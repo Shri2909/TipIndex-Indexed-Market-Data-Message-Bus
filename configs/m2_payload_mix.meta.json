@@ -1,0 +1,12 @@
+{
+  "source_counts": "results/data/itch_20191230_counts.json",
+  "source_counts_sha256": "01911be1842f95dc13952999a5fa801d8ebefef2f6e387daf115ee31d4091303",
+  "source_gzip_sha256": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+  "spec_length_table": "py/tiplog_py/itch/protocol.py::LENGTHS",
+  "spec_table_source_sha256": "ab220d032994ca356927326c9dba55c7e6d22c9919919553ade9a0a9201b75b0",
+  "message_count": 268744780,
+  "observed_types": 18,
+  "mix_file": "configs/m2_payload_mix.csv",
+  "mix_sha256": "b61c4c1821837e258f1947133ce6988db0141a066557dde742dc8542a9abb817",
+  "scope": "Aggregate full-day observed payload length distribution; synthetic M2 payload bytes, no raw messages"
+}

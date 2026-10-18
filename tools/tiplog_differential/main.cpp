@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
       if (arg == "--help") {
         std::cout
             << "tiplog_differential [--seeds N] [--operations N] [--seed-base "
-               "N] [--mode scan|indexed] [--kernel stdpq|binheap|quad|loser]\n";
+               "N] [--mode scan|indexed|auto] [--kernel stdpq|binheap|quad|loser]\n";
         return 0;
       }
       if (i + 1 >= argc)
@@ -45,8 +45,10 @@ int main(int argc, char **argv) {
       config.mode = tiplog::ReplayMode::Scan;
     else if (mode == "indexed")
       config.mode = tiplog::ReplayMode::Indexed;
+    else if (mode == "auto")
+      config.mode = tiplog::ReplayMode::Auto;
     else
-      throw std::invalid_argument("invalid mode (Auto is a P5 task)");
+      throw std::invalid_argument("invalid mode");
     if (kernel == "stdpq")
       config.kernel = tiplog::MergeKernel::StdPQ;
     else if (kernel == "binheap")
@@ -73,6 +75,9 @@ int main(int argc, char **argv) {
               << ",\"opens\":" << r.opens
               << ",\"effective_indexed_opens\":" << r.indexed_opens
               << ",\"effective_scan_opens\":" << r.scan_opens
+              << ",\"multicursor_opens\":" << r.multicursor_opens
+              << ",\"indexed_execution_batches\":" << r.indexed_execution_batches
+              << ",\"scan_execution_batches\":" << r.scan_execution_batches
               << ",\"batches\":" << r.batches
               << ",\"delivered\":" << r.delivered
               << ",\"history_expired_opens\":" << r.history_expired

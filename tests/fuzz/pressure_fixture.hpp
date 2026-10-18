@@ -13,7 +13,7 @@ namespace tiplog::fuzz {
 // Independently calculated before P4 implementation. See
 // results/p3/p4-pressure-fixture-plan.md: these expected tails are not copied
 // from the engine or supplied to the capacity-only ScanOracle.
-inline void pressure_fixture() {
+inline void pressure_fixture(MergeKernel kernel = MergeKernel::StdPQ) {
   auto check = [](bool value) { if (!value) std::abort(); };
   EngineConfig config;
   config.ring_bytes = 64;
@@ -63,7 +63,7 @@ inline void pressure_fixture() {
     // modes share the expected result; neither mode supplies the other's tail.
     const auto& newest_sub = i % 2 == 0 ? asub : bsub;
     for (const auto mode : {ReplayMode::Scan, ReplayMode::Indexed}) {
-      auto newest = engine.open_replay(newest_sub, static_cast<Seq>(i), mode);
+      auto newest = engine.open_replay(newest_sub, static_cast<Seq>(i), mode, kernel);
       check(newest.next_batch(2, out) == Status::Done);
       check(out.size() == 1 && out.front().seq == i + 1);
       check(out.front().pos == starts[i] && out.front().topic == topic);
@@ -72,9 +72,9 @@ inline void pressure_fixture() {
       check(!newest.error());
     }
     if (i == 0) {
-      unfinished.emplace(engine.open_replay(asub, Seq{0}, ReplayMode::Indexed));
-      exact_budget.emplace(engine.open_replay(asub, Seq{0}, ReplayMode::Indexed));
-      unmatched.emplace(engine.open_replay(bsub, Seq{0}, ReplayMode::Indexed));
+      unfinished.emplace(engine.open_replay(asub, Seq{0}, ReplayMode::Indexed, kernel));
+      exact_budget.emplace(engine.open_replay(asub, Seq{0}, ReplayMode::Indexed, kernel));
+      unmatched.emplace(engine.open_replay(bsub, Seq{0}, ReplayMode::Indexed, kernel));
       check(exact_budget->next_batch(1, out) == Status::More);
       check(out.size() == 1 && out.front().seq == 1);
       check(exact_budget->checkpoint() == (ResumeCheckpoint{1, 32}));

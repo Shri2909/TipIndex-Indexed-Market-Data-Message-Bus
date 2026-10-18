@@ -38,8 +38,7 @@ std::string path(std::mt19937_64 &random) {
   return value;
 }
 SubscriptionSpec subscription(std::mt19937_64 &random,
-                              const std::vector<std::string> &paths,
-                              bool one_partition) {
+                              const std::vector<std::string> &paths) {
   SubscriptionSpec result;
   switch (random() % 8) {
   case 0:
@@ -51,33 +50,11 @@ SubscriptionSpec subscription(std::mt19937_64 &random,
     break;
   default: {
     const auto count = 1 + random() % 5;
-    const auto selected = paths[static_cast<std::size_t>(random() % paths.size())];
-    const auto first_slash = selected.find('/');
-    if (one_partition && first_slash == std::string::npos) {
-      result.terms.push_back({Term::Subtree, selected});
-      break; // Root subscriptions are the explicitly exercised wide fallback.
-    }
-    const auto second_slash = first_slash == std::string::npos
-                                  ? std::string::npos
-                                  : selected.find('/', first_slash + 1);
-    const auto partition = selected.substr(0, second_slash);
-    std::vector<std::string> candidates;
-    if (one_partition) {
-      for (const auto &candidate : paths)
-        if (candidate == partition ||
-            (candidate.starts_with(partition) &&
-             candidate.size() > partition.size() &&
-             candidate[partition.size()] == '/'))
-          candidates.push_back(candidate);
-    }
     for (std::uint64_t i = 0; i < count; ++i) {
-      auto value = one_partition
-          ? candidates[static_cast<std::size_t>(random() % candidates.size())]
-          : paths[static_cast<std::size_t>(random() % paths.size())];
+      auto value = paths[static_cast<std::size_t>(random() % paths.size())];
       if (random() % 3 == 0) {
         const auto slash = value.rfind('/');
-        if (slash != std::string::npos &&
-            (!one_partition || slash >= partition.size()))
+        if (slash != std::string::npos)
           value.resize(slash);
       }
       result.terms.push_back(
@@ -198,7 +175,7 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
           require(actual_rejected && expected_rejected, "empty spec accepted");
           ++result.empty_specs_rejected;
         } else {
-          auto spec = subscription(random, paths, config.mode == ReplayMode::Indexed);
+          auto spec = subscription(random, paths);
           const auto upper = engine.stats().head_seq - 1;
           Seq after{};
           switch (random() % 6) {
@@ -225,10 +202,13 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
           auto &pair = *replays[slot];
           compare(engine, pair.actual, pair.expected);
           ++result.opens;
-          if (pair.actual.effective_mode() == ReplayMode::Indexed)
+          if (pair.actual.effective_mode() == ReplayMode::Indexed) {
             ++result.indexed_opens;
-          else
+            if (pair.actual.selected_partition_count() > 1)
+              ++result.multicursor_opens;
+          } else {
             ++result.scan_opens;
+          }
           if (pair.actual.error())
             ++result.history_expired;
         }
@@ -237,6 +217,14 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
         if (replays[slot]) {
           auto &pair = *replays[slot];
           const auto budget = static_cast<std::size_t>(random() % 18);
+          if (budget != 0 && pair.actual.status() == Status::More &&
+              pair.actual.checkpoint()->next_pos < pair.actual.upper_pos() &&
+              pair.actual.checkpoint()->next_pos >= engine.stats().tail_pos) {
+            if (pair.actual.effective_mode() == ReplayMode::Indexed)
+              ++result.indexed_execution_batches;
+            else
+              ++result.scan_execution_batches;
+          }
           const auto status = pair.actual.next_batch(budget, actual);
           require(status == pair.expected.next_batch(budget, expected),
                   "batch return status mismatch");

@@ -21,6 +21,14 @@ std::uint64_t number(std::string_view value) {
   }
   return result;
 }
+double fraction(std::string_view value) {
+  double result{};
+  const auto parsed =
+      std::from_chars(value.data(), value.data() + value.size(), result);
+  if (parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size())
+    throw std::invalid_argument("expected Auto fraction in [0,1]");
+  return result;
+}
 void hash_number(std::uint64_t &state, std::uint64_t value) {
   for (unsigned i = 0; i < 8; ++i) {
     state ^= value & 255U;
@@ -46,8 +54,9 @@ int main(int argc, char **argv) {
     engine_config.max_record_bytes = engine_config.ring_bytes / 2;
     tiplog::SubscriptionSpec subscription;
     std::filesystem::path path;
-    std::string_view backend = "engine", mode_name = "scan";
+    std::string_view backend = "engine", mode_name = "scan", kernel_name = "stdpq";
     tiplog::ReplayMode mode = tiplog::ReplayMode::Scan;
+    tiplog::MergeKernel kernel = tiplog::MergeKernel::StdPQ;
     for (int i = 1; i < argc; ++i) {
       const std::string_view arg(argv[i]);
       if (arg == "--help") {
@@ -57,13 +66,14 @@ int main(int argc, char **argv) {
                "[--consume-every N] [--pause FIRST:COUNT] [--jitter-budget] "
                "[--ring-bytes N] [--max-record-bytes N] [--exact "
                "PATH|--subtree PATH] "
-               "[--backend engine|recording] [--mode scan|indexed] "
+               "[--backend engine|recording] [--mode scan|indexed|auto] "
+               "[--kernel stdpq|binheap|quad|loser] "
+               "[--auto-max-partitions N] [--auto-max-index-fraction F] "
                "[--index-enabled 0|1] [--pool-blocks N] [--block-entries N] "
                "[--pool-policy force-evict|reject-publish] [--minimum-record-bytes 16|32]\n"
-               "Engine backend uses captured snapshots and chains only "
-               "completed progress; "
+               "Engine backend polls Tail across captured ranges; "
                "retention failures are explicit in JSON. Default subscription: "
-               "Subtree(itch).\n";
+               "Subtree(itch). Auto defaults are explicit uncalibrated policy values.\n";
         return 0;
       }
       if (arg == "--jitter-budget") {
@@ -79,6 +89,15 @@ int main(int argc, char **argv) {
         backend = value;
       else if (arg == "--mode")
         mode_name = value;
+      else if (arg == "--kernel")
+        kernel_name = value;
+      else if (arg == "--auto-max-partitions") {
+        const auto count = number(value);
+        if (count > UINT32_MAX)
+          throw std::invalid_argument("Auto partition threshold exceeds u32");
+        engine_config.auto_max_partitions = static_cast<std::uint32_t>(count);
+      } else if (arg == "--auto-max-index-fraction")
+        engine_config.auto_max_index_fraction = fraction(value);
       else if (arg == "--index-enabled") {
         if (value != "0" && value != "1")
           throw std::invalid_argument("index-enabled must be 0 or 1");
@@ -135,8 +154,20 @@ int main(int argc, char **argv) {
       mode = tiplog::ReplayMode::Scan;
     else if (mode_name == "indexed")
       mode = tiplog::ReplayMode::Indexed;
+    else if (mode_name == "auto")
+      mode = tiplog::ReplayMode::Auto;
     else
-      throw std::invalid_argument("invalid mode (Auto is a P5 task)");
+      throw std::invalid_argument("invalid replay mode");
+    if (kernel_name == "stdpq")
+      kernel = tiplog::MergeKernel::StdPQ;
+    else if (kernel_name == "binheap")
+      kernel = tiplog::MergeKernel::BinHeap;
+    else if (kernel_name == "quad")
+      kernel = tiplog::MergeKernel::Quad;
+    else if (kernel_name == "loser")
+      kernel = tiplog::MergeKernel::Loser;
+    else
+      throw std::invalid_argument("invalid merge kernel");
     if (path.empty())
       throw std::invalid_argument("--trace FILE is required");
     if (backend != "engine" && backend != "recording")
@@ -150,6 +181,7 @@ int main(int argc, char **argv) {
     std::optional<tiplog::ResumeCheckpoint> final_checkpoint;
     tiplog::EngineStats final_stats;
     tiplog::ring::RingStats final_ring_stats;
+    auto final_effective_mode = tiplog::ReplayMode::Scan;
     if (backend == "recording") {
       tiplog::Seq sequence = 0;
       result = tiplog::driver::drive_trace(
@@ -162,26 +194,26 @@ int main(int argc, char **argv) {
       if (subscription.terms.empty())
         subscription.terms.push_back({tiplog::Term::Subtree, "itch"});
       const auto sub = engine.compile(subscription);
-      std::optional<tiplog::Replay> replay;
-      tiplog::Seq resume_after = 0;
+      auto tail = engine.open_tail(sub, tiplog::Seq{0}, mode, kernel);
+      snapshots = 1; // Includes the initial empty captured range.
+      auto previous_upper = tail.upper_seq();
       std::vector<tiplog::Delivered> out;
       auto consume = [&](std::size_t budget) {
         if (final_error)
           return;
-        if (!replay || replay->status() == tiplog::Status::Done) {
-          if (replay)
-            resume_after = replay->checkpoint()->after_seq;
-          replay.emplace(engine.open_replay(sub, resume_after, mode));
+        final_status = tail.poll(budget, out);
+        if (tail.upper_seq() != previous_upper) {
           ++snapshots;
+          previous_upper = tail.upper_seq();
         }
-        final_status = replay->next_batch(budget, out);
         ++batches;
         for (const auto &record : out) {
           hash_delivery(replay_digest, record);
           ++delivered;
         }
-        final_error = replay->error();
-        final_checkpoint = replay->checkpoint();
+        final_error = tail.error();
+        final_checkpoint = tail.checkpoint();
+        final_effective_mode = tail.effective_mode();
       };
       result = tiplog::driver::drive_trace(
           reader, config,
@@ -206,7 +238,15 @@ int main(int argc, char **argv) {
       engine.check_invariants();
     }
     std::cout << "{\"backend\":\"" << backend
-              << "\",\"mode\":\"" << mode_name << "\",\"seed\":" << result.seed
+              << "\",\"mode\":\"" << mode_name
+              << "\",\"kernel\":\"" << kernel_name
+              << "\",\"reader\":\"" << (backend == "engine" ? "tail" : "none")
+              << "\",\"effective_last_range_mode\":\""
+              << (final_effective_mode == tiplog::ReplayMode::Indexed ? "indexed" : "scan")
+              << "\",\"auto_policy_calibrated\":false,\"auto_max_partitions\":"
+              << engine_config.auto_max_partitions
+              << ",\"auto_max_index_fraction\":" << engine_config.auto_max_index_fraction
+              << ",\"seed\":" << result.seed
               << ",\"published\":" << result.published
               << ",\"first_seq\":" << result.first_seq
               << ",\"last_seq\":" << result.last_seq

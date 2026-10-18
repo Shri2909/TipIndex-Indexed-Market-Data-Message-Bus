@@ -289,7 +289,7 @@ TEST(EngineIndex, V20DynamicFilterGrowthDoesNotLeaveDanglingPointers) {
   ASSERT_EQ(out.size(), 1U);
   EXPECT_EQ(out[0].seq, 3U);
 }
-TEST(EngineIndex, V20WideFallsBackAndMultiplePartitionsAreExplicitP5) {
+TEST(EngineIndex, V20WideFallsBackAndMultiplePartitionsMerge) {
   Engine e(config());
   const auto a = e.intern("itch/A/add"), b = e.intern("itch/B/add");
   e.publish(a, bytes(0));
@@ -297,9 +297,14 @@ TEST(EngineIndex, V20WideFallsBackAndMultiplePartitionsAreExplicitP5) {
   auto wide = e.open_replay(e.compile(subtree("itch")), Seq{0},
                             ReplayMode::Indexed);
   EXPECT_EQ(wide.effective_mode(), ReplayMode::Scan);
-  EXPECT_THROW(static_cast<void>(e.open_replay(
+  auto merged = e.open_replay(
       e.compile({{{Term::Exact, "itch/A/add"}, {Term::Exact, "itch/B/add"}}}),
-      Seq{0}, ReplayMode::Indexed)), std::invalid_argument);
+      Seq{0}, ReplayMode::Indexed);
+  std::vector<Delivered> out;
+  EXPECT_EQ(merged.next_batch(8, out), Status::Done);
+  ASSERT_EQ(out.size(), 2U);
+  EXPECT_EQ(out[0].seq, 1U);
+  EXPECT_EQ(out[1].seq, 2U);
 }
 TEST(EngineIndex, V20DisabledIndexPreservesScanAndRejectsIndexed) {
   auto c = config();

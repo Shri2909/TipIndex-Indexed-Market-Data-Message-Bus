@@ -48,8 +48,10 @@ include(cmake/p2.cmake)
 include(cmake/p2_ref.cmake)
 include(cmake/p3_ring.cmake)
 include(cmake/p4_index.cmake)
+include(cmake/p5_merge.cmake)
 include(cmake/p3_engine.cmake)
 include(cmake/p3_fuzz.cmake)
+include(cmake/p5_bench.cmake)
 
 # Allocator diagnostics are separate from the portable index and its gauges.
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND CMAKE_BUILD_TYPE STREQUAL "Release")

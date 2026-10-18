@@ -3,6 +3,7 @@
 #include "tiplog/ring/ring.hpp"
 #include "tiplog/subs/compiled.hpp"
 #include "tiplog/index/index.hpp"
+#include "tiplog/merge/kernels.hpp"
 
 #include <limits>
 #include <memory>
@@ -14,6 +15,10 @@ namespace tiplog {
 class PoolExhausted : public std::runtime_error {
 public:
   PoolExhausted() : std::runtime_error("index block pool exhausted") {}
+};
+class InvalidRange : public std::invalid_argument {
+public:
+  InvalidRange() : std::invalid_argument("tail start is beyond the current head") {}
 };
 
 struct EngineConfig {
@@ -29,6 +34,9 @@ struct EngineConfig {
   index::Config index{};
   PoolPolicy pool_policy{PoolPolicy::ForceEvict};
   std::size_t minimum_record_bytes{16};
+  // Explicit initial policy values, not measured or calibrated thresholds.
+  std::uint32_t auto_max_partitions{64};
+  double auto_max_index_fraction{0.25};
 };
 struct EngineStats {
   LogPos head_pos{};
@@ -44,6 +52,7 @@ struct EngineLifetime {
 };
 } // namespace detail
 class Engine;
+class Tail;
 class Replay {
 public:
   Replay(const Replay &) = delete;
@@ -61,14 +70,19 @@ public:
   [[nodiscard]] LogPos upper_pos() const noexcept { return upper_pos_; }
   [[nodiscard]] Status status() const noexcept { return status_; }
   [[nodiscard]] ReplayMode effective_mode() const noexcept { return mode_; }
+  [[nodiscard]] std::size_t selected_partition_count() const noexcept {
+    return partitions_.size();
+  }
   [[nodiscard]] std::optional<ResumeCheckpoint> checkpoint() const noexcept {
     return checkpoint_;
   }
 
 private:
   friend class Engine;
+  friend class Tail;
   Replay(Engine &, const subs::CompiledSubscription &, Seq,
-         std::optional<ResumeCheckpoint>, ReplayMode);
+         std::optional<ResumeCheckpoint>, ReplayMode, MergeKernel);
+  Status next_batch_into(std::size_t max, std::vector<Delivered> &out);
   void release() noexcept;
   Engine *engine_;
   std::weak_ptr<detail::EngineLifetime> lifetime_;
@@ -81,7 +95,43 @@ private:
   std::optional<ReplayError> error_;
   std::optional<ResumeCheckpoint> checkpoint_;
   ReplayMode mode_{ReplayMode::Scan};
-  std::optional<PartitionId> partition_;
+  MergeKernel kernel_{MergeKernel::StdPQ};
+  std::vector<PartitionId> partitions_;
+};
+
+// A live reader is a chain of completed captured ranges. Done means caught up
+// at this call; a subsequent positive poll may capture newly published DATA.
+class Tail {
+public:
+  Tail(const Tail &) = delete;
+  Tail &operator=(const Tail &) = delete;
+  Tail(Tail &&) noexcept = default;
+  Tail &operator=(Tail &&) noexcept = default;
+  Status poll(std::size_t max, std::vector<Delivered> &out);
+  [[nodiscard]] Status status() const noexcept { return status_; }
+  [[nodiscard]] std::optional<ReplayError> error() const noexcept { return error_; }
+  [[nodiscard]] std::optional<ResumeCheckpoint> checkpoint() const noexcept {
+    return checkpoint_;
+  }
+  [[nodiscard]] Seq upper_seq() const noexcept { return replay_.upper_seq(); }
+  [[nodiscard]] LogPos upper_pos() const noexcept { return replay_.upper_pos(); }
+  [[nodiscard]] ReplayMode effective_mode() const noexcept {
+    return replay_.effective_mode();
+  }
+private:
+  friend class Engine;
+  Tail(Engine &, const subs::CompiledSubscription &, Seq, ReplayMode, MergeKernel);
+  Engine *engine_;
+  std::weak_ptr<detail::EngineLifetime> lifetime_;
+  subs::CompiledSubscription sub_;
+  ReplayMode mode_;
+  MergeKernel kernel_;
+  Seq requested_after_;
+  Seq last_delivered_;
+  Replay replay_;
+  Status status_;
+  std::optional<ReplayError> error_;
+  std::optional<ResumeCheckpoint> checkpoint_;
 };
 
 class Engine {
@@ -102,6 +152,9 @@ public:
                                    Seq after_seq,
                                    ReplayMode mode = ReplayMode::Scan,
                                    MergeKernel kernel = MergeKernel::StdPQ);
+  [[nodiscard]] Tail open_tail(const subs::CompiledSubscription &, Seq after_seq,
+                              ReplayMode mode = ReplayMode::Scan,
+                              MergeKernel kernel = MergeKernel::StdPQ);
   [[nodiscard]] Replay open_replay(const subs::CompiledSubscription &,
                                    ResumeCheckpoint,
                                    ReplayMode mode = ReplayMode::Scan,
@@ -117,6 +170,7 @@ public:
 
 private:
   friend class Replay;
+  friend class Tail;
   EngineConfig config_;
   topics::Registry registry_;
   ring::Ring ring_;

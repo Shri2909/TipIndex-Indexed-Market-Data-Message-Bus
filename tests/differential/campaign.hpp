@@ -17,6 +17,9 @@ struct Result {
   std::uint64_t opens{};
   std::uint64_t indexed_opens{};
   std::uint64_t scan_opens{};
+  std::uint64_t multicursor_opens{};
+  std::uint64_t indexed_execution_batches{};
+  std::uint64_t scan_execution_batches{};
   std::uint64_t batches{};
   std::uint64_t delivered{};
   std::uint64_t history_expired{};

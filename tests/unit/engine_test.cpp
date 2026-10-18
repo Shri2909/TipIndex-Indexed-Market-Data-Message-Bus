@@ -276,7 +276,11 @@ TEST(Engine, V36InvalidConfigAndForeignSubscriptionsRejected) {
   auto wide = a.open_replay(sub, Seq{0}, ReplayMode::Indexed);
   EXPECT_EQ(wide.effective_mode(), ReplayMode::Scan);
   EXPECT_EQ(wide.status(), Status::Done);
-  EXPECT_THROW(static_cast<void>(a.open_replay(sub, Seq{0}, ReplayMode::Auto)),
+  auto automatic = a.open_replay(sub, Seq{0}, ReplayMode::Auto);
+  EXPECT_EQ(automatic.effective_mode(), ReplayMode::Scan);
+  EXPECT_EQ(automatic.status(), Status::Done);
+  EXPECT_THROW(static_cast<void>(a.open_replay(
+                   sub, Seq{0}, static_cast<ReplayMode>(255))),
                std::invalid_argument);
 }
 TEST(Engine, ReplayLifetimeAndMoveAreChecked) {

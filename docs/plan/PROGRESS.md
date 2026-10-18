@@ -6,7 +6,7 @@ This file records authorization. It **cannot grant** it. Approval is recorded he
 |---|---|
 | Plan version | **v1.1** (2026-10-17), superseding proposed v1.0 |
 | Approval state | **APPROVED** by the user on 2026-10-17 with the proposed Tier B defaults; approval explicitly does not start implementation |
-| Authorized phase | **P1–P5 jointly authorized** by the user on 2026-10-17; P0–P3 complete, P4 executing. |
+| Authorized phase | **P1–P5 jointly authorized** by the user on 2026-10-17; P0–P4 complete, P5 executing. |
 | Workflow step | 4 of 5: execute P1 → P2 → P3 → P4 → P5, passing each gate before automatic continuation; stop after P5 |
 | Selected tier | **Tier B**; effort estimates remain provisional and weekly availability is unspecified |
 | Approved defaults | 2019-12-30 Nasdaq data only; no privileged benchmark-setting changes; proposed writable repository setup preserving managed/read-only metadata |
@@ -51,7 +51,7 @@ At that approval boundary, P0–P8 remained unstarted and no phase was authorize
 
 ## Next action
 
-Complete the jointly authorized P1–P5 sequence. P1 and P2 gates passed; P3 ring/scan replay, differential coverage and F3 are next. Continue P4/P5 automatically after their prerequisites pass. No P6–P8, Tier C or roadmap work is authorized.
+Finish P5 acceptance under the joint P1–P5 authorization. P0–P4 gates passed; P5 implementation, release/sanitizer tests and RC3 passed. Complete all-mode CC2, final integrated F3 and isolated M1/M1-touch/M2 pilot, then stop. No P6–P8, Tier C or roadmap work is authorized.
 
 ## Log
 
@@ -235,3 +235,41 @@ The root has added an independent [F3 pressure fixture](../../tests/fuzz/pressur
 The prior1,250-input corpus passed indexed smoke; all9 named seeds, including true pressure/recycling cases, passed again after final golden-payload fixture additions. Fresh [F3 indexed timed gate](../../results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json) is **running, not passed**; no P4 completion claim is made. Its dedicated fresh corpus preserves prior corpora while avoiding repeatedly loading all old long inputs during mutation segments.
 
 [Allocator source/method/actual observations](../../results/p4/memory-sources.md) separately measures the required glibc contribution and preserves exact structural recounts. [Real trace Scan/Indexed smoke](../../results/p4/real-driver-mode-comparison.json) publishes10,000 events, delivers the same one AAPL event and completes at the same upper checkpoint; it is functional validation, not performance evidence. Independent review has found no unresolved source defect; its final timed audit remains pending. P5 source implementation still waits for this P4 gate.
+
+**Local source provenance:** snapshot commit `d4e5b8323dd43a77c5d5f97fc46f2be25f5a0006` now exists in the approved writable `.tiplog-git`; managed `.git` remains read-only and untouched. [Revision audit](../../results/p4/source-revision.json) matches all49 frozen source files to that commit. Staging path checks excluded raw/traces/real fuzz seeds/F2 payload logs. Earlier commands retain their historical unborn-HEAD/source-hash provenance; this later snapshot is not substituted as run-time metadata. P5's future pilot will record its actual revision and dirty state. No push/publication occurred.
+
+## Phase 4 completed gate and Phase 5 handoff — 2026-10-18
+
+**P4.1–P4.5 complete; every P4 completion criterion met.** [Authoritative phase gate](../../results/p4/phase-gate.json), [checked source manifest](../../results/p4/implementation-manifest.json), [final independent review](../../results/p4/review.md). Earlier running/pending entries are historical snapshots superseded by this gate.
+
+- **Pool/index:** fixed32-B metadata and separate u32 deltas; free-list/generations, prepared append/nonallocating commit, ordered expiry heap, full/partial seals, lazy cold-open expiry/cadence sweeps and declared pressure policies. V37 checks late partial seals and wide-before-narrow arithmetic.
+- **Cursor/replay:** binary block/entry seeks, position/generation safety and k1 indexed replay preserve common completion/expiry/checkpoint rules; dynamic filters are reacquired after topic creation.
+- **Accounting:** exact independent slot/recount conservation, heap/list/fixed storage/high-water; [actual supported allocator observations](../../results/p4/memory-sources.md) separately cover the declared process boundary. Generic16/enforced32 sizing and strong rejected-publication state checks pass.
+- **Executed checks:** final warning-free builds; **121/121 release and121/121 ASan/UBSan tests**, **10M release +2M sanitizer differential operations**. Effective Indexed opens and wide fallbacks are reported separately.
+- **F3 passed:** **1,801.3472 monotonic seconds /81,399 executions /15 exit-0 segments**. [Root terminal verification](../../results/p4/fuzz-gate-verified.json) and independent review verified all log/stat/binary/runner/corpus identities, all49 frozen sources unchanged, no sanitizer report and no failure artifact. Peak RSS717MiB. Corrected indexed-selector seed variants passed independent smoke and were retained in the campaign.
+
+[Source→decision/invariant→task→symbol→validation→executed evidence: Index](../../results/p4/index-sources.md), [Engine](../../results/p4/engine-sources.md), [golden pressure/F3 map](../../results/p4/fuzz-plan.md), [allocator](../../results/p4/memory-sources.md). Published shared-pool observations stay distinct from our independent transactional, expiry and accounting algorithms. No P4 blocker remains.
+
+**P5 starts automatically now** under the joint P1–P5 authorization. Its required kernels, multiparty replay/Auto/Tail, equivalence/differential/sanitizer/fuzz/RC3 checks and M1/M1-touch/M2 harnesses/pilot remain to be completed. [Read-only merge study](../../results/p4/p5-merge-study.md), [Engine/Tail study](../../results/p4/p5-engine-study.md), [benchmark handoff](../../results/p4/p5-benchmark-handoff.md) are preparation, not executed P5 evidence. Stop after P5's accepted gate; P6–P8, Tier C and roadmap work remain outside scope.
+
+
+## Phase 5 live acceptance checks — 2026-10-18
+
+P5.1–P5.5 implementation is integrated: four independent merge kernels, checked packed keys, multi-partition replay, configurable **uncalibrated** Auto, Tail re-arming, independent Tail reference, deterministic driver/campaigns and M1/M1-touch/M2 harnesses. No P5 completion is claimed before the remaining timed gate and pilot pass.
+
+- Final integrated [release tests](../../results/p5/release-tests-integration-20261018T155700.707669Z.json) and [ASan/UBSan tests](../../results/p5/sanitizer-tests-integration-20261018T155840.807045Z.json) each passed **157/157**. Leak checks remain enabled. Named integrated F3 seeds passed their final smoke check.
+- [RC3](../../results/p5/rc3-summary.json) passed **180 functional runs /170 equality checks**: repeated GCC/Clang, Scan/Indexed×4/Auto×4, actual narrow Indexed/Auto, wide Scan fallback, successful replay and nonempty-prefix expiry. [Integrity audit](../../results/p5/rc3-integrity.json) verifies commands, results and source/binary identities.
+- [CC2 all configurations](../../results/p5/CC2-full-sequence-20261018T160119.265969Z.json) is **running**: nine configurations per preset, each 1,000×10,000 release or200×10,000 sanitizer operations. All nine release children passed; sanitizer children are in progress. The final cross-mode outcome/digest audit remains pending.
+- Fresh [integrated F3](../../results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z.json) is **running**, requiring ≥1,800 confirmed monotonic seconds. [38-file binary source freeze](../../results/p5/fuzz-source-freeze.json), [17 named scenarios](../../results/p5/named-corpus.json). No timed-gate completion is inferred from elapsed wall time.
+- [Full-size M1 functional check](../../results/p5/M1-full-pilot-functional-20261018T160201.375404Z.json) passed all15 selected cases, including fully initialized1GiB touches, independent expected hashes and Quad padding variants. This is functional validation, **not timing evidence**. M2 matrix functional verification is in progress after its final build.
+- [Pilot runner/method](../../results/p5/pilot-method.md) is prepared and validated. **Timed pilot and reduced simulated Cachegrind remain unrun** until all fuzzing, tests and builds finish, followed by a verified quiescence barrier, final source snapshot and fresh environment/AC/affinity checks. Full campaigns and P6.2 noise/calibration studies remain deferred.
+
+[Engine/Tail traceability](../../results/p5/engine-sources.md), [merge/M1 traceability](../../results/p5/merge-sources.md), [RC3 traceability](../../results/p5/rc3-evidence.md). Primary-source reading boundaries remain explicit. These are independent algorithms; no unavailable Aria details or transferred speedups are claimed. P6–P8, Tier C and roadmap work remain unauthorized.
+
+
+**P5 CC2 terminal update:** [all18 campaigns](../../results/p5/CC2-all-configurations.json)
+passed **90,000,000 release +18,000,000 sanitizer operations**. Each of nine mode/kernel
+choices independently met its required seed/operation counts. Canonical aggregate
+outputs/outcomes match exactly across modes for each preset; only declared
+mode-specific execution counters and elapsed time are excluded. F3 and isolated
+pilot acceptance remain pending.

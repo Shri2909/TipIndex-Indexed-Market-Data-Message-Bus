@@ -498,3 +498,33 @@ The independent P1–P5 [source/requirements audit](../../results/p1/review-sour
 Finding28's four-byte-entry warning affects actual accounting: portable index gauges exactly report fixed metadata/deltas, sealed flags, heap/list capacities, control storage, live/stale/open/sealed/free slots and high-water. Allocator overhead is separately observed through a supported fresh single-thread glibc2.43 `mallinfo2` process boundary. [Original material, method and actual observations](../../results/p4/memory-sources.md) records the inspected local header and official manual §3.2.3.10. The signed allocator-minus-reserved difference includes rounding/retained allocation effects and is not per-object headers or RSS. No allocator settings, architecture, dependency, scope or acceptance criterion changed.
 
 P4 also corrected the randomized campaign's declared partition bound from39 to41: compiling a nonexistent exact term interns two extra ancestor partitions. [Engine traceability](../../results/p4/engine-sources.md) records the independently sufficient generic16 pool sizing. The engine's reported tail is never substituted for oracle retention; true pressure is checked against prior hand arithmetic and golden replay bytes. Actual P4 completion still depends on its timed F3 gate in PROGRESS.
+
+
+## P5 bounded implementation reading — 2026-10-18
+
+P5 reuses the saved S18/S23/S49/S42 findings with targeted original reading,
+not a new research sweep. [Merge source ledger](../../results/p5/merge-sources.md)
+records the actually inspected Sanders §2 and AppendicesA.2/A.5, original
+short merge discussions, installed GCC15.2 StdPQ/heap implementation ranges
+and pinned Google Benchmark1.9.5 revision192ef10025eb2c4cdd392bc502f0c852196baa48.
+S20 full text remains uninspected; unavailable S22 pages and S49 linked ACM
+text are not claimed read. Quad padding is independently checked geometry,
+loser replay is an independent guarded tournament algorithm, and no code or
+speedup is attributed to unavailable Aria internals.
+
+Pinned Benchmark source confirms its random interleaving uses internal entropy
+without an exposed replay seed, and explicit Iterations would override adaptive
+minimum-time calibration. The harness therefore preserves actual invocation
+order, input seed and raw repetitions while keeping adaptive iteration counts.
+[Method and reading boundaries](../../results/p5/pilot-method.md). A read-only
+[generated-code review](../../results/p5/assembly-review.json) confirms the
+actual record touch feeds the sink and records representative compiler choices;
+it makes no branch-free, cache-benefit or performance-ordering claim.
+
+The [installed Valgrind3.26 original manual inspection](../../results/p5/cachegrind-sources.json)
+records exact sections and document identity. In this version cache and branch
+simulation must be enabled explicitly. The reduced fallback will retain whole
+program instruction and **simulated** cache/branch counts, including setup;
+these are neither modern-PMU observations nor isolated hot-loop attribution.
+This reading changes no approved dependency, semantics, scope or gate. Actual
+checks and pending/complete status remain in PROGRESS and the P5 phase gate.

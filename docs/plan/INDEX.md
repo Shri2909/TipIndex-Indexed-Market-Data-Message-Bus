@@ -4,9 +4,9 @@
 |---|---|
 | Plan version | **v1.1** · 2026-10-17 · research/design refresh of v1.0 |
 | Approval state | **APPROVED** by the user on 2026-10-17 with the proposed Tier B defaults |
-| Authorized phase | **P1–P5 jointly authorized** by the user's separate 2026-10-17 execution instruction; P0–P3 complete, P4 in progress. Stop after P5. |
+| Authorized phase | **P1–P5 jointly authorized** by the user's separate 2026-10-17 execution instruction; P0–P4 complete, P5 in progress. Stop after P5. |
 | Selected scope/defaults | **Tier B**; 2019-12-30 Nasdaq data only; no privileged benchmark-setting changes; proposed writable repository setup |
-| Planning-stage completion means | The design and execution protocol are reviewable. Actual implementation has advanced through P3; phase evidence and current work are recorded in PROGRESS. |
+| Planning-stage completion means | The design and execution protocol are reviewable. Actual implementation has advanced through P4; phase evidence and current work are recorded in PROGRESS. |
 
 **Workspace inspected before the research refresh.** The master prompt and all seven original planning documents were reviewed; no root PROJECT_PLAN.md was present. The managed `.git` directory could not be used as a repository. The refresh edited planning files only. P0 now uses a separate writable `.tiplog-git` with the original workspace as its worktree; managed metadata is preserved. See [PROGRESS](PROGRESS.md) and [the dated historical review](REVIEW_2026-10-17.md).
 
