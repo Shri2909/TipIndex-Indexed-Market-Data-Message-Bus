@@ -1,0 +1,22 @@
+{
+  "label": "release-tests",
+  "argv": [
+    "ctest",
+    "--preset",
+    "release",
+    "--output-on-failure"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T032707.123150Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p2/release-tests-20261018T032707.123150Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 1.6863319260000083
+}

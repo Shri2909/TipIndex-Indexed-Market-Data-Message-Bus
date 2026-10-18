@@ -1,0 +1,12 @@
+{
+  "source": "data/raw/12302019.NASDAQ_ITCH50.gz",
+  "source_sha256": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+  "decompressed_offset": 0,
+  "bytes": 65536,
+  "seed": "data/raw/fuzz_itch_walker/nasdaq-20191230-first65536.bin",
+  "seed_sha256": "a6d9d955c6385dbd76460a6cb07042c2ecefee0dc03de8e26cdb0d91ca783bae",
+  "working_corpus": "data/raw/fuzz_itch_walker",
+  "synthetic_seed_directory": "tests/fuzz/corpus/itch_walker",
+  "local_only": true,
+  "purpose": "VALIDATION F2 first64KiB real BinaryFILE plus golden/synthetic corpus; never tracked"
+}

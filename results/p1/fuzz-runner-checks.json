@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "actual completed segment exit/log/statistics/totals verification",
+      "status": "passed",
+      "summary": "results/p1/F1-trace-segmented-gate-20261017T142028.416744Z.json",
+      "confirmed_seconds_at_check": 121.19153030899997
+    },
+    {
+      "check": "tampered elapsed total rejected",
+      "status": "passed"
+    },
+    {
+      "check": "tampered completed-log hash rejected",
+      "status": "passed"
+    },
+    {
+      "check": "actual persistent completed-segment corpus seed hashes verified",
+      "status": "passed"
+    },
+    {
+      "check": "changed checkpointed seed rejected",
+      "status": "passed"
+    },
+    {
+      "check": "Python syntax compilation",
+      "status": "passed",
+      "command": ".venv/bin/python -m py_compile scripts/run_fuzz_gate.py"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "label": "converter-2GiB-pilot",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "tiplog_py.itch",
+    "convert",
+    "data/raw/20191230_prefix_pilot.gz",
+    "--output",
+    "data/traces/pilot_H-spec.tpl",
+    "--also-flat",
+    "data/traces/pilot_H-flat.tpl",
+    "--start",
+    "09:30:00",
+    "--end",
+    "09:31:00",
+    "--limit-bytes",
+    "2147483648"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T090555.447871Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p1/converter-2GiB-pilot-20261017T090555.447871Z.log",
+  "status": "failed",
+  "exit_code": 2,
+  "duration_seconds": 93.99081666699931
+}

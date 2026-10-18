@@ -1,0 +1,21 @@
+{
+  "label": "converter-pilot-environment",
+  "argv": [
+    "bash",
+    "-c",
+    "scripts/env_capture.sh --preset release > results/env/p1-converter-pilot.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T145159.332134Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p1/converter-pilot-environment-20261017T145159.332134Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.36990855399972133
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "argv": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--head",
+      "--output",
+      "results/p1/nasdaq-head.txt",
+      "https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/12302019.NASDAQ_ITCH50.gz"
+    ],
+    "started_utc": "2026-10-17T09:01:52.931394+00:00",
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "gzip",
+      "-t",
+      "data/raw/12302019.NASDAQ_ITCH50.gz"
+    ],
+    "started_utc": "2026-10-17T11:02:21.643864+00:00",
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "captured_utc": "2026-10-17T15:03:48.198739+00:00",
+  "files": {
+    "py/tiplog_py/figures/build.py": "8985279cf8113586b590e7c1dfa5d17c12b932a7f64604dd9705971510422a4f",
+    "py/tiplog_py/itch/__main__.py": "b39486f13fa1af8f4c98477581efa8cfef3b1dea1cd1d75d24dfe3a48475016c",
+    "py/tiplog_py/itch/characterize.py": "e4796ce234be05324ffed5ad2c208ca5722f98395c424014ccb39fa0027a0bbd",
+    "py/tiplog_py/itch/protocol.py": "ab220d032994ca356927326c9dba55c7e6d22c9919919553ade9a0a9201b75b0",
+    "py/tiplog_py/itch/routing.py": "51b69c5f7a8e6e566ae2be9d338fd6c8c5dc7185fd9f48269266851185dc0645",
+    "py/tiplog_py/trace/format.py": "4bda96c3d0008a939a53efefaa25a55351699089619a4508f8997568c5d83c23",
+    "scripts/check_p1_data.py": "4d6bceae5a5b04a2513e9ecfa0ce15033dbe56387d8d9356933e3b468f57a7d2",
+    "scripts/reconcile_itch.py": "381f9a9a86e607c8b7bc82d66aa4d053ee847b76f65299af03b79bcf65c45c92",
+    "scripts/run_check.py": "c06b5d2d1de601c982aae6dd48eeb160eaa80952af7108219c5268dd7bdd8df6",
+    "src/tiplog/trace/itch_walker.cpp": "a5ab131673f6bd75c79f5249f5a304805caef0c57b2f8af6db2d5e4f984f4c6d",
+    "src/tiplog/trace/reader.cpp": "568bbe73d7a62374c87a3ef708108c8990b3259ffd2c4d77b473ccc187c880f2",
+    "tools/tiplog_walk/trace_check.cpp": "4aca16c25e99ebf12eff4d12bccbbb7b882bf33b93b7ffaba0d9281d55ac552c"
+  },
+  "scope": "P1 real-data converter/counts/trace/figures validation source identity; no Git commit exists"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": {
+    "same_publication_and_schedule": true,
+    "same_ordered_delivery_digest": true,
+    "same_status_and_checkpoint": true
+  },
+  "records_published": 10000,
+  "records_delivered": 1,
+  "scan": "results/p4/real-driver-scan-20261018T102456.662533Z.json",
+  "indexed": "results/p4/real-driver-indexed-20261018T102456.662533Z.json",
+  "scope": "Real trace functional smoke, not benchmark"
+}

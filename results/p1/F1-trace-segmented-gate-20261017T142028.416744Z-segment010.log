@@ -1,0 +1,21 @@
+Dictionary: 5 entries
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191239
+INFO: Loaded 1 modules   (731 inline 8-bit counters): 731 [0x5ee2a710cfc0, 0x5ee2a710d29b), 
+INFO: Loaded 1 PC tables (731 PCs): 731 [0x5ee2a710d2a0,0x5ee2a7110050), 
+INFO:       95 files found in tests/fuzz/corpus/trace_reader
+INFO: seed corpus: files: 95 min: 1b max: 126b total: 9729b rss: 33Mb
+#96	INITED cov: 203 ft: 345 corp: 66/6650b exec/s: 0 rss: 36Mb
+#65536	pulse  cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 32768 rss: 78Mb
+#131072	pulse  cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 32768 rss: 119Mb
+#262144	pulse  cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 32768 rss: 202Mb
+#524288	pulse  cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 30840 rss: 365Mb
+#1048576	pulse  cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 29959 rss: 458Mb
+#2097152	pulse  cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 29959 rss: 459Mb
+#3584471	DONE   cov: 203 ft: 345 corp: 66/6650b lim: 65536 exec/s: 29623 rss: 459Mb
+Done 3584471 runs in 121 second(s)
+stat::number_of_executed_units: 3584471
+stat::average_exec_per_sec:     29623
+stat::new_units_added:          0
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              459

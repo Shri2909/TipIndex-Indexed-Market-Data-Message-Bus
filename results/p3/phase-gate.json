@@ -1,0 +1,42 @@
+{
+  "phase": "P3",
+  "status": "passed",
+  "completed_utc": "2026-10-18T04:14:43.402318+00:00",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "criteria": {
+    "P2 prerequisite": "met",
+    "P3.1 checked ring DATA/PAD append eviction and checkpoints": "met",
+    "P3.2 Scan replay captured upper expiry and progress": "met",
+    "P3.3 INV-R1-R7 and rejection invariants": "met",
+    "P3.4 V10-V14 V35/V36/V38 release and sanitizer": "met",
+    "CC2 release 1000x10000 and sanitizer 200x10000": "met",
+    "P3.5 F3 >=1800 monotonic seconds clean": "met",
+    "Source traceability and independent review": "met"
+  },
+  "checks": {
+    "release_tests": "results/p3/release-tests-final-20261018T034022.019438Z.json",
+    "sanitizer_tests": "results/p3/sanitizer-tests-final-20261018T034025.130173Z.json",
+    "release_CC2": "results/p3/differential-release-20261018T034047.389885Z.json",
+    "sanitizer_CC2": "results/p3/differential-sanitizer-20261018T034107.454243Z.json",
+    "F3_seed_smoke": "results/p3/fuzz-seed-smoke-20261018T034028.474170Z.json",
+    "real_driver_smoke": "results/p3/real-driver-smoke-20261018T041420.004585Z.json",
+    "F3_verified": "results/p3/fuzz-gate-verified.json"
+  },
+  "test_counts": {
+    "all_each_preset": 86,
+    "ring": 17,
+    "engine": 17
+  },
+  "differential_operations": {
+    "release": 10000000,
+    "sanitizer": 2000000
+  },
+  "fuzz": {
+    "monotonic_seconds": 1801.291782927,
+    "executions": 216843,
+    "segments": 15
+  },
+  "review": "results/p3/review.md",
+  "continuation": "P4 starts automatically under joint authorization; stop after P5"
+}

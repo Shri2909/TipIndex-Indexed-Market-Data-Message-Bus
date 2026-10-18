@@ -1,0 +1,19 @@
+# Managed session metadata and the explicit writable Git directory.
+/.agents/
+/.aws/
+/.codex/
+/.tiplog-git/
+
+/build/
+/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/data/raw/
+/data/traces/
+/results/raw/
+# F2 logs can contain dictionary fragments derived from its local Nasdaq seed.
+# Preserve complete logs/artifacts locally; track statistics and hashes only.
+/results/p1/F2*.log
+/results/p1/fuzz-artifacts/
+/results/p1/fuzz-crashes/

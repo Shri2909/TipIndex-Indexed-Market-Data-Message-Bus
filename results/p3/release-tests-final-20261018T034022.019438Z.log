@@ -1,0 +1,177 @@
+Test project /home/abc/Desktop/Jane Street/build/release
+      Start  1: plumbing.Plumbing.Cxx20AndGoogleTest
+ 1/86 Test  #1: plumbing.Plumbing.Cxx20AndGoogleTest ......................................................   Passed    0.02 sec
+      Start  2: trace.TraceV05.GoldenHeaderDictionaryAndRecord
+ 2/86 Test  #2: trace.TraceV05.GoldenHeaderDictionaryAndRecord ............................................   Passed    0.02 sec
+      Start  3: trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics
+ 3/86 Test  #3: trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics ....................................   Passed    0.02 sec
+      Start  4: trace.TraceV05.EveryTruncationRejected
+ 4/86 Test  #4: trace.TraceV05.EveryTruncationRejected ....................................................   Passed    0.02 sec
+      Start  5: trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected
+ 5/86 Test  #5: trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected .................................   Passed    0.02 sec
+      Start  6: trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected
+ 6/86 Test  #6: trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected ....................   Passed    0.02 sec
+      Start  7: trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired
+ 7/86 Test  #7: trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired ..............................   Passed    0.02 sec
+      Start  8: trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected
+ 8/86 Test  #8: trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected ..............................   Passed    0.01 sec
+      Start  9: trace.TraceV05.CanonicalUtf8PathsRequired
+ 9/86 Test  #9: trace.TraceV05.CanonicalUtf8PathsRequired .................................................   Passed    0.02 sec
+      Start 10: trace.TraceV05.FlagsPaddingAndTrailingBytesRejected
+10/86 Test #10: trace.TraceV05.FlagsPaddingAndTrailingBytesRejected .......................................   Passed    0.02 sec
+      Start 11: trace.TraceV05.FileMappingMoveAndRewind
+11/86 Test #11: trace.TraceV05.FileMappingMoveAndRewind ...................................................   Passed    0.02 sec
+      Start 12: trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries
+12/86 Test #12: trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries ...............................   Passed    0.02 sec
+      Start 13: trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected
+13/86 Test #13: trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected ........................   Passed    0.02 sec
+      Start 14: trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected
+14/86 Test #14: trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected .............................   Passed    0.02 sec
+      Start 15: trace.ItchWalkerV04.TimestampInversionsAndJson
+15/86 Test #15: trace.ItchWalkerV04.TimestampInversionsAndJson ............................................   Passed    0.02 sec
+      Start 16: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds
+16/86 Test #16: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds ...............................   Passed    0.02 sec
+      Start 17: topics.subs.V06Registry.PathValidationAndLookup
+17/86 Test #17: topics.subs.V06Registry.PathValidationAndLookup ...........................................   Passed    0.02 sec
+      Start 18: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion
+18/86 Test #18: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion .....................   Passed    0.01 sec
+      Start 19: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+19/86 Test #19: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher ...........   Passed    0.52 sec
+      Start 20: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+20/86 Test #20: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms ...................   Passed    0.01 sec
+      Start 21: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+21/86 Test #21: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries .......................   Passed    0.01 sec
+      Start 22: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+22/86 Test #22: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow ...   Passed    0.02 sec
+      Start 23: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded
+23/86 Test #23: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded ..............................   Passed    0.02 sec
+      Start 24: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+24/86 Test #24: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks ...........................   Passed    0.02 sec
+      Start 25: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+25/86 Test #25: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor .........   Passed    0.02 sec
+      Start 26: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+26/86 Test #26: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit .......   Passed    0.01 sec
+      Start 27: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain
+27/86 Test #27: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain ...........................   Passed    0.02 sec
+      Start 28: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel
+28/86 Test #28: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel ............................   Passed    0.02 sec
+      Start 29: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+29/86 Test #29: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged ...   Passed    0.02 sec
+      Start 30: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+30/86 Test #30: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth .............................   Passed    0.08 sec
+      Start 31: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation
+31/86 Test #31: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation ................................   Passed    0.01 sec
+      Start 32: oracle.OracleRetention.V09HandComputedPadAndWrap
+32/86 Test #32: oracle.OracleRetention.V09HandComputedPadAndWrap ..........................................   Passed    0.02 sec
+      Start 33: oracle.OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction
+33/86 Test #33: oracle.OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction ..................   Passed    0.02 sec
+      Start 34: oracle.OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation
+34/86 Test #34: oracle.OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation ........   Passed    0.02 sec
+      Start 35: oracle.OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation
+35/86 Test #35: oracle.OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation .......................   Passed    0.01 sec
+      Start 36: oracle.OracleMatching.IndependentPathBoundaryAndUnion
+36/86 Test #36: oracle.OracleMatching.IndependentPathBoundaryAndUnion .....................................   Passed    0.02 sec
+      Start 37: oracle.OracleMatching.InvalidSubscriptionsAreRejectedIndependently
+37/86 Test #37: oracle.OracleMatching.InvalidSubscriptionsAreRejectedIndependently ........................   Passed    0.02 sec
+      Start 38: oracle.OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload
+38/86 Test #38: oracle.OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload .................   Passed    0.02 sec
+      Start 39: oracle.OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState
+39/86 Test #39: oracle.OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState ....................   Passed    0.02 sec
+      Start 40: oracle.OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck
+40/86 Test #40: oracle.OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck ...   Passed    0.02 sec
+      Start 41: oracle.OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered
+41/86 Test #41: oracle.OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered ....................   Passed    0.02 sec
+      Start 42: oracle.OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall
+42/86 Test #42: oracle.OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall ..................   Passed    0.02 sec
+      Start 43: oracle.OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap
+43/86 Test #43: oracle.OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap ...........................   Passed    0.02 sec
+      Start 44: oracle.OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper
+44/86 Test #44: oracle.OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper .........   Passed    0.02 sec
+      Start 45: oracle.OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow
+45/86 Test #45: oracle.OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow .............................   Passed    0.01 sec
+      Start 46: oracle.OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad
+46/86 Test #46: oracle.OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad ...............   Passed    0.02 sec
+      Start 47: oracle.OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion
+47/86 Test #47: oracle.OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion .........................   Passed    0.01 sec
+      Start 48: driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder
+48/86 Test #48: driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder ........................   Passed    0.02 sec
+      Start 49: driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic
+49/86 Test #49: driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic .....................   Passed    0.01 sec
+      Start 50: driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay
+50/86 Test #50: driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay ...................   Passed    0.02 sec
+      Start 51: driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit
+51/86 Test #51: driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit ................   Passed    0.02 sec
+      Start 52: driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications
+52/86 Test #52: driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications ............................   Passed    0.01 sec
+      Start 53: ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord
+53/86 Test #53: ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord ..................................   Passed    0.02 sec
+      Start 54: ring.RingFraming.V10V36HandComputedEightBytePadAndWrap
+54/86 Test #54: ring.RingFraming.V10V36HandComputedEightBytePadAndWrap ....................................   Passed    0.01 sec
+      Start 55: ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad
+55/86 Test #55: ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad ......................................   Passed    0.02 sec
+      Start 56: ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen
+56/86 Test #56: ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen .................................   Passed    0.02 sec
+      Start 57: ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill
+57/86 Test #57: ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill .....................................   Passed    0.01 sec
+      Start 58: ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged
+58/86 Test #58: ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged .................   Passed    0.02 sec
+      Start 59: ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction
+59/86 Test #59: ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction ................................   Passed    0.01 sec
+      Start 60: ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention
+60/86 Test #60: ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention .................   Passed    0.01 sec
+      Start 61: ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState
+61/86 Test #61: ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState .........................   Passed    0.02 sec
+      Start 62: ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites
+62/86 Test #62: ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites ..........................   Passed    0.01 sec
+      Start 63: ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction
+63/86 Test #63: ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction .................   Passed    0.02 sec
+      Start 64: ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad
+64/86 Test #64: ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad ...............................   Passed    0.02 sec
+      Start 65: ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum
+65/86 Test #65: ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum ...........................   Passed    0.03 sec
+      Start 66: ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors
+66/86 Test #66: ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors ...................   Passed    0.02 sec
+      Start 67: ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted
+67/86 Test #67: ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted .................   Passed    0.02 sec
+      Start 68: ring.RingInvariants.V11RandomizedAppendChecksEveryOperation
+68/86 Test #68: ring.RingInvariants.V11RandomizedAppendChecksEveryOperation ...............................   Passed    0.04 sec
+      Start 69: ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries
+69/86 Test #69: ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries ................   Passed    0.01 sec
+      Start 70: engine.Engine.V12EmptyAndExtremeFutureRanges
+70/86 Test #70: engine.Engine.V12EmptyAndExtremeFutureRanges ..............................................   Passed    0.01 sec
+      Start 71: engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing
+71/86 Test #71: engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing .......................   Passed    0.02 sec
+      Start 72: engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook
+72/86 Test #72: engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook ........................   Passed    0.01 sec
+      Start 73: engine.Engine.V13HistoryExpiredFieldsAndTerminalStability
+73/86 Test #73: engine.Engine.V13HistoryExpiredFieldsAndTerminalStability .................................   Passed    0.01 sec
+      Start 74: engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor
+74/86 Test #74: engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor ...............   Passed    0.02 sec
+      Start 75: engine.Engine.V35IrrelevantRecordExpiryIsConservative
+75/86 Test #75: engine.Engine.V35IrrelevantRecordExpiryIsConservative .....................................   Passed    0.02 sec
+      Start 76: engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry
+76/86 Test #76: engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry ....................................   Passed    0.02 sec
+      Start 77: engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap
+77/86 Test #77: engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap .................................   Passed    0.02 sec
+      Start 78: engine.Engine.V14CapturedUpperExcludesLaterPublish
+78/86 Test #78: engine.Engine.V14CapturedUpperExcludesLaterPublish ........................................   Passed    0.02 sec
+      Start 79: engine.Engine.V14ZeroOutputSnapshotAdvancesChain
+79/86 Test #79: engine.Engine.V14ZeroOutputSnapshotAdvancesChain ..........................................   Passed    0.02 sec
+      Start 80: engine.Engine.V14ChainedRangesEqualSingleRange
+80/86 Test #80: engine.Engine.V14ChainedRangesEqualSingleRange ............................................   Passed    0.02 sec
+      Start 81: engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries
+81/86 Test #81: engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries .......................   Passed    0.01 sec
+      Start 82: engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry
+82/86 Test #82: engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry .....................   Passed    0.02 sec
+      Start 83: engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek
+83/86 Test #83: engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek ...........................   Passed    0.01 sec
+      Start 84: engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState
+84/86 Test #84: engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState .......................   Passed    0.02 sec
+      Start 85: engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected
+85/86 Test #85: engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected .............................   Passed    0.02 sec
+      Start 86: engine.Engine.ReplayLifetimeAndMoveAreChecked
+86/86 Test #86: engine.Engine.ReplayLifetimeAndMoveAreChecked .............................................   Passed    0.01 sec
+
+100% tests passed out of 86
+
+Total Test time (real) =   2.19 sec

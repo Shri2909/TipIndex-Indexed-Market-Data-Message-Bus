@@ -1,0 +1,32 @@
+{
+  "label": "indexed-selector-seed-smoke",
+  "argv": [
+    "env",
+    "TIPLOG_FUZZ_MODE=indexed",
+    "taskset",
+    "-c",
+    "8",
+    "build/fuzz/fuzz_engine_ops",
+    "build/p4/indexed-selector-seeds",
+    "-runs=0",
+    "-seed=20191230",
+    "-max_len=65536",
+    "-len_control=0",
+    "-timeout=10",
+    "-print_final_stats=1",
+    "-print_funcs=0"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T102831.576885Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p4/indexed-selector-seed-smoke-20261018T102831.576885Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.033618337999996584
+}

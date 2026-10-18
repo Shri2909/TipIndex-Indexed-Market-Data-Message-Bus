@@ -1,0 +1,22 @@
+[  2%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[  5%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[ 10%] Built target tiplog_smoke_test
+[ 64%] Built target benchmark
+[ 70%] Built target benchmark_main
+[ 72%] Linking CXX static library libtiplog_trace.a
+[ 72%] Built target tiplog_trace
+[ 75%] Building CXX object CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o
+[ 78%] Building CXX object CMakeFiles/tiplog_trace_check.dir/tools/tiplog_walk/trace_check.cpp.o
+[ 81%] Building CXX object CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o
+[ 83%] Building CXX object CMakeFiles/fuzz_trace_reader.dir/tests/fuzz/targets/fuzz_trace_reader.cpp.o
+[ 86%] Linking CXX executable tiplog_walk
+[ 89%] Linking CXX executable fuzz_trace_reader
+[ 89%] Built target tiplog_walk
+[ 91%] Linking CXX executable tiplog_trace_check
+[ 94%] Building CXX object CMakeFiles/fuzz_itch_walker.dir/tests/fuzz/targets/fuzz_itch_walker.cpp.o
+[ 94%] Built target fuzz_trace_reader
+[ 94%] Built target tiplog_trace_check
+[ 97%] Linking CXX executable fuzz_itch_walker
+[ 97%] Built target fuzz_itch_walker
+[100%] Linking CXX executable tiplog_trace_test
+[100%] Built target tiplog_trace_test

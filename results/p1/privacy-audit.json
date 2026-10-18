@@ -1,0 +1,23 @@
+{
+  "F2_raw_logs_eligible_for_tracking": [],
+  "checked_utc": "2026-10-17T15:16:48.792182+00:00",
+  "dictionary_recommendation_note": "The one remaining recommendation log is F1, whose inputs derive only from synthetic project trace seeds. All F2 raw logs stay local/ignored.",
+  "eligible_dictionary_recommendation_logs": [
+    "results/p1/F1-trace-30min-20261017T090446.272531Z.log"
+  ],
+  "eligible_files_checked": 391,
+  "eligible_files_matching_high_entropy_24_byte_real_prefix_signatures": [],
+  "eligible_message_binary_extensions_outside_synthetic_test_corpus": [],
+  "ignore_checks": {
+    "data/raw/12302019.NASDAQ_ITCH50.gz": true,
+    "data/raw/fuzz_itch_walker/nasdaq-20191230-first65536.bin": true,
+    "data/traces/itch_20191230_0930_1000_spec.mdt": true,
+    "results/p1/F2-framing-real-segmented-gate-20261017T142151.850263Z-segment001.log": true,
+    "results/p1/fuzz-artifacts/future-real-derived-input": true
+  },
+  "limitations": "Signature scan and extension checks support a provenance audit; they do not prove absence of every possible short payload fragment. Reviewed JSON/CSV/log paths contain aggregate metadata, hashes and commands; real-prefix mutations and raw F2 logs stay in ignored paths. No Git commit/index change performed.",
+  "real_prefix_sha256": "a6d9d955c6385dbd76460a6cb07042c2ecefee0dc03de8e26cdb0d91ca783bae",
+  "selection": "git ls-files --cached --others --exclude-standard -z; all current tracked or eligible untracked files",
+  "signature_count": 1830,
+  "status": "passed"
+}

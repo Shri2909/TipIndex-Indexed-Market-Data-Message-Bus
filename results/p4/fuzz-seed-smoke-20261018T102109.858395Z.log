@@ -1,0 +1,15 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 446423276
+INFO: Loaded 1 modules   (6092 inline 8-bit counters): 6092 [0x5da8a4798088, 0x5da8a4799854), 
+INFO: Loaded 1 PC tables (6092 PCs): 6092 [0x5da8a4799858,0x5da8a47b1518), 
+INFO:     1250 files found in tests/fuzz/corpus/ops
+INFO: seed corpus: files: 1250 min: 1b max: 63942b total: 3903690b rss: 34Mb
+#1024	pulse  cov: 1773 ft: 7846 corp: 531/348Kb exec/s: 85 rss: 569Mb
+#1251	INITED cov: 1773 ft: 8131 corp: 612/1288Kb exec/s: 26 rss: 810Mb
+#1251	DONE   cov: 1773 ft: 8131 corp: 612/1288Kb lim: 62646 exec/s: 26 rss: 810Mb
+Done 1251 runs in 48 second(s)
+stat::number_of_executed_units: 1251
+stat::average_exec_per_sec:     26
+stat::new_units_added:          0
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              810

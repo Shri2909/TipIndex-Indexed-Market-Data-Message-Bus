@@ -1,0 +1,14 @@
+{
+  "status": "added_for_validation",
+  "reason": "P4 remaps selector choices to k1 subscriptions; retain historical seeds and add explicitly decoded indexed variants",
+  "changes": {
+    "late_topic_indexed.ops": "choice3 selects future subtree; completed empty snapshot then resume-after-checkpoint captures new future event",
+    "equal_events_indexed.ops": "choice0 selects A subtree; eight identical payload events remain distinct, batched across a later publication"
+  },
+  "files": {
+    "tests/fuzz/corpus/ops_indexed/late_topic_indexed.ops": "31dceb7aea91b84368d6510efcd402de03380904d16c5e93eae707a6d4c31e9b",
+    "tests/fuzz/corpus/ops_indexed/equal_events_indexed.ops": "b6615e5d7cc2c07890d63825163afbbaf4a6a28c7a04d19649369f3550dbc707"
+  },
+  "existing_files_modified": false,
+  "binary_changed": false
+}

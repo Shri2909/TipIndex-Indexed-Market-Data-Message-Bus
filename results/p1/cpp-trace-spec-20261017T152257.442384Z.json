@@ -1,0 +1,21 @@
+{
+  "label": "cpp-trace-spec",
+  "argv": [
+    "bash",
+    "-c",
+    "build/release/tiplog_trace_check data/traces/itch_20191230_0930_1000_spec.mdt > results/p1/trace-check-spec.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T152257.442384Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p1/cpp-trace-spec-20261017T152257.442384Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 4.048470761000317
+}

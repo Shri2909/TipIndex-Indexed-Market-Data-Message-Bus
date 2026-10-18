@@ -1,0 +1,36 @@
+{
+  "total_uncompressed_bytes": 742,
+  "message_count": 23,
+  "payload_bytes": 694,
+  "terminated": true,
+  "incomplete": false,
+  "timestamp_inversions": 0,
+  "by_type": {
+    "A":{"count":1,"payload_bytes":36,"framed_bytes":38},
+    "B":{"count":1,"payload_bytes":19,"framed_bytes":21},
+    "C":{"count":1,"payload_bytes":36,"framed_bytes":38},
+    "D":{"count":1,"payload_bytes":19,"framed_bytes":21},
+    "E":{"count":1,"payload_bytes":31,"framed_bytes":33},
+    "F":{"count":1,"payload_bytes":40,"framed_bytes":42},
+    "H":{"count":1,"payload_bytes":25,"framed_bytes":27},
+    "I":{"count":1,"payload_bytes":50,"framed_bytes":52},
+    "J":{"count":1,"payload_bytes":35,"framed_bytes":37},
+    "K":{"count":1,"payload_bytes":28,"framed_bytes":30},
+    "L":{"count":1,"payload_bytes":26,"framed_bytes":28},
+    "N":{"count":1,"payload_bytes":20,"framed_bytes":22},
+    "O":{"count":1,"payload_bytes":48,"framed_bytes":50},
+    "P":{"count":1,"payload_bytes":44,"framed_bytes":46},
+    "Q":{"count":1,"payload_bytes":40,"framed_bytes":42},
+    "R":{"count":1,"payload_bytes":39,"framed_bytes":41},
+    "S":{"count":1,"payload_bytes":12,"framed_bytes":14},
+    "U":{"count":1,"payload_bytes":35,"framed_bytes":37},
+    "V":{"count":1,"payload_bytes":35,"framed_bytes":37},
+    "W":{"count":1,"payload_bytes":12,"framed_bytes":14},
+    "X":{"count":1,"payload_bytes":23,"framed_bytes":25},
+    "Y":{"count":1,"payload_bytes":20,"framed_bytes":22},
+    "h":{"count":1,"payload_bytes":21,"framed_bytes":23}
+  },
+  "by_locate": {
+    "0":{"count":23,"payload_bytes":694,"framed_bytes":740}
+  }
+}

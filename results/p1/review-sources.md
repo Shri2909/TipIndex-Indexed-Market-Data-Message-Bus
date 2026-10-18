@@ -1,0 +1,50 @@
+# P1–P5 independent specification/source review
+
+Access date: **2026-10-17 (Asia/Kolkata)**. This is review evidence, not a passed implementation gate. The user's joint P1–P5 authorization is the operative scope; P6–P8, Tier C and roadmap remain excluded.
+
+## Saved specification inspected
+
+Read the complete `PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md`, `MASTER_PROJECT_PROMPT.md`, `INDEX.md`, `PROGRESS.md`, `VALIDATION_PLAN.md`, `REVIEW_2026-10-17.md`, `FINDINGS_TO_IMPLEMENTATION.md`, and `PROBLEM_STATEMENT_AND_BENCHMARKS.md`. Inspected phase tasks in `IMPLEMENTATION_PLAN.md`; `ARCHITECTURE.md` §§2–5, §§9–13; `STUDY_PLAN.md` ST-01–ST-08, ST-11/ST-13 and refresh reading; `RESEARCH.md` evidence ledger, §§1–5 and dated refresh §§6–7. This preserves the ledger's limited-reading labels: Knuth, LaMarca–Ladner, inaccessible ACM full text and abstract-only papers are not represented as fully read.
+
+## Original material re-inspected
+
+| Source | Material actually inspected | Revision/access limitation | Result used in this implementation sequence |
+|---|---|---|---|
+| S11 [Aeron Transport Protocol Specification](https://github.com/aeron-io/aeron/wiki/Transport-Protocol-Specification) | Terminology (term, term offset); General Header Format; Data Frame alignment note; Padding Frames; SHM Memory Ordering for Frame Writing | Wiki displayed last edit 2025-03-12, 22 revisions. Specification only; no Aeron implementation code inspected or copied. | In-band padding and logical positions inform P3. Aeron's 32-byte frame/header layout is **not** our independently specified 8-byte alignment/16-byte DATA header. Its concurrent publication protocol is background for R4 and is not a core concurrency guarantee. |
+| S13 [Kafka log implementation note](https://github.com/apache/kafka/blob/trunk/docs/implementation/log.md) | Log identification/offset discussion, Writes, Reads, Deletes, Guarantees, recovery discussion | Moving `trunk` documentation, fetched 2026-10-17; raw endpoint failed once but GitHub rendered contents. No Kafka source-code implementation inspected or copied; historical byte-offset description is not modern Kafka's entire API. | Explicit out-of-range reads and unit-based retention motivate errors/whole-record eviction; our seq/position split and PAD/checkpoint algorithm remain independent design. |
+| S18 [Sanders, Fast Priority Queues for Cached Memory](https://ae.iti.kit.edu/documents/people/sanders/papers/spqjea.pdf) | §2 loser-tree paragraph, PDF page 5; Appendix A.5, PDF pages 23–24, including winner update and leaf-to-root tournament replay | Published 2000 PDF; no current code repository revision applies. Not the whole paper. Appendix pseudocode inspected as reference; copying code would require appropriate attribution/license review. | P5 loser-tree node winner and leaf-index replay; sentinel guard and arbitrary-k padding are explicit project contracts. Predictable addresses are algorithmic structure; old UltraSPARC observations do not prove current branch/cache behavior. |
+| S23 [Linnakangas message](https://www.postgresql.org/message-id/28f47336-84e2-445e-8216-d1ce7d3ddc3e@iki.fi), 2025-12-03 | Complete short message | Mailing-list review, not adopted code or reproduced measurements. | Test worst cases where heaps win; presume no kernel winner. |
+| S23 [Naylor message](https://www.postgresql.org/message-id/CANWCAZZ6KpsL%2BoEJFyQxqMMNv7FHRxPqUGafn9sqJzg_BmH5Qg@mail.gmail.com), 2025-12-08 | Complete short message | Review observations, not accepted implementation. | Count sentinel/control comparisons honestly, include bursty/low-cardinality cases; keep inlined early-exit heap baseline fair. |
+| S49 [Zhou follow-up](https://www.postgresql.org/message-id/CABPTF7WRcm=y-2dRs-vK3SLyCVyxLvUyTDQ-9%2B-OLoBYAwG%2B=Q@mail.gmail.com), 2026-05-25 | Complete short message, including quoted regression/cutoff request | Linked ACM full text was not fetched in this review; its prior inaccessible status is unchanged. No PostgreSQL patch/code copied. | Adversarial interleavings remain required. No offset-value coding or new dependency enters scope. |
+| S42 [Google Benchmark v1.9.5 user guide](https://github.com/google/benchmark/blob/192ef10025eb2c4cdd392bc502f0c852196baa48/docs/user_guide.md) and `docs/random_interleaving.md` | Local verified dependency checkout: Output Formats; warm-up controls; Custom Counters; Preventing Optimization; repetitions/aggregates; random interleaving | **Commit `192ef10025eb2c4cdd392bc502f0c852196baa48`**, same immutable archive/hash as P0 `cmake/deps.cmake`. Documentation only; library is already an attributed build dependency. | JSON preserves individual repetitions; warm-up/random interleaving use pinned supported flags. `DoNotOptimize` protects a result, not all expressions that produce it; every merge output contributes to the running hash. Setup/input generation belong outside M1 merge-loop timing. |
+
+These are bounded confirmations of saved design, not a scope amendment. Jane Street's published observations stay identified by S01–S04/S61; none of this review reconstructs unpublished Aria code or transfers other systems' measured speedups to tiplog.
+
+## Acceptance audit for delegation
+
+The following restates existing acceptance requirements; no thresholds are reduced:
+
+- **CC-1:** each required phase V-test passes release and ASan/UBSan with zero reports.
+- **CC-2:** at least **1,000 seeds × 10,000 operations per selected (mode, kernel)** in release; at least **200 seeds** under sanitizers, using the same operation floor unless an authoritative recorded correction specifies otherwise.
+- **CC-3:** each relevant fuzz target runs **at least 1,800 seconds per phase gate**, retains final statistics, and has no unresolved crash. P1 F1, P3 F3 scan, P4 F3 indexed k=1, P5 F3 integrated modes/kernels. F2 is included as a skeleton in P1.6, not substituted for F1.
+- **P1:** V01–V05, CC-6 full-day per-type/per-locate agreement, RC-2 repeated identical trace hashes, full-stream exact bytes/counts/skew and F01–F05. Missing BinaryFILE terminator is explicit `incomplete`, distinct from gzip integrity; do not fabricate one.
+- **P2:** V06–V09 plus V38's local-ID exhaustion: ancestors/partitions/local IDs, normalization, later-topic hooks, wide subscriptions and independently checked retention examples.
+- **P3:** V09–V14, V26, V35/V36 and ring/replay invariants; replay errors compare exact delivered prefix, status fields and checkpoints against an independent path/retention oracle.
+- **P4:** V15–V20, V26/V37; memory gauges equal independent recount, generations/recycling are safe, pool sizing/pressure policies and rejected-publication state preservation are tested.
+- **P5:** V13/V14/V18, V21/V23–V26/V35/V38, kernel/oracle equivalence and RC-3 repeated GCC/Clang digests. V22 galloping is Tier C and excluded. Required harnesses are M1, M1-touch and M2; run/save the authorized P5 pilot. P6's 30-repetition M1/T1 noise pilot and full experiment campaign remain P6.
+- **Measurement:** no concurrent fuzzing/conversion during timing; use verified P-core 2 and record actual affinity/frequency/power/build/input state, failed ASLR attempt and no-counter fallback. M1 measures merge loop only; setup is outside timing; every kernel uses identical lists/output sink. Keep raw individual repetitions and failures. No speedup or calibrated Auto threshold is presumed.
+
+## API/invariant traps to review before later gates
+
+1. Topic interning must preflight local-ID exhaustion before adding even ancestors; subtree hooks must reach topics created later. Wide terms force scan and cannot freeze a static set of current partitions. Empty/nonexistent match sets must not break zero-cursor paths.
+2. Ring configuration enforces `16 <= max_record <= C/2` with checked aligned lengths. PAD can be eight bytes while DATA is at least sixteen; sparse sequence lookup must skip PAD safely. Capacity retention is maximal; counted ForceEvict may shorten it.
+3. Publication preflights sequence/position and all index/checkpoint/list/heap resources **before** eviction. RejectPublish must preserve observable head/tail, sequences, ring contents and index membership. Commit cannot later reject for exhausted resources.
+4. Replay shares `unread_pos`/`resume_after_seq` across modes; these differ from `last_delivered`. For a positive batch, already complete or `unread_pos==upper_pos` wins before expiry. `max=0` changes nothing. Full batches stop after their last delivered DATA without mode-specific look-ahead; exhausted snapshots advance to captured upper even with zero output.
+5. Check `after_seq>=upper_seq` before computing `after_seq+1`. Future snapshots provide no reusable checkpoint. Future tails fail InvalidRange and never lower their floor.
+6. Tail chains finish captured snapshots and resume from completed-range checkpoint, then re-arm exhausted cursors when new matching topics/partitions arrive. Equal-valued distinct events remain distinct sequence records.
+7. Compact index deltas use wide subtract/shift and range check before narrowing. A late partial seal can expire before an earlier full seal, so sealed expiry is a `(last_pos,id,gen)` min-heap, never a FIFO.
+8. Only last partition blocks are open; stale open blocks are swept before declaring pressure. Generic sizing uses minimum DATA=16, not ITCH=32 unless enforced. Account live entries, stale entries, open slack, partial-sealed slack, metadata, heap, lists, free storage and high-water separately.
+9. Cursor expiry/checkpoint check precedes dereferencing recycled blocks. Cached key/gen checks remain defensive. Each retained DATA has exactly one partition entry.
+10. Packed keys reserve `UINT64_MAX`; `k<=65,535`, IDs `0..65,534`, and all positions/boundaries `<2^51`. Synthetic test hooks exercise near limits without huge traffic. Handle k=0/1 and exhausted/re-armed cursors.
+
+Implementation symbols, executed commands and gate outcomes must be attached by the owning phase's traceability/evidence records as code appears; this review does not claim those tests have run.

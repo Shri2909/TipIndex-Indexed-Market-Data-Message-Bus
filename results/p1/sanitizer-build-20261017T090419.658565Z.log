@@ -1,0 +1,16 @@
+[  6%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[  6%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[ 12%] Built target tiplog_smoke_test
+[ 72%] Built target benchmark
+[ 78%] Built target benchmark_main
+[ 81%] Linking CXX static library libtiplog_trace.a
+[ 81%] Built target tiplog_trace
+[ 84%] Building CXX object CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o
+[ 87%] Building CXX object CMakeFiles/tiplog_trace_check.dir/tools/tiplog_walk/trace_check.cpp.o
+[ 90%] Building CXX object CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o
+[ 93%] Linking CXX executable tiplog_walk
+[ 96%] Linking CXX executable tiplog_trace_check
+[ 96%] Built target tiplog_walk
+[ 96%] Built target tiplog_trace_check
+[100%] Linking CXX executable tiplog_trace_test
+[100%] Built target tiplog_trace_test

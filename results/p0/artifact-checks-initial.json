@@ -1,0 +1,249 @@
+{
+  "captured_at_utc": "2026-10-17T08:51:17Z",
+  "checks": [
+    {
+      "name": "master prompt unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "execution prompt unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "managed .git mode and entries unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "writable separate metadata and working tree",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "command: bash -n scripts/git.sh",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "git.sh executable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "command: bash -n scripts/check_all.sh",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "check_all.sh executable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "command: bash -n scripts/env_capture.sh",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "env_capture.sh executable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "scripts/check_all.py compiles",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "scripts/env_capture.py compiles",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "py/tests/test_smoke.py compiles",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "command: /home/abc/Desktop/Jane Street/scripts/git.sh rev-parse --show-toplevel",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Git wrapper works outside workspace",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "command: /home/abc/Desktop/Jane Street/scripts/git.sh check-ignore build/example data/raw/example data/traces/example results/raw/example .venv/example .tiplog-git/config",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all six ignored paths",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "command: /home/abc/Desktop/Jane Street/scripts/env_capture.sh --preset release",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "environment capture works outside workspace",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "CPU2 P-core pinning + start/end observed",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frequency samples available",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "counter fallback + honest null values",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no privileged machine setting changes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "environment contains complete required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "artifact source checksums current",
+      "passed": true,
+      "details": 27
+    },
+    {
+      "name": "14 required commands passed",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "six supplemental commands passed",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "isolated venv no user site",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen requirements match installed packages",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "dependency archive hashes verified",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Markdown fences balanced",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "local Markdown link targets exist",
+      "passed": false,
+      "details": [
+        {
+          "file": "docs/plan/ARCHITECTURE.md",
+          "target": "rec.topic"
+        }
+      ]
+    },
+    {
+      "name": "no later data or engine artifacts",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "-n",
+        "scripts/git.sh"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "-n",
+        "scripts/check_all.sh"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "-n",
+        "scripts/env_capture.sh"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/abc/Desktop/Jane Street/scripts/git.sh",
+        "rev-parse",
+        "--show-toplevel"
+      ],
+      "cwd": "/tmp",
+      "exit_code": 0,
+      "stdout": "/home/abc/Desktop/Jane Street\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/abc/Desktop/Jane Street/scripts/git.sh",
+        "check-ignore",
+        "build/example",
+        "data/raw/example",
+        "data/traces/example",
+        "results/raw/example",
+        ".venv/example",
+        ".tiplog-git/config"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "exit_code": 0,
+      "stdout": "build/example\ndata/raw/example\ndata/traces/example\nresults/raw/example\n.venv/example\n.tiplog-git/config\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/abc/Desktop/Jane Street/scripts/env_capture.sh",
+        "--preset",
+        "release"
+      ],
+      "cwd": "/tmp",
+      "exit_code": 0,
+      "stdout": "Valid environment JSON; captured_at_utc=2026-10-17T08:51:18.497515+00:00",
+      "stderr": ""
+    }
+  ],
+  "status": "failed"
+}

@@ -1,0 +1,4 @@
+[ 50%] Built target tiplog_index
+[ 75%] Building CXX object CMakeFiles/tiplog_index_memory.dir/tools/tiplog_index_memory.cpp.o
+[100%] Linking CXX executable tiplog_index_memory
+[100%] Built target tiplog_index_memory

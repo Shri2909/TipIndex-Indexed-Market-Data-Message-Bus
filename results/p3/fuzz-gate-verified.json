@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-18T04:14:19.966076+00:00",
+  "gate": "results/p3/F3-scan-segmented-gate-20261018T034111.719594Z.json",
+  "monotonic_seconds": 1801.291782927,
+  "executed_units": 216843,
+  "segments": 15,
+  "source_files_unchanged": 42,
+  "checks": [
+    "terminal exit/statistics/log hashes",
+    "binary/runner hashes",
+    "corpus checkpoint",
+    "frozen source hashes",
+    "duration >=1800"
+  ]
+}

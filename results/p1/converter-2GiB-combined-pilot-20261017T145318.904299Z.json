@@ -1,0 +1,40 @@
+{
+  "label": "converter-2GiB-combined-pilot",
+  "argv": [
+    "taskset",
+    "-c",
+    "2",
+    ".venv/bin/python",
+    "-m",
+    "tiplog_py.itch",
+    "convert",
+    "data/raw/12302019.NASDAQ_ITCH50.gz",
+    "--source-sha256",
+    "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+    "--output",
+    "data/traces/pilot/itch_20191230_0930_1000_spec.mdt",
+    "--also-flat",
+    "data/traces/pilot/itch_20191230_0930_1000_flat.mdt",
+    "--start",
+    "09:30:00",
+    "--end",
+    "10:00:00",
+    "--limit-bytes",
+    "2147483648",
+    "--counts-output",
+    "results/data/itch_20191230_pilot_counts.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T145318.904299Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p1/converter-2GiB-combined-pilot-20261017T145318.904299Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 301.3915006549996
+}

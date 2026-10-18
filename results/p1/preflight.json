@@ -1,0 +1,29 @@
+{
+  "captured_at_utc": "2026-10-17T08:59:57Z",
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "free_disk_bytes": 30961868800,
+  "managed_git_mode": "0o555",
+  "managed_git_entries": [],
+  "p0_source_hashes_changed": [
+    "docs/plan/INDEX.md",
+    "docs/plan/PROGRESS.md"
+  ],
+  "p0_gate": "passed",
+  "current_markdown_hashes": {
+    "docs/plan/REVIEW_2026-10-17.md": "4f723fd3372b70dc59b0dc40b3e2ba2e4c0a51bc810eb8f3a239e50a6906f643",
+    "docs/plan/PROGRESS.md": "f0bfb68335505e4420adf1344d7d80f693a6775c4e29a364170b0e1ab671a3a4",
+    "docs/plan/RESEARCH.md": "72a603366ce2bb0db7e0895e267a89e4931de610406de19e0fe2c31bb4408fcb",
+    "docs/plan/PROBLEM_STATEMENT_AND_BENCHMARKS.md": "7eee78210eded0c0cca9f6600fcf2c99aa1e8bd9cce72aa23c2b3ef5f4507f2e",
+    "docs/plan/FINDINGS_TO_IMPLEMENTATION.md": "6c191c40e64810233eb757a6c0b862970e44f28e3a9c3766a189f81dcdb83ecd",
+    "docs/plan/INDEX.md": "ce388f57e0b10eb7736ec85576c9eeec0e73c10974edfe14e22045d102614cc2",
+    "docs/plan/ARCHITECTURE.md": "93a93a9f396060c8ef37b76c77c60387e017d11656a8eb97939e29a4ef275d19",
+    "docs/plan/IMPLEMENTATION_PLAN.md": "ee8b897d3a2a20bf7f3bba3e9c523ae59b80ec237258882aee4ef0277469fa22",
+    "docs/plan/VALIDATION_PLAN.md": "9d3ddf5c6b7d3dac7dc8b9cd21df75b3a088f310ac45a4deee14f584f4800c47",
+    "docs/plan/STUDY_PLAN.md": "86ed871fe0e35ad5ff235ea0814664775619a99a390316c1ad539c162ae3a4b7",
+    "README.md": "7a4c9496b795483aa9ca394ea9c8d8b710302f7c738865ac3ed45d25e0aeb1ab",
+    "IMPLEMENTATION_EXECUTION_PROMPT.md": "af03050d1465d96a6aac594340d331795a5d356b7c21edb7aa7d1c35cf3946ca",
+    "PHASES_2_TO_5_IMPLEMENTATION_PROMPT.md": "26dc2c057e7c9777672742a4bed8fb9474a253d56547c5c979582a9a2775a4c0",
+    "PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md": "06c3f4f13527865e86098d5b8c584578c1099cc375bc157e80bcfa5db2747fb4",
+    "MASTER_PROJECT_PROMPT.md": "89c0fe2ab7be8304d5cf9b9b8da07ee554efffc9c75596822fdd4f353f7d3067"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "executable": "/home/abc/Desktop/Jane Street/.venv/bin/python",
+  "base_executable": "/usr/bin/python3.14",
+  "resolved_base_executable": "/usr/bin/python3.14",
+  "version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "prefix": "/home/abc/Desktop/Jane Street/.venv",
+  "base_prefix": "/usr",
+  "isolated_venv": true,
+  "user_site_enabled": false,
+  "platform": "linux-x86_64",
+  "required": [
+    "numpy==2.3.5",
+    "matplotlib==3.11.0",
+    "pytest==9.0.2"
+  ],
+  "creation_argv": [
+    "/usr/bin/python3",
+    "-m",
+    "venv",
+    ".venv"
+  ],
+  "install_argv": [
+    ".venv/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--disable-pip-version-check",
+    "--retries",
+    "0",
+    "--timeout",
+    "30",
+    "--only-binary=:all:",
+    "numpy==2.3.5",
+    "matplotlib==3.11.0",
+    "pytest==9.0.2"
+  ],
+  "packages": [
+    {
+      "name": "contourpy",
+      "version": "1.4.0",
+      "requires_python": ">=3.12",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "requires_python": ">=3.8",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.67.0",
+      "requires_python": ">=3.11",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "requires_python": ">=3.10",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "requires_python": ">=3.10",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.0",
+      "requires_python": ">=3.11",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "numpy",
+      "version": "2.3.5",
+      "requires_python": ">=3.11",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "requires_python": ">=3.9",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "requires_python": ">=3.11",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "pip",
+      "version": "25.1.1",
+      "requires_python": ">=3.9",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "requires_python": ">=3.10",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "requires_python": ">=3.9",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "requires_python": ">=3.9",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "pytest",
+      "version": "9.0.2",
+      "requires_python": ">=3.10",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
+      "location": "/home/abc/Desktop/Jane Street/.venv/lib/python3.14/site-packages"
+    }
+  ]
+}

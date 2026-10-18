@@ -1,0 +1,121 @@
+{
+  "checks": {
+    "CC6:passed": true,
+    "F01_F05:all_10_artifacts": true,
+    "H-flat:RC2_byte_identity": true,
+    "H-flat:complete_scan": true,
+    "H-flat:cpp_counts": true,
+    "H-flat:hierarchy_label": true,
+    "H-flat:source_completeness_reported": true,
+    "H-flat:source_identity": true,
+    "H-flat:type_counts": true,
+    "H-flat:window": true,
+    "H-spec:RC2_byte_identity": true,
+    "H-spec:complete_scan": true,
+    "H-spec:cpp_counts": true,
+    "H-spec:hierarchy_label": true,
+    "H-spec:source_completeness_reported": true,
+    "H-spec:source_identity": true,
+    "H-spec:type_counts": true,
+    "H-spec:window": true,
+    "full_day:H-flat_topic_volumes:counts": true,
+    "full_day:H-flat_topic_volumes:payload_bytes": true,
+    "full_day:family_volumes:counts": true,
+    "full_day:family_volumes:payload_bytes": true,
+    "full_day:partition_volumes:counts": true,
+    "full_day:partition_volumes:payload_bytes": true,
+    "full_day:per_second:counts": true,
+    "full_day:per_second:payload_bytes": true,
+    "full_day:run_lengths:counts": true,
+    "full_day:topic_volumes:counts": true,
+    "full_day:topic_volumes:payload_bytes": true,
+    "hierarchies:payload_identity": true,
+    "window:H-flat_topic_volumes:counts": true,
+    "window:H-flat_topic_volumes:payload_bytes": true,
+    "window:family_volumes:counts": true,
+    "window:family_volumes:payload_bytes": true,
+    "window:partition_volumes:counts": true,
+    "window:partition_volumes:payload_bytes": true,
+    "window:per_second:counts": true,
+    "window:per_second:payload_bytes": true,
+    "window:run_lengths:counts": true,
+    "window:topic_volumes:counts": true,
+    "window:topic_volumes:payload_bytes": true
+  },
+  "figures": {
+    "results/figures/F01_itch_type_mix.pdf": {
+      "bytes": 21034,
+      "sha256": "3050b0f88177196b3c85acfd57ca888afff793e8e1f0873b96e0c8f5deeb7050"
+    },
+    "results/figures/F01_itch_type_mix.png": {
+      "bytes": 62714,
+      "sha256": "c1ee6519d9ae68fdf82577abf3da924e5c59bdf70f31f10f51646c31cd54564e"
+    },
+    "results/figures/F02_symbol_volume_skew.pdf": {
+      "bytes": 43037,
+      "sha256": "ec2652618fcfbaf69cabdc20562c40ed77e529adcb53db65c2458daf17f69a94"
+    },
+    "results/figures/F02_symbol_volume_skew.png": {
+      "bytes": 165213,
+      "sha256": "e7fedd90be7300a8e43aa839a363721fe2a05710a8b3f8a9e86a2a99fade9c0f"
+    },
+    "results/figures/F03_family_composition.pdf": {
+      "bytes": 24384,
+      "sha256": "a3e93e90994afb46bcd9c6a0ec2421a05e8266255f8f9558a2adea322c19db35"
+    },
+    "results/figures/F03_family_composition.png": {
+      "bytes": 78792,
+      "sha256": "da1ce22a26c00761f92ffb57d62c6a832b8dd26b52afc46169bdeb4f20fbdb8e"
+    },
+    "results/figures/F04_runs_and_bursts.pdf": {
+      "bytes": 70706,
+      "sha256": "fe62039f2c86c9479d866b2d5f73c0980b10c796ee555ecba2dd03346cc0cb10"
+    },
+    "results/figures/F04_runs_and_bursts.png": {
+      "bytes": 84202,
+      "sha256": "b68e2ad1799bc204e2ec96a8a15cd5f47efb5bf637d2fcd20abb32fc3961bad3"
+    },
+    "results/figures/F05_tree_and_class_sizes.pdf": {
+      "bytes": 20636,
+      "sha256": "1bab6166b699cb3fc4c56a9a51081db4eeb1ce85e9205bad1ef80662aea804f1"
+    },
+    "results/figures/F05_tree_and_class_sizes.png": {
+      "bytes": 103184,
+      "sha256": "a4646a96ba36df7bce1769876b5da1142d65d56ff79c364fbbf8ab31d35d2e4d"
+    }
+  },
+  "scope": "Real-data P1 integrity/RC-2/V05/L1 checks; no engine or performance result",
+  "status": "passed",
+  "traces": {
+    "H-flat": {
+      "bytes": 1616161552,
+      "cpp_result": {
+        "payload_bytes": 947677397,
+        "payload_fnv1a64": 11374081966379056750,
+        "record_count": 32817244,
+        "topic_count": 62964
+      },
+      "path": "data/traces/itch_20191230_0930_1000_flat.mdt",
+      "records": 32817244,
+      "repeat_path": "data/traces/repeat/itch_20191230_0930_1000_flat.mdt",
+      "repeat_sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2",
+      "sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2",
+      "topics": 62964
+    },
+    "H-spec": {
+      "bytes": 1616858987,
+      "cpp_result": {
+        "payload_bytes": 947677397,
+        "payload_fnv1a64": 11374081966379056750,
+        "record_count": 32817244,
+        "topic_count": 62964
+      },
+      "path": "data/traces/itch_20191230_0930_1000_spec.mdt",
+      "records": 32817244,
+      "repeat_path": "data/traces/repeat/itch_20191230_0930_1000_spec.mdt",
+      "repeat_sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70",
+      "sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70",
+      "topics": 62964
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "inputs": [
+    "results/data/itch_20191230_counts_cpp.json",
+    "results/data/itch_20191230_uncompressed_bytes.txt"
+  ],
+  "checks": {
+    "independent_gzip_byte_count": true,
+    "message_count_by_type": true,
+    "message_count_by_locate": true,
+    "payload_bytes_by_type": true,
+    "payload_bytes_by_locate": true,
+    "exact_framed_byte_decomposition": true
+  },
+  "scope": "Independent C++ counts and separate gzip byte count; Python CC-6 reconciliation still required",
+  "timing_claim": "No throughput claim; integrity checks overlapped fuzzing"
+}

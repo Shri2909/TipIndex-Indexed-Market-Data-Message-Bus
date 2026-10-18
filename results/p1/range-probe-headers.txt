@@ -1,0 +1,10 @@
+HTTP/2 206 
+content-type: application/x-gzip
+last-modified: Tue, 31 Dec 2019 05:13:48 GMT
+accept-ranges: bytes
+etag: "64b3281599bfd51:0"
+server: Microsoft-IIS/10.0
+date: Sat, 17 Oct 2026 09:00:43 GMT
+content-length: 1048576
+content-range: bytes 1048576-2097151/3524013057
+

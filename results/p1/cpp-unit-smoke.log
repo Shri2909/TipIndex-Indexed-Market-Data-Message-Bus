@@ -1,0 +1,40 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 14 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 10 tests from TraceV05
+[ RUN      ] TraceV05.GoldenHeaderDictionaryAndRecord
+[       OK ] TraceV05.GoldenHeaderDictionaryAndRecord (0 ms)
+[ RUN      ] TraceV05.EmptyAndMaximumPayloadAndMultipleTopics
+[       OK ] TraceV05.EmptyAndMaximumPayloadAndMultipleTopics (0 ms)
+[ RUN      ] TraceV05.EveryTruncationRejected
+[       OK ] TraceV05.EveryTruncationRejected (0 ms)
+[ RUN      ] TraceV05.HeaderFlagsReservedVersionAndMagicRejected
+[       OK ] TraceV05.HeaderFlagsReservedVersionAndMagicRejected (0 ms)
+[ RUN      ] TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected
+[       OK ] TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected (0 ms)
+[ RUN      ] TraceV05.ExactRecordCountAndDictionaryBoundaryRequired
+[       OK ] TraceV05.ExactRecordCountAndDictionaryBoundaryRequired (0 ms)
+[ RUN      ] TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected
+[       OK ] TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected (0 ms)
+[ RUN      ] TraceV05.CanonicalUtf8PathsRequired
+[       OK ] TraceV05.CanonicalUtf8PathsRequired (0 ms)
+[ RUN      ] TraceV05.FlagsPaddingAndTrailingBytesRejected
+[       OK ] TraceV05.FlagsPaddingAndTrailingBytesRejected (0 ms)
+[ RUN      ] TraceV05.FileMappingMoveAndRewind
+[       OK ] TraceV05.FileMappingMoveAndRewind (0 ms)
+[----------] 10 tests from TraceV05 (1 ms total)
+
+[----------] 4 tests from ItchWalkerV04
+[ RUN      ] ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries
+[       OK ] ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries (1 ms)
+[ RUN      ] ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected
+[       OK ] ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected (4 ms)
+[ RUN      ] ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected
+[       OK ] ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected (0 ms)
+[ RUN      ] ItchWalkerV04.TimestampInversionsAndJson
+[       OK ] ItchWalkerV04.TimestampInversionsAndJson (0 ms)
+[----------] 4 tests from ItchWalkerV04 (7 ms total)
+
+[----------] Global test environment tear-down
+[==========] 14 tests from 2 test suites ran. (9 ms total)
+[  PASSED  ] 14 tests.

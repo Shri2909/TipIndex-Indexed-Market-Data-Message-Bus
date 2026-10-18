@@ -1,0 +1,18 @@
+{
+  "phase": "P3",
+  "status": "passed",
+  "updated_utc": "2026-10-18T04:14:43.402318+00:00",
+  "F3_gate": "results/p3/F3-scan-segmented-gate-20261018T034111.719594Z.json",
+  "F3_session": 80792,
+  "F3_resume_command": "TIPLOG_EXECUTION_CONTEXT=outside-sandbox .venv/bin/python scripts/run_fuzz_gate.py --phase p3 --label F3-scan-segmented --binary build/fuzz/fuzz_engine_ops --corpus tests/fuzz/corpus/ops --cpu 6 --seconds 1800 --segment-seconds 120 --resume results/p3/F3-scan-segmented-gate-20261018T034111.719594Z.json",
+  "passed": {
+    "release_tests": "results/p3/release-tests-final-20261018T034022.019438Z.json",
+    "sanitizer_tests": "results/p3/sanitizer-tests-final-20261018T034025.130173Z.json",
+    "release_CC2": "results/p3/differential-release-20261018T034047.389885Z.json",
+    "sanitizer_CC2": "results/p3/differential-sanitizer-20261018T034107.454243Z.json",
+    "F3_seed_smoke": "results/p3/fuzz-seed-smoke-20261018T034028.474170Z.json",
+    "real_driver_smoke": "results/p3/real-driver-smoke-20261018T041420.004585Z.json",
+    "F3_verified": "results/p3/fuzz-gate-verified.json"
+  },
+  "continuation": "P4 starts automatically under joint authorization; stop after P5"
+}

@@ -1,0 +1,23 @@
+{
+  "label": "gzip-full-bytes",
+  "argv": [
+    "bash",
+    "-o",
+    "pipefail",
+    "-c",
+    "gzip -dc data/raw/12302019.NASDAQ_ITCH50.gz | wc -c > results/data/itch_20191230_uncompressed_bytes.txt"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T110741.797616Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p1/gzip-full-bytes-20261017T110741.797616Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 47.04473421300008
+}

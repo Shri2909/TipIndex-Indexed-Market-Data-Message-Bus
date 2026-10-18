@@ -1,0 +1,16 @@
+{
+  "status": "running",
+  "required_monotonic_seconds": 1800,
+  "binary": "build/fuzz/fuzz_trace_reader",
+  "binary_sha256": "2980e559367028df3e5f96dde7b9d92533826dceb55cac21620c2fe1a1ec1fcf",
+  "monotonic_seconds": 0.0,
+  "attempts": [],
+  "executed_units": 0,
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "DEBUGINFOD_URLS": "",
+    "TIPLOG_FUZZ_MODE": null,
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  }
+}

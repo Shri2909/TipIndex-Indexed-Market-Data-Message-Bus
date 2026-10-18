@@ -1,0 +1,14 @@
+{
+  "scope": "Synthetic named seeds for fresh P4 mutation campaign; entire previous 1250-input P3 corpus already passed indexed seed smoke",
+  "files": {
+    "tests/fuzz/corpus/ops_indexed/exact_final_evicted.ops": "2fb8890f0a1744cc93266fbc6e5848f3b70294bd2de90fbdde59d2d7e96061d7",
+    "tests/fuzz/corpus/ops_indexed/future_zero.ops": "f430815b8874b4da71d6debf5612c57b4716adb047aba61e9f53e90175872267",
+    "tests/fuzz/corpus/ops_indexed/irrelevant_expiry.ops": "95604dfb15c16b803ec8bf1fbe4b0e039570237ee24c435b3ddc7db580d62018",
+    "tests/fuzz/corpus/ops_indexed/late_topic.ops": "3b0beb113fe5dd712001c0a759a666ba6b88b687a3be9548490c93a644373390",
+    "tests/fuzz/corpus/ops_indexed/overlap_equal.ops": "14fddd141ab512c5190a3af06f6f65adc10dfe12bee72c1d2f92b27862448186",
+    "tests/fuzz/corpus/ops_indexed/pad8_wrap.ops": "ff49cc078a4fe8a7a95c027b45d044d675900fe5e47841b08a46f11b97b70bcb",
+    "tests/fuzz/corpus/ops_indexed/pool_pressure_checked.ops": "76be8b528d0075f7aae98d6fa57a6d3c83ae480a8469e668d7b0af968995ac71",
+    "tests/fuzz/corpus/ops_indexed/recycled_block.ops": "384133caa9712063f30eb3eeed62b354d906a818571906bc543565fc75caf035",
+    "tests/fuzz/corpus/ops_indexed/reject_unchanged.ops": "8041d1c9c6dd0594209fe9cb56ae9a5ad8274d042f4e1b3ad9f83c802dc2e0bb"
+  }
+}

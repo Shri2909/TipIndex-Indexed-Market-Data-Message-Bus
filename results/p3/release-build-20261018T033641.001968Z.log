@@ -1,0 +1,46 @@
+[  1%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[  5%] Built target tiplog_smoke_test
+[ 10%] Built target tiplog_trace
+[ 15%] Built target tiplog_topics_subs
+[ 18%] Built target tiplog_ref
+[ 22%] Built target tiplog_walk
+[ 25%] Built target tiplog_trace_test
+[ 28%] Built target tiplog_trace_check
+[ 62%] Built target benchmark
+[ 66%] Built target tiplog_driver
+[ 69%] Built target tiplog_topics_subs_test
+[ 72%] Built target tiplog_oracle_test
+[ 76%] Built target tiplog_driver_test
+[ 79%] Built target benchmark_main
+[ 81%] Linking CXX static library libtiplog_ring.a
+[ 81%] Built target tiplog_ring
+[ 83%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 84%] Building CXX object CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o
+[ 86%] Linking CXX static library libtiplog_engine.a
+[ 86%] Built target tiplog_engine
+[ 88%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 89%] Building CXX object CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o
+[ 91%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp: In function ‘int main(int, char**)’:
+/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp:16:7: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   16 |       if(i+1>=argc)throw std::invalid_argument("missing option value");const std::string_view value(argv[++i]);
+      |       ^~
+/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp:16:72: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   16 |       if(i+1>=argc)throw std::invalid_argument("missing option value");const std::string_view value(argv[++i]);
+      |                                                                        ^~~~~
+[ 93%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+/home/abc/Desktop/Jane Street/tests/unit/engine_test.cpp: In member function ‘virtual void tiplog::{anonymous}::Engine_V14ChainedRangesEqualSingleRange_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/engine_test.cpp:126:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  126 |     for(const auto& r:out)chained.push_back(r.seq);after=replay.checkpoint()->after_seq;
+      |     ^~~
+/home/abc/Desktop/Jane Street/tests/unit/engine_test.cpp:126:52: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  126 |     for(const auto& r:out)chained.push_back(r.seq);after=replay.checkpoint()->after_seq;
+      |                                                    ^~~~~
+[ 94%] Linking CXX executable tiplog_sim
+[ 94%] Built target tiplog_sim
+[ 96%] Linking CXX executable tiplog_differential
+[ 96%] Built target tiplog_differential
+[ 98%] Linking CXX executable tiplog_ring_test
+[ 98%] Built target tiplog_ring_test
+[100%] Linking CXX executable tiplog_engine_test
+[100%] Built target tiplog_engine_test

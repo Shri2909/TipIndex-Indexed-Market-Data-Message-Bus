@@ -1,0 +1,14 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191230
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x5be8ef4a20e8, 0x5be8ef4a38da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x5be8ef4a38e0,0x5be8ef4bb800), 
+INFO:        2 files found in build/p4/indexed-selector-seeds
+INFO: seed corpus: files: 2 min: 26b max: 56b total: 82b rss: 32Mb
+#3	INITED cov: 1431 ft: 1922 corp: 2/82b exec/s: 0 rss: 35Mb
+#3	DONE   cov: 1431 ft: 1922 corp: 2/82b lim: 56 exec/s: 0 rss: 35Mb
+Done 3 runs in 0 second(s)
+stat::number_of_executed_units: 3
+stat::average_exec_per_sec:     0
+stat::new_units_added:          0
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              35

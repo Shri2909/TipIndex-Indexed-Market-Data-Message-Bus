@@ -1,0 +1,25 @@
+{
+  "updated_utc": "2026-10-17T11:09:44Z",
+  "phase": "P1",
+  "authorization": "P1-P5 jointly; stop after P5",
+  "sessions": {
+    "F1_original_superseded": 65396,
+    "F2_original_superseded": 86688,
+    "F1_monotonic_gate": "results/p1/F1-trace-gate-20261017T105935.973200Z.json",
+    "F2_monotonic_gate": 68969
+  },
+  "required_next": [
+    "accepted monotonic F1/F2 gates >=1800sec each",
+    "isolated 2GiB converter pilot on validated full gzip; RK01 decision",
+    "combined full Python stats +09:30-10:00 dual trace conversion",
+    "repeat conversion/hash RC2 +C++ roundtrip",
+    "CC6 reconciliation, real figures, P1 gate"
+  ],
+  "failed_checks_retained": [
+    "initial slow single download intentionally stopped; partial preserved",
+    "initial limited pilot on truncated gzip prefix failed EOF before2GiB; no RK01 decision claimed"
+  ],
+  "p0_reused": true,
+  "acquisition": "passed",
+  "full_cpp_counts": "passed; source BinaryFILE terminator absent/incomplete"
+}

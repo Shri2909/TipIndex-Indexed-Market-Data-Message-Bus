@@ -1,0 +1,5 @@
+system="\x00\x0cS"
+directory="\x00\x27R"
+add="\x00\x24A"
+delete="\x00\x13D"
+terminator="\x00\x00"

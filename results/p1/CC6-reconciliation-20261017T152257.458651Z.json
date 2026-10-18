@@ -1,0 +1,28 @@
+{
+  "label": "CC6-reconciliation",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/reconcile_itch.py",
+    "--python",
+    "results/data/itch_20191230_counts.json",
+    "--cpp",
+    "results/data/itch_20191230_counts_cpp.json",
+    "--bytes",
+    "results/data/itch_20191230_uncompressed_bytes.txt",
+    "--output",
+    "results/p1/cc6-reconciliation.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T152257.458651Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p1/CC6-reconciliation-20261017T152257.458651Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.0875890219995199
+}

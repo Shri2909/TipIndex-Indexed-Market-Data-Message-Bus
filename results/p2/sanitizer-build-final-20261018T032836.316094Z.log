@@ -1,0 +1,16 @@
+[  4%] Built target tiplog_ref
+[ 10%] Built target tiplog_topics_subs
+[ 16%] Built target tiplog_trace
+[ 20%] Built target tiplog_smoke_test
+[ 22%] Building CXX object CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o
+[ 27%] Built target tiplog_topics_subs_test
+[ 35%] Built target tiplog_driver
+[ 72%] Built target benchmark
+[ 77%] Built target tiplog_walk
+[ 85%] Built target tiplog_trace_check
+[ 85%] Built target tiplog_trace_test
+[ 89%] Built target tiplog_sim
+[ 93%] Built target benchmark_main
+[ 97%] Built target tiplog_driver_test
+[100%] Linking CXX executable tiplog_oracle_test
+[100%] Built target tiplog_oracle_test

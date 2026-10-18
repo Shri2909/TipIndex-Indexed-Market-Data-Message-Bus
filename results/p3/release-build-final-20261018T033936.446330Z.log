@@ -1,0 +1,32 @@
+[  3%] Built target tiplog_smoke_test
+[  8%] Built target tiplog_trace
+[ 13%] Built target tiplog_topics_subs
+[ 15%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 18%] Built target tiplog_ref
+[ 22%] Built target tiplog_walk
+[ 55%] Built target benchmark
+[ 59%] Built target tiplog_trace_check
+[ 62%] Built target tiplog_trace_test
+[ 66%] Built target tiplog_topics_subs_test
+[ 69%] Built target tiplog_driver
+[ 72%] Built target tiplog_oracle_test
+[ 76%] Built target benchmark_main
+[ 79%] Built target tiplog_driver_test
+[ 81%] Linking CXX static library libtiplog_ring.a
+[ 81%] Built target tiplog_ring
+[ 83%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 84%] Building CXX object CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o
+[ 86%] Linking CXX static library libtiplog_engine.a
+[ 86%] Built target tiplog_engine
+[ 88%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 91%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 91%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 93%] Linking CXX executable tiplog_sim
+[ 93%] Built target tiplog_sim
+[ 94%] Building CXX object CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o
+[ 96%] Linking CXX executable tiplog_differential
+[ 96%] Built target tiplog_differential
+[ 98%] Linking CXX executable tiplog_ring_test
+[ 98%] Built target tiplog_ring_test
+[100%] Linking CXX executable tiplog_engine_test
+[100%] Built target tiplog_engine_test

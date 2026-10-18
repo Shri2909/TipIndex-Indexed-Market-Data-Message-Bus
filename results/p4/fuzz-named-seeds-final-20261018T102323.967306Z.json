@@ -1,0 +1,32 @@
+{
+  "label": "fuzz-named-seeds-final",
+  "argv": [
+    "env",
+    "TIPLOG_FUZZ_MODE=indexed",
+    "taskset",
+    "-c",
+    "6",
+    "build/fuzz/fuzz_engine_ops",
+    "tests/fuzz/corpus/ops_indexed",
+    "-runs=0",
+    "-seed=20191230",
+    "-max_len=65536",
+    "-len_control=0",
+    "-timeout=10",
+    "-print_final_stats=1",
+    "-print_funcs=0"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T102323.967306Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p4/fuzz-named-seeds-final-20261018T102323.967306Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.03902692400004071
+}

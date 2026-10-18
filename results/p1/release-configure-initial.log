@@ -1,0 +1,10 @@
+-- Failed to find LLVM FileCheck
+-- Google Benchmark version: v1.9.5, normalized to 1.9.5
+-- tiplog GoogleTest provider: system 1.17.0
+CMake Error at cmake/p1.cmake:17 (gtest_discover_tests):
+  Unknown CMake command "gtest_discover_tests".
+Call Stack (most recent call first):
+  CMakeLists.txt:33 (include)
+
+
+-- Configuring incomplete, errors occurred!

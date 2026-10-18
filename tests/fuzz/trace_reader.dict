@@ -1,0 +1,5 @@
+magic="TPLTRC\x00\x01"
+version="\x01\x00\x00\x00"
+dictionary_offset="\x40\x00\x00\x00\x00\x00\x00\x00"
+topic="itch/AAPL/add/A"
+max_payload="\xff\xff"

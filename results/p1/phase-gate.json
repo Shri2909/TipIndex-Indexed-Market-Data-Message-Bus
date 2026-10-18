@@ -1,0 +1,38 @@
+{
+  "phase": "P1",
+  "status": "passed",
+  "completed_utc": "2026-10-17T15:24:41.513861+00:00",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "criteria": {
+    "P0 dependency verified": "met",
+    "P1.1 approved acquisition gzip SHA manifest": "met",
+    "P1.2 exact full-stream measurements and RK01": "met",
+    "P1.3 H-spec and H-flat deterministic converters": "met",
+    "P1.4 V01-V03 golden tests": "met",
+    "P1.5 independent C++ counts and CC6": "met",
+    "P1.6 trace reader V05 F1 F2 sanitizer gates": "met",
+    "P1.7 real L1 full/window tables F01-F05 and complexity": "met",
+    "RC2 exact repeated trace SHA256": "met",
+    "Source-to-code-to-check evidence and local-data preservation": "met"
+  },
+  "evidence": {
+    "results/p1/data-gate.json": "0a516ce19d482f6e013932145409a99daab5d527e5389790861a580bb0ea36d1",
+    "results/p1/real-data-artifact-checks.json": "93077c601eabe4d5cb92fe466e243de91c224dcf364a98ac9d43142459266d19",
+    "results/p1/cc6-reconciliation.json": "d0561d17f405a68e34177d6a5accf379ffd1785134910e7a2af53c7489962fb6",
+    "results/p1/fuzz-gate-verified.json": "02e167c909bc3480dbb7ed1fa4c471c0fe9247a861b4ff2002064c3449dbbec2",
+    "results/p1/rk01-converter-decision.json": "9a80c4149ff02275205acabc95dec95156e311b9f7c4b1183acdfc137997c7b7",
+    "results/p1/privacy-audit.json": "955b1f8c05b33f3cf6e1235e525a96aa8a7dddd3820a2beb0571820636404cdb",
+    "results/p1/figure-visual-review.json": "dc26dbcd74a1fd2c7f957b7a4bdb283b91ae742118cac3a0ef896ee5998c92e4",
+    "results/p1/sanitizer-tests-20261017T090424.742150Z.json": "027e864679f8f4af9c5d5b1914c53bbdddc011b07dd68f849cceef23421216e3",
+    "results/p1/python-final-metadata-check-20261017T142615.823401Z.json": "85b8638a7cd50a9e98b455f64d04c356f1e12fe85435039748e906e45975df31"
+  },
+  "implementation_manifest": "5875b6d30e938c49d101ab8da7966fdb5d957df7165c322c261e43d644a7db46",
+  "limitations": [
+    "Intact gzip has no BinaryFILE session terminator: incomplete=true",
+    "Nasdaq raw data, real fuzz seeds, payload-derived F2 logs and traces stay local/ignored",
+    "Conversion timings are scoped diagnostics; no engine benchmark or host-wide isolation claim",
+    "No Git commit exists; source manifest identifies checked implementation"
+  ],
+  "continuation": "P2 starts automatically under existing joint P1-P5 authorization; stop after P5"
+}

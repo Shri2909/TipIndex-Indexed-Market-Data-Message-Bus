@@ -1,0 +1,34 @@
+{
+  "artifacts": [
+    "F01_itch_type_mix.pdf",
+    "F01_itch_type_mix.png",
+    "F02_symbol_volume_skew.pdf",
+    "F02_symbol_volume_skew.png",
+    "F03_family_composition.pdf",
+    "F03_family_composition.png",
+    "F04_runs_and_bursts.pdf",
+    "F04_runs_and_bursts.png",
+    "F05_tree_and_class_sizes.pdf",
+    "F05_tree_and_class_sizes.png",
+    "p1-figures.json"
+  ],
+  "input": "independent synthetic 5 directory + 1000 D/E messages, gzip terminator",
+  "manifest": {
+    "figures": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05"
+    ],
+    "inputs": {
+      "counts": "/tmp/tiplog-p1-figures-npni5pln/counts.json",
+      "data_dir": "/tmp/tiplog-p1-figures-npni5pln/tables",
+      "prefix": "itch_20191230"
+    },
+    "scope": "P1 F01\u2013F05 only; later-phase figures have no inputs and are not claimed generated",
+    "selection": "Full-day totals; F03 top-20 symbols by message count, deterministic ties by path"
+  },
+  "scope": "figure plumbing smoke only, not real-data F01-F05 gate",
+  "status": "passed"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "preparation_only",
+  "accessed_utc": "2026-10-18T10:13:36.063155+00:00",
+  "phase_scope": "P5 measurement preparation while P4 implementation proceeds; no benchmark run",
+  "source": "S42 Google Benchmark",
+  "revision": "192ef10025eb2c4cdd392bc502f0c852196baa48",
+  "sections_actually_inspected": [
+    "user_guide Output Formats lines71-108",
+    "Runtime and Reporting Considerations lines240-270",
+    "Preventing Optimization lines1084-1143",
+    "Statistics repetitions/aggregates lines1145-1174",
+    "random_interleaving.md complete"
+  ],
+  "decision": [
+    "Preserve per-repetition JSON, not aggregates only",
+    "Merge output hash includes every output; DoNotOptimize protects the result, not all expressions",
+    "Setup excluded from M1 timing; pinned supported warmup/repetition/random-interleaving flags",
+    "No transfer of library documentation variance percentages to this project"
+  ],
+  "files": {
+    "build/release/_deps/benchmark-src/docs/user_guide.md": "4a8854597b4a112d0444b8b2b7d12e80d7c72fc91ad3a33ebbec9fde3e980070",
+    "build/release/_deps/benchmark-src/docs/random_interleaving.md": "e68c0e88e2323b82c119b21417f925aab77d9017bbb615393d836da971f214ed"
+  },
+  "new_dependency": false,
+  "code_reused": false
+}

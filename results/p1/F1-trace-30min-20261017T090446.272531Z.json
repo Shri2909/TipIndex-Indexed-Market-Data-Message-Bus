@@ -1,0 +1,31 @@
+{
+  "label": "F1-trace-30min",
+  "argv": [
+    "taskset",
+    "-c",
+    "6",
+    "build/fuzz/fuzz_trace_reader",
+    "tests/fuzz/corpus/trace_reader",
+    "-dict=tests/fuzz/trace_reader.dict",
+    "-max_total_time=1800",
+    "-seed=20191230",
+    "-print_final_stats=1",
+    "-max_len=65536",
+    "-rss_limit_mb=2048",
+    "-timeout=10",
+    "-artifact_prefix=results/p1/fuzz-crashes/"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261017T090446.272531Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p1/F1-trace-30min-20261017T090446.272531Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 911.6185691290002
+}

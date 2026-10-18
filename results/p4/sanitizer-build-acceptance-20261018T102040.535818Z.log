@@ -1,0 +1,37 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[  4%] Built target tiplog_topics_subs
+[  9%] Built target tiplog_trace
+[ 12%] Built target tiplog_smoke_test
+[ 13%] Building CXX object CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[ 16%] Built target tiplog_ring
+[ 20%] Built target tiplog_ref
+[ 23%] Built target tiplog_walk
+[ 53%] Built target benchmark
+[ 56%] Built target tiplog_trace_check
+[ 60%] Built target tiplog_trace_test
+[ 63%] Built target tiplog_topics_subs_test
+[ 66%] Built target tiplog_driver
+[ 69%] Built target tiplog_oracle_test
+[ 72%] Built target tiplog_ring_test
+[ 75%] Built target benchmark_main
+[ 78%] Built target tiplog_driver_test
+[ 80%] Linking CXX static library libtiplog_index.a
+[ 80%] Built target tiplog_index
+[ 81%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 83%] Building CXX object CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o
+[ 84%] Linking CXX static library libtiplog_engine.a
+[ 84%] Built target tiplog_engine
+[ 86%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 87%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 89%] Linking CXX executable tiplog_sim
+[ 89%] Built target tiplog_sim
+[ 90%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 92%] Linking CXX executable tiplog_engine_test
+[ 93%] Linking CXX executable tiplog_index_test
+[ 93%] Built target tiplog_index_test
+[ 95%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 95%] Built target tiplog_engine_test
+[ 96%] Linking CXX executable tiplog_engine_index_test
+[ 98%] Linking CXX executable tiplog_differential
+[ 98%] Built target tiplog_engine_index_test
+[100%] Built target tiplog_differential

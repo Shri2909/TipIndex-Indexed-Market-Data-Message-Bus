@@ -1,0 +1,218 @@
+{
+  "status": "passed",
+  "commands": [
+    {
+      "step": "debug-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "debug"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.444867+00:00",
+      "duration_seconds": 0.044529347000207053,
+      "exit_code": 0,
+      "log": "debug-configure.log"
+    },
+    {
+      "step": "debug-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "debug",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.489684+00:00",
+      "duration_seconds": 0.07872014900021895,
+      "exit_code": 0,
+      "log": "debug-build.log"
+    },
+    {
+      "step": "debug-ctest",
+      "argv": [
+        "ctest",
+        "--preset",
+        "debug",
+        "--output-on-failure",
+        "--no-tests=error"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.568706+00:00",
+      "duration_seconds": 0.0291446419996646,
+      "exit_code": 0,
+      "log": "debug-ctest.log"
+    },
+    {
+      "step": "release-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "release"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.598283+00:00",
+      "duration_seconds": 0.045218422999823815,
+      "exit_code": 0,
+      "log": "release-configure.log"
+    },
+    {
+      "step": "release-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "release",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.643807+00:00",
+      "duration_seconds": 0.07558108999910473,
+      "exit_code": 0,
+      "log": "release-build.log"
+    },
+    {
+      "step": "release-ctest",
+      "argv": [
+        "ctest",
+        "--preset",
+        "release",
+        "--output-on-failure",
+        "--no-tests=error"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.719753+00:00",
+      "duration_seconds": 0.0259547969999403,
+      "exit_code": 0,
+      "log": "release-ctest.log"
+    },
+    {
+      "step": "asan-ubsan-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "asan-ubsan"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.746006+00:00",
+      "duration_seconds": 0.04828424300012557,
+      "exit_code": 0,
+      "log": "asan-ubsan-configure.log"
+    },
+    {
+      "step": "asan-ubsan-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "asan-ubsan",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:09.794599+00:00",
+      "duration_seconds": 8.48002321399963,
+      "exit_code": 0,
+      "log": "asan-ubsan-build.log"
+    },
+    {
+      "step": "asan-ubsan-ctest",
+      "argv": [
+        "ctest",
+        "--preset",
+        "asan-ubsan",
+        "--output-on-failure",
+        "--no-tests=error"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:18.274991+00:00",
+      "duration_seconds": 0.04495781200057536,
+      "exit_code": 0,
+      "log": "asan-ubsan-ctest.log"
+    },
+    {
+      "step": "fuzz-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "fuzz"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:18.320352+00:00",
+      "duration_seconds": 4.574200148999807,
+      "exit_code": 0,
+      "log": "fuzz-configure.log"
+    },
+    {
+      "step": "fuzz-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "fuzz",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:22.894862+00:00",
+      "duration_seconds": 9.977721692999694,
+      "exit_code": 0,
+      "log": "fuzz-build.log"
+    },
+    {
+      "step": "fuzz-ctest",
+      "argv": [
+        "ctest",
+        "--preset",
+        "fuzz",
+        "--output-on-failure",
+        "--no-tests=error"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:32.872912+00:00",
+      "duration_seconds": 0.04608242100039206,
+      "exit_code": 0,
+      "log": "fuzz-ctest.log"
+    },
+    {
+      "step": "python-dependencies",
+      "argv": [
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:32.919332+00:00",
+      "duration_seconds": 0.18727329800003645,
+      "exit_code": 0,
+      "log": "python-dependencies.log"
+    },
+    {
+      "step": "python-pytest",
+      "argv": [
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-c",
+        "py/pytest.ini",
+        "py/tests",
+        "-v"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:29:33.106958+00:00",
+      "duration_seconds": 0.6383722190003027,
+      "exit_code": 0,
+      "log": "python-pytest.log"
+    }
+  ],
+  "environment": {
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "ASAN_OPTIONS": null,
+    "UBSAN_OPTIONS": null
+  }
+}

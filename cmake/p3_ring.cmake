@@ -1,0 +1,10 @@
+add_library(tiplog_ring src/tiplog/ring/ring.cpp)
+add_library(tiplog::ring ALIAS tiplog_ring)
+target_include_directories(tiplog_ring PUBLIC "${PROJECT_SOURCE_DIR}/src")
+target_link_libraries(tiplog_ring PUBLIC tiplog::build_options)
+
+if(BUILD_TESTING)
+  add_executable(tiplog_ring_test tests/unit/ring_test.cpp)
+  target_link_libraries(tiplog_ring_test PRIVATE tiplog::ring GTest::gtest_main)
+  gtest_discover_tests(tiplog_ring_test TEST_PREFIX "ring." DISCOVERY_MODE PRE_TEST)
+endif()

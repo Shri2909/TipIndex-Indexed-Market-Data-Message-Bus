@@ -1,0 +1,26 @@
+{
+  "label": "fuzz-build-acceptance",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "fuzz",
+    "--parallel",
+    "3",
+    "--target",
+    "fuzz_engine_ops"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T102040.542692Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p4/fuzz-build-acceptance-20261018T102040.542692Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 5.4828006480000795
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-17T14:52:33.530478+00:00",
+  "checks": [
+    {
+      "gate": "results/p1/F1-trace-segmented-gate-20261017T142028.416744Z.json",
+      "status": "passed",
+      "monotonic_seconds": 1801.8977860090001,
+      "executed_units": 53139553,
+      "completed_segments": 15,
+      "gate_sha256": "d631ef23d6f9596dce2f3bdd84f46366e08bf9fb13b03923dff4cdee3edd15a0"
+    },
+    {
+      "gate": "results/p1/F2-framing-real-segmented-gate-20261017T142151.850263Z.json",
+      "status": "passed",
+      "monotonic_seconds": 1801.7636901550004,
+      "executed_units": 2043899,
+      "completed_segments": 15,
+      "gate_sha256": "41316f32dd74d3532785f4fe7c6deada5fb33c1854912a8f229d71afd99869da"
+    }
+  ],
+  "verification": "Recomputed completed log hashes, final stats, totals, current binary/runner hashes and preserved corpus files"
+}

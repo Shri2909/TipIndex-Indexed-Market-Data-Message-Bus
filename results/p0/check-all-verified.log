@@ -1,0 +1,29 @@
+Running cmake --preset debug
+Passed debug-configure
+Running cmake --build --preset debug --parallel 4
+Passed debug-build
+Running ctest --preset debug --output-on-failure --no-tests=error
+Passed debug-ctest
+Running cmake --preset release
+Passed release-configure
+Running cmake --build --preset release --parallel 4
+Passed release-build
+Running ctest --preset release --output-on-failure --no-tests=error
+Passed release-ctest
+Running cmake --preset asan-ubsan
+Passed asan-ubsan-configure
+Running cmake --build --preset asan-ubsan --parallel 4
+Passed asan-ubsan-build
+Running ctest --preset asan-ubsan --output-on-failure --no-tests=error
+Passed asan-ubsan-ctest
+Running cmake --preset fuzz
+Passed fuzz-configure
+Running cmake --build --preset fuzz --parallel 4
+Passed fuzz-build
+Running ctest --preset fuzz --output-on-failure --no-tests=error
+Passed fuzz-ctest
+Running '/home/abc/Desktop/Jane Street/.venv/bin/python' -m pip check
+Passed python-dependencies
+Running '/home/abc/Desktop/Jane Street/.venv/bin/python' -m pytest -c py/pytest.ini py/tests -v
+Passed python-pytest
+All Phase 0 plumbing checks passed; evidence: /home/abc/Desktop/Jane Street/results/p0/20261017T042909.444760Z

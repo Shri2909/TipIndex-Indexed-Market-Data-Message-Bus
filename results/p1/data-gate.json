@@ -1,0 +1,403 @@
+{
+  "CC6_evidence": "results/p1/cc6-reconciliation.json",
+  "F2_local_real_seed": "results/p1/fuzz-F2-real-seed.json",
+  "L1_summaries": {
+    "full_day": {
+      "class_count_definition": "raw active consumers and effective distinct nonempty local match sets; no solver coverage claim",
+      "complexity_histograms": {
+        "b_W0_raw": {
+          "10": 1125,
+          "11": 842,
+          "12": 1839,
+          "13": 1582,
+          "14": 3444,
+          "15": 7,
+          "16": 1,
+          "2": 1,
+          "4": 9,
+          "6": 5,
+          "8": 22,
+          "9": 30
+        },
+        "b_W1_effective": {
+          "1": 1,
+          "3": 14,
+          "4": 8892
+        },
+        "b_W1_raw": {
+          "4": 8906,
+          "8906": 1
+        },
+        "b_W2_effective": {
+          "1": 7907,
+          "4": 1000
+        },
+        "b_W2_raw": {
+          "1": 7906,
+          "1000": 1,
+          "4": 1000
+        },
+        "b_W3_effective": {
+          "1": 1,
+          "3": 14,
+          "4": 8693,
+          "5": 199
+        },
+        "b_W3_raw": {
+          "4": 8707,
+          "5": 198,
+          "6": 1,
+          "8906": 1
+        },
+        "edges": {
+          "12": 22,
+          "13": 30,
+          "14": 1125,
+          "15": 842,
+          "16": 1839,
+          "17": 1582,
+          "18": 3444,
+          "19": 7,
+          "20": 1,
+          "3": 1,
+          "6": 9,
+          "8": 5
+        },
+        "nodes": {
+          "13": 22,
+          "14": 30,
+          "15": 1125,
+          "16": 842,
+          "17": 1839,
+          "18": 1582,
+          "19": 3444,
+          "20": 7,
+          "21": 1,
+          "4": 1,
+          "7": 9,
+          "9": 5
+        },
+        "positive_topics": {
+          "10": 1125,
+          "11": 842,
+          "12": 1839,
+          "13": 1582,
+          "14": 3444,
+          "15": 7,
+          "16": 1,
+          "2": 1,
+          "4": 9,
+          "6": 5,
+          "8": 22,
+          "9": 30
+        }
+      },
+      "messages": {
+        "gini": 0.7783725248916857,
+        "top_10_percent_share": 0.657131817034447,
+        "top_1_percent_share": 0.21798737272557112
+      },
+      "partitions": 8907,
+      "payload_bytes": {
+        "gini": 0.7674990665769079,
+        "top_10_percent_share": 0.64669305811914,
+        "top_1_percent_share": 0.21401436043376723
+      },
+      "prefix": "itch_20191230_full_day",
+      "record_bytes": {
+        "gini": 0.7717946689767587,
+        "top_10_percent_share": 0.6508919140787843,
+        "top_1_percent_share": 0.2156731799262897
+      },
+      "symbol_partitions": 8906,
+      "volume_definition": "payload_bytes original ITCH; framed_bytes payload+2 BinaryFILE; record_bytes align8(16+payload), no ring PAD",
+      "w3_random_basket_seed": 20191230
+    },
+    "window": {
+      "class_count_definition": "raw active consumers and effective distinct nonempty local match sets; no solver coverage claim",
+      "complexity_histograms": {
+        "b_W0_raw": {
+          "1": 14,
+          "10": 519,
+          "11": 7,
+          "2": 19,
+          "3": 20,
+          "4": 167,
+          "5": 1402,
+          "6": 1921,
+          "7": 1671,
+          "8": 1819,
+          "9": 1348
+        },
+        "b_W1_effective": {
+          "1": 14,
+          "2": 1558,
+          "3": 7295,
+          "4": 40
+        },
+        "b_W1_raw": {
+          "2": 26,
+          "3": 8836,
+          "4": 44,
+          "8906": 1
+        },
+        "b_W2_effective": {
+          "0": 7865,
+          "1": 42,
+          "2": 8,
+          "3": 989,
+          "4": 3
+        },
+        "b_W2_raw": {
+          "0": 7865,
+          "1": 41,
+          "1000": 1,
+          "3": 997,
+          "4": 3
+        },
+        "b_W3_effective": {
+          "1": 14,
+          "2": 1542,
+          "3": 7130,
+          "4": 220,
+          "5": 1
+        },
+        "b_W3_raw": {
+          "2": 26,
+          "3": 8639,
+          "4": 238,
+          "5": 3,
+          "8906": 1
+        },
+        "edges": {
+          "1": 1,
+          "10": 1669,
+          "11": 1817,
+          "12": 1348,
+          "13": 516,
+          "14": 10,
+          "15": 7,
+          "2": 13,
+          "3": 13,
+          "4": 6,
+          "5": 19,
+          "6": 12,
+          "7": 156,
+          "8": 1402,
+          "9": 1918
+        },
+        "nodes": {
+          "10": 1918,
+          "11": 1669,
+          "12": 1817,
+          "13": 1348,
+          "14": 516,
+          "15": 10,
+          "16": 7,
+          "2": 1,
+          "3": 13,
+          "4": 13,
+          "5": 6,
+          "6": 19,
+          "7": 12,
+          "8": 156,
+          "9": 1402
+        },
+        "positive_topics": {
+          "1": 14,
+          "10": 519,
+          "11": 7,
+          "2": 19,
+          "3": 20,
+          "4": 167,
+          "5": 1402,
+          "6": 1921,
+          "7": 1671,
+          "8": 1819,
+          "9": 1348
+        }
+      },
+      "messages": {
+        "gini": 0.796934801898747,
+        "top_10_percent_share": 0.6925320630986582,
+        "top_1_percent_share": 0.2556283292901844
+      },
+      "partitions": 8907,
+      "payload_bytes": {
+        "gini": 0.7906356855932222,
+        "top_10_percent_share": 0.6849668877557946,
+        "top_1_percent_share": 0.25366837470749604
+      },
+      "prefix": "itch_20191230_window",
+      "record_bytes": {
+        "gini": 0.7939094268560405,
+        "top_10_percent_share": 0.6886156271076338,
+        "top_1_percent_share": 0.25463999781185753
+      },
+      "symbol_partitions": 8906,
+      "volume_definition": "payload_bytes original ITCH; framed_bytes payload+2 BinaryFILE; record_bytes align8(16+payload), no ring PAD",
+      "w3_random_basket_seed": 20191230
+    }
+  },
+  "actual_counts": {
+    "incomplete": true,
+    "message_count": 268744780,
+    "payload_bytes": 7713918349,
+    "routing": {
+      "directory_conflicts": 0,
+      "directory_entries": 8906,
+      "directory_zero_locates": 0,
+      "nonzero_k_locates": 0,
+      "nonzero_market_locates": 0,
+      "symbol_messages_crosschecked": 124134289,
+      "symbol_mismatches": 0,
+      "unknown_locate_messages": 0
+    },
+    "terminated": false,
+    "timestamp_inversions": 0,
+    "topic_count": 111997,
+    "total_uncompressed_bytes": 8251407909
+  },
+  "actual_window": {
+    "end_exclusive_ns": 36000000000000,
+    "maximum_timestamp_ns": 35999999956464,
+    "message_count": 32817244,
+    "minimum_timestamp_ns": 34200000000230,
+    "payload_bytes": 947677397,
+    "start_inclusive_ns": 34200000000000,
+    "topic_count": 62964
+  },
+  "artifact_check_count": 41,
+  "artifact_checks": "results/p1/real-data-artifact-checks.json",
+  "checked_utc": "2026-10-17T15:24:02.642583+00:00",
+  "checks": {
+    "CC6_reconciliation": "passed",
+    "F01_F05_actual_figures": "passed",
+    "RC2_both_hierarchies": "passed",
+    "RK01_decision": "passed; retain Python, projected combined runtime below 2,700 seconds",
+    "cpp_trace_checks": "passed",
+    "full_conversion_and_counts": "passed",
+    "isolated_2GiB_converter_pilot": "passed"
+  },
+  "code_identity": "results/p1/real-data-source-hashes.json",
+  "command_records": [
+    "results/p1/converter-pilot-environment-20261017T145159.332134Z.json",
+    "results/p1/converter-2GiB-combined-pilot-20261017T145318.904299Z.json",
+    "results/p1/full-conversion-and-counts-20261017T145858.606353Z.json",
+    "results/p1/repeat-conversion-RC2-20261017T151510.973927Z.json",
+    "results/p1/CC6-reconciliation-20261017T152257.458651Z.json",
+    "results/p1/cpp-trace-spec-20261017T152257.442384Z.json",
+    "results/p1/cpp-trace-flat-20261017T152257.457689Z.json",
+    "results/p1/figures-F01-F05-20261017T152257.442393Z.json",
+    "results/p1/real-data-artifact-check-20261017T152311.693823Z.json"
+  ],
+  "exact_uncompressed_bytes": 8251407909,
+  "figure_manifest": "results/figures/p1-figures.json",
+  "figure_visual_review": {
+    "evidence": "results/p1/figure-visual-review.json",
+    "figures": [
+      "F02",
+      "F03"
+    ],
+    "reviewer": "root",
+    "status": "passed"
+  },
+  "final_check_sessions": {
+    "cpp_flat": 17579,
+    "cpp_spec": 21292,
+    "figures": 73484
+  },
+  "free_disk_bytes": 14596022272,
+  "full_conversion_actual_elapsed_seconds": 867.4794890799999,
+  "full_conversion_command_record": "results/p1/full-conversion-and-counts-20261017T145858.606353Z.json",
+  "full_conversion_session": 3397,
+  "full_counts_path": "results/data/itch_20191230_counts.json",
+  "fuzz_gates": {
+    "results/p1/F1-trace-segmented-gate-20261017T142028.416744Z.json": {
+      "executed_units": 53139553,
+      "monotonic_seconds": 1801.8977860090001,
+      "required_monotonic_seconds": 1800,
+      "status": "passed"
+    },
+    "results/p1/F2-framing-real-segmented-gate-20261017T142151.850263Z.json": {
+      "executed_units": 2043899,
+      "monotonic_seconds": 1801.7636901550004,
+      "required_monotonic_seconds": 1800,
+      "status": "passed"
+    }
+  },
+  "isolated_pilot_configuration": {
+    "byte_limit": 2147483648,
+    "combined_full_L1_aggregates": true,
+    "cpu": 2,
+    "hierarchies": [
+      "H-spec",
+      "H-flat"
+    ],
+    "projection_limit_seconds": 2700,
+    "source": "data/raw/12302019.NASDAQ_ITCH50.gz",
+    "timing_prerequisite": "Both accepted terminal fuzz gates; all known workers completed;60s settle",
+    "window_end_exclusive": "10:00:00",
+    "window_start_inclusive": "09:30:00"
+  },
+  "measurement_limits": [
+    "CPU 2 taskset pin verified; no known project fuzzing/build/conversion overlaps",
+    "SMT sibling idleness and host-wide isolation are unverified; no universal throughput claim",
+    "RK-01 projection is an estimate from an explicitly limited prefix, not full-run time",
+    "Full source BinaryFILE terminator absent; complete gzip/framing validation does not prove session completeness"
+  ],
+  "phase": "P1",
+  "pilot_command_record": "results/p1/converter-2GiB-combined-pilot-20261017T145318.904299Z.json",
+  "pilot_environment": "results/env/p1-converter-pilot.json",
+  "pilot_session": 54974,
+  "remaining_real_data_checks": [],
+  "repeat_conversion_command_record": "results/p1/repeat-conversion-RC2-20261017T151510.973927Z.json",
+  "repeat_conversion_session": 67187,
+  "rk01": "results/p1/rk01-converter-decision.json",
+  "scope": "P1 real-data acceptance checks; overall phase documentation and progression owned by root",
+  "settle_confirmed_monotonic_seconds": 79.40896542200016,
+  "settle_started_monotonic": 2320.824454364,
+  "settle_started_utc": "2026-10-17T14:52:05.910682+00:00",
+  "source_binaryfile_incomplete": true,
+  "source_bytes": 3524013057,
+  "source_code_unchanged_during_real_data_runs": true,
+  "source_sha256": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+  "status": "passed",
+  "superseded_unaccepted_fuzz_gates": [
+    "results/p1/F1-trace-gate-20261017T105935.973200Z.json",
+    "results/p1/F2-framing-gate-20261017T110135.269411Z.json",
+    "results/p1/F2-framing-segmented-gate-20261017T142044.989922Z.json"
+  ],
+  "traces": {
+    "H-flat": {
+      "bytes": 1616161552,
+      "cpp_result": {
+        "payload_bytes": 947677397,
+        "payload_fnv1a64": 11374081966379056750,
+        "record_count": 32817244,
+        "topic_count": 62964
+      },
+      "path": "data/traces/itch_20191230_0930_1000_flat.mdt",
+      "records": 32817244,
+      "repeat_path": "data/traces/repeat/itch_20191230_0930_1000_flat.mdt",
+      "repeat_sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2",
+      "sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2",
+      "topics": 62964
+    },
+    "H-spec": {
+      "bytes": 1616858987,
+      "cpp_result": {
+        "payload_bytes": 947677397,
+        "payload_fnv1a64": 11374081966379056750,
+        "record_count": 32817244,
+        "topic_count": 62964
+      },
+      "path": "data/traces/itch_20191230_0930_1000_spec.mdt",
+      "records": 32817244,
+      "repeat_path": "data/traces/repeat/itch_20191230_0930_1000_spec.mdt",
+      "repeat_sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70",
+      "sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70",
+      "topics": 62964
+    }
+  }
+}

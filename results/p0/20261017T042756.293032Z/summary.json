@@ -1,0 +1,112 @@
+{
+  "status": "failed",
+  "commands": [
+    {
+      "step": "debug-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "debug"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:27:56.293139+00:00",
+      "duration_seconds": 2.797204640000018,
+      "exit_code": 0,
+      "log": "debug-configure.log"
+    },
+    {
+      "step": "debug-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "debug",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:27:59.090656+00:00",
+      "duration_seconds": 4.8510590159994535,
+      "exit_code": 0,
+      "log": "debug-build.log"
+    },
+    {
+      "step": "debug-ctest",
+      "argv": [
+        "ctest",
+        "--preset",
+        "debug",
+        "--output-on-failure",
+        "--no-tests=error"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:28:03.942044+00:00",
+      "duration_seconds": 0.06841752299988002,
+      "exit_code": 0,
+      "log": "debug-ctest.log"
+    },
+    {
+      "step": "release-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "release"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:28:04.011060+00:00",
+      "duration_seconds": 2.755704334999791,
+      "exit_code": 0,
+      "log": "release-configure.log"
+    },
+    {
+      "step": "release-build",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "release",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:28:06.767082+00:00",
+      "duration_seconds": 7.419638557000326,
+      "exit_code": 0,
+      "log": "release-build.log"
+    },
+    {
+      "step": "release-ctest",
+      "argv": [
+        "ctest",
+        "--preset",
+        "release",
+        "--output-on-failure",
+        "--no-tests=error"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:28:14.187123+00:00",
+      "duration_seconds": 0.025719295000271813,
+      "exit_code": 0,
+      "log": "release-ctest.log"
+    },
+    {
+      "step": "asan-ubsan-configure",
+      "argv": [
+        "cmake",
+        "--preset",
+        "asan-ubsan"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "started_utc": "2026-10-17T04:28:14.213247+00:00",
+      "duration_seconds": 4.610142440000345,
+      "exit_code": 1,
+      "log": "asan-ubsan-configure.log"
+    }
+  ],
+  "environment": {
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "ASAN_OPTIONS": null,
+    "UBSAN_OPTIONS": null
+  }
+}

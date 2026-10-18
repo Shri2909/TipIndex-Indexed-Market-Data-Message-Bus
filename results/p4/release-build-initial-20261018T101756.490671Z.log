@@ -1,0 +1,124 @@
+[  3%] Built target tiplog_smoke_test
+[  7%] Built target tiplog_topics_subs
+[ 12%] Built target tiplog_trace
+[ 13%] Building CXX object CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[ 16%] Built target tiplog_ring
+[ 20%] Built target tiplog_ref
+[ 23%] Built target tiplog_walk
+[ 26%] Built target tiplog_trace_check
+[ 56%] Built target benchmark
+[ 60%] Built target tiplog_trace_test
+[ 63%] Built target tiplog_topics_subs_test
+[ 66%] Built target tiplog_driver
+[ 69%] Built target tiplog_oracle_test
+[ 72%] Built target tiplog_ring_test
+[ 75%] Built target benchmark_main
+[ 78%] Built target tiplog_driver_test
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp: In member function ‘void tiplog::index::Index::sweep_open(tiplog::LogPos)’:
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp:193:17: warning: unused variable ‘state’ [-Wunused-variable]
+  193 |     const auto& state = partitions_[p];
+      |                 ^~~~~
+[ 80%] Linking CXX static library libtiplog_index.a
+[ 80%] Built target tiplog_index
+[ 81%] Building CXX object CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o
+[ 83%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+In file included from /usr/include/gtest/gtest-printers.h:122,
+                 from /usr/include/gtest/gtest-matchers.h:49,
+                 from /usr/include/gtest/internal/gtest-death-test-internal.h:47,
+                 from /usr/include/gtest/gtest-death-test.h:43,
+                 from /usr/include/gtest/gtest.h:64,
+                 from /home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:3:
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp: In member function ‘virtual void {anonymous}::IndexConfig_V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:56:36: warning: ignoring return value of ‘static uint32_t tiplog::index::Index::sizing_blocks(uint64_t, uint32_t, uint32_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   56 |   EXPECT_THROW(Index::sizing_blocks(1024, 24, 4, 7), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from /home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:1:
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:153:38: note: declared here
+  153 |   [[nodiscard]] static std::uint32_t sizing_blocks(std::uint64_t ring_bytes,
+      |                                      ^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:57:36: warning: ignoring return value of ‘static uint32_t tiplog::index::Index::sizing_blocks(uint64_t, uint32_t, uint32_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   57 |   EXPECT_THROW(Index::sizing_blocks(1024, 16, 3, 7), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:153:38: note: declared here
+  153 |   [[nodiscard]] static std::uint32_t sizing_blocks(std::uint64_t ring_bytes,
+      |                                      ^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:58:36: warning: ignoring return value of ‘static uint32_t tiplog::index::Index::sizing_blocks(uint64_t, uint32_t, uint32_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   58 |   EXPECT_THROW(Index::sizing_blocks(LogPos{1} << 35U, 16, 4, 7), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:153:38: note: declared here
+  153 |   [[nodiscard]] static std::uint32_t sizing_blocks(std::uint64_t ring_bytes,
+      |                                      ^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:59:36: warning: ignoring return value of ‘static uint32_t tiplog::index::Index::sizing_blocks(uint64_t, uint32_t, uint32_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+   59 |   EXPECT_THROW(Index::sizing_blocks(1024, 16, 4, index::none), index::RepresentationLimit);
+      |                ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:153:38: note: declared here
+  153 |   [[nodiscard]] static std::uint32_t sizing_blocks(std::uint64_t ring_bytes,
+      |                                      ^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp: In member function ‘virtual void {anonymous}::IndexPool_V15NearGenerationLimitRejectsBeforeMembershipChanges_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:108:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  108 |   EXPECT_THROW(pool.prepare_append(0, 32, 32, 4), index::RepresentationLimit);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp: In member function ‘virtual void {anonymous}::IndexPool_V15GenerationZeroLimitAllowsInitialAllocationButNoFree_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:121:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  121 |   EXPECT_THROW(pool.prepare_append(0, 16, 16, 4), index::RepresentationLimit);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp: In member function ‘virtual void {anonymous}::IndexPreparation_V15RejectsInvalidInputsWithoutLogicalMutation_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:361:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  361 |   EXPECT_THROW(pool.prepare_append(index::none, 16, 0, 4), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:362:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  362 |   EXPECT_THROW(pool.prepare_append(4, 16, 0, 4), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:363:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  363 |   EXPECT_THROW(pool.prepare_append(0, 15, 0, 4), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:364:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  364 |   EXPECT_THROW(pool.prepare_append(0, 16, 1, 4), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:366:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  366 |   EXPECT_THROW(pool.prepare_append(0, 16, 24, 4), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp:367:35: warning: ignoring return value of ‘tiplog::index::Preparation tiplog::index::Index::prepare_append(tiplog::PartitionId, tiplog::LogPos, tiplog::LogPos, std::size_t, uint64_t)’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  367 |   EXPECT_THROW(pool.prepare_append(0, 0, 0, 4), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/src/tiplog/index/index.hpp:138:29: note: declared here
+  138 |   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
+      |                             ^~~~~~~~~~~~~~
+[ 84%] Linking CXX static library libtiplog_engine.a
+[ 84%] Built target tiplog_engine
+[ 86%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 87%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 89%] Linking CXX executable tiplog_sim
+[ 89%] Built target tiplog_sim
+[ 90%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 92%] Linking CXX executable tiplog_index_test
+[ 92%] Built target tiplog_index_test
+[ 93%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 95%] Linking CXX executable tiplog_engine_test
+[ 95%] Built target tiplog_engine_test
+[ 96%] Building CXX object CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o
+[ 98%] Linking CXX executable tiplog_differential
+[100%] Linking CXX executable tiplog_engine_index_test
+[100%] Built target tiplog_differential
+[100%] Built target tiplog_engine_index_test

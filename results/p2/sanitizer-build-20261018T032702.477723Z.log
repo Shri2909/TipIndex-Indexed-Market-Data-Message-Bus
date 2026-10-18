@@ -1,0 +1,66 @@
+[  2%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[  8%] Built target tiplog_trace
+[ 10%] Building CXX object CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 14%] Built target tiplog_smoke_test
+[ 18%] Built target tiplog_walk
+[ 60%] Built target benchmark
+[ 64%] Built target tiplog_trace_check
+[ 66%] Building CXX object CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o
+[ 70%] Built target tiplog_trace_test
+[ 75%] Built target benchmark_main
+[ 77%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 79%] Linking CXX static library libtiplog_ref.a
+[ 79%] Built target tiplog_ref
+[ 81%] Building CXX object CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o
+[ 83%] Linking CXX static library libtiplog_driver.a
+[ 83%] Built target tiplog_driver
+[ 85%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:111:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  111 |   EXPECT_THROW(oracle.open_replay({}, 0), std::invalid_argument);
+      |                ^~~~~~~~~~~~~~~~~~ ~~~~~
+/usr/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1369:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1369 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1311:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1311 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:112:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  112 |   EXPECT_THROW(oracle.open_replay(exact("/a"), 0), std::invalid_argument);
+      |                ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1369:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1369 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1311:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1311 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:114:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  114 |   EXPECT_THROW(oracle.open_replay(invalid, 0), std::invalid_argument);
+      |                ^~~~~~~~~~~~~~~~~~ ~~~~~~~~~~
+/usr/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1369:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1369 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1311:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1311 |     statement;                                                    \
+      |     ^~~~~~~~~
+[ 87%] Building CXX object CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o
+[ 89%] Linking CXX static library libtiplog_topics_subs.a
+[ 89%] Built target tiplog_topics_subs
+[ 91%] Building CXX object CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o
+[ 93%] Linking CXX executable tiplog_sim
+[ 93%] Built target tiplog_sim
+3 warnings generated.
+[ 95%] Linking CXX executable tiplog_oracle_test
+[ 95%] Built target tiplog_oracle_test
+[ 97%] Linking CXX executable tiplog_driver_test
+[ 97%] Built target tiplog_driver_test
+[100%] Linking CXX executable tiplog_topics_subs_test
+[100%] Built target tiplog_topics_subs_test

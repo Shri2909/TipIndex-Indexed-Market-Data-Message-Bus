@@ -1,0 +1,16 @@
+[ 27%] Building CXX object CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 27%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 27%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[ 36%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 45%] Linking CXX static library libtiplog_ring.a
+[ 45%] Built target tiplog_ring
+[ 54%] Linking CXX static library libtiplog_ref.a
+[ 54%] Built target tiplog_ref
+[ 63%] Linking CXX static library libtiplog_topics_subs.a
+[ 63%] Built target tiplog_topics_subs
+[ 72%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 81%] Linking CXX static library libtiplog_engine.a
+[ 81%] Built target tiplog_engine
+[ 90%] Building CXX object CMakeFiles/fuzz_engine_ops.dir/tests/fuzz/targets/fuzz_engine_ops.cpp.o
+[100%] Linking CXX executable fuzz_engine_ops
+[100%] Built target fuzz_engine_ops

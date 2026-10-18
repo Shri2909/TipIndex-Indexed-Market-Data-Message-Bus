@@ -1,0 +1,19 @@
+{
+  "label": "pressure-probe",
+  "argv": [
+    "build/p4/pressure_probe"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T101702.891627Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p4/pressure-probe-20261018T101702.891627Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.0012209270000198558
+}

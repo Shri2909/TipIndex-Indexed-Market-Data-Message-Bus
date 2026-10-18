@@ -1,0 +1,12 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191234
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x5b11bc5810e8, 0x5b11bc5828da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x5b11bc5828e0,0x5b11bc59a800), 
+INFO:      802 files found in tests/fuzz/corpus/ops_indexed
+INFO: seed corpus: files: 802 min: 1b max: 28250b total: 784494b rss: 34Mb
+#803	INITED cov: 1796 ft: 7974 corp: 593/577Kb exec/s: 47 rss: 547Mb
+#1024	pulse  cov: 1796 ft: 7974 corp: 593/577Kb lim: 65536 exec/s: 36 rss: 547Mb
+#1113	NEW    cov: 1796 ft: 7979 corp: 594/582Kb lim: 65536 exec/s: 37 rss: 613Mb L: 4255/28250 MS: 5 CMP-ChangeByte-ChangeByte-ShuffleBytes-ChangeByte- DE: "\376\377\377\377\377\377\377\177"-
+#1208	REDUCE cov: 1796 ft: 7979 corp: 594/581Kb lim: 65536 exec/s: 36 rss: 613Mb L: 3229/28250 MS: 5 CrossOver-ChangeByte-CMP-CMP-EraseBytes- DE: "othe"-"\021\000\000\000\000\000\000\014"-
+#1469	REDUCE cov: 1796 ft: 7979 corp: 594/581Kb lim: 65536 exec/s: 40 rss: 613Mb L: 1032/28250 MS: 1 EraseBytes-
+#1485	REDUCE cov: 1796 ft: 7979 corp: 594/581Kb lim: 65536 exec/s: 41 rss: 613Mb L: 187/28250 MS: 1 EraseBytes-

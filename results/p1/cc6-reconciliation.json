@@ -1,0 +1,14 @@
+{
+  "criterion": "CC-6/V04",
+  "status": "passed",
+  "mismatches": [],
+  "compared_type_keys": 18,
+  "compared_locate_keys": 8907,
+  "message_count": 268744780,
+  "uncompressed_bytes": 8251407909,
+  "inputs": {
+    "results/data/itch_20191230_counts.json": "01911be1842f95dc13952999a5fa801d8ebefef2f6e387daf115ee31d4091303",
+    "results/data/itch_20191230_counts_cpp.json": "50718e9635c44ea3033be6bee2e42becb1a72659513d7e1524da35796c4c55a5",
+    "results/data/itch_20191230_uncompressed_bytes.txt": "09f8fb1bbf2a4f26307089254b07dbaa2759e3349a346b8cd65a7fe188a7a077"
+  }
+}

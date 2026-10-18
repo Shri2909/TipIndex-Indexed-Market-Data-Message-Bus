@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-17T15:23:42.433807+00:00",
+  "method": "Root visual inspection via view_image of actual real-data outputs",
+  "checks": [
+    "Legible axis labels and symbol names",
+    "CCDF survival and Lorenz endpoints/order consistent with plotted quantities",
+    "Family stacks and execution/modify fractions rendered without clipping"
+  ],
+  "figures": {
+    "F02_symbol_volume_skew.png": "e7fedd90be7300a8e43aa839a363721fe2a05710a8b3f8a9e86a2a99fade9c0f",
+    "F03_family_composition.png": "da1ce22a26c00761f92ffb57d62c6a832b8dd26b52afc46169bdeb4f20fbdb8e"
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "step": "fallback-configure",
+    "argv": [
+      "cmake",
+      "--preset",
+      "release",
+      "-B",
+      "build/gtest-fallback",
+      "-DTIPLOG_FORCE_FETCH_GTEST=ON"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 3.2013825260000885,
+    "log": "fallback-configure.log"
+  },
+  {
+    "step": "fallback-build",
+    "argv": [
+      "cmake",
+      "--build",
+      "build/gtest-fallback",
+      "--parallel",
+      "4"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 14.128666128000077,
+    "log": "fallback-build.log"
+  },
+  {
+    "step": "fallback-ctest",
+    "argv": [
+      "ctest",
+      "--test-dir",
+      "build/gtest-fallback",
+      "--output-on-failure",
+      "--no-tests=error"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.02675512399946456,
+    "log": "fallback-ctest.log"
+  },
+  {
+    "step": "clang-configure",
+    "argv": [
+      "cmake",
+      "--preset",
+      "release",
+      "-B",
+      "build/release-clang",
+      "-DCMAKE_CXX_COMPILER=clang++"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 3.5827849880006397,
+    "log": "clang-configure.log"
+  },
+  {
+    "step": "clang-build",
+    "argv": [
+      "cmake",
+      "--build",
+      "build/release-clang",
+      "--parallel",
+      "4"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 7.937131853999745,
+    "log": "clang-build.log"
+  },
+  {
+    "step": "clang-ctest",
+    "argv": [
+      "ctest",
+      "--test-dir",
+      "build/release-clang",
+      "--output-on-failure",
+      "--no-tests=error"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.03085685000041849,
+    "log": "clang-ctest.log"
+  }
+]

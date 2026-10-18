@@ -1,0 +1,1196 @@
+{
+  "affinity": {
+    "capture_process": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "cpu_is_atom_pmu_member": false,
+    "cpu_is_core_pmu_member": true,
+    "limitation": "Affinity does not isolate shared caches, package power, thermals, or sibling activity.",
+    "pin_details": {
+      "affinity": [
+        2
+      ],
+      "checksum": 8386560,
+      "cpu_end": 2,
+      "cpu_start": 2,
+      "diagnostic_only_not_benchmark": true,
+      "errors": {},
+      "frequency_after_khz": 4344003,
+      "frequency_before_khz": 4344003,
+      "system_seconds": 9.999999999999593e-06,
+      "user_seconds": 1.600000000000039e-05,
+      "wall_ns": 22429
+    },
+    "pin_diagnostic": {
+      "argv": [
+        "taskset",
+        "-c",
+        "2",
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-c",
+        "\nimport ctypes, json, os, resource, time\nfrom pathlib import Path\ncpu = int(__import__(\"sys\").argv[1])\nerrors = {}\ndef frequency():\n    try:\n        return int(Path(f\"/sys/devices/system/cpu/cpu{cpu}/cpufreq/scaling_cur_freq\").read_text())\n    except (OSError, ValueError) as exc:\n        errors[\"frequency\"] = str(exc)\n        return None\nlibc = ctypes.CDLL(None, use_errno=True)\ndef current_cpu():\n    try:\n        value = libc.sched_getcpu()\n        if value < 0:\n            raise OSError(ctypes.get_errno(), \"sched_getcpu failed\")\n        return value\n    except (AttributeError, OSError) as exc:\n        errors[\"sched_getcpu\"] = str(exc)\n        return None\nbefore = frequency()\nstart_cpu = current_cpu()\nstart_usage = resource.getrusage(resource.RUSAGE_SELF)\nstart = time.perf_counter_ns()\nchecksum = sum(range(4096))\nelapsed = time.perf_counter_ns() - start\nend_usage = resource.getrusage(resource.RUSAGE_SELF)\nend_cpu = current_cpu()\nafter = frequency()\nprint(json.dumps({\"affinity\": sorted(os.sched_getaffinity(0)), \"cpu_start\": start_cpu,\n \"cpu_end\": end_cpu, \"frequency_before_khz\": before, \"frequency_after_khz\": after,\n \"diagnostic_only_not_benchmark\": True, \"checksum\": checksum,\n \"wall_ns\": elapsed, \"user_seconds\": end_usage.ru_utime - start_usage.ru_utime,\n \"system_seconds\": end_usage.ru_stime - start_usage.ru_stime, \"errors\": errors}))\n",
+        "2"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/taskset",
+      "resolved_executable": "/usr/bin/taskset",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"affinity\": [2], \"cpu_start\": 2, \"cpu_end\": 2, \"frequency_before_khz\": 4344003, \"frequency_after_khz\": 4344003, \"diagnostic_only_not_benchmark\": true, \"checksum\": 8386560, \"wall_ns\": 22429, \"user_seconds\": 1.600000000000039e-05, \"system_seconds\": 9.999999999999593e-06, \"errors\": {}}\n"
+    },
+    "pin_verified": true,
+    "requested_cpu": 2,
+    "smt_sibling_idle_verified": false,
+    "smt_siblings": [
+      2,
+      3
+    ]
+  },
+  "build": {
+    "cmake_caches": {
+      "build/asan-ubsan/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Debug",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/debug/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Debug",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "g++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/gcc-ar-15",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/gcc-ranlib-15",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-O0 -g -D_GLIBCXX_ASSERTIONS",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/fuzz/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Debug",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "ON",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/gtest-fallback/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/g++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/gcc-ar-15",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/gcc-ranlib-15",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_C_COMPILER:FILEPATH": "/usr/bin/cc",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "ON",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "FetchContent v1.17.0"
+      },
+      "build/release-clang/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/release/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "g++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/gcc-ar-15",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/gcc-ranlib-15",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      }
+    },
+    "environment_flags": {
+      "CC": null,
+      "CFLAGS": null,
+      "CXX": null,
+      "CXXFLAGS": null,
+      "LDFLAGS": null
+    },
+    "presets": {
+      "buildPresets": [
+        {
+          "configurePreset": "debug",
+          "name": "debug"
+        },
+        {
+          "configurePreset": "release",
+          "name": "release"
+        },
+        {
+          "configurePreset": "asan-ubsan",
+          "name": "asan-ubsan"
+        },
+        {
+          "configurePreset": "fuzz",
+          "name": "fuzz"
+        }
+      ],
+      "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 30,
+        "patch": 0
+      },
+      "configurePresets": [
+        {
+          "binaryDir": "${sourceDir}/build/${presetName}",
+          "cacheVariables": {
+            "BUILD_TESTING": "ON",
+            "CMAKE_CXX_EXTENSIONS": "OFF",
+            "CMAKE_CXX_STANDARD": "20",
+            "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+          },
+          "generator": "Unix Makefiles",
+          "hidden": true,
+          "name": "base"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_COMPILER": "g++",
+            "CMAKE_CXX_FLAGS_DEBUG": "-O0 -g -D_GLIBCXX_ASSERTIONS"
+          },
+          "inherits": "base",
+          "name": "debug"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "CMAKE_CXX_COMPILER": "g++",
+            "CMAKE_CXX_FLAGS_RELEASE": "-O2 -g -march=x86-64-v3 -DNDEBUG"
+          },
+          "inherits": "base",
+          "name": "release"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_COMPILER": "clang++",
+            "CMAKE_CXX_FLAGS_DEBUG": "-O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+            "CMAKE_EXE_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all",
+            "CMAKE_SHARED_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all"
+          },
+          "inherits": "base",
+          "name": "asan-ubsan"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_COMPILER": "clang++",
+            "CMAKE_CXX_FLAGS_DEBUG": "-O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+            "CMAKE_EXE_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all",
+            "CMAKE_SHARED_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all",
+            "TIPLOG_ENABLE_FUZZING": "ON"
+          },
+          "inherits": "base",
+          "name": "fuzz"
+        }
+      ],
+      "testPresets": [
+        {
+          "configurePreset": "debug",
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "debug",
+          "output": {
+            "outputOnFailure": true
+          }
+        },
+        {
+          "configurePreset": "release",
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "release",
+          "output": {
+            "outputOnFailure": true
+          }
+        },
+        {
+          "configurePreset": "asan-ubsan",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+            "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+          },
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "asan-ubsan",
+          "output": {
+            "outputOnFailure": true
+          }
+        },
+        {
+          "configurePreset": "fuzz",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+            "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+          },
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "fuzz",
+          "output": {
+            "outputOnFailure": true
+          }
+        }
+      ],
+      "version": 6
+    },
+    "target_flags": {
+      "build/asan-ubsan/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/debug/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O0 -g -D_GLIBCXX_ASSERTIONS -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/fuzz_itch_walker.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/fuzz_trace_reader.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/gtest-fallback/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -isystem \"/home/abc/Desktop/Jane Street/build/gtest-fallback/_deps/googletest-src/googletest/include\" -isystem \"/home/abc/Desktop/Jane Street/build/gtest-fallback/_deps/googletest-src/googletest\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release-clang/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2"
+    }
+  },
+  "capture_invocation": [
+    "/home/abc/Desktop/Jane Street/scripts/env_capture.sh",
+    "--preset",
+    "release"
+  ],
+  "captured_at_utc": "2026-10-17T14:51:59.660199+00:00",
+  "controls": {
+    "ac_online": true,
+    "aslr_randomize_va_space": "2",
+    "no_turbo": "0",
+    "per_process_aslr_probe": {
+      "argv": [
+        "setarch",
+        "x86_64",
+        "-R",
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-c",
+        "import json; from pathlib import Path; print(json.dumps({'child_started': True, 'personality_hex': Path('/proc/self/personality').read_text().strip()}))"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/setarch",
+      "resolved_executable": "/usr/bin/setarch",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"child_started\": true, \"personality_hex\": \"00040000\"}\n"
+    },
+    "perf_event_paranoid": "4",
+    "smt_active": "1",
+    "smt_control": "on",
+    "supplies": {
+      "ADP1": {
+        "online": "1",
+        "type": "Mains"
+      },
+      "BAT0": {
+        "capacity": "100",
+        "status": "Full",
+        "type": "Battery"
+      }
+    },
+    "thermals": {
+      "thermal_zone0": {
+        "temp_millidegrees_c": "68000",
+        "type": "acpitz"
+      },
+      "thermal_zone1": {
+        "temp_millidegrees_c": "57050",
+        "type": "SEN1"
+      },
+      "thermal_zone2": {
+        "temp_millidegrees_c": "20000",
+        "type": "INT3400 Thermal"
+      },
+      "thermal_zone3": {
+        "temp_millidegrees_c": "73000",
+        "type": "TCPU"
+      },
+      "thermal_zone4": {
+        "temp_millidegrees_c": "73000",
+        "type": "TCPU_PCI"
+      },
+      "thermal_zone5": {
+        "temp_millidegrees_c": "73000",
+        "type": "x86_pkg_temp"
+      }
+    }
+  },
+  "cpu": {
+    "lscpu": {
+      "argv": [
+        "lscpu",
+        "--json"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/lscpu",
+      "resolved_executable": "/usr/bin/lscpu",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n   \"lscpu\": [\n      {\n         \"field\": \"Architecture:\",\n         \"data\": \"x86_64\"\n      },{\n         \"field\": \"CPU op-mode(s):\",\n         \"data\": \"32-bit, 64-bit\"\n      },{\n         \"field\": \"Address sizes:\",\n         \"data\": \"39 bits physical, 48 bits virtual\"\n      },{\n         \"field\": \"Byte Order:\",\n         \"data\": \"Little Endian\"\n      },{\n         \"field\": \"CPU(s):\",\n         \"data\": \"12\"\n      },{\n         \"field\": \"On-line CPU(s) list:\",\n         \"data\": \"0-11\"\n      },{\n         \"field\": \"Vendor ID:\",\n         \"data\": \"GenuineIntel\"\n      },{\n         \"field\": \"Model name:\",\n         \"data\": \"12th Gen Intel(R) Core(TM) i5-1235U\"\n      },{\n         \"field\": \"CPU family:\",\n         \"data\": \"6\"\n      },{\n         \"field\": \"Model:\",\n         \"data\": \"154\"\n      },{\n         \"field\": \"Thread(s) per core:\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Core(s) per socket:\",\n         \"data\": \"10\"\n      },{\n         \"field\": \"Socket(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"Stepping:\",\n         \"data\": \"4\"\n      },{\n         \"field\": \"CPU(s) scaling MHz:\",\n         \"data\": \"31%\"\n      },{\n         \"field\": \"CPU max MHz:\",\n         \"data\": \"4400.0000\"\n      },{\n         \"field\": \"CPU min MHz:\",\n         \"data\": \"400.0000\"\n      },{\n         \"field\": \"BogoMIPS:\",\n         \"data\": \"4992.00\"\n      },{\n         \"field\": \"Flags:\",\n         \"data\": \"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities\"\n      },{\n         \"field\": \"Virtualization:\",\n         \"data\": \"VT-x\"\n      },{\n         \"field\": \"L1d cache:\",\n         \"data\": \"352 KiB (10 instances)\"\n      },{\n         \"field\": \"L1i cache:\",\n         \"data\": \"576 KiB (10 instances)\"\n      },{\n         \"field\": \"L2 cache:\",\n         \"data\": \"6.5 MiB (4 instances)\"\n      },{\n         \"field\": \"L3 cache:\",\n         \"data\": \"12 MiB (1 instance)\"\n      },{\n         \"field\": \"NUMA node(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"NUMA node0 CPU(s):\",\n         \"data\": \"0-11\"\n      },{\n         \"field\": \"Vulnerability Gather data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Ghostwrite:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Indirect target selection:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Itlb multihit:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability L1tf:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Meltdown:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mmio stale data:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Old microcode:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Reg file data sampling:\",\n         \"data\": \"Mitigation; Clear Register File\"\n      },{\n         \"field\": \"Vulnerability Retbleed:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec rstack overflow:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec store bypass:\",\n         \"data\": \"Mitigation; Speculative Store Bypass disabled via prctl\"\n      },{\n         \"field\": \"Vulnerability Spectre v1:\",\n         \"data\": \"Mitigation; usercopy/swapgs barriers and __user pointer sanitization\"\n      },{\n         \"field\": \"Vulnerability Spectre v2:\",\n         \"data\": \"Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\"\n      },{\n         \"field\": \"Vulnerability Srbds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsa:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsx async abort:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Vmscape:\",\n         \"data\": \"Mitigation; IBPB before exit to userspace\"\n      }\n   ]\n}\n"
+    },
+    "models": [
+      "12th Gen Intel(R) Core(TM) i5-1235U"
+    ],
+    "online": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "pmus": {
+      "breakpoint": {
+        "type": "5"
+      },
+      "cpu_atom": {
+        "cpus": "4-11",
+        "events": {
+          "branch-instructions": "event=0xc4",
+          "branch-misses": "event=0xc5",
+          "bus-cycles": "event=0x3c,umask=0x01",
+          "cache-misses": "event=0x2e,umask=0x41",
+          "cache-references": "event=0x2e,umask=0x4f",
+          "cpu-cycles": "event=0x3c",
+          "instructions": "event=0xc0",
+          "mem-loads": "event=0xd0,umask=0x5,ldlat=3\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "mem-stores": "event=0xd0,umask=0x6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "ref-cycles": "event=0x3c,umask=0x01",
+          "topdown-bad-spec": "event=0x73,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "topdown-be-bound": "event=0x74,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "topdown-fe-bound": "event=0x71,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "topdown-retiring": "event=0xc2,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+        },
+        "type": "10"
+      },
+      "cpu_core": {
+        "cpus": "0-3",
+        "events": {
+          "branch-instructions": "event=0xc4",
+          "branch-misses": "event=0xc5",
+          "bus-cycles": "event=0x3c,umask=0x01",
+          "cache-misses": "event=0x2e,umask=0x41",
+          "cache-references": "event=0x2e,umask=0x4f",
+          "cpu-cycles": "event=0x3c",
+          "instructions": "event=0xc0",
+          "mem-loads": "event=0xcd,umask=0x1,ldlat=3",
+          "mem-loads-aux": "event=0x03,umask=0x82",
+          "mem-stores": "event=0xcd,umask=0x2",
+          "ref-cycles": "event=0x3c,umask=0x01",
+          "slots": "event=0x00,umask=0x4",
+          "topdown-bad-spec": "event=0x00,umask=0x81",
+          "topdown-be-bound": "event=0x00,umask=0x83",
+          "topdown-br-mispredict": "event=0x00,umask=0x85",
+          "topdown-fe-bound": "event=0x00,umask=0x82",
+          "topdown-fetch-lat": "event=0x00,umask=0x86",
+          "topdown-heavy-ops": "event=0x00,umask=0x84",
+          "topdown-mem-bound": "event=0x00,umask=0x87",
+          "topdown-retiring": "event=0x00,umask=0x80"
+        },
+        "type": "4"
+      },
+      "cstate_core": {
+        "type": "25"
+      },
+      "cstate_pkg": {
+        "type": "26"
+      },
+      "i915": {
+        "type": "28"
+      },
+      "intel_bts": {
+        "type": "11"
+      },
+      "intel_pt": {
+        "type": "12"
+      },
+      "kprobe": {
+        "type": "8"
+      },
+      "msr": {
+        "type": "13"
+      },
+      "power": {
+        "type": "27"
+      },
+      "software": {
+        "type": "1"
+      },
+      "tracepoint": {
+        "type": "2"
+      },
+      "uncore_arb_0": {
+        "type": "18"
+      },
+      "uncore_arb_1": {
+        "type": "19"
+      },
+      "uncore_cbox_0": {
+        "type": "14"
+      },
+      "uncore_cbox_1": {
+        "type": "15"
+      },
+      "uncore_cbox_2": {
+        "type": "16"
+      },
+      "uncore_cbox_3": {
+        "type": "17"
+      },
+      "uncore_clock": {
+        "type": "20"
+      },
+      "uncore_imc_0": {
+        "type": "21"
+      },
+      "uncore_imc_1": {
+        "type": "22"
+      },
+      "uncore_imc_free_running_0": {
+        "type": "23"
+      },
+      "uncore_imc_free_running_1": {
+        "type": "24"
+      },
+      "uprobe": {
+        "type": "9"
+      }
+    },
+    "topology": {
+      "0": {
+        "core_id": "0",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "0-1"
+      },
+      "1": {
+        "core_id": "0",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "0-1"
+      },
+      "10": {
+        "core_id": "14",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "10"
+      },
+      "11": {
+        "core_id": "15",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "11"
+      },
+      "2": {
+        "core_id": "4",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "2-3"
+      },
+      "3": {
+        "core_id": "4",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "2-3"
+      },
+      "4": {
+        "core_id": "8",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "4"
+      },
+      "5": {
+        "core_id": "9",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "5"
+      },
+      "6": {
+        "core_id": "10",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "6"
+      },
+      "7": {
+        "core_id": "11",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "7"
+      },
+      "8": {
+        "core_id": "12",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "8"
+      },
+      "9": {
+        "core_id": "13",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "9"
+      }
+    }
+  },
+  "git": {
+    "dirty": true,
+    "head": {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "--git-dir=/home/abc/Desktop/Jane Street/.tiplog-git",
+        "--work-tree=/home/abc/Desktop/Jane Street",
+        "rev-parse",
+        "--verify",
+        "HEAD"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/git",
+      "resolved_executable": "/usr/bin/git",
+      "returncode": 128,
+      "stderr": "fatal: Needed a single revision\n",
+      "stdout": ""
+    },
+    "managed_metadata_preserved": "/home/abc/Desktop/Jane Street/.git",
+    "metadata": "/home/abc/Desktop/Jane Street/.tiplog-git",
+    "sha": null,
+    "status": {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "--git-dir=/home/abc/Desktop/Jane Street/.tiplog-git",
+        "--work-tree=/home/abc/Desktop/Jane Street",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/git",
+      "resolved_executable": "/usr/bin/git",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "?? .gitignore\n?? CMakeLists.txt\n?? CMakePresets.json\n?? IMPLEMENTATION_EXECUTION_PROMPT.md\n?? MASTER_PROJECT_PROMPT.md\n?? PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md\n?? PHASES_2_TO_5_IMPLEMENTATION_PROMPT.md\n?? README.md\n?? cmake/\n?? data/\n?? docs/\n?? py/\n?? results/\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n"
+    },
+    "unborn_head_allowed_at_bootstrap": true
+  },
+  "kernel": {
+    "os_release": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo",
+    "uname": [
+      "Linux",
+      "abc-HP-Laptop-15s-fq5xxx",
+      "7.0.0-38-generic",
+      "#38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026",
+      "x86_64",
+      ""
+    ]
+  },
+  "limitations": [
+    "Point-in-time environment observation; P6 still requires AC power and a pilot.",
+    "No SMT offlining, frequency/governor/turbo/ASLR sysctl changes or privilege elevation.",
+    "Frequency samples bracket a short plumbing diagnostic, not a benchmark or stable-frequency proof."
+  ],
+  "machine_settings_changed": false,
+  "master_project_prompt_sha256": "89c0fe2ab7be8304d5cf9b9b8da07ee554efffc9c75596822fdd4f353f7d3067",
+  "phase": "P0.4",
+  "process_security_context": {
+    "CapAmb": "0000000000000000",
+    "CapBnd": "0000000000000000",
+    "CapEff": "0000000000000000",
+    "CapInh": "0000000000000000",
+    "CapPrm": "0000000000000000",
+    "NoNewPrivs": "1",
+    "Seccomp": "2"
+  },
+  "profiling": {
+    "availability_probes": {
+      "cpu_core/cycles/u": {
+        "argv": [
+          "perf",
+          "stat",
+          "--no-scale",
+          "-x",
+          ";",
+          "-e",
+          "cpu_core/cycles/u",
+          "--",
+          "taskset",
+          "-c",
+          "2",
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 1,
+        "stderr": "Error:\nNo supported events found.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+        "stdout": ""
+      },
+      "cpu_core/instructions/u": {
+        "argv": [
+          "perf",
+          "stat",
+          "--no-scale",
+          "-x",
+          ";",
+          "-e",
+          "cpu_core/instructions/u",
+          "--",
+          "taskset",
+          "-c",
+          "2",
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 1,
+        "stderr": "Error:\nNo supported events found.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+        "stdout": ""
+      },
+      "task-clock": {
+        "argv": [
+          "perf",
+          "stat",
+          "--no-scale",
+          "-x",
+          ";",
+          "-e",
+          "task-clock",
+          "--",
+          "taskset",
+          "-c",
+          "2",
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 1,
+        "stderr": "Error:\nNo supported events found.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+        "stdout": ""
+      }
+    },
+    "control_probe": {
+      "reason": "Fallback selected; no successful counter collection required for P0.",
+      "status": "not_run"
+    },
+    "counter_values": null,
+    "decision": "DEC-2=no: no privileged settings changes; time/getrusage fallback",
+    "fallback": {
+      "cachegrind": "planned reduced configurations in later experiments; instruction/cache counts must be labeled simulated; not run in P0",
+      "hardware_counter_claims": false,
+      "timing": [
+        "wall_clock",
+        "getrusage_user_seconds",
+        "getrusage_system_seconds"
+      ]
+    },
+    "hardware_counter_measurement_selected": false,
+    "limitation": "perf-list names or exit status alone do not demonstrate usable counters. Probes are diagnostics, not performance results.",
+    "perf_list": {
+      "cpu_core/L1-dcache-load-misses/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/L1-dcache-load-misses/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/LLC-load-misses/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/LLC-load-misses/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/branch-misses/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/branch-misses/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/cycles/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/cycles/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/instructions/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/instructions/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "scaling": null,
+    "time_enabled": null,
+    "time_running": null
+  },
+  "project_root": "/home/abc/Desktop/Jane Street",
+  "python": {
+    "base_prefix": "/usr",
+    "executable": "/home/abc/Desktop/Jane Street/.venv/bin/python",
+    "prefix": "/home/abc/Desktop/Jane Street/.venv",
+    "resolved_executable": "/usr/bin/python3.14",
+    "version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "read_errors": {
+    "/sys/devices/system/cpu/cpu0/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu0/topology/core_type'",
+    "/sys/devices/system/cpu/cpu1/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu1/topology/core_type'",
+    "/sys/devices/system/cpu/cpu10/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu10/topology/core_type'",
+    "/sys/devices/system/cpu/cpu11/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu11/topology/core_type'",
+    "/sys/devices/system/cpu/cpu2/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu2/topology/core_type'",
+    "/sys/devices/system/cpu/cpu3/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu3/topology/core_type'",
+    "/sys/devices/system/cpu/cpu4/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu4/topology/core_type'",
+    "/sys/devices/system/cpu/cpu5/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu5/topology/core_type'",
+    "/sys/devices/system/cpu/cpu6/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu6/topology/core_type'",
+    "/sys/devices/system/cpu/cpu7/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu7/topology/core_type'",
+    "/sys/devices/system/cpu/cpu8/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu8/topology/core_type'",
+    "/sys/devices/system/cpu/cpu9/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu9/topology/core_type'"
+  },
+  "resources": {
+    "disk_free_bytes": 23784022016,
+    "disk_path": "/home/abc/Desktop/Jane Street",
+    "disk_total_bytes": 84583702528,
+    "disk_used_bytes": 56456007680,
+    "load_average": [
+      1.2529296875,
+      1.78466796875,
+      1.76953125
+    ],
+    "meminfo": {
+      "Active": "3577908 kB",
+      "Active(anon)": "2292536 kB",
+      "Active(file)": "1285372 kB",
+      "AnonHugePages": "0 kB",
+      "AnonPages": "2239580 kB",
+      "Balloon": "0 kB",
+      "Bounce": "0 kB",
+      "Buffers": "154456 kB",
+      "Cached": "2352012 kB",
+      "CmaFree": "0 kB",
+      "CmaTotal": "0 kB",
+      "CommitLimit": "11949604 kB",
+      "Committed_AS": "13192784 kB",
+      "DirectMap1G": "11534336 kB",
+      "DirectMap2M": "4651008 kB",
+      "DirectMap4k": "255736 kB",
+      "Dirty": "1032 kB",
+      "FileHugePages": "34816 kB",
+      "FilePmdMapped": "0 kB",
+      "GPUActive": "0 kB",
+      "GPUReclaim": "0 kB",
+      "HardwareCorrupted": "0 kB",
+      "HugePages_Free": "0",
+      "HugePages_Rsvd": "0",
+      "HugePages_Surp": "0",
+      "HugePages_Total": "0",
+      "Hugepagesize": "2048 kB",
+      "Hugetlb": "0 kB",
+      "Inactive": "902140 kB",
+      "Inactive(anon)": "0 kB",
+      "Inactive(file)": "902140 kB",
+      "KReclaimable": "163028 kB",
+      "KernelStack": "15692 kB",
+      "Mapped": "743400 kB",
+      "MemAvailable": "12093460 kB",
+      "MemFree": "10084736 kB",
+      "MemTotal": "15510612 kB",
+      "Mlocked": "64 kB",
+      "NFS_Unstable": "0 kB",
+      "PageTables": "39432 kB",
+      "Percpu": "12000 kB",
+      "SReclaimable": "163028 kB",
+      "SUnreclaim": "218492 kB",
+      "SecPageTables": "3332 kB",
+      "Shmem": "319184 kB",
+      "ShmemHugePages": "249856 kB",
+      "ShmemPmdMapped": "0 kB",
+      "Slab": "381520 kB",
+      "SwapCached": "0 kB",
+      "SwapFree": "4194300 kB",
+      "SwapTotal": "4194300 kB",
+      "Unaccepted": "0 kB",
+      "Unevictable": "265780 kB",
+      "VmallocChunk": "0 kB",
+      "VmallocTotal": "34359738367 kB",
+      "VmallocUsed": "61488 kB",
+      "Writeback": "0 kB",
+      "WritebackTmp": "0 kB",
+      "Zswap": "0 kB",
+      "Zswapped": "0 kB"
+    }
+  },
+  "schema_version": 1,
+  "selected_preset": "release",
+  "tools": {
+    "clang": {
+      "argv": [
+        "clang",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/clang",
+      "resolved_executable": "/usr/lib/llvm-21/bin/clang",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Ubuntu clang version 21.1.8 (6ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-21/bin\n"
+    },
+    "clang++": {
+      "argv": [
+        "clang++",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/clang++",
+      "resolved_executable": "/usr/lib/llvm-21/bin/clang",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Ubuntu clang version 21.1.8 (6ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-21/bin\n"
+    },
+    "cmake": {
+      "argv": [
+        "cmake",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/cmake",
+      "resolved_executable": "/usr/bin/cmake",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "cmake version 4.4.0\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+    },
+    "g++": {
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/g++",
+      "resolved_executable": "/usr/bin/x86_64-linux-gnu-g++-15",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "gcc": {
+      "argv": [
+        "gcc",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/gcc",
+      "resolved_executable": "/usr/bin/x86_64-linux-gnu-gcc-15",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "git": {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/git",
+      "resolved_executable": "/usr/bin/git",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "git version 2.53.0\n"
+    },
+    "make": {
+      "argv": [
+        "make",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/make",
+      "resolved_executable": "/usr/bin/make",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "GNU Make 4.4.1\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n"
+    },
+    "perf": {
+      "argv": [
+        "perf",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/perf",
+      "resolved_executable": "/usr/bin/perf",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "perf version 7.0.14\n"
+    },
+    "setarch": {
+      "argv": [
+        "setarch",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/setarch",
+      "resolved_executable": "/usr/bin/setarch",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "setarch from util-linux 2.41.3\n"
+    },
+    "taskset": {
+      "argv": [
+        "taskset",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/taskset",
+      "resolved_executable": "/usr/bin/taskset",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "taskset from util-linux 2.41.3\n"
+    },
+    "valgrind": {
+      "argv": [
+        "valgrind",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/valgrind",
+      "resolved_executable": "/usr/bin/valgrind",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "valgrind-3.26.0\n"
+    }
+  }
+}

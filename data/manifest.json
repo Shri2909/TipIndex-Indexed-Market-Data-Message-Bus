@@ -1,0 +1,27 @@
+{
+  "source": "nasdaq",
+  "source_url": "https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/12302019.NASDAQ_ITCH50.gz",
+  "path": "data/raw/12302019.NASDAQ_ITCH50.gz",
+  "size_bytes": 3524013057,
+  "last_modified": "Tue, 31 Dec 2019 05:13:48 GMT",
+  "etag": "\"64b3281599bfd51:0\"",
+  "accept_ranges": "bytes",
+  "sha256": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+  "downloaded_at_utc": "2026-10-17T11:02:59.244802+00:00",
+  "gzip_validation": "passed",
+  "redistribution": "Raw and message-level derived data stay local and ignored",
+  "stream_characterization": {
+    "uncompressed_bytes": 8251407909,
+    "cpp_message_count": 268744780,
+    "binaryfile_terminator_present": false,
+    "binaryfile_incomplete": true,
+    "gzip_and_frame_integrity": "passed",
+    "python_reconciliation": "passed",
+    "python_message_count": 268744780,
+    "python_counts": "results/data/itch_20191230_counts.json",
+    "cc6_evidence": "results/p1/cc6-reconciliation.json",
+    "timestamp_inversions": 0,
+    "symbol_directory_entries": 8906,
+    "hierarchy_trace_gate": "results/p1/data-gate.json"
+  }
+}

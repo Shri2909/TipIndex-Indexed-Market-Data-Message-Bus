@@ -1,0 +1,124 @@
+{
+  "description": "P0 checked source/document snapshot; unborn Git HEAD. Generated logs/env excluded to avoid circular hashes.",
+  "files": {
+    ".gitignore": "554443b2fc4c1f177775045054408a3511d82e413d3a7f72ffbbe42182c96733",
+    "CMakeLists.txt": "ee4c2df920f8cbf7a368dedcc33a5b5eece62b856fe19f7f97b4e2acd80e6bc0",
+    "CMakePresets.json": "74c8e0a98feea5734d3582d286a416d2eb122f632f28798bd3f97fd2540a7e0a",
+    "IMPLEMENTATION_EXECUTION_PROMPT.md": "af03050d1465d96a6aac594340d331795a5d356b7c21edb7aa7d1c35cf3946ca",
+    "MASTER_PROJECT_PROMPT.md": "89c0fe2ab7be8304d5cf9b9b8da07ee554efffc9c75596822fdd4f353f7d3067",
+    "README.md": "7a4c9496b795483aa9ca394ea9c8d8b710302f7c738865ac3ed45d25e0aeb1ab",
+    "cmake/deps.cmake": "5eb0d70e37d6bd4514a9b16c96751b9db7370304d6ccfa1118b324e75e10f759",
+    "docs/plan/ARCHITECTURE.md": "93a93a9f396060c8ef37b76c77c60387e017d11656a8eb97939e29a4ef275d19",
+    "docs/plan/FINDINGS_TO_IMPLEMENTATION.md": "6c191c40e64810233eb757a6c0b862970e44f28e3a9c3766a189f81dcdb83ecd",
+    "docs/plan/IMPLEMENTATION_PLAN.md": "ee8b897d3a2a20bf7f3bba3e9c523ae59b80ec237258882aee4ef0277469fa22",
+    "docs/plan/INDEX.md": "da244faf6f10ca07f21e92c0c17b97329bc379c093b3cec5bd1f865ba6fbf0f5",
+    "docs/plan/PROBLEM_STATEMENT_AND_BENCHMARKS.md": "7eee78210eded0c0cca9f6600fcf2c99aa1e8bd9cce72aa23c2b3ef5f4507f2e",
+    "docs/plan/PROGRESS.md": "95e2ea0da889327d83c6b8e81010416e01568bff6e35f3de6b98d49abfdf6e04",
+    "docs/plan/RESEARCH.md": "72a603366ce2bb0db7e0895e267a89e4931de610406de19e0fe2c31bb4408fcb",
+    "docs/plan/REVIEW_2026-10-17.md": "4f723fd3372b70dc59b0dc40b3e2ba2e4c0a51bc810eb8f3a239e50a6906f643",
+    "docs/plan/STUDY_PLAN.md": "86ed871fe0e35ad5ff235ea0814664775619a99a390316c1ad539c162ae3a4b7",
+    "docs/plan/VALIDATION_PLAN.md": "9d3ddf5c6b7d3dac7dc8b9cd21df75b3a088f310ac45a4deee14f584f4800c47",
+    "py/pytest.ini": "0a0c358000b558af4503a6a6d7fba7c0895fec95c08f328d4e50d561bbb86ad9",
+    "py/requirements.txt": "48221c98c8d187dd387568e49cb2eb231e0a950ee655bfc97d044845321d4208",
+    "py/tests/test_smoke.py": "b151bf1028141ce8a6c4524c538432a41be1729addb186ad3862ada5bbfbb42c",
+    "py/tiplog_py/__init__.py": "ca0706e7cc917e9d86dbb21ec8ca7f1f190781eb6183153afe4d67f22fa3ed82",
+    "scripts/check_all.py": "2b2f358dbb0fc9e35d82b9b8d1448f5c5fba1cf5b2b493a56ce66002b1aac2e7",
+    "scripts/check_all.sh": "a8abbaf23d3f91730fbdacc5a75ee953ba7615c8a395def747d2d3d912c35513",
+    "scripts/env_capture.py": "074987b5b4b81502a8a7b60228cff7c662915e70c82fc982dda6c57f4c7d9036",
+    "scripts/env_capture.sh": "12be6453f761e28fff4b84fbd191e354bb57da3dffc521c6fd2439313a4af98d",
+    "scripts/git.sh": "20ec58667286e2ef4e70a79c84393b27881d94936b3274f4cfe23520d9207231",
+    "tests/unit/smoke_test.cpp": "2520a74b16b9b0fde2065d6134464e64a775e8ecea8f4c6e2ee4e4e26978654c"
+  },
+  "builds": {
+    "debug": {
+      "smoke_compile_commands": [
+        {
+          "directory": "/home/abc/Desktop/Jane Street/build/debug",
+          "command": "/usr/bin/g++   -O0 -g -D_GLIBCXX_ASSERTIONS -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+          "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+          "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+        }
+      ],
+      "test_executable_sha256": "4e6f45b3e623679d56410d4fa34a77181b769323037c0a4b8d13ad69b0cbb7a8",
+      "link_command": "/usr/bin/g++ -O0 -g -D_GLIBCXX_ASSERTIONS -Wl,--dependency-file=CMakeFiles/tiplog_smoke_test.dir/link.d CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -o tiplog_smoke_test  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a\n",
+      "gtest_provider": [
+        "TIPLOG_GTEST_PROVIDER:INTERNAL=system 1.17.0"
+      ]
+    },
+    "release": {
+      "smoke_compile_commands": [
+        {
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "command": "/usr/bin/g++   -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+          "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+          "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+        }
+      ],
+      "test_executable_sha256": "69ff4d416c4ee2345013f1b9df79d64f73e5edf24439264c3881cd3d39f86814",
+      "link_command": "/usr/bin/g++ -O2 -g -march=x86-64-v3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/tiplog_smoke_test.dir/link.d CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -o tiplog_smoke_test  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a\n",
+      "gtest_provider": [
+        "TIPLOG_GTEST_PROVIDER:INTERNAL=system 1.17.0"
+      ]
+    },
+    "asan-ubsan": {
+      "smoke_compile_commands": [
+        {
+          "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+          "command": "/usr/bin/clang++   -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+          "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+          "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+        }
+      ],
+      "test_executable_sha256": "c569a5693153a9a5b12d24ca66aa8b43bc3c260d597048a02a688c56dcac402b",
+      "link_command": "/usr/bin/clang++ -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover=all -Xlinker --dependency-file=CMakeFiles/tiplog_smoke_test.dir/link.d CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -o tiplog_smoke_test  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a\n",
+      "gtest_provider": [
+        "TIPLOG_GTEST_PROVIDER:INTERNAL=system 1.17.0"
+      ]
+    },
+    "fuzz": {
+      "smoke_compile_commands": [
+        {
+          "directory": "/home/abc/Desktop/Jane Street/build/fuzz",
+          "command": "/usr/bin/clang++   -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+          "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+          "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+        }
+      ],
+      "test_executable_sha256": "f0462d560189249b7a1076f7e2c504e8dc6a2107f9ee2a06753604773229f816",
+      "link_command": "/usr/bin/clang++ -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -fsanitize=address,undefined -fno-sanitize-recover=all -Xlinker --dependency-file=CMakeFiles/tiplog_smoke_test.dir/link.d CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -o tiplog_smoke_test  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a\n",
+      "gtest_provider": [
+        "TIPLOG_GTEST_PROVIDER:INTERNAL=system 1.17.0"
+      ]
+    },
+    "gtest-fallback": {
+      "smoke_compile_commands": [
+        {
+          "directory": "/home/abc/Desktop/Jane Street/build/gtest-fallback",
+          "command": "/usr/bin/g++  -isystem \"/home/abc/Desktop/Jane Street/build/gtest-fallback/_deps/googletest-src/googletest/include\" -isystem \"/home/abc/Desktop/Jane Street/build/gtest-fallback/_deps/googletest-src/googletest\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+          "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+          "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+        }
+      ],
+      "test_executable_sha256": "0ee592c6af15141659e1c654c3b7fa170e50bde035301165baf3790a75c9ba3e",
+      "link_command": "/usr/bin/g++ -O2 -g -march=x86-64-v3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/tiplog_smoke_test.dir/link.d CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -o tiplog_smoke_test  lib/libgtest_main.a lib/libgtest.a\n",
+      "gtest_provider": [
+        "TIPLOG_GTEST_PROVIDER:INTERNAL=FetchContent v1.17.0"
+      ]
+    },
+    "release-clang": {
+      "smoke_compile_commands": [
+        {
+          "directory": "/home/abc/Desktop/Jane Street/build/release-clang",
+          "command": "/usr/bin/clang++   -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+          "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+          "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+        }
+      ],
+      "test_executable_sha256": "f89084d43f5c88e1451a1255fe0591d1bff25b31a63755e22c1935a663f6c314",
+      "link_command": "/usr/bin/clang++ -O2 -g -march=x86-64-v3 -DNDEBUG -Xlinker --dependency-file=CMakeFiles/tiplog_smoke_test.dir/link.d CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -o tiplog_smoke_test  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a\n",
+      "gtest_provider": [
+        "TIPLOG_GTEST_PROVIDER:INTERNAL=system 1.17.0"
+      ]
+    }
+  }
+}

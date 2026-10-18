@@ -1,0 +1,55 @@
+[  2%] Building CXX object CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[  4%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[  8%] Built target tiplog_smoke_test
+[ 14%] Built target tiplog_trace
+[ 16%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 58%] Built target benchmark
+[ 62%] Built target tiplog_walk
+[ 66%] Built target tiplog_trace_check
+[ 70%] Built target tiplog_trace_test
+[ 72%] Building CXX object CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o
+[ 75%] Linking CXX static library libtiplog_ref.a
+[ 75%] Built target tiplog_ref
+[ 79%] Built target benchmark_main
+[ 81%] Linking CXX static library libtiplog_driver.a
+[ 83%] Building CXX object CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o
+[ 83%] Built target tiplog_driver
+[ 85%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 87%] Building CXX object CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o
+In file included from /usr/include/gtest/gtest-printers.h:122,
+                 from /usr/include/gtest/gtest-matchers.h:49,
+                 from /usr/include/gtest/internal/gtest-death-test-internal.h:47,
+                 from /usr/include/gtest/gtest-death-test.h:43,
+                 from /usr/include/gtest/gtest.h:64,
+                 from /home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:3:
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp: In member function ‘virtual void {anonymous}::OracleMatching_InvalidSubscriptionsAreRejectedIndependently_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:111:34: warning: ignoring return value of ‘tiplog::ref::OracleReplay tiplog::ref::ScanOracle::open_replay(const tiplog::SubscriptionSpec&, tiplog::Seq) const’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  111 |   EXPECT_THROW(oracle.open_replay({}, 0), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:1:
+/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.hpp:49:30: note: declared here
+   49 |   [[nodiscard]] OracleReplay open_replay(const SubscriptionSpec& sub, Seq after_seq) const;
+      |                              ^~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:112:34: warning: ignoring return value of ‘tiplog::ref::OracleReplay tiplog::ref::ScanOracle::open_replay(const tiplog::SubscriptionSpec&, tiplog::Seq) const’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  112 |   EXPECT_THROW(oracle.open_replay(exact("/a"), 0), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.hpp:49:30: note: declared here
+   49 |   [[nodiscard]] OracleReplay open_replay(const SubscriptionSpec& sub, Seq after_seq) const;
+      |                              ^~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp:114:34: warning: ignoring return value of ‘tiplog::ref::OracleReplay tiplog::ref::ScanOracle::open_replay(const tiplog::SubscriptionSpec&, tiplog::Seq) const’, declared with attribute ‘nodiscard’ [-Wunused-result]
+  114 |   EXPECT_THROW(oracle.open_replay(invalid, 0), std::invalid_argument);
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.hpp:49:30: note: declared here
+   49 |   [[nodiscard]] OracleReplay open_replay(const SubscriptionSpec& sub, Seq after_seq) const;
+      |                              ^~~~~~~~~~~
+[ 89%] Linking CXX executable tiplog_sim
+[ 89%] Built target tiplog_sim
+[ 91%] Linking CXX static library libtiplog_topics_subs.a
+[ 91%] Built target tiplog_topics_subs
+[ 93%] Building CXX object CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o
+[ 95%] Linking CXX executable tiplog_oracle_test
+[ 95%] Built target tiplog_oracle_test
+[ 97%] Linking CXX executable tiplog_driver_test
+[ 97%] Built target tiplog_driver_test
+[100%] Linking CXX executable tiplog_topics_subs_test
+[100%] Built target tiplog_topics_subs_test

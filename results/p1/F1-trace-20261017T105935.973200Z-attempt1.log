@@ -1,0 +1,32 @@
+Dictionary: 5 entries
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191230
+INFO: Loaded 1 modules   (731 inline 8-bit counters): 731 [0x60f507e6efc0, 0x60f507e6f29b), 
+INFO: Loaded 1 PC tables (731 PCs): 731 [0x60f507e6f2a0,0x60f507e72050), 
+INFO:       80 files found in tests/fuzz/corpus/trace_reader
+INFO: seed corpus: files: 80 min: 1b max: 126b total: 8360b rss: 33Mb
+#81	INITED cov: 203 ft: 337 corp: 63/6354b exec/s: 0 rss: 35Mb
+#58380	REDUCE cov: 203 ft: 337 corp: 63/6353b lim: 703 exec/s: 29190 rss: 72Mb L: 64/126 MS: 4 InsertByte-ChangeBinInt-ChangeBit-EraseBytes-
+#65536	pulse  cov: 203 ft: 337 corp: 63/6353b lim: 766 exec/s: 32768 rss: 76Mb
+#107633	REDUCE cov: 203 ft: 337 corp: 63/6328b lim: 1187 exec/s: 35877 rss: 102Mb L: 71/126 MS: 3 CrossOver-EraseBytes-CopyPart-
+#128659	REDUCE cov: 203 ft: 337 corp: 63/6327b lim: 1387 exec/s: 32164 rss: 115Mb L: 70/126 MS: 1 EraseBytes-
+#131072	pulse  cov: 203 ft: 337 corp: 63/6327b lim: 1407 exec/s: 32768 rss: 117Mb
+#255203	REDUCE cov: 203 ft: 337 corp: 63/6323b lim: 2640 exec/s: 31900 rss: 193Mb L: 66/126 MS: 3 ChangeBinInt-ChangeByte-EraseBytes-
+#262144	pulse  cov: 203 ft: 337 corp: 63/6323b lim: 2706 exec/s: 29127 rss: 197Mb
+#524288	pulse  cov: 203 ft: 337 corp: 63/6323b lim: 5315 exec/s: 29127 rss: 357Mb
+#1048576	pulse  cov: 203 ft: 337 corp: 63/6323b lim: 10535 exec/s: 29959 rss: 459Mb
+#1726156	REDUCE cov: 203 ft: 337 corp: 63/6322b lim: 17281 exec/s: 29761 rss: 460Mb L: 65/126 MS: 2 ShuffleBytes-EraseBytes-
+#2097152	pulse  cov: 203 ft: 337 corp: 63/6322b lim: 20977 exec/s: 29959 rss: 460Mb
+#4194304	pulse  cov: 203 ft: 337 corp: 63/6322b lim: 41869 exec/s: 29746 rss: 461Mb
+#5824969	REDUCE cov: 203 ft: 337 corp: 63/6310b lim: 58129 exec/s: 28694 rss: 462Mb L: 106/126 MS: 2 EraseBytes-CMP- DE: "\012\000\000\000\000\000\000\000"-
+#6101899	REDUCE cov: 203 ft: 337 corp: 63/6298b lim: 60889 exec/s: 28782 rss: 463Mb L: 90/126 MS: 5 CopyPart-ChangeBinInt-PersAutoDict-EraseBytes-PersAutoDict- DE: "\012\000\000\000\000\000\000\000"-"\012\000\000\000\000\000\000\000"-
+#8034530	REDUCE cov: 203 ft: 337 corp: 63/6297b lim: 65536 exec/s: 28797 rss: 464Mb L: 64/126 MS: 1 EraseBytes-
+#8077911	REDUCE cov: 203 ft: 337 corp: 63/6296b lim: 65536 exec/s: 28849 rss: 464Mb L: 65/126 MS: 1 EraseBytes-
+#8388608	pulse  cov: 203 ft: 337 corp: 63/6296b lim: 65536 exec/s: 28826 rss: 464Mb
+#10533153	NEW    cov: 203 ft: 340 corp: 64/6414b lim: 65536 exec/s: 28857 rss: 464Mb L: 118/126 MS: 2 ChangeByte-CopyPart-
+#10759044	NEW    cov: 203 ft: 341 corp: 65/6532b lim: 65536 exec/s: 28922 rss: 469Mb L: 118/126 MS: 1 CopyPart-
+#11086976	NEW    cov: 203 ft: 342 corp: 66/6650b lim: 65536 exec/s: 28872 rss: 471Mb L: 118/126 MS: 2 ChangeByte-ChangeBinInt-
+#11146982	NEW    cov: 203 ft: 343 corp: 67/6768b lim: 65536 exec/s: 28878 rss: 471Mb L: 118/126 MS: 1 ChangeBinInt-
+#11230518	NEW    cov: 203 ft: 344 corp: 68/6886b lim: 65536 exec/s: 28870 rss: 472Mb L: 118/126 MS: 1 ChangeBinInt-
+#16777216	pulse  cov: 203 ft: 344 corp: 68/6886b lim: 65536 exec/s: 28532 rss: 472Mb
+#33554432	pulse  cov: 203 ft: 344 corp: 68/6886b lim: 65536 exec/s: 28315 rss: 472Mb

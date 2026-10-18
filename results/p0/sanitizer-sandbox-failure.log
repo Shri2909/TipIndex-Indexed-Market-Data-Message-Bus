@@ -1,0 +1,21 @@
+      cached: true
+      stdout: |
+        ==1264==LeakSanitizer has encountered a fatal error.
+        ==1264==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+        ==1264==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+      exitCode: 1
+  -
+      cached: true
+      stdout: |
+        ==1290==LeakSanitizer has encountered a fatal error.
+        ==1290==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+        ==1290==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+      exitCode: 1
+  -
+      cached: true
+      stdout: |
+        ==1311==LeakSanitizer has encountered a fatal error.
+        ==1311==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+        ==1311==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+      exitCode: 1
+...
