@@ -32,3 +32,6 @@ results/p6/**/*.mdt
 /audit/remediation/core/final-validation/*-corpus/
 /audit/remediation/core/final-validation/*-artifacts/
 /audit/remediation/core/final-validation/fuzz_*/stderr.log
+
+# Local project prompts
+/*[Pp][Rr][Oo][Mm][Pp][Tt]*.[Mm][Dd]
