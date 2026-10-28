@@ -1,0 +1,115 @@
+{
+ "configs": 9,
+ "per_config": {
+  "cc2-auto-binheap": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 109.433
+  },
+  "cc2-auto-loser": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 69.4534
+  },
+  "cc2-auto-quad": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 107.172
+  },
+  "cc2-auto-stdpq": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 111.467
+  },
+  "cc2-indexed-binheap": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 109.664
+  },
+  "cc2-indexed-loser": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 116.282
+  },
+  "cc2-indexed-quad": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 98.0963
+  },
+  "cc2-indexed-stdpq": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 94.14
+  },
+  "cc2-scan-stdpq": {
+   "status": "passed",
+   "matches_recorded": true,
+   "digest": 1217005992737911606,
+   "delivered": 231676,
+   "batches": 1888634,
+   "execution_batches": 75672,
+   "history_expired_opens": 899244,
+   "opens": 1857515,
+   "elapsed_s": 100.231
+  }
+ },
+ "coverage_profile": {
+  "operations": 10000000,
+  "batches": 1888634,
+  "execution_batch_fraction": 0.04006705375419483,
+  "history_expired_open_fraction": 0.484111299235807,
+  "delivered_per_operation": 0.0231676
+ },
+ "unique_digests": [
+  1217005992737911606
+ ],
+ "verdict": "PASS"
+}

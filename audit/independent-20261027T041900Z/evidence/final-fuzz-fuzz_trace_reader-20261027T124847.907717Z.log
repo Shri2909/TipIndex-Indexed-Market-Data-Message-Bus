@@ -1,0 +1,15 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20261027
+INFO: Loaded 1 modules   (784 inline 8-bit counters): 784 [0x572f96c23040, 0x572f96c23350), 
+INFO: Loaded 1 PC tables (784 PCs): 784 [0x572f96c23350,0x572f96c26450), 
+INFO:       95 files found in /home/abc/Desktop/Jane Street/audit/independent-20261027T041900Z/evidence/private-fuzz/fuzz_trace_reader/corpus
+INFO: seed corpus: files: 95 min: 1b max: 126b total: 9729b rss: 33Mb
+#96	INITED cov: 226 ft: 371 corp: 66/6704b exec/s: 0 rss: 35Mb
+#9187	NEW    cov: 226 ft: 373 corp: 67/6822b lim: 216 exec/s: 0 rss: 42Mb L: 118/126 MS: 1 ChangeBinInt-
+#10000	DONE   cov: 226 ft: 373 corp: 67/6822b lim: 223 exec/s: 0 rss: 43Mb
+Done 10000 runs in 0 second(s)
+stat::number_of_executed_units: 10000
+stat::average_exec_per_sec:     0
+stat::new_units_added:          1
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              43

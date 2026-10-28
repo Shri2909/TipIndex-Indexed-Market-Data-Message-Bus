@@ -1,0 +1,13 @@
+-- Failed to find LLVM FileCheck
+-- Google Benchmark version: v1.9.5, normalized to 1.9.5
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- tiplog GoogleTest provider: FetchContent v1.17.0
+-- Found Python3: /home/abc/.pyenv/shims/python3.11 (found version "3.11.15") found components: Interpreter
+-- Configuring done (1.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/abc/Desktop/Jane Street/build/fuzz

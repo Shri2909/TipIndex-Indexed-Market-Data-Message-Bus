@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/home/abc/Desktop/Jane Street/build/release/tiplog_bench",
+    "--synthetic",
+    "--records",
+    "1",
+    "--partitions",
+    "2",
+    "--mix",
+    "/tmp/tmpnrh68j5d/mix.csv",
+    "--ring-bytes",
+    "8192",
+    "--requests",
+    "/tmp/tmpnrh68j5d/requests.tsv",
+    "--output",
+    "/tmp/tmpnrh68j5d/rows.jsonl"
+  ],
+  "binary_sha256": "c6b6e4468527d9365dfeb700aab2e59331ef72719bad2114edb8584ad172bf9c",
+  "request_bytes": "id\tT1\t0\tsubtree:synth\tscan\tquad\trepeat-warm\t64\t1\n",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "rows": "{\"kind\":\"prefill\",\"status\":\"ok\",\"publications\":1,\"index_enabled\":true,\"ring_bytes\":8192,\"block_entries\":1024,\"publish_wall_ns\":7587,\"publish_cpu_ns\":5165,\"user_ns\":7000,\"system_ns\":14000,\"publish_sink64\":12007098915487223780,\"cpu_start\":8,\"cpu_end\":8,\"freq_start_khz\":1999912,\"freq_end_khz\":1999912,\"head_seq\":2,\"tail_seq\":1,\"head_pos\":32,\"tail_pos\":0,\"capacity_and_pressure_data_evicted\":0,\"pressure_data_evicted\":0,\"pad_bytes_appended\":0,\"registry_topics\":9,\"registry_partitions\":3,\"subscription_observers\":0,\"registry_identity_sha256\":\"d7be071d5970736ddb994e5c3036438519ace0ca14b4d1ec03b4c99e61a06e6b\",\"registry_identity_scope\":\"after sorted unique request compilation; topic-id u64LE, path-byte-length u64LE, path UTF-8 in registry order\",\"subscription_compilation_errors\":0,\"timing_scope\":\"trace traversal or synthetic generation plus publish and identical sequence/payload sink; excludes trace validation and dictionary setup\",\"work_counter_scope\":\"replay loop decoded spans and DATA fetches; popped postings; ring seek header counts separate; excludes uninstrumented index seek comparisons\",\"observed_owner_runs\":1,\"observed_run_mean\":1,\"owner_top1_count\":1,\"owner_top10_count\":1,\"owner_counts_sha256\":\"4cbbd8ca5215b8d161aec181a74b694f4e24b001d5b081dc0030ed797a8973e0\",\"event_counts\":[0,0,1],\"owner_counts\":[1,0]}\n"
+}

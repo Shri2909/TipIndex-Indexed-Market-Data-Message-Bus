@@ -1,0 +1,21 @@
+{
+  "label": "worked-example-release",
+  "argv": [
+    "build/release/tiplog_layout_example",
+    "--output",
+    "results/p7/worked-example.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T084010.443196Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/worked-example-release-20261025T084010.443196Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.0022368280006048735
+}

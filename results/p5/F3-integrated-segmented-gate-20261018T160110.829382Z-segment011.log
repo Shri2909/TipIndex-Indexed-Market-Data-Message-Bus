@@ -1,0 +1,34 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191240
+INFO: Loaded 1 modules   (7274 inline 8-bit counters): 7274 [0x601941657898, 0x601941659502), 
+INFO: Loaded 1 PC tables (7274 PCs): 7274 [0x601941659508,0x601941675ba8), 
+INFO:     1302 files found in tests/fuzz/corpus/ops_integrated
+INFO: seed corpus: files: 1302 min: 1b max: 65386b total: 3061462b rss: 34Mb
+#1024	pulse  cov: 2198 ft: 10496 corp: 675/233Kb exec/s: 256 rss: 457Mb
+#1303	INITED cov: 2199 ft: 11475 corp: 867/2036Kb exec/s: 36 rss: 738Mb
+#1555	NEW    cov: 2199 ft: 11476 corp: 868/2039Kb lim: 65536 exec/s: 37 rss: 755Mb L: 2603/65386 MS: 2 ChangeASCIIInt-InsertByte-
+#1593	REDUCE cov: 2199 ft: 11476 corp: 868/2037Kb lim: 65536 exec/s: 37 rss: 755Mb L: 9632/65386 MS: 3 CMP-ChangeByte-EraseBytes- DE: "pressure/B"-
+#1714	NEW    cov: 2199 ft: 11477 corp: 869/2037Kb lim: 65536 exec/s: 37 rss: 755Mb L: 283/65386 MS: 1 ShuffleBytes-
+#1727	NEW    cov: 2199 ft: 11481 corp: 870/2041Kb lim: 65536 exec/s: 36 rss: 755Mb L: 3860/65386 MS: 3 CMP-ShuffleBytes-CrossOver- DE: "\020\000\000\000\000\000\000\000"-
+#1803	REDUCE cov: 2199 ft: 11481 corp: 870/2041Kb lim: 65536 exec/s: 38 rss: 755Mb L: 124/65386 MS: 1 EraseBytes-
+#1994	REDUCE cov: 2199 ft: 11481 corp: 870/2041Kb lim: 65536 exec/s: 37 rss: 755Mb L: 651/65386 MS: 1 EraseBytes-
+#2048	pulse  cov: 2199 ft: 11481 corp: 870/2041Kb lim: 65536 exec/s: 38 rss: 755Mb
+#2489	NEW    cov: 2199 ft: 11482 corp: 871/2085Kb lim: 65536 exec/s: 37 rss: 755Mb L: 45596/65386 MS: 5 ChangeASCIIInt-ChangeByte-ChangeBit-ShuffleBytes-CopyPart-
+#2782	REDUCE cov: 2199 ft: 11482 corp: 871/2085Kb lim: 65536 exec/s: 38 rss: 755Mb L: 93/65386 MS: 3 InsertByte-EraseBytes-CrossOver-
+#2821	NEW    cov: 2199 ft: 11484 corp: 872/2088Kb lim: 65536 exec/s: 38 rss: 755Mb L: 2114/65386 MS: 4 ChangeBit-InsertRepeatedBytes-CMP-EraseBytes- DE: "\001\000q\202f\206\035\030"-
+#3065	NEW    cov: 2199 ft: 11486 corp: 873/2145Kb lim: 65536 exec/s: 36 rss: 755Mb L: 58597/65386 MS: 4 ChangeByte-PersAutoDict-ChangeASCIIInt-CrossOver- DE: "\001\000q\202f\206\035\030"-
+#3073	REDUCE cov: 2199 ft: 11486 corp: 873/2145Kb lim: 65536 exec/s: 36 rss: 755Mb L: 529/65386 MS: 3 ChangeBinInt-ChangeBit-EraseBytes-
+#3121	REDUCE cov: 2199 ft: 11486 corp: 873/2143Kb lim: 65536 exec/s: 33 rss: 755Mb L: 52799/65386 MS: 3 ShuffleBytes-ChangeASCIIInt-EraseBytes-
+#4096	pulse  cov: 2199 ft: 11486 corp: 873/2143Kb lim: 65536 exec/s: 36 rss: 781Mb
+#4501	DONE   cov: 2199 ft: 11486 corp: 873/2143Kb lim: 65536 exec/s: 36 rss: 781Mb
+###### Recommended dictionary. ######
+"pressure/B" # Uses: 114
+"\020\000\000\000\000\000\000\000" # Uses: 98
+"\001\000q\202f\206\035\030" # Uses: 48
+###### End of recommended dictionary. ######
+Done 4501 runs in 122 second(s)
+stat::number_of_executed_units: 4501
+stat::average_exec_per_sec:     36
+stat::new_units_added:          12
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              781

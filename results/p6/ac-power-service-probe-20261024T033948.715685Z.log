@@ -1,0 +1,23 @@
+{
+  "kernel": {
+    "ADP1": {
+      "type": "Mains",
+      "online": "0"
+    },
+    "BAT0": {
+      "type": "Battery",
+      "status": "Discharging",
+      "capacity": "94"
+    }
+  },
+  "line_power_ADP1": {
+    "returncode": 0,
+    "stdout": "  native-path:          ADP1\n  power supply:         yes\n  updated:              Sat Oct 24 09:01:31 2026 (497 seconds ago)\n  has history:          no\n  has statistics:       no\n  line-power\n    warning-level:       none\n    online:              no\n    icon-name:          'ac-adapter-symbolic'\n\n",
+    "stderr": ""
+  },
+  "battery_BAT0": {
+    "returncode": 0,
+    "stdout": "  native-path:          BAT0\n  vendor:               HP\n  model:                Primary\n  serial:               SerialNumber\n  power supply:         yes\n  updated:              Sat Oct 24 09:09:22 2026 (26 seconds ago)\n  has history:          yes\n  has statistics:       yes\n  battery\n    present:             yes\n    rechargeable:        yes\n    state:               discharging\n    warning-level:       none\n    energy:              28.921 Wh\n    energy-empty:        0 Wh\n    energy-full:         30.859 Wh\n    energy-full-design:  41.04 Wh\n    voltage-min-design:  11.4 V\n    capacity-level:      Normal\n    energy-rate:         5.51255 W\n    voltage:             12.246 V\n    charge-cycles:       165\n    time to empty:       5.2 hours\n    percentage:          94%\n    capacity:            75.1925%\n    technology:          lithium-ion\n    icon-name:          'battery-full-symbolic'\n  History (rate):\n    1792813162\t5.513\tdischarging\n    1792813132\t5.513\tdischarging\n    1792813102\t6.831\tdischarging\n  History (voltage):\n    1792813162\t12.246\tdischarging\n    1792813132\t12.263\tdischarging\n    1792813102\t12.241\tdischarging\n\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,52 @@
+name: Checks
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [debug, release, asan-ubsan, fuzz]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+      MPLCONFIGDIR: ${{ github.workspace }}/build/matplotlib
+      ASAN_OPTIONS: detect_leaks=1:abort_on_error=1
+      UBSAN_OPTIONS: print_stacktrace=1:halt_on_error=1
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.14"
+      - name: Install hash-locked packages and tooling
+        run: python -m pip install --require-hashes --only-binary=:all: -r py/requirements.txt -r configs/ci-requirements.txt
+      - name: Configure and build
+        run: |
+          cmake --preset "${{ matrix.preset }}"
+          cmake --build --preset "${{ matrix.preset }}" --parallel 2
+      - name: C++ tests
+        run: ctest --preset "${{ matrix.preset }}" --output-on-failure --no-tests=error
+      - name: Python and script regressions
+        if: matrix.preset == 'release'
+        run: |
+          python -m pip check
+          python -m pytest -c py/pytest.ini py/tests tests/scripts -q
+      - name: Dependency advisories
+        if: matrix.preset == 'release'
+        run: pip-audit --requirement py/requirements.txt --no-deps --disable-pip --progress-spinner off
+      - name: Fuzzer smoke checks
+        if: matrix.preset == 'fuzz'
+        run: |
+          mkdir -p build/fuzz-smoke/trace build/fuzz-smoke/itch build/fuzz-smoke/ops build/fuzz-smoke/poll
+          build/fuzz/fuzz_trace_reader build/fuzz-smoke/trace -runs=1000 -max_len=4096
+          build/fuzz/fuzz_itch_walker build/fuzz-smoke/itch -runs=1000 -max_len=4096
+          TIPLOG_FUZZ_MODE=all build/fuzz/fuzz_engine_ops build/fuzz-smoke/ops -runs=100 -max_len=4096
+          build/fuzz/fuzz_poll_budget build/fuzz-smoke/poll -runs=1000 -max_len=4096

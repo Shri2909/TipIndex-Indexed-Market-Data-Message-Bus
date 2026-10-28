@@ -1,0 +1,23 @@
+{
+  "label": "reporting-exact-ratio-regression",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "py/tests/test_layout_analysis.py"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T142753.740410Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/reporting-exact-ratio-regression-20261025T142753.740410Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.20501705699962258
+}

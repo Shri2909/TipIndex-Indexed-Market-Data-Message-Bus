@@ -1,0 +1,148 @@
+[  1%] Building CXX object CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[  2%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[  3%] Building CXX object CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o
+[  4%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[  5%] Linking CXX executable tiplog_smoke_test
+[  5%] Built target tiplog_smoke_test
+[  6%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[  7%] Linking CXX static library libtiplog_merge.a
+[  7%] Built target tiplog_merge
+[  8%] Building CXX object CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[  9%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[ 10%] Linking CXX static library libtiplog_ring.a
+[ 10%] Built target tiplog_ring
+[ 11%] Building CXX object CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 12%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 13%] Linking CXX static library libtiplog_trace.a
+[ 13%] Built target tiplog_trace
+[ 14%] Building CXX object CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o
+[ 15%] Linking CXX static library libtiplog_index.a
+[ 15%] Built target tiplog_index
+[ 16%] Building CXX object CMakeFiles/tiplog_merge_test.dir/tests/unit/merge_test.cpp.o
+[ 17%] Linking CXX static library libtiplog_ref.a
+[ 17%] Built target tiplog_ref
+[ 18%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark.cc.o
+[ 19%] Linking CXX static library libtiplog_topics_subs.a
+[ 19%] Built target tiplog_topics_subs
+[ 20%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/model.cpp.o
+[ 21%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_api_internal.cc.o
+[ 22%] Linking CXX executable tiplog_merge_test
+[ 22%] Built target tiplog_merge_test
+[ 23%] Building CXX object CMakeFiles/tiplog_index_memory.dir/tools/tiplog_index_memory.cpp.o
+[ 24%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_name.cc.o
+[ 25%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/exact.cpp.o
+[ 26%] Linking CXX executable tiplog_index_memory
+[ 26%] Built target tiplog_index_memory
+[ 27%] Building CXX object CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o
+[ 28%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_register.cc.o
+[ 29%] Linking CXX executable tiplog_walk
+[ 29%] Built target tiplog_walk
+[ 30%] Building CXX object CMakeFiles/tiplog_trace_check.dir/tools/tiplog_walk/trace_check.cpp.o
+[ 31%] Linking CXX executable tiplog_ring_test
+[ 31%] Built target tiplog_ring_test
+[ 32%] Building CXX object CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o
+[ 33%] Linking CXX executable tiplog_trace_check
+[ 33%] Built target tiplog_trace_check
+[ 34%] Building CXX object CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o
+[ 35%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/global.cpp.o
+[ 36%] Linking CXX static library libtiplog_layout_lib.a
+[ 36%] Built target tiplog_layout_lib
+[ 37%] Building CXX object CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o
+[ 38%] Linking CXX static library libtiplog_driver.a
+[ 38%] Built target tiplog_driver
+[ 39%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 40%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_runner.cc.o
+[ 41%] Linking CXX static library libtiplog_engine.a
+[ 41%] Built target tiplog_engine
+[ 42%] Building CXX object CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o
+[ 43%] Linking CXX executable tiplog_trace_test
+[ 43%] Built target tiplog_trace_test
+[ 44%] Building CXX object CMakeFiles/tiplog_oracle_tail_test.dir/tests/unit/oracle_tail_test.cpp.o
+[ 45%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/check.cc.o
+[ 46%] Linking CXX executable tiplog_topics_subs_test
+[ 46%] Built target tiplog_topics_subs_test
+[ 47%] Building CXX object CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o
+[ 48%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/colorprint.cc.o
+[ 49%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/commandlineflags.cc.o
+[ 50%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/complexity.cc.o
+[ 51%] Linking CXX executable tiplog_oracle_test
+[ 51%] Built target tiplog_oracle_test
+[ 52%] Building CXX object CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o
+[ 53%] Linking CXX executable tiplog_oracle_tail_test
+[ 53%] Built target tiplog_oracle_tail_test
+[ 54%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 55%] Linking CXX executable tiplog_driver_test
+[ 55%] Built target tiplog_driver_test
+[ 56%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 57%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/console_reporter.cc.o
+[ 58%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/counter.cc.o
+[ 59%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/csv_reporter.cc.o
+[ 60%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/json_reporter.cc.o
+[ 61%] Linking CXX executable tiplog_index_test
+[ 61%] Built target tiplog_index_test
+[ 62%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+[ 63%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/perf_counters.cc.o
+[ 64%] Linking CXX executable tiplog_engine_index_test
+[ 64%] Built target tiplog_engine_index_test
+[ 65%] Building CXX object CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o
+[ 66%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/reporter.cc.o
+[ 67%] Linking CXX executable tiplog_engine_test
+[ 67%] Built target tiplog_engine_test
+[ 68%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[ 69%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 70%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/statistics.cc.o
+[ 71%] Linking CXX executable tiplog_differential
+[ 71%] Built target tiplog_differential
+[ 72%] Building CXX object CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o
+[ 73%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/string_util.cc.o
+[ 74%] Linking CXX executable tiplog_engine_merge_test
+[ 75%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/sysinfo.cc.o
+[ 75%] Built target tiplog_engine_merge_test
+[ 76%] Building CXX object CMakeFiles/tiplog_layout.dir/tools/tiplog_layout/main.cpp.o
+[ 77%] Linking CXX executable tiplog_bench_contract_test
+[ 77%] Built target tiplog_bench_contract_test
+[ 78%] Building CXX object CMakeFiles/tiplog_layout_example.dir/tools/tiplog_layout/worked_example.cpp.o
+[ 79%] Linking CXX executable tiplog_bench
+[ 79%] Built target tiplog_bench
+[ 80%] Building CXX object CMakeFiles/tiplog_layout_runtime.dir/tools/tiplog_layout/runtime_main.cpp.o
+[ 81%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/timers.cc.o
+[ 82%] Linking CXX executable tiplog_layout_example
+[ 82%] Built target tiplog_layout_example
+[ 83%] Building CXX object CMakeFiles/tiplog_layout_test.dir/tests/layout/layout_test.cpp.o
+[ 84%] Linking CXX static library libbenchmark.a
+[ 84%] Built target benchmark
+[ 85%] Building CXX object CMakeFiles/tiplog_layout_cc5.dir/tests/layout/layout_cc5.cpp.o
+/tmp/tiplog-second-pass/work/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutThreshold_ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity_Test::TestBody()’:
+/tmp/tiplog-second-pass/work/tests/layout/layout_test.cpp:191:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  191 |         if (v != 0) EXPECT_TRUE(cuts[v]);
+      |            ^
+/tmp/tiplog-second-pass/work/tests/layout/layout_test.cpp:193:14: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  193 |           if (raw.nodes[child].parent == v) EXPECT_TRUE(cuts[child]);
+      |              ^
+/tmp/tiplog-second-pass/work/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutExact_ForwardParentIdsAndMultipleChildStages_Test::TestBody()’:
+/tmp/tiplog-second-pass/work/tests/layout/layout_test.cpp:324:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  324 |     if (expected.curve[k].feasible)
+      |        ^
+[ 86%] Linking CXX executable tiplog_layout
+[ 86%] Built target tiplog_layout
+[ 87%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark_main.dir/benchmark_main.cc.o
+[ 88%] Linking CXX static library libbenchmark_main.a
+[ 88%] Built target benchmark_main
+[ 89%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 90%] Linking CXX executable tiplog_layout_cc5
+[ 90%] Built target tiplog_layout_cc5
+[ 91%] Building CXX object CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o
+[ 92%] Linking CXX executable tiplog_sim
+[ 92%] Built target tiplog_sim
+[ 93%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[ 94%] Linking CXX executable tiplog_layout_runtime
+[ 94%] Built target tiplog_layout_runtime
+[ 95%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[ 96%] Linking CXX executable merge_bench
+[ 97%] Linking CXX executable publish_bench
+[ 97%] Built target merge_bench
+[ 97%] Built target publish_bench
+[ 98%] Linking CXX executable index_bench
+[ 98%] Built target index_bench
+[100%] Linking CXX executable tiplog_layout_test
+[100%] Built target tiplog_layout_test

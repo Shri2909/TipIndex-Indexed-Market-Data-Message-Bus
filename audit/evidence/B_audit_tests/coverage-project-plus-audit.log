@@ -1,0 +1,28 @@
+warning: 194 functions have mismatched data
+Filename                               Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover    Branches   Missed Branches     Cover
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+src/tiplog/driver/trace_driver.cpp          56                 1    98.21%           3                 0   100.00%          64                 2    96.88%          50                 2    96.00%
+src/tiplog/driver/trace_driver.hpp           2                 0   100.00%           2                 0   100.00%           2                 0   100.00%           0                 0         -
+src/tiplog/engine/engine.cpp               314                20    93.63%          19                 0   100.00%         408                15    96.32%         209                24    88.52%
+src/tiplog/engine/engine.hpp                27                 0   100.00%          25                 0   100.00%          39                 0   100.00%           0                 0         -
+src/tiplog/index/index.cpp                 494                80    83.81%          34                 0   100.00%         556                 3    99.46%         346                69    80.06%
+src/tiplog/index/index.hpp                  10                 0   100.00%          10                 0   100.00%          12                 0   100.00%           0                 0         -
+src/tiplog/layout/exact.cpp                294                20    93.20%          17                 0   100.00%         353                16    95.47%         206                27    86.89%
+src/tiplog/layout/global.cpp                51                 2    96.08%           6                 0   100.00%          95                 4    95.79%          36                 3    91.67%
+src/tiplog/layout/model.cpp                294                 9    96.94%          24                 0   100.00%         445                18    95.96%         236                24    89.83%
+src/tiplog/merge/kernels.cpp                48                 0   100.00%           7                 0   100.00%          78                 0   100.00%          44                 0   100.00%
+src/tiplog/merge/kernels.hpp               135                 6    95.56%          34                 4    88.24%         162                13    91.98%          76                 3    96.05%
+src/tiplog/ring/ring.cpp                   242                11    95.45%          18                 0   100.00%         291                21    92.78%         194                33    82.99%
+src/tiplog/ring/ring.hpp                    12                 1    91.67%          12                 1    91.67%          12                 1    91.67%           0                 0         -
+src/tiplog/subs/compiled.cpp               158                 5    96.84%          23                 0   100.00%         185                 0   100.00%         136                14    89.71%
+src/tiplog/subs/compiled.hpp                 3                 0   100.00%           2                 0   100.00%           2                 0   100.00%           0                 0         -
+src/tiplog/topics/registry.cpp             152                10    93.42%          22                 1    95.45%         210                16    92.38%         104                10    90.38%
+src/tiplog/topics/registry.hpp               9                 2    77.78%           9                 2    77.78%           9                 2    77.78%           0                 0         -
+src/tiplog/trace/itch_walker.cpp            93                 3    96.77%           7                 0   100.00%         120                 1    99.17%          96                 4    95.83%
+src/tiplog/trace/itch_walker.hpp             7                 0   100.00%           7                 0   100.00%           7                 0   100.00%           0                 0         -
+src/tiplog/trace/reader.cpp                200                 9    95.50%          13                 0   100.00%         160                13    91.88%         132                18    86.36%
+src/tiplog/trace/reader.hpp                  5                 0   100.00%           3                 0   100.00%           7                 0   100.00%           2                 0   100.00%
+src/tiplog/types.hpp                         4                 0   100.00%           4                 0   100.00%           4                 0   100.00%           0                 0         -
+tools/tiplog_bench/contracts.hpp            44                 6    86.36%          11                 5    54.55%         162                52    67.90%          28                 1    96.43%
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                     2654               185    93.03%         312                13    95.83%        3383               177    94.77%        1895               232    87.76%

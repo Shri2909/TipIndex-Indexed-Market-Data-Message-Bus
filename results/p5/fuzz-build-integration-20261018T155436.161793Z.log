@@ -1,0 +1,14 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[  6%] Building CXX object CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 20%] Built target tiplog_ring
+[ 40%] Built target tiplog_topics_subs
+[ 53%] Built target tiplog_index
+[ 66%] Built target tiplog_ref
+[ 73%] Linking CXX static library libtiplog_merge.a
+[ 73%] Built target tiplog_merge
+[ 80%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 86%] Linking CXX static library libtiplog_engine.a
+[ 86%] Built target tiplog_engine
+[ 93%] Building CXX object CMakeFiles/fuzz_engine_ops.dir/tests/fuzz/targets/fuzz_engine_ops.cpp.o
+[100%] Linking CXX executable fuzz_engine_ops
+[100%] Built target fuzz_engine_ops

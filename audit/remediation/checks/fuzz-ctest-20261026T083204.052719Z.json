@@ -1,0 +1,24 @@
+{
+  "label": "fuzz-ctest",
+  "argv": [
+    "ctest",
+    "--preset",
+    "fuzz",
+    "--output-on-failure",
+    "--output-junit",
+    "/home/abc/Desktop/Jane Street/audit/remediation/fuzz.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:32:04.053000+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/fuzz-ctest-20261026T083204.052719Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 26.37513581600001,
+  "log_sha256": "cfae6d6f66b7241281f7a9588a104233ecef78f08f480ab0248345f1b4215b46"
+}

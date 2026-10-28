@@ -1,0 +1,5 @@
+[ 10%] Built target tiplog_merge
+[ 90%] Built target benchmark
+[ 95%] Building CXX object CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o
+[100%] Linking CXX executable merge_bench
+[100%] Built target merge_bench

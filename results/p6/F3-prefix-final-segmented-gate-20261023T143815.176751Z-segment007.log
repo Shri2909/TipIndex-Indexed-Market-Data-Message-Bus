@@ -1,0 +1,28 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191236
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x6419e2899ed8, 0x6419e289bbaf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x6419e289bbb0,0x6419e28b8920), 
+INFO:     1415 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1415 min: 1b max: 64773b total: 3481250b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10504 corp: 653/185Kb exec/s: 204 rss: 424Mb
+#1416	INITED cov: 2250 ft: 11535 corp: 878/2126Kb exec/s: 21 rss: 673Mb
+#1681	REDUCE cov: 2250 ft: 11535 corp: 878/2123Kb lim: 65536 exec/s: 20 rss: 674Mb L: 29577/64773 MS: 5 ChangeBit-InsertByte-ChangeBit-InsertRepeatedBytes-EraseBytes-
+#1789	REDUCE cov: 2250 ft: 11535 corp: 878/2123Kb lim: 65536 exec/s: 20 rss: 674Mb L: 466/64773 MS: 3 ChangeByte-EraseBytes-CopyPart-
+#1857	NEW    cov: 2250 ft: 11536 corp: 879/2124Kb lim: 65536 exec/s: 21 rss: 674Mb L: 1536/64773 MS: 3 InsertRepeatedBytes-InsertByte-EraseBytes-
+#1915	NEW    cov: 2250 ft: 11537 corp: 880/2159Kb lim: 65536 exec/s: 21 rss: 674Mb L: 35333/64773 MS: 3 InsertByte-ShuffleBytes-CMP- DE: "\016\000\000\000\000\000\000\000"-
+#2048	pulse  cov: 2250 ft: 11537 corp: 880/2159Kb lim: 65536 exec/s: 20 rss: 674Mb
+#2057	NEW    cov: 2250 ft: 11539 corp: 881/2191Kb lim: 65536 exec/s: 19 rss: 674Mb L: 32972/64773 MS: 2 PersAutoDict-CopyPart- DE: "\016\000\000\000\000\000\000\000"-
+#2072	NEW    cov: 2250 ft: 11552 corp: 882/2193Kb lim: 65536 exec/s: 19 rss: 674Mb L: 1571/64773 MS: 5 ChangeBit-CopyPart-ChangeBit-PersAutoDict-CopyPart- DE: "\016\000\000\000\000\000\000\000"-
+#2146	REDUCE cov: 2250 ft: 11552 corp: 882/2193Kb lim: 65536 exec/s: 18 rss: 674Mb L: 146/64773 MS: 4 ChangeBinInt-PersAutoDict-CopyPart-EraseBytes- DE: "\016\000\000\000\000\000\000\000"-
+#2172	REDUCE cov: 2250 ft: 11552 corp: 882/2193Kb lim: 65536 exec/s: 18 rss: 674Mb L: 840/64773 MS: 1 EraseBytes-
+#2188	NEW    cov: 2250 ft: 11555 corp: 883/2194Kb lim: 65536 exec/s: 18 rss: 674Mb L: 1523/64773 MS: 1 CopyPart-
+#2318	DONE   cov: 2250 ft: 11555 corp: 883/2194Kb lim: 65536 exec/s: 19 rss: 674Mb
+###### Recommended dictionary. ######
+"\016\000\000\000\000\000\000\000" # Uses: 33
+###### End of recommended dictionary. ######
+Done 2318 runs in 121 second(s)
+stat::number_of_executed_units: 2318
+stat::average_exec_per_sec:     19
+stat::new_units_added:          9
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              674

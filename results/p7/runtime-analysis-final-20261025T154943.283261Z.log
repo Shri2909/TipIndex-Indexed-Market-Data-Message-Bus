@@ -1,0 +1,1 @@
+{"status": "passed", "configuration_count": 900, "measured_attempts": 9000, "solver_status_counts": {"solved": 8850, "state_limit": 150}, "all_rounds_solved_configurations": 885, "frequency_flagged_observations": 1626}

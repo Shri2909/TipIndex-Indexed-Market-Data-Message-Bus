@@ -1,0 +1,170 @@
+{
+  "changes": [
+    {
+      "path": "README.md",
+      "initial_sha256": "1b9bde232552fb1a6dc4b6afff146a8ffe5fefed2fb2d268187f9af65541c20c",
+      "final_sha256": "6c8b1da27e19e67596491edfdcf1c8cbb90d041180699e02f726a29c4341bc02"
+    },
+    {
+      "path": "bench/micro/index_bench.cpp",
+      "initial_sha256": "7396d140eac4c53f1fd33bafa9b77519572114fcc15cb8f42c830d4ec7bf5ced",
+      "final_sha256": "94b1880e8ff564b0b9264c6995bcbe3141ee4a608b714b59db955d4095819c62"
+    },
+    {
+      "path": "bench/micro/merge_bench.cpp",
+      "initial_sha256": "847a80404ed3a6faaf75a9bef561e77ae47d02a887035077f5421990a355ae89",
+      "final_sha256": "28b0ecb875ef0d98d53f08013a654f94187032b1dcad3da4d026d6d28b116399"
+    },
+    {
+      "path": "bench/micro/publish_bench.cpp",
+      "initial_sha256": "4f14121937cc6be1e0e22b282db6efe83c662465b36de66e17a5aac516e22adb",
+      "final_sha256": "7bb3c7ae40f63204fae972a287e795c33544b1dbcd5a868097167f0e3b0bc95e"
+    },
+    {
+      "path": "cmake/benchmark_output_patch.cmake",
+      "initial_sha256": null,
+      "final_sha256": "7f47d57baea381da8e8e9bafee03657d61be158622a4b0ca8d5b831c560eeec8"
+    },
+    {
+      "path": "cmake/deps.cmake",
+      "initial_sha256": "6ad2dd854f112812830e6da06d512a428e4c83c4ea416f81619ad6c975188290",
+      "final_sha256": "9fe5234ea05786f21aa201c06d006e3fffe1a962d78601b6121f24cecdd7fd4d"
+    },
+    {
+      "path": "docs/plan/ARCHITECTURE.md",
+      "initial_sha256": "d58dfa77a9f7af946992db65577e6aa4e31cbb2653659ec9e7eaebc111fb0b05",
+      "final_sha256": "56bf07e4bd7dde0f9f8aeecf77777792469898913bf6a1b4adb341dddc64bf64"
+    },
+    {
+      "path": "docs/report/POLL_BUDGET.md",
+      "initial_sha256": "26849acaf8a9fafddb9bad53a0a133378870697c7664432c5808f32bfa7d4702",
+      "final_sha256": "fe13304c0ef3e5224f61432425a4a373fe6782cd8304c07f2476d7ff7eb22e7e"
+    },
+    {
+      "path": "py/tests/test_independent_audit.py",
+      "initial_sha256": null,
+      "final_sha256": "110dae5563724bb679e13bfbc26b8bcc550df2982938241e3de379e0e5295e8b"
+    },
+    {
+      "path": "py/tiplog_py/_outputs.py",
+      "initial_sha256": "0ac4ab739771fbe0571fd99a413aa0238a683569b83df06c581df714f4834d51",
+      "final_sha256": "744e1717d78c40de3f70a93af838656ff4e550c205995a31306cf97fe4b5b524"
+    },
+    {
+      "path": "py/tiplog_py/analysis/summarize.py",
+      "initial_sha256": "e547a5ca734e080e802987225e23dd0fe3ad5f2761ea5892be6c432ff6844073",
+      "final_sha256": "e5406eb4d960f46a10b2a63908ad9f9ad8ba2ca670894b95ae21d8033801e745"
+    },
+    {
+      "path": "py/tiplog_py/exp/oracle.py",
+      "initial_sha256": "5a4e120d720637e285ff7f9981a792235787881f945c82c620b9ee75e4498dd2",
+      "final_sha256": "d127808b6176d8635789b3669ca74a968356698acbcbc3b233fd80d436719a44"
+    },
+    {
+      "path": "py/tiplog_py/layout/analyze.py",
+      "initial_sha256": "181aa7a5fe55251af136da80db9568285a0dd59dc9f375454181e3cff879eb45",
+      "final_sha256": "abd65a292e5747832e17187ed6f30bfa59a73122d39547342f25320531d17b13"
+    },
+    {
+      "path": "py/tiplog_py/trace/format.py",
+      "initial_sha256": "0d5227370314329ea3987e196ef7b5c01165be6e88243012ac7ce4448dcfec6c",
+      "final_sha256": "0ac2eff752bcc93594659fe7c05c180902ac990c33c161b361fb9ab35b2ee2cf"
+    },
+    {
+      "path": "scripts/assemble_f01_acceptance.py",
+      "initial_sha256": "2f69d4bb6883104fd4b241f8d5b797157084fc30311f59175efcf82c78b487b0",
+      "final_sha256": "054a7876a2fceccbafa5c83aacdeb7734f653a1af624bf15667cec70c57a649a"
+    },
+    {
+      "path": "scripts/build_provenance.py",
+      "initial_sha256": null,
+      "final_sha256": "d9de1ff2b2af47470aac74c6b43e24637f3d083beca4a2d8a18a2384d9d12b30"
+    },
+    {
+      "path": "scripts/check_f01.py",
+      "initial_sha256": "72352e9bccc004cfed15f85a3e07c5d91279c8b603ef1ed5b13b132644c139e3",
+      "final_sha256": "2e5a4fc1dbdc1d7051d321622452fb97fb0ed83c8ab8d10caf36445da54f222c"
+    },
+    {
+      "path": "scripts/check_p7_runtime_quiescence.py",
+      "initial_sha256": "773817641acf1106bf0641e8308ddf8bd88c4e30b0a48f5be271cfbcd3e4d5bb",
+      "final_sha256": "c2084eb3bda63b447e838d7dbd1cd2243e83134f9571b0bc97e93dadf6a4d0b1"
+    },
+    {
+      "path": "scripts/f01_summary.py",
+      "initial_sha256": null,
+      "final_sha256": "29a2874f16e59477c26f0b52c42ac685cf7987c26844756444470ca6e2c089ad"
+    },
+    {
+      "path": "scripts/run_f01_check.py",
+      "initial_sha256": "b76cc5d2176303be058fb91e8c68312a11f0d03376d5d7cb2a53140158150862",
+      "final_sha256": "edebe471b9f0395b0f1df2389fc2975c73911f82451e11c23a460a0ba8d8a6a8"
+    },
+    {
+      "path": "scripts/run_f01_study.py",
+      "initial_sha256": "68d145b2079894b7a75df48b192418be92c6c2f06e52d14221bd3f04029188da",
+      "final_sha256": "7b3190a8fccff4e70e7d97292d8460370268bb86007ff0f98c76d6d1b2b96df1"
+    },
+    {
+      "path": "src/tiplog/engine/engine.cpp",
+      "initial_sha256": "26d24e8409617c63a489dddeab5968faec5f44564aee01908caf1f27cf750596",
+      "final_sha256": "9a398b520d2aceb456e3e7ed1cbf2bdd536a2f6150a3ee5e6490b76a07a03f4b"
+    },
+    {
+      "path": "tests/layout/tool_contracts.py",
+      "initial_sha256": "820376e14040bf5f17704ea6bff08fed0d85ed6bd0af5bb333a4d18dd9c70835",
+      "final_sha256": "4897089ddc09774f01d85245edf150287bbe7aee1a54d5bde919e5fea909c04c"
+    },
+    {
+      "path": "tests/scripts/test_build_provenance.py",
+      "initial_sha256": null,
+      "final_sha256": "18b19560df6cbfcab7e3b78d25722609075542adb3484c5be0bedeb5172aab5f"
+    },
+    {
+      "path": "tests/scripts/test_f01_checker.py",
+      "initial_sha256": "7fc877cc7f521b96d7c6d375d7554720241ad1669fda3b592dfd3e294a747e90",
+      "final_sha256": "674673bec71e22d1773229c3613a28d7dc0a8f39b465430b6af323492526b93b"
+    },
+    {
+      "path": "tests/scripts/test_f01_fixture.py",
+      "initial_sha256": null,
+      "final_sha256": "d88d6bbd518c2b97b4e63c07332121ffdc5ec73ebed5c3250be4cfc2a7cd5e64"
+    },
+    {
+      "path": "tests/scripts/test_quiescence.py",
+      "initial_sha256": "8bbb67247bb03d5f1abe62eae1d88ca89c0359190e93635b893f4955a1306c3d",
+      "final_sha256": "d91732a6e5b4dbc894f2b54b57568e74d43abac2e0e556f0676d96ab9fa3633e"
+    },
+    {
+      "path": "tests/unit/poll_budget_test.cpp",
+      "initial_sha256": "7c778461d5477efea9de36ef37428c05296ea914ca15f70b8daaf939149488d9",
+      "final_sha256": "8c51f145ab37128078075567a53e3fb6f39e694450fcfd391808fa46765be4cd"
+    },
+    {
+      "path": "tools/file_safety.hpp",
+      "initial_sha256": null,
+      "final_sha256": "74e730a814a00f6487a1e84ec911dc2218413f0872a07e2de750a15bb8ea1038"
+    },
+    {
+      "path": "tools/tiplog_bench/main.cpp",
+      "initial_sha256": "f8572d5cfc58cedbc1adea14256aa659eb5084511b56c038474139f959c9b7e1",
+      "final_sha256": "1072518329a57d69a3898f4a26464aef32ce5ba74dbc783ba8d2283753330568"
+    },
+    {
+      "path": "tools/tiplog_layout/main.cpp",
+      "initial_sha256": "5a43a215a922a56591f2f041becf3464db8c054fcb096366a0180ef347fdec4b",
+      "final_sha256": "c995038366f2f6291c38164f98b8992cfcff374ab58561c208888d92a67fab7e"
+    },
+    {
+      "path": "tools/tiplog_layout/runtime_main.cpp",
+      "initial_sha256": "ae2c9d5aeec0d567ea4a3b9393249d2f12907c6eb156a1e6bda52127289dbbe7",
+      "final_sha256": "d736bcd5a43690e35dccfd2407733c9f72484f10c237d494226ce974514ebdf7"
+    },
+    {
+      "path": "tools/tiplog_walk/main.cpp",
+      "initial_sha256": "2059df3bc394018240cb6add261294db767775f18749d82b3b5884543598b894",
+      "final_sha256": "76f59782ed5ebd716e4a75b3f923de9b97ac843d813adccc6413701c98ffae40"
+    }
+  ],
+  "removed": []
+}

@@ -1,0 +1,32 @@
+{
+  "phase": "P6",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "authorization": "2026-10-25: finish entire Phase6 and stop; P7/P8 not started",
+  "checks": {
+    "release_cpp_166": "results/p6/release-tests-prefix-final-20261023T143830.870052Z.json",
+    "asan_cpp_166": "results/p6/sanitizer-tests-prefix-final-20261023T143838.074028Z.json",
+    "final_python_143": "results/p6/python-final-title-check-20261025T075429.867981Z.json",
+    "CC2": "results/p6/CC2-all-configurations.json",
+    "RC3": "results/p6/rc3-final-verified.json",
+    "F3": "results/p6/fuzz-prefix-final-verified.json",
+    "core_integrity": "results/p6/final-core-integrity.json",
+    "auditor_selftest": "results/p6/auditor-t5-enrichment-self-test-20261025T041647.001633Z.json",
+    "auditor_compatibility": "results/p6/auditor-t5-compatibility/compatibility.json",
+    "measurement_files_unchanged": "results/p6/auditor-t5-compatibility/measurement-files-final.json",
+    "complete_audit_analysis_pipeline": "results/p6/closeout-audit-analysis-figures-20261025T041854.547119Z.json",
+    "figure_focus_tests": "results/p6/figure-layout-focused-tests-20261025T043234.286174Z.json",
+    "figure_compatibility": "results/p6/f12-layout-compatibility/compatibility.json",
+    "figure_title_compatibility": "results/p6/f12-title-position-compatibility/compatibility.json",
+    "RC1_final_regeneration": "results/p6/figures-final-title-regeneration-20261025T075429.868488Z.json",
+    "T2_adjusted_selftest": "results/p6/t2-adjusted-report-selftest-final-20261025T042015.276071Z.json",
+    "T2_adjusted_analysis": "results/p6/t2-adjusted-report-analysis-final-20261025T042021.275937Z.json",
+    "T5_highwater_analysis": "results/p6/t5-high-water-report-analysis-20261025T043318.669440Z.json",
+    "environment": "results/p6/closeout-environment-20261025T041647.365111Z.json",
+    "final_artifact_review": "results/p6/final-gate-review.json",
+    "regeneration_identity": "results/p6/figure-regeneration-verification.json"
+  },
+  "report": "docs/report/results_tip.md",
+  "source_map": "results/p6/p6-report-source-map.md",
+  "at_utc": "2026-10-25T07:56:03.590775+00:00"
+}

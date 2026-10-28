@@ -1,0 +1,22 @@
+{"id": "release-scan-stdpq", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 93.65260251200016}
+{"id": "release-indexed-stdpq", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 95.75796621100017}
+{"id": "release-indexed-binheap", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 99.60845392700003}
+{"id": "release-indexed-quad", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 99.36611612000002}
+{"id": "release-indexed-loser", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 88.28328706700017}
+{"id": "release-auto-stdpq", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 88.91417539000008}
+{"id": "release-auto-quad", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 88.06039970899997}
+{"id": "release-auto-binheap", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 91.32346478699992}
+{"id": "asan-ubsan-scan-stdpq", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 67.44999023399987}
+{"id": "release-auto-loser", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 95.87608919700006}
+{"id": "asan-ubsan-indexed-stdpq", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 81.19529907099991}
+{"id": "asan-ubsan-indexed-binheap", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 78.12274149399991}
+{"id": "asan-ubsan-indexed-quad", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 72.10934641200015}
+{"id": "asan-ubsan-indexed-loser", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 69.24129122599993}
+{"id": "asan-ubsan-auto-stdpq", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 67.33743646599987}
+{"id": "asan-ubsan-auto-binheap", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 69.48717747700039}
+{"id": "asan-ubsan-auto-quad", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 69.06214935499975}
+{"id": "fuzz_trace_reader", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 0.41589753500011284}
+{"id": "fuzz_itch_walker", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 9.99553112700005}
+{"id": "asan-ubsan-auto-loser", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 66.2081019719999}
+{"id": "fuzz_engine_ops", "passed": true, "exit_status": 0, "elapsed_monotonic_seconds": 43.139986681999744}
+{"passed": true, "groups": {"release": {"pairs": 9, "all_passed": true, "mode_independent_digest_equal": true, "digest_values": [13453666401178898262], "operations": 90000000, "seeds_per_pair": 1000}, "asan-ubsan": {"pairs": 9, "all_passed": true, "mode_independent_digest_equal": true, "digest_values": [13990326321313093666], "operations": 18000000, "seeds_per_pair": 200}}, "report": "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/summary.json"}

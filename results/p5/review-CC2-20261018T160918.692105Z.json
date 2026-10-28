@@ -1,0 +1,21 @@
+{
+  "label": "review-CC2",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json,re\nsummary_path=Path(\"results/p5/CC2-all-configurations.json\")\nsummary=json.loads(summary_path.read_text());assert summary[\"status\"]==\"passed\"\nexpected={(\"scan\",\"stdpq\")} | {(mode,kernel) for mode in (\"indexed\",\"auto\") for kernel in (\"stdpq\",\"binheap\",\"quad\",\"loser\")}\nexcluded=set(summary[\"excluded_mode_specific_fields\"])\nresults={};details=[]\nfor preset,seeds in ((\"release\",1000),(\"asan-ubsan\",200)):\n rows=[row for row in summary[\"rows\"] if row[\"preset\"]==preset]\n assert len(rows)==9 and {(r[\"mode\"],r[\"kernel\"]) for r in rows}==expected\n canonical=[]\n for row in rows:\n  record_path=Path(row[\"record\"]);record=json.loads(record_path.read_text())\n  assert record[\"status\"]==\"passed\" and record[\"exit_code\"]==0\n  argv=record[\"argv\"]\n  for option,value in ((\"--seeds\",str(seeds)),(\"--operations\",\"10000\"),(\"--seed-base\",\"20191230\"),(\"--mode\",row[\"mode\"]),(\"--kernel\",row[\"kernel\"])):\n   assert argv[argv.index(option)+1]==value\n  if preset==\"asan-ubsan\":\n   assert \"detect_leaks=1\" in record[\"environment\"][\"ASAN_OPTIONS\"] and \"halt_on_error=1\" in record[\"environment\"][\"UBSAN_OPTIONS\"]\n  log_path=Path(record[\"log\"]);log=log_path.read_text()\n  assert not any(marker in log for marker in (\"ERROR: AddressSanitizer\",\"ERROR: LeakSanitizer\",\"runtime error:\",\"UndefinedBehaviorSanitizer:\"))\n  payload=json.loads(next(line for line in reversed(log.splitlines()) if line.startswith(\"{\")))\n  assert payload==row[\"result\"] and payload[\"status\"]==\"passed\"\n  assert payload[\"operations\"]==seeds*10000 and payload[\"seeds\"]==seeds and payload[\"operations_per_seed\"]==10000\n  if row[\"mode\"]!=\"scan\":\n   assert payload[\"indexed_execution_batches\"]>0 and payload[\"multicursor_opens\"]>0\n  if row[\"mode\"]==\"auto\":assert payload[\"scan_execution_batches\"]>0\n  canonical.append({k:v for k,v in payload.items() if k not in excluded})\n  details.append({\"preset\":preset,\"mode\":row[\"mode\"],\"kernel\":row[\"kernel\"],\"record\":str(record_path),\"record_sha256\":hashlib.sha256(record_path.read_bytes()).hexdigest(),\"log_sha256\":hashlib.sha256(log_path.read_bytes()).hexdigest(),\"indexed_execution_batches\":payload[\"indexed_execution_batches\"],\"scan_execution_batches\":payload[\"scan_execution_batches\"],\"multicursor_opens\":payload[\"multicursor_opens\"]})\n assert all(p==canonical[0] for p in canonical)\n results[preset]={\"configurations\":len(rows),\"operations\":9*seeds*10000,\"same_observable_results\":True,\"digest\":canonical[0][\"digest_fnv1a64\"]}\nrc3=json.loads(Path(\"results/p5/rc3-summary.json\").read_text())\nassert hashlib.sha256(Path(\"build/release/tiplog_differential\").read_bytes()).hexdigest()==rc3[\"builds\"][\"gcc\"][\"binaries\"][\"tiplog_differential\"]\nfor filename,digest in rc3[\"source_sha256\"].items():assert hashlib.sha256(Path(filename).read_bytes()).hexdigest()==digest\nout={\"status\":\"passed\",\"scope\":\"Independent saved CC2 evidence audit; no differential campaign rerun\",\"summary_sha256\":hashlib.sha256(summary_path.read_bytes()).hexdigest(),\"preset_results\":results,\"effective_execution_and_multicursor_coverage_checked\":True,\"current_release_binary_rc3_and_source_identity\":True,\"rows\":details}\nPath(\"results/p5/CC2-independent-review.json\").write_text(json.dumps(out,indent=2)+\"\\n\")\nprint(json.dumps({k:v for k,v in out.items() if k!=\"rows\"}))\n"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T160918.692105Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/review-CC2-20261018T160918.692105Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.024685800000042946
+}

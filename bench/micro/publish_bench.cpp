@@ -1,5 +1,7 @@
 #include "tiplog/engine/engine.hpp"
 #include "bench_log.hpp"
+#include "../../tools/tiplog_bench/contracts.hpp"
+#include "../../tools/file_safety.hpp"
 #include <benchmark/benchmark.h>
 
 #include <algorithm>
@@ -57,26 +59,7 @@ std::uint64_t bounded(std::mt19937_64& random, std::uint64_t bound) {
 }
 std::vector<std::pair<std::uint16_t, std::uint64_t>> read_mix(const std::string& path) {
   std::ifstream stream(path);
-  if (!stream) throw std::invalid_argument("cannot read empirical mix");
-  std::string line;
-  std::getline(stream, line);
-  if (line != "type,payload_bytes,count" && line != "type,payload_bytes,count\r")
-    throw std::invalid_argument("empirical mix header");
-  std::vector<std::pair<std::uint16_t, std::uint64_t>> result;
-  std::uint64_t cumulative = 0;
-  while (std::getline(stream, line)) {
-    if (!line.empty() && line.back() == '\r') line.pop_back();
-    const auto first = line.find(','), last = line.rfind(',');
-    if (first != 1 || first == last) throw std::invalid_argument("empirical mix row");
-    const auto size = number(std::string_view(line).substr(first + 1, last - first - 1));
-    const auto count = number(std::string_view(line).substr(last + 1));
-    if (size < 12 || size > 256 || count == 0 || count > UINT64_MAX - cumulative)
-      throw std::invalid_argument("empirical mix limits");
-    cumulative += count;
-    result.emplace_back(static_cast<std::uint16_t>(size), cumulative);
-  }
-  if (result.empty()) throw std::invalid_argument("empty empirical mix");
-  return result;
+  return tiplog::bench::read_payload_mix(stream);
 }
 Inputs inputs(const Profile& profile,
               const std::vector<std::pair<std::uint16_t, std::uint64_t>>& mix) {
@@ -281,6 +264,12 @@ int main(int argc, char** argv) {
     if (selected.payload != "12" && selected.payload != "32" && selected.payload != "64" &&
         selected.payload != "256" && selected.payload != "empirical")
       throw std::invalid_argument("payload must be12,32,64,256,empirical");
+    if (verify_only && remaining.size() != 1)
+      throw std::invalid_argument("unrecognized argument in verification mode: " +
+                                  std::string(remaining[1]));
+    if (!verify_only)
+      tiplog::cli::check_benchmark_outputs(static_cast<int>(remaining.size()), remaining.data(),
+                                          {mix_file}, false);
     const auto mix = read_mix(mix_file);
     std::vector<Profile> profiles;
     if (matrix) {
@@ -315,6 +304,8 @@ int main(int argc, char** argv) {
       }
     }
     if (!verify_only) { benchmark::RunSpecifiedBenchmarks(); benchmark::Shutdown(); }
+    std::cout.flush();
+    if (!std::cout) throw std::runtime_error("failed writing stdout result");
     return 0;
   } catch (const std::exception& error) {
     std::cerr << "publish_bench: " << error.what() << '\n'; return 1;

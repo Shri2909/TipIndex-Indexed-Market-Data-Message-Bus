@@ -1,0 +1,42 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191239
+INFO: Loaded 1 modules   (7274 inline 8-bit counters): 7274 [0x5fd7f034b898, 0x5fd7f034d502), 
+INFO: Loaded 1 PC tables (7274 PCs): 7274 [0x5fd7f034d508,0x5fd7f0369ba8), 
+INFO:     1281 files found in tests/fuzz/corpus/ops_integrated
+INFO: seed corpus: files: 1281 min: 1b max: 65386b total: 2865840b rss: 34Mb
+#1024	pulse  cov: 2198 ft: 10503 corp: 686/251Kb exec/s: 256 rss: 465Mb
+#1282	INITED cov: 2199 ft: 11463 corp: 865/2031Kb exec/s: 38 rss: 699Mb
+#1292	NEW    cov: 2199 ft: 11470 corp: 866/2044Kb lim: 65536 exec/s: 39 rss: 699Mb L: 12676/65386 MS: 5 ChangeBinInt-CrossOver-ShuffleBytes-CopyPart-CrossOver-
+#1490	REDUCE cov: 2199 ft: 11470 corp: 866/2044Kb lim: 65536 exec/s: 40 rss: 699Mb L: 52/65386 MS: 3 ShuffleBytes-ChangeBinInt-EraseBytes-
+#1572	REDUCE cov: 2199 ft: 11470 corp: 866/2044Kb lim: 65536 exec/s: 40 rss: 699Mb L: 47/65386 MS: 2 ChangeBit-EraseBytes-
+#1637	NEW    cov: 2199 ft: 11471 corp: 867/2073Kb lim: 65536 exec/s: 38 rss: 711Mb L: 29778/65386 MS: 5 ChangeByte-ShuffleBytes-InsertByte-InsertByte-ShuffleBytes-
+#1738	NEW    cov: 2199 ft: 11474 corp: 868/2127Kb lim: 65536 exec/s: 37 rss: 711Mb L: 55217/65386 MS: 1 CopyPart-
+#2048	pulse  cov: 2199 ft: 11474 corp: 868/2127Kb lim: 65536 exec/s: 37 rss: 733Mb
+#2203	REDUCE cov: 2199 ft: 11474 corp: 868/2127Kb lim: 65536 exec/s: 39 rss: 733Mb L: 317/65386 MS: 5 ShuffleBytes-InsertRepeatedBytes-EraseBytes-ChangeByte-InsertRepeatedBytes-
+#2269	REDUCE cov: 2199 ft: 11474 corp: 868/2127Kb lim: 65536 exec/s: 38 rss: 733Mb L: 46/65386 MS: 1 EraseBytes-
+#2397	REDUCE cov: 2199 ft: 11474 corp: 868/2124Kb lim: 65536 exec/s: 37 rss: 733Mb L: 27281/65386 MS: 3 ChangeBit-ChangeBit-EraseBytes-
+#2911	REDUCE cov: 2199 ft: 11474 corp: 868/2124Kb lim: 65536 exec/s: 40 rss: 733Mb L: 3274/65386 MS: 4 ShuffleBytes-ChangeByte-CrossOver-EraseBytes-
+#2965	REDUCE cov: 2199 ft: 11474 corp: 868/2121Kb lim: 65536 exec/s: 40 rss: 733Mb L: 12978/65386 MS: 4 CMP-ShuffleBytes-EraseBytes-CopyPart- DE: "\000\000v\0223\262\335\310"-
+#3007	REDUCE cov: 2199 ft: 11474 corp: 868/2121Kb lim: 65536 exec/s: 40 rss: 733Mb L: 142/65386 MS: 2 ShuffleBytes-EraseBytes-
+#3242	REDUCE cov: 2199 ft: 11474 corp: 868/2121Kb lim: 65536 exec/s: 42 rss: 733Mb L: 66/65386 MS: 5 CopyPart-EraseBytes-InsertByte-ChangeByte-ChangeBit-
+#3388	REDUCE cov: 2199 ft: 11474 corp: 868/2120Kb lim: 65536 exec/s: 42 rss: 733Mb L: 5032/65386 MS: 1 EraseBytes-
+#3539	REDUCE cov: 2199 ft: 11474 corp: 868/2120Kb lim: 65536 exec/s: 42 rss: 733Mb L: 468/65386 MS: 1 EraseBytes-
+#3571	REDUCE cov: 2199 ft: 11474 corp: 868/2119Kb lim: 65536 exec/s: 42 rss: 733Mb L: 40365/65386 MS: 2 ChangeBit-EraseBytes-
+#3694	REDUCE cov: 2199 ft: 11474 corp: 868/2119Kb lim: 65536 exec/s: 42 rss: 733Mb L: 789/65386 MS: 3 PersAutoDict-PersAutoDict-EraseBytes- DE: "\000\000v\0223\262\335\310"-"\000\000v\0223\262\335\310"-
+#3826	REDUCE cov: 2199 ft: 11474 corp: 868/2119Kb lim: 65536 exec/s: 42 rss: 733Mb L: 524/65386 MS: 2 EraseBytes-EraseBytes-
+#4096	pulse  cov: 2199 ft: 11474 corp: 868/2119Kb lim: 65536 exec/s: 41 rss: 733Mb
+#4177	REDUCE cov: 2199 ft: 11474 corp: 868/2119Kb lim: 65536 exec/s: 40 rss: 766Mb L: 4676/65386 MS: 1 EraseBytes-
+#4536	NEW    cov: 2199 ft: 11476 corp: 869/2120Kb lim: 65536 exec/s: 41 rss: 766Mb L: 1289/65386 MS: 4 ChangeByte-PersAutoDict-ChangeBinInt-InsertRepeatedBytes- DE: "\000\000v\0223\262\335\310"-
+#4755	REDUCE cov: 2199 ft: 11476 corp: 869/2120Kb lim: 65536 exec/s: 40 rss: 766Mb L: 398/65386 MS: 4 ShuffleBytes-CMP-ChangeBit-EraseBytes- DE: "\017\000\000\000\000\000\000\000"-
+#4918	REDUCE cov: 2199 ft: 11476 corp: 869/2120Kb lim: 65536 exec/s: 41 rss: 771Mb L: 207/65386 MS: 3 CrossOver-ChangeByte-EraseBytes-
+#4928	DONE   cov: 2199 ft: 11476 corp: 869/2120Kb lim: 65536 exec/s: 40 rss: 771Mb
+###### Recommended dictionary. ######
+"\000\000v\0223\262\335\310" # Uses: 186
+"\017\000\000\000\000\000\000\000" # Uses: 6
+###### End of recommended dictionary. ######
+Done 4928 runs in 122 second(s)
+stat::number_of_executed_units: 4928
+stat::average_exec_per_sec:     40
+stat::new_units_added:          21
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              771

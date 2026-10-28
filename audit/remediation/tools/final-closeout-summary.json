@@ -1,0 +1,53 @@
+{
+  "schema": "tiplog-remediation-tools-final-closeout-v1",
+  "at_utc": "2026-10-26T08:39:35.254836+00:00",
+  "status": "passed",
+  "scope": "Correctness, input compatibility and artifact identity only; no performance claims",
+  "frozen_case_batches_checked": 32,
+  "frozen_curve_batches_checked": 24,
+  "budget_source_header_sha256": "8d333dbbfe037aeed3924a2779f4603f68504a71d4b7db8ee98dda7ef36cef8e",
+  "all_frozen_inputs_fit_current_defaults": true,
+  "budget_maxima": {
+    "batch_bytes": 88718316,
+    "aggregate_preparation_work_bound": 120300000,
+    "case_preparation_work_bound": 1004000,
+    "case_membership_upper_bound": 4000,
+    "global_batch_bytes": 2415456,
+    "global_aggregate_entries": 120904
+  },
+  "layout_frontend_help": [
+    {
+      "command": [
+        "/home/abc/Desktop/Jane Street/build/release/tiplog_layout",
+        "--help"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "40e79fbf9373da736f552a5e2afc16eacae8def40189d29b3728e7069daef61b",
+      "current_defaults_exposed": true
+    },
+    {
+      "command": [
+        "/home/abc/Desktop/Jane Street/build/release/tiplog_layout_runtime",
+        "--help"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "32dab134a97d31eb43f16908327f82e6d391fda44cb71fac0fa2114734d1112d",
+      "current_defaults_exposed": true
+    }
+  ],
+  "cc5_release_instances": 10000,
+  "cc5_sanitizer_instances": 10000,
+  "cc5_release_and_sanitizer_match_historical": true,
+  "worked_example_release_and_sanitizer_byte_identical_to_snapshot": true,
+  "sanitizer_validation_context": "CC5 and worked example passed outside the tracing sandbox, with leak checks enabled. Initial traced run produced the environment-only LSan ptrace failure; final untraced process exits are zero with empty stderr.",
+  "p6_original_files_verified": 5364,
+  "p6_original_bytes_verified": 4105957437,
+  "p6_changed_files": [],
+  "p8_manifest_unchanged": true,
+  "detail_artifacts": [
+    "frozen-budget-preflight.json",
+    "layout-closeout.json",
+    "layout-closeout-untraced.log",
+    "frozen-p6-measurements.json"
+  ]
+}

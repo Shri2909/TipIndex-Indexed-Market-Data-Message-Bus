@@ -1,0 +1,56 @@
+{
+  "scope": "Exploratory noisy-host CPU-time diagnostic; no guaranteed nonregression or speedup.",
+  "commands": [
+    [
+      "g++",
+      "-std=c++20",
+      "-O2",
+      "-g",
+      "-march=x86-64-v3",
+      "-DNDEBUG",
+      "-I",
+      "/home/abc/Desktop/Jane Street/results/f01/legacy-diagnostic/baseline",
+      "-I",
+      "/home/abc/Desktop/Jane Street/src",
+      "/home/abc/Desktop/Jane Street/results/f01/legacy-diagnostic/legacy_diagnostic.cpp",
+      "/home/abc/Desktop/Jane Street/results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.cpp",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+      "-o",
+      "/home/abc/Desktop/Jane Street/build/f01/core-review/reproduce-compile-check/baseline"
+    ],
+    [
+      "g++",
+      "-std=c++20",
+      "-O2",
+      "-g",
+      "-march=x86-64-v3",
+      "-DNDEBUG",
+      "-I",
+      "/home/abc/Desktop/Jane Street/results/f01/legacy-diagnostic/final",
+      "-I",
+      "/home/abc/Desktop/Jane Street/src",
+      "/home/abc/Desktop/Jane Street/results/f01/legacy-diagnostic/legacy_diagnostic.cpp",
+      "/home/abc/Desktop/Jane Street/results/f01/legacy-diagnostic/final/tiplog/engine/engine.cpp",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+      "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+      "-o",
+      "/home/abc/Desktop/Jane Street/build/f01/core-review/reproduce-compile-check/final"
+    ]
+  ],
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "file_identities": {
+    "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a": "ee3b47552f0720cf5f574df5044a2cc6244efdf1bfa1132c457d799830f54afd",
+    "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a": "02930281fadc7b221bcfa5747d6ff11427ec96deaa98b416f6786f056aaa8348",
+    "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a": "60422354d910309daeda5500a0755f588babc0190a11576f5ea2486e2cc7e7fc",
+    "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a": "3fbb86aca227e1a6b743169ab9a5d3ee7a8a9e30f95cae6d664483cee00781c3",
+    "/home/abc/Desktop/Jane Street/build/f01/core-review/reproduce-compile-check/baseline": "bfdf8b2db67a1729d8e5295a17f9382bb8a87a0e5b326f7364e836261fe3e941",
+    "/home/abc/Desktop/Jane Street/build/f01/core-review/reproduce-compile-check/final": "627461c64d92c60c67a9395ea34f1a17e248832488f007e130dc1c7a7ed9ae05"
+  },
+  "rows": [],
+  "summary": {}
+}

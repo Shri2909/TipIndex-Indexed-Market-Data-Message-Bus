@@ -1,0 +1,68 @@
+Execute P7 → P8 of approved plan v1.1, Tier B, for tiplog. Finish both acceptance gates, then STOP.
+
+This explicitly authorizes implementation, debugging, tests, studies, reporting and local packaging for P7 and P8. It supersedes the previous stop-after-P6 instruction. Continue automatically between these two phases. Do not stop at a plan, partial implementation or intermediate report.
+
+BASELINE AND SCOPE
+
+P0–P6 are complete. Verify results/p6/phase-gate.json and preserve the accepted implementation, raw measurements and evidence. Reuse valid completed work. Do not rerun P6 campaigns merely to obtain fresh results.
+
+Keep optimizer work isolated from the timed engine. Establish whether prior evidence remains applicable through source, binary and dependency-impact checks. Rerun affected acceptance checks when necessary; never substitute smoke tests for required gates.
+
+Scope: P7 and P8 only. No Tier C, roadmap R1–R10, new datasets, privileged settings, unrelated cleanup or external publication/push. Preserve managed repository metadata and existing user work.
+
+AUTHORITATIVE REQUIREMENTS
+
+First read MASTER_PROJECT_PROMPT.md, docs/plan/INDEX.md and docs/plan/PROGRESS.md.
+
+Then apply the relevant requirements from ARCHITECTURE.md, IMPLEMENTATION_PLAN.md, VALIDATION_PLAN.md, RESEARCH.md, STUDY_PLAN.md, REVIEW_2026-10-17.md, FINDINGS_TO_IMPLEMENTATION.md and PROBLEM_STATEMENT_AND_BENCHMARKS.md under docs/plan/.
+
+Use corrected v1.1 contracts. Reuse saved research and complete required ST-09 reading. Inspect original sources only where needed to resolve an implementation decision; record sections, revisions, limitations and attribution. Do not invent unpublished Aria details.
+
+P7 — REQUIRED EXIT GATE
+
+Complete P7.1–P7.6, including all of the following:
+
+1. Implement the declared connected residual-store model within partitions, including internal-node volumes, zero volumes, above-root terms, exact/subtree/basket requests and once-per-request store charging. No replication or cross-partition bundling.
+
+2. Implement two independent cost evaluators, H-BASE, H-KM-min/max, Gray-code ENUM, and MASK-DP with reconstruction and the approved global nonnegative multiplier sweep. References must not reuse optimized solver logic.
+
+3. Use checked exact rational/scaled-integer costs. Enforce deterministic ties, finite thresholds [0,W_total], representation limits and all V39 boundary cases. Follow ARCHITECTURE §6.5/§6.9 exactly: supported-point certificates require their stated preconditions and complete partition information. Never describe unsupported budgets or incomplete curves as globally solved.
+
+4. Pass V28–V32 and V39 in release and ASan/UBSan. Meet CC-5: DP=ENUM on at least10,000 random instances for every applicable k≤K, with zero mismatches. Independently validate threshold-solver correctness and count monotonicity.
+
+5. Reproduce exact worked-example waste:
+   H-BASE=5,517,460,497 B;
+   H-KM-max=39,881,491 B;
+   ENUM/DP optimum and H-KM-min=30,029,491 B.
+
+6. Execute all Tier B L2/L3/L4/L5 studies: W0–W3, β/α={0,64KiB,1MiB}, prescribed budgets/sweeps, synthetic scaling and H-spec/H-flat sensitivity. Preserve the H-flat exact-read zero-waste baseline. Generate F14–F18.
+
+Declare solver state/time caps before studies. Report coverage by workload, partitions, bytes and workload weight, including timeout/state-limit/heuristic-only outcomes. Compute gaps only against solved optima with identical objectives, budgets and feasible sets.
+
+Label results modeled; they are not measured physical disk I/O.
+
+Save an evidence-backed P7 gate. Proceed to P8 only after every mandatory P7 criterion passes.
+
+P8 — REQUIRED EXIT GATE
+
+Complete P8.1–P8.3:
+
+- Write docs/report/REPORT.md following IMPLEMENTATION_PLAN §11, integrating actual implementation, correctness evidence, P6 measurements, P7 modeled results, uncertainty, exactness coverage, failures and limitations.
+- Write docs/report/REPRODUCE.md with tested commands, dependencies, checksums, seeds, configurations and local-data requirements. Verify one-command figure regeneration. Preserve valid inputs rather than redownloading/reconverting them.
+- Verify CC-1–CC-6, RC-1–RC-3 and IMPLEMENTATION_PLAN §10.1 against final source. Every checked completion item must link valid executed evidence.
+- Preserve input incompleteness, host/noise/counter limitations, assumed workloads and sequential-reader scope. Distinguish modeled savings from measured performance. Use only supported numbers in resume bullets.
+- Update README, INDEX and PROGRESS. Verify artifact identities and local links. Exclude message-level Nasdaq data, real fuzz inputs and large ignored artifacts from tracked packaging.
+
+Save an evidence-backed P8 gate. Mark the core complete only when its full checklist passes.
+
+EXECUTION DISCIPLINE
+
+Maintain source/finding → decision → task → code/symbol → validation → executed-evidence traceability.
+
+Save actual commands, exits, logs, seeds, configurations, hashes, compiler flags, environment and Git SHA/dirty state. Preserve failed attempts. Never invent results, conceal failures or mark unrun checks passed.
+
+Resolve routine choices autonomously. Do not reduce coverage, repetitions or acceptance criteria. Request input only for an unavoidable external prerequisite or material change requiring approval; complete unaffected work meanwhile.
+
+Give concise progress updates. Finish with one consolidated completion report linking both gates, deliverables, executed checks, findings and limitations. If anything mandatory remains unmet, state that accurately and do not claim completion.
+
+Begin P7 now. Continue through P8 after its prerequisites pass. STOP after P8; do not start roadmap work.

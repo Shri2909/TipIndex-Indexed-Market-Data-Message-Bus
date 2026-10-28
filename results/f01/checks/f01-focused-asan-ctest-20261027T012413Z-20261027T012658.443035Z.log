@@ -1,0 +1,51 @@
+Test project /home/abc/Desktop/Jane Street/build/f01/test-asan
+      Start 13: poll_budget.PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture
+ 1/23 Test #13: poll_budget.PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture ...................   Passed    0.03 sec
+      Start 14: poll_budget.PollBudget.V03EmptyFutureFinishedAndMaximumCaps
+ 2/23 Test #14: poll_budget.PollBudget.V03EmptyFutureFinishedAndMaximumCaps ..................................   Passed    0.03 sec
+      Start 15: poll_budget.PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection
+ 3/23 Test #15: poll_budget.PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection ..............   Passed    0.03 sec
+      Start 16: poll_budget.PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+ 4/23 Test #16: poll_budget.PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress .................   Passed    0.29 sec
+      Start 17: poll_budget.PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+ 5/23 Test #17: poll_budget.PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating ...............   Passed    0.03 sec
+      Start 18: poll_budget.PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress
+ 6/23 Test #18: poll_budget.PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress .............   Passed    0.03 sec
+      Start 19: poll_budget.PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+ 7/23 Test #19: poll_budget.PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges ...................   Passed    0.03 sec
+      Start 20: poll_budget.PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted
+ 8/23 Test #20: poll_budget.PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted ..............   Passed    0.03 sec
+      Start 21: poll_budget.PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData
+ 9/23 Test #21: poll_budget.PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData .......   Passed    0.03 sec
+      Start 22: poll_budget.PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels
+10/23 Test #22: poll_budget.PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels ........   Passed    0.14 sec
+      Start 23: poll_budget.PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry
+11/23 Test #23: poll_budget.PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry ...............   Passed    0.03 sec
+      Start 24: poll_budget.PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires
+12/23 Test #24: poll_budget.PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires ........   Passed    0.03 sec
+      Start 25: poll_budget.PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress
+13/23 Test #25: poll_budget.PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress ..........................   Passed    0.08 sec
+      Start 26: poll_budget.PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime
+14/23 Test #26: poll_budget.PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime ..........................   Passed    0.03 sec
+      Start 27: poll_budget.PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint
+15/23 Test #27: poll_budget.PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint ................   Passed    0.03 sec
+      Start 28: poll_budget.PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary
+16/23 Test #28: poll_budget.PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary .........................   Passed    0.03 sec
+      Start 29: poll_budget.PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds
+17/23 Test #29: poll_budget.PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds ...   Passed    0.03 sec
+      Start 30: poll_budget.PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors
+18/23 Test #30: poll_budget.PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors ........   Passed    0.03 sec
+      Start 31: poll_budget.PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess
+19/23 Test #31: poll_budget.PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess .........   Passed    0.03 sec
+      Start 32: poll_budget.PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch
+20/23 Test #32: poll_budget.PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch ...............   Passed    0.04 sec
+      Start 33: poll_budget.PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries
+21/23 Test #33: poll_budget.PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries .........   Passed    0.04 sec
+      Start 34: poll_budget.PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions
+22/23 Test #34: poll_budget.PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions .....   Passed    0.03 sec
+      Start 35: poll_budget.PollBudget.V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch
+23/23 Test #35: poll_budget.PollBudget.V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch .............   Passed    0.04 sec
+
+100% tests passed out of 23
+
+Total Test time (real) =   1.22 sec

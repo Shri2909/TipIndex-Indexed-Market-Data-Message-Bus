@@ -1,0 +1,56 @@
+runtime round 0/10: settling 0/60 s
+runtime round 0/10: settling 20/60 s
+runtime round 0/10: settling 40/60 s
+runtime round 0/10: child running 0 s
+runtime round 0/10: passed all 900 DP rows and controls
+runtime round 1/10: settling 0/60 s
+runtime round 1/10: settling 20/60 s
+runtime round 1/10: settling 40/60 s
+runtime round 1/10: child running 0 s
+runtime round 1/10: passed all 900 DP rows and controls
+runtime round 2/10: settling 0/60 s
+runtime round 2/10: settling 20/60 s
+runtime round 2/10: settling 40/60 s
+runtime round 2/10: child running 0 s
+runtime round 2/10: passed all 900 DP rows and controls
+runtime round 3/10: settling 0/60 s
+runtime round 3/10: settling 20/60 s
+runtime round 3/10: settling 40/60 s
+runtime round 3/10: child running 0 s
+runtime round 3/10: passed all 900 DP rows and controls
+runtime round 4/10: settling 0/60 s
+runtime round 4/10: settling 20/60 s
+runtime round 4/10: settling 40/60 s
+runtime round 4/10: child running 0 s
+runtime round 4/10: passed all 900 DP rows and controls
+runtime round 5/10: settling 0/60 s
+runtime round 5/10: settling 20/60 s
+runtime round 5/10: settling 40/60 s
+runtime round 5/10: child running 0 s
+runtime round 5/10: passed all 900 DP rows and controls
+runtime round 6/10: settling 0/60 s
+runtime round 6/10: settling 20/60 s
+runtime round 6/10: settling 40/60 s
+runtime round 6/10: child running 0 s
+runtime round 6/10: passed all 900 DP rows and controls
+runtime round 7/10: settling 0/60 s
+runtime round 7/10: settling 20/60 s
+runtime round 7/10: settling 40/60 s
+runtime round 7/10: child running 0 s
+runtime round 7/10: passed all 900 DP rows and controls
+runtime round 8/10: settling 0/60 s
+runtime round 8/10: settling 20/60 s
+runtime round 8/10: settling 40/60 s
+runtime round 8/10: child running 0 s
+runtime round 8/10: passed all 900 DP rows and controls
+runtime round 9/10: settling 0/60 s
+runtime round 9/10: settling 20/60 s
+runtime round 9/10: settling 40/60 s
+runtime round 9/10: child running 0 s
+runtime round 9/10: passed all 900 DP rows and controls
+runtime round 10/10: settling 0/60 s
+runtime round 10/10: settling 20/60 s
+runtime round 10/10: settling 40/60 s
+runtime round 10/10: child running 0 s
+runtime round 10/10: passed all 900 DP rows and controls
+runtime campaign passed: 1 warm-up + 10 measured fresh processes, results/p7/runtime-campaign.json

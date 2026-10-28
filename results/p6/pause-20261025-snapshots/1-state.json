@@ -1,0 +1,6731 @@
+{
+  "common": {
+    "aslr_regime": "per-process disabled",
+    "auto_thresholds": {
+      "max_fraction": 1.0,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 3585027177.5
+    },
+    "binary_sha256": "8626525fb5c93e98cb84866a3e987e9954ca203ce8215bc0e3b6a26fb1306b50",
+    "compiler": {
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/g++",
+      "resolved_executable": "/usr/bin/x86_64-linux-gnu-g++-15",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "counters": null,
+    "cpu": 2,
+    "design": "paired-process-rounds",
+    "environment_path": "results/raw/P6/campaign-20261024/evaluation/environment-20261024T122159.832927Z.json",
+    "flags": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_bench/main.cpp\"",
+    "frequency_flags_reference": "results/raw/P6/campaign-20261024/evaluation/frequency-flags.json",
+    "git": {
+      "dirty": true,
+      "managed_git_preserved": true,
+      "metadata": ".tiplog-git",
+      "sha": "aa13c1824ba5a7a3593a0f63c6f455cac851e822"
+    },
+    "input_sha256": {
+      "configs/m2_payload_mix.csv": "b61c4c1821837e258f1947133ce6988db0141a066557dde742dc8542a9abb817",
+      "configs/m2_payload_mix.meta.json": "b1660287a307d459403df3ee1daa50bb35b25377a2406d409663975c7c27b1f1",
+      "data/manifest.json": "5b24dc677dbb26af76c84fbf06c69b32f5bd00c014cf6ff8455cf9bdb9738202",
+      "data/raw/12302019.NASDAQ_ITCH50.gz": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+      "data/traces/itch_20191230_0930_1000_flat.mdt": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2",
+      "data/traces/itch_20191230_0930_1000_flat.mdt.meta.json": "080eb641892369d62b9387975f0c61363093459bc250f991faf2595aadea6d6e",
+      "data/traces/itch_20191230_0930_1000_spec.mdt": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70",
+      "data/traces/itch_20191230_0930_1000_spec.mdt.meta.json": "e2fbcc134bb81c4028ef9292ff5f3b8ea538956fbfb021d568f8228ff0e0153a",
+      "results/data/itch_20191230_counts.json": "01911be1842f95dc13952999a5fa801d8ebefef2f6e387daf115ee31d4091303"
+    },
+    "observer_cpu_affinity": [
+      6
+    ],
+    "preset": "release",
+    "protocol_sha256": "17f774d173f47414305ef2f84e4817e7552ac0d1a9f9cd5feb702982b17a7169",
+    "provenance_reference": "results/raw/P6/campaign-20261024/evaluation/provenance.json",
+    "quiescence_record": "results/p6/measurement-quiescence-ac.json",
+    "run_id": "evaluation",
+    "seed": 20191230
+  },
+  "completed_processes": [
+    {
+      "id": "real-C1073741824-B1024-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C1073741824-B1024-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 21006,
+      "workload_id": "real-C1073741824-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "real-C2147483648-B1024-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 252,
+      "workload_id": "real-C2147483648-B1024"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P10-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P1000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.0-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z0.8-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L1-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L16-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 162,
+      "workload_id": "synth-P100000-Z1.2-L256-S20191231"
+    },
+    {
+      "id": "memory-B64-A34500000000000-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A34500000000000-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A34500000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A35100000000000-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A35100000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B64-A36000000000000-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B64-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A34500000000000-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A34500000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep18-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 18,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A35100000000000-rep19-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 19,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A35100000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-warmup-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": -1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep00-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 0,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep01-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 1,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep02-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 2,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep03-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 3,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep04-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 4,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep05-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 5,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep06-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 6,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep07-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 7,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep08-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 8,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep09-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 9,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep10-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 10,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep11-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 11,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep12-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 12,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep13-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 13,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep14-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 14,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep15-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 15,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep16-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 16,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    {
+      "id": "memory-B256-A36000000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    }
+  ],
+  "excluded_saved_warmups": 1,
+  "plan": "results/raw/P6/prepared-evaluation/plan.json",
+  "plan_sha256": "658274d88370da6493c76a4febc5e7546c5ff8402262e182b801ec08c01795f3",
+  "quiescence": {
+    "conditions": {
+      "at_utc": "2026-10-24T03:44:16.389022+00:00",
+      "builds_finished": true,
+      "conversion_finished": true,
+      "fuzz_finished": true,
+      "limits": "Visible project process check; no exclusive-host claim. AC now verified online. Previous failed preflight preserved.",
+      "optimizer_not_started": true,
+      "other_agents_quiescent": true,
+      "power": {
+        "ac_online": true,
+        "supplies": {
+          "ADP1": {
+            "capacity": null,
+            "online": "1",
+            "status": null,
+            "type": "Mains"
+          },
+          "BAT0": {
+            "capacity": "93",
+            "online": null,
+            "status": "Charging",
+            "type": "Battery"
+          }
+        }
+      },
+      "research_quiescent": true,
+      "status": "passed",
+      "tests_finished": true,
+      "visible_processes": {
+        "at_utc": "2026-10-24T03:44:16.386686+00:00",
+        "excluded_runner_ancestors": [
+          1,
+          1898,
+          2201,
+          3577,
+          4038,
+          4250,
+          7042,
+          7043
+        ],
+        "limit": "Visible process snapshot plus saved operator declaration; no host-wide isolation claim.",
+        "offenders": [],
+        "pid_namespace": "pid:[4026531836]",
+        "proc1_comm": "systemd",
+        "read_errors": []
+      }
+    },
+    "declaration": {
+      "bytes": 1159,
+      "path": "results/p6/measurement-quiescence-ac.json",
+      "sha256": "7bebf858d2ae2ff1507598c8b912f50b52246a92eecaf200081560c295ed7f72"
+    },
+    "visible_processes": {
+      "at_utc": "2026-10-24T12:21:59.816168+00:00",
+      "excluded_runner_ancestors": [
+        1,
+        1898,
+        31899,
+        31900,
+        31902,
+        52334
+      ],
+      "limit": "Visible process snapshot plus saved operator declaration; no host-wide isolation claim.",
+      "offenders": [],
+      "pid_namespace": "pid:[4026531836]",
+      "proc1_comm": "systemd",
+      "read_errors": []
+    }
+  },
+  "repetitions": 20,
+  "started_utc": "2026-10-24T12:22:04.256480+00:00",
+  "status": "running"
+}

@@ -1,0 +1,14 @@
+-- Failed to find LLVM FileCheck
+-- Google Benchmark version: v1.9.5, normalized to 1.9.5
+-- Enabling additional flags: -DINCLUDE_DIRECTORIES=/tmp/tiplog-second-pass/asan/_deps/benchmark-src/include
+-- Performing Test THREAD_SAFETY_ATTRIBUTES -- success
+-- Performing Test STD_REGEX -- success
+-- Performing Test STEADY_CLOCK -- success
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test PTHREAD_AFFINITY -- success
+-- tiplog GoogleTest provider: system 1.17.0
+-- Configuring done (1.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/tiplog-second-pass/asan

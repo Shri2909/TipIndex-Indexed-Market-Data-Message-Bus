@@ -1,0 +1,23 @@
+{
+  "label": "environment-cpu2",
+  "argv": [
+    "scripts/env_capture.sh",
+    "--cpu",
+    "2",
+    "--preset",
+    "release"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T083646.850622Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/environment-cpu2-20261025T083646.850622Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.3049942830002692
+}

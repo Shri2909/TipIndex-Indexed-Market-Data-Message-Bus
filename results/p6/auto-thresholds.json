@@ -1,0 +1,257 @@
+{
+  "candidates": [
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 0,
+      "training_sum_median_cpu_ns": 5216356751.0
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 0,
+      "training_sum_median_cpu_ns": 5216356751.0
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 0,
+      "training_sum_median_cpu_ns": 5216356751.0
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 0,
+      "training_sum_median_cpu_ns": 5216356751.0
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 0,
+      "training_sum_median_cpu_ns": 5216356751.0
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 0,
+      "training_sum_median_cpu_ns": 5216356751.0
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 1,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 1,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 1,
+      "training_sum_median_cpu_ns": 4600047149.0
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 1,
+      "training_sum_median_cpu_ns": 4510978683.5
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 1,
+      "training_sum_median_cpu_ns": 4329750136.0
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 1,
+      "training_sum_median_cpu_ns": 4329750136.0
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 4,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 4,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 4,
+      "training_sum_median_cpu_ns": 4600047149.0
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 4,
+      "training_sum_median_cpu_ns": 4510978683.5
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 4,
+      "training_sum_median_cpu_ns": 4140735377.5
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 4,
+      "training_sum_median_cpu_ns": 4012973006.0
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 16,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 16,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 16,
+      "training_sum_median_cpu_ns": 4600047149.0
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 16,
+      "training_sum_median_cpu_ns": 4510978683.5
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 16,
+      "training_sum_median_cpu_ns": 4140735377.5
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 16,
+      "training_sum_median_cpu_ns": 4031507339.0
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 4686794948.0
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 4331765719.5
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 4242697254.0
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 3694255216.0
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 64,
+      "training_sum_median_cpu_ns": 3585027177.5
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 256,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 256,
+      "training_sum_median_cpu_ns": 4686794948.0
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 256,
+      "training_sum_median_cpu_ns": 4331765719.5
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 256,
+      "training_sum_median_cpu_ns": 4242697254.0
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 256,
+      "training_sum_median_cpu_ns": 3694255216.0
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 256,
+      "training_sum_median_cpu_ns": 3585027177.5
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 1024,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 1024,
+      "training_sum_median_cpu_ns": 4686794948.0
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 1024,
+      "training_sum_median_cpu_ns": 4331765719.5
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 1024,
+      "training_sum_median_cpu_ns": 4242697254.0
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 1024,
+      "training_sum_median_cpu_ns": 3694255216.0
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 1024,
+      "training_sum_median_cpu_ns": 4328666707.5
+    },
+    {
+      "max_fraction": 0.01,
+      "max_partitions": 65535,
+      "training_sum_median_cpu_ns": 4955076377.5
+    },
+    {
+      "max_fraction": 0.05,
+      "max_partitions": 65535,
+      "training_sum_median_cpu_ns": 4686794948.0
+    },
+    {
+      "max_fraction": 0.1,
+      "max_partitions": 65535,
+      "training_sum_median_cpu_ns": 4331765719.5
+    },
+    {
+      "max_fraction": 0.25,
+      "max_partitions": 65535,
+      "training_sum_median_cpu_ns": 4242697254.0
+    },
+    {
+      "max_fraction": 0.5,
+      "max_partitions": 65535,
+      "training_sum_median_cpu_ns": 3694255216.0
+    },
+    {
+      "max_fraction": 1.0,
+      "max_partitions": 65535,
+      "training_sum_median_cpu_ns": 4328666707.5
+    }
+  ],
+  "evaluation_rows_used": 0,
+  "evaluation_seed": 20191231,
+  "policy": {
+    "max_fraction": 1.0,
+    "max_partitions": 64,
+    "training_sum_median_cpu_ns": 3585027177.5
+  },
+  "scope": "Finite predeclared training grid; no optimal-policy or held-out performance claim.",
+  "selection": "minimum sum training cohort median BinHeap/Scan CPU; ties lowest K then rho",
+  "status": "frozen",
+  "training_identity_sha256": "479cb7264d1310400aa8e8dca12b1e4c6aaf23ac17a942cba02fd09c9c2c294f",
+  "training_rows": 14400,
+  "training_seed": 20191230
+}

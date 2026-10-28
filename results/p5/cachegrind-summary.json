@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "executed_utc": "2026-10-19T00:59:37.371864+00:00",
+  "command_record": "results/p5/reduced-simulated-cachegrind-20261019T005904.727501Z.json",
+  "whole_program_events": {
+    "Ir": 40824426,
+    "I1mr": 7866,
+    "ILmr": 2940,
+    "Dr": 6254549,
+    "D1mr": 81957,
+    "DLmr": 8625,
+    "Dw": 3959664,
+    "D1mw": 106695,
+    "DLmw": 36814,
+    "Bc": 4414407,
+    "Bcm": 282190,
+    "Bi": 55761,
+    "Bim": 18293
+  },
+  "simulated_cache_geometry": [
+    "I1 cache:         32768 B, 64 B, 8-way associative",
+    "D1 cache:         49152 B, 64 B, 12-way associative",
+    "LL cache:         12582912 B, 64 B, 12-way associative"
+  ],
+  "functional_profiles_passed": 15,
+  "outputs_per_profile": 4096,
+  "touch_initialized_bytes_per_touch_profile": 1048576,
+  "measurement_scope": "Whole reduced process including startup, generation, expected-reference construction, allocations, all15 functional kernel/layout runs and teardown; no hot-loop/kernel-specific hardware attribution",
+  "labels": [
+    "instruction tracing",
+    "simulated cache misses",
+    "simulated branch mispredictions"
+  ],
+  "hardware_counter_claims": false,
+  "identities": {
+    "results/raw/P5-cachegrind/reduced-20261019.out": "e204c4ad7ee81188d6288653f294d239ff41eb5ade354f00086a3f07473f5ee3",
+    "results/raw/P5-cachegrind/reduced-20261019.log": "a3fa627e23a8452579d65adfdcbbe7bb7351418afd7ab962454d3d5445de2260",
+    "results/p5/reduced-simulated-cachegrind-20261019T005904.727501Z.log": "e06196c2c1dbf8eae89214db5d23ad28c0f0241e010b295f568b4418b94fbc46",
+    "build/release/merge_bench": "7ae9d903b4b19f036416556db5d33934ff0e242a9659a697c6b06e1d3fb2533d"
+  },
+  "source_reading": "results/p5/cachegrind-sources.json"
+}

@@ -1,0 +1,1 @@
+{"compression": "exact per-topic weight preserved", "flat_type_projection": "source aggregates equal", "market_weights": ["8906", "1900", "8906/10"], "small_cases": 138, "source_partitions": 8907, "status": "passed", "symbols": 8906, "synthetic_effective_classes": [1, 4]}

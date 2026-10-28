@@ -1,0 +1,16 @@
+{
+  "exp": "M1",
+  "config_id": "M1/k1/zipf0.8/N4194304/Quad-pad0",
+  "n_measured": 15,
+  "saved_summary": {
+    "noise_flagged_count": 0,
+    "noise_observed_count": 0,
+    "noise_unknown_count": 15
+  },
+  "current_sidecar_reconstruction": {
+    "noise_flagged_count": 15,
+    "noise_observed_count": 15,
+    "noise_unknown_count": 0
+  },
+  "sidecar": "results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/frequency-flags.json"
+}

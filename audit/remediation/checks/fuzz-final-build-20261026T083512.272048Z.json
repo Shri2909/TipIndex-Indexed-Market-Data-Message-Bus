@@ -1,0 +1,24 @@
+{
+  "label": "fuzz-final-build",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "fuzz",
+    "--parallel",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:35:12.272261+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/fuzz-final-build-20261026T083512.272048Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.6048627220000071,
+  "log_sha256": "1e43b6021558ee7c858ea392b05ef5dd0da52b170f5a63e588a2c5f14ad8b122"
+}

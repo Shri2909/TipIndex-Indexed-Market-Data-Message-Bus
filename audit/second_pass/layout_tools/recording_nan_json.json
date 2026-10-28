@@ -1,0 +1,16 @@
+{
+  "name": "recording_nan_json",
+  "argv": [
+    "/home/abc/Desktop/Jane Street/build/release/tiplog_sim",
+    "--trace",
+    "/home/abc/Desktop/Jane Street/tests/fuzz/corpus/trace_reader/empty.mdt",
+    "--backend",
+    "recording",
+    "--auto-max-index-fraction",
+    "nan"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.0015863919998082565,
+  "stdout": "{\"backend\":\"recording\",\"mode\":\"scan\",\"kernel\":\"stdpq\",\"reader\":\"none\",\"effective_last_range_mode\":\"scan\",\"auto_policy_calibrated\":false,\"auto_max_partitions\":64,\"auto_max_index_fraction\":nan,\"seed\":1,\"published\":0,\"first_seq\":0,\"last_seq\":0,\"payload_bytes\":0,\"publication_digest_fnv1a64\":14695981039346656037,\"schedule_digest_fnv1a64\":14695981039346656037,\"delivered\":0,\"replay_digest_fnv1a64\":14695981039346656037,\"batches\":0,\"snapshots\":0,\"outcome\":\"done\",\"head_pos\":0,\"tail_pos\":0,\"head_seq\":0,\"tail_seq\":0,\"pressure_data_evicted\":0,\"pressure_bytes_evicted\":0}\n",
+  "stderr": ""
+}

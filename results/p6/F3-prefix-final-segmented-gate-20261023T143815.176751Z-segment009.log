@@ -1,0 +1,32 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191238
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x5915012f1ed8, 0x5915012f3baf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x5915012f3bb0,0x591501310920), 
+INFO:     1443 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1443 min: 1b max: 64773b total: 3731869b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10493 corp: 645/177Kb exec/s: 341 rss: 413Mb
+#1444	INITED cov: 2250 ft: 11568 corp: 884/2232Kb exec/s: 26 rss: 719Mb
+#1580	REDUCE cov: 2250 ft: 11568 corp: 884/2232Kb lim: 65536 exec/s: 23 rss: 719Mb L: 77/64773 MS: 1 EraseBytes-
+#1628	REDUCE cov: 2250 ft: 11568 corp: 884/2232Kb lim: 65536 exec/s: 23 rss: 719Mb L: 209/64773 MS: 2 ChangeBit-EraseBytes-
+#1855	REDUCE cov: 2250 ft: 11568 corp: 884/2232Kb lim: 65536 exec/s: 24 rss: 719Mb L: 42/64773 MS: 2 ChangeByte-EraseBytes-
+#1873	REDUCE cov: 2250 ft: 11568 corp: 884/2232Kb lim: 65536 exec/s: 24 rss: 719Mb L: 111/64773 MS: 3 ChangeByte-ChangeByte-EraseBytes-
+#1909	REDUCE cov: 2250 ft: 11568 corp: 884/2232Kb lim: 65536 exec/s: 25 rss: 719Mb L: 117/64773 MS: 1 EraseBytes-
+#2048	pulse  cov: 2250 ft: 11568 corp: 884/2232Kb lim: 65536 exec/s: 25 rss: 719Mb
+#2197	NEW    cov: 2250 ft: 11581 corp: 885/2256Kb lim: 65536 exec/s: 24 rss: 719Mb L: 24732/64773 MS: 3 InsertByte-EraseBytes-CopyPart-
+#2429	NEW    cov: 2250 ft: 11586 corp: 886/2261Kb lim: 65536 exec/s: 26 rss: 719Mb L: 5198/64773 MS: 2 InsertRepeatedBytes-InsertByte-
+#2650	REDUCE cov: 2250 ft: 11586 corp: 886/2261Kb lim: 65536 exec/s: 25 rss: 719Mb L: 86/64773 MS: 1 EraseBytes-
+#2756	REDUCE cov: 2250 ft: 11586 corp: 886/2261Kb lim: 65536 exec/s: 26 rss: 719Mb L: 37/64773 MS: 1 EraseBytes-
+#3118	REDUCE cov: 2250 ft: 11586 corp: 886/2261Kb lim: 65536 exec/s: 27 rss: 784Mb L: 53/64773 MS: 2 EraseBytes-CrossOver-
+#3177	REDUCE cov: 2250 ft: 11586 corp: 886/2261Kb lim: 65536 exec/s: 27 rss: 784Mb L: 1930/64773 MS: 4 CMP-CMP-EraseBytes-CopyPart- DE: "\377\000"-"\000\000\000\022"-
+#3392	REDUCE cov: 2250 ft: 11586 corp: 886/2255Kb lim: 65536 exec/s: 28 rss: 784Mb L: 33577/64773 MS: 5 ChangeBinInt-EraseBytes-ChangeBit-ChangeByte-ShuffleBytes-
+#3392	DONE   cov: 2250 ft: 11586 corp: 886/2255Kb lim: 65536 exec/s: 28 rss: 784Mb
+###### Recommended dictionary. ######
+"\377\000" # Uses: 11
+"\000\000\000\022" # Uses: 10
+###### End of recommended dictionary. ######
+Done 3392 runs in 121 second(s)
+stat::number_of_executed_units: 3392
+stat::average_exec_per_sec:     28
+stat::new_units_added:          12
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              784

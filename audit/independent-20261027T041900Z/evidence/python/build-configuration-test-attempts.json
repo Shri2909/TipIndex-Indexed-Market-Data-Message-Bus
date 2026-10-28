@@ -1,0 +1,19 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed",
+      "passed": 19,
+      "failed": 24,
+      "cause": "New configuration fixtures inherited CMAKE_CXX_COMPILER=g++/clang++ from real preset while compiler detection intentionally pointed to a fake compiler. capture_build correctly rejected identity mismatch before configuration validation. Fixture was corrected to retain its matching fake compiler path.",
+      "representative_error": "ValueError: configured and detected C++ compiler identities disagree"
+    },
+    {
+      "attempt": 2,
+      "status": "passed",
+      "passed": 43,
+      "failed": 0,
+      "log": "build-configuration-pytest.log"
+    }
+  ]
+}

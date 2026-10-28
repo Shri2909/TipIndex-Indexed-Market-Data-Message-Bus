@@ -1,0 +1,35 @@
+{
+  "label": "final-pytest",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-c",
+    "py/pytest.ini",
+    "py/tests",
+    "tests/scripts",
+    "-q",
+    "--junitxml=results/f01/python-final.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-27T01:49:06.029327+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "af874e2465b451a518d88c161f40d04bf033fc114188a2e02b54839e7092b32e"
+  },
+  "log": "results/f01/checks/final-pytest-20261027T014906.029203Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 10.673428858999841,
+  "log_sha256": "f60fbeba88e35e3158701a487641129e8a510e1c11499c6753b7b3f3796b557f",
+  "input_sets_after": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "af874e2465b451a518d88c161f40d04bf033fc114188a2e02b54839e7092b32e"
+  }
+}

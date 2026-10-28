@@ -1,0 +1,2973 @@
+--- initial/README.md
++++ final/README.md
+@@ -17,6 +17,9 @@
+ approved and added as F-01, with separate validation and synthetic measurements.
+ Its [measured results](docs/report/POLL_BUDGET_RESULTS.md) show shorter polling turns
+ and the cost of repeated preparation; the feature remains opt-in.
++The subsequent [independent audit and remediation](audit/independent-20261027T041900Z/REPORT.md)
++records current-source validation separately. Earlier phase and feature gates
++retain their historical source identities and measurements.
+ Tier C and roadmap extensions R1–R10
+ remain outside the approved implementation scope.
+ 
+@@ -231,5 +234,6 @@
+ committed or pushed, and message-level Nasdaq data, real fuzz inputs and large raw
+ results stay in ignored local directories. **The original core execution stopped after P8.**
+ The subsequently approved audit remediation is recorded separately; use
+-`scripts/check_remediation.py` for the current closeout rather than interpreting
+-the historical source-identity gate as acceptance of changed code.
++the [current audit acceptance](audit/independent-20261027T041900Z/acceptance.json)
++for the current closeout. `scripts/check_remediation.py` verifies its earlier
++remediation freeze; source changes require separate current evidence.
+--- initial/bench/micro/index_bench.cpp
++++ final/bench/micro/index_bench.cpp
+@@ -1,4 +1,5 @@
+ #include "../../tools/tiplog_bench/contracts.hpp"
++#include "../../tools/file_safety.hpp"
+ #include "bench_log.hpp"
+ #include "tiplog/index/index.hpp"
+ #include "tiplog/topics/registry.hpp"
+@@ -233,6 +234,12 @@
+     }
+     if (trace.empty())
+       throw std::invalid_argument("M3 requires --trace PATH");
++    if (verify && benchmark_args.size() != 1)
++      throw std::invalid_argument("unrecognized argument in verification mode: " +
++                                  std::string(benchmark_args[1]));
++    if (!verify)
++      tiplog::cli::check_benchmark_outputs(static_cast<int>(benchmark_args.size()),
++                                          benchmark_args.data(), {trace});
+     // Initialize first: a selected B arm must not construct the other pools.
+     if (!verify) {
+       auto count = static_cast<int>(benchmark_args.size());
+--- initial/bench/micro/merge_bench.cpp
++++ final/bench/micro/merge_bench.cpp
+@@ -1,14 +1,17 @@
+ #include "bench_log.hpp"
+ #include "tiplog/merge/kernels.hpp"
++#include "../../tools/file_safety.hpp"
+ 
+ #include <benchmark/benchmark.h>
+ 
+ #include <array>
++#include <charconv>
+ #include <cmath>
+ #include <cstdlib>
+ #include <fstream>
+ #include <iomanip>
+ #include <iostream>
++#include <limits>
+ #include <numeric>
+ #include <optional>
+ #include <random>
+@@ -324,6 +327,19 @@
+ std::string value(std::string_view arg, std::string_view prefix) {
+   return std::string(arg.substr(prefix.size()));
+ }
++std::uint64_t number(std::string_view text) {
++  std::uint64_t result{};
++  const auto parsed = std::from_chars(text.data(), text.data() + text.size(), result);
++  if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size())
++    throw std::invalid_argument("expected unsigned decimal integer");
++  return result;
++}
++std::size_t parse_size(std::string_view text) {
++  const auto result = number(text);
++  if (result > std::numeric_limits<std::size_t>::max())
++    throw std::invalid_argument("size exceeds size_t representation");
++  return static_cast<std::size_t>(result);
++}
+ } // namespace
+ int main(int argc, char **argv) {
+   try {
+@@ -344,11 +360,11 @@
+       else if (arg.starts_with("--profile="))
+         selection = value(arg, "--profile=");
+       else if (arg.starts_with("--outputs="))
+-        base.outputs = std::stoull(value(arg, "--outputs="));
++        base.outputs = parse_size(value(arg, "--outputs="));
+       else if (arg.starts_with("--touch-bytes="))
+-        base.touch_bytes = std::stoull(value(arg, "--touch-bytes="));
++        base.touch_bytes = parse_size(value(arg, "--touch-bytes="));
+       else if (arg.starts_with("--seed="))
+-        base.seed = std::stoull(value(arg, "--seed="));
++        base.seed = number(value(arg, "--seed="));
+       else if (arg == "--tiplog-help") {
+         std::cout
+             << "merge_bench --profile=pilot|full|uniform64|geometric64|touch64 "
+@@ -362,7 +378,12 @@
+       } else
+         benchmark_args.push_back(argv[i]);
+     }
++    if (verification && benchmark_args.size() != 1)
++      throw std::invalid_argument("unrecognized argument in verification mode: " +
++                                  std::string(benchmark_args[1]));
+     if (!verification) {
++      tiplog::cli::check_benchmark_outputs(static_cast<int>(benchmark_args.size()),
++                                          benchmark_args.data());
+       auto count = static_cast<int>(benchmark_args.size());
+       benchmark_args.push_back(nullptr);
+       benchmark::Initialize(&count, benchmark_args.data());
+--- initial/bench/micro/publish_bench.cpp
++++ final/bench/micro/publish_bench.cpp
+@@ -1,6 +1,7 @@
+ #include "tiplog/engine/engine.hpp"
+ #include "bench_log.hpp"
+ #include "../../tools/tiplog_bench/contracts.hpp"
++#include "../../tools/file_safety.hpp"
+ #include <benchmark/benchmark.h>
+ 
+ #include <algorithm>
+@@ -263,6 +264,12 @@
+     if (selected.payload != "12" && selected.payload != "32" && selected.payload != "64" &&
+         selected.payload != "256" && selected.payload != "empirical")
+       throw std::invalid_argument("payload must be12,32,64,256,empirical");
++    if (verify_only && remaining.size() != 1)
++      throw std::invalid_argument("unrecognized argument in verification mode: " +
++                                  std::string(remaining[1]));
++    if (!verify_only)
++      tiplog::cli::check_benchmark_outputs(static_cast<int>(remaining.size()), remaining.data(),
++                                          {mix_file}, false);
+     const auto mix = read_mix(mix_file);
+     std::vector<Profile> profiles;
+     if (matrix) {
+--- initial/cmake/benchmark_output_patch.cmake
++++ final/cmake/benchmark_output_patch.cmake
+@@ -0,0 +1,37 @@
++# Local correction to the verified Google Benchmark 1.9.5 source. Its result
++# ofstream otherwise closes without checking buffered write/close failures.
++# Never modify the archive pin or accept unexpected/generated source contents.
++set(_tiplog_benchmark_cc "${benchmark_SOURCE_DIR}/src/benchmark.cc")
++set(_tiplog_benchmark_original "93dd058ff126b0e50f53f8d5d31d6fa5132b345b3132781c692b7d8538c72da3")
++set(_tiplog_benchmark_patched "4fc57e51c4bf1aa76e8c61bc4538f4a00fce0f03dd96e8f8ba577870da16fce8")
++file(SHA256 "${_tiplog_benchmark_cc}" _tiplog_benchmark_hash)
++if(_tiplog_benchmark_hash STREQUAL _tiplog_benchmark_original)
++  file(READ "${_tiplog_benchmark_cc}" _tiplog_benchmark_text)
++  string(REPLACE "#include <string>\n" "#include <string>\n#include <stdexcept>\n"
++    _tiplog_benchmark_text "${_tiplog_benchmark_text}")
++  set(_tiplog_benchmark_before [=[  Out.flush();
++  Err.flush();
++  return benchmarks.size();]=])
++  set(_tiplog_benchmark_after [=[  Out.flush();
++  Err.flush();
++  // tiplog TOOL-05: final result-file failures must fail the invocation.
++  if (output_file.is_open()) {
++    output_file.flush();
++    if (!output_file) throw std::runtime_error("failed writing benchmark result file");
++    output_file.close();
++    if (!output_file) throw std::runtime_error("failed closing benchmark result file");
++  }
++  return benchmarks.size();]=])
++  string(REPLACE "${_tiplog_benchmark_before}" "${_tiplog_benchmark_after}"
++    _tiplog_benchmark_text "${_tiplog_benchmark_text}")
++  string(SHA256 _tiplog_benchmark_hash "${_tiplog_benchmark_text}")
++  if(NOT _tiplog_benchmark_hash STREQUAL _tiplog_benchmark_patched)
++    message(FATAL_ERROR "Google Benchmark output patch did not produce the approved source identity")
++  endif()
++  file(WRITE "${_tiplog_benchmark_cc}" "${_tiplog_benchmark_text}")
++elseif(NOT _tiplog_benchmark_hash STREQUAL _tiplog_benchmark_patched)
++  message(FATAL_ERROR "Unexpected Google Benchmark source identity; refusing to patch or use it")
++endif()
++if(NOT BENCHMARK_ENABLE_EXCEPTIONS)
++  message(FATAL_ERROR "tiplog benchmark output-error propagation requires BENCHMARK_ENABLE_EXCEPTIONS=ON")
++endif()
+--- initial/cmake/deps.cmake
++++ final/cmake/deps.cmake
+@@ -28,6 +28,7 @@
+ set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "" FORCE)
+ set(BENCHMARK_DOWNLOAD_DEPENDENCIES OFF CACHE BOOL "" FORCE)
+ FetchContent_MakeAvailable(benchmark)
++include("${PROJECT_SOURCE_DIR}/cmake/benchmark_output_patch.cmake")
+ 
+ if(BUILD_TESTING)
+   # Existing build caches may retain FORCE_FETCH=OFF from the old default.
+--- initial/docs/plan/ARCHITECTURE.md
++++ final/docs/plan/ARCHITECTURE.md
+@@ -552,7 +552,7 @@
+ - It is **exact for its own problem** P_T: the minimum number of stores such that every store has W ≤ T or is a single topic.
+   - Hot singletons are forced, because any store containing x has W ≥ w(x) > T.
+   - The rest is the Kundu–Misra MinNum problem (S33, S34).
+-  - Optimality **must be validated** against brute force in the authorized phase (V30); no check has run.
++  - Optimality **must be validated** against brute force (V30). P7's executed checks and their coverage are recorded in [the layout report](../report/results_layout.md); this requirement does not claim coverage of every possible input.
+ - count(T) is non-increasing if H-KM implements the stated optimal threshold/count solver; V30 must check both the implementation and this property. Use deterministic node-id tie-breaking for equal child weights, exclude zero-only stores from the count, and report K=0 infeasible for positive volume. Related-problem NP-hardness in S34 is not a hardness proof for M-store.
+ 
+ **Bisection variants for budget K** (the article's "greedy + binary search" is ambiguous, RESEARCH §1.3):
+@@ -580,7 +580,7 @@
+ V28 (two independent evaluators), V29 (MASK-DP = ENUM on ≥10⁴ random tiny trees, every k), V30 (KM vs brute-force minimum count), V31 (baseline construction), V32 (worked example). See VALIDATION_PLAN §3.
+ 
+ ### 6.9 Claims discipline for the optimizer
+-- **"Exact"** means optimal for M-store with the stated workload, scaled nonnegative costs, and budget, per partition. ENUM validation is required in P7 and has not run. Set explicit state/time limits for ENUM and MASK-DP and report per-workload coverage; W0 can exceed both methods' practical limits. Such rows are heuristic-only, without an exact optimality gap.
++- **"Exact"** means optimal for M-store with the stated workload, scaled nonnegative costs, and budget, per partition. P7's ENUM differential validation and per-workload coverage are recorded in [the layout report](../report/results_layout.md). Set explicit state/time limits for ENUM and MASK-DP; W0 can exceed both methods' practical limits. Such rows are heuristic-only, without an exact optimality gap.
+ - It is not optimal for excluded layout models or unmodeled costs.
+ - Greedy-vs-exact gaps are reported only on identical objectives and feasible sets. Anything else is labeled "not an optimality gap".
+ 
+--- initial/docs/report/POLL_BUDGET.md
++++ final/docs/report/POLL_BUDGET.md
+@@ -112,11 +112,13 @@
+ 
+ ## Validation, measurements and reproduction
+ 
+-F-01 is complete. The separate [feature gate](../../results/f01/phase-gate.json),
++F-01 is complete. At the feature-acceptance freeze, the separate [feature gate](../../results/f01/phase-gate.json),
+ [acceptance manifest](../../results/f01/acceptance.json) and
+-[passing verifier](../../results/f01/checks.json) bind its current sources to
++[passing verifier](../../results/f01/checks.json) bound that freeze's sources to
+ executed evidence. The [measurement report](POLL_BUDGET_RESULTS.md) contains the
+ observed responsiveness/throughput tradeoff and its limits.
++Subsequent corrections and current-source acceptance are recorded in the
++[independent audit](../../audit/independent-20261027T041900Z/REPORT.md).
+ 
+ Final checks passed: **229 CTests in each of four presets**, **302 Python/script
+ tests**, **108 million legacy differential operations**, **12 million new-model
+@@ -178,7 +180,7 @@
+ build/release/tiplog_poll_bench --records 1000000 --cases no-match \
+   --modes scan,indexed,auto --budgets legacy,unlimited,1000 --reps 3 \
+   --output results/f01/my-demo.jsonl
+-.venv/bin/python results/f01/summarize.py results/f01/my-demo.jsonl \
++.venv/bin/python scripts/f01_summary.py results/f01/my-demo.jsonl \
+   --output results/f01/my-summary.json
+ ```
+ 
+--- initial/py/tests/test_independent_audit.py
++++ final/py/tests/test_independent_audit.py
+@@ -0,0 +1,255 @@
++"""Regressions from the independent October 2026 parser/resource audit."""
++import struct
++import json
++
++import numpy as np
++import pytest
++
++from tiplog_py.exp.oracle import TraceIndex
++from tiplog_py.trace.format import HEADER, MAGIC, TraceReader, TraceWriter
++
++
++def trace_bytes(*, count=0, records=b'', dictionary=struct.pack('<I', 0), offset=None):
++    offset = HEADER.size + len(records) if offset is None else offset
++    return HEADER.pack(MAGIC, 1, 0, count, offset, len(dictionary), 0, bytes(16)) + records + dictionary
++
++
++@pytest.mark.parametrize('data', [
++    b'', b'short',
++    trace_bytes(count=10_000),
++    trace_bytes(count=(1 << 64)-1),
++    trace_bytes(offset=63),
++    trace_bytes(dictionary=b''),
++    trace_bytes(dictionary=struct.pack('<I', 100)),
++    trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
++    trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
++                + struct.pack('<IH', 2, 1) + b'a'),
++])
++def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
++    path = tmp_path/'input.mdt'
++    path.write_bytes(data)
++    def forbidden(*args, **kwargs):
++        pytest.fail('invalid metadata must reject before index allocation')
++    monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
++    instance = TraceIndex.__new__(TraceIndex)
++    with pytest.raises(ValueError):
++        instance.__init__(path, tmp_path/'cache')
++    assert instance.stream is instance.data is instance.rows is None
++    assert not list((tmp_path/'cache').iterdir())
++
++
++def test_independent_parser_failed_record_cleans_owned_cache_and_input(tmp_path):
++    path = tmp_path/'input.mdt'
++    dictionary = struct.pack('<IIH', 1, 1, 3) + b'a/b'
++    path.write_bytes(trace_bytes(count=1, records=struct.pack('<IHHQ', 1, 65535, 0, 1),
++                                dictionary=dictionary))
++    cache = tmp_path/'cache'; cache.mkdir()
++    unrelated = cache/'unrelated.partial.npy'; unrelated.write_bytes(b'preserve')
++    instance = TraceIndex.__new__(TraceIndex)
++    with pytest.raises(ValueError, match='record'):
++        instance.__init__(path, cache)
++    assert instance.stream is instance.data is instance.rows is None
++    assert list(cache.iterdir()) == [unrelated]
++    assert unrelated.read_bytes() == b'preserve'
++
++
++def test_independent_parser_cache_publication_failure_cleans_owned_files(tmp_path, monkeypatch):
++    path = tmp_path/'input.mdt'
++    with TraceWriter(path, '00'*32) as writer:
++        writer.append('a/b', b'x', 1)
++    from pathlib import Path
++    original = Path.replace
++    def fail_publication(self, target):
++        if self.name.endswith('.partial.npy'):
++            raise OSError('injected cache publication failure')
++        return original(self, target)
++    monkeypatch.setattr(Path, 'replace', fail_publication)
++    instance = TraceIndex.__new__(TraceIndex)
++    with pytest.raises(OSError, match='injected'):
++        instance.__init__(path, tmp_path/'cache')
++    assert instance.stream is instance.data is instance.rows is None
++    assert not list((tmp_path/'cache').iterdir())
++
++
++@pytest.mark.parametrize('stage', ['write', 'close', 'replace'])
++def test_trace_writer_finish_failure_aborts_owned_staging(tmp_path, monkeypatch, stage):
++    path = tmp_path/'output.mdt'; path.write_bytes(b'old destination')
++    writer = TraceWriter(path, '00'*32)
++    writer.append('a/b', b'x', 1)
++    underlying = writer.stream
++    class FailedStream:
++        failed = False
++        def __getattr__(self, name):
++            return getattr(underlying, name)
++        def write(self, data):
++            if stage == 'write':
++                raise OSError('injected write failure')
++            return underlying.write(data)
++        def close(self):
++            underlying.close()
++            if stage == 'close' and not self.failed:
++                self.failed = True
++                raise OSError('injected close failure')
++    writer.stream = FailedStream()
++    if stage == 'replace':
++        from pathlib import Path
++        monkeypatch.setattr(Path, 'replace', lambda *args: (_ for _ in ()).throw(OSError('injected rename failure')))
++    with pytest.raises(OSError, match='injected'):
++        writer.__exit__(None, None, None)
++    assert writer.closed and underlying.closed
++    assert not writer.partial.exists()
++    assert path.read_bytes() == b'old destination'
++
++
++def test_trace_writer_and_independent_cache_success_remain_identical(tmp_path):
++    path = tmp_path/'input.mdt'
++    with TraceWriter(path, '00'*32) as writer:
++        writer.append('a/b', b'x', 1)
++    with TraceReader(path) as reader:
++        assert [record.payload for record in reader] == [b'x']
++    with TraceIndex(path, tmp_path/'cache') as first:
++        expected = first.rows.copy()
++        sha = first.trace_sha256
++    with TraceIndex(path, tmp_path/'cache') as second:
++        assert second.trace_sha256 == sha
++        np.testing.assert_array_equal(second.rows, expected)
++    second.close()  # Resource cleanup is safe after an earlier explicit close.
++
++
++def normalized_rows(path):
++    path.write_text(json.dumps(dict(exp='T1', config_id='failed', status='crash'))+'\n')
++    return path.read_bytes()
++
++
++@pytest.mark.parametrize('alias', ['direct', 'symlink', 'hardlink', 'table', 'summary_table'])
++def test_analysis_rejects_entire_write_set_aliases_before_writing(tmp_path, alias):
++    import os
++    from tiplog_py.analysis.summarize import build
++    source = tmp_path/'raw.jsonl'
++    original = normalized_rows(source)
++    output = tmp_path/'summary.json'
++    if alias == 'direct': output = source
++    elif alias == 'symlink': output.symlink_to(source)
++    elif alias == 'hardlink': os.link(source, output)
++    elif alias == 'table':
++        source.rename(tmp_path/'tip-outcomes.csv')
++        source = tmp_path/'tip-outcomes.csv'
++    else: output = tmp_path/'tip-statistics.csv'
++    with pytest.raises(ValueError, match='distinct'):
++        build(source, output)
++    assert source.read_bytes() == original
++    assert not (tmp_path/'tip-paired-ratios.csv').exists()
++
++
++def test_analysis_protects_used_frequency_sidecar(tmp_path):
++    from tiplog_py.analysis.summarize import build
++    sidecar = tmp_path/'frequency.json'
++    sidecar.write_text(json.dumps(dict(samples=[])))
++    source = tmp_path/'raw.jsonl'
++    source.write_text(json.dumps(dict(exp='T1', config_id='failed', status='crash',
++                                     frequency_flags_reference='frequency.json'))+'\n')
++    original = sidecar.read_bytes()
++    with pytest.raises(ValueError, match='distinct'):
++        build(source, sidecar, evidence_root=tmp_path)
++    assert sidecar.read_bytes() == original
++
++
++@pytest.mark.parametrize('stage', ['table', 'publish'])
++def test_analysis_failed_bundle_preserves_old_outputs(tmp_path, monkeypatch, stage):
++    from tiplog_py.analysis import summarize
++    import os
++    source = tmp_path/'raw.jsonl'; original = normalized_rows(source)
++    output = tmp_path/'summary.json'
++    paths = [output, *(tmp_path/name for name in summarize.TABLE_NAMES)]
++    for index, path in enumerate(paths): path.write_text(f'old-{index}')
++    before = {path: path.read_bytes() for path in paths}
++    if stage == 'table':
++        def fail(*args, **kwargs): raise OSError('injected table failure')
++        monkeypatch.setattr(summarize, 'write_tables', fail)
++    else:
++        replace = os.replace
++        failed = False
++        def fail(source, target):
++            nonlocal failed
++            if not failed and target == paths[-1]:
++                failed = True
++                raise OSError('injected publish failure')
++            return replace(source, target)
++        monkeypatch.setattr(os, 'replace', fail)
++    with pytest.raises(OSError, match='injected'):
++        summarize.build(source, output)
++    assert source.read_bytes() == original
++    assert {path: path.read_bytes() for path in paths} == before
++    assert not list(tmp_path.glob('.*.partial'))
++
++
++@pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
++def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
++    from tiplog_py.layout.analyze import build
++    paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
++    for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
++    before = {name: path.read_bytes() for name, path in paths.items()}
++    with pytest.raises(ValueError, match='distinct'):
++        build([paths['input']], paths['metadata'], csv_path=paths[target], global_paths=[paths['global']])
++    assert {name: path.read_bytes() for name, path in paths.items()} == before
++
++
++@pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
++def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
++    from tiplog_py.layout.analyze import main
++    source = tmp_path/'input.jsonl'; source.write_text('original')
++    metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
++    output = source if target == 'summary_input' else tmp_path/'summary.json'
++    csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
++    with pytest.raises(ValueError, match='distinct'):
++        main(['--input', str(source), '--metadata', str(metadata), '--output', str(output), '--csv', str(csv)])
++    assert source.read_text() == 'original'
++    assert metadata.read_text() == '{}'
++
++
++@pytest.mark.parametrize('sizes', [np.array([-1]), np.array([0]), np.array([1.5]),
++                                  np.array([[24]]), np.array([True])])
++def test_retention_rejects_invalid_sizes_before_search(sizes, monkeypatch):
++    from tiplog_py.exp.oracle import retained_layout
++    def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
++    monkeypatch.setattr(np, 'searchsorted', forbidden)
++    with pytest.raises(ValueError): retained_layout(sizes, 64)
++
++
++@pytest.mark.parametrize('sizes,capacity', [
++    ([1 << 63, 1 << 63], 1 << 63),
++    ([(1 << 62)+8]*3, 1 << 63),
++    ([24], 1 << 64),
++])
++def test_retention_rejects_unrepresentable_data_or_pad_positions(sizes, capacity):
++    from tiplog_py.exp.oracle import retained_layout
++    with pytest.raises(ValueError): retained_layout(np.array(sizes, dtype='u8'), capacity)
++
++
++def test_retention_preserves_exact_uint64_search_boundaries():
++    from tiplog_py.exp.oracle import retained_layout
++    # A scalar whole-item queue uses Python integers throughout, independently
++    # of NumPy prefix sums/search keys and the production PAD computation.
++    for power in (52, 53, 54, 61, 62, 63):
++        capacity = 1 << power
++        for delta in (1, 2, 7, 8, 15, 16, 63):
++            schedules = [[capacity//2, delta, capacity//2, delta],
++                         [capacity//2+delta, capacity//2-delta, delta],
++                         [capacity-2*delta, delta, 3*delta]]
++            for sizes in schedules:
++                items, head, seq, pad_bytes, positions = [], 0, 1, 0, []
++                for size in sizes:
++                    remaining = capacity-head%capacity
++                    if size > remaining:
++                        items.append((head, remaining, None)); head += remaining; pad_bytes += remaining
++                    positions.append(head)
++                    items.append((head, size, seq)); head += size; seq += 1
++                    while items and head-items[0][0] > capacity: items.pop(0)
++                data = [item for item in items if item[2] is not None]
++                actual = retained_layout(np.array(sizes, dtype='u8'), capacity)
++                assert [int(value) for value in actual['positions']] == positions
++                assert actual['head_pos'] == head
++                assert actual['tail_pos'] == (items[0][0] if items else head)
++                assert actual['tail_seq'] == (data[0][2] if data else seq)
++                assert actual['retained_data'] == len(data)
++                assert actual['pad_bytes'] == pad_bytes
+--- initial/py/tiplog_py/_outputs.py
++++ final/py/tiplog_py/_outputs.py
+@@ -6,7 +6,13 @@
+ 
+ def validate_outputs(source, outputs):
+     """Check both resolved paths and existing inode aliases before any writes."""
+-    paths = [Path(source), *(Path(path) for path in outputs)]
++    validate_output_bundle([source], outputs)
++
++
++def validate_output_bundle(sources, outputs):
++    """Allow shared read inputs while keeping the entire write set distinct."""
++    sources = list(sources)
++    paths = [*(Path(path) for path in sources), *(Path(path) for path in outputs)]
+     lexical = [Path(os.path.abspath(path)) for path in paths]
+     resolved = [path.resolve() for path in paths]
+     identities = []
+@@ -16,7 +22,7 @@
+             identities.append((stat.st_dev, stat.st_ino))
+         except FileNotFoundError:
+             identities.append(None)
+-    for index in range(1, len(paths)):
++    for index in range(len(sources), len(paths)):
+         if any(resolved[index] == resolved[other] or
+                (identities[index] is not None and identities[index] == identities[other]) or
+                lexical[index].is_relative_to(lexical[other]) or
+@@ -34,9 +40,9 @@
+     renames, so callers must not treat interrupted publication as accepted data.
+     No predictable temporary filename is opened or removed.
+     """
+-    def __init__(self, source, outputs):
++    def __init__(self, source, outputs, *, additional_sources=()):
+         self.outputs = [Path(path) for path in outputs]
+-        validate_outputs(source, self.outputs)
++        validate_output_bundle([source, *additional_sources], self.outputs)
+         self.staged = {}
+         self.backups = {}
+         self.published = []
+--- initial/py/tiplog_py/analysis/summarize.py
++++ final/py/tiplog_py/analysis/summarize.py
+@@ -9,10 +9,21 @@
+ from pathlib import Path
+ 
+ from .stats import median_summary, paired_ratio, stable_seed
++from tiplog_py._outputs import OutputTransaction
+ 
+ STATUSES = {"ok", "history_expired", "fell_behind", "invalid_config", "crash", "oracle_mismatch"}
+ DEFAULT_SEED = 20191230
+ ROOT = Path(__file__).resolve().parents[3]
++TABLE_NAMES = ('tip-statistics.csv', 'tip-outcomes.csv', 'tip-paired-ratios.csv')
++
++
++def frequency_sidecar(reference, *, source_path, evidence_root=None):
++    path = Path(reference)
++    if not path.is_absolute():
++        candidates = ((Path(evidence_root) / path,) if evidence_root is not None
++                      else (ROOT / path, source_path.parent / path))
++        path = next((candidate for candidate in candidates if candidate.is_file()), candidates[0])
++    return path
+ 
+ 
+ def hydrate_noise(row: dict, *, source_path: Path, cache: dict, evidence_root=None) -> None:
+@@ -32,13 +43,7 @@
+     reference = row.get("frequency_flags_reference")
+     if not reference:
+         return
+-    path = Path(reference)
+-    if not path.is_absolute():
+-        # Production references are repository-relative. A standalone copied
+-        # bundle may instead keep the sidecar beside the input JSONL.
+-        candidates = ((Path(evidence_root) / path,) if evidence_root is not None
+-                      else (ROOT / path, source_path.parent / path))
+-        path = next((candidate for candidate in candidates if candidate.is_file()), candidates[0])
++    path = frequency_sidecar(reference, source_path=source_path, evidence_root=evidence_root)
+     if evidence_root is not None and not path.is_file():
+         raise ValueError(f"missing frequency sidecar in declared evidence workspace: {path}")
+     if recorded:
+@@ -325,23 +330,32 @@
+ 
+ 
+ def build(path: Path, output: Path, *, seed=DEFAULT_SEED, evidence_root=None):
++    path, output = Path(path), Path(output)
+     rows = read_rows(path, evidence_root=evidence_root)
++    sidecars = {frequency_sidecar(row['frequency_flags_reference'], source_path=path, evidence_root=evidence_root)
++                for row in rows if row.get('frequency_flags_reference')}
++    outputs = [output, *(output.parent / name for name in TABLE_NAMES)]
++    transaction = OutputTransaction(path, outputs, additional_sources=sidecars)
+     summary = summarize_rows(rows, seed=seed)
+     summary["paired_comparisons"] = paired_comparisons(rows, seed=seed)
+     summary["input"] = str(path)
+     with Path(path).open("rb") as stream:
+         summary["input_sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
+-    output.parent.mkdir(parents=True, exist_ok=True)
+-    output.write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n")
+-    write_tables(summary, output.parent)
++    with transaction:
++        transaction.path(output).write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n")
++        write_tables(summary, output.parent, destinations=transaction.staged)
++        transaction.commit()
+     return summary
+ 
+ 
+-def write_tables(summary: dict, output: Path):
++def write_tables(summary: dict, output: Path, *, destinations=None):
+     """Save auditable complete tables; every row carries non-ok/raw references."""
+     output = Path(output)
+     output.mkdir(parents=True, exist_ok=True)
+-    with (output / "tip-statistics.csv").open("w", newline="") as stream:
++    def target(name):
++        path = output / name
++        return destinations[path] if destinations is not None else path
++    with target("tip-statistics.csv").open("w", newline="") as stream:
+         columns = ("exp", "config_id", "arm", "metric", "n", "median", "q1", "q3", "iqr",
+                    "min", "max", "ci95_low", "ci95_high", "n_non_ok", "n_validation_failed", "status_counts",
+                    "noise_flagged_count", "noise_observed_count", "noise_unknown_count", "raw_evidence", "bootstrap_seed", "bootstrap_resamples")
+@@ -353,13 +367,13 @@
+                 row.update(metric, metric=name, status_counts=json.dumps(item["status_counts"], sort_keys=True),
+                            raw_evidence=json.dumps(item["raw_evidence"]))
+                 writer.writerow(row)
+-    with (output / "tip-outcomes.csv").open("w", newline="") as stream:
++    with target("tip-outcomes.csv").open("w", newline="") as stream:
+         columns = ("exp", "config_id", "arm", "n_measured", "n_ok", "n_non_ok", "n_validation_failed", "warmup_count", "noise_flagged_count", "noise_observed_count", "noise_unknown_count", "status_counts", "raw_evidence")
+         writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore")
+         writer.writeheader()
+         for item in summary["configurations"]:
+             writer.writerow(dict(item, status_counts=json.dumps(item["status_counts"], sort_keys=True), raw_evidence=json.dumps(item["raw_evidence"])))
+-    with (output / "tip-paired-ratios.csv").open("w", newline="") as stream:
++    with target("tip-paired-ratios.csv").open("w", newline="") as stream:
+         columns = ("exp", "comparison_id", "numerator", "denominator", "metric", "status", "ratio",
+                    "ci95_low", "ci95_high", "paired_rounds", "status_counts", "unpaired_rounds", "raw_evidence")
+         writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore")
+--- initial/py/tiplog_py/exp/oracle.py
++++ final/py/tiplog_py/exp/oracle.py
+@@ -10,8 +10,10 @@
+ import hashlib
+ import json
+ import mmap
++import os
+ from pathlib import Path
+ import struct
++import tempfile
+ from typing import Iterable
+ import numpy as np
+ from .hashes import ByteAccelerator, FNV_OFFSET, sha_file
+@@ -45,18 +47,28 @@
+ 
+ 
+ def dictionary(data, offset: int) -> dict[int, str]:
++    if offset < 64 or offset % 8 or offset + 4 > len(data):
++        raise ValueError('invalid independent dictionary boundary')
+     count, = struct.unpack_from('<I', data, offset)
+     cursor = offset + 4
++    if count > (len(data) - cursor) // 7:
++        raise ValueError('impossible independent dictionary count')
+     topics = {}
++    paths = set()
+     for _ in range(count):
++        if cursor + 6 > len(data):
++            raise ValueError('truncated independent dictionary entry')
+         topic, length = struct.unpack_from('<IH', data, cursor)
+         cursor += 6
++        if not length or length > 4096 or cursor + length > len(data):
++            raise ValueError('invalid independent dictionary path length')
+         path = data[cursor:cursor+length].decode('utf-8')
+         cursor += length
+         if (not topic or topic in topics or not path or any(not x for x in path.split('/')) or
+-                length > 4096 or path.count('/')+1 > 128 or '\0' in path):
++                path in paths or path.count('/')+1 > 128 or '\0' in path):
+             raise ValueError('invalid independent dictionary')
+         topics[topic] = path
++        paths.add(path)
+     if cursor != len(data):
+         raise ValueError('independent dictionary trailing bytes')
+     return topics
+@@ -66,19 +78,32 @@
+     """Build only outside measurement blocks; cache hash is validated on reuse."""
+     def __init__(self, path: str | Path, cache: Path, *, rebuild=False):
+         self.path, self.cache = Path(path), Path(cache)
+-        cache.mkdir(parents=True, exist_ok=True)
++        self.stream = self.data = self.rows = None
++        try:
++            self._initialize(rebuild=rebuild)
++        except BaseException:
++            self.close()
++            raise
++
++    def _initialize(self, *, rebuild):
++        self.cache.mkdir(parents=True, exist_ok=True)
+         self.stream = self.path.open('rb')
++        if self.stream.seek(0, 2) < HEADER.size:
++            raise ValueError('truncated independent trace header')
++        self.stream.seek(0)
+         self.data = mmap.mmap(self.stream.fileno(), 0, access=mmap.ACCESS_COPY)
+         magic, version, flags, count, offset, length, prefix, reserved = HEADER.unpack_from(self.data)
+         if magic != b'TPLTRC\0\1' or version != 1 or flags or any(reserved):
+             raise ValueError('invalid independent trace header')
+-        if offset + length != len(self.data) or offset < 64:
++        if offset + length != len(self.data) or offset < 64 or offset % 8:
+             raise ValueError('independent trace region boundary')
++        if count > (offset - HEADER.size) // RECORD.size:
++            raise ValueError('impossible independent trace record count')
+         self.topics = dictionary(self.data, offset)
+         self.trace_sha256 = sha_file(self.path)
+         stem = self.trace_sha256
+-        self.array_path = cache / (stem + '.npy')
+-        self.metadata_path = cache / (stem + '.json')
++        self.array_path = self.cache / (stem + '.npy')
++        self.metadata_path = self.cache / (stem + '.json')
+         valid = False
+         if self.metadata_path.exists() and self.array_path.exists() and not rebuild:
+             meta = json.loads(self.metadata_path.read_text())
+@@ -86,37 +111,59 @@
+                      meta.get('index_sha256') == sha_file(self.array_path) and
+                      meta.get('parser_version') == 2)
+         if not valid:
+-            temporary = self.array_path.with_suffix('.partial.npy')
+-            rows = np.lib.format.open_memmap(temporary, mode='w+', dtype=INDEX_DTYPE,
+-                                             shape=(count,))
+-            cursor, previous_ts = 64, 0
+-            for index in range(count):
+-                topic, payload_length, record_flags, timestamp = RECORD.unpack_from(self.data, cursor)
+-                begin = cursor + 16
+-                end = (begin + payload_length + 7) & ~7
+-                if (end > offset or record_flags or topic not in self.topics or
+-                    timestamp < previous_ts or any(self.data[begin+payload_length:end])):
+-                    raise ValueError(f'invalid independent trace record {index}')
+-                rows[index] = (begin, timestamp, topic, payload_length, end-cursor)
+-                cursor, previous_ts = end, timestamp
+-            if cursor != offset:
+-                raise ValueError('independent trace record count mismatch')
+-            rows.flush()
+-            del rows
+-            temporary.replace(self.array_path)
++            fd, name = tempfile.mkstemp(prefix=f'.{stem}.', suffix='.partial.npy', dir=self.cache)
++            os.close(fd)
++            temporary = Path(name)
++            rows = None
++            try:
++                rows = np.lib.format.open_memmap(temporary, mode='w+', dtype=INDEX_DTYPE,
++                                                 shape=(count,))
++                cursor, previous_ts = 64, 0
++                for index in range(count):
++                    if cursor + RECORD.size > offset:
++                        raise ValueError(f'truncated independent trace record {index}')
++                    topic, payload_length, record_flags, timestamp = RECORD.unpack_from(self.data, cursor)
++                    begin = cursor + 16
++                    end = (begin + payload_length + 7) & ~7
++                    if (end > offset or record_flags or topic not in self.topics or
++                        timestamp < previous_ts or any(self.data[begin+payload_length:end])):
++                        raise ValueError(f'invalid independent trace record {index}')
++                    rows[index] = (begin, timestamp, topic, payload_length, end-cursor)
++                    cursor, previous_ts = end, timestamp
++                if cursor != offset:
++                    raise ValueError('independent trace record count mismatch')
++                rows.flush()
++                rows._mmap.close()
++                rows = None
++                temporary.replace(self.array_path)
++            finally:
++                if rows is not None:
++                    rows._mmap.close()
++                temporary.unlink(missing_ok=True)
+             meta = {'parser_version': 2, 'trace_sha256': self.trace_sha256,
+                     'records': count, 'index_sha256': sha_file(self.array_path),
+                     'source': str(self.path), 'index': str(self.array_path),
+                     'scope': 'ignored local message-level cache; never redistribute'}
+             self.metadata_path.write_text(json.dumps(meta, indent=2) + '\n')
+         self.rows = np.load(self.array_path, mmap_mode='r')
+-        if self.rows.dtype != INDEX_DTYPE or len(self.rows) != count:
++        if not isinstance(self.rows, np.memmap):
++            if hasattr(self.rows, 'close'):
++                self.rows.close()
++            self.rows = None
++            raise ValueError('independent index is not a memory-mapped array')
++        if self.rows.dtype != INDEX_DTYPE or self.rows.ndim != 1 or len(self.rows) != count:
+             raise ValueError('independent index dtype/count mismatch')
+ 
+     def close(self):
+-        del self.rows
+-        self.data.close()
+-        self.stream.close()
++        if self.rows is not None:
++            self.rows._mmap.close()
++            self.rows = None
++        if self.data is not None:
++            self.data.close()
++            self.data = None
++        if self.stream is not None:
++            self.stream.close()
++            self.stream = None
+ 
+     def __enter__(self): return self
+     def __exit__(self, *_): self.close()
+@@ -124,8 +171,20 @@
+ 
+ def retained_layout(sizes: np.ndarray, capacity: int) -> dict:
+     """Use prefix sums and explicit PAD insertions, independent of append/evict."""
+-    if capacity < 8 or capacity & (capacity - 1) or np.any(sizes > capacity):
++    sizes = np.asarray(sizes)
++    maximum_position = (1 << 64) - 1
++    if (type(capacity) is not int or capacity < 8 or capacity > maximum_position or
++            capacity & (capacity - 1) or sizes.ndim != 1 or
++            not np.issubdtype(sizes.dtype, np.integer)):
+         raise ValueError('invalid ring capacity or oversized DATA')
++    if len(sizes):
++        largest = int(sizes.max())
++        if int(sizes.min()) <= 0 or largest > capacity:
++            raise ValueError('DATA sizes must be positive and fit the ring capacity')
++        # The usual trace sizes establish safety in O(1) after the extrema scan.
++        # Only unusually large integers need an exact Python-width sum.
++        if len(sizes) * largest > maximum_position and sum(map(int, sizes)) > maximum_position:
++            raise ValueError('DATA logical positions exceed u64')
+     sizes = np.asarray(sizes, dtype='<u8')
+     ends = np.cumsum(sizes, dtype=np.uint64)
+     starts = ends - sizes
+@@ -135,7 +194,10 @@
+     cursor = 0
+     while cursor < len(sizes):
+         # First DATA whose unpadded end lies beyond this physical ring end.
+-        crossing = int(np.searchsorted(ends, boundary - accumulated_pad, side='right'))
++        threshold = boundary - accumulated_pad
++        if threshold >= int(ends[-1]):
++            break
++        crossing = int(np.searchsorted(ends, np.uint64(threshold), side='right'))
+         if crossing >= len(sizes):
+             break
+         before = int(starts[crossing]) + accumulated_pad
+@@ -143,6 +205,8 @@
+         if padding:
+             pads.append((crossing, before, padding))
+             accumulated_pad += padding
++            if int(ends[-1]) + accumulated_pad > maximum_position:
++                raise ValueError('DATA/PAD logical positions exceed u64')
+         boundary += capacity
+         cursor = crossing
+     # Each PAD contributes one delta; a single prefix sum applies all padding.
+@@ -150,9 +214,9 @@
+     for index, _begin, padding in pads:
+         padding_deltas[index] += np.uint64(padding)
+     positions = starts + np.cumsum(padding_deltas, dtype=np.uint64)
+-    head = int(positions[-1] + sizes[-1]) if len(sizes) else 0
++    head = int(positions[-1]) + int(sizes[-1]) if len(sizes) else 0
+     cutoff = max(0, head-capacity)
+-    oldest_index = int(np.searchsorted(positions, cutoff, side='left'))
++    oldest_index = int(np.searchsorted(positions, np.uint64(cutoff), side='left'))
+     tail = int(positions[oldest_index]) if oldest_index < len(sizes) else head
+     for _index, begin, _padding in pads:
+         if cutoff <= begin < tail:
+--- initial/py/tiplog_py/layout/analyze.py
++++ final/py/tiplog_py/layout/analyze.py
+@@ -14,6 +14,7 @@
+ from collections import Counter, defaultdict
+ from fractions import Fraction
+ from pathlib import Path
++from tiplog_py._outputs import OutputTransaction
+ 
+ 
+ METHODS = ("base", "km-min", "km-max", "enum", "dp")
+@@ -580,6 +581,17 @@
+ 
+ 
+ def build(inputs, metadata_path, *, csv_path=None, kinds=(), methods=METHODS, global_paths=()):
++    inputs, global_paths = list(inputs), list(global_paths)
++    if csv_path is None:
++        return _build(inputs, metadata_path, kinds=kinds, methods=methods, global_paths=global_paths)
++    with OutputTransaction(metadata_path, [csv_path], additional_sources=[*inputs, *global_paths]) as transaction:
++        summary = _build(inputs, metadata_path, csv_path=transaction.path(csv_path),
++                         kinds=kinds, methods=methods, global_paths=global_paths)
++        transaction.commit()
++    return summary
++
++
++def _build(inputs, metadata_path, *, csv_path=None, kinds=(), methods=METHODS, global_paths=()):
+     inputs = [Path(path) for path in inputs]
+     metadata_path = Path(metadata_path)
+     metadata = json.loads(metadata_path.read_text())
+@@ -626,10 +638,12 @@
+     parser.add_argument("--method", choices=METHODS, action="append")
+     parser.add_argument("--global", dest="global_paths", type=Path, action="append", default=[])
+     args = parser.parse_args(argv)
+-    summary = build(args.input, args.metadata, csv_path=args.csv, kinds=args.kind,
+-                    methods=args.method or METHODS, global_paths=args.global_paths)
+-    args.output.parent.mkdir(parents=True, exist_ok=True)
+-    args.output.write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n")
++    with OutputTransaction(args.metadata, [args.output, args.csv],
++                           additional_sources=[*args.input, *args.global_paths]) as transaction:
++        summary = build(args.input, args.metadata, csv_path=transaction.path(args.csv), kinds=args.kind,
++                        methods=args.method or METHODS, global_paths=args.global_paths)
++        transaction.path(args.output).write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n")
++        transaction.commit()
+     print(json.dumps({"status": summary["status"], "rows": summary["rows"],
+                       "failure_counts": summary["failure_counts"], "output": str(args.output)}))
+     return 1 if summary["failure_counts"] else 0
+--- initial/py/tiplog_py/trace/format.py
++++ final/py/tiplog_py/trace/format.py
+@@ -92,25 +92,31 @@
+     def finish(self) -> None:
+         if self.closed:
+             return
+-        dict_offset = self.stream.tell()
+-        self.stream.write(U32.pack(len(self.topics)))
+-        for path, topic_id in self.topics.items():
+-            encoded = path_bytes(path)
+-            self.stream.write(DICT_ENTRY.pack(topic_id, len(encoded)))
+-            self.stream.write(encoded)
+-        dict_length = self.stream.tell() - dict_offset
+-        self.stream.seek(0)
+-        self.stream.write(HEADER.pack(MAGIC, 1, 0, self.count, dict_offset,
+-                                      dict_length, self.source_prefix, bytes(16)))
+-        self.stream.close()
+-        self.partial.replace(self.path)
++        try:
++            dict_offset = self.stream.tell()
++            self.stream.write(U32.pack(len(self.topics)))
++            for path, topic_id in self.topics.items():
++                encoded = path_bytes(path)
++                self.stream.write(DICT_ENTRY.pack(topic_id, len(encoded)))
++                self.stream.write(encoded)
++            dict_length = self.stream.tell() - dict_offset
++            self.stream.seek(0)
++            self.stream.write(HEADER.pack(MAGIC, 1, 0, self.count, dict_offset,
++                                          dict_length, self.source_prefix, bytes(16)))
++            self.stream.close()
++            self.partial.replace(self.path)
++        except BaseException:
++            self.abort()
++            raise
+         self.closed = True
+ 
+     def abort(self) -> None:
+         if not self.closed:
+-            self.stream.close()
+-            self.partial.unlink(missing_ok=True)
+-            self.closed = True
++            try:
++                self.stream.close()
++            finally:
++                self.partial.unlink(missing_ok=True)
++                self.closed = True
+ 
+     def __enter__(self):
+         return self
+--- initial/scripts/assemble_f01_acceptance.py
++++ final/scripts/assemble_f01_acceptance.py
+@@ -73,6 +73,9 @@
+         self.records.add(name)
+         record = self.read(name)
+         self.bind(record['log'], record['log_sha256'])
++        for field in ('build_provenance', 'build_artifacts_before', 'build_artifacts_after'):
++            for artifact, identity in record.get(field, {}).get('artifacts', {}).items():
++                self.bind(artifact, identity['sha256'])
+         if 'binding' in record:
+             self.binding(record['binding'])
+         if 'raw_output' in record:
+@@ -141,6 +144,19 @@
+         freeze = self.bind('results/f01/source-freeze-final.json')
+         compatible = [self.bind('results/f01/source-freeze.json')]
+         self.bind('results/f01/protocol.json')
++        builds = {}
++        current_cpp = input_sets(self.root)['cpp']
++        for preset in PRESETS:
++            choices = []
++            for path in sorted((self.root/'results/f01/checks').glob('*.json')):
++                saved = read_json(path)
++                if (saved.get('status') == 'passed' and saved.get('exit_code') == 0
++                        and saved.get('build_provenance', {}).get('preset') == preset
++                        and saved['build_provenance'].get('cpp_input_set') == current_cpp):
++                    choices.append(path)
++            require(choices, 'missing current source-bound full build: '+preset)
++            builds[preset] = self.bind(choices[-1].relative_to(self.root).as_posix())
++            self.record(builds[preset])
+         ctest = {}
+         for preset in PRESETS:
+             record, _ = self.latest_record(f'final-ctest-{preset}-*.json')
+@@ -183,6 +199,7 @@
+             'baseline': baseline, 'source_freeze': freeze,
+             'compatible_cpp_freezes': compatible,
+             'sources': source_inventory(self.root), 'input_sets': input_sets(self.root),
++            'builds': builds,
+             'evidence': dict(sorted(self.evidence.items())),
+             'validations': {'ctest': ctest, 'python': python, 'differentials': differentials,
+                             'fuzz': {'record': fuzz_record, 'summary': fuzz_summary},
+--- initial/scripts/build_provenance.py
++++ final/scripts/build_provenance.py
+@@ -0,0 +1,288 @@
++"""Bind successful project builds and later executions to the same artifacts.
++
++This is local execution provenance, not an attestation against a malicious host.
++Snapshots never write into build directories or alter historical evidence.
++"""
++from __future__ import annotations
++
++import hashlib
++import json
++import os
++from pathlib import Path
++import re
++import shutil
++import shlex
++
++SCHEMA = 'tiplog-build-artifacts-v1'
++PRESETS = ('debug', 'release', 'asan-ubsan', 'fuzz')
++SHA = re.compile(r'[0-9a-f]{64}\Z')
++
++
++def identity(path):
++    path = Path(path)
++    with path.open('rb') as stream:
++        digest = hashlib.file_digest(stream, 'sha256').hexdigest()
++    return {'sha256': digest, 'bytes': path.stat().st_size}
++
++
++def cache_values(path):
++    """Read data entries only; retain configuration keys without environment dumps."""
++    result = {}
++    for line in Path(path).read_text().splitlines():
++        if not line or line.startswith(('#', '//')) or '=' not in line:
++            continue
++        key_type, value = line.split('=', 1)
++        key, separator, _kind = key_type.partition(':')
++        if not separator:
++            continue
++        if key in result:
++            raise ValueError(f'duplicate CMake cache key: {key}')
++        result[key] = value
++    return result
++
++
++def capture_build(root, preset, cpp_input_set):
++    root = Path(root).resolve()
++    if preset not in PRESETS or not isinstance(cpp_input_set, str) or not SHA.fullmatch(cpp_input_set):
++        raise ValueError('known preset and exact C++ input-set hash required')
++    directory = root/'build'/preset
++    if not directory.is_dir() or directory.resolve() != directory:
++        raise ValueError('build directory is missing or aliases another location')
++    metadata = [directory/'CMakeCache.txt', directory/'compile_commands.json']
++    if any(not path.is_file() or path.resolve().parent != directory for path in metadata):
++        raise ValueError('build requires local CMake cache and compile commands')
++    cache = cache_values(metadata[0])
++    if (Path(cache.get('CMAKE_HOME_DIRECTORY', '')).resolve() != root or
++            Path(cache.get('CMAKE_CACHEFILE_DIR', '')).resolve() != directory or
++            cache.get('CMAKE_EXPORT_COMPILE_COMMANDS', '').upper() not in ('ON', 'TRUE', '1')):
++        raise ValueError('CMake cache does not describe this source/build directory')
++    commands = json.loads(metadata[1].read_text())
++    if not isinstance(commands, list) or not commands or any(
++            not isinstance(item, dict) or not isinstance(item.get('file'), str) or
++            not isinstance(item.get('directory'), str) or
++            not (isinstance(item.get('command'), str) or isinstance(item.get('arguments'), list))
++            for item in commands):
++        raise ValueError('compile commands must describe a nonempty compilation database')
++    executables = [path for path in sorted(directory.iterdir()) if path.is_file() and os.access(path, os.X_OK)]
++    if not executables:
++        raise ValueError('no built project executables')
++    if any(path.resolve().parent != directory for path in executables):
++        raise ValueError('project executable aliases a file outside its build directory')
++    configuration = {key: value for key, value in sorted(cache.items())
++                     if key.startswith(('CMAKE_CXX_FLAGS', 'CMAKE_EXE_LINKER_FLAGS',
++                                        'CMAKE_SHARED_LINKER_FLAGS', 'TIPLOG_'))
++                     or key in {'CMAKE_BUILD_TYPE', 'CMAKE_CXX_STANDARD', 'CMAKE_CXX_EXTENSIONS',
++                                'CMAKE_GENERATOR', 'CMAKE_MAKE_PROGRAM', 'BUILD_TESTING',
++                                'CMAKE_EXPORT_COMPILE_COMMANDS', 'BENCHMARK_ENABLE_EXCEPTIONS'}}
++    detection = sorted((directory/'CMakeFiles').glob('*/CMakeCXXCompiler.cmake'))
++    if len(detection) != 1:
++        raise ValueError('missing or ambiguous CMake compiler detection')
++    text = detection[0].read_text()
++    detected_compiler = re.search(r'^set\(CMAKE_CXX_COMPILER "([^"\n]+)"\)', text, re.M)
++    if detected_compiler is None:
++        raise ValueError('missing detected C++ compiler')
++    compiler = Path(detected_compiler.group(1))
++    configured = cache.get('CMAKE_CXX_COMPILER', '')
++    configured_path = Path(configured) if Path(configured).is_absolute() else Path(shutil.which(configured) or '')
++    if (not compiler.is_absolute() or not compiler.is_file() or not configured_path.is_file()
++            or configured_path.resolve() != compiler.resolve()):
++        raise ValueError('configured and detected C++ compiler identities disagree')
++    compiler_info = {'path': str(compiler.resolve()), **identity(compiler)}
++    for key in ('ID', 'VERSION'):
++        match = re.search(r'^set\(CMAKE_CXX_COMPILER_' + key + r' "([^"\n]+)"\)', text, re.M)
++        if match is None:
++            raise ValueError(f'missing CMake compiler {key.lower()}')
++        compiler_info[key.lower()] = match.group(1)
++    dependencies = []
++    if 'benchmark_SOURCE_DIR' in cache:
++        benchmark = Path(cache['benchmark_SOURCE_DIR'])/'src/benchmark.cc'
++        if not benchmark.is_file() or not benchmark.resolve().is_relative_to(directory):
++            raise ValueError('missing or external Google Benchmark patched source')
++        dependencies.append(benchmark)
++    return {'schema': SCHEMA, 'preset': preset, 'cpp_input_set': cpp_input_set,
++            'build_directory': directory.relative_to(root).as_posix(),
++            'configuration': configuration, 'compiler': compiler_info,
++            'artifacts': {path.relative_to(root).as_posix(): identity(path)
++                          for path in [*metadata, detection[0], *dependencies, *executables]}}
++
++
++def verify_build(snapshot, root, preset, cpp_input_set):
++    """Raise on missing, stale, added, removed or changed build artifacts."""
++    if not isinstance(snapshot, dict) or snapshot != capture_build(root, preset, cpp_input_set):
++        raise ValueError('build artifacts/configuration do not match the recorded snapshot')
++    return True
++
++
++def preset_variables(root, preset):
++    """Resolve the repository's declared configure-preset inheritance."""
++    document = json.loads((Path(root)/'CMakePresets.json').read_text())
++    entries = {item['name']: item for item in document['configurePresets']}
++    if len(entries) != len(document['configurePresets']):
++        raise ValueError('duplicate configure preset')
++    def resolve(name, active):
++        if name not in entries or name in active:
++            raise ValueError('missing or cyclic configure-preset inheritance')
++        entry = entries[name]
++        parents = entry.get('inherits', [])
++        parents = [parents] if isinstance(parents, str) else parents
++        values = {}
++        # CMake gives an earlier parent precedence over a later parent.
++        for parent in reversed(parents):
++            values.update(resolve(parent, active | {name}))
++        values.update(entry.get('cacheVariables', {}))
++        return values
++    values = resolve(preset, set())
++    return {name: str(value.get('value') if isinstance(value, dict) else value)
++            for name, value in values.items()}
++
++
++def _required_flags(actual, required, *, sanitizer):
++    """Check token presence and options whose later occurrence overrides it."""
++    normalized = []
++    index = 0
++    while index < len(actual):
++        token = actual[index]
++        if token in ('-D', '-U') and index+1 < len(actual):
++            index += 1
++            token += actual[index]
++        normalized.append(token)
++        index += 1
++    actual = normalized
++    # These options can hide flags or code in files/passes which the recorded
++    # source/compilation inventory does not bind. Supported presets do not use
++    # them. Reject rather than pretend to emulate the compiler driver.
++    indirect = ('-Xclang', '-mllvm', '-Xpreprocessor', '-Xassembler', '-Xlinker',
++                '-Wp,', '-Wa,', '-Wl,', '--config', '-specs', '--specs', '-wrapper',
++                '-fplugin', '-fpass-plugin', '-load', '-include', '--include', '-imacros',
++                '-ivfsoverlay', '-vfsoverlay', '-fmodule-file', '-fmodule-map-file',
++                '-fprebuilt-module-path', '-fmodules', '--gcc-toolchain', '-gcc-toolchain',
++                '--sysroot', '-isysroot', '-resource-dir', '-B', '-ccc-', '-cc1',
++                '-fprofile-use', '-fprofile-instr-use', '-fauto-profile')
++    if any(token.startswith(('@', *indirect)) for token in actual):
++        raise ValueError('indirect compiler flags or undeclared compilation inputs are unsupported')
++    if any(token.startswith(('-fsanitize', '-fno-sanitize')) and token not in required
++           for token in actual):
++        raise ValueError('undeclared sanitizer suppression or configuration flag')
++    declared_ndebug = any(token.startswith('-D') and token[2:].split('=', 1)[0] == 'NDEBUG'
++                          for token in required)
++    if not declared_ndebug and any(token.startswith('-D') and token[2:].split('=', 1)[0] == 'NDEBUG'
++                                   for token in actual):
++        raise ValueError('NDEBUG disables assertions required by the declared preset')
++    if not set(required) <= set(actual):
++        raise ValueError('compilation/link flags omit required preset tokens')
++    if sanitizer and any(token.startswith(('-fno-sanitize=', '-fsanitize-recover='))
++                         or token in ('-fsanitize-recover', '-fno-sanitize-recover') for token in actual):
++        raise ValueError('sanitizer instrumentation or error recovery was overridden')
++    for pattern in (r'-O(?:[0-3sgz]|fast)', r'-g(?:[0-3])?', r'-f(?:no-)?omit-frame-pointer',
++                    r'-std=.+'):
++        wanted = [token for token in required if re.fullmatch(pattern, token)]
++        observed = [token for token in actual if re.fullmatch(pattern, token)]
++        if wanted and (not observed or observed[-1] != wanted[-1]):
++            raise ValueError('effective compilation flag overrides its preset')
++    for token in required:
++        if not token.startswith('-D'):
++            continue
++        macro = token[2:].split('=', 1)[0]
++        definitions = [flag for flag in actual if flag.startswith(('-D', '-U'))
++                       and flag[2:].split('=', 1)[0] == macro]
++        if not definitions or definitions[-1] != token:
++            raise ValueError('required preset macro was overridden')
++
++
++def validate_configuration(snapshot, root, preset):
++    """Require actual preset configuration, including compiler instrumentation.
++
++    Recording a directory named ``asan-ubsan`` and setting ASAN_OPTIONS alone
++    cannot establish that the compiled project code contains sanitizer checks.
++    """
++    root = Path(root).resolve()
++    if preset not in PRESETS or snapshot.get('schema') != SCHEMA or snapshot.get('preset') != preset:
++        raise ValueError('unknown or mismatched build configuration preset')
++    declared = preset_variables(root, preset)
++    configuration = snapshot['configuration']
++    expected_compiler = 'GNU' if preset in ('debug', 'release') else 'Clang'
++    if snapshot['compiler'].get('id') != expected_compiler:
++        raise ValueError('compiler does not match the supported preset')
++    for name in ('CMAKE_BUILD_TYPE', 'CMAKE_CXX_STANDARD', 'CMAKE_CXX_EXTENSIONS'):
++        if configuration.get(name) != declared.get(name):
++            raise ValueError('build configuration differs from declared preset: '+name)
++    truth = lambda value: str(value).upper() in ('ON', 'TRUE', 'YES', '1')
++    if not truth(configuration.get('BUILD_TESTING', 'OFF')):
++        raise ValueError('preset test compilation is disabled')
++    if truth(configuration.get('TIPLOG_ENABLE_FUZZING', 'OFF')) != (preset == 'fuzz'):
++        raise ValueError('fuzz instrumentation does not match its preset')
++    sanitizer = preset in ('asan-ubsan', 'fuzz')
++    build_type = declared['CMAKE_BUILD_TYPE'].upper()
++    def flags(values, prefix):
++        return shlex.split(values.get(prefix, '')) + shlex.split(values.get(prefix+'_'+build_type, ''))
++    required_cxx = flags(declared, 'CMAKE_CXX_FLAGS')
++    _required_flags(flags(configuration, 'CMAKE_CXX_FLAGS'), required_cxx, sanitizer=sanitizer)
++    for prefix in ('CMAKE_EXE_LINKER_FLAGS', 'CMAKE_SHARED_LINKER_FLAGS'):
++        _required_flags(flags(configuration, prefix), flags(declared, prefix), sanitizer=sanitizer)
++    if any(name.endswith('/benchmark-src/src/benchmark.cc') for name in snapshot['artifacts']):
++        if not truth(configuration.get('BENCHMARK_ENABLE_EXCEPTIONS', 'OFF')):
++            raise ValueError('patched Benchmark output handling requires C++ exceptions')
++    required_compile = [*required_cxx, '-std=c++'+declared['CMAKE_CXX_STANDARD']]
++    database = json.loads((root/'build'/preset/'compile_commands.json').read_text())
++    owned = 0
++    for entry in database:
++        directory = Path(entry['directory'])
++        source = Path(entry['file'])
++        source = (source if source.is_absolute() else directory/source).resolve()
++        if not source.is_relative_to(root) or source.relative_to(root).parts[0] not in ('src', 'tools', 'bench', 'tests'):
++            continue
++        owned += 1
++        argv = entry.get('arguments')
++        argv = shlex.split(entry['command']) if argv is None else argv
++        if not isinstance(argv, list) or not argv or not all(isinstance(token, str) for token in argv):
++            raise ValueError('invalid project compilation command')
++        compiler = Path(argv[0])
++        compiler = compiler if compiler.is_absolute() else Path(shutil.which(argv[0]) or '')
++        if not compiler.is_file() or compiler.resolve() != Path(snapshot['compiler']['path']).resolve():
++            raise ValueError('project command uses another compiler or launcher')
++        _required_flags(argv[1:], required_compile, sanitizer=sanitizer)
++    if not owned:
++        raise ValueError('compilation database omits project-owned source entries')
++    return True
++
++
++def command_build(command, root, cwd=None):
++    """Recognize full preset builds, preset CTest and direct/wrapped binaries."""
++    if not command:
++        return None
++    root, cwd = Path(root).resolve(), Path(cwd or root).resolve()
++    scripts = {(candidate if candidate.is_absolute() else cwd/candidate).resolve()
++               for candidate in map(Path, command) if candidate.name in
++               ('run_f01_fuzz.py', 'run_f01_differentials.py')}
++    if root/'scripts/run_f01_fuzz.py' in scripts:
++        return {'preset': 'fuzz', 'kind': 'launcher', 'full_build': False}
++    if root/'scripts/run_f01_differentials.py' in scripts:
++        if '--preset' not in command or command.index('--preset')+1 >= len(command):
++            raise ValueError('differential launcher requires an explicit preset')
++        preset = command[command.index('--preset')+1]
++        if preset not in PRESETS:
++            raise ValueError('unknown differential launcher preset')
++        return {'preset': preset, 'kind': 'launcher', 'full_build': False}
++    name = Path(command[0]).name
++    if name in ('cmake', 'ctest') and '--preset' in command:
++        at = command.index('--preset')
++        if at+1 >= len(command) or command[at+1] not in PRESETS:
++            raise ValueError('missing or unknown build/test preset')
++        preset = command[at+1]
++        if name == 'ctest':
++            return {'preset': preset, 'kind': 'ctest', 'full_build': False}
++        if '--build' in command:
++            return {'preset': preset, 'kind': 'build',
++                    'full_build': not any(arg in ('--target', '-t', '--') or
++                                          arg.startswith('--target=') for arg in command)}
++        return None  # Configure does not produce compiled artifacts.
++    found = set()
++    for token in command:
++        candidate = Path(token)
++        candidate = (candidate if candidate.is_absolute() else cwd/candidate).resolve()
++        for preset in PRESETS:
++            if candidate.parent == root/'build'/preset and candidate.is_file() and os.access(candidate, os.X_OK):
++                found.add(preset)
++    if len(found) > 1:
++        raise ValueError('command refers to binaries from multiple presets')
++    return {'preset': found.pop(), 'kind': 'binary', 'full_build': False} if found else None
+--- initial/scripts/check_f01.py
++++ final/scripts/check_f01.py
+@@ -23,6 +23,14 @@
+     'tiplog_f01_remediation_helpers', Path(__file__).with_name('check_remediation.py'))
+ _HELPERS = importlib.util.module_from_spec(_HELPER_SPEC)
+ _HELPER_SPEC.loader.exec_module(_HELPERS)
++_BENCH_SPEC = importlib.util.spec_from_file_location(
++    'tiplog_f01_fixture_contract', Path(__file__).with_name('f01_summary.py'))
++_BENCH = importlib.util.module_from_spec(_BENCH_SPEC)
++_BENCH_SPEC.loader.exec_module(_BENCH)
++_BUILD_SPEC = importlib.util.spec_from_file_location(
++    'tiplog_f01_build_provenance', Path(__file__).with_name('build_provenance.py'))
++_BUILD = importlib.util.module_from_spec(_BUILD_SPEC)
++_BUILD_SPEC.loader.exec_module(_BUILD)
+ digest, input_sets, junit_counts, local, source_inventory = (
+     _HELPERS.digest, _HELPERS.input_sets, _HELPERS.junit_counts,
+     _HELPERS.local, _HELPERS.source_inventory)
+@@ -102,6 +110,21 @@
+         require(all(values.get(name) == value for name, value in needed.items()), f'sanitizer disabled: {key}')
+ 
+ 
++FULL_SUITE_SELECTION_ENV = ('GTEST_FILTER', 'GTEST_TOTAL_SHARDS', 'GTEST_SHARD_INDEX',
++                            'GTEST_REPEAT', 'TESTBRIDGE_TEST_ONLY', 'CTEST_TESTS_TO_RUN',
++                            'PYTEST_ADDOPTS', 'PYTEST_PLUGINS')
++
++
++def full_suite_environment(record):
++    environment = record.get('environment')
++    require(isinstance(environment, dict), 'full suite environment is missing')
++    for name in FULL_SUITE_SELECTION_ENV:
++        require(name in environment, 'full suite selection environment was not recorded: '+name)
++        require(environment[name] in (None, ''), 'full suite selection/injection environment is active: '+name)
++    require(environment.get('PYTEST_DISABLE_PLUGIN_AUTOLOAD') == '1',
++            'full suite plugin autoload was not explicitly disabled')
++
++
+ class Audit:
+     def __init__(self, manifest, root=ROOT):
+         self.manifest, self.root = manifest, Path(root).resolve()
+@@ -109,6 +132,7 @@
+         self.checks = []
+         self.current_inputs = input_sets(self.root)
+         self.allowed_differential_cpp = {self.current_inputs['cpp']}
++        self.verified_builds = {}
+ 
+     def section(self, name, action):
+         try:
+@@ -156,6 +180,7 @@
+             'ctest', 'python', 'differentials', 'fuzz', 'benchmarks', 'mutations'}, 'incomplete validation sections')
+         require(isinstance(self.evidence, dict) and self.evidence, 'missing evidence inventory')
+         require(all(name == self.name(name) for name in self.evidence), 'evidence keys must be canonical relative paths')
++        require(set(self.manifest.get('builds', {})) == set(PRESETS), 'missing source-bound build matrix')
+ 
+     def sources(self):
+         current = source_inventory(self.root)
+@@ -210,8 +235,37 @@
+         require(not SANITIZER_FAILURE.search(log), f'sanitizer failure in successful evidence: {name}')
+         return record, log
+ 
++    def build(self, preset):
++        """Require an actual full build and rehash the exact compiled artifacts."""
++        if preset in self.verified_builds:
++            return self.verified_builds[preset]
++        require(preset in self.manifest.get('builds', {}), 'missing source-bound build: '+preset)
++        record, _ = self.runner(self.manifest['builds'][preset])
++        argv = record['argv']
++        require(argv[:4] == ['cmake', '--build', '--preset', preset], 'wrong build command/preset')
++        tail = argv[4:]
++        require(not tail or (len(tail) == 2 and tail[0] == '--parallel' and re.fullmatch('[1-9][0-9]*', tail[1])),
++                'build must compile the complete preset')
++        require(record.get('build_execution') == {'preset': preset, 'kind': 'build', 'full_build': True},
++                'build record lacks full-preset provenance')
++        snapshot = record.get('build_provenance')
++        require(snapshot and snapshot == record.get('build_artifacts_after'), 'build has no final artifact snapshot')
++        _BUILD.verify_build(snapshot, self.root, preset, self.current_inputs['cpp'])
++        _BUILD.validate_configuration(snapshot, self.root, preset)
++        for name, identity in snapshot['artifacts'].items():
++            self.bound(name)
++            self.identity(name, identity)
++        self.verified_builds[preset] = snapshot
++        return snapshot
++
++    def execution(self, preset, record):
++        snapshot = self.build(preset)
++        require(record.get('build_artifacts_before') == snapshot == record.get('build_artifacts_after'),
++                'execution used missing, stale or changed build artifacts: '+preset)
++
+     def ctest_one(self, preset, reference):
+         record, _ = self.runner(reference['record'])
++        full_suite_environment(record)
+         argv = record['argv']
+         require(Path(argv[0]).name == 'ctest', 'CTest evidence ran another executable')
+         values, switches = {}, []
+@@ -234,6 +288,7 @@
+                 require(re.fullmatch(r'[1-9][0-9]*', values[option]), 'invalid CTest concurrency')
+         if preset in ('asan-ubsan', 'fuzz'):
+             sanitizers(record['environment'])
++        self.execution(preset, record)
+         path = self.bound(reference['junit'])
+         count = junit_counts(path, 229)
+         names = [case.get('name', '') for case in ET.parse(path).getroot().iter('testcase')]
+@@ -252,6 +307,7 @@
+     def python(self):
+         reference = self.manifest['validations']['python']
+         record, _ = self.runner(reference['record'], group='python')
++        full_suite_environment(record)
+         argv = record['argv']
+         require(argv[0] in ('.venv/bin/python', str(self.root / '.venv/bin/python'))
+                 and argv[1:3] == ['-m', 'pytest'], 'Python check used another interpreter/command')
+@@ -277,6 +333,7 @@
+                 sanitizers(record['environment'])
+             argv = record['argv']
+             executable = self.name(argv[0])
++            self.execution(preset, record)
+             values = options(argv[1:])
+             result = decode(log)
+             require(result['status'] == 'passed' and result['seed_base'] == 1
+@@ -316,6 +373,7 @@
+         require(len(record['argv']) == 2 and re.fullmatch(r'python(?:3(?:\.[0-9]+)?)?', Path(record['argv'][0]).name)
+                 and self.name(record['argv'][1]) == 'scripts/run_f01_fuzz.py', 'wrong fuzz launcher')
+         sanitizers(record['environment'])
++        self.execution('fuzz', record)
+         printed = [decode(line) for line in log.splitlines() if line.startswith('{')]
+         require(printed and printed[-1].get('summary') == reference['summary'], 'fuzz summary is not the executed output')
+         summary = self.read(reference['summary'])
+@@ -389,13 +447,11 @@
+         require(reference['source_freeze'] == self.manifest['source_freeze'], 'benchmark uses another source freeze')
+         require(reference['protocol'] == plan['protocol'] == 'results/f01/protocol.json', 'benchmark protocol differs')
+         self.text(reference['protocol'], plan['protocol_sha256'])
+-        for field, expected in (('summarizer', 'results/f01/summarize.py'),
+-                                ('contracts', 'results/f01/check_tool.py')):
+-            require(plan['analysis'][field] == expected, 'unexpected benchmark analysis implementation')
+-            self.text(expected, plan['analysis'][field + '_sha256'])
+-        spec = importlib.util.spec_from_file_location('tiplog_f01_bound_summary', self.bound(plan['analysis']['summarizer']))
+-        module = importlib.util.module_from_spec(spec)
+-        spec.loader.exec_module(module)
++        for field, expected in (('summarizer', {'results/f01/summarize.py', 'scripts/f01_summary.py'}),
++                                ('contracts', {'results/f01/check_tool.py'})):
++            require(plan['analysis'][field] in expected, 'unexpected benchmark analysis implementation')
++            self.text(plan['analysis'][field], plan['analysis'][field + '_sha256'])
++        module = _BENCH
+         jobs = plan['timed_jobs']
+         require(jobs and len({job['id'] for job in jobs}) == len(jobs), 'missing/duplicate study job')
+         expected_records = sum(job['process_repetitions'] for job in jobs)
+@@ -528,6 +584,9 @@
+         self.text(binding['build_record'], binding['build_record_sha256'])
+         build, _ = self.runner(binding['build_record'])
+         require(build['argv'][:4] == ['cmake', '--build', '--preset', 'release'], 'benchmark binary lacks a current Release build')
++        require(binding['build_record'] == self.manifest.get('builds', {}).get('release'),
++                'benchmark uses a different Release build record')
++        self.execution('release', record)
+         require(self.name(binding['binary']) == 'build/release/tiplog_poll_bench'
+                 and record['binary_sha256'] == binding['binary_sha256'], 'benchmark binary binding differs')
+         self.identity(binding['binary'], binding['binary_sha256'])
+--- initial/scripts/check_p7_runtime_quiescence.py
++++ final/scripts/check_p7_runtime_quiescence.py
+@@ -4,6 +4,7 @@
+ from datetime import datetime
+ import hashlib
+ import json
++import math
+ from pathlib import Path
+ 
+ 
+@@ -43,7 +44,28 @@
+ 
+ def foreign_cpu23_seconds(path, launcher, hz):
+     """Foreign CPU time of processes sampled on CPU2/3 at two consecutive snapshots."""
++    if isinstance(hz, bool) or not isinstance(hz, (int, float)) or not math.isfinite(hz) or hz <= 0:
++        raise ValueError('clock ticks per second must be finite and positive')
+     snapshots=[json.loads(line) for line in Path(path).read_text().splitlines()]
++    if len(snapshots) < 2:
++        raise ValueError('process audit requires at least two nonempty snapshots')
++    previous_time = None
++    for sample in snapshots:
++        at = epoch(sample['at_utc'])
++        if not math.isfinite(at) or (previous_time is not None and at <= previous_time):
++            raise ValueError('process snapshots must be chronological')
++        previous_time = at
++        processes = sample['processes']
++        if not isinstance(processes, list) or not processes:
++            raise ValueError('process snapshot must contain observed processes')
++        identities = set()
++        for process in processes:
++            for field in ('pid', 'ppid', 'cpu', 'user_ticks', 'system_ticks'):
++                if type(process[field]) is not int or process[field] < 0:
++                    raise ValueError('invalid process identity or CPU counter')
++            if process['pid'] == 0 or process['pid'] in identities or not isinstance(process['comm'], str):
++                raise ValueError('duplicate or invalid process identity')
++            identities.add(process['pid'])
+     total=0.0;largest={}
+     for before,after in zip(snapshots,snapshots[1:]):
+         a={p['pid']:p for p in before['processes']};b={p['pid']:p for p in after['processes']}
+@@ -55,6 +77,10 @@
+                     campaign.add(p['pid']);changed=True
+         for pid,q in b.items():
+             p=a.get(pid)
++            if p is not None and any(q[field] < p[field] for field in ('user_ticks', 'system_ticks')):
++                # PID reuse cannot be distinguished by the historical format.
++                # Its counter discontinuity cannot certify a quiet interval.
++                raise ValueError('process CPU counters decreased between snapshots')
+             if p is None or pid in campaign or p['cpu'] not in (2,3) or q['cpu'] not in (2,3):
+                 continue
+             seconds=(q['user_ticks']+q['system_ticks']-p['user_ticks']-p['system_ticks'])/hz
+@@ -68,6 +94,10 @@
+     campaign_path=Path(rule['campaign'])
+     campaign=load(campaign_path)
+     samples=[json.loads(line) for line in Path(rule['sampler_output']).read_text().splitlines()]
++    times = [sample['epoch'] for sample in samples]
++    if (any(isinstance(at, bool) or not isinstance(at, (int, float)) or not math.isfinite(at) for at in times)
++            or any(after <= before for before, after in zip(times, times[1:]))):
++        raise ValueError('CPU sampler timestamps must be finite and chronological')
+     hz=rule['clock_ticks_per_second']
+     rounds=[];failures=[]
+     for record in campaign['rounds']:
+@@ -79,21 +109,27 @@
+         else:
+             idle=inside[-1]['cpu2']['idle']-inside[0]['cpu2']['idle']
+             total=inside[-1]['cpu2']['total']-inside[0]['cpu2']['total']
+-            cpu2_idle=idle/total if total>0 else None
++            cpu2_idle=idle/total if total>0 and 0<=idle<=total else None
++        identity_valid = False
+         try:
+             audit = accepted_process_audit(record)
++            identity_valid = True
++            foreign,largest=foreign_cpu23_seconds(audit,record['launcher_pid'],hz)
+         except (OSError, ValueError, KeyError, TypeError) as error:
+             row = {'round': record['round'], 'kind': record['kind'], 'status': 'failed',
+-                   'checks': {'accepted_attempt_identity': False}, 'error': str(error)}
++                   'checks': {'accepted_attempt_identity': identity_valid,
++                              'sampling_evidence_valid': False}, 'error': str(error)}
+             rounds.append(row)
+             failures.append(row)
+             continue
+-        foreign,largest=foreign_cpu23_seconds(audit,record['launcher_pid'],hz)
+         cpu3_idle=record['cpu3_idle_ratio']
+         checks={'accepted_attempt_identity': True,
++                'sampling_evidence_valid': True,
+                 'cpu2_settle_idle':cpu2_idle is not None and cpu2_idle>=rule['thresholds']['cpu2_settle_idle_min'],
+                 'foreign_cpu23_seconds':foreign<=rule['thresholds']['foreign_cpu23_seconds_max'],
+-                'cpu3_idle_ratio':cpu3_idle is not None and cpu3_idle>=rule['thresholds']['cpu3_idle_ratio_min']}
++                'cpu3_idle_ratio':isinstance(cpu3_idle, (int, float)) and not isinstance(cpu3_idle, bool)
++                    and math.isfinite(cpu3_idle) and 0<=cpu3_idle<=1
++                    and cpu3_idle>=rule['thresholds']['cpu3_idle_ratio_min']}
+         row={'round':record['round'],'kind':record['kind'],'cpu2_settle_idle':cpu2_idle,'cpu2_settle_samples':len(inside),
+              'foreign_cpu23_seconds':foreign,'largest_foreign':largest,'cpu3_idle_ratio':cpu3_idle,
+              'process_audit':str(audit),'process_audit_sha256':sha(audit),'checks':checks,
+--- initial/scripts/f01_summary.py
++++ final/scripts/f01_summary.py
+@@ -0,0 +1,213 @@
++#!/usr/bin/env python3
++"""Validate F-01 observations against an independent deterministic fixture.
++
++The original analysis implementation is retained under results/f01 for historical
++reproduction. This maintained entry point adds independent byte/position/mode
++checks, then retains its summary schema and paired statistical calculations.
++"""
++from __future__ import annotations
++
++import argparse
++from functools import lru_cache
++import hashlib
++import importlib.util
++import json
++import math
++from pathlib import Path
++import sys
++
++ROOT = Path(__file__).resolve().parents[1]
++_HISTORICAL = ROOT/'results/f01/summarize.py'
++if hashlib.sha256(_HISTORICAL.read_bytes()).hexdigest() != 'd47350aba69e067ab6980b83afebd857e41e15158ccb32c2431caf096b252d55':
++    raise ValueError('historical F01 statistical implementation changed')
++_SPEC = importlib.util.spec_from_file_location('tiplog_historical_f01_summary', _HISTORICAL)
++_OLD = importlib.util.module_from_spec(_SPEC)
++_SPEC.loader.exec_module(_OLD)
++IDENTITY = _OLD.IDENTITY
++MASK = (1 << 64) - 1
++SIZES = (0, 1, 17, 65, 129, 257)
++
++
++def require(condition, message):
++    if not condition:
++        raise ValueError(message)
++
++
++def decode(text):
++    return json.loads(text, object_pairs_hook=_OLD.unique_object,
++                      parse_constant=lambda v: (_ for _ in ()).throw(ValueError('nonfinite JSON: '+v)))
++
++
++def natural(row, field, low=0, high=MASK):
++    value = row[field]
++    require(type(value) is int and low <= value <= high, 'invalid '+field)
++    return value
++
++
++@lru_cache(maxsize=64)
++def fixture(n, seed, case, shape, k, stride):
++    """Reconstruct publication without engine, registry, ring or C++ helpers."""
++    lengths = (0,) if shape == 'small' else (64,) if shape == 'fixed' else SIZES
++    spans = tuple((16+x+7)//8*8 for x in lengths)
++    rounds, remainder = divmod(n, len(spans))
++    data_bytes = rounds*sum(spans)+sum(spans[:remainder])
++    ring_bytes = 1 << (max(4096, data_bytes+560)-1).bit_length()
++    require(ring_bytes <= 128 << 20, 'independent fixture ring exceeds resource cap')
++    checkpoint_bytes = (ring_bytes//4096+2)*8
++    topics_bytes = (k+5)*4096
++    # The declared pool policy reserves packed blocks plus two per possible
++    # partition and one spare. The preflight counts 32-byte metadata, 1024 u32
++    # entries, one sealed byte and a 16-byte heap node per block.
++    blocks = (ring_bytes+16383)//16384+2*(k+5)+1
++    pool_bytes = blocks*(32+4*1024+1+16)
++    require(ring_bytes+checkpoint_bytes+pool_bytes+(k+5)*128+topics_bytes <= 128 << 20,
++            'independent fixture preparation exceeds resource cap')
++    pos = priming = 0
++    if shape == 'wrapped-variable':
++        target = (ring_bytes-data_bytes//2)//8*8
++        # The primer emits 280-byte DATA followed by a final >=16-byte DATA.
++        rounds, remainder = divmod(target, 280)
++        priming = rounds+int(remainder >= 16)
++        pos = rounds*280+(remainder if remainder >= 16 else 0)
++    digest = 14695981039346656037
++    outputs = candidates = pads = pad_bytes = selected_bytes = 0
++
++    def hash_bytes(values):
++        nonlocal digest
++        for value in values:
++            digest = ((digest ^ value)*1099511628211) & MASK
++
++    for ordinal in range(n):
++        size = spans[ordinal % len(spans)]
++        room = ring_bytes-pos % ring_bytes
++        if size > room:
++            # seek_after starts at the first DATA, excluding a leading PAD.
++            if ordinal:
++                pads += 1
++                pad_bytes += room
++            pos += room
++        selected = ordinal % stride == 0 or ordinal == n-1
++        if selected:
++            selected_bytes += size
++            matched = case == 'dense' or (case == 'late-match' and ordinal == n-1) or (case == 'sparse' and candidates % 128 == 127)
++            if matched:
++                # intern("bench/p0/hit") registers bench, p0, hit; each new
++                # partition subsequently contributes pN, hit, miss in that order.
++                topic = 3+3*(candidates % k)
++                length = lengths[ordinal % len(lengths)]
++                for value in (priming+ordinal+1, pos, topic, length):
++                    hash_bytes(value.to_bytes(8, 'little'))
++                state = (seed ^ ((ordinal*0x9e3779b97f4a7c15) & MASK)) & MASK
++                for _ in range(length):
++                    state ^= state >> 12
++                    state ^= (state << 25) & MASK
++                    state ^= state >> 27
++                    hash_bytes((((state*2685821657736338717) & MASK) >> 56,))
++                outputs += 1
++            candidates += 1
++        pos += size
++    return {'priming': priming, 'data_bytes': data_bytes, 'pads': pads,
++            'pad_bytes': pad_bytes, 'selected_bytes': selected_bytes,
++            'candidates': candidates, 'next_pos': pos,
++            'ring_bytes':ring_bytes, 'checkpoint_bytes':checkpoint_bytes,
++            'topics_bytes':topics_bytes, 'minimum_index_bytes':pool_bytes,
++            'digest': {'outputs': outputs, 'fnv1a64': f'{digest:016x}'}}
++
++
++def validate(row):
++    require(isinstance(row, dict), 'raw row must be an object')
++    n = natural(row, 'records', 1, 2_000_000)
++    seed = natural(row, 'seed')
++    k = natural(row, 'configured_partitions', 1, 65535)
++    stride = natural(row, 'candidate_every', 1, 1024)
++    natural(row, 'repetition')
++    natural(row, 'calls', 1)
++    natural(row, 'max_outputs', 1, 2_000_000)
++    require(row['case'] in ('no-match', 'late-match', 'sparse', 'dense'), 'unknown case')
++    require(row['shape'] in ('small', 'fixed', 'variable', 'wrapped-variable'), 'unknown shape')
++    for field in ('fixture_reserved_bytes', 'fixture_selected_partitions', 'selected_partition_count',
++                  'fixture_priming_records', 'fixture_data_bytes', 'fixture_pads_in_range',
++                  'fixture_candidate_records', 'inspections_used', 'max_inspections_in_call',
++                  'max_outputs_in_call', 'zero_output_calls', 'service_calls', 'peak_rss_bytes',
++                  'fixture_build_ns', 'drain_elapsed_ns', 'drain_cpu_ns', 'open_elapsed_ns',
++                  'index_reserved_bytes', 'ring_checkpoint_bytes', 'conservative_topics_bytes'):
++        natural(row, field)
++    for field in ('after_seq', 'next_pos'):
++        natural(row['final_checkpoint'], field)
++    natural(row['output_digest'], 'outputs')
++    natural(row['oracle_digest'], 'outputs')
++    model = fixture(n, seed, row['case'], row['shape'], k, stride)
++    require(row['ring_checkpoint_bytes'] == model['checkpoint_bytes']
++            and row['conservative_topics_bytes'] == model['topics_bytes']
++            and row['index_reserved_bytes'] >= model['minimum_index_bytes']
++            and row['fixture_reserved_bytes'] == model['ring_bytes']+model['checkpoint_bytes']
++                +model['topics_bytes']+row['index_reserved_bytes'], 'inconsistent fixture resource accounting')
++    for field, expected in (('fixture_priming_records', model['priming']),
++                            ('fixture_data_bytes', model['data_bytes']),
++                            ('fixture_pads_in_range', model['pads']),
++                            ('fixture_candidate_records', model['candidates'])):
++        require(row[field] == expected, 'independent fixture mismatch: '+field)
++    require(row['output_digest'] == row['oracle_digest'] == model['digest'], 'independent publication digest mismatch')
++    require(row['final_checkpoint'] == {'after_seq': n+model['priming'], 'next_pos': model['next_pos']},
++            'independent final checkpoint mismatch')
++    mode = row['mode']
++    require(mode in ('scan', 'indexed', 'auto'), 'unknown configured mode')
++    effective = mode if mode != 'auto' else ('indexed' if k <= 64 and model['candidates'] <= .25*n else 'scan')
++    require(row['effective_mode'] == effective, 'configured/effective mode mismatch')
++    require(row['selected_partition_count'] == (k if effective == 'indexed' else 0), 'planned partition count mismatch')
++    budget = row['budget']
++    require(isinstance(budget, str), 'invalid budget')
++    if budget not in ('legacy', 'unlimited'):
++        require(budget.isascii() and budget.isdecimal() and 0 < int(budget) <= MASK, 'invalid finite budget')
++    key = _OLD.validate(row)
++    work = row['poll_work']
++    require(work['bytes_inspected'] == (model['selected_bytes'] if effective == 'indexed' else model['data_bytes']+model['pad_bytes']),
++            'independent inspected-byte count mismatch')
++    require(row['drain_elapsed_ns'] >= row['poll_latency_ns']['sum'] > 0, 'invalid poll/drain timing')
++    for field in ('poll_latency_ns', 'victim_service_delay_ns', 'publisher_service_delay_ns'):
++        sample = row[field]
++        require(sample['sum'] <= sample['sample_count']*sample['max'], 'impossible sample sum')
++        if sample['sample_count'] == 1:
++            require(len({sample[x] for x in ('p50', 'p95', 'p99', 'max', 'sum')}) == 1, 'inconsistent singleton statistics')
++    for field, expected in (('outputs_per_drain_second', model['digest']['outputs']*1e9/row['drain_elapsed_ns']),
++                            ('fixture_records_per_poll_second', n*1e9/row['poll_latency_ns']['sum'])):
++        value = row[field]
++        require(type(value) in (int, float) and math.isfinite(value) and math.isclose(value, expected, rel_tol=1e-12),
++                'inconsistent reported rate: '+field)
++    return key
++
++
++def summarize(paths):
++    for path in paths:
++        with Path(path).open() as stream:
++            for number, line in enumerate(stream, 1):
++                try:
++                    validate(decode(line))
++                except (ValueError, KeyError, TypeError) as error:
++                    raise ValueError(f'{path}:{number}: {error}') from error
++    return _OLD.summarize(paths)
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('inputs', type=Path, nargs='+')
++    parser.add_argument('--output', type=Path)
++    args = parser.parse_args()
++    result = summarize(args.inputs)
++    if args.output:
++        target = args.output.resolve()
++        require(any(target.is_relative_to(ROOT/name) for name in ('results/f01', 'build/f01')),
++                'summary output must be beneath results/f01 or build/f01')
++        target.parent.mkdir(parents=True, exist_ok=True)
++        with target.open('x') as stream:
++            json.dump(result, stream, indent=2, allow_nan=False)
++            stream.write('\n')
++    print(json.dumps({'status': 'passed', 'validated_rows': result['validated_rows'], 'arms': len(result['arms'])}))
++
++
++if __name__ == '__main__':
++    try:
++        main()
++    except (OSError, ValueError, KeyError, TypeError) as error:
++        print('F01 summary: '+str(error), file=sys.stderr)
++        raise SystemExit(1)
+--- initial/scripts/run_f01_check.py
++++ final/scripts/run_f01_check.py
+@@ -10,6 +10,7 @@
+ import time
+ 
+ from check_remediation import input_sets
++from build_provenance import capture_build, command_build
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ 
+@@ -50,19 +51,53 @@
+               'input_sets_before': input_sets(),
+               'log': str(log.relative_to(ROOT)),
+               'environment': {key: environment.get(key) for key in
+-                              ('ASAN_OPTIONS', 'UBSAN_OPTIONS', 'PYTHONPATH', 'PYTHONDONTWRITEBYTECODE')}}
++                              ('ASAN_OPTIONS', 'UBSAN_OPTIONS', 'PYTHONPATH', 'PYTHONDONTWRITEBYTECODE',
++                               'GTEST_FILTER', 'GTEST_TOTAL_SHARDS', 'GTEST_SHARD_INDEX', 'GTEST_REPEAT',
++                               'TESTBRIDGE_TEST_ONLY', 'CTEST_TESTS_TO_RUN',
++                               'PYTEST_ADDOPTS', 'PYTEST_PLUGINS', 'PYTEST_DISABLE_PLUGIN_AUTOLOAD')}}
++    provenance_error = None
++    try:
++        execution = command_build(command, ROOT, working_directory)
++        if execution:
++            record['build_execution'] = execution
++            if execution['kind'] != 'build':
++                record['build_artifacts_before'] = capture_build(ROOT, execution['preset'], record['input_sets_before']['cpp'])
++    except (OSError, ValueError, TypeError) as error:
++        provenance_error = f'{type(error).__name__}: {error}'
+     record_path.write_text(json.dumps(record, indent=2)+'\n')
+     started = time.monotonic()
+     with log.open('w') as output:
++        if provenance_error is not None:
++            output.write('Build provenance preflight failed: '+provenance_error+'\n')
++            code = 125
++        else:
++            try:
++                code = subprocess.run(command, cwd=working_directory, env=environment,
++                                      stdout=output, stderr=subprocess.STDOUT).returncode
++            except OSError as error:
++                output.write(str(error)+'\n')
++                code = 127
++            record['command_exit_code'] = code
++    record['input_sets_after'] = input_sets()
++    if provenance_error is None and record.get('build_execution'):
++        execution = record['build_execution']
+         try:
+-            code = subprocess.run(command, cwd=working_directory, env=environment,
+-                                  stdout=output, stderr=subprocess.STDOUT).returncode
+-        except OSError as error:
+-            output.write(str(error)+'\n')
+-            code = 127
++            record['build_artifacts_after'] = capture_build(ROOT, execution['preset'], record['input_sets_after']['cpp'])
++            if (code == 0 and execution['kind'] == 'build' and execution['full_build'] and
++                    record['input_sets_before']['cpp'] == record['input_sets_after']['cpp']):
++                record['build_provenance'] = record['build_artifacts_after']
++            if execution['kind'] != 'build' and record['build_artifacts_before'] != record['build_artifacts_after']:
++                raise ValueError('build artifacts changed during execution')
++        except (OSError, ValueError, TypeError) as error:
++            provenance_error = f'{type(error).__name__}: {error}'
++            code = 125 if code == 0 else code
++            with log.open('a') as output:
++                output.write('Build provenance capture failed: '+provenance_error+'\n')
++    if provenance_error is not None:
++        record['provenance_error'] = provenance_error
+     record.update(exit_code=code, status='passed' if code == 0 else 'failed',
+                   elapsed_seconds=time.monotonic()-started, log_sha256=sha(log),
+-                  input_sets_after=input_sets())
++                  input_sets_after=record['input_sets_after'])
+     record_path.write_text(json.dumps(record, indent=2)+'\n')
+     print(json.dumps({'status': record['status'], 'record': str(record_path.relative_to(ROOT)),
+                       'exit_code': code}), flush=True)
+--- initial/scripts/run_f01_study.py
++++ final/scripts/run_f01_study.py
+@@ -22,6 +22,8 @@
+ import time
+ 
+ from check_remediation import input_sets
++import f01_summary
++from build_provenance import capture_build, verify_build, validate_configuration
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ ALL_BUDGETS = "legacy,unlimited,1,8,32,128,512,2048"
+@@ -112,7 +114,7 @@
+         "preflight": {"id": "resource-boundary", "argv": preflight, "expected_rows": rows_for(preflight),
+                       "expected_status_by_partitions": {"8192": "ok", "12288": "infeasible"},
+                       "scope": "Separate resource control, excluded from timing summary and accepted benchmark raw. This brackets tested stress points, not the exact highest feasible K."},
+-        "analysis": {"summarizer": "results/f01/summarize.py", "summarizer_sha256": sha(ROOT / "results/f01/summarize.py"),
++        "analysis": {"summarizer": "scripts/f01_summary.py", "summarizer_sha256": sha(ROOT / "scripts/f01_summary.py"),
+                      "contracts": "results/f01/check_tool.py", "contracts_sha256": sha(ROOT / "results/f01/check_tool.py"),
+                      "pairing": "Within each same-input group, pair each budget with legacy by fresh process repetition label; summarize ratios and per-repetition percentiles using medians, not pooled calls."},
+         "coverage": {"budgets": ALL_BUDGETS.split(","), "extra_demo_budget": "1000", "cases": ["no-match", "late-match", "sparse", "dense"],
+@@ -154,10 +156,12 @@
+ 
+ 
+ def load_summary_module(path):
+-    spec = importlib.util.spec_from_file_location("f01_study_summary", path)
+-    module = importlib.util.module_from_spec(spec)
+-    spec.loader.exec_module(module)
+-    return module
++    # Historical plans still bind their original analysis file, while every
++    # new execution also receives the maintained independent fixture checks.
++    if path.resolve() not in {(ROOT / 'results/f01/summarize.py').resolve(),
++                              (ROOT / 'scripts/f01_summary.py').resolve()}:
++        raise ValueError('unknown F01 analysis implementation')
++    return f01_summary
+ 
+ 
+ def normalize(args):
+@@ -207,10 +211,15 @@
+     if any(build_record.get(field, {}).get("cpp") != frozen["cpp_input_set"] for field in ("input_sets_before", "input_sets_after")):
+         raise ValueError("Release build record differs from frozen C++ sources")
+     build_argv = build_record.get("argv", [])
+-    if "--build" not in build_argv or "--preset" not in build_argv or build_argv[build_argv.index("--preset") + 1] != "release":
+-        raise ValueError("record does not describe a Release preset build")
++    if (build_argv[:4] != ['cmake', '--build', '--preset', 'release']
++            or build_record.get('build_execution') != {'preset':'release','kind':'build','full_build':True}
++            or any(value in build_argv[4:] for value in ('--target', '-t', '--'))):
++        raise ValueError("record does not describe a full Release preset build")
+     if sha(ROOT / build_record["log"]) != build_record["log_sha256"]:
+         raise ValueError("Release build log identity mismatch")
++    snapshot = build_record.get('build_provenance')
++    verify_build(snapshot, ROOT, 'release', frozen['cpp_input_set'])
++    validate_configuration(snapshot, ROOT, 'release')
+     binary = args.binary.resolve()
+     if not binary.is_relative_to(ROOT / "build/release"):
+         raise ValueError("study binary must be inside build/release")
+@@ -244,6 +253,9 @@
+                   "input_sets_before": input_sets(), "log": relative(log), "binding": binding,
+                   "binary_sha256": binary_sha, "environment": {key: environment.get(key) for key in ("ASAN_OPTIONS", "UBSAN_OPTIONS", "PYTHONDONTWRITEBYTECODE")},
+                   "host_before": host_observation()}
++        record['build_artifacts_before'] = capture_build(ROOT, 'release', frozen['cpp_input_set'])
++        if record['build_artifacts_before'] != snapshot:
++            raise ValueError('study artifacts differ from the source-bound Release build')
+         write_new(record_path, record)
+         start = time.monotonic()
+         with log.open("x") as output:
+@@ -254,6 +266,9 @@
+                 code = 127
+         record.update(exit_code=code, elapsed_seconds=time.monotonic() - start, finished_utc=now(),
+                       status="passed" if code == 0 else "failed", log_sha256=sha(log), input_sets_after=input_sets(), host_after=host_observation())
++        record['build_artifacts_after'] = capture_build(ROOT, 'release', frozen['cpp_input_set'])
++        if record['build_artifacts_after'] != snapshot:
++            record.update(exit_code=125, status='failed', provenance_error='study build artifacts changed during execution')
+         if raw is not None and raw.exists():
+             record.update(raw_output=relative(raw), raw_sha256=sha(raw))
+         record_path.write_text(json.dumps(record, indent=2, allow_nan=False) + "\n")
+--- initial/src/tiplog/engine/engine.cpp
++++ final/src/tiplog/engine/engine.cpp
+@@ -516,10 +516,19 @@
+     if (Report && remaining.max_inspections)
+       *remaining.max_inspections -= inspections;
+     const auto batch = [&] {
+-      if constexpr (Report)
+-        return replay_.next_batch_into<true>(remaining, out);
+-      else
+-        return replay_.next_batch_into<false>(remaining.max_outputs, out);
++      try {
++        if constexpr (Report)
++          return replay_.next_batch_into<true>(remaining, out);
++        else
++          return replay_.next_batch_into<false>(remaining.max_outputs, out);
++      } catch (...) {
++        // A throwing append can leave a successfully delivered prefix in out.
++        // Keep the public exception caches unchanged, but preserve that prefix
++        // in any later terminal error, including expiry before the next retry.
++        if (out.size() != before)
++          last_delivered_ = out.back().seq;
++        throw;
++      }
+     }();
+     if constexpr (Report) {
+       inspections += batch.inspections_used;
+--- initial/tests/layout/tool_contracts.py
++++ final/tests/layout/tool_contracts.py
+@@ -39,10 +39,10 @@
+         struct.pack_into("<QQQ", data, 16, records, offset, len(data) - offset)
+         path.write_bytes(data)
+ 
+-    def command(self, name, *args, text=None, success=True, stdout=None, env=None):
++    def command(self, name, *args, text=None, success=True, stdout=None, env=None, cwd=None):
+         result = subprocess.run([str(BIN / name), *map(str, args)], input=text,
+                                 text=True, stdout=stdout or subprocess.PIPE,
+-                                stderr=subprocess.PIPE, timeout=30, env=env)
++                                stderr=subprocess.PIPE, timeout=30, env=env, cwd=cwd)
+         if success:
+             self.assertEqual(result.returncode, 0, result.stderr)
+         else:
+@@ -153,6 +153,17 @@
+             self.command("index_bench", "--trace", trace,
+                          "--benchmark_filter=^M3-seek/B64$", "--benchmark_min_time=1x",
+                          env={**os.environ, "TIPLOG_BENCH_INPUTS": "/dev/full"}, success=False)
++            failed = self.command("index_bench", "--trace", trace,
++                                  "--benchmark_filter=^M3-seek/B64$", "--benchmark_min_time=1x",
++                                  "--benchmark_out=/dev/full", success=False)
++            self.assertIn("failed writing benchmark result file", failed.stderr)
++        output = self.root / "m3.json"
++        self.command("index_bench", "--trace", trace,
++                     "--benchmark_filter=^M3-seek/B64$", "--benchmark_min_time=1x",
++                     "--benchmark_out=" + str(output))
++        saved = json.loads(output.read_text())
++        self.assertEqual(len(saved["benchmarks"]), 1)
++        self.assertEqual(json.loads(saved["benchmarks"][0]["label"]), verified["inputs"][0])
+ 
+     def test_replay_constructor_config_rejections_are_validated_before_execution(self):
+         requests = self.root / "disabled.tsv"
+@@ -163,6 +174,129 @@
+         self.assertEqual(rows[1]["status"], "invalid_config")
+         self.assertIn("requires enabled index", rows[1]["reason"])
+ 
++    def test_output_aliases_preserve_all_source_inputs(self):
++        cases = self.root / "cases.tsv"
++        cases.write_text(self.case)
++        curves = self.root / "curves.tsv"
++        curves.write_text("CURVE\tone\t1\t1\t1\nPOINT\t1\t2\nEND\n")
++        framed = self.root / "framed.bin"
++        framed.write_bytes(b"\0\0")
++        requests = self.root / "requests.tsv"
++        requests.write_text("one\tT1\t0\tsubtree:synth\tscan\tquad\trepeat-warm\t64\t1\n")
++        dictionary = self.root / "terms.tsv"
++        dictionary.write_text("")
++        for kind in ("direct", "hardlink", "symlink"):
++            def alias(source):
++                if kind == "direct":
++                    return source
++                target = self.root / (source.name + "." + kind)
++                if target.exists() or target.is_symlink():
++                    target.unlink()
++                if kind == "hardlink":
++                    target.hardlink_to(source)
++                else:
++                    target.symlink_to(source)
++                return target
++
++            for name in ("tiplog_layout", "tiplog_layout_runtime"):
++                if not (BIN / name).exists():
++                    continue
++                for option, source in (("--input", cases), ("--global-curves", curves)):
++                    before = source.read_bytes()
++                    self.command(name, option, source, "--output", alias(source), success=False)
++                    self.assertEqual(source.read_bytes(), before)
++            before = framed.read_bytes()
++            self.command("tiplog_walk", framed, "--out", alias(framed), success=False)
++            self.assertEqual(framed.read_bytes(), before)
++            for source in (self.mix, requests, dictionary):
++                before = source.read_bytes()
++                self.bench(alias(source), "--requests", requests, "--term-dictionary", dictionary,
++                           success=False)
++                self.assertEqual(source.read_bytes(), before)
++            before = self.trace.read_bytes()
++            self.command("tiplog_bench", "--trace", self.trace, "--ring-bytes", "8192",
++                         "--output", alias(self.trace), success=False)
++            self.assertEqual(self.trace.read_bytes(), before)
++
++    def test_microbenchmark_outputs_preserve_inputs_and_remain_distinct(self):
++        for name, source, args in (
++                ("publish_bench", self.mix, ["--mix-file", self.mix]),
++                ("index_bench", self.trace, ["--trace", self.trace])):
++            before = source.read_bytes()
++            target = self.root / (name + ".hardlink")
++            target.hardlink_to(source)
++            variables = ["TIPLOG_BENCH_INVOCATIONS", "BENCHMARK_OUT"]
++            if name == "index_bench":
++                variables.append("TIPLOG_BENCH_INPUTS")
++            for variable in variables:
++                self.command(name, *args, "--benchmark_filter=DOES_NOT_MATCH",
++                             env={**os.environ, variable: str(target)}, success=False)
++                self.assertEqual(source.read_bytes(), before)
++            self.command(name, *args, "--benchmark_filter=DOES_NOT_MATCH",
++                         "--benchmark_out=" + str(target), success=False)
++            self.assertEqual(source.read_bytes(), before)
++        shared = self.root / "shared.jsonl"
++        shared.write_text("preserve\n")
++        self.command("merge_bench", "--benchmark_filter=DOES_NOT_MATCH",
++                     env={**os.environ, "TIPLOG_BENCH_INPUTS": str(shared),
++                          "TIPLOG_BENCH_INVOCATIONS": str(shared)}, success=False)
++        self.assertEqual(shared.read_text(), "preserve\n")
++
++    def test_input_filenames_resembling_benchmark_flags_keep_their_meaning(self):
++        for name, source, option in (("publish_bench", self.mix, "--mix-file"),
++                                     ("index_bench", self.trace, "--trace")):
++            fixture_name = name + ".fixture"
++            unusual_name = "--benchmark_out=" + fixture_name
++            unusual = self.root / unusual_name
++            unusual.write_bytes(source.read_bytes())
++            (self.root / fixture_name).hardlink_to(unusual)
++            before = unusual.read_bytes()
++            self.command(name, option, unusual_name, "--benchmark_filter=DOES_NOT_MATCH", cwd=self.root)
++            self.assertEqual(unusual.read_bytes(), before)
++
++    def test_request_read_errors_fail_before_output_creation(self):
++        rejected = self.root / "read-error.jsonl"
++        self.bench(rejected, "--requests", self.root, success=False)
++        self.assertFalse(rejected.exists())
++        requests = self.root / "empty.tsv"
++        requests.write_text("")
++        valid = self.root / "empty.jsonl"
++        self.bench(valid, "--requests", requests)
++        self.assertEqual([row["kind"] for row in map(json.loads, valid.read_text().splitlines())],
++                         ["prefill"])
++
++    def test_request_id_named_id_is_not_mistaken_for_a_header(self):
++        requests = self.root / "named-id.tsv"
++        requests.write_text("id\texperiment\tafter_seq\tterms\tmode\tkernel\tcache\tbatch\treaders\n"
++                            "id\tT1\t0\tsubtree:synth\tscan\tquad\trepeat-warm\t64\t1\n")
++        output = self.root / "named-id.jsonl"
++        self.bench(output, "--requests", requests)
++        rows = list(map(json.loads, output.read_text().splitlines()))
++        self.assertEqual([row["kind"] for row in rows], ["prefill", "replay"])
++        self.assertEqual(rows[1]["id"], "id")
++        self.assertEqual(rows[1]["status"], "ok")
++        requests.write_text("id\tbad-header\n")
++        rejected = self.root / "bad-header.jsonl"
++        self.bench(rejected, "--requests", requests, success=False)
++        self.assertFalse(rejected.exists())
++
++    def test_microbenchmark_verification_rejects_ignored_and_malformed_arguments(self):
++        for option in ("--outputs=8garbage", "--outputs=-1", "--outputs= 8",
++                       "--outputs=18446744073709551616", "--touch-bytes=64x",
++                       "--seed=-1", "--seed=8x", "--seed=+1"):
++            self.command("merge_bench", "--diagnostic", "--profile=uniform64",
++                         "--outputs=8", option, success=False)
++        for name, args in (("merge_bench", ["--diagnostic", "--profile=uniform64", "--outputs=8"]),
++                           ("publish_bench", ["--verify-only", "--mix-file", self.mix]),
++                           ("index_bench", ["--verify-only", "--trace", self.trace])):
++            result = self.command(name, *args, "--unknown-option", success=False)
++            self.assertIn("unrecognized argument in verification mode", result.stderr)
++        valid = self.command("merge_bench", "--diagnostic", "--profile=uniform64", "--outputs=8",
++                             "--seed=18446744073709551615")
++        self.assertEqual(len(valid.stdout.splitlines()), 4)
++        for line in valid.stdout.splitlines():
++            self.assertEqual(json.loads(line)["input"]["seed"], (1 << 64) - 1)
++
+ 
+ if __name__ == "__main__":
+     unittest.main()
+--- initial/tests/scripts/test_build_provenance.py
++++ final/tests/scripts/test_build_provenance.py
+@@ -0,0 +1,330 @@
++"""Current-source acceptance must bind tests to a successful compiled build."""
++import importlib.util
++import json
++from pathlib import Path
++import shlex
++from types import SimpleNamespace
++
++import pytest
++
++ROOT = Path(__file__).resolve().parents[2]
++spec = importlib.util.spec_from_file_location('build_provenance_test_helper', ROOT/'scripts/build_provenance.py')
++provenance = importlib.util.module_from_spec(spec)
++spec.loader.exec_module(provenance)
++CPP = 'a'*64
++
++
++def build_tree(root, preset='release'):
++    directory = root/'build'/preset
++    directory.mkdir(parents=True)
++    compiler = root/'compiler'; compiler.write_bytes(b'compiler identity')
++    cache = '\n'.join([f'CMAKE_HOME_DIRECTORY:INTERNAL={root}',
++                       f'CMAKE_CACHEFILE_DIR:INTERNAL={directory}',
++                       'CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON',
++                       f'CMAKE_CXX_COMPILER:FILEPATH={compiler}',
++                       'CMAKE_BUILD_TYPE:STRING=Release',
++                       'CMAKE_CXX_FLAGS_RELEASE:STRING=-O2 -DNDEBUG',
++                       'TIPLOG_ENABLE_FUZZING:BOOL=OFF',
++                       'UNRELATED_SECRET:STRING=must not appear in configuration'])+'\n'
++    (directory/'CMakeCache.txt').write_text(cache)
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(root/'src/example.cpp'), command='c++ -c example.cpp')]))
++    detection = directory/'CMakeFiles/4.4.0/CMakeCXXCompiler.cmake'
++    detection.parent.mkdir(parents=True)
++    detection.write_text(f'set(CMAKE_CXX_COMPILER "{compiler}")\n'
++                         'set(CMAKE_CXX_COMPILER_ID "GNU")\nset(CMAKE_CXX_COMPILER_VERSION "15.2.0")\n')
++    binary = directory/'tiplog_example'; binary.write_bytes(b'project executable'); binary.chmod(0o755)
++    vendored = directory/'_deps/bin/upstream'; vendored.parent.mkdir(parents=True)
++    vendored.write_bytes(b'upstream'); vendored.chmod(0o755)
++    return directory, binary
++
++
++def test_snapshot_exact_identity_and_sanitized_configuration(tmp_path):
++    directory, binary = build_tree(tmp_path)
++    snapshot = provenance.capture_build(tmp_path, 'release', CPP)
++    assert snapshot['schema'] == provenance.SCHEMA
++    assert snapshot['compiler']['id'] == 'GNU' and snapshot['compiler']['version'] == '15.2.0'
++    assert snapshot['configuration']['CMAKE_CXX_FLAGS_RELEASE'] == '-O2 -DNDEBUG'
++    assert 'UNRELATED_SECRET' not in snapshot['configuration']
++    assert set(snapshot['artifacts']) == {
++        'build/release/CMakeCache.txt', 'build/release/compile_commands.json',
++        'build/release/CMakeFiles/4.4.0/CMakeCXXCompiler.cmake', 'build/release/tiplog_example'}
++    assert provenance.verify_build(snapshot, tmp_path, 'release', CPP)
++    binary.write_bytes(b'stale replacement')
++    with pytest.raises(ValueError, match='match'): provenance.verify_build(snapshot, tmp_path, 'release', CPP)
++
++
++@pytest.mark.parametrize('damage', ['missing_cache', 'missing_commands', 'empty_commands', 'missing_binary',
++                                   'new_binary', 'flags', 'compiler', 'source', 'duplicate_cache', 'alias'])
++def test_missing_stale_filtered_or_changed_artifacts_fail_closed(tmp_path, damage):
++    directory, binary = build_tree(tmp_path)
++    snapshot = provenance.capture_build(tmp_path, 'release', CPP)
++    if damage == 'missing_cache': (directory/'CMakeCache.txt').unlink()
++    elif damage == 'missing_commands': (directory/'compile_commands.json').unlink()
++    elif damage == 'empty_commands': (directory/'compile_commands.json').write_text('[]')
++    elif damage == 'missing_binary': binary.unlink()
++    elif damage == 'new_binary':
++        extra = directory/'unexpected'; extra.write_text('executable'); extra.chmod(0o755)
++    elif damage == 'flags':
++        cache = directory/'CMakeCache.txt'; cache.write_text(cache.read_text().replace('-O2', '-O0'))
++    elif damage == 'compiler': (tmp_path/'compiler').write_bytes(b'other compiler')
++    elif damage == 'source': CPP_other = 'b'*64
++    elif damage == 'duplicate_cache':
++        with (directory/'CMakeCache.txt').open('a') as stream: stream.write('CMAKE_BUILD_TYPE:STRING=Debug\n')
++    else:
++        outside = tmp_path/'external'; outside.write_bytes(b'external'); outside.chmod(0o755)
++        binary.unlink(); binary.symlink_to(outside)
++    with pytest.raises((ValueError, OSError)):
++        provenance.verify_build(snapshot, tmp_path, 'release', CPP_other if damage == 'source' else CPP)
++
++
++def test_command_classification_distinguishes_full_build_from_partial(tmp_path):
++    _, binary = build_tree(tmp_path)
++    assert provenance.command_build(['cmake', '--build', '--preset', 'release', '--parallel', '2'], tmp_path) == {
++        'preset': 'release', 'kind': 'build', 'full_build': True}
++    assert provenance.command_build(['cmake', '--build', '--preset', 'release', '--target', 'tiplog_example'], tmp_path)['full_build'] is False
++    assert provenance.command_build(['ctest', '--preset', 'release'], tmp_path)['kind'] == 'ctest'
++    assert provenance.command_build(['taskset', '-c', '2', str(binary), '--seeds', '10'], tmp_path)['kind'] == 'binary'
++    assert provenance.command_build(['cmake', '--preset', 'release'], tmp_path) is None
++    assert provenance.command_build(['python', '-m', 'pytest'], tmp_path) is None
++    assert provenance.command_build(['python', 'scripts/run_f01_fuzz.py'], tmp_path)['preset'] == 'fuzz'
++    assert provenance.command_build(['python', 'scripts/run_f01_differentials.py', '--preset', 'release'], tmp_path)['preset'] == 'release'
++
++
++def test_named_compiler_cache_resolves_against_detected_compiler(tmp_path, monkeypatch):
++    directory, _ = build_tree(tmp_path)
++    compiler = tmp_path/'compiler'
++    cache = directory/'CMakeCache.txt'
++    cache.write_text(cache.read_text().replace(f'CMAKE_CXX_COMPILER:FILEPATH={compiler}',
++                                              'CMAKE_CXX_COMPILER:UNINITIALIZED=g++'))
++    monkeypatch.setattr(provenance.shutil, 'which', lambda name: str(compiler) if name == 'g++' else None)
++    assert provenance.capture_build(tmp_path, 'release', CPP)['compiler']['path'] == str(compiler)
++
++
++def test_configured_benchmark_patch_and_exception_flag_are_bound(tmp_path):
++    directory, _ = build_tree(tmp_path)
++    source = directory/'_deps/benchmark-src/src/benchmark.cc'
++    source.parent.mkdir(parents=True); source.write_text('patched source')
++    with (directory/'CMakeCache.txt').open('a') as stream:
++        stream.write(f'benchmark_SOURCE_DIR:STATIC={source.parent.parent}\nBENCHMARK_ENABLE_EXCEPTIONS:BOOL=ON\n')
++    snapshot = provenance.capture_build(tmp_path, 'release', CPP)
++    assert snapshot['configuration']['BENCHMARK_ENABLE_EXCEPTIONS'] == 'ON'
++    assert source.relative_to(tmp_path).as_posix() in snapshot['artifacts']
++    source.write_text('changed patch')
++    with pytest.raises(ValueError): provenance.verify_build(snapshot, tmp_path, 'release', CPP)
++
++
++def configured_tree(root, preset):
++    directory, _ = build_tree(root, preset)
++    (root/'CMakePresets.json').write_bytes((ROOT/'CMakePresets.json').read_bytes())
++    values = provenance.cache_values(directory/'CMakeCache.txt')
++    values.update(provenance.preset_variables(root, preset))
++    values['CMAKE_CXX_COMPILER'] = str(root/'compiler')
++    values['TIPLOG_ENABLE_FUZZING'] = 'ON' if preset == 'fuzz' else 'OFF'
++    (directory/'CMakeCache.txt').write_text(''.join(f'{key}:STRING={value}\n' for key, value in values.items()))
++    detection = directory/'CMakeFiles/4.4.0/CMakeCXXCompiler.cmake'
++    if preset in ('asan-ubsan', 'fuzz'):
++        detection.write_text(detection.read_text().replace('"GNU"', '"Clang"'))
++    source = root/'src/example.cpp'; source.parent.mkdir(); source.write_text('int example;\n')
++    required = shlex.split(values.get('CMAKE_CXX_FLAGS', ''))
++    required += shlex.split(values.get('CMAKE_CXX_FLAGS_'+values['CMAKE_BUILD_TYPE'].upper(), ''))
++    command = [str(root/'compiler'), *required, '-std=c++20', '-c', str(source)]
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(source), command=shlex.join(command))]))
++    return directory, command
++
++
++@pytest.mark.parametrize('preset', provenance.PRESETS)
++def test_actual_declared_preset_configuration_is_required_and_supported(tmp_path, preset):
++    configured_tree(tmp_path, preset)
++    snapshot = provenance.capture_build(tmp_path, preset, CPP)
++    assert provenance.validate_configuration(snapshot, tmp_path, preset)
++
++
++@pytest.mark.parametrize('damage', ['wrong_build_type', 'wrong_compiler', 'testing_off', 'fuzz_off',
++                                   'missing_compile_san', 'missing_cache_san', 'recover', 'disable_san',
++                                   'opt_override', 'missing_frame', 'wrong_standard', 'link_disabled',
++                                   'shared_link_missing', 'no_project_entries', 'other_compiler',
++                                   'cache_recover'])
++def test_wrong_or_overridden_sanitizer_configuration_cannot_pass(tmp_path, damage):
++    preset = 'fuzz' if damage == 'fuzz_off' else 'asan-ubsan'
++    directory, command = configured_tree(tmp_path, preset)
++    cache = provenance.cache_values(directory/'CMakeCache.txt')
++    if damage == 'wrong_build_type': cache['CMAKE_BUILD_TYPE'] = 'Release'
++    elif damage == 'testing_off': cache['BUILD_TESTING'] = 'OFF'
++    elif damage == 'fuzz_off': cache['TIPLOG_ENABLE_FUZZING'] = 'OFF'
++    elif damage == 'missing_compile_san': command.remove('-fsanitize=address,undefined')
++    elif damage == 'missing_cache_san':
++        cache['CMAKE_CXX_FLAGS_DEBUG'] = cache['CMAKE_CXX_FLAGS_DEBUG'].replace('-fsanitize=address,undefined', '')
++    elif damage == 'recover': command.append('-fsanitize-recover=all')
++    elif damage == 'disable_san': command.append('-fno-sanitize=undefined')
++    elif damage == 'opt_override': command.append('-O0')
++    elif damage == 'missing_frame': command.remove('-fno-omit-frame-pointer')
++    elif damage == 'wrong_standard': command.append('-std=c++17')
++    elif damage == 'link_disabled': cache['CMAKE_EXE_LINKER_FLAGS'] += ' -fno-sanitize=all'
++    elif damage == 'shared_link_missing': cache['CMAKE_SHARED_LINKER_FLAGS'] = ''
++    elif damage == 'other_compiler': command[0] = '/bin/echo'
++    elif damage == 'cache_recover': cache['CMAKE_CXX_FLAGS_DEBUG'] += ' -fsanitize-recover=all'
++    elif damage == 'wrong_compiler':
++        detection = directory/'CMakeFiles/4.4.0/CMakeCXXCompiler.cmake'
++        detection.write_text(detection.read_text().replace('"Clang"', '"GNU"'))
++    (directory/'CMakeCache.txt').write_text(''.join(f'{key}:STRING={value}\n' for key, value in cache.items()))
++    database = [dict(directory=str(directory), file=str(tmp_path/'src/example.cpp'), arguments=command)]
++    if damage == 'no_project_entries': database[0]['file'] = str(directory/'_deps/example.cpp')
++    (directory/'compile_commands.json').write_text(json.dumps(database))
++    snapshot = provenance.capture_build(tmp_path, preset, CPP)
++    with pytest.raises(ValueError): provenance.validate_configuration(snapshot, tmp_path, preset)
++
++
++@pytest.mark.parametrize('damage', ['fuzz_in_release', 'undefine_assertion', 'undefine_assertion_separate', 'optimization'])
++def test_release_effective_flags_and_macro_overrides_are_rejected(tmp_path, damage):
++    directory, command = configured_tree(tmp_path, 'release')
++    if damage == 'fuzz_in_release':
++        cache = directory/'CMakeCache.txt'; cache.write_text(cache.read_text().replace('TIPLOG_ENABLE_FUZZING:STRING=OFF', 'TIPLOG_ENABLE_FUZZING:STRING=ON'))
++    elif damage == 'undefine_assertion': command.append('-UNDEBUG')
++    elif damage == 'undefine_assertion_separate': command += ['-U', 'NDEBUG']
++    else: command.append('-O0')
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(tmp_path/'src/example.cpp'), arguments=command)]))
++    snapshot = provenance.capture_build(tmp_path, 'release', CPP)
++    with pytest.raises(ValueError): provenance.validate_configuration(snapshot, tmp_path, 'release')
++
++
++@pytest.mark.parametrize('surface', ['compile', 'cache', 'link'])
++def test_response_file_cannot_hide_the_peer_reproduced_sanitizer_disable(tmp_path, surface):
++    directory, command = configured_tree(tmp_path, 'asan-ubsan')
++    response = tmp_path/'disable.rsp'
++    response.write_text('-fno-sanitize=all\n')
++    token = '@'+str(response)
++    if surface == 'compile':
++        command.append(token)
++        (directory/'compile_commands.json').write_text(json.dumps([
++            dict(directory=str(directory), file=str(tmp_path/'src/example.cpp'), arguments=command)]))
++    else:
++        key = 'CMAKE_CXX_FLAGS_DEBUG' if surface == 'cache' else 'CMAKE_EXE_LINKER_FLAGS'
++        cache = provenance.cache_values(directory/'CMakeCache.txt')
++        cache[key] += ' '+token
++        (directory/'CMakeCache.txt').write_text(''.join(f'{key}:STRING={value}\n' for key, value in cache.items()))
++    snapshot = provenance.capture_build(tmp_path, 'asan-ubsan', CPP)
++    with pytest.raises(ValueError, match='indirect'):
++        provenance.validate_configuration(snapshot, tmp_path, 'asan-ubsan')
++
++
++@pytest.mark.parametrize('extra', [
++    ['-fsanitize-ignorelist=external.txt'], ['-fsanitize-blacklist=external.txt'],
++    ['-Xclang', '-disable-llvm-passes'], ['-mllvm', '-asan-instrument-reads=false'],
++    ['-Xpreprocessor', '-DNDEBUG'], ['-Wp,-DNDEBUG'],
++    ['-Xassembler', '@assembler.rsp'], ['-Wa,@assembler.rsp'],
++    ['-Xlinker', '@linker.rsp'], ['-Wl,@linker.rsp'],
++    ['--config=external.cfg'], ['--config', 'external.cfg'], ['--config-user-dir=external'],
++    ['-specs=external.specs'], ['-wrapper', 'external-wrapper'], ['-Bexternal-toolchain'],
++    ['-fplugin=external.so'], ['-fpass-plugin=external.so'],
++    ['-include', 'external.h'], ['-includeexternal.h'], ['-include-pch', 'external.pch'],
++    ['-imacros', 'external.h'], ['-ivfsoverlay', 'external.yaml'],
++    ['-fmodule-file=external.pcm'], ['-fmodule-map-file=external.modulemap'],
++    ['-fprebuilt-module-path=external'], ['-fmodules-cache-path=external'],
++    ['--gcc-toolchain=external'], ['--sysroot=external'], ['-isysroot', 'external'],
++    ['-resource-dir', 'external'], ['-fprofile-instr-use=external.profdata'],
++    ['-fno-sanitize-address-use-after-scope'],
++])
++def test_undeclared_suppression_or_compiler_input_cannot_bypass_inspected_flags(tmp_path, extra):
++    directory, command = configured_tree(tmp_path, 'asan-ubsan')
++    command += extra
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(tmp_path/'src/example.cpp'), arguments=command)]))
++    snapshot = provenance.capture_build(tmp_path, 'asan-ubsan', CPP)
++    with pytest.raises(ValueError, match='indirect|undeclared sanitizer'):
++        provenance.validate_configuration(snapshot, tmp_path, 'asan-ubsan')
++
++
++@pytest.mark.parametrize('preset', ['debug', 'asan-ubsan', 'fuzz'])
++@pytest.mark.parametrize('extra', [['-DNDEBUG'], ['-D', 'NDEBUG'], ['-DNDEBUG=0']])
++def test_undeclared_ndebug_cannot_silently_disable_assertions(tmp_path, preset, extra):
++    directory, command = configured_tree(tmp_path, preset)
++    command += extra
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(tmp_path/'src/example.cpp'), arguments=command)]))
++    snapshot = provenance.capture_build(tmp_path, preset, CPP)
++    with pytest.raises(ValueError, match='NDEBUG'):
++        provenance.validate_configuration(snapshot, tmp_path, preset)
++
++
++def test_ordinary_warning_flags_remain_extensible(tmp_path):
++    directory, command = configured_tree(tmp_path, 'asan-ubsan')
++    command += ['-Wall', '-Wextra', '-Werror', '-Wno-unused-parameter']
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(tmp_path/'src/example.cpp'), arguments=command)]))
++    snapshot = provenance.capture_build(tmp_path, 'asan-ubsan', CPP)
++    assert provenance.validate_configuration(snapshot, tmp_path, 'asan-ubsan')
++
++
++def recorder(monkeypatch, root):
++    monkeypatch.syspath_prepend(str(ROOT/'scripts'))
++    spec = importlib.util.spec_from_file_location('run_f01_check_provenance_test', ROOT/'scripts/run_f01_check.py')
++    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
++    monkeypatch.setattr(module, 'ROOT', root)
++    monkeypatch.setattr(module, 'input_sets', lambda: dict(cpp=CPP, python='b'*64))
++    return module
++
++
++@pytest.mark.parametrize('kind', ['build', 'ctest', 'binary'])
++def test_recorder_binds_successful_build_and_later_executions(tmp_path, monkeypatch, kind):
++    _, binary = build_tree(tmp_path)
++    module = recorder(monkeypatch, tmp_path)
++    command = {'build': ['cmake', '--build', '--preset', 'release', '--parallel', '2'],
++               'ctest': ['ctest', '--preset', 'release'], 'binary': [str(binary), '--seeds', '1']}[kind]
++    monkeypatch.setattr('sys.argv', ['run_f01_check', '--cwd', str(tmp_path), 'check', '--', *command])
++    monkeypatch.setattr(module.subprocess, 'run', lambda *args, **kwargs: SimpleNamespace(returncode=0))
++    assert module.main() == 0
++    record = json.loads(next((tmp_path/'results/f01/checks').glob('*.json')).read_text())
++    assert record['status'] == 'passed' and record['command_exit_code'] == 0
++    assert record['build_execution']['kind'] == kind
++    if kind == 'build': assert record['build_provenance'] == record['build_artifacts_after']
++    else: assert record['build_artifacts_before'] == record['build_artifacts_after']
++
++
++def test_recorder_does_not_run_unbound_test_command(tmp_path, monkeypatch):
++    module = recorder(monkeypatch, tmp_path)
++    monkeypatch.setattr('sys.argv', ['run_f01_check', '--cwd', str(tmp_path), 'check', '--', 'ctest', '--preset', 'release'])
++    def forbidden(*args, **kwargs): pytest.fail('test ran without build provenance')
++    monkeypatch.setattr(module.subprocess, 'run', forbidden)
++    assert module.main() == 125
++    record = json.loads(next((tmp_path/'results/f01/checks').glob('*.json')).read_text())
++    assert record['status'] == 'failed' and 'provenance_error' in record
++    assert 'command_exit_code' not in record
++
++
++def test_recorder_rejects_binary_replacement_during_test(tmp_path, monkeypatch):
++    _, binary = build_tree(tmp_path)
++    module = recorder(monkeypatch, tmp_path)
++    monkeypatch.setattr('sys.argv', ['run_f01_check', '--cwd', str(tmp_path), 'check', '--', 'ctest', '--preset', 'release'])
++    def changed(*args, **kwargs):
++        binary.write_bytes(b'changed during execution')
++        return SimpleNamespace(returncode=0)
++    monkeypatch.setattr(module.subprocess, 'run', changed)
++    assert module.main() == 125
++    record = json.loads(next((tmp_path/'results/f01/checks').glob('*.json')).read_text())
++    assert record['command_exit_code'] == 0 and record['status'] == 'failed'
++    assert record['build_artifacts_before'] != record['build_artifacts_after']
++
++
++@pytest.mark.parametrize('active', [False, True])
++def test_recorder_explicitly_binds_full_suite_selection_environment(tmp_path, monkeypatch, active):
++    module = recorder(monkeypatch, tmp_path)
++    values = {'GTEST_FILTER': '-PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix',
++              'GTEST_TOTAL_SHARDS': '999999', 'GTEST_SHARD_INDEX': '999998', 'GTEST_REPEAT': '0',
++              'TESTBRIDGE_TEST_ONLY': 'NoMatchingCase', 'CTEST_TESTS_TO_RUN': '0,0,1',
++              'PYTEST_ADDOPTS': '-k not_the_new_regression', 'PYTEST_PLUGINS': 'injected_plugin'}
++    for name, value in values.items():
++        if active: monkeypatch.setenv(name, value)
++        else: monkeypatch.delenv(name, raising=False)
++    monkeypatch.delenv('PYTEST_DISABLE_PLUGIN_AUTOLOAD', raising=False)
++    monkeypatch.setattr('sys.argv', ['run_f01_check', '--cwd', str(tmp_path), 'check', '--',
++                                   '.venv/bin/python', '-m', 'pytest'])
++    monkeypatch.setattr(module.subprocess, 'run', lambda *args, **kwargs: SimpleNamespace(returncode=0))
++    assert module.main() == 0
++    record = json.loads(next((tmp_path/'results/f01/checks').glob('*.json')).read_text())
++    assert all(name in record['environment'] for name in values)
++    assert {name: record['environment'][name] for name in values} == {
++        name: value if active else None for name, value in values.items()}
++    assert record['environment']['PYTEST_DISABLE_PLUGIN_AUTOLOAD'] == '1'
+--- initial/tests/scripts/test_f01_checker.py
++++ final/tests/scripts/test_f01_checker.py
+@@ -2,6 +2,7 @@
+ import copy
+ import importlib.util
+ import json
++import shlex
+ from pathlib import Path
+ import xml.etree.ElementTree as ET
+ 
+@@ -25,6 +26,7 @@
+     path = tmp_path / 'src/core.cpp'
+     path.parent.mkdir()
+     path.write_text('int core() { return 1; }\n')
++    (tmp_path/'CMakePresets.json').write_text((ROOT/'CMakePresets.json').read_text())
+     return checker.Audit({'evidence': {}}, tmp_path)
+ 
+ 
+@@ -35,14 +37,71 @@
+         'input_sets_before': audit.current_inputs.copy(),
+         'input_sets_after': audit.current_inputs.copy(),
+         'environment': {'ASAN_OPTIONS': 'detect_leaks=1:abort_on_error=1',
+-                        'UBSAN_OPTIONS': 'print_stacktrace=1:halt_on_error=1'},
++                        'UBSAN_OPTIONS': 'print_stacktrace=1:halt_on_error=1',
++                        **{name: None for name in checker.FULL_SUITE_SELECTION_ENV},
++                        'PYTEST_DISABLE_PLUGIN_AUTOLOAD': '1'},
+         'log': 'results/f01/' + (label or 'check') + '.log',
+     }
++    executed_preset = None
++    if argv[0] == 'ctest' and '--preset' in argv:
++        executed_preset = argv[argv.index('--preset')+1]
++    elif argv[0].startswith('build/'):
++        executed_preset = Path(argv[0]).parts[1]
++    elif len(argv) > 1 and argv[1] == 'scripts/run_f01_fuzz.py':
++        executed_preset = 'fuzz'
++    if executed_preset:
++        snapshot = source_bound_build(audit, executed_preset)
++        record['build_artifacts_before'] = copy.deepcopy(snapshot)
++        record['build_artifacts_after'] = copy.deepcopy(snapshot)
+     path = write(audit, record['log'], log, text=True)
+     record['log_sha256'] = checker.digest(path)
+     name = 'results/f01/' + (label + '.record' if label else 'record') + '.json'
+     write(audit, name, record)
+     return name, record
++
++
++def source_bound_build(audit, preset):
++    builds = audit.manifest.setdefault('builds', {})
++    if preset in builds:
++        return audit.read(builds[preset])['build_provenance']
++    directory = audit.root/'build'/preset
++    directory.mkdir(parents=True, exist_ok=True)
++    compiler = audit.root/'compiler'
++    compiler.write_text('compiler identity')
++    presets = json.loads((audit.root/'CMakePresets.json').read_text())['configurePresets']
++    variables = {}
++    for item in presets:
++        if item['name'] in ('base', preset):
++            variables.update(item.get('cacheVariables', {}))
++    variables.update(CMAKE_HOME_DIRECTORY=str(audit.root), CMAKE_CACHEFILE_DIR=str(directory),
++                     CMAKE_CXX_COMPILER=str(compiler))
++    (directory/'CMakeCache.txt').write_text(
++        ''.join(f'{key}:STRING={value}\n' for key, value in variables.items()))
++    flags = variables['CMAKE_CXX_FLAGS_'+variables['CMAKE_BUILD_TYPE'].upper()]
++    (directory/'compile_commands.json').write_text(json.dumps([
++        dict(directory=str(directory), file=str(audit.root/'src/core.cpp'),
++             arguments=[str(compiler), *shlex.split(flags), '-std=c++20', '-c', 'core.cpp'])]))
++    detection = directory/'CMakeFiles/4.4.0/CMakeCXXCompiler.cmake'
++    detection.parent.mkdir(parents=True, exist_ok=True)
++    compiler_id = 'Clang' if preset in ('asan-ubsan', 'fuzz') else 'GNU'
++    detection.write_text(f'set(CMAKE_CXX_COMPILER "{compiler}")\n'
++                         f'set(CMAKE_CXX_COMPILER_ID "{compiler_id}")\nset(CMAKE_CXX_COMPILER_VERSION "15.2.0")\n')
++    names = checker.FUZZERS if preset == 'fuzz' else {
++        'tiplog_test', 'tiplog_differential', 'tiplog_poll_differential', 'tiplog_poll_bench'}
++    for name in names:
++        path = directory/name
++        if not path.exists():
++            path.write_text('retained executable placeholder')
++        path.chmod(0o755)
++    snapshot = checker._BUILD.capture_build(audit.root, preset, audit.current_inputs['cpp'])
++    for name, identity in snapshot['artifacts'].items():
++        audit.evidence[name] = identity
++    name, record = command(audit, ['cmake', '--build', '--preset', preset, '--parallel', '2'], label='build-'+preset)
++    record.update(build_execution={'preset': preset, 'kind': 'build', 'full_build': True},
++                  build_provenance=snapshot, build_artifacts_after=snapshot)
++    write(audit, name, record)
++    builds[preset] = name
++    return snapshot
+ 
+ 
+ def junit(audit, name, *, old=205, contract=23, differential=1):
+@@ -67,6 +126,75 @@
+     reference, _ = ctest(audit)
+     assert audit.ctest_one('release', reference) == {
+         'tests': 229, 'poll_budget': 23, 'poll_differential': 1}
++
++
++def python_suite(audit):
++    name = 'results/f01/python.xml'
++    junit(audit, name, old=259, contract=0, differential=0)
++    record_name, record = command(audit, [
++        '.venv/bin/python', '-m', 'pytest', '-c', 'py/pytest.ini', 'py/tests',
++        'tests/scripts', '-q', '--junitxml='+name], label='python')
++    reference = {'record': record_name, 'junit': name}
++    audit.manifest['validations'] = {'python': reference}
++    return reference, record
++
++
++@pytest.mark.parametrize('suite', ['ctest', 'python'])
++def test_full_suite_accepts_explicit_empty_selection_controls(tmp_path, suite):
++    audit = fixture(tmp_path)
++    reference, record = ctest(audit) if suite == 'ctest' else python_suite(audit)
++    record['environment'].update({name: '' for name in checker.FULL_SUITE_SELECTION_ENV})
++    write(audit, reference['record'], record)
++    if suite == 'ctest': assert audit.ctest_one('release', reference)['tests'] == 229
++    else: assert audit.python()['tests'] == 259
++
++
++@pytest.mark.parametrize('suite', ['ctest', 'python'])
++@pytest.mark.parametrize('name,value', [
++    ('GTEST_FILTER', '-PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix'),
++    ('GTEST_TOTAL_SHARDS', '999999'), ('GTEST_SHARD_INDEX', '999998'),
++    ('GTEST_REPEAT', '0'), ('TESTBRIDGE_TEST_ONLY', '-PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix'),
++    ('CTEST_TESTS_TO_RUN', '0,0,1'), ('PYTEST_ADDOPTS', '-k not_the_new_regression'),
++    ('PYTEST_PLUGINS', 'injected_plugin'), ('PYTEST_DISABLE_PLUGIN_AUTOLOAD', '0')])
++def test_active_environment_cannot_claim_a_complete_suite(tmp_path, suite, name, value):
++    audit = fixture(tmp_path)
++    reference, record = ctest(audit) if suite == 'ctest' else python_suite(audit)
++    # Keep the full-looking JUnit and all build/source/log identities intact.
++    record['environment'][name] = value
++    write(audit, reference['record'], record)
++    with pytest.raises(ValueError, match='full suite'):
++        audit.ctest_one('release', reference) if suite == 'ctest' else audit.python()
++
++
++@pytest.mark.parametrize('suite', ['ctest', 'python'])
++@pytest.mark.parametrize('name', [*checker.FULL_SUITE_SELECTION_ENV, 'PYTEST_DISABLE_PLUGIN_AUTOLOAD'])
++def test_unrecorded_environment_cannot_claim_a_complete_suite(tmp_path, suite, name):
++    audit = fixture(tmp_path)
++    reference, record = ctest(audit) if suite == 'ctest' else python_suite(audit)
++    del record['environment'][name]
++    write(audit, reference['record'], record)
++    with pytest.raises(ValueError, match='full suite'):
++        audit.ctest_one('release', reference) if suite == 'ctest' else audit.python()
++
++
++@pytest.mark.parametrize('damage', ['missing_build', 'changed_binary', 'changed_recorded_binary', 'partial_build'])
++def test_current_source_hashes_cannot_bless_stale_or_unbound_execution(tmp_path, damage):
++    audit = fixture(tmp_path)
++    reference, record = ctest(audit)
++    build_name = audit.manifest['builds']['release']
++    if damage == 'missing_build':
++        audit.manifest['builds'] = {}
++    elif damage == 'changed_binary':
++        (tmp_path/'build/release/tiplog_test').write_text('stale replacement')
++    elif damage == 'changed_recorded_binary':
++        record['build_artifacts_before']['artifacts']['build/release/tiplog_test']['sha256'] = 'f'*64
++        write(audit, reference['record'], record)
++    else:
++        build = audit.read(build_name)
++        build['argv'] += ['--target', 'tiplog_test']
++        write(audit, build_name, build)
++    with pytest.raises(ValueError, match='build|artifacts|complete preset'):
++        audit.ctest_one('release', reference)
+ 
+ 
+ @pytest.mark.parametrize('change', ['old', 'contract', 'model'])
+--- initial/tests/scripts/test_f01_fixture.py
++++ final/tests/scripts/test_f01_fixture.py
+@@ -0,0 +1,114 @@
++"""Independent benchmark fixture checks, including simultaneous evidence forgery."""
++import copy
++import importlib.util
++from pathlib import Path
++
++import pytest
++
++ROOT = Path(__file__).resolve().parents[2]
++SPEC = importlib.util.spec_from_file_location('f01_fixture', ROOT/'scripts/f01_summary.py')
++contract = importlib.util.module_from_spec(SPEC)
++SPEC.loader.exec_module(contract)
++
++
++def fnv(data):
++    result = 14695981039346656037
++    for byte in data:
++        result = (result ^ byte)*1099511628211 % (1 << 64)
++    return f'{result:016x}'
++
++
++def row():
++    # One empty-payload message: seq=1, pos=0, topic=3. Its second call
++    # confirms the exact output boundary. Timings below are synthetic controls.
++    import struct
++    digest = {'outputs': 1, 'fnv1a64': fnv(struct.pack('<QQQQ', 1, 0, 3, 0))}
++    zero_work = {key: 0 for key in contract._OLD.WORK_FIELDS}
++    work = dict(zero_work, records_fetched=1, delivered=1, bytes_inspected=16)
++    sample = dict(sample_count=2, p50=10, p95=10, p99=10, max=10, sum=20)
++    return dict(schema='tiplog.f01.poll-benchmark.v1', status='ok', reader='replay', correctness='passed',
++                records=1, seed=7, case='dense', shape='small', configured_partitions=1, candidate_every=1,
++                mode='scan', effective_mode='scan', kernel='stdpq', budget='legacy', schedule='round-robin',
++                max_outputs=1, repetition=0, fixture_reserved_bytes=128696, fixture_selected_partitions=1,
++                index_reserved_bytes=100000, ring_checkpoint_bytes=24, conservative_topics_bytes=24576,
++                selected_partition_count=0, output_digest=digest.copy(), oracle_digest=digest.copy(),
++                fixture_candidate_records=1, fixture_priming_records=0, fixture_data_bytes=16,
++                fixture_pads_in_range=0, final_checkpoint=dict(after_seq=1, next_pos=16), calls=2,
++                max_outputs_in_call=1, zero_output_calls=1, open_work=zero_work, poll_work=work,
++                all_work=work.copy(), inspections_used=1, max_inspections_in_call=1, service_calls=2,
++                stop_counts={key: 0 for key in contract._OLD.STOPS}, stop_counts_available=False,
++                poll_latency_ns=sample.copy(), victim_service_delay_ns=sample.copy(),
++                publisher_service_delay_ns=sample.copy(), drain_elapsed_ns=40, drain_cpu_ns=30,
++                open_elapsed_ns=1, fixture_build_ns=1, peak_rss_bytes=100000,
++                outputs_per_drain_second=25_000_000, fixture_records_per_poll_second=50_000_000)
++
++
++def test_single_record_independent_digest_and_summary_contract():
++    observed = row()
++    assert contract.validate(observed) == tuple(observed[x] for x in contract.IDENTITY)
++
++
++@pytest.mark.parametrize('mutation', ['both_hashes', 'next_pos', 'mode', 'byte_count', 'rate', 'statistics',
++                                      'output_type', 'position_type', 'calls_type', 'nonfinite_rate'])
++def test_self_consistent_forgery_or_inconsistent_measurement_rejects(mutation):
++    observed = row()
++    if mutation == 'both_hashes':
++        for key in ('output_digest', 'oracle_digest'):
++            observed[key]['fnv1a64'] = '0123456789abcdef'
++    elif mutation == 'next_pos':
++        observed['final_checkpoint']['next_pos'] = 0
++    elif mutation == 'mode':
++        observed['mode'] = 'indexed'
++    elif mutation == 'byte_count':
++        for key in ('poll_work', 'all_work'):
++            observed[key]['bytes_inspected'] = 24
++    elif mutation == 'rate':
++        observed['outputs_per_drain_second'] = 0
++    elif mutation == 'statistics':
++        observed['poll_latency_ns']['sum'] = 30
++        observed['fixture_records_per_poll_second'] = 1e9/30
++    elif mutation == 'output_type':
++        observed['output_digest']['outputs'] = observed['oracle_digest']['outputs'] = True
++    elif mutation == 'position_type':
++        observed['final_checkpoint']['next_pos'] = 16.0
++    elif mutation == 'calls_type':
++        observed['calls'] = 2.0
++    else:
++        observed['outputs_per_drain_second'] = float('nan')
++    with pytest.raises(ValueError):
++        contract.validate(observed)
++
++
++def test_leading_pad_is_excluded_from_captured_inspections():
++    import struct
++    expected = contract.fixture(1, 7, 'dense', 'wrapped-variable', 1, 1)
++    assert expected['priming'] == 15
++    assert expected['pads'] == expected['pad_bytes'] == 0
++    assert expected['next_pos'] == 4112
++    assert expected['digest'] == {'outputs': 1, 'fnv1a64': fnv(struct.pack('<QQQQ', 16, 4096, 3, 0))}
++
++
++def test_internal_pad_is_charged_and_advances_position():
++    expected = contract.fixture(2, 7, 'no-match', 'wrapped-variable', 1, 1)
++    assert expected['priming'] == 15
++    assert expected['pads'] == 1 and expected['pad_bytes'] == 8
++    assert expected['data_bytes'] == 40 and expected['next_pos'] == 4120
++
++
++def test_impossible_large_fixture_rejects_before_iteration():
++    with pytest.raises(ValueError, match='resource cap'):
++        contract.fixture(2_000_000, 7, 'dense', 'variable', 1, 1)
++
++
++@pytest.mark.parametrize('k', [12288,65535])
++def test_forged_success_cannot_bypass_preparation_resource_cap(k):
++    observed = row()
++    observed.update(configured_partitions=k, fixture_selected_partitions=k)
++    with pytest.raises(ValueError, match='resource cap'):
++        contract.validate(observed)
++
++
++def test_duplicate_keys_and_nonfinite_json_fail_closed():
++    for text in ('{"calls":1,"calls":2}', '{"time":NaN}', '{"time":Infinity}'):
++        with pytest.raises(ValueError):
++            contract.decode(text)
+--- initial/tests/scripts/test_quiescence.py
++++ final/tests/scripts/test_quiescence.py
+@@ -69,7 +69,8 @@
+ def test_noise_is_read_from_accepted_log(tmp_path):
+     compact, status, chosen = attempt(tmp_path)
+     def sample(ticks):
+-        return {'processes': [dict(pid=77, ppid=1, cpu=2, user_ticks=ticks,
++        return {'at_utc': f'2026-10-26T00:00:{ticks//1000:02}+00:00',
++                'processes': [dict(pid=77, ppid=1, cpu=2, user_ticks=ticks,
+                                    system_ticks=0, comm='other-worker')]}
+     chosen.write_text(json.dumps(sample(0))+'\n'+json.dumps(sample(1000))+'\n')
+     document = json.loads(status.read_text())
+@@ -79,3 +80,58 @@
+     compact['record_sha256'] = quiescence.sha(status)
+     selected = quiescence.accepted_process_audit(compact)
+     assert quiescence.foreign_cpu23_seconds(selected, compact['launcher_pid'], 100)[0] == 10
++
++
++def campaign(tmp_path, damage=None):
++    """Self-consistent artifact hashes must not hide missing/invalid sampling."""
++    from datetime import datetime
++    rounds = []
++    for number in range(11):
++        directory = tmp_path/f'{number:02}'; directory.mkdir()
++        record, status, chosen = attempt(directory)
++        accepted = json.loads(status.read_text())
++        accepted.update(round=number, kind='warmup' if number == 0 else 'measured')
++        process = dict(pid=77, ppid=1, cpu=2, user_ticks=0, system_ticks=0, comm='foreign')
++        samples = [dict(at_utc='2026-10-26T00:00:00+00:00', processes=[process]),
++                   dict(at_utc='2026-10-26T00:01:00+00:00', processes=[dict(process, user_ticks=10)])]
++        if number == 0:
++            if damage == 'empty': samples = []
++            elif damage == 'singleton': samples = samples[:1]
++            elif damage == 'empty_processes': samples[1]['processes'] = []
++            elif damage == 'decreased_ticks': samples[0]['processes'][0]['user_ticks'] = 1000
++            elif damage == 'duplicate_pid': samples[1]['processes'].append(dict(process))
++            elif damage == 'reversed_time': samples.reverse()
++            elif damage == 'noisy': samples[1]['processes'][0]['user_ticks'] = 1000
++            elif damage == 'impossible_idle': accepted['cpu3_idle_ratio'] = 2.0
++        chosen.write_text(''.join(json.dumps(sample)+'\n' for sample in samples))
++        accepted['artifact_identities'][str(chosen)] = quiescence.sha(chosen)
++        save(status, accepted)
++        save(directory/f'round-{number:02}.accepted.json', accepted)
++        record.update({key: accepted[key] for key in ('round', 'kind', 'cpu3_idle_ratio')})
++        record['record_sha256'] = quiescence.sha(status)
++        rounds.append(record)
++    manifest = tmp_path/'campaign.json'; save(manifest, dict(status='passed', rounds=rounds))
++    at = datetime.fromisoformat('2026-10-26T00:00:00+00:00').timestamp()
++    cpu_samples = tmp_path/'cpu.jsonl'
++    cpu_samples.write_text(json.dumps(dict(epoch=at, cpu2=dict(idle=0, total=0)))+'\n'
++                           +json.dumps(dict(epoch=at+60, cpu2=dict(idle=95, total=100)))+'\n')
++    rule = tmp_path/'rule.json'
++    save(rule, dict(campaign=str(manifest), sampler_output=str(cpu_samples), clock_ticks_per_second=100,
++                    thresholds=dict(cpu2_settle_idle_min=.9, foreign_cpu23_seconds_max=3,
++                                    cpu3_idle_ratio_min=.9)))
++    return rule
++
++
++def test_complete_quiet_campaign_passes(tmp_path):
++    result = quiescence.audit_campaign(campaign(tmp_path))
++    assert result['status'] == 'passed'
++    assert len(result['rounds']) == 11 and not result['failures']
++
++
++@pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
++                                   'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
++def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
++    result = quiescence.audit_campaign(campaign(tmp_path, damage))
++    assert result['status'] == 'failed'
++    assert len(result['rounds']) == 11
++    assert [row['round'] for row in result['failures']] == [0]
+--- initial/tests/unit/poll_budget_test.cpp
++++ final/tests/unit/poll_budget_test.cpp
+@@ -983,5 +983,70 @@
+     }
+   }
+ }
++
++TEST(PollBudget, TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix) {
++  for (const auto choice : choices) {
++    for (const unsigned form : {0U, 1U, 2U}) {
++      for (const bool partial : {false, true}) {
++        SCOPED_TRACE(::testing::Message()
++                     << static_cast<unsigned>(choice.mode) << ':'
++                     << static_cast<unsigned>(choice.kernel) << ':' << form
++                     << ':' << partial);
++        Engine engine(config(128));
++        const auto a = engine.intern("itch/A/add");
++        engine.publish(a, payload());
++        engine.publish(a, payload());
++        auto tail = engine.open_tail(engine.compile(exact()), Seq{0},
++                                     choice.mode, choice.kernel);
++        const auto original_checkpoint = tail.checkpoint();
++        std::vector<Delivered> out;
++        if (partial)
++          out.reserve(1);
++        failed_allocation_size = (partial ? 2 : 1) * sizeof(Delivered);
++        fail_output_append = true;
++        try {
++          if (form == 0)
++            static_cast<void>(tail.poll(8, out));
++          else
++            static_cast<void>(tail.poll(
++                PollLimits{8, form == 1 ? std::nullopt
++                                        : std::optional<std::uint64_t>{8}}, out));
++          fail_output_append = false;
++          failed_allocation_size = sizeof(Delivered);
++          FAIL() << "output allocation failure was not reached";
++        } catch (const std::bad_alloc &) {
++          EXPECT_FALSE(fail_output_append);
++        }
++        fail_output_append = false;
++        failed_allocation_size = sizeof(Delivered);
++        ASSERT_EQ(out.size(), partial ? 1U : 0U);
++        const Seq actual_last_delivered = partial ? out.back().seq : 0;
++        EXPECT_EQ(actual_last_delivered, partial ? 1U : 0U);
++        // Preserve the public exception cache while accounting internally for
++        // every output already handed to the caller in the throwing poll.
++        EXPECT_EQ(tail.checkpoint(), original_checkpoint);
++        EXPECT_EQ(tail.status(), Status::More);
++        EXPECT_FALSE(tail.error());
++        for (unsigned i = 0; i < 16; ++i)
++          engine.publish(a, payload());
++        no_work(tail.poll(PollLimits{8, 0}, out), Status::More);
++        EXPECT_EQ(tail.checkpoint(), original_checkpoint);
++        const auto result = tail.poll(PollLimits{8, 8}, out);
++        EXPECT_EQ(result.status, Status::Error);
++        EXPECT_EQ(result.stop, PollStop::Error);
++        EXPECT_EQ(result.inspections_used, 0U);
++        EXPECT_EQ(result.work_delta, ReplayWork{});
++        EXPECT_TRUE(out.empty());
++        const auto expected_error = ReplayError{
++            ReplayError::FellBehind, 0, actual_last_delivered,
++            engine.stats().tail_seq};
++        EXPECT_EQ(tail.error(), expected_error);
++        no_work(tail.poll(PollLimits{0, 0}, out), Status::Error);
++        EXPECT_EQ(tail.poll(8, out), Status::Error);
++        EXPECT_EQ(tail.error(), expected_error);
++      }
++    }
++  }
++}
+ } // namespace
+ } // namespace tiplog
+--- initial/tools/file_safety.hpp
++++ final/tools/file_safety.hpp
+@@ -0,0 +1,52 @@
++#pragma once
++
++#include <cstdlib>
++#include <filesystem>
++#include <initializer_list>
++#include <stdexcept>
++#include <string>
++#include <string_view>
++#include <utility>
++#include <vector>
++
++namespace tiplog::cli {
++// Protect the inputs of a single local invocation, including hard-link aliases.
++// Paths must remain stable during the invocation; this is not a concurrent
++// hostile-pathname protocol. Call before any output is opened for writing.
++inline void require_distinct_files(const std::filesystem::path& input,
++                                   const std::filesystem::path& output) {
++  if (input.empty() || output.empty()) return;
++  if (std::filesystem::weakly_canonical(input) ==
++          std::filesystem::weakly_canonical(output) ||
++      (std::filesystem::exists(input) && std::filesystem::exists(output) &&
++       std::filesystem::equivalent(input, output)))
++    throw std::invalid_argument("input and output paths must differ: " + input.string());
++}
++
++// Google Benchmark and our diagnostics each own an output. Check these before
++// library initialization can open a requested result file.
++inline void check_benchmark_outputs(
++    int argc, char** argv,
++    std::initializer_list<std::filesystem::path> inputs = {},
++    bool writes_input_manifest = true) {
++  std::vector<std::filesystem::path> outputs;
++  for (const char* variable : {"TIPLOG_BENCH_INPUTS", "TIPLOG_BENCH_INVOCATIONS"})
++    if ((writes_input_manifest || std::string_view(variable) != "TIPLOG_BENCH_INPUTS"))
++      if (const auto* path = std::getenv(variable); path && *path) outputs.emplace_back(path);
++  std::filesystem::path benchmark_output;
++  if (const auto* path = std::getenv("BENCHMARK_OUT")) benchmark_output = path;
++  constexpr std::string_view prefix = "--benchmark_out=";
++  for (int index = 1; index < argc; ++index) {
++    const std::string_view arg(argv[index]);
++    if (arg.starts_with(prefix)) benchmark_output = arg.substr(prefix.size());
++  }
++  // Pinned Google Benchmark reads BENCHMARK_OUT, then lets the last command-line
++  // --benchmark_out= value override it (including an explicitly empty value).
++  if (!benchmark_output.empty()) outputs.push_back(std::move(benchmark_output));
++  for (std::size_t index = 0; index < outputs.size(); ++index) {
++    for (const auto& input : inputs) require_distinct_files(input, outputs[index]);
++    for (std::size_t previous = 0; previous < index; ++previous)
++      require_distinct_files(outputs[previous], outputs[index]);
++  }
++}
++} // namespace tiplog::cli
+--- initial/tools/tiplog_bench/main.cpp
++++ final/tools/tiplog_bench/main.cpp
+@@ -1,4 +1,5 @@
+ #include "contracts.hpp"
++#include "../file_safety.hpp"
+ #include "tiplog/engine/engine.hpp"
+ #include "tiplog/trace/reader.hpp"
+ 
+@@ -206,9 +207,9 @@
+   while (std::getline(input, line)) {
+     if (line.empty() || line[0] == '#')
+       continue;
++    if (line == "id\texperiment\tafter_seq\tterms\tmode\tkernel\tcache\tbatch\treaders")
++      continue;
+     auto fields = tb::split(line, '\t');
+-    if (fields[0] == "id")
+-      continue;
+     if (fields.size() != 9)
+       throw std::invalid_argument("request TSV requires9columns");
+     if (fields[3].starts_with('@')) {
+@@ -220,6 +221,8 @@
+                       fields[6], tb::number(fields[2]), tb::number(fields[7]),
+                       tb::number(fields[8])});
+   }
++  if (input.bad() || !input.eof())
++    throw std::runtime_error("cannot read requests");
+   return result;
+ }
+ SubscriptionSpec specification(std::string_view text) {
+@@ -688,6 +691,8 @@
+ int main(int argc, char **argv) {
+   try {
+     auto o = options(argc, argv);
++    for (const auto& source : {o.synthetic ? o.mix : o.trace, o.requests, o.term_dictionary})
++      tiplog::cli::require_distinct_files(source, o.output);
+     const auto todo = requests(o.requests, term_dictionary(o.term_dictionary));
+     std::ofstream out(o.output, std::ios::app);
+     if (!out)
+--- initial/tools/tiplog_layout/main.cpp
++++ final/tools/tiplog_layout/main.cpp
+@@ -2,6 +2,7 @@
+ #include "tiplog/layout/global.hpp"
+ #include "tiplog/layout/model.hpp"
+ #include "input_budget.hpp"
++#include "../file_safety.hpp"
+ 
+ #include <algorithm>
+ #include <charconv>
+@@ -189,9 +190,8 @@
+       throw std::invalid_argument("unknown or duplicate method: " + method);
+   }
+   const auto& source = result.input.empty() ? result.global_curves : result.input;
+-  if (source != "-" && result.output != "-" &&
+-      std::filesystem::weakly_canonical(source) == std::filesystem::weakly_canonical(result.output))
+-    throw std::invalid_argument("input and output paths must differ");
++  if (source != "-" && result.output != "-")
++    tiplog::cli::require_distinct_files(source, result.output);
+   return result;
+ }
+ 
+--- initial/tools/tiplog_layout/runtime_main.cpp
++++ final/tools/tiplog_layout/runtime_main.cpp
+@@ -11,6 +11,7 @@
+ #include "tiplog/layout/global.hpp"
+ #include "tiplog/layout/model.hpp"
+ #include "input_budget.hpp"
++#include "../file_safety.hpp"
+ 
+ #include <algorithm>
+ #include <charconv>
+@@ -294,9 +295,8 @@
+       throw std::invalid_argument("unknown or duplicate method: " + method);
+   }
+   const auto& source = result.input.empty() ? result.global_curves : result.input;
+-  if (source != "-" && result.output != "-" &&
+-      std::filesystem::weakly_canonical(source) == std::filesystem::weakly_canonical(result.output))
+-    throw std::invalid_argument("input and output paths must differ");
++  if (source != "-" && result.output != "-")
++    tiplog::cli::require_distinct_files(source, result.output);
+   return result;
+ }
+ 
+--- initial/tools/tiplog_walk/main.cpp
++++ final/tools/tiplog_walk/main.cpp
+@@ -1,4 +1,5 @@
+ #include "tiplog/trace/itch_walker.hpp"
++#include "../file_safety.hpp"
+ 
+ #include <array>
+ #include <fstream>
+@@ -20,6 +21,7 @@
+         have_input = true;
+       } else throw std::runtime_error("usage: tiplog_walk [FILE|-] [--out JSON]");
+     }
++    if (input_path != "-") tiplog::cli::require_distinct_files(input_path, output_path);
+     std::ios::sync_with_stdio(false);
+     std::cin.tie(nullptr);
+     std::ifstream input_file;

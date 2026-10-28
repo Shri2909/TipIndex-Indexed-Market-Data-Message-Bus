@@ -1,0 +1,1210 @@
+{
+  "broad_sources_at_start": {
+    "cmake/deps.cmake": "5eb0d70e37d6bd4514a9b16c96751b9db7370304d6ccfa1118b324e75e10f759",
+    "cmake/p1.cmake": "9a864a548048d4fdf076e22917d6741d6637203cf58ab72a1e9cc83e7ce08d7e",
+    "cmake/p2.cmake": "2b94277c86b1213a2add1458e47c372ab578e5bc2477aa4302ba9255ae3d6960",
+    "cmake/p2_ref.cmake": "b681f76d103f78dc5e8526e8f476c17ca54612245788d021abba3b3a36a8f9a2",
+    "cmake/p3_engine.cmake": "607a0dc4f997ce9877bbed3d0f208f25cc65ee1447e2512aa7a15358977016b1",
+    "cmake/p3_fuzz.cmake": "14bb78326964e1f09f8568caad975831a3aa5524c3c0a4990fd263c61da499bf",
+    "cmake/p3_ring.cmake": "fcfd1c6cc09d82889714336b77a7064132af7bfea1f47747634f5a6fcf0de431",
+    "cmake/p4_index.cmake": "f0e67a7e471e85f5b9236b430cb8aa7097e1082542f5ac86ae7951b855dfde9f",
+    "cmake/p5_bench.cmake": "acf676df894f4d06f9d329984a05faa0ea4e2dd9ea2a21ee58b328b0ed82f78e",
+    "cmake/p5_merge.cmake": "e51aec3af9186c2bcddfbd0ea3330aaa3467bff4c4e584fc1e7287607a1d6b17",
+    "cmake/p6_bench.cmake": "6b5dcaed6e18c5fb2fa73b67825c548321de39458bac526275cc322bac1c56be",
+    "src/tiplog/driver/trace_driver.cpp": "37a76cc9ad8b2aeb5a63216df83ea4a53167c295aca451557f77322964762206",
+    "src/tiplog/driver/trace_driver.hpp": "7a6cb9d77427ea0710f15c4bbb8ee69a7046df85ae614582b1e0f440ed084509",
+    "src/tiplog/engine/engine.cpp": "8d1dd35bf1178756fd8cd991cd28f0ab75e7c61af07f36829f2a89baf0c382ec",
+    "src/tiplog/engine/engine.hpp": "cfe7a9cb9944fbbe247856d43a94dbf761ca25782b1ea1d7dd07b92093ab176e",
+    "src/tiplog/index/index.cpp": "a5556666ff938b390915fe2f6bda2c69bd6128a7cb6681998442b93ca3d4afb9",
+    "src/tiplog/index/index.hpp": "8882326090680eabb47cd390013170e20b92896d2e3024220b8382878884ca97",
+    "src/tiplog/merge/kernels.cpp": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c",
+    "src/tiplog/merge/kernels.hpp": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8",
+    "src/tiplog/ring/ring.cpp": "d23835c56745866c64a392d5045daf1498e84e6d5b4c633f97848076da6bcc46",
+    "src/tiplog/ring/ring.hpp": "3376898c9c4fbb18e7f33e3e13d773c8179dae9eac81ed08a7d950f2bdc3850b",
+    "src/tiplog/subs/compiled.cpp": "a0d9c9cbc3d0b164fcc9c6db3e1c21f77111448e56de0ed65069aea47079c794",
+    "src/tiplog/subs/compiled.hpp": "5863990621090092c14e62136fcfb2227e47558b313d76b90d03df8f94a60fb3",
+    "src/tiplog/topics/registry.cpp": "acfeeecab24e28cfbac12dd70dd906771b4b60d3542da624c7f3caeb0d468bf2",
+    "src/tiplog/topics/registry.hpp": "c9e3e032072d91b01d9508b98ddf1a608ff413eda601aad9885dd69ada402c72",
+    "src/tiplog/trace/itch_walker.cpp": "a5ab131673f6bd75c79f5249f5a304805caef0c57b2f8af6db2d5e4f984f4c6d",
+    "src/tiplog/trace/itch_walker.hpp": "29a96924c408b0b097cb1a3a04bb0e571bd5b71e9b7c42c83b8008356903eb9e",
+    "src/tiplog/trace/reader.cpp": "568bbe73d7a62374c87a3ef708108c8990b3259ffd2c4d77b473ccc187c880f2",
+    "src/tiplog/trace/reader.hpp": "8212dc84f0d0a11cd1bd1c9b726e9e2ce649abd11be98ed677e95cc7a102a3c0",
+    "src/tiplog/types.hpp": "dc8aa1f3a9dd6fd5279c55ff32b3723e5aac2e69d3eddcf7f9c70dc0f2a64465",
+    "tests/differential/campaign.cpp": "3d2299514446d7cf174d849133b540da9f1cff4761c699fbe12ba75ebd13f285",
+    "tests/differential/campaign.hpp": "142daabcc420f89d315d233aa4b0ce7bf3f3e4b1be3f2968cab573e95b691870",
+    "tests/ref/oracle_tail.hpp": "9798d0c162ad5c30c8aa10f1d7e33f68e7e70c88ed11979e235fd218f09331c4",
+    "tests/ref/scan_oracle.cpp": "820708798d9d42b2c7adf66eeaca1f4c0e64ee819df4e900f76c6696aa9e6e46",
+    "tests/ref/scan_oracle.hpp": "5c468998ed873e9168d9edab25fe8153c69e99f309921522bf28aecb5eeb318f",
+    "tools/tiplog_bench/contracts.hpp": "df4e015277f1857ed4620892acd7a5a47c24af0823e1b261fe4cef2db93ddc92",
+    "tools/tiplog_bench/main.cpp": "bb2d59d6ca2c27ea0f3ac8aa2b6e4103d0066077da0ccd81d99d295d2cf8499f",
+    "tools/tiplog_differential/main.cpp": "2b96d0ab89d0cb81dc49cf6e854d23b307a7a665f14e7858d6fd5f6288190e58",
+    "tools/tiplog_index_memory.cpp": "0bbebfb5a2971cb72de18066aac00e02514a7e8cd47ff2d575d3f3fc926e49bf",
+    "tools/tiplog_sim/main.cpp": "a0c12bd6f2a56e2a96bf3ea20bb7bedb2c01f07c2eaa8c8580632b37fd3dd0f5",
+    "tools/tiplog_walk/main.cpp": "d1590bf684f554a27526c9eaf877e972702a073af58224fc812e95842cbb84fb",
+    "tools/tiplog_walk/trace_check.cpp": "4aca16c25e99ebf12eff4d12bccbbb7b882bf33b93b7ffaba0d9281d55ac552c"
+  },
+  "builds": {
+    "clang": {
+      "binaries": {
+        "tiplog_differential": "83a27993518177f5bc2816575f0009b06de62d78c8c8163a2d7211c2cddfb71d",
+        "tiplog_sim": "2fb4ffe42ec57ac7154e882ac9840f0377236d32b1dd17948d0171c36590a936"
+      },
+      "cmake_cache_sha256": "42d4f8dd5bdf07dd60288dcc1da7d57dffb5e2bcc9f561040ed38eff413a5c68",
+      "compile_commands_sha256": "370704925a31cd349bacfcc6097641e608d1fdc64f05b58ac5e44c80a26f4c76",
+      "compiler": {
+        "argv": [
+          "/usr/bin/clang++",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Ubuntu clang version 21.1.8 (6ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-21/bin\n"
+      },
+      "directory": "build/clang-release",
+      "relevant_compile_commands": [
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/trace/reader.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/trace/reader.cpp",
+          "output": "CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/trace/itch_walker.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/trace/itch_walker.cpp",
+          "output": "CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/topics/registry.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/topics/registry.cpp",
+          "output": "CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/subs/compiled.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/subs/compiled.cpp",
+          "output": "CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/driver/trace_driver.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/driver/trace_driver.cpp",
+          "output": "CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/ring/ring.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/ring/ring.cpp",
+          "output": "CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp",
+          "output": "CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp",
+          "output": "CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/engine/engine.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/engine/engine.cpp",
+          "output": "CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_sim/main.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/tools/tiplog_sim/main.cpp",
+          "output": "CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.cpp",
+          "output": "CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp",
+          "output": "CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o"
+        },
+        {
+          "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/differential/campaign.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/clang-release",
+          "file": "/home/abc/Desktop/Jane Street/tests/differential/campaign.cpp",
+          "output": "CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o"
+        }
+      ]
+    },
+    "gcc": {
+      "binaries": {
+        "tiplog_differential": "543be7a79d70bb02aac59b689793f0e5cb5a08d00f3d3bfdbb0f269349e30cdc",
+        "tiplog_sim": "edf8c49354d2a83f86b3283e800968986535327d9ab95f9d09182ed1b5b53451"
+      },
+      "cmake_cache_sha256": "a4793eedce080d0ab40bc36cefed66cb780ef69ec7ca8fe96a6fb58e2f9e5956",
+      "compile_commands_sha256": "654b305ab5de3910bde3e59ad7f30d28dd733fc3151a42d3db7d906efd83e888",
+      "compiler": {
+        "argv": [
+          "g++",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+      },
+      "directory": "build/release",
+      "relevant_compile_commands": [
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/trace/reader.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/trace/reader.cpp",
+          "output": "CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/trace/itch_walker.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/trace/itch_walker.cpp",
+          "output": "CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/topics/registry.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/topics/registry.cpp",
+          "output": "CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/subs/compiled.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/subs/compiled.cpp",
+          "output": "CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/driver/trace_driver.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/driver/trace_driver.cpp",
+          "output": "CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/ring/ring.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/ring/ring.cpp",
+          "output": "CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp",
+          "output": "CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp",
+          "output": "CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/engine/engine.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/src/tiplog/engine/engine.cpp",
+          "output": "CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_sim/main.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/tools/tiplog_sim/main.cpp",
+          "output": "CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.cpp",
+          "output": "CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp",
+          "output": "CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o"
+        },
+        {
+          "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/differential/campaign.cpp\"",
+          "directory": "/home/abc/Desktop/Jane Street/build/release",
+          "file": "/home/abc/Desktop/Jane Street/tests/differential/campaign.cpp",
+          "output": "CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o"
+        }
+      ]
+    }
+  },
+  "comparison_rules": {
+    "differential_repeat_and_compiler": "all fields except elapsed_monotonic_seconds",
+    "outcome_rule": "done must have checkpoint and no error; expiry must retain full FellBehind prefix",
+    "same_configuration_repeat_and_compiler": "all simulation JSON fields",
+    "simulation_across_configurations": "all fields except explicit mode/kernel labels",
+    "simulation_label_fields_excluded_across_configurations": [
+      "effective_last_range_mode",
+      "kernel",
+      "mode"
+    ]
+  },
+  "comparisons": [
+    {
+      "check": "basket-success/scan/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/scan/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/scan/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/indexed/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/auto/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-success/all-observable-fields/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/scan/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/scan/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/scan/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/indexed/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/auto/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "basket-expiry/all-observable-fields/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/scan/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/scan/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/scan/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/indexed/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/auto/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-success/all-observable-fields/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/scan/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/scan/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/scan/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/indexed/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/auto/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "wide-expiry/all-observable-fields/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/scan/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/scan/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/scan/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/indexed/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/stdpq/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/stdpq/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/stdpq/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/binheap/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/binheap/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/binheap/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/quad/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/quad/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/quad/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/loser/gcc/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/loser/clang/repeat1",
+      "status": "passed"
+    },
+    {
+      "check": "synthetic/auto/loser/clang/repeat2",
+      "status": "passed"
+    },
+    {
+      "check": "production source identity before/after all runs",
+      "status": "passed"
+    },
+    {
+      "check": "gcc binary identity before/after all runs",
+      "status": "passed"
+    },
+    {
+      "check": "clang binary identity before/after all runs",
+      "status": "passed"
+    }
+  ],
+  "configurations": [
+    [
+      "scan",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "binheap"
+    ],
+    [
+      "indexed",
+      "quad"
+    ],
+    [
+      "indexed",
+      "loser"
+    ],
+    [
+      "auto",
+      "stdpq"
+    ],
+    [
+      "auto",
+      "binheap"
+    ],
+    [
+      "auto",
+      "quad"
+    ],
+    [
+      "auto",
+      "loser"
+    ]
+  ],
+  "cpu": 7,
+  "finished_utc": "2026-10-23T14:44:24.484600+00:00",
+  "git_commit": "aa13c1824ba5a7a3593a0f63c6f455cac851e822",
+  "git_dirty": true,
+  "purpose": "RC-3 functional reproducibility; no performance claims",
+  "repeats_per_compiler": 2,
+  "run_count": 180,
+  "runs": [
+    "results/p6/rc3-runs-20261023T143849.079765Z/001-basket-success-gcc-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/002-basket-success-gcc-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/003-basket-success-clang-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/004-basket-success-clang-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/005-basket-success-gcc-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/006-basket-success-gcc-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/007-basket-success-clang-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/008-basket-success-clang-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/009-basket-success-gcc-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/010-basket-success-gcc-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/011-basket-success-clang-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/012-basket-success-clang-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/013-basket-success-gcc-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/014-basket-success-gcc-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/015-basket-success-clang-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/016-basket-success-clang-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/017-basket-success-gcc-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/018-basket-success-gcc-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/019-basket-success-clang-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/020-basket-success-clang-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/021-basket-success-gcc-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/022-basket-success-gcc-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/023-basket-success-clang-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/024-basket-success-clang-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/025-basket-success-gcc-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/026-basket-success-gcc-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/027-basket-success-clang-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/028-basket-success-clang-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/029-basket-success-gcc-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/030-basket-success-gcc-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/031-basket-success-clang-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/032-basket-success-clang-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/033-basket-success-gcc-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/034-basket-success-gcc-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/035-basket-success-clang-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/036-basket-success-clang-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/037-basket-expiry-gcc-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/038-basket-expiry-gcc-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/039-basket-expiry-clang-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/040-basket-expiry-clang-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/041-basket-expiry-gcc-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/042-basket-expiry-gcc-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/043-basket-expiry-clang-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/044-basket-expiry-clang-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/045-basket-expiry-gcc-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/046-basket-expiry-gcc-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/047-basket-expiry-clang-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/048-basket-expiry-clang-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/049-basket-expiry-gcc-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/050-basket-expiry-gcc-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/051-basket-expiry-clang-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/052-basket-expiry-clang-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/053-basket-expiry-gcc-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/054-basket-expiry-gcc-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/055-basket-expiry-clang-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/056-basket-expiry-clang-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/057-basket-expiry-gcc-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/058-basket-expiry-gcc-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/059-basket-expiry-clang-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/060-basket-expiry-clang-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/061-basket-expiry-gcc-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/062-basket-expiry-gcc-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/063-basket-expiry-clang-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/064-basket-expiry-clang-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/065-basket-expiry-gcc-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/066-basket-expiry-gcc-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/067-basket-expiry-clang-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/068-basket-expiry-clang-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/069-basket-expiry-gcc-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/070-basket-expiry-gcc-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/071-basket-expiry-clang-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/072-basket-expiry-clang-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/073-wide-success-gcc-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/074-wide-success-gcc-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/075-wide-success-clang-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/076-wide-success-clang-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/077-wide-success-gcc-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/078-wide-success-gcc-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/079-wide-success-clang-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/080-wide-success-clang-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/081-wide-success-gcc-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/082-wide-success-gcc-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/083-wide-success-clang-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/084-wide-success-clang-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/085-wide-success-gcc-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/086-wide-success-gcc-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/087-wide-success-clang-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/088-wide-success-clang-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/089-wide-success-gcc-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/090-wide-success-gcc-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/091-wide-success-clang-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/092-wide-success-clang-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/093-wide-success-gcc-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/094-wide-success-gcc-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/095-wide-success-clang-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/096-wide-success-clang-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/097-wide-success-gcc-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/098-wide-success-gcc-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/099-wide-success-clang-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/100-wide-success-clang-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/101-wide-success-gcc-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/102-wide-success-gcc-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/103-wide-success-clang-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/104-wide-success-clang-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/105-wide-success-gcc-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/106-wide-success-gcc-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/107-wide-success-clang-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/108-wide-success-clang-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/109-wide-expiry-gcc-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/110-wide-expiry-gcc-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/111-wide-expiry-clang-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/112-wide-expiry-clang-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/113-wide-expiry-gcc-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/114-wide-expiry-gcc-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/115-wide-expiry-clang-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/116-wide-expiry-clang-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/117-wide-expiry-gcc-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/118-wide-expiry-gcc-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/119-wide-expiry-clang-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/120-wide-expiry-clang-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/121-wide-expiry-gcc-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/122-wide-expiry-gcc-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/123-wide-expiry-clang-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/124-wide-expiry-clang-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/125-wide-expiry-gcc-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/126-wide-expiry-gcc-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/127-wide-expiry-clang-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/128-wide-expiry-clang-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/129-wide-expiry-gcc-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/130-wide-expiry-gcc-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/131-wide-expiry-clang-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/132-wide-expiry-clang-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/133-wide-expiry-gcc-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/134-wide-expiry-gcc-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/135-wide-expiry-clang-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/136-wide-expiry-clang-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/137-wide-expiry-gcc-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/138-wide-expiry-gcc-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/139-wide-expiry-clang-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/140-wide-expiry-clang-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/141-wide-expiry-gcc-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/142-wide-expiry-gcc-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/143-wide-expiry-clang-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/144-wide-expiry-clang-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/145-synthetic-gcc-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/146-synthetic-gcc-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/147-synthetic-clang-scan-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/148-synthetic-clang-scan-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/149-synthetic-gcc-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/150-synthetic-gcc-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/151-synthetic-clang-indexed-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/152-synthetic-clang-indexed-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/153-synthetic-gcc-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/154-synthetic-gcc-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/155-synthetic-clang-indexed-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/156-synthetic-clang-indexed-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/157-synthetic-gcc-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/158-synthetic-gcc-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/159-synthetic-clang-indexed-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/160-synthetic-clang-indexed-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/161-synthetic-gcc-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/162-synthetic-gcc-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/163-synthetic-clang-indexed-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/164-synthetic-clang-indexed-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/165-synthetic-gcc-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/166-synthetic-gcc-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/167-synthetic-clang-auto-stdpq-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/168-synthetic-clang-auto-stdpq-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/169-synthetic-gcc-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/170-synthetic-gcc-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/171-synthetic-clang-auto-binheap-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/172-synthetic-clang-auto-binheap-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/173-synthetic-gcc-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/174-synthetic-gcc-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/175-synthetic-clang-auto-quad-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/176-synthetic-clang-auto-quad-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/177-synthetic-gcc-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/178-synthetic-gcc-auto-loser-r2.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/179-synthetic-clang-auto-loser-r1.json",
+    "results/p6/rc3-runs-20261023T143849.079765Z/180-synthetic-clang-auto-loser-r2.json"
+  ],
+  "source_scope": "Core, independent reference, sim/differential and core build definitions; unrelated bench tool excluded. Exact tested binary hashes frozen before/after.",
+  "source_sha256": {
+    "CMakeLists.txt": "644d30b919063e0f8bbbf92af9cd0bead4fdc0efa2e1adfca3c5c5eb402d665c",
+    "CMakePresets.json": "74c8e0a98feea5734d3582d286a416d2eb122f632f28798bd3f97fd2540a7e0a",
+    "cmake/deps.cmake": "5eb0d70e37d6bd4514a9b16c96751b9db7370304d6ccfa1118b324e75e10f759",
+    "cmake/p1.cmake": "9a864a548048d4fdf076e22917d6741d6637203cf58ab72a1e9cc83e7ce08d7e",
+    "cmake/p2.cmake": "2b94277c86b1213a2add1458e47c372ab578e5bc2477aa4302ba9255ae3d6960",
+    "cmake/p2_ref.cmake": "b681f76d103f78dc5e8526e8f476c17ca54612245788d021abba3b3a36a8f9a2",
+    "cmake/p3_engine.cmake": "607a0dc4f997ce9877bbed3d0f208f25cc65ee1447e2512aa7a15358977016b1",
+    "cmake/p3_fuzz.cmake": "14bb78326964e1f09f8568caad975831a3aa5524c3c0a4990fd263c61da499bf",
+    "cmake/p3_ring.cmake": "fcfd1c6cc09d82889714336b77a7064132af7bfea1f47747634f5a6fcf0de431",
+    "cmake/p4_index.cmake": "f0e67a7e471e85f5b9236b430cb8aa7097e1082542f5ac86ae7951b855dfde9f",
+    "cmake/p5_bench.cmake": "acf676df894f4d06f9d329984a05faa0ea4e2dd9ea2a21ee58b328b0ed82f78e",
+    "cmake/p5_merge.cmake": "e51aec3af9186c2bcddfbd0ea3330aaa3467bff4c4e584fc1e7287607a1d6b17",
+    "scripts/check_p6_rc3.py": "5bb7beb978a2101ab24a40a91e3c315d41bd402b146364624caa433efa97449e",
+    "src/tiplog/driver/trace_driver.cpp": "37a76cc9ad8b2aeb5a63216df83ea4a53167c295aca451557f77322964762206",
+    "src/tiplog/driver/trace_driver.hpp": "7a6cb9d77427ea0710f15c4bbb8ee69a7046df85ae614582b1e0f440ed084509",
+    "src/tiplog/engine/engine.cpp": "8d1dd35bf1178756fd8cd991cd28f0ab75e7c61af07f36829f2a89baf0c382ec",
+    "src/tiplog/engine/engine.hpp": "cfe7a9cb9944fbbe247856d43a94dbf761ca25782b1ea1d7dd07b92093ab176e",
+    "src/tiplog/index/index.cpp": "a5556666ff938b390915fe2f6bda2c69bd6128a7cb6681998442b93ca3d4afb9",
+    "src/tiplog/index/index.hpp": "8882326090680eabb47cd390013170e20b92896d2e3024220b8382878884ca97",
+    "src/tiplog/merge/kernels.cpp": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c",
+    "src/tiplog/merge/kernels.hpp": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8",
+    "src/tiplog/ring/ring.cpp": "d23835c56745866c64a392d5045daf1498e84e6d5b4c633f97848076da6bcc46",
+    "src/tiplog/ring/ring.hpp": "3376898c9c4fbb18e7f33e3e13d773c8179dae9eac81ed08a7d950f2bdc3850b",
+    "src/tiplog/subs/compiled.cpp": "a0d9c9cbc3d0b164fcc9c6db3e1c21f77111448e56de0ed65069aea47079c794",
+    "src/tiplog/subs/compiled.hpp": "5863990621090092c14e62136fcfb2227e47558b313d76b90d03df8f94a60fb3",
+    "src/tiplog/topics/registry.cpp": "acfeeecab24e28cfbac12dd70dd906771b4b60d3542da624c7f3caeb0d468bf2",
+    "src/tiplog/topics/registry.hpp": "c9e3e032072d91b01d9508b98ddf1a608ff413eda601aad9885dd69ada402c72",
+    "src/tiplog/trace/itch_walker.cpp": "a5ab131673f6bd75c79f5249f5a304805caef0c57b2f8af6db2d5e4f984f4c6d",
+    "src/tiplog/trace/itch_walker.hpp": "29a96924c408b0b097cb1a3a04bb0e571bd5b71e9b7c42c83b8008356903eb9e",
+    "src/tiplog/trace/reader.cpp": "568bbe73d7a62374c87a3ef708108c8990b3259ffd2c4d77b473ccc187c880f2",
+    "src/tiplog/trace/reader.hpp": "8212dc84f0d0a11cd1bd1c9b726e9e2ce649abd11be98ed677e95cc7a102a3c0",
+    "src/tiplog/types.hpp": "dc8aa1f3a9dd6fd5279c55ff32b3723e5aac2e69d3eddcf7f9c70dc0f2a64465",
+    "tests/differential/campaign.cpp": "3d2299514446d7cf174d849133b540da9f1cff4761c699fbe12ba75ebd13f285",
+    "tests/differential/campaign.hpp": "142daabcc420f89d315d233aa4b0ce7bf3f3e4b1be3f2968cab573e95b691870",
+    "tests/ref/oracle_tail.hpp": "9798d0c162ad5c30c8aa10f1d7e33f68e7e70c88ed11979e235fd218f09331c4",
+    "tests/ref/scan_oracle.cpp": "820708798d9d42b2c7adf66eeaca1f4c0e64ee819df4e900f76c6696aa9e6e46",
+    "tests/ref/scan_oracle.hpp": "5c468998ed873e9168d9edab25fe8153c69e99f309921522bf28aecb5eeb318f",
+    "tools/tiplog_differential/main.cpp": "2b96d0ab89d0cb81dc49cf6e854d23b307a7a665f14e7858d6fd5f6288190e58",
+    "tools/tiplog_sim/main.cpp": "a0c12bd6f2a56e2a96bf3ea20bb7bedb2c01f07c2eaa8c8580632b37fd3dd0f5"
+  },
+  "started_utc": "2026-10-23T14:38:49.147921+00:00",
+  "status": "passed",
+  "trace": "data/traces/itch_20191230_0930_1000_spec.mdt",
+  "trace_sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70"
+}

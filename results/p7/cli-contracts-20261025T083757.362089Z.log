@@ -1,0 +1,21 @@
+..F                                                                      [100%]
+=================================== FAILURES ===================================
+___________ test_layout_cli_global_unsupported_and_incomplete_curves ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-3/test_layout_cli_global_unsuppo0')
+
+    def test_layout_cli_global_unsupported_and_incomplete_curves(tmp_path):
+        text = 'CURVE\tp\t1\t3\t1\nPOINT\t1\t10\nPOINT\t2\t8\nPOINT\t3\t0\nEND\n'
+        result, rows = invoke(tmp_path, text, '--multipliers', '5', '--budgets', '2', global_input=True)
+        assert result.returncode == 0, result.stderr
+        assert rows[0]['certified'] and rows[0]['stores'] == 1
+        bound = rows[1]
+        assert bound['status'] == 'certified_lower_bound'
+>       assert bound['magnitude'] == '5' and not bound['negative']
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'magnitude'
+
+py/tests/test_layout_cli.py:57: KeyError
+=========================== short test summary info ============================
+FAILED py/tests/test_layout_cli.py::test_layout_cli_global_unsupported_and_incomplete_curves
+1 failed, 2 passed in 0.03s

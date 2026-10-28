@@ -1,0 +1,1437 @@
+Running main() from /home/abc/Desktop/Jane Street/build/f01/core/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PollBudget
+[ RUN      ] PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 1
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 16
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 2
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 32
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 3
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 48
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 4
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 64
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 5
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 80
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 6
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 96
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 7
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 112
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 8
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 128
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 9
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 144
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 10
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 160
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 11
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 176
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 12
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 192
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 13
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 208
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 14
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 224
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 15
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 240
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 16
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 256
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 17
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 272
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 18
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 288
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 19
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 304
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 20
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 320
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 21
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 336
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 22
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 352
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 23
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 368
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 24
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 384
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 25
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 400
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 26
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 416
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 27
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 432
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 28
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 448
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 29
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 464
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 30
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 480
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 31
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 496
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 32
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 512
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 33
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 528
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 34
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 544
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 35
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 560
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 36
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 576
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 37
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 592
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 38
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 608
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 39
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 624
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 40
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 640
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 41
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 656
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 42
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 672
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 43
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 688
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 44
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 704
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 45
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 720
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 46
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 736
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 47
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 752
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 48
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 768
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 49
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 784
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 50
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 800
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 51
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 816
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 52
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 832
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 53
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 848
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 54
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 864
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 55
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 880
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 56
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 896
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 57
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 912
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 58
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 928
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 59
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 944
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 60
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 960
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 61
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 976
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 62
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 992
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 63
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1008
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 64
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1024
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 65
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1040
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 66
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1056
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 67
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1072
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 68
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1088
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 69
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1104
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 70
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1120
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 71
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1136
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 72
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1152
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 73
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1168
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 74
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1184
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 75
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1200
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 76
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1216
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 77
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1232
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 78
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1248
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 79
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1264
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 80
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1280
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 81
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1296
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 82
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1312
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 83
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1328
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 84
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1344
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 85
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1360
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 86
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1376
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 87
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1392
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 88
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1408
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 89
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1424
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 90
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1440
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 91
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1456
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 92
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1472
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 93
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1488
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 94
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1504
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 95
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1520
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 96
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1536
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 97
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1552
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 98
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1568
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 99
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1584
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:271: Failure
+Expected equality of these values:
+  replay.checkpoint()->after_seq
+    Which is: 0
+  seq
+    Which is: 100
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:272: Failure
+Expected equality of these values:
+  replay.checkpoint()->next_pos
+    Which is: 0
+  seq < 100 ? seq * 16 : 1608
+    Which is: 1608
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:279: Failure
+Expected equality of these values:
+  result.stop
+    Which is: 4-byte object <02-00 00-00>
+  PollStop::SnapshotDone
+    Which is: 4-byte object <03-00 00-00>
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:280: Failure
+Expected equality of these values:
+  result.status
+    Which is: 1-byte object <00>
+  Status::Done
+    Which is: 1-byte object <01>
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-ot7menec/poll_budget_test.cpp:281: Failure
+Expected equality of these values:
+  out.size()
+    Which is: 0
+  1U
+    Which is: 1
+
+[  FAILED  ] PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating (0 ms)
+[----------] 1 test from PollBudget (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+
+ 1 FAILED TEST

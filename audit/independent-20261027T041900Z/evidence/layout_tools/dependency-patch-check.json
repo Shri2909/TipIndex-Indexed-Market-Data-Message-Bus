@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "label": "original",
+      "argv": [
+        "cmake",
+        "-Dbenchmark_SOURCE_DIR=/tmp/tiplog-benchmark-patch-qaf2_q83",
+        "-DBENCHMARK_ENABLE_EXCEPTIONS=ON",
+        "-P",
+        "/home/abc/Desktop/Jane Street/cmake/benchmark_output_patch.cmake"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "before": "93dd058ff126b0e50f53f8d5d31d6fa5132b345b3132781c692b7d8538c72da3",
+      "after": "4fc57e51c4bf1aa76e8c61bc4538f4a00fce0f03dd96e8f8ba577870da16fce8",
+      "mtime_unchanged": false
+    },
+    {
+      "label": "idempotence",
+      "argv": [
+        "cmake",
+        "-Dbenchmark_SOURCE_DIR=/tmp/tiplog-benchmark-patch-qaf2_q83",
+        "-DBENCHMARK_ENABLE_EXCEPTIONS=ON",
+        "-P",
+        "/home/abc/Desktop/Jane Street/cmake/benchmark_output_patch.cmake"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "before": "4fc57e51c4bf1aa76e8c61bc4538f4a00fce0f03dd96e8f8ba577870da16fce8",
+      "after": "4fc57e51c4bf1aa76e8c61bc4538f4a00fce0f03dd96e8f8ba577870da16fce8",
+      "mtime_unchanged": true
+    },
+    {
+      "label": "unexpected",
+      "argv": [
+        "cmake",
+        "-Dbenchmark_SOURCE_DIR=/tmp/tiplog-benchmark-patch-qaf2_q83",
+        "-DBENCHMARK_ENABLE_EXCEPTIONS=ON",
+        "-P",
+        "/home/abc/Desktop/Jane Street/cmake/benchmark_output_patch.cmake"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "CMake Error at cmake/benchmark_output_patch.cmake:33 (message):\n  Unexpected Google Benchmark source identity; refusing to patch or use it\n\n\n",
+      "before": "82ae1e0a8efc02396af37d6b5c4ca3bb771b52d7e5004671b5d0fee50dd4fdcb",
+      "after": "82ae1e0a8efc02396af37d6b5c4ca3bb771b52d7e5004671b5d0fee50dd4fdcb",
+      "mtime_unchanged": true
+    }
+  ],
+  "archive_before": "f82705a2726d8f6cdcda274b841f6314dbfc6f731cdda06c946f310ec1cc3ad9",
+  "archive_after": "f82705a2726d8f6cdcda274b841f6314dbfc6f731cdda06c946f310ec1cc3ad9"
+}

@@ -358,5 +358,32 @@ TEST(EngineIndex, V19MinimumConfigurationValidatedBeforeUse) {
   c.max_record_bytes = 16;
   EXPECT_THROW(Engine invalid(c), std::invalid_argument);
 }
+TEST(EngineIndex, AutoUsesRecentSparsePostingInPartiallyOverlappingBlock) {
+  auto c = config(131072, 32, 1024);
+  Engine engine(c);
+  const auto a = engine.intern("r/A/e"), b = engine.intern("r/B/e");
+  const auto sub = engine.compile(exact("r/A/e"));
+  for (int i = 0; i < 1023; ++i) engine.publish(a, {});
+  for (int i = 0; i < 4000; ++i) engine.publish(b, {});
+  engine.publish(a, {});
+  auto automatic = engine.open_replay(sub, 1023, ReplayMode::Auto);
+  auto indexed = engine.open_replay(sub, 1023, ReplayMode::Indexed);
+  auto scan = engine.open_replay(sub, 1023, ReplayMode::Scan);
+  ASSERT_EQ(automatic.effective_mode(), ReplayMode::Indexed);
+  std::vector<Delivered> actual, indexed_out, scanned;
+  EXPECT_EQ(automatic.next_batch(2, actual), Status::Done);
+  EXPECT_EQ(indexed.next_batch(2, indexed_out), Status::Done);
+  EXPECT_EQ(scan.next_batch(2, scanned), Status::Done);
+  ASSERT_EQ(actual.size(), 1U);
+  ASSERT_EQ(indexed_out.size(), 1U);
+  ASSERT_EQ(scanned.size(), 1U);
+  EXPECT_EQ(actual[0].seq, 5024U);
+  EXPECT_EQ(actual[0].seq, indexed_out[0].seq);
+  EXPECT_EQ(actual[0].seq, scanned[0].seq);
+  EXPECT_EQ(automatic.checkpoint(), scan.checkpoint());
+  EXPECT_EQ(automatic.work().records_fetched, 1U);
+  EXPECT_EQ(scan.work().records_fetched, 4001U);
+  engine.check_invariants();
+}
 } // namespace
 } // namespace tiplog

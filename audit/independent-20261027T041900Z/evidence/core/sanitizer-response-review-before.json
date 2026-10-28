@@ -1,0 +1,24 @@
+{
+  "helper_source_sha256": "a6dbb2a753eb97a8fd0b5d5ae3d497482e7ba17806513af75ee5bb8bc02693d0",
+  "validator_accepted_response_override": true,
+  "actual_flags": [
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=all",
+    "-fno-omit-frame-pointer",
+    "@audit/independent-20261027T041900Z/evidence/core/sanitizer-disable.rsp",
+    "-std=c++20"
+  ],
+  "compiler": "Ubuntu clang version 21.1.8 (6ubuntu1)",
+  "objects": {
+    "disabled": {
+      "sha256": "163baff6adabb99e1591c1cc85c82e502101318db26190b2c4403385c08aee32",
+      "undefined_symbols": ""
+    },
+    "positive": {
+      "sha256": "f8846ca851410cf59621920bae15a7a2e4d950b4e951bf0c88e11d22ea782567",
+      "undefined_symbols": "                 U __asan_init\n                 U __asan_register_elf_globals\n                 U __asan_report_load4\n                 U __asan_version_mismatch_check_v8\n                 w __start_asan_globals\n                 w __stop_asan_globals\n                 U __ubsan_handle_pointer_overflow_abort\n                 U __ubsan_handle_type_mismatch_v1_abort\n"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "label": "CC2-full-sequence",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/run_p5_differential.py"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T160119.265969Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p5/CC2-full-sequence-20261018T160119.265969Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 441.6697827359999
+}

@@ -9,6 +9,7 @@
 #include <memory>
 #include <optional>
 #include <stdexcept>
+#include <type_traits>
 
 namespace tiplog {
 
@@ -44,6 +45,42 @@ struct EngineStats {
   Seq head_seq{};
   Seq tail_seq{};
 };
+// Exact traversal work, not hardware events. Bytes include complete DATA/PAD
+// spans decoded by the replay loop. Seek metadata/header work is separately
+// reported; entries_visited counts postings selected from the merge kernel.
+struct ReplayWork {
+  std::uint64_t bytes_inspected{};
+  std::uint64_t entries_visited{};
+  std::uint64_t records_fetched{};
+  std::uint64_t delivered{};
+  std::uint64_t pads_inspected{};
+  std::uint64_t seek_data_examined{};
+  std::uint64_t seek_pads_examined{};
+  std::uint64_t index_seeks{};
+  bool operator==(const ReplayWork &) const = default;
+};
+
+// The inspection cap applies to traversal, not seek/planning/merge setup. One
+// Scan DATA/PAD or Indexed posting plus DATA fetch consumes one inspection.
+// An absent cap preserves the legacy unlimited traversal/checkpoint behavior.
+struct PollLimits {
+  std::size_t max_outputs;
+  std::optional<std::uint64_t> max_inspections{std::nullopt};
+};
+enum class PollStop {
+  NoWork,
+  OutputLimit,
+  InspectionLimit,
+  SnapshotDone,
+  CaughtUp,
+  Error
+};
+struct PollResult {
+  Status status;
+  PollStop stop;
+  std::uint64_t inspections_used;
+  ReplayWork work_delta;
+};
 
 namespace detail {
 struct EngineLifetime {
@@ -63,6 +100,9 @@ public:
   // Outputs borrow ring storage until the next engine mutation. No engine
   // mutation may interleave inside this single-threaded batch operation.
   Status next_batch(std::size_t max, std::vector<Delivered> &out);
+  // Either zero limit performs no work and reports cached status + NoWork.
+  // More + InspectionLimit can return no outputs; resume this same Replay.
+  PollResult next_batch(PollLimits limits, std::vector<Delivered> &out);
   [[nodiscard]] std::optional<ReplayError> error() const noexcept {
     return error_;
   }
@@ -70,6 +110,7 @@ public:
   [[nodiscard]] LogPos upper_pos() const noexcept { return upper_pos_; }
   [[nodiscard]] Status status() const noexcept { return status_; }
   [[nodiscard]] ReplayMode effective_mode() const noexcept { return mode_; }
+  [[nodiscard]] ReplayWork work() const noexcept { return work_; }
   [[nodiscard]] std::size_t selected_partition_count() const noexcept {
     return partitions_.size();
   }
@@ -82,7 +123,10 @@ private:
   friend class Tail;
   Replay(Engine &, const subs::CompiledSubscription &, Seq,
          std::optional<ResumeCheckpoint>, ReplayMode, MergeKernel);
-  Status next_batch_into(std::size_t max, std::vector<Delivered> &out);
+  template <bool Report>
+  std::conditional_t<Report, PollResult, Status>
+  next_batch_into(std::conditional_t<Report, PollLimits, std::size_t> limits,
+                  std::vector<Delivered> &out);
   void release() noexcept;
   Engine *engine_;
   std::weak_ptr<detail::EngineLifetime> lifetime_;
@@ -97,6 +141,7 @@ private:
   ReplayMode mode_{ReplayMode::Scan};
   MergeKernel kernel_{MergeKernel::StdPQ};
   std::vector<PartitionId> partitions_;
+  ReplayWork work_{};
 };
 
 // A live reader is a chain of completed captured ranges. Done means caught up
@@ -108,6 +153,9 @@ public:
   Tail(Tail &&) noexcept = default;
   Tail &operator=(Tail &&) noexcept = default;
   Status poll(std::size_t max, std::vector<Delivered> &out);
+  // A single allowance is shared across every captured range in this call.
+  // CaughtUp observes the current head only for a positive-limit poll.
+  PollResult poll(PollLimits limits, std::vector<Delivered> &out);
   [[nodiscard]] Status status() const noexcept { return status_; }
   [[nodiscard]] std::optional<ReplayError> error() const noexcept { return error_; }
   [[nodiscard]] std::optional<ResumeCheckpoint> checkpoint() const noexcept {
@@ -121,6 +169,10 @@ public:
 private:
   friend class Engine;
   Tail(Engine &, const subs::CompiledSubscription &, Seq, ReplayMode, MergeKernel);
+  template <bool Report>
+  std::conditional_t<Report, PollResult, Status>
+  poll_into(std::conditional_t<Report, PollLimits, std::size_t> limits,
+            std::vector<Delivered> &out);
   Engine *engine_;
   std::weak_ptr<detail::EngineLifetime> lifetime_;
   subs::CompiledSubscription sub_;

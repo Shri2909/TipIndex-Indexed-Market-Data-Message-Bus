@@ -1,4 +1,5 @@
 #include "tiplog/trace/itch_walker.hpp"
+#include "../file_safety.hpp"
 
 #include <array>
 #include <fstream>
@@ -20,6 +21,7 @@ int main(int argc, char** argv) {
         have_input = true;
       } else throw std::runtime_error("usage: tiplog_walk [FILE|-] [--out JSON]");
     }
+    if (input_path != "-") tiplog::cli::require_distinct_files(input_path, output_path);
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     std::ifstream input_file;
@@ -37,7 +39,11 @@ int main(int argc, char** argv) {
     }
     if (input->bad() || (!input->eof() && input->fail())) throw std::runtime_error("input read failed");
     walker->finish();
-    if (output_path.empty()) walker->write_json(std::cout);
+    if (output_path.empty()) {
+      walker->write_json(std::cout);
+      std::cout.flush();
+      if (!std::cout) throw std::runtime_error("stdout write failed");
+    }
     else {
       std::ofstream output(output_path);
       if (!output) throw std::runtime_error("cannot open output file");

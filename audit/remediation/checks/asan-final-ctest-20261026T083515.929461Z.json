@@ -1,0 +1,25 @@
+{
+  "label": "asan-final-ctest",
+  "argv": [
+    "ctest",
+    "--preset",
+    "asan-ubsan",
+    "--output-on-failure",
+    "--no-tests=error",
+    "--output-junit",
+    "/home/abc/Desktop/Jane Street/audit/remediation/asan.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:35:15.929742+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/asan-final-ctest-20261026T083515.929461Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 17.41617934399983,
+  "log_sha256": "9591b78d281fa2a9ef016f6e6ff09b9cadedbdce5e5f5d4dee091db255dcdaf5"
+}

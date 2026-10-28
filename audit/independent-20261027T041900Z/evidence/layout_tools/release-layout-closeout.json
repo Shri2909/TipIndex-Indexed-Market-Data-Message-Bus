@@ -1,0 +1,78 @@
+{
+  "commands": [
+    {
+      "label": "cc5",
+      "argv": [
+        "/home/abc/Desktop/Jane Street/build/independent-layout-tools-final/tiplog_layout_cc5",
+        "--instances",
+        "10000",
+        "--seed",
+        "20191230",
+        "--output",
+        "/home/abc/Desktop/Jane Street/audit/independent-20261027T041900Z/evidence/layout_tools/cc5-release.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"schema\": \"tiplog-layout-cc5-v1\",\n  \"status\": \"passed\",\n  \"seed\": 20191230,\n  \"rng\": \"mt19937_64; per-instance seed xor golden-ratio*(index+1)\",\n  \"requested_instances\": 10000,\n  \"completed_instances\": 10000,\n  \"maximum_nodes\": 12,\n  \"maximum_classes\": 4,\n  \"exact_count_comparisons\": 57461,\n  \"at_most_comparisons\": 57461,\n  \"reconstructed_layouts_checked\": 96322,\n  \"random_layouts_checked\": 20000,\n  \"nodes\": 62727,\n  \"zero_volume_nodes\": 15266,\n  \"empty_trees\": 345,\n  \"consumer_classes\": 19803,\n  \"basket_classes\": 9838,\n  \"exact_terms\": 19724,\n  \"subtree_terms\": 16465,\n  \"above_root_terms\": 6618,\n  \"internal_node_terms\": 10370,\n  \"rational_instances\": 5000,\n  \"zero_coefficient_instances\": 3718,\n  \"mismatches\": 0,\n  \"input_fnv1a64\": \"112398f36f943dbe\",\n  \"result_fnv1a64\": \"c4b17e0577e35cab\",\n  \"limits\": {\"enum_max_edges\":22,\"dp_max_classes\":16,\"max_states\":10000000,\"max_work\":100000000,\"time_limit_ms\":60000},\n  \"failure_instance_index\": null,\n  \"error\": \"\"\n}\n",
+      "stderr": "",
+      "wall_seconds": 9.791831271999968,
+      "binary_sha256": "8b783abc23cfdabeaf9bba9385632491ab92d65c3dd6333469ca5e6e8b7bece2",
+      "output_sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "historical_path": "/home/abc/Desktop/Jane Street/results/p7/cc5-release.json",
+      "historical_sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "json_equal_to_historical": true,
+      "bytes_equal_to_historical": true
+    },
+    {
+      "label": "example",
+      "argv": [
+        "/home/abc/Desktop/Jane Street/build/independent-layout-tools-final/tiplog_layout_example",
+        "--output",
+        "/home/abc/Desktop/Jane Street/audit/independent-20261027T041900Z/evidence/layout_tools/worked-example.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "wall_seconds": 0.01049180300003627,
+      "binary_sha256": "5d171c73ae92c6f280897db14a7b1f57df841a8066bf467f9054219d363c87f0",
+      "output_sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "historical_path": "/home/abc/Desktop/Jane Street/results/p7/worked-example.json",
+      "historical_sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "json_equal_to_historical": true,
+      "bytes_equal_to_historical": true
+    }
+  ],
+  "source_identities": [
+    {
+      "path": "src/tiplog/layout/global.cpp",
+      "sha256": "00bc7c4cc1f964da64605de7a78b8d66d2b72df92d09132ddfb5d3bd31ae6fc0"
+    },
+    {
+      "path": "src/tiplog/layout/exact.hpp",
+      "sha256": "484fc99bea3a7d91b367803d6e4d2dd12412c8370cabbe0771dd0b767d51dea4"
+    },
+    {
+      "path": "src/tiplog/layout/exact.cpp",
+      "sha256": "9a099018607b8706de3de2ec1e189aadb17025a842fa378596a1a55b068c26ff"
+    },
+    {
+      "path": "src/tiplog/layout/model.hpp",
+      "sha256": "fec5e107685d83577d1ea0d7b4c997f01633eb48fb0115febf1398d2184bc42c"
+    },
+    {
+      "path": "src/tiplog/layout/global.hpp",
+      "sha256": "ee8a645ecafc8227dc41370bf1471d98e0de455d36a122a6f6254779bacfef65"
+    },
+    {
+      "path": "src/tiplog/layout/model.cpp",
+      "sha256": "4bddd6718ed5e2a2495a49953289ad274a03e88afaae0a06f6eac87c48608ad6"
+    },
+    {
+      "path": "tools/tiplog_layout/worked_example.cpp",
+      "sha256": "e71d6712c935765fe2b228793c87ed66a967e68ff937d2265d3c80a426efdf66"
+    },
+    {
+      "path": "tests/layout/layout_cc5.cpp",
+      "sha256": "c059fac2e9972515860d2163d6c8b9a851b1c775c3603e60f1caa8aff0c8829d"
+    }
+  ]
+}

@@ -212,3 +212,98 @@ Use these **instead of optional depth reading or just in time**, not as an expan
 | ST-23 — recent engineering lessons | S61 history/coalescing sections, optional 15–20 min; S59 handoff sections JIT R2; S60 retry/resource sections JIT R5 | Explain why identical trade values are distinct events. Draw repeated recovery fallback and identify overlap resources; for networking, show that a timeout actually releases/cancels the outstanding operation. These readings do not add a feature engine or network service to the core. |
 
 Book references remain targeted and accurately labeled: Knuth §5.4.1 is optional and was not inspected. No newly discovered paper or book becomes required merely because it is recent.
+
+## 5. F-01 study and review plan — 2026-10-26
+
+**Research completed; implementation awaiting user approval.** The user requested source study for
+work-budgeted replay/tail polling after the approved audit corrections. [RESEARCH §9](RESEARCH.md#9-f-01-research-work-budgeted-replay-and-tail-polling--2026-10-26)
+contains the primary-source ledger, reading limits, immutable repository revisions, licenses,
+proposed API/semantics, alternatives, validation gates and measurement plan. Older phase-status
+statements above remain dated history; they do not govern this new research request.
+
+The proposed first version caps **traversal inspections**, including rejected records and PAD.
+Preparation, seeks, Auto planning, merge construction and allocation remain outside that cap and
+must be measured separately. Review this scope before implementation; it is not a hard complete-call
+CPU/time limit. A caller must still rotate between runnable consumers to offer other work a turn.
+
+These exercises are review aids; **none has been executed as a feature test or benchmark**.
+Estimated effort below is a planning estimate, not a measured delivery promise.
+
+| Study item | Focused original reading | Exercise / pass condition | Estimate |
+|---|---|---|---|
+| ST-F01-01 — accounting and stop semantics | RESEARCH F01-S01/S02/S03: Aeron controlled poll, Agrona controlledRead, NAPI zero/exact-budget rules; pinned methods in §9.5 | Trace PAD, two rejects and a match under output limit 1 / inspection budget 2. Identify what is consumed, checkpointed and returned. Show why fragment/output counts alone do not prove the new bound. | 45 min |
+| ST-F01-02 — work-producing boundaries | F01-S04/S06: Tokio accounting comments, DataFusion `coop.rs`/filter loop and official 2025 cancellation article | Show how filtering consumes without output and how replenishing a branch/range budget defeats composition. Specify one charge for a posting plus DATA fetch, rather than two. | 45 min |
+| ST-F01-03 — continuation and retention | F01-P01 SaGe §§3.1–3.3; F01-S10 PIT comparison; current Replay constructor/Indexed loop/Index cursor validation | Prove why committing the globally minimum rejected candidate is safe. Separate processed progress from `last_delivered_`. Explain why a checkpoint neither pins bytes nor restores the old captured upper bound when a new Replay opens. | 60 min |
+| ST-F01-04 — cooperative fairness and caller policy | F01-S05 Seastar helpers; F01-P05 cooperative fairness; Tokio runtime fairness/yield non-guarantees | Draw a round-robin caller with long and short readers. Contrast immediate-redrain. State which guarantees come from the library and which assumptions come from its caller. | 30 min |
+| ST-F01-05 — quantum tradeoffs | F01-P02 Morsels §3.3, F01-P03 Self-Tuning §3.1, F01-P04 SEDA §3.4; optional P06/P07/P08 | Sketch throughput versus allowance without inventing measurements. Derive repeated K-partition setup cost; explain why equal record counts have unequal durations. Select experiments that could falsify the benefit. | 45 min |
+| ST-F01-06 — contract and evidence review | RESEARCH §§9.6–9.10 and existing audit F-01 acceptance | Complete the decisions and matrix below. Separate old unlimited Q7 from budgeted intermediate stops/checkpoints. Completing the reading does not approve implementation. | 45 min |
+
+Suggested order: ST-F01-01 → 02 → 03 → 04 → 05 → 06; approximately **4.5 hours** for a new reader.
+Revision/section links avoid requiring full Aeron, DataFusion, Tokio or Seastar codebase study.
+Recent hardware-preemption papers are optional context, not required frameworks.
+
+### 5.1 Decisions to approve before coding
+
+| Decision | Recommended proposal | Why the review matters |
+|---|---|---|
+| Scope | Inspection cap plus separately visible preparation cost | A loop counter does not bound seeks, estimates, initialization or allocation. A metadata-budgeted state machine is a larger option. |
+| Unit | One Scan DATA/PAD item or one Indexed posting plus fetched DATA, matching or rejected | Fixes the audited rejection path and avoids byte-budget starvation/double-charge. |
+| API | New explicit budgeted overloads; original signatures remain unlimited | Existing callers, statuses and historical comparisons retain their contract. |
+| Return meaning | State plus reason: no-work, output cap, inspection cap, snapshot completion, tail caught-up or error | Zero output, exhausted budget and completion are different observations. |
+| Zero/absent budget | Zero makes no progress and reports cached status with no-work reason; absence is unlimited | Avoid accidental unlimited work or a false fresh caught-up claim on Tail. Preserve lifetime/error checks. |
+| Progress | Finite-budget calls commit consumed candidates; append matching output before committing it. Legacy/nullopt calls retain old rejecting-posting checkpoint behavior. | Prevent rejecting-prefix livelock without changing unlimited allocation-failure/checkpoint semantics. |
+| Tail composition | One allowance and aggregate per-call counters across range rollover | Replay replacement cannot replenish the cap or erase completed-range work. |
+| State reuse | Logical checkpoints and re-seek initially; no pinning or physical cursor/filter caching | Preserve existing retention and mutation safety. |
+| Defaults | Opt-in only; evaluate a sweep before suggesting a deployment value | Upstream constants are not calibrated defaults for this workload. |
+
+### 5.2 Review exercises with concrete expected outcomes
+
+1. **Two rejects followed by a match.** With inspection budget 1, the first two positive calls can
+   return no delivery, but each preserves processed progress. The third can deliver the match.
+   A fourth must not reread it. Include Indexed and Scan; equal intermediate checkpoints are not required.
+2. **PAD plus a record.** Budget 1 stops after PAD when it is the next traversed Scan item, charging
+   it despite no output. Another positive call reaches DATA.
+3. **Tail rollover.** Spend one of two units completing an old snapshot. A fresh range opened in
+   that same poll has at most one left. Its telemetry includes both ranges. Then use exactly the
+   last unit to complete the old range: later DATA requires `More + InspectionLimit` with fresh
+   opening deferred; no later DATA permits `Done + CaughtUp` using head metadata alone.
+4. **Allocation failure.** If appending a matching result fails, it stays unread; previously committed
+   finite-budget rejects need not be retraversed. Legacy and nullopt calls must instead retain their
+   old visible checkpoint after the same rejected prefix/failing append. Test both paths explicitly.
+5. **Retention between calls.** Yield, publish enough to recycle a consumed block, then resume while
+   unread progress remains retained. Contrast unread expiry, which must fail before dereference.
+   Explain why a stale physical cursor can be unsafe even when a logical resume point is valid.
+6. **Exact exhaustion.** Distinguish known completion from a cap-limited range without an extra
+   inspection. Retain legacy More at exact output boundaries. A zero-budget query makes no fresh
+   capture and does not establish that cached Done means the live Tail is caught up now.
+7. **Setup amplification.** For N candidates, K partitions and allowance B, discuss roughly
+   `K * ceil(N/B)` repeated seeks before output-limit stops. Seeks are binary; Auto estimates also
+   traverse overlapping blocks. Identify what the inspection meter excludes.
+
+### 5.3 Evidence required after implementation approval
+
+Future implementation must satisfy RESEARCH F01-V01–V08: independent accounting, million-record
+nonmatch progress, every boundary/PAD case, one Tail allowance, all kernels/modes, retained-history
+equivalence, expiry/move/lifetime safety, allocation failure and unchanged unlimited behavior.
+Random positive budgets supplement deterministic fixtures. Mutations that charge matches only,
+ignore PAD, reset on rollover or lose rejecting Indexed progress must be killed.
+
+The future performance study should hold inputs and caller schedule constant while varying budgets,
+report complete-call timing and preparation separately, and measure short-reader/publisher service
+delay alongside throughput. Include zero-output polls, large partition counts, Auto block estimates,
+variable record sizes, process repetitions, raw non-ok outcomes and sample counts for tail statistics.
+No responsiveness guarantee or speedup is inferred from the papers. The contract provides
+deterministic inspection limits; the study determines their practical tradeoff.
+
+**Stop point:** this is study material and a reviewable proposal. Production code, API, tests,
+dependencies and historical results are unchanged. Begin F-01 only after user approval.
+
+## 6. Approved implementation follow-through
+
+The user approved F-01 on 2026-10-26. The prior stop point above is the historical
+research boundary. The [implemented API contract](../report/POLL_BUDGET.md),
+[compiled-source freeze](../../results/f01/source-freeze-final.json), and
+[predeclared exact study plan](../../results/f01/study-plan-final.json) now track
+the execution phase separately. No paper's timing result or budget constant is
+adopted as a project default. Final correctness and measurement evidence is
+required before feature closeout.

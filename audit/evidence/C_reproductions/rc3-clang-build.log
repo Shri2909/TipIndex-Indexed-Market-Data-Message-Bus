@@ -1,0 +1,26 @@
+[  5%] Building CXX object CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 11%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 16%] Building CXX object CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[ 27%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[ 27%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 33%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[ 38%] Linking CXX static library libtiplog_ring.a
+[ 38%] Built target tiplog_ring
+[ 44%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[ 50%] Linking CXX static library libtiplog_merge.a
+[ 50%] Built target tiplog_merge
+[ 55%] Linking CXX static library libtiplog_index.a
+[ 55%] Built target tiplog_index
+[ 61%] Linking CXX static library libtiplog_topics_subs.a
+[ 61%] Built target tiplog_topics_subs
+[ 66%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 72%] Linking CXX static library libtiplog_trace.a
+[ 72%] Built target tiplog_trace
+[ 77%] Building CXX object CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o
+[ 83%] Linking CXX static library libtiplog_driver.a
+[ 83%] Built target tiplog_driver
+[ 88%] Linking CXX static library libtiplog_engine.a
+[ 88%] Built target tiplog_engine
+[ 94%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[100%] Linking CXX executable tiplog_sim
+[100%] Built target tiplog_sim

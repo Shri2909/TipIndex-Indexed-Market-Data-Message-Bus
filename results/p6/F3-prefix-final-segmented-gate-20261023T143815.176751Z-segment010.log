@@ -1,0 +1,30 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191239
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x56c27f3cced8, 0x56c27f3cebaf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x56c27f3cebb0,0x56c27f3eb920), 
+INFO:     1455 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1455 min: 1b max: 64773b total: 3798038b rss: 35Mb
+#1024	pulse  cov: 2248 ft: 10435 corp: 640/172Kb exec/s: 341 rss: 396Mb
+#1456	INITED cov: 2250 ft: 11586 corp: 883/2216Kb exec/s: 26 rss: 736Mb
+#1553	REDUCE cov: 2250 ft: 11586 corp: 883/2207Kb lim: 65536 exec/s: 23 rss: 736Mb L: 15755/64773 MS: 2 ChangeByte-EraseBytes-
+#1579	NEW    cov: 2250 ft: 11600 corp: 884/2252Kb lim: 65536 exec/s: 22 rss: 736Mb L: 45115/64773 MS: 1 CopyPart-
+#1766	REDUCE cov: 2250 ft: 11600 corp: 884/2252Kb lim: 65536 exec/s: 24 rss: 736Mb L: 297/64773 MS: 2 ChangeBit-EraseBytes-
+#1962	REDUCE cov: 2250 ft: 11600 corp: 884/2252Kb lim: 65536 exec/s: 22 rss: 736Mb L: 296/64773 MS: 1 EraseBytes-
+#1979	REDUCE cov: 2250 ft: 11600 corp: 884/2251Kb lim: 65536 exec/s: 22 rss: 736Mb L: 2147/64773 MS: 2 InsertByte-EraseBytes-
+#2009	REDUCE cov: 2250 ft: 11600 corp: 884/2251Kb lim: 65536 exec/s: 23 rss: 736Mb L: 432/64773 MS: 5 InsertByte-ChangeASCIIInt-CopyPart-ChangeByte-EraseBytes-
+#2032	REDUCE cov: 2250 ft: 11600 corp: 884/2251Kb lim: 65536 exec/s: 23 rss: 736Mb L: 509/64773 MS: 3 ShuffleBytes-InsertByte-EraseBytes-
+#2048	pulse  cov: 2250 ft: 11600 corp: 884/2251Kb lim: 65536 exec/s: 23 rss: 736Mb
+#2522	REDUCE cov: 2250 ft: 11600 corp: 884/2251Kb lim: 65536 exec/s: 25 rss: 736Mb L: 97/64773 MS: 5 ShuffleBytes-ShuffleBytes-ChangeBit-ChangeBit-EraseBytes-
+#2818	NEW    cov: 2250 ft: 11604 corp: 885/2253Kb lim: 65536 exec/s: 26 rss: 736Mb L: 1495/64773 MS: 1 ChangeBit-
+#2960	REDUCE cov: 2250 ft: 11604 corp: 885/2253Kb lim: 65536 exec/s: 26 rss: 736Mb L: 726/64773 MS: 2 CMP-EraseBytes- DE: "md"-
+#3166	NEW    cov: 2250 ft: 11605 corp: 886/2312Kb lim: 65536 exec/s: 26 rss: 736Mb L: 60594/64773 MS: 1 CopyPart-
+#3171	DONE   cov: 2250 ft: 11605 corp: 886/2312Kb lim: 65536 exec/s: 26 rss: 736Mb
+###### Recommended dictionary. ######
+"md" # Uses: 15
+###### End of recommended dictionary. ######
+Done 3171 runs in 121 second(s)
+stat::number_of_executed_units: 3171
+stat::average_exec_per_sec:     26
+stat::new_units_added:          11
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              736

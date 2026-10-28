@@ -1,0 +1,16 @@
+[
+  {
+    "version": "baseline",
+    "input_bytes": 2615,
+    "repetitions": 250,
+    "seconds": 16.944853240000157,
+    "executions_per_second": 14.753742417187066
+  },
+  {
+    "version": "current",
+    "input_bytes": 2615,
+    "repetitions": 250,
+    "seconds": 2.055735920001098,
+    "executions_per_second": 121.61095088510517
+  }
+]

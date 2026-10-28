@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checks": {
+    "release_tests": true,
+    "release_tests_log_exists": true,
+    "asan_tests": true,
+    "asan_tests_log_exists": true,
+    "M1_functional": true,
+    "M1_functional_log_exists": true,
+    "M2_functional": true,
+    "M2_functional_log_exists": true,
+    "CC2": true,
+    "CC2_review": true,
+    "RC3": true,
+    "RC3_audit": true,
+    "assembly": true,
+    "runner_validation": true,
+    "digest_self_test": true,
+    "auditor_validation": true,
+    "all38_frozen_sources_unchanged": true,
+    "master_unchanged": true,
+    "managed_git_empty_preserved": true
+  },
+  "records": {
+    "release_tests": "release-tests-integration-20261018T155700.707669Z.json",
+    "asan_tests": "sanitizer-tests-integration-20261018T155840.807045Z.json",
+    "M1_functional": "M1-full-pilot-functional-20261018T160201.375404Z.json",
+    "M2_functional": "M2-full-matrix-functional-20261018T160504.287611Z.json",
+    "CC2": "CC2-all-configurations.json",
+    "CC2_review": "CC2-independent-review.json",
+    "RC3": "rc3-summary.json",
+    "RC3_audit": "rc3-integrity.json",
+    "assembly": "assembly-review.json",
+    "runner_validation": "pilot-runner-validation.json",
+    "digest_self_test": "pilot-digest-self-test.json",
+    "auditor_validation": "pilot-auditor-validation.json"
+  },
+  "limits": "Pre-pilot artifact check only. F3, Cachegrind and actual pilot remain pending."
+}

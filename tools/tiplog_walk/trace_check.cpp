@@ -20,6 +20,8 @@ int main(int argc, char** argv) {
     std::cout << "{\"record_count\":" << count << ",\"payload_bytes\":" << payload_bytes
               << ",\"topic_count\":" << reader.dictionary().size()
               << ",\"payload_fnv1a64\":" << payload_fnv1a64 << "}\n";
+    std::cout.flush();
+    if (!std::cout) throw std::runtime_error("failed writing stdout result");
     return 0;
   } catch (const std::exception& error) {
     std::cerr << "tiplog_trace_check: " << error.what() << '\n';

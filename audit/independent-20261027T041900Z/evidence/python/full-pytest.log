@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.0.3, pluggy-1.7.0
+rootdir: /home/abc/Desktop/Jane Street/py
+configfile: pytest.ini
+collected 382 items
+
+py/tests/test_analysis_figures.py ...                                    [  0%]
+py/tests/test_analysis_stats.py .................                        [  5%]
+py/tests/test_audit_remediation.py ..................................... [ 14%]
+.....................................                                    [ 24%]
+py/tests/test_exp_cpp.py ......................................          [ 34%]
+py/tests/test_exp_oracle.py .....                                        [ 35%]
+py/tests/test_exp_protocol.py ...........                                [ 38%]
+py/tests/test_independent_audit.py ..................................... [ 48%]
+                                                                         [ 48%]
+py/tests/test_itch_cli.py ......                                         [ 50%]
+py/tests/test_itch_protocol.py ......................................    [ 59%]
+py/tests/test_itch_routing.py .......                                    [ 61%]
+py/tests/test_layout_analysis.py .....                                   [ 63%]
+py/tests/test_layout_cli.py ...                                          [ 63%]
+py/tests/test_smoke.py .                                                 [ 64%]
+py/tests/test_trace_format.py .................                          [ 68%]
+py/test_build_provenance.py ...................                          [ 73%]
+py/test_experiment_auditor.py .......                                    [ 75%]
+py/test_f01_checker.py ...........................................       [ 86%]
+py/test_f01_fixture.py ...............                                   [ 90%]
+py/test_quiescence.py ...................                                [ 95%]
+py/test_remediation.py .................                                 [100%]
+
+============================= 382 passed in 17.89s =============================

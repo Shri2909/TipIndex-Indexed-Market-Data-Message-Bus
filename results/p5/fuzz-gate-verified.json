@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-19T00:57:56.476713+00:00",
+  "gate": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z.json",
+  "gate_sha256": "5772d697ba3150e108068952eef60d6ca081c24c1757e1ed99d4c8d0b23a9358",
+  "verification_script_sha256": "9866300752bfd162fb6a9c7ee8b22db8d56b6ef637199ad89c7f1583eef03603",
+  "checks": [
+    "terminal status and >=1800 confirmed monotonic seconds",
+    "all exit codes/log hashes/terminal stats and accumulated totals",
+    "binary/runner identity and exact terminal corpus identity",
+    "all38 frozen sources unchanged",
+    "full length range and leak/UB checks preserved",
+    "no crash artifact"
+  ],
+  "monotonic_seconds": 1805.0594934080023,
+  "executions": 104457,
+  "segments": 15,
+  "peak_rss_MiB": 805,
+  "source_files": 38,
+  "corpus_files": 1357,
+  "binary_sha256": "cf050fa28039bd171ef951ea89ca3cd60c1f9a988b961216822637880d92ac6a"
+}

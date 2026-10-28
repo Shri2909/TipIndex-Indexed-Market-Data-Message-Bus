@@ -1,0 +1,1071 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-25T07:52:25.369368+00:00",
+  "checks": [
+    {
+      "check": "frozen-fuzz-source:CMakeLists.txt",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:CMakePresets.json",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/deps.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p1.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p2.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p2_ref.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p3_engine.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p3_fuzz.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p3_ring.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p4_index.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p5_bench.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p5_merge.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/driver/trace_driver.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/driver/trace_driver.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/engine/engine.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/engine/engine.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/index/index.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/index/index.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/merge/kernels.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/merge/kernels.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/ring/ring.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/ring/ring.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/subs/compiled.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/subs/compiled.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/topics/registry.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/topics/registry.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/trace/itch_walker.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/trace/itch_walker.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/trace/reader.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/trace/reader.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:src/tiplog/types.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/fuzz/pressure_fixture.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/fuzz/targets/fuzz_engine_ops.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/fuzz/targets/fuzz_itch_walker.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/fuzz/targets/fuzz_trace_reader.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/ref/oracle_tail.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/ref/scan_oracle.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:tests/ref/scan_oracle.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen-fuzz-source:cmake/p6_bench.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current-final-fuzz-binary",
+      "status": "passed"
+    },
+    {
+      "check": "final-tool:tools/tiplog_bench/main.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "final-tool:results/p6/request-precompile-check.py",
+      "status": "passed"
+    },
+    {
+      "check": "final-tool:build/release/tiplog_bench",
+      "status": "passed"
+    },
+    {
+      "check": "final-tool:build/asan-ubsan/tiplog_bench",
+      "status": "passed"
+    },
+    {
+      "check": "accepted-gate:CC2-all-configurations.json",
+      "status": "passed"
+    },
+    {
+      "check": "accepted-gate:rc3-final-verified.json",
+      "status": "passed"
+    },
+    {
+      "check": "accepted-gate:fuzz-prefix-final-verified.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:CMakeLists.txt",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:CMakePresets.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/deps.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p1.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p2.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p2_ref.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p3_engine.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p3_fuzz.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p3_ring.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p4_index.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p5_bench.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:cmake/p5_merge.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:scripts/check_p6_rc3.py",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/driver/trace_driver.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/driver/trace_driver.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/engine/engine.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/engine/engine.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/index/index.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/index/index.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/merge/kernels.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/merge/kernels.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/ring/ring.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/ring/ring.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/subs/compiled.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/subs/compiled.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/topics/registry.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/topics/registry.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/trace/itch_walker.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/trace/itch_walker.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/trace/reader.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/trace/reader.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:src/tiplog/types.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tests/differential/campaign.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tests/differential/campaign.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tests/ref/oracle_tail.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tests/ref/scan_oracle.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tests/ref/scan_oracle.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tools/tiplog_differential/main.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-current-source:tools/tiplog_sim/main.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/001-basket-success-gcc-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/002-basket-success-gcc-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/003-basket-success-clang-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/004-basket-success-clang-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/005-basket-success-gcc-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/006-basket-success-gcc-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/007-basket-success-clang-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/008-basket-success-clang-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/009-basket-success-gcc-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/010-basket-success-gcc-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/011-basket-success-clang-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/012-basket-success-clang-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/013-basket-success-gcc-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/014-basket-success-gcc-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/015-basket-success-clang-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/016-basket-success-clang-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/017-basket-success-gcc-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/018-basket-success-gcc-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/019-basket-success-clang-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/020-basket-success-clang-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/021-basket-success-gcc-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/022-basket-success-gcc-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/023-basket-success-clang-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/024-basket-success-clang-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/025-basket-success-gcc-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/026-basket-success-gcc-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/027-basket-success-clang-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/028-basket-success-clang-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/029-basket-success-gcc-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/030-basket-success-gcc-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/031-basket-success-clang-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/032-basket-success-clang-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/033-basket-success-gcc-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/034-basket-success-gcc-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/035-basket-success-clang-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/036-basket-success-clang-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/037-basket-expiry-gcc-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/038-basket-expiry-gcc-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/039-basket-expiry-clang-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/040-basket-expiry-clang-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/041-basket-expiry-gcc-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/042-basket-expiry-gcc-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/043-basket-expiry-clang-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/044-basket-expiry-clang-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/045-basket-expiry-gcc-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/046-basket-expiry-gcc-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/047-basket-expiry-clang-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/048-basket-expiry-clang-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/049-basket-expiry-gcc-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/050-basket-expiry-gcc-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/051-basket-expiry-clang-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/052-basket-expiry-clang-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/053-basket-expiry-gcc-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/054-basket-expiry-gcc-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/055-basket-expiry-clang-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/056-basket-expiry-clang-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/057-basket-expiry-gcc-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/058-basket-expiry-gcc-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/059-basket-expiry-clang-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/060-basket-expiry-clang-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/061-basket-expiry-gcc-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/062-basket-expiry-gcc-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/063-basket-expiry-clang-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/064-basket-expiry-clang-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/065-basket-expiry-gcc-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/066-basket-expiry-gcc-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/067-basket-expiry-clang-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/068-basket-expiry-clang-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/069-basket-expiry-gcc-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/070-basket-expiry-gcc-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/071-basket-expiry-clang-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/072-basket-expiry-clang-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/073-wide-success-gcc-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/074-wide-success-gcc-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/075-wide-success-clang-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/076-wide-success-clang-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/077-wide-success-gcc-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/078-wide-success-gcc-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/079-wide-success-clang-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/080-wide-success-clang-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/081-wide-success-gcc-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/082-wide-success-gcc-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/083-wide-success-clang-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/084-wide-success-clang-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/085-wide-success-gcc-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/086-wide-success-gcc-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/087-wide-success-clang-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/088-wide-success-clang-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/089-wide-success-gcc-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/090-wide-success-gcc-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/091-wide-success-clang-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/092-wide-success-clang-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/093-wide-success-gcc-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/094-wide-success-gcc-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/095-wide-success-clang-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/096-wide-success-clang-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/097-wide-success-gcc-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/098-wide-success-gcc-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/099-wide-success-clang-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/100-wide-success-clang-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/101-wide-success-gcc-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/102-wide-success-gcc-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/103-wide-success-clang-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/104-wide-success-clang-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/105-wide-success-gcc-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/106-wide-success-gcc-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/107-wide-success-clang-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/108-wide-success-clang-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/109-wide-expiry-gcc-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/110-wide-expiry-gcc-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/111-wide-expiry-clang-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/112-wide-expiry-clang-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/113-wide-expiry-gcc-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/114-wide-expiry-gcc-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/115-wide-expiry-clang-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/116-wide-expiry-clang-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/117-wide-expiry-gcc-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/118-wide-expiry-gcc-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/119-wide-expiry-clang-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/120-wide-expiry-clang-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/121-wide-expiry-gcc-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/122-wide-expiry-gcc-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/123-wide-expiry-clang-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/124-wide-expiry-clang-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/125-wide-expiry-gcc-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/126-wide-expiry-gcc-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/127-wide-expiry-clang-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/128-wide-expiry-clang-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/129-wide-expiry-gcc-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/130-wide-expiry-gcc-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/131-wide-expiry-clang-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/132-wide-expiry-clang-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/133-wide-expiry-gcc-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/134-wide-expiry-gcc-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/135-wide-expiry-clang-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/136-wide-expiry-clang-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/137-wide-expiry-gcc-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/138-wide-expiry-gcc-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/139-wide-expiry-clang-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/140-wide-expiry-clang-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/141-wide-expiry-gcc-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/142-wide-expiry-gcc-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/143-wide-expiry-clang-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/144-wide-expiry-clang-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/145-synthetic-gcc-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/146-synthetic-gcc-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/147-synthetic-clang-scan-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/148-synthetic-clang-scan-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/149-synthetic-gcc-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/150-synthetic-gcc-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/151-synthetic-clang-indexed-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/152-synthetic-clang-indexed-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/153-synthetic-gcc-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/154-synthetic-gcc-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/155-synthetic-clang-indexed-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/156-synthetic-clang-indexed-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/157-synthetic-gcc-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/158-synthetic-gcc-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/159-synthetic-clang-indexed-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/160-synthetic-clang-indexed-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/161-synthetic-gcc-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/162-synthetic-gcc-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/163-synthetic-clang-indexed-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/164-synthetic-clang-indexed-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/165-synthetic-gcc-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/166-synthetic-gcc-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/167-synthetic-clang-auto-stdpq-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/168-synthetic-clang-auto-stdpq-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/169-synthetic-gcc-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/170-synthetic-gcc-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/171-synthetic-clang-auto-binheap-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/172-synthetic-clang-auto-binheap-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/173-synthetic-gcc-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/174-synthetic-gcc-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/175-synthetic-clang-auto-quad-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/176-synthetic-clang-auto-quad-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/177-synthetic-gcc-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/178-synthetic-gcc-auto-loser-r2.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/179-synthetic-clang-auto-loser-r1.json",
+      "status": "passed"
+    },
+    {
+      "check": "RC3-preserved-child:results/p6/rc3-runs-20261023T143849.079765Z/180-synthetic-clang-auto-loser-r2.json",
+      "status": "passed"
+    }
+  ],
+  "scope": "Current timed-engine/fuzz/tool dependencies unchanged; postprocessing-only corrections do not invalidate accepted long correctness campaigns."
+}

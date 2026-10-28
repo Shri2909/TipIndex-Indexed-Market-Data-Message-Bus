@@ -1,0 +1,25 @@
+Dictionary: 5 entries
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 524629035
+INFO: Loaded 1 modules   (128 inline 8-bit counters): 128 [0x5654a1798200, 0x5654a1798280), 
+INFO: Loaded 1 PC tables (128 PCs): 128 [0x5654a1798280,0x5654a1798a80), 
+INFO:       74 files found in /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/fuzz/corpus-itch_walker
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 74 min: 1b max: 742b total: 9017b rss: 36Mb
+#75	INITED cov: 43 ft: 127 corp: 24/1761b exec/s: 0 rss: 233Mb
+#4096	pulse  cov: 43 ft: 127 corp: 24/1761b lim: 576 exec/s: 2048 rss: 327Mb
+#8192	pulse  cov: 43 ft: 127 corp: 24/1761b lim: 621 exec/s: 1638 rss: 327Mb
+#16384	pulse  cov: 43 ft: 127 corp: 24/1761b lim: 702 exec/s: 1638 rss: 327Mb
+#32768	pulse  cov: 43 ft: 127 corp: 24/1761b lim: 864 exec/s: 1560 rss: 327Mb
+#56686	REDUCE cov: 43 ft: 127 corp: 24/1757b lim: 1096 exec/s: 1532 rss: 327Mb L: 66/540 MS: 1 EraseBytes-
+#65536	pulse  cov: 43 ft: 127 corp: 24/1757b lim: 1176 exec/s: 1560 rss: 327Mb
+#112735	REDUCE cov: 43 ft: 127 corp: 24/1746b lim: 1646 exec/s: 1544 rss: 328Mb L: 71/540 MS: 3 InsertRepeatedBytes-CrossOver-CopyPart-
+#117683	REDUCE cov: 43 ft: 127 corp: 24/1744b lim: 1686 exec/s: 1548 rss: 328Mb L: 69/540 MS: 3 ShuffleBytes-CopyPart-EraseBytes-
+#131072	pulse  cov: 43 ft: 127 corp: 24/1744b lim: 1816 exec/s: 1542 rss: 328Mb
+#190314	REDUCE cov: 43 ft: 127 corp: 24/1732b lim: 2408 exec/s: 1534 rss: 328Mb L: 54/540 MS: 5 CrossOver-CrossOver-ShuffleBytes-CrossOver-CMP- DE: "\001/"-
+#262144	pulse  cov: 43 ft: 127 corp: 24/1732b lim: 3123 exec/s: 1524 rss: 328Mb
+#453724	DONE   cov: 43 ft: 127 corp: 24/1732b lim: 4096 exec/s: 1507 rss: 328Mb
+###### Recommended dictionary. ######
+"\001/" # Uses: 22494
+###### End of recommended dictionary. ######
+Done 453724 runs in 301 second(s)

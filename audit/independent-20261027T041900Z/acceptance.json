@@ -1,0 +1,149 @@
+{
+  "schema": "tiplog-independent-acceptance-v1",
+  "status": "passed",
+  "checked_utc": "2026-10-28T01:30:54.157395+00:00",
+  "source_freeze_sha256": "b63cd3efa96e009c045fa0b854ea8e5d1446172b38a0cd82fb5fdfe877079ec6",
+  "artifact_manifest_sha256": "8b10036f69bf8c8df09bf5333b5f68337350af1f77a0a050d65350c8ae734e60",
+  "input_sets": {
+    "cpp": "4c6b5e59785282d4d936331c1487045b5ffb10ceb07e475db33a321bd585c595",
+    "python": "f74ece85ea654ff4197e0beb2cff862f1e558603dd57e54da56c3dcd2da9163b"
+  },
+  "counts": {
+    "confirmed": 14,
+    "fixed": 14,
+    "verified": 14,
+    "unresolved": 0
+  },
+  "checks": [
+    {
+      "check": "build-and-ctest:debug",
+      "status": "passed",
+      "details": {
+        "tests": 230,
+        "poll_budget": 24,
+        "poll_differential": 1
+      }
+    },
+    {
+      "check": "build-and-ctest:release",
+      "status": "passed",
+      "details": {
+        "tests": 230,
+        "poll_budget": 24,
+        "poll_differential": 1
+      }
+    },
+    {
+      "check": "build-and-ctest:asan-ubsan",
+      "status": "passed",
+      "details": {
+        "tests": 230,
+        "poll_budget": 24,
+        "poll_differential": 1
+      }
+    },
+    {
+      "check": "build-and-ctest:fuzz",
+      "status": "passed",
+      "details": {
+        "tests": 230,
+        "poll_budget": 24,
+        "poll_differential": 1
+      }
+    },
+    {
+      "check": "python",
+      "status": "passed",
+      "details": {
+        "tests": 499
+      }
+    },
+    {
+      "check": "dependencies-and-auditor",
+      "status": "passed",
+      "details": true
+    },
+    {
+      "check": "differential:release",
+      "status": "passed",
+      "details": {
+        "legacy_operations": 90000000,
+        "budget_operations": 10000000
+      }
+    },
+    {
+      "check": "differential:asan-ubsan",
+      "status": "passed",
+      "details": {
+        "legacy_operations": 18000000,
+        "budget_operations": 2000000
+      }
+    },
+    {
+      "check": "matched-build-budget-model",
+      "status": "passed",
+      "details": {
+        "operations": 2000000
+      }
+    },
+    {
+      "check": "four-private-fuzz-corpora",
+      "status": "passed",
+      "details": {
+        "executions": 40000,
+        "historical_files": 6643
+      }
+    },
+    {
+      "check": "layout-exact-cross-checks",
+      "status": "passed",
+      "details": {
+        "instances_per_build": 10000,
+        "byte_identical_historical_results": true
+      }
+    },
+    {
+      "check": "performance-and-independent-fixture-evidence",
+      "status": "passed",
+      "details": {
+        "historical_rows": 2274,
+        "new_rows": 192
+      }
+    },
+    {
+      "check": "performance-follow-up",
+      "status": "passed",
+      "details": {
+        "validated_rows": 160,
+        "fresh_process_pairs": 10
+      }
+    },
+    {
+      "check": "historical-preservation",
+      "status": "passed",
+      "details": {
+        "historical_files": 4262,
+        "p6_raw_files": 5364
+      }
+    },
+    {
+      "check": "findings-and-deliverables",
+      "status": "passed",
+      "details": {
+        "confirmed": 14,
+        "fixed": 14,
+        "verified": 14,
+        "unresolved": 0
+      }
+    },
+    {
+      "check": "current-gate-negative-controls",
+      "status": "passed",
+      "details": {
+        "killed": 2,
+        "focused_checker_tests": 193
+      }
+    }
+  ],
+  "scope": "Local reviewed final-source execution evidence; no universal bug-free, hard-latency or malicious-host attestation claim."
+}

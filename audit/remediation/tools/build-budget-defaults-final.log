@@ -1,0 +1,25 @@
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object CMakeFiles/tiplog_layout.dir/tools/tiplog_layout/main.cpp.o
+[100%] Linking CXX executable tiplog_layout
+[100%] Built target tiplog_layout
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object CMakeFiles/tiplog_layout_runtime.dir/tools/tiplog_layout/runtime_main.cpp.o
+[100%] Linking CXX executable tiplog_layout_runtime
+[100%] Built target tiplog_layout_runtime
+[ 40%] Built target gtest
+[ 60%] Built target tiplog_layout_lib
+[ 80%] Built target gtest_main
+[ 90%] Building CXX object CMakeFiles/tiplog_layout_test.dir/tests/layout/layout_test.cpp.o
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutThreshold_ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:193:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  193 |         if (v != 0) EXPECT_TRUE(cuts[v]);
+      |            ^
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:195:14: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  195 |           if (raw.nodes[child].parent == v) EXPECT_TRUE(cuts[child]);
+      |              ^
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutExact_ForwardParentIdsAndMultipleChildStages_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:326:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  326 |     if (expected.curve[k].feasible)
+      |        ^
+[100%] Linking CXX executable tiplog_layout_test
+[100%] Built target tiplog_layout_test

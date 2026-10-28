@@ -1,0 +1,59 @@
+# Full approved Tier B matrix. File creation does not run measurements.
+version = 1
+seed = 20191230
+trace = "data/traces/itch_20191230_0930_1000_spec.mdt"
+trace_meta = "data/traces/itch_20191230_0930_1000_spec.mdt.meta.json"
+partition_volumes = "results/data/itch_20191230_window_partition_volumes.csv"
+payload_mix = "configs/m2_payload_mix.csv"
+binary = "build/release/tiplog_bench"
+cache_directory = "build/python-oracle/cache"
+anchor_ts = 36000000000000
+repetitions = 10
+warmup_processes = 1
+cache_treatments = ["repeat-warm", "scratch-thrashed"]
+kernels = ["stdpq", "binheap", "quad", "loser"]
+# Scan and all four Indexed arms are required. Auto is a frozen-policy evaluation.
+auto_kernels = ["stdpq", "binheap", "quad", "loser"]
+
+[t1]
+backlogs_seconds = [1, 10, 60, 300]
+ring_bytes = 1073741824
+long_backlog_ring_bytes = 2147483648
+basket_sizes = [10, 100, 1000]
+tape_sizes = [1, 10, 100, 1000]
+block_entries = 1024
+
+[t2]
+readers = [1, 10, 100, 1000]
+backlog_seconds = 10
+# Exact architecture W2 weights, sampled with replacement with the fixed seed.
+workload = "W2"
+
+[t3]
+partitions = [10, 1000, 100000]
+zipf = [0.0, 0.8, 1.2]
+run_lengths = [1, 16, 256]
+records = 1048576
+ring_bytes = 134217728
+block_entries = 256
+# Routine specified grid: k=1, floor(sqrt(P)), P; duplicate k removed.
+breadth = ["one", "sqrt", "all"]
+# One immutable three-event schedule: .01, .09, .90 event probabilities.
+selectivity = [0.01, 0.1, 1.0]
+evaluation_seed = 20191231
+training_partitions = [10, 1000]
+training_zipf = [0.0, 0.8]
+training_run_lengths = [1, 16]
+training_seed = 20191230
+
+[auto]
+# Finite grid predeclared before looking at measurements. Default threshold
+# candidate included; training chooses minimum summed paired CPU, deterministic tie.
+max_partitions_candidates = [0, 1, 4, 16, 64, 256, 1024, 65535]
+max_fraction_candidates = [0.01, 0.05, 0.1, 0.25, 0.5, 1.0]
+
+[t5]
+block_entries = [64, 256, 1024, 4096]
+ring_bytes = 1073741824
+# 09:35, 09:45, 10:00 exclusive anchors from the accepted trace window.
+anchor_ts = [34500000000000, 35100000000000, 36000000000000]

@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/scripts/analyze_p7.py", line 37, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/abc/Desktop/Jane Street/scripts/analyze_p7.py", line 27, in main
+    summary = build(paths,metadata,csv_path=csv_path)
+  File "/home/abc/Desktop/Jane Street/py/tiplog_py/layout/analyze.py", line 617, in build
+    return json_exact(summary)
+  File "/home/abc/Desktop/Jane Street/py/tiplog_py/layout/analyze.py", line 70, in json_exact
+    return {str(key): json_exact(item) for key, item in value.items()}
+                      ~~~~~~~~~~^^^^^^
+  File "/home/abc/Desktop/Jane Street/py/tiplog_py/layout/analyze.py", line 72, in json_exact
+    return [json_exact(item) for item in value]
+            ~~~~~~~~~~^^^^^^
+  File "/home/abc/Desktop/Jane Street/py/tiplog_py/layout/analyze.py", line 70, in json_exact
+    return {str(key): json_exact(item) for key, item in value.items()}
+                      ~~~~~~~~~~^^^^^^
+  File "/home/abc/Desktop/Jane Street/py/tiplog_py/layout/analyze.py", line 70, in json_exact
+    return {str(key): json_exact(item) for key, item in value.items()}
+                      ~~~~~~~~~~^^^^^^
+  File "/home/abc/Desktop/Jane Street/py/tiplog_py/layout/analyze.py", line 68, in json_exact
+    return {"exact": str(value), "value": float(value)}
+                     ~~~^^^^^^^
+  File "/usr/lib/python3.14/fractions.py", line 459, in __str__
+    return '%s/%s' % (self._numerator, self._denominator)
+                      ^^^^^^^^^^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit

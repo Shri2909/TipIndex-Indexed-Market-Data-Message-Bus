@@ -1,0 +1,430 @@
+[
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "scan",
+      "--kernel",
+      "stdpq"
+    ],
+    "id": "release-scan-stdpq",
+    "kernel": "stdpq",
+    "kind": "differential",
+    "mode": "scan",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "stdpq"
+    ],
+    "id": "release-indexed-stdpq",
+    "kernel": "stdpq",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "binheap"
+    ],
+    "id": "release-indexed-binheap",
+    "kernel": "binheap",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "quad"
+    ],
+    "id": "release-indexed-quad",
+    "kernel": "quad",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "loser"
+    ],
+    "id": "release-indexed-loser",
+    "kernel": "loser",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "stdpq"
+    ],
+    "id": "release-auto-stdpq",
+    "kernel": "stdpq",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "binheap"
+    ],
+    "id": "release-auto-binheap",
+    "kernel": "binheap",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "quad"
+    ],
+    "id": "release-auto-quad",
+    "kernel": "quad",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "1000",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "loser"
+    ],
+    "id": "release-auto-loser",
+    "kernel": "loser",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "release",
+    "seeds": 1000
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "scan",
+      "--kernel",
+      "stdpq"
+    ],
+    "id": "asan-ubsan-scan-stdpq",
+    "kernel": "stdpq",
+    "kind": "differential",
+    "mode": "scan",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "stdpq"
+    ],
+    "id": "asan-ubsan-indexed-stdpq",
+    "kernel": "stdpq",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "binheap"
+    ],
+    "id": "asan-ubsan-indexed-binheap",
+    "kernel": "binheap",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "quad"
+    ],
+    "id": "asan-ubsan-indexed-quad",
+    "kernel": "quad",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "indexed",
+      "--kernel",
+      "loser"
+    ],
+    "id": "asan-ubsan-indexed-loser",
+    "kernel": "loser",
+    "kind": "differential",
+    "mode": "indexed",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "stdpq"
+    ],
+    "id": "asan-ubsan-auto-stdpq",
+    "kernel": "stdpq",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "binheap"
+    ],
+    "id": "asan-ubsan-auto-binheap",
+    "kernel": "binheap",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "quad"
+    ],
+    "id": "asan-ubsan-auto-quad",
+    "kernel": "quad",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+      "--seed-base",
+      "1",
+      "--seeds",
+      "200",
+      "--operations",
+      "10000",
+      "--mode",
+      "auto",
+      "--kernel",
+      "loser"
+    ],
+    "id": "asan-ubsan-auto-loser",
+    "kernel": "loser",
+    "kind": "differential",
+    "mode": "auto",
+    "preset": "asan-ubsan",
+    "seeds": 200
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_trace_reader",
+      "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_trace_reader-corpus",
+      "-runs=10000",
+      "-seed=1",
+      "-max_len=65536",
+      "-detect_leaks=1",
+      "-print_final_stats=1",
+      "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_trace_reader-artifacts/"
+    ],
+    "environment": {},
+    "id": "fuzz_trace_reader",
+    "kind": "fuzz",
+    "seed_corpus_source": "tests/fuzz/corpus/trace_reader"
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_itch_walker",
+      "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_itch_walker-corpus",
+      "-runs=10000",
+      "-seed=1",
+      "-max_len=65536",
+      "-detect_leaks=1",
+      "-print_final_stats=1",
+      "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_itch_walker-artifacts/"
+    ],
+    "environment": {},
+    "id": "fuzz_itch_walker",
+    "kind": "fuzz",
+    "seed_corpus_source": "tests/fuzz/corpus/itch_walker"
+  },
+  {
+    "command": [
+      "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_engine_ops",
+      "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_engine_ops-corpus",
+      "-runs=10000",
+      "-seed=1",
+      "-max_len=65536",
+      "-detect_leaks=1",
+      "-print_final_stats=1",
+      "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_engine_ops-artifacts/"
+    ],
+    "environment": {
+      "TIPLOG_FUZZ_MODE": "all"
+    },
+    "id": "fuzz_engine_ops",
+    "kind": "fuzz",
+    "seed_corpus_source": "tests/fuzz/corpus/ops_integrated"
+  }
+]

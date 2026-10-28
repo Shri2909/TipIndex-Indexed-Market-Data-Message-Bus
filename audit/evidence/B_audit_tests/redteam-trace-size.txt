@@ -1,0 +1,1 @@
+-rw-rw-r-- 1 abc abc 128284 Oct 26 06:39 /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/redteam/deep.mdt

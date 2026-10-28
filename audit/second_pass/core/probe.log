@@ -1,0 +1,6 @@
+work_budget requested=Scan effective=Scan output_limit=1 output=0 status=1 records_fetched=1000000 entries_visited=0 bytes_inspected=16000000 index_seeks=0
+work_budget requested=Indexed effective=Indexed output_limit=1 output=0 status=1 records_fetched=1000000 entries_visited=1000000 bytes_inspected=16000000 index_seeks=1
+work_budget requested=Auto effective=Scan output_limit=1 output=0 status=1 records_fetched=1000000 entries_visited=0 bytes_inspected=16000000 index_seeks=0
+auto_boundary estimate=1024 actual_selected_postings=1 range_records=4001
+auto_boundary requested=Indexed effective=Indexed output_limit=1 output=1 status=0 records_fetched=1 entries_visited=1 bytes_inspected=16 index_seeks=1
+auto_boundary requested=Auto effective=Scan output_limit=1 output=1 status=0 records_fetched=4001 entries_visited=0 bytes_inspected=64016 index_seeks=0

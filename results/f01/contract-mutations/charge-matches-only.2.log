@@ -1,0 +1,23 @@
+Running main() from /home/abc/Desktop/Jane Street/build/f01/core/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PollBudget
+[ RUN      ] PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:226: Failure
+Expected equality of these values:
+  replay.checkpoint()
+    Which is: (16-byte object <50-C3 00-00 00-00 00-00 00-35 0C-00 00-00 00-00>)
+  (ResumeCheckpoint{processed, processed * 16})
+    Which is: 16-byte object <7F-00 00-00 00-00 00-00 F0-07 00-00 00-00 00-00>
+
+[  FAILED  ] PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress (199 ms)
+[----------] 1 test from PollBudget (199 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (199 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+
+ 1 FAILED TEST

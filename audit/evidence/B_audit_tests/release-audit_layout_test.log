@@ -1,0 +1,20 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from AuditLayout
+[ RUN      ] AuditLayout.MaskDpEqualsEnumOnLargerRationalInstances
+[audit] MASK-DP/ENUM exact-count comparisons=8890
+[       OK ] AuditLayout.MaskDpEqualsEnumOnLargerRationalInstances (1148 ms)
+[ RUN      ] AuditLayout.EvaluatorsAgreeOnRandomLayouts
+[       OK ] AuditLayout.EvaluatorsAgreeOnRandomLayouts (44 ms)
+[ RUN      ] AuditLayout.ThresholdGreedyIsExactForItsProblemAndMonotone
+[       OK ] AuditLayout.ThresholdGreedyIsExactForItsProblemAndMonotone (938 ms)
+[ RUN      ] AuditLayout.KmBisectionEndpoints
+[       OK ] AuditLayout.KmBisectionEndpoints (42 ms)
+[ RUN      ] AuditLayout.GlobalPenaltyOwnBudgetOptimalityAndValidBounds
+[       OK ] AuditLayout.GlobalPenaltyOwnBudgetOptimalityAndValidBounds (32 ms)
+[----------] 5 tests from AuditLayout (2207 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (2207 ms total)
+[  PASSED  ] 5 tests.

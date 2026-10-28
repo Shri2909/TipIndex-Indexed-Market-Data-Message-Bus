@@ -1,0 +1,22 @@
+{
+  "at_utc": "2026-10-19T00:58:20.463885+00:00",
+  "status": "complete",
+  "phase": "P5",
+  "completed": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "release_and_asan_tests": 157,
+  "cc2_record": "results/p5/CC2-full-sequence-20261018T160119.265969Z.json",
+  "f3_record": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z.json",
+  "rc3_record": "results/p5/rc3-summary.json",
+  "pending": [],
+  "continuation": "STOP after P5. Await explicit P6 or other later-phase authorization.",
+  "cc2_result": "results/p5/CC2-all-configurations.json",
+  "f3_verified": "results/p5/fuzz-gate-verified.json",
+  "gate": "results/p5/phase-gate.json",
+  "completed_utc": "2026-10-19T01:12:52.115964+00:00"
+}

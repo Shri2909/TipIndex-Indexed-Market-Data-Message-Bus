@@ -1,0 +1,24 @@
+{
+  "label": "pilot-independent-artifact-audit",
+  "argv": [
+    "taskset",
+    "-c",
+    "7",
+    ".venv/bin/python",
+    "scripts/check_p5_pilot.py",
+    "results/p5/pilot-latest.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261019T010932.546357Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/pilot-independent-artifact-audit-20261019T010932.546357Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 4.108372581000026
+}

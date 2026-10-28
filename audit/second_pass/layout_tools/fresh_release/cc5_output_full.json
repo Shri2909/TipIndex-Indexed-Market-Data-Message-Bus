@@ -1,0 +1,14 @@
+{
+  "name": "cc5_output_full",
+  "argv": [
+    "/tmp/tiplog-second-pass/release/tiplog_layout_cc5",
+    "--instances",
+    "1",
+    "--output",
+    "/dev/full"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.0014202829988789745,
+  "stdout": "{\n  \"schema\": \"tiplog-layout-cc5-v1\",\n  \"status\": \"passed\",\n  \"seed\": 5784666202311753729,\n  \"rng\": \"mt19937_64; per-instance seed xor golden-ratio*(index+1)\",\n  \"requested_instances\": 1,\n  \"completed_instances\": 1,\n  \"maximum_nodes\": 12,\n  \"maximum_classes\": 4,\n  \"exact_count_comparisons\": 1,\n  \"at_most_comparisons\": 1,\n  \"reconstructed_layouts_checked\": 2,\n  \"random_layouts_checked\": 2,\n  \"nodes\": 0,\n  \"zero_volume_nodes\": 0,\n  \"empty_trees\": 1,\n  \"consumer_classes\": 0,\n  \"basket_classes\": 0,\n  \"exact_terms\": 0,\n  \"subtree_terms\": 0,\n  \"above_root_terms\": 0,\n  \"internal_node_terms\": 0,\n  \"rational_instances\": 0,\n  \"zero_coefficient_instances\": 1,\n  \"mismatches\": 0,\n  \"input_fnv1a64\": \"171e591574385d84\",\n  \"result_fnv1a64\": \"a141173f76fd6360\",\n  \"limits\": {\"enum_max_edges\":22,\"dp_max_classes\":16,\"max_states\":10000000,\"max_work\":100000000,\"time_limit_ms\":60000},\n  \"failure_instance_index\": null,\n  \"error\": \"\"\n}\n",
+  "stderr": ""
+}

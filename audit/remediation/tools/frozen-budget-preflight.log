@@ -1,0 +1,12 @@
+{
+  "input_batches": 32,
+  "global_curve_batches": 24,
+  "maxima": {
+    "batch_bytes": 88718316,
+    "aggregate_preparation_work_bound": 120300000,
+    "case_preparation_work_bound": 1004000,
+    "case_membership_upper_bound": 4000,
+    "global_batch_bytes": 2415456,
+    "global_aggregate_entries": 120904
+  }
+}

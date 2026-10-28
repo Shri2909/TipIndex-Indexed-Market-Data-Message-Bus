@@ -1,0 +1,8 @@
+depth=1000 path_bytes=1999 hook=0 intern_s=0.003 compile_s=0.042 heap_bytes=2158064
+depth=1000 path_bytes=1999 hook=1 intern_s=0.004 compile_s=0.059 heap_bytes=2158032
+depth=2000 path_bytes=3999 hook=0 intern_s=0.014 compile_s=0.361 heap_bytes=8318032
+depth=2000 path_bytes=3999 hook=1 intern_s=0.018 compile_s=0.378 heap_bytes=8318016
+depth=4000 path_bytes=7999 hook=0 intern_s=0.043 compile_s=2.699 heap_bytes=32639280
+depth=4000 path_bytes=7999 hook=1 intern_s=0.057 compile_s=2.629 heap_bytes=32639280
+depth=8000 path_bytes=15999 hook=0 intern_s=0.164 compile_s=20.826 heap_bytes=129281344
+depth=8000 path_bytes=15999 hook=1 intern_s=0.216 compile_s=20.925 heap_bytes=129281392

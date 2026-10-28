@@ -1,0 +1,13 @@
+{"stage": "pilot-M1", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/pilot-M1-attempt001.stdout.log"}
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 291, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 241, in main
+    pilot_micro = micro('pilot-M1', 30)
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 230, in micro
+    stage(kind, command, micro_pointer=pointer)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 197, in stage
+    raise RuntimeError('campaign stage failed; evidence preserved: ' + name)
+RuntimeError: campaign stage failed; evidence preserved: pilot-M1

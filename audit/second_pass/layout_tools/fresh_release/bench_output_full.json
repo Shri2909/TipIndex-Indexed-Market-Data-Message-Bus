@@ -1,0 +1,20 @@
+{
+  "name": "bench_output_full",
+  "argv": [
+    "/tmp/tiplog-second-pass/release/tiplog_bench",
+    "--synthetic",
+    "--records",
+    "100",
+    "--partitions",
+    "2",
+    "--ring-bytes",
+    "2048",
+    "--output",
+    "/dev/full",
+    "--memory"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.02588488800029154,
+  "stdout": "",
+  "stderr": ""
+}

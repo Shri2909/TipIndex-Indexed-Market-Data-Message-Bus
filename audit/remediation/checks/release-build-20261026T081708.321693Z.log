@@ -1,0 +1,139 @@
+[  1%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[  2%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[  3%] Building CXX object CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[  4%] Linking CXX static library libtiplog_trace.a
+[  4%] Built target tiplog_trace
+[  4%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[  5%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[  6%] Linking CXX static library libtiplog_topics_subs.a
+[  6%] Built target tiplog_topics_subs
+[  7%] Building CXX object CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o
+[  8%] Linking CXX static library libtiplog_driver.a
+[  8%] Built target tiplog_driver
+[  9%] Building CXX object CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 10%] Linking CXX static library libtiplog_merge.a
+[ 10%] Built target tiplog_merge
+[ 11%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 12%] Linking CXX static library libtiplog_ring.a
+[ 12%] Built target tiplog_ring
+[ 13%] Building CXX object CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[ 14%] Linking CXX static library libtiplog_index.a
+[ 14%] Built target tiplog_index
+[ 15%] Building CXX object CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 16%] Linking CXX static library libtiplog_ref.a
+[ 16%] Built target tiplog_ref
+[ 34%] Built target benchmark
+[ 35%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/model.cpp.o
+[ 36%] Linking CXX static library ../../../lib/libgtest.a
+[ 36%] Built target gtest
+[ 37%] Building CXX object CMakeFiles/tiplog_index_memory.dir/tools/tiplog_index_memory.cpp.o
+[ 38%] Linking CXX executable tiplog_index_memory
+[ 38%] Built target tiplog_index_memory
+[ 40%] Built target benchmark_main
+[ 41%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 42%] Linking CXX static library ../../../lib/libgtest_main.a
+[ 42%] Built target gtest_main
+[ 43%] Building CXX object CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o
+[ 44%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/exact.cpp.o
+[ 45%] Linking CXX executable tiplog_walk
+[ 45%] Built target tiplog_walk
+[ 46%] Building CXX object CMakeFiles/tiplog_trace_check.dir/tools/tiplog_walk/trace_check.cpp.o
+[ 47%] Linking CXX executable tiplog_trace_check
+[ 47%] Built target tiplog_trace_check
+[ 48%] Building CXX object CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o
+[ 49%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/global.cpp.o
+[ 50%] Linking CXX static library libtiplog_layout_lib.a
+[ 50%] Built target tiplog_layout_lib
+[ 51%] Building CXX object CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o
+[ 52%] Linking CXX executable tiplog_trace_test
+[ 52%] Built target tiplog_trace_test
+[ 53%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 54%] Linking CXX static library libtiplog_engine.a
+[ 54%] Built target tiplog_engine
+[ 55%] Building CXX object CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o
+[ 56%] Linking CXX executable tiplog_topics_subs_test
+[ 56%] Built target tiplog_topics_subs_test
+[ 57%] Building CXX object CMakeFiles/tiplog_oracle_tail_test.dir/tests/unit/oracle_tail_test.cpp.o
+[ 58%] Linking CXX executable tiplog_oracle_test
+[ 58%] Built target tiplog_oracle_test
+[ 59%] Building CXX object CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o
+[ 59%] Linking CXX executable tiplog_oracle_tail_test
+[ 59%] Built target tiplog_oracle_tail_test
+[ 60%] Building CXX object CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o
+[ 61%] Linking CXX executable tiplog_driver_test
+[ 61%] Built target tiplog_driver_test
+[ 62%] Building CXX object CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o
+[ 63%] Linking CXX executable tiplog_ring_test
+[ 63%] Built target tiplog_ring_test
+[ 64%] Building CXX object CMakeFiles/tiplog_merge_test.dir/tests/unit/merge_test.cpp.o
+[ 65%] Linking CXX executable tiplog_index_test
+[ 65%] Built target tiplog_index_test
+[ 66%] Building CXX object CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o
+[ 67%] Linking CXX executable tiplog_merge_test
+[ 67%] Built target tiplog_merge_test
+[ 68%] Building CXX object CMakeFiles/tiplog_checker_test.dir/tests/unit/checker_test.cpp.o
+[ 69%] Linking CXX executable tiplog_checker_test
+[ 69%] Built target tiplog_checker_test
+[ 70%] Building CXX object CMakeFiles/tiplog_differential_test.dir/tests/unit/differential_test.cpp.o
+[ 71%] Linking CXX executable merge_bench
+[ 71%] Built target merge_bench
+[ 71%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 72%] Building CXX object CMakeFiles/tiplog_differential_test.dir/tests/differential/campaign.cpp.o
+[ 73%] Linking CXX executable tiplog_differential_test
+[ 73%] Built target tiplog_differential_test
+[ 74%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 75%] Linking CXX executable tiplog_engine_test
+[ 75%] Built target tiplog_engine_test
+[ 76%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+[ 77%] Linking CXX executable tiplog_engine_index_test
+[ 77%] Built target tiplog_engine_index_test
+[ 78%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 79%] Building CXX object CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o
+[ 80%] Linking CXX executable tiplog_engine_merge_test
+[ 80%] Built target tiplog_engine_merge_test
+[ 81%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[ 81%] Linking CXX executable tiplog_differential
+[ 81%] Built target tiplog_differential
+[ 82%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[ 83%] Linking CXX executable publish_bench
+[ 83%] Built target publish_bench
+[ 84%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[ 85%] Linking CXX executable tiplog_bench
+[ 85%] Built target tiplog_bench
+[ 86%] Building CXX object CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o
+[ 87%] Linking CXX executable tiplog_bench_contract_test
+[ 87%] Built target tiplog_bench_contract_test
+[ 88%] Building CXX object CMakeFiles/tiplog_layout.dir/tools/tiplog_layout/main.cpp.o
+[ 88%] Linking CXX executable index_bench
+[ 88%] Built target index_bench
+[ 89%] Building CXX object CMakeFiles/tiplog_layout_example.dir/tools/tiplog_layout/worked_example.cpp.o
+[ 90%] Linking CXX executable tiplog_layout
+[ 90%] Linking CXX executable tiplog_layout_example
+[ 90%] Built target tiplog_layout
+[ 91%] Building CXX object CMakeFiles/tiplog_layout_runtime.dir/tools/tiplog_layout/runtime_main.cpp.o
+[ 91%] Built target tiplog_layout_example
+[ 92%] Building CXX object CMakeFiles/tiplog_layout_test.dir/tests/layout/layout_test.cpp.o
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutThreshold_ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:193:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  193 |         if (v != 0) EXPECT_TRUE(cuts[v]);
+      |            ^
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:195:14: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  195 |           if (raw.nodes[child].parent == v) EXPECT_TRUE(cuts[child]);
+      |              ^
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutExact_ForwardParentIdsAndMultipleChildStages_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:326:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  326 |     if (expected.curve[k].feasible)
+      |        ^
+[ 93%] Linking CXX executable tiplog_layout_runtime
+[ 93%] Built target tiplog_layout_runtime
+[ 94%] Building CXX object CMakeFiles/tiplog_layout_cc5.dir/tests/layout/layout_cc5.cpp.o
+[ 95%] Linking CXX executable tiplog_layout_cc5
+[ 95%] Built target tiplog_layout_cc5
+[ 96%] Building CXX object CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o
+[ 97%] Linking CXX executable tiplog_layout_test
+[ 98%] Linking CXX executable tiplog_smoke_test
+[ 98%] Built target tiplog_layout_test
+[ 99%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 99%] Built target tiplog_smoke_test
+[100%] Linking CXX executable tiplog_sim
+[100%] Built target tiplog_sim

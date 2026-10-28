@@ -1,0 +1,21 @@
+{
+  "label": "t2-adjusted-report-selftest-final",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/summarize_p6_t2_adjusted.py",
+    "--self-test"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T042015.276071Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/t2-adjusted-report-selftest-final-20261025T042015.276071Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 1.7322437580005499
+}

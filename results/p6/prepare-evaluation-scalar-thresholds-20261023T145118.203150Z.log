@@ -1,0 +1,320 @@
+{"preparing": "real-C1073741824-B1024", "index": 0, "total": 41}
+{"preparing": "real-C2147483648-B1024", "index": 1, "total": 41}
+{"preparing": "synth-P10-Z0.0-L1-S20191231", "index": 2, "total": 41}
+{"preparing": "synth-P10-Z0.0-L16-S20191231", "index": 3, "total": 41}
+{"preparing": "synth-P10-Z0.0-L256-S20191231", "index": 4, "total": 41}
+{"preparing": "synth-P10-Z0.8-L1-S20191231", "index": 5, "total": 41}
+{"preparing": "synth-P10-Z0.8-L16-S20191231", "index": 6, "total": 41}
+{"preparing": "synth-P10-Z0.8-L256-S20191231", "index": 7, "total": 41}
+{"preparing": "synth-P10-Z1.2-L1-S20191231", "index": 8, "total": 41}
+{"preparing": "synth-P10-Z1.2-L16-S20191231", "index": 9, "total": 41}
+{"preparing": "synth-P10-Z1.2-L256-S20191231", "index": 10, "total": 41}
+{"preparing": "synth-P1000-Z0.0-L1-S20191231", "index": 11, "total": 41}
+{"preparing": "synth-P1000-Z0.0-L16-S20191231", "index": 12, "total": 41}
+{"preparing": "synth-P1000-Z0.0-L256-S20191231", "index": 13, "total": 41}
+{"preparing": "synth-P1000-Z0.8-L1-S20191231", "index": 14, "total": 41}
+{"preparing": "synth-P1000-Z0.8-L16-S20191231", "index": 15, "total": 41}
+{"preparing": "synth-P1000-Z0.8-L256-S20191231", "index": 16, "total": 41}
+{"preparing": "synth-P1000-Z1.2-L1-S20191231", "index": 17, "total": 41}
+{"preparing": "synth-P1000-Z1.2-L16-S20191231", "index": 18, "total": 41}
+{"preparing": "synth-P1000-Z1.2-L256-S20191231", "index": 19, "total": 41}
+{"preparing": "synth-P100000-Z0.0-L1-S20191231", "index": 20, "total": 41}
+{"preparing": "synth-P100000-Z0.0-L16-S20191231", "index": 21, "total": 41}
+{"preparing": "synth-P100000-Z0.0-L256-S20191231", "index": 22, "total": 41}
+{"preparing": "synth-P100000-Z0.8-L1-S20191231", "index": 23, "total": 41}
+{"preparing": "synth-P100000-Z0.8-L16-S20191231", "index": 24, "total": 41}
+{"preparing": "synth-P100000-Z0.8-L256-S20191231", "index": 25, "total": 41}
+{"preparing": "synth-P100000-Z1.2-L1-S20191231", "index": 26, "total": 41}
+{"preparing": "synth-P100000-Z1.2-L16-S20191231", "index": 27, "total": 41}
+{"preparing": "synth-P100000-Z1.2-L256-S20191231", "index": 28, "total": 41}
+{"preparing": "memory-B64-A34500000000000", "index": 29, "total": 41}
+{"preparing": "memory-B64-A35100000000000", "index": 30, "total": 41}
+{"preparing": "memory-B64-A36000000000000", "index": 31, "total": 41}
+{"preparing": "memory-B256-A34500000000000", "index": 32, "total": 41}
+{"preparing": "memory-B256-A35100000000000", "index": 33, "total": 41}
+{"preparing": "memory-B256-A36000000000000", "index": 34, "total": 41}
+{"preparing": "memory-B1024-A34500000000000", "index": 35, "total": 41}
+{"preparing": "memory-B1024-A35100000000000", "index": 36, "total": 41}
+{"preparing": "memory-B1024-A36000000000000", "index": 37, "total": 41}
+{"preparing": "memory-B4096-A34500000000000", "index": 38, "total": 41}
+{"preparing": "memory-B4096-A35100000000000", "index": 39, "total": 41}
+{"preparing": "memory-B4096-A36000000000000", "index": 40, "total": 41}
+{
+  "status": "prepared",
+  "suite": "evaluation",
+  "config": "configs/P6/matrix.toml",
+  "config_sha256": "5595d13b437fa44b02473483883b1ec836aa0344950819e13cd1375caa06c905",
+  "workloads": [
+    {
+      "id": "real-C1073741824-B1024",
+      "path": "results/raw/P6/prepared-evaluation/real-C1073741824-B1024.json.gz",
+      "sha256": "18302fc9458988f11559ec60c6b62d663dfc0a02401641288e7ad4764cbe44ae",
+      "requests": 21006
+    },
+    {
+      "id": "real-C2147483648-B1024",
+      "path": "results/raw/P6/prepared-evaluation/real-C2147483648-B1024.json.gz",
+      "sha256": "001259320610e2450e111df856d385c43a9718aeb3dc42de7d50c77cbee67904",
+      "requests": 252
+    },
+    {
+      "id": "synth-P10-Z0.0-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z0.0-L1-S20191231.json.gz",
+      "sha256": "12d6db57f488ceb53da8069d749d17683481b3662d7375e5f2e97f94d4847000",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z0.0-L16-S20191231.json.gz",
+      "sha256": "e72916d8d07c1f358b0b0f57852b5d238921815ba96c6c10b6ccea6c1cff9e93",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z0.0-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z0.0-L256-S20191231.json.gz",
+      "sha256": "e735e1f65ccac2e52bd8a865f01a807c0c11b030933fbae8d5fa73bf4fe4ee14",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z0.8-L1-S20191231.json.gz",
+      "sha256": "84707f72d342f19464ee2793a90dfb9513f45ebddea16324d38d94b04f7502ac",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z0.8-L16-S20191231.json.gz",
+      "sha256": "1516d3597207209c92bcb066fad17a0cc2721577b901d52b31379027f584817f",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z0.8-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z0.8-L256-S20191231.json.gz",
+      "sha256": "f323d9749d7b471e79ca8645dd879bc1108666a657be3b6b88230f2c3ac92e9e",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z1.2-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z1.2-L1-S20191231.json.gz",
+      "sha256": "2a781d68dfc1b1f1162e36b5274c1f799d7a29dee6a7467056ea999fbff5dbeb",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z1.2-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z1.2-L16-S20191231.json.gz",
+      "sha256": "0806e0687f15857986363d3be0b3514cc122d8596ffd7f96cf0e988c7e1fc5ce",
+      "requests": 162
+    },
+    {
+      "id": "synth-P10-Z1.2-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P10-Z1.2-L256-S20191231.json.gz",
+      "sha256": "80d08a831fd64515b27596f466e9d5cee665ff73559a8e1e69596b3df866b495",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z0.0-L1-S20191231.json.gz",
+      "sha256": "d75a0499f178c18006ed5cf5775470a5f1982c14b9d9e74c6651217afa1c4b8b",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z0.0-L16-S20191231.json.gz",
+      "sha256": "4532f36cd146772297c6e535b8438a0be2a0913b45829ed75fcc43cd00f5c8b9",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z0.0-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z0.0-L256-S20191231.json.gz",
+      "sha256": "14bc34cf3a035d99d872862694538c0045b9d3469326f627116b1894c31fa93c",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z0.8-L1-S20191231.json.gz",
+      "sha256": "8e3c8eea166b580c8994e42146c3fce439421c42d16235a236745c7c498f2dbb",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z0.8-L16-S20191231.json.gz",
+      "sha256": "02f04c236237e0ac994f4da56ff055d1d9be291de5b9f079ab8d435f17c18163",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z0.8-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z0.8-L256-S20191231.json.gz",
+      "sha256": "56c17d4cc5b56ff216473322fba9563e04d6b93a40fd4ed0800ae0450c834cf4",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z1.2-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z1.2-L1-S20191231.json.gz",
+      "sha256": "3d124d5be04e3bda6fc1dcbf2d559f62669eb663cb4faaf0d5539aa769598f59",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z1.2-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z1.2-L16-S20191231.json.gz",
+      "sha256": "8b17092e84032fdd95d4521715e6211bc53790e3cc5b83808df12bdec5368878",
+      "requests": 162
+    },
+    {
+      "id": "synth-P1000-Z1.2-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P1000-Z1.2-L256-S20191231.json.gz",
+      "sha256": "e2708c35ec2f03381eb2c20f8eff27d231ba9d84bee96de47813eba026034bbc",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z0.0-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z0.0-L1-S20191231.json.gz",
+      "sha256": "6e5dad4b52f864dcb0dd2963f13cac6e6e2afe172e8ea25af4d63a07986d6034",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z0.0-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z0.0-L16-S20191231.json.gz",
+      "sha256": "f808f7addf8fb3f187649350849176d7c7568a7b98339a3f5cb3befb2151082b",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z0.0-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z0.0-L256-S20191231.json.gz",
+      "sha256": "e27d464366d57d88762de042c93f0f5205136142891dbfb6384b08207cd1d904",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z0.8-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z0.8-L1-S20191231.json.gz",
+      "sha256": "595b469dd1235d09cc86553f97e2eeeadc5737dc5ba2c0edc9ff8b518cd95751",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z0.8-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z0.8-L16-S20191231.json.gz",
+      "sha256": "c9e0a897ad5ce000370d675f54f758e6db33cba76d47f4c3d5141f78ae48e1d2",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z0.8-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z0.8-L256-S20191231.json.gz",
+      "sha256": "46f3d7ac279bcc03bbee7fcc9f56056c092fb637f5efc61613f31772827a875b",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z1.2-L1-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z1.2-L1-S20191231.json.gz",
+      "sha256": "39ffecdb0c7679073ce51fb012bea2a7346f6c417e5fdd9bc4a3f131a89ea79e",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z1.2-L16-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z1.2-L16-S20191231.json.gz",
+      "sha256": "ba75e7879cd9d50c66400da6e0f1c3c6f1061973d3e5eb2f4e11c506da9cd4ae",
+      "requests": 162
+    },
+    {
+      "id": "synth-P100000-Z1.2-L256-S20191231",
+      "path": "results/raw/P6/prepared-evaluation/synth-P100000-Z1.2-L256-S20191231.json.gz",
+      "sha256": "fbaf5d319455413c0eca832cc8a7a8292b12a2f976e83503296bf4765127b7ae",
+      "requests": 162
+    },
+    {
+      "id": "memory-B64-A34500000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B64-A34500000000000.json.gz",
+      "sha256": "0e81d7f3141f9e28bb0e02aca8e6d65008e3fec242cfb1481beb407624938e10",
+      "requests": 2
+    },
+    {
+      "id": "memory-B64-A35100000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B64-A35100000000000.json.gz",
+      "sha256": "46ebed3c00254a5a625f4d21a0538b5921cc81e431a07dee659e26bedb9ffbb2",
+      "requests": 2
+    },
+    {
+      "id": "memory-B64-A36000000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B64-A36000000000000.json.gz",
+      "sha256": "43fc44f14745ee66aeb6661aa4d6d21ad28afa6781e69b3c9518f0d2d865bdfd",
+      "requests": 2
+    },
+    {
+      "id": "memory-B256-A34500000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B256-A34500000000000.json.gz",
+      "sha256": "d16600f5f05a002c8a372e8109b8bc2cda85f9930da572248c4dd76932b2b600",
+      "requests": 2
+    },
+    {
+      "id": "memory-B256-A35100000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B256-A35100000000000.json.gz",
+      "sha256": "d70c62bb29ac6a40cfe440f55054de32227eb2010d8360294b00f2a5aa719dea",
+      "requests": 2
+    },
+    {
+      "id": "memory-B256-A36000000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B256-A36000000000000.json.gz",
+      "sha256": "0a4a8df08aaf3781d0d1386ee2774ee609d9e46e4c550b661058570623b8dd86",
+      "requests": 2
+    },
+    {
+      "id": "memory-B1024-A34500000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B1024-A34500000000000.json.gz",
+      "sha256": "c2e6310995a173bdbf0c4ed74e0ca7048da524c85e12e1ddbf0b0dde6a1fa04c",
+      "requests": 2
+    },
+    {
+      "id": "memory-B1024-A35100000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B1024-A35100000000000.json.gz",
+      "sha256": "1c57d257950c6818ebe49cf9c2dd19a5cf260c33b3948508cf7eea8412cfe5e6",
+      "requests": 2
+    },
+    {
+      "id": "memory-B1024-A36000000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B1024-A36000000000000.json.gz",
+      "sha256": "f6755294d6b9a40a64b1a4b199edd66f1e276bb4b1a92a6c04bbbdfec3b7d951",
+      "requests": 2
+    },
+    {
+      "id": "memory-B4096-A34500000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B4096-A34500000000000.json.gz",
+      "sha256": "1104557f56099fd0b0bc55556b133172e3f3753cdcd8fbba7d099b3fa0cd5cb7",
+      "requests": 2
+    },
+    {
+      "id": "memory-B4096-A35100000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B4096-A35100000000000.json.gz",
+      "sha256": "13623587da747e8d7c9f586c5b531a8c72781492057ba44d61f1330233f2aec3",
+      "requests": 2
+    },
+    {
+      "id": "memory-B4096-A36000000000000",
+      "path": "results/raw/P6/prepared-evaluation/memory-B4096-A36000000000000.json.gz",
+      "sha256": "2bf07211146a642c98acecfdb6a32a35824a64b907d2db375fc426ff4089db00",
+      "requests": 2
+    }
+  ],
+  "independent_accelerator": {
+    "argv": [
+      "/usr/bin/cc",
+      "-std=c11",
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "/home/abc/Desktop/Jane Street/py/tiplog_py/exp/hash_bytes.c",
+      "-o",
+      "/home/abc/Desktop/Jane Street/build/python-oracle/libtiplog_oracle_bytes.so"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "compiler_version": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "source": "/home/abc/Desktop/Jane Street/py/tiplog_py/exp/hash_bytes.c",
+    "source_sha256": "7910f385aaac9f4365b150276ed4578e2fb6b08b35e5f78bc973da7b1f611612",
+    "binary": "/home/abc/Desktop/Jane Street/build/python-oracle/libtiplog_oracle_bytes.so",
+    "binary_sha256": "1e75970da2687584545498da6111f98d316229da23a1642ca5262e6dc66da235"
+  },
+  "created_utc": "2026-10-23T14:55:59.405081+00:00",
+  "matrix_choice": "T1 C1GiB all backlogs and C2GiB longest; T3 k=1/sqrt(P)/P and local selectivity .01/.1/1"
+}

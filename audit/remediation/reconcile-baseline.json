@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "seconds": 216.01743231699948,
+  "input": "results/raw/P6/campaign-20261024/evaluation-observations.jsonl",
+  "files": {
+    "tip-summary.json": {
+      "sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb",
+      "frozen_sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb",
+      "matches_frozen": true,
+      "bytes": 84501291
+    },
+    "tip-statistics.csv": {
+      "sha256": "7b728d08490344bef5eb1f0bda25a99450048c9a4a1b8e0ea6030e0880002549",
+      "frozen_sha256": "7b728d08490344bef5eb1f0bda25a99450048c9a4a1b8e0ea6030e0880002549",
+      "matches_frozen": true,
+      "bytes": 176491532
+    },
+    "tip-outcomes.csv": {
+      "sha256": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24",
+      "frozen_sha256": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24",
+      "matches_frozen": true,
+      "bytes": 16963433
+    },
+    "tip-paired-ratios.csv": {
+      "sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866",
+      "frozen_sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866",
+      "matches_frozen": true,
+      "bytes": 14080408
+    }
+  },
+  "noise_flagged_count": 74935,
+  "noise_observed_count": 125700
+}

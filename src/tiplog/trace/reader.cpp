@@ -1,10 +1,12 @@
 #include "tiplog/trace/reader.hpp"
+#include "tiplog/types.hpp"
 
 #include <algorithm>
 #include <array>
 #include <cerrno>
 #include <cstring>
 #include <limits>
+#include <string_view>
 #include <system_error>
 #include <unordered_set>
 #include <utility>
@@ -137,7 +139,9 @@ void Reader::validate() {
   if (count > (header_.dict_length - 4) / 7)
     throw FormatError("dictionary count cannot fit");
   std::size_t offset = dict_start + 4;
-  std::unordered_set<std::string> paths;
+  // Duplicate detection only lives during validation. Views borrow the same
+  // immutable mapped/span bytes as records, avoiding a second owned path copy.
+  std::unordered_set<std::string_view> paths;
   for (std::uint64_t i = 0; i < count; ++i) {
     if (offset > bytes_.size() || bytes_.size() - offset < 6)
       throw FormatError("truncated dictionary entry");
@@ -145,9 +149,15 @@ void Reader::validate() {
     const auto size = static_cast<std::size_t>(little(bytes_, offset + 4, 2));
     offset += 6;
     if (size > bytes_.size() - offset) throw FormatError("truncated dictionary path");
+    // Enforce the same bounded topic contract as Registry, before allocating
+    // a path or allowing the driver to construct its ancestor prefixes.
+    const std::string_view raw_path(reinterpret_cast<const char*>(bytes_.data() + offset), size);
+    if (size > max_topic_path_bytes ||
+        static_cast<std::size_t>(std::count(raw_path.begin(), raw_path.end(), '/')) >= max_topic_depth)
+      throw FormatError("dictionary topic exceeds path byte/depth representation limit");
     std::string path(reinterpret_cast<const char*>(bytes_.data() + offset), size);
     offset += size;
-    if (id == 0 || !canonical_utf8_path(path) || topic_index_.contains(id) || !paths.insert(path).second)
+    if (id == 0 || !canonical_utf8_path(path) || topic_index_.contains(id) || !paths.insert(raw_path).second)
       throw FormatError("invalid or duplicate dictionary id/path");
     topic_index_.emplace(id, topics_.size());
     topics_.push_back({id, std::move(path)});

@@ -1,0 +1,96 @@
+{
+ "png_count": 18,
+ "identical": 18,
+ "rows": {
+  "F01_itch_type_mix.png": {
+   "identical": true,
+   "new": "c1ee6519d9ae68fd",
+   "recorded": "c1ee6519d9ae68fd"
+  },
+  "F02_symbol_volume_skew.png": {
+   "identical": true,
+   "new": "e7fedd90be7300a8",
+   "recorded": "e7fedd90be7300a8"
+  },
+  "F03_family_composition.png": {
+   "identical": true,
+   "new": "da1ce22a26c00761",
+   "recorded": "da1ce22a26c00761"
+  },
+  "F04_runs_and_bursts.png": {
+   "identical": true,
+   "new": "b68e2ad1799bc204",
+   "recorded": "b68e2ad1799bc204"
+  },
+  "F05_tree_and_class_sizes.png": {
+   "identical": true,
+   "new": "a4646a96ba36df7b",
+   "recorded": "a4646a96ba36df7b"
+  },
+  "F06_merge_cost_vs_k.png": {
+   "identical": true,
+   "new": "583b7cecb552a9b0",
+   "recorded": "583b7cecb552a9b0"
+  },
+  "F07_merge_run_length.png": {
+   "identical": true,
+   "new": "5c9e1158b7095ff9",
+   "recorded": "5c9e1158b7095ff9"
+  },
+  "F08_publish_index_cost.png": {
+   "identical": true,
+   "new": "30bfe6515f1dc7b9",
+   "recorded": "30bfe6515f1dc7b9"
+  },
+  "F09_catchup_breadth.png": {
+   "identical": true,
+   "new": "801e5df120094831",
+   "recorded": "801e5df120094831"
+  },
+  "F10_replay_work.png": {
+   "identical": true,
+   "new": "b2c72a9e2de04281",
+   "recorded": "b2c72a9e2de04281"
+  },
+  "F11_many_readers_cpu.png": {
+   "identical": true,
+   "new": "a2753af77ea7d2b4",
+   "recorded": "a2753af77ea7d2b4"
+  },
+  "F12_scan_index_crossover.png": {
+   "identical": true,
+   "new": "bb0ce216decf073f",
+   "recorded": "bb0ce216decf073f"
+  },
+  "F13_index_memory_slack.png": {
+   "identical": true,
+   "new": "c5aea8930dfdb89b",
+   "recorded": "c5aea8930dfdb89b"
+  },
+  "F14_layout_class_amplification.png": {
+   "identical": true,
+   "new": "0c6634d79a7e6626",
+   "recorded": "0c6634d79a7e6626"
+  },
+  "F15_layout_tradeoff.png": {
+   "identical": true,
+   "new": "fd2573708567b7c3",
+   "recorded": "fd2573708567b7c3"
+  },
+  "F16_layout_gaps_scaling.png": {
+   "identical": true,
+   "new": "2785cc44cfc82b61",
+   "recorded": "2785cc44cfc82b61"
+  },
+  "F17_layout_worked_example.png": {
+   "identical": true,
+   "new": "5d4e137f1ba915a5",
+   "recorded": "5d4e137f1ba915a5"
+  },
+  "F18_layout_hierarchy.png": {
+   "identical": true,
+   "new": "1dd64daf7acf600b",
+   "recorded": "1dd64daf7acf600b"
+  }
+ }
+}

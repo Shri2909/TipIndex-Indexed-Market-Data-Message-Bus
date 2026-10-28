@@ -1,0 +1,1 @@
+{"cases": 214668, "class_membership_weights": "exact", "drycount_hash_match": true, "files": 32, "manifest": "results/p7/input-manifest.json", "metadata_bytes": 198500966, "real_cases": 213768, "status": "passed", "synthetic_cases": 900, "tsv_bytes": 321649118}

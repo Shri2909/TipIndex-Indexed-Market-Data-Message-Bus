@@ -1,0 +1,307 @@
+{
+  "schema": "tiplog.f01.study-run.v1",
+  "status": "passed",
+  "started_utc": "2026-10-27T01:35:50.039701+00:00",
+  "binding": {
+    "binary": "build/release/tiplog_poll_bench",
+    "binary_sha256": "fc5b38a7875c696c1380b1155c6c36d6b22beb84ea08c0680900276dbabc7b5e",
+    "source_freeze": "results/f01/source-freeze-final.json",
+    "source_freeze_sha256": "16c52bee96301d574231533842f21dc19f77e6d9c1d955b999304d410c01697d",
+    "cpp_input_set": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "protocol": "results/f01/protocol.json",
+    "protocol_sha256": "8b7fdc06ada75691d5d9ae2dec81638514185654f2277f43fb6f1d2e2de631b6",
+    "plan": "results/f01/study-plan-final.json",
+    "plan_sha256": "1853d3abc40bb67f138f4e7fdb4228cf86dde2db1863e58630fe9ce901723194",
+    "runner": "scripts/run_f01_study.py",
+    "runner_sha256": "68d145b2079894b7a75df48b192418be92c6c2f06e52d14221bd3f04029188da",
+    "build_record": "results/f01/checks/final2-build-release-20261027T012424.459838Z.json",
+    "build_record_sha256": "1f4c6c8847e61b541bd2331591709ae11620c0030119e2e34c38ba6b334f9467"
+  },
+  "records": [
+    "results/f01/studies/final-20261027/demo-1m-process-00.record.json",
+    "results/f01/studies/final-20261027/demo-1m-process-01.record.json",
+    "results/f01/studies/final-20261027/demo-1m-process-02.record.json",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.record.json",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.record.json",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.record.json",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.record.json",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.record.json",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.record.json",
+    "results/f01/studies/final-20261027/setup-stress-process-00.record.json",
+    "results/f01/studies/final-20261027/setup-stress-process-01.record.json",
+    "results/f01/studies/final-20261027/setup-stress-process-02.record.json",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.record.json",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.record.json",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.record.json",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.record.json",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.record.json",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.record.json"
+  ],
+  "original_raw": [
+    "results/f01/studies/final-20261027/demo-1m-process-00.jsonl",
+    "results/f01/studies/final-20261027/demo-1m-process-01.jsonl",
+    "results/f01/studies/final-20261027/demo-1m-process-02.jsonl",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.jsonl",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.jsonl",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.jsonl",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.jsonl",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.jsonl",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.jsonl",
+    "results/f01/studies/final-20261027/setup-stress-process-00.jsonl",
+    "results/f01/studies/final-20261027/setup-stress-process-01.jsonl",
+    "results/f01/studies/final-20261027/setup-stress-process-02.jsonl",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.jsonl",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.jsonl",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.jsonl",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.jsonl",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.jsonl",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.jsonl"
+  ],
+  "raw": [
+    "results/f01/studies/final-20261027/demo-1m-process-00.normalized.jsonl",
+    "results/f01/studies/final-20261027/demo-1m-process-01.normalized.jsonl",
+    "results/f01/studies/final-20261027/demo-1m-process-02.normalized.jsonl",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.normalized.jsonl",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.normalized.jsonl",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.normalized.jsonl",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.normalized.jsonl",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.normalized.jsonl",
+    "results/f01/studies/final-20261027/setup-stress-process-00.normalized.jsonl",
+    "results/f01/studies/final-20261027/setup-stress-process-01.normalized.jsonl",
+    "results/f01/studies/final-20261027/setup-stress-process-02.normalized.jsonl",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.normalized.jsonl",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.normalized.jsonl",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.normalized.jsonl",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.normalized.jsonl",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.normalized.jsonl",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.normalized.jsonl"
+  ],
+  "preflight_records": [
+    "results/f01/studies/final-20261027/resource-boundary.record.json"
+  ],
+  "preflight_raw": [
+    "results/f01/studies/final-20261027/resource-boundary.jsonl"
+  ],
+  "jobs": [
+    {
+      "id": "demo-1m",
+      "status": "passed",
+      "rows": 72,
+      "records": [
+        "results/f01/studies/final-20261027/demo-1m-process-00.record.json",
+        "results/f01/studies/final-20261027/demo-1m-process-01.record.json",
+        "results/f01/studies/final-20261027/demo-1m-process-02.record.json"
+      ],
+      "original_raw": [
+        "results/f01/studies/final-20261027/demo-1m-process-00.jsonl",
+        "results/f01/studies/final-20261027/demo-1m-process-01.jsonl",
+        "results/f01/studies/final-20261027/demo-1m-process-02.jsonl"
+      ]
+    },
+    {
+      "id": "pareto-100k",
+      "status": "passed",
+      "rows": 288,
+      "records": [
+        "results/f01/studies/final-20261027/pareto-100k-process-00.record.json",
+        "results/f01/studies/final-20261027/pareto-100k-process-01.record.json",
+        "results/f01/studies/final-20261027/pareto-100k-process-02.record.json"
+      ],
+      "original_raw": [
+        "results/f01/studies/final-20261027/pareto-100k-process-00.jsonl",
+        "results/f01/studies/final-20261027/pareto-100k-process-01.jsonl",
+        "results/f01/studies/final-20261027/pareto-100k-process-02.jsonl"
+      ]
+    },
+    {
+      "id": "dense-throughput",
+      "status": "passed",
+      "rows": 144,
+      "records": [
+        "results/f01/studies/final-20261027/dense-throughput-process-00.record.json",
+        "results/f01/studies/final-20261027/dense-throughput-process-01.record.json",
+        "results/f01/studies/final-20261027/dense-throughput-process-02.record.json"
+      ],
+      "original_raw": [
+        "results/f01/studies/final-20261027/dense-throughput-process-00.jsonl",
+        "results/f01/studies/final-20261027/dense-throughput-process-01.jsonl",
+        "results/f01/studies/final-20261027/dense-throughput-process-02.jsonl"
+      ]
+    },
+    {
+      "id": "setup-stress",
+      "status": "passed",
+      "rows": 270,
+      "records": [
+        "results/f01/studies/final-20261027/setup-stress-process-00.record.json",
+        "results/f01/studies/final-20261027/setup-stress-process-01.record.json",
+        "results/f01/studies/final-20261027/setup-stress-process-02.record.json"
+      ],
+      "original_raw": [
+        "results/f01/studies/final-20261027/setup-stress-process-00.jsonl",
+        "results/f01/studies/final-20261027/setup-stress-process-01.jsonl",
+        "results/f01/studies/final-20261027/setup-stress-process-02.jsonl"
+      ]
+    },
+    {
+      "id": "record-shapes-kernels",
+      "status": "passed",
+      "rows": 1440,
+      "records": [
+        "results/f01/studies/final-20261027/record-shapes-kernels-process-00.record.json",
+        "results/f01/studies/final-20261027/record-shapes-kernels-process-01.record.json",
+        "results/f01/studies/final-20261027/record-shapes-kernels-process-02.record.json"
+      ],
+      "original_raw": [
+        "results/f01/studies/final-20261027/record-shapes-kernels-process-00.jsonl",
+        "results/f01/studies/final-20261027/record-shapes-kernels-process-01.jsonl",
+        "results/f01/studies/final-20261027/record-shapes-kernels-process-02.jsonl"
+      ]
+    },
+    {
+      "id": "scheduling-control",
+      "status": "passed",
+      "rows": 60,
+      "records": [
+        "results/f01/studies/final-20261027/scheduling-control-process-00.record.json",
+        "results/f01/studies/final-20261027/scheduling-control-process-01.record.json",
+        "results/f01/studies/final-20261027/scheduling-control-process-02.record.json"
+      ],
+      "original_raw": [
+        "results/f01/studies/final-20261027/scheduling-control-process-00.jsonl",
+        "results/f01/studies/final-20261027/scheduling-control-process-01.jsonl",
+        "results/f01/studies/final-20261027/scheduling-control-process-02.jsonl"
+      ]
+    }
+  ],
+  "normalization": "results/f01/studies/final-20261027/normalization.json",
+  "normalizer_record": "results/f01/studies/final-20261027/normalization.record.json",
+  "resource_preflight": {
+    "status": "passed",
+    "expected_nonzero_exit": true,
+    "outcomes": [
+      {
+        "configured_partitions": 8192,
+        "repetition": 0,
+        "status": "ok"
+      },
+      {
+        "configured_partitions": 8192,
+        "repetition": 1,
+        "status": "ok"
+      },
+      {
+        "configured_partitions": 8192,
+        "repetition": 2,
+        "status": "ok"
+      },
+      {
+        "configured_partitions": 12288,
+        "repetition": 0,
+        "status": "infeasible"
+      },
+      {
+        "configured_partitions": 12288,
+        "repetition": 1,
+        "status": "infeasible"
+      },
+      {
+        "configured_partitions": 12288,
+        "repetition": 2,
+        "status": "infeasible"
+      }
+    ]
+  },
+  "summary": "results/f01/studies/final-20261027/summary.json",
+  "contracts": "results/f01/studies/final-20261027/contracts.json",
+  "contract_record": "results/f01/studies/final-20261027/contracts.record.json",
+  "finished_utc": "2026-10-27T01:36:28.760000+00:00",
+  "validated_rows": 2274,
+  "arm_groups": 758,
+  "evidence": {
+    "results/f01/studies/final-20261027/contracts.json": "095f2bee2ffcdd874dd8d4e0710f087a49a3a24ef0450e580f9ac1b15d3d1f46",
+    "results/f01/studies/final-20261027/contracts.log": "e024c21bb324843695bdb231491127002ba622c28dafb8e8a7f421f0844e5746",
+    "results/f01/studies/final-20261027/contracts.record.json": "9825a09f6ba0bde5c2315acf9187a40591f6be5a69b866af36884ae4d774ead7",
+    "results/f01/studies/final-20261027/demo-1m-process-00.jsonl": "dfe4f8a55f479f07e0886e22ae839855d71c4373cc7836731a9fce4c8fb42e53",
+    "results/f01/studies/final-20261027/demo-1m-process-00.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/demo-1m-process-00.normalized.jsonl": "e823ac1d7d0416b8a5ec0d33c53d6845d811118337270807fe3adfe816463d13",
+    "results/f01/studies/final-20261027/demo-1m-process-00.record.json": "440d1b8f01e2b8076341f2f3c546a054818753240072934fc00692d9975c3e53",
+    "results/f01/studies/final-20261027/demo-1m-process-01.jsonl": "c399e15291fab2f45843476c97456db8cfb8db4ce826e173534a40cf34d5e371",
+    "results/f01/studies/final-20261027/demo-1m-process-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/demo-1m-process-01.normalized.jsonl": "b9c73557029139452a4f37fc3645f315be2ac0b41a3dd3c252ecb9ef3875655f",
+    "results/f01/studies/final-20261027/demo-1m-process-01.record.json": "32fdee398a8fe687abdf1dc3ecba37156242b13b9ece100e31b765f3c201cbb5",
+    "results/f01/studies/final-20261027/demo-1m-process-02.jsonl": "1ceb566088af6ac38e7d3bbdec13d1c9d1e1b3ff937a8b64325ebb3468491a7f",
+    "results/f01/studies/final-20261027/demo-1m-process-02.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/demo-1m-process-02.normalized.jsonl": "a85fcd676cc84f0f24e382f42f2d4a968d7b3a95165722ef0e2cef7dc2c462f4",
+    "results/f01/studies/final-20261027/demo-1m-process-02.record.json": "742dd583357f286a8705d9d87da3f53ed860ca5ab67af3a0bd1be11712ec67c1",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.jsonl": "fe73b1f7fc70c15404f1eb15895487c42dab5dd9698d5d208ecdfd40b25a0815",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.normalized.jsonl": "d3c8e92272f325303b9d48d42c744d85bb749c20dcb6d84c43d50eccd840fff1",
+    "results/f01/studies/final-20261027/dense-throughput-process-00.record.json": "2cffa8daa89d07501bf96aed471247d19a89b43c0f9f3a6ac35757f327b3873c",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.jsonl": "3e5e28e9c96e009eb70a1b04ade6e4ddac0781675ef4ca9877bb4beae79c013f",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.normalized.jsonl": "3ace4b0ae87b4abadaaf697b51f19b8127d0cc2ea18873bc8a06d94feb924f58",
+    "results/f01/studies/final-20261027/dense-throughput-process-01.record.json": "d1d10720d2de6e49d9e96a405737bdef3debd4523de72ba144003d20e51f752f",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.jsonl": "dd0a283113ff0a8db9654ad2229758aa04d74b8515fe979d4b1c530349c14316",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.normalized.jsonl": "b2667f5916d7a71e727a32bbf665e6e5c18f56fe44a9013c44795fafdf9d57ed",
+    "results/f01/studies/final-20261027/dense-throughput-process-02.record.json": "7932eebc7221c6032dc3ed766d7b836592bddeed1ac05598b88df8156fb84b57",
+    "results/f01/studies/final-20261027/normalization-plan.json": "0b2fbcbad18e349d1fd857e877c7be5594e3fa0e938429c4a55ae79a448ff1e3",
+    "results/f01/studies/final-20261027/normalization.json": "abf45fc24e9121ed55e1a6f1daf07949242ac08e5f1bc1e2765eb288e1e23bdd",
+    "results/f01/studies/final-20261027/normalization.log": "6f5df26a5f8a5e9cfbe95d2af1400a99efb3431dce4677ff4558fb6ee5be06d8",
+    "results/f01/studies/final-20261027/normalization.record.json": "df994e92f353486198f0e723284ff8fd3fb00fc1e05cf7e94a1497b3e3aef58d",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.jsonl": "f8005fd6b527e8b7ed1ee64efca85d4a29f495eda54185e6dcfab8b2c66f3846",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl": "f1c5c1cf74d03f6cfc1c4df8dd11bb2fc64c30914b2b435927040e867738c7e3",
+    "results/f01/studies/final-20261027/pareto-100k-process-00.record.json": "7300625ecb43fb5c77af8ae2121837f43fd83c50a9175ec6bf1d03569c6b1bfb",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.jsonl": "0f3ec5d1fbe04a4e7c52190072ca48c29cc12834e0ea736c394a8bff936d41bf",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.normalized.jsonl": "6134a121961d564149980542a900930ec993fa0c3c8d822d1cd22e19e925d418",
+    "results/f01/studies/final-20261027/pareto-100k-process-01.record.json": "d2585fffbc183e916a14df1d1cfee659e6bc9ecb6562cd94fb3b649f22660aaa",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.jsonl": "74c349f901df7e66e5109c6d23c31484d137bab5246b323d34c298868ee0a335",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.normalized.jsonl": "0b2d3c318cb5abdd56541a3f4cb0cef026c6659fc37fd0fb86ae7caf4c08f723",
+    "results/f01/studies/final-20261027/pareto-100k-process-02.record.json": "900c2d64f6f7b3108cb2f0464d88e80b67d0860a2dac4946a619c1b6328bb4c9",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.jsonl": "e6b8fe4ef3afae94b24eb4f7f9b680f47144c36dc4cb7e8a00515e6fbeab5f14",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.normalized.jsonl": "2aad21f39e5249eb2231881aca9383d6e3b4d4055b63a78459cf1afb13a6c066",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-00.record.json": "d90fa39265127b8bf9d8aa1c7a4916e68cff54a27c1d31badc1c727e0479da3e",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.jsonl": "d44fe761633ab68a64ba867fbda66fd3b33d37cd251c8d1598506b2e507ec8c1",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.normalized.jsonl": "5e0ec58137f2a56a673219ea5d28ae4275f540b4bfbbc4a9e9422472bb7be898",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-01.record.json": "2d6ef2ad60746f59a024fd00d7bcd16d68c7126adae51a8ad329189982bed3f1",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.jsonl": "e8e061e694ac49435790aa13d1ee162b1499432dd42343d14d361800adfd480f",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.normalized.jsonl": "c3c935091bb7850b08a01792f9bbd6867d6bd5f6cbed2af0a4848baca4250c7e",
+    "results/f01/studies/final-20261027/record-shapes-kernels-process-02.record.json": "a75198b53f08bb1db7eef9faf481871fed921daa4764ffbba6a91e691ded81b5",
+    "results/f01/studies/final-20261027/resource-boundary.jsonl": "12a603c94257e68ca41af17e7ee708911b4dfc4dada215d0685cd24a42db292f",
+    "results/f01/studies/final-20261027/resource-boundary.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/resource-boundary.record.json": "e5512ca362678767e8c9aa8bfbf3c0e9e182755d18d83a06118eccf1f2d02a12",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.jsonl": "7b5b73d748f2817fb1297b50e66d77d7a9e939fa7ff23819d70778e1c5b614db",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.normalized.jsonl": "c9540425441b0f22a75b9b1f448e5d380204f51f72f46062b1de316e39e52133",
+    "results/f01/studies/final-20261027/scheduling-control-process-00.record.json": "be55a6dfcd9064ede048ad9bb8c52009ed90fb581c24d311268edfd52b067c89",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.jsonl": "653ac7dc405350543165a6c8d5607ff092d63d36839a747b6d6a20877c68e299",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.normalized.jsonl": "1f21cfc3fcf8bec2f0c9a4165cbdaddca27bdd7008bb3795ff8d74e6ab7ffaf6",
+    "results/f01/studies/final-20261027/scheduling-control-process-01.record.json": "84ad38563a3c3d87ae57b820427bb44d3681e887277c6fda9310e94947953be9",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.jsonl": "72704d1bcf06f48a92d1b2b9aa57c5c2fdbc8fb5d0952785aa7ae4008228e4a6",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.normalized.jsonl": "bc11fdab9f8bf52d1115b894a9c0c533869e38ff157b532d237c61bbef63a6e0",
+    "results/f01/studies/final-20261027/scheduling-control-process-02.record.json": "62be02d2426fde105db437897886d6704c8d8d85d63185025c4d36e531aa49ef",
+    "results/f01/studies/final-20261027/setup-stress-process-00.jsonl": "3fd615a6e3e8d09f67f4a4089a028a1ebec1982e7431bba441755b2ca8caf51d",
+    "results/f01/studies/final-20261027/setup-stress-process-00.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/setup-stress-process-00.normalized.jsonl": "5d3b93b45217407ee47306d828d27c1a218194128bbdbc406364cd0cd757eb0e",
+    "results/f01/studies/final-20261027/setup-stress-process-00.record.json": "1f63804e6569c02351abec97e96ec9a13f2ca2516296249f1afbffae2a298d04",
+    "results/f01/studies/final-20261027/setup-stress-process-01.jsonl": "c45fa6e19056e786d885352f623c6a6810d2c3bbdb01dd273d96c1338be5e42a",
+    "results/f01/studies/final-20261027/setup-stress-process-01.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/setup-stress-process-01.normalized.jsonl": "e70492e908e003938f1840bf41a2c6cf6346cec9ea550d0497f87c24c34aa47d",
+    "results/f01/studies/final-20261027/setup-stress-process-01.record.json": "965677ca1d116fa89119da44500515523b086b8a611d321a06e08bfd50cc1cad",
+    "results/f01/studies/final-20261027/setup-stress-process-02.jsonl": "e05937c4535280e47e9fc20bc3f238613738bb66faded1448d78d95e534710a2",
+    "results/f01/studies/final-20261027/setup-stress-process-02.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/f01/studies/final-20261027/setup-stress-process-02.normalized.jsonl": "639212e4a409ff49a2e87cf610fb5e74cfb34d4cad6dcbad04ada839c0a984fb",
+    "results/f01/studies/final-20261027/setup-stress-process-02.record.json": "4f968267e1ee46b5b7965877e7fcaf4a6bc76086f07cffba67626f3c56dd2e76",
+    "results/f01/studies/final-20261027/summary.json": "6344babc8dc0b820cd946f6cc3a0a86773c600a0cf7078e37dff79d99ecc8cd2"
+  }
+}

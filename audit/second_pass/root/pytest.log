@@ -1,0 +1,212 @@
+....................ssssssssssssssssssssssssssssssssssssss.............. [ 47%]
+..........................................................FFF........... [ 95%]
+....s..                                                                  [100%]
+=================================== FAILURES ===================================
+__________ test_layout_cli_full_curve_has_separate_comparison_budget ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-4/test_layout_cli_full_curve_has0')
+
+    def test_layout_cli_full_curve_has_separate_comparison_budget(tmp_path):
+        text = ('CASE\tchain\t2\nCOST\t1\t0\t0\n'
+                'NODE\t-\t1\tr\nNODE\t0\t2\tr/a\nNODE\t1\t3\tr/a/b\n'
+                'CLASS\tone\t1\nTERM\tE\tr\nTERM\tE\tr/a/b\n'
+                'CLASS\ttwo\t1\nTERM\tE\tr/a\nEND\n')
+>       result, rows = invoke(tmp_path, text, '--methods', 'enum,dp', '--full-curves')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:16: in invoke
+    result = subprocess.run(command, capture_output=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.14/subprocess.py:1875: in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: None args: ['/tmp/tiplog-second-pass/work/build/release/...>
+args = ['/tmp/tiplog-second-pass/work/build/release/tiplog_layout', '--input', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_f...0/input.tsv', '--output', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_full_curve_has0/output.jsonl', '--methods', ...]
+executable = '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+env = None, restore_signals = True, close_fds = True, p2cread = -1
+p2cwrite = -1, c2pread = 18, c2pwrite = 19, errread = 20, errwrite = 21
+
+    def _posix_spawn(self, args, executable, env, restore_signals, close_fds,
+                     p2cread, p2cwrite,
+                     c2pread, c2pwrite,
+                     errread, errwrite):
+        """Execute program using os.posix_spawn()."""
+        kwargs = {}
+        if restore_signals:
+            # See _Py_RestoreSignals() in Python/pylifecycle.c
+            sigset = []
+            for signame in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                signum = getattr(signal, signame, None)
+                if signum is not None:
+                    sigset.append(signum)
+            kwargs['setsigdef'] = sigset
+    
+        file_actions = []
+        for fd in (p2cwrite, c2pread, errread):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_CLOSE, fd))
+        for fd, fd2 in (
+            (p2cread, 0),
+            (c2pwrite, 1),
+            (errwrite, 2),
+        ):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_DUP2, fd, fd2))
+    
+        if close_fds:
+            file_actions.append((os.POSIX_SPAWN_CLOSEFROM, 3))
+    
+        if file_actions:
+            kwargs['file_actions'] = file_actions
+    
+>       self.pid = os.posix_spawn(executable, args, env, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+
+/usr/lib/python3.14/subprocess.py:1819: FileNotFoundError
+____________ test_layout_cli_invalid_input_and_caps_remain_explicit ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-4/test_layout_cli_invalid_input_0')
+
+    def test_layout_cli_invalid_input_and_caps_remain_explicit(tmp_path):
+>       result, rows = invoke(tmp_path, 'CASE\tx\t1\nCOST\t1/0\t0\t0\nEND\n')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:16: in invoke
+    result = subprocess.run(command, capture_output=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.14/subprocess.py:1875: in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: None args: ['/tmp/tiplog-second-pass/work/build/release/...>
+args = ['/tmp/tiplog-second-pass/work/build/release/tiplog_layout', '--input', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_invalid_input_0/input.tsv', '--output', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_invalid_input_0/output.jsonl']
+executable = '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+env = None, restore_signals = True, close_fds = True, p2cread = -1
+p2cwrite = -1, c2pread = 18, c2pwrite = 19, errread = 20, errwrite = 21
+
+    def _posix_spawn(self, args, executable, env, restore_signals, close_fds,
+                     p2cread, p2cwrite,
+                     c2pread, c2pwrite,
+                     errread, errwrite):
+        """Execute program using os.posix_spawn()."""
+        kwargs = {}
+        if restore_signals:
+            # See _Py_RestoreSignals() in Python/pylifecycle.c
+            sigset = []
+            for signame in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                signum = getattr(signal, signame, None)
+                if signum is not None:
+                    sigset.append(signum)
+            kwargs['setsigdef'] = sigset
+    
+        file_actions = []
+        for fd in (p2cwrite, c2pread, errread):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_CLOSE, fd))
+        for fd, fd2 in (
+            (p2cread, 0),
+            (c2pwrite, 1),
+            (errwrite, 2),
+        ):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_DUP2, fd, fd2))
+    
+        if close_fds:
+            file_actions.append((os.POSIX_SPAWN_CLOSEFROM, 3))
+    
+        if file_actions:
+            kwargs['file_actions'] = file_actions
+    
+>       self.pid = os.posix_spawn(executable, args, env, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+
+/usr/lib/python3.14/subprocess.py:1819: FileNotFoundError
+___________ test_layout_cli_global_unsupported_and_incomplete_curves ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-4/test_layout_cli_global_unsuppo0')
+
+    def test_layout_cli_global_unsupported_and_incomplete_curves(tmp_path):
+        text = 'CURVE\tp\t1\t3\t1\nPOINT\t1\t10\nPOINT\t2\t8\nPOINT\t3\t0\nEND\n'
+>       result, rows = invoke(tmp_path, text, '--multipliers', '5', '--budgets', '2', global_input=True)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:16: in invoke
+    result = subprocess.run(command, capture_output=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.14/subprocess.py:1875: in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: None args: ['/tmp/tiplog-second-pass/work/build/release/...>
+args = ['/tmp/tiplog-second-pass/work/build/release/tiplog_layout', '--global-curves', '/tmp/pytest-of-abc/pytest-4/test_layo...put.tsv', '--output', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_global_unsuppo0/output.jsonl', '--multipliers', ...]
+executable = '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+env = None, restore_signals = True, close_fds = True, p2cread = -1
+p2cwrite = -1, c2pread = 18, c2pwrite = 19, errread = 20, errwrite = 21
+
+    def _posix_spawn(self, args, executable, env, restore_signals, close_fds,
+                     p2cread, p2cwrite,
+                     c2pread, c2pwrite,
+                     errread, errwrite):
+        """Execute program using os.posix_spawn()."""
+        kwargs = {}
+        if restore_signals:
+            # See _Py_RestoreSignals() in Python/pylifecycle.c
+            sigset = []
+            for signame in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                signum = getattr(signal, signame, None)
+                if signum is not None:
+                    sigset.append(signum)
+            kwargs['setsigdef'] = sigset
+    
+        file_actions = []
+        for fd in (p2cwrite, c2pread, errread):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_CLOSE, fd))
+        for fd, fd2 in (
+            (p2cread, 0),
+            (c2pwrite, 1),
+            (errwrite, 2),
+        ):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_DUP2, fd, fd2))
+    
+        if close_fds:
+            file_actions.append((os.POSIX_SPAWN_CLOSEFROM, 3))
+    
+        if file_actions:
+            kwargs['file_actions'] = file_actions
+    
+>       self.pid = os.posix_spawn(executable, args, env, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+
+/usr/lib/python3.14/subprocess.py:1819: FileNotFoundError
+=========================== short test summary info ============================
+FAILED ../../../../tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py::test_layout_cli_full_curve_has_separate_comparison_budget
+FAILED ../../../../tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py::test_layout_cli_invalid_input_and_caps_remain_explicit
+FAILED ../../../../tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py::test_layout_cli_global_unsupported_and_incomplete_curves
+3 failed, 109 passed, 39 skipped in 6.24s

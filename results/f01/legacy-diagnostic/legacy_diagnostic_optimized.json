@@ -1,0 +1,647 @@
+{
+  "scope": "diagnostic, concurrent host, PROCESS_CPUTIME_ID; no deployment performance claim",
+  "rows": [
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.464057643,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 0
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.583169291,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 0
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.393027134,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 0
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.770513665,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 0
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.110647723,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 0
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.130249697,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 0
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.212186652,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 0
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.351753619,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 0
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.06490892,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 0
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.088237716,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 0
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.37533869,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 1
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.466885385,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 1
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 2.08530833,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 1
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.807829504,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 1
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.138590416,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 1
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.117777197,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 1
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.348870565,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 1
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.335201477,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 1
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.089074768,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 1
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.067935607,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 1
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.532723038,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 2
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.53488537,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 2
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.147364736,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 2
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.845995167,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 2
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.120366751,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 2
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.131188034,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 2
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.331642146,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 2
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.24935867,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 2
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.072294406,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 2
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.093775983,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 2
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.453046316,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 3
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.406393946,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 3
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.306303712,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 3
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.417035434,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 3
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.192390062,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 3
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.144344534,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 3
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.2977346,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 3
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.354429677,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 3
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.126745873,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 3
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.094263096,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 3
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.900445765,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 4
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 1.823723672,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 4
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.495373154,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 4
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 1.718930587,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 4
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.14880939,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 4
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.166422376,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 4
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.461097912,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 4
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.508780638,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 4
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.092288488,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 4
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.114479521,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 4
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 2.017337467,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 5
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 2.455960024,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 5
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 3.294868502,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 5
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 3.067493196,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 5
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.20603131,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 5
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.185206068,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 5
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.674393781,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 5
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.488426628,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 5
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.156252688,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 5
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.120305972,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 5
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 2.252046543,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 6
+    },
+    {
+      "scenario": "scan_reject",
+      "cpu_seconds": 2.479925429,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 6
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 2.725376417,
+      "digest": 80,
+      "arm": "baseline",
+      "repetition": 6
+    },
+    {
+      "scenario": "indexed_reject",
+      "cpu_seconds": 2.909856451,
+      "digest": 80,
+      "arm": "optimized",
+      "repetition": 6
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.158836617,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 6
+    },
+    {
+      "scenario": "scan_one",
+      "cpu_seconds": 0.165067271,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 6
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.448632928,
+      "digest": 13700000,
+      "arm": "baseline",
+      "repetition": 6
+    },
+    {
+      "scenario": "indexed_one",
+      "cpu_seconds": 0.58807576,
+      "digest": 13700000,
+      "arm": "optimized",
+      "repetition": 6
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.100419006,
+      "digest": 3000000,
+      "arm": "baseline",
+      "repetition": 6
+    },
+    {
+      "scenario": "terminal",
+      "cpu_seconds": 0.126670504,
+      "digest": 3000000,
+      "arm": "optimized",
+      "repetition": 6
+    }
+  ],
+  "summary": {
+    "indexed_one": {
+      "median_ratio": 1.1034112815501103,
+      "pair_ratios": [
+        1.657755639596029,
+        1.0407787224636842,
+        0.7518907744614581,
+        0.8400385727293372,
+        1.1034112815501103,
+        1.3807473678523523,
+        1.3108172033239611
+      ],
+      "baseline_cpu_seconds": [
+        0.212186652,
+        0.335201477,
+        0.331642146,
+        0.354429677,
+        0.461097912,
+        0.488426628,
+        0.448632928
+      ],
+      "optimized_cpu_seconds": [
+        0.351753619,
+        0.348870565,
+        0.24935867,
+        0.2977346,
+        0.508780638,
+        0.674393781,
+        0.58807576
+      ]
+    },
+    "indexed_reject": {
+      "median_ratio": 1.149499429224072,
+      "pair_ratios": [
+        1.270982898887309,
+        1.1534872759771047,
+        1.6089000376947264,
+        0.9218567727079153,
+        1.149499429224072,
+        1.0741241435503415,
+        1.0676897447447165
+      ],
+      "baseline_cpu_seconds": [
+        1.393027134,
+        1.807829504,
+        1.147364736,
+        1.417035434,
+        1.495373154,
+        3.067493196,
+        2.725376417
+      ],
+      "optimized_cpu_seconds": [
+        1.770513665,
+        2.08530833,
+        1.845995167,
+        1.306303712,
+        1.718930587,
+        3.294868502,
+        2.909856451
+      ]
+    },
+    "scan_one": {
+      "median_ratio": 1.1183593723487475,
+      "pair_ratios": [
+        1.1771565963449604,
+        1.1767168817916425,
+        1.0899025927849462,
+        1.3328531165579156,
+        1.1183593723487475,
+        1.1124436268470426,
+        1.0392268112836978
+      ],
+      "baseline_cpu_seconds": [
+        0.110647723,
+        0.117777197,
+        0.120366751,
+        0.144344534,
+        0.14880939,
+        0.185206068,
+        0.158836617
+      ],
+      "optimized_cpu_seconds": [
+        0.130249697,
+        0.138590416,
+        0.131188034,
+        0.192390062,
+        0.166422376,
+        0.20603131,
+        0.165067271
+      ]
+    },
+    "scan_reject": {
+      "median_ratio": 1.0014107780377735,
+      "pair_ratios": [
+        1.0813572119714687,
+        0.9375911056609239,
+        1.0014107780377735,
+        1.033171623166245,
+        0.9596294225212999,
+        0.8214048466938727,
+        1.1011874673320194
+      ],
+      "baseline_cpu_seconds": [
+        1.464057643,
+        1.466885385,
+        1.532723038,
+        1.406393946,
+        1.900445765,
+        2.455960024,
+        2.252046543
+      ],
+      "optimized_cpu_seconds": [
+        1.583169291,
+        1.37533869,
+        1.53488537,
+        1.453046316,
+        1.823723672,
+        2.017337467,
+        2.479925429
+      ]
+    },
+    "terminal": {
+      "median_ratio": 1.2987941114012196,
+      "pair_ratios": [
+        1.359408167629349,
+        1.3111646739242355,
+        1.297140237932102,
+        1.3445969671948819,
+        1.2404528829207822,
+        1.2987941114012196,
+        1.2614196161232665
+      ],
+      "baseline_cpu_seconds": [
+        0.06490892,
+        0.067935607,
+        0.072294406,
+        0.094263096,
+        0.092288488,
+        0.120305972,
+        0.100419006
+      ],
+      "optimized_cpu_seconds": [
+        0.088237716,
+        0.089074768,
+        0.093775983,
+        0.126745873,
+        0.114479521,
+        0.156252688,
+        0.126670504
+      ]
+    }
+  }
+}

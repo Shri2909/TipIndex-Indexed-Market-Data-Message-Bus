@@ -1,0 +1,60 @@
+[  3%] Building CXX object tiplog/CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[  6%] Building CXX object tiplog/CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 10%] Building CXX object tiplog/CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[ 13%] Building CXX object tiplog/CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 16%] Building CXX object tiplog/CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 20%] Building CXX object tiplog/CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/model.cpp.o
+[ 20%] Linking CXX static library libtiplog_merge.a
+[ 20%] Built target tiplog_merge
+[ 23%] Building CXX object tiplog/CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[ 23%] Linking CXX static library libtiplog_ring.a
+[ 23%] Built target tiplog_ring
+[ 26%] Building CXX object tiplog/CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[ 30%] Linking CXX static library libtiplog_ref.a
+[ 30%] Built target tiplog_ref
+[ 33%] Building CXX object tiplog/CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 36%] Building CXX object tiplog/CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/exact.cpp.o
+[ 40%] Building CXX object tiplog/CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/global.cpp.o
+[ 43%] Linking CXX static library libtiplog_trace.a
+[ 43%] Built target tiplog_trace
+[ 46%] Building CXX object CMakeFiles/audit_trace_test.dir/cpp/audit_trace_test.cpp.o
+[ 50%] Linking CXX static library libtiplog_index.a
+[ 50%] Built target tiplog_index
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_trace_test.cpp:54:39: warning: implicit conversion changes signedness: 'int' to 'size_type' (aka 'unsigned long') [-Wsign-conversion]
+   54 |   for (int i = 0; i < 8; ++i) b.bytes[i] = static_cast<std::byte>(magic[i]);
+      |                               ~       ^
+[ 53%] Linking CXX static library libtiplog_topics_subs.a
+[ 53%] Built target tiplog_topics_subs
+[ 56%] Building CXX object tiplog/CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+1 warning generated.
+[ 60%] Linking CXX executable audit_trace_test
+[ 60%] Built target audit_trace_test
+[ 63%] Linking CXX static library libtiplog_layout_lib.a
+[ 63%] Built target tiplog_layout_lib
+[ 66%] Building CXX object CMakeFiles/audit_layout_test.dir/cpp/audit_layout_test.cpp.o
+[ 70%] Linking CXX static library libtiplog_engine.a
+[ 70%] Built target tiplog_engine
+[ 73%] Building CXX object CMakeFiles/audit_pressure_test.dir/cpp/audit_pressure_test.cpp.o
+[ 76%] Building CXX object CMakeFiles/audit_engine_test.dir/cpp/audit_engine_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_redteam_test.dir/cpp/audit_redteam_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_checker_test.dir/cpp/audit_checker_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_red_spec_test.dir/cpp/audit_red_spec_test.cpp.o
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_redteam_test.cpp:114:37: warning: implicit conversion changes signedness: 'int' to 'size_type' (aka 'unsigned long') [-Wsign-conversion]
+  114 |   for (int i = 0; i < 8; ++i) bytes[i] = static_cast<std::byte>(magic[i]);
+      |                               ~~~~~ ^
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_redteam_test.cpp:116:44: warning: implicit conversion changes signedness: 'int' to 'std::size_t' (aka 'unsigned long') [-Wsign-conversion]
+  116 |     for (int i = 0; i < n; ++i) bytes[at + i] = static_cast<std::byte>((v >> (8 * i)) & 0xff);
+      |                                          ~ ^
+[ 83%] Linking CXX executable audit_red_spec_test
+[ 86%] Linking CXX executable audit_checker_test
+[ 86%] Built target audit_red_spec_test
+[ 86%] Built target audit_checker_test
+2 warnings generated.
+[ 90%] Linking CXX executable audit_redteam_test
+[ 90%] Built target audit_redteam_test
+[ 93%] Linking CXX executable audit_layout_test
+[ 93%] Built target audit_layout_test
+[ 96%] Linking CXX executable audit_engine_test
+[ 96%] Built target audit_engine_test
+[100%] Linking CXX executable audit_pressure_test
+[100%] Built target audit_pressure_test

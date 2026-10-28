@@ -1,0 +1,61 @@
+[  3%] Building CXX object tiplog/CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[  6%] Building CXX object tiplog/CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[  9%] Building CXX object tiplog/CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 12%] Building CXX object tiplog/CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 16%] Building CXX object tiplog/CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 19%] Building CXX object tiplog/CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/model.cpp.o
+[ 22%] Linking CXX static library libtiplog_ring.a
+[ 22%] Built target tiplog_ring
+[ 22%] Building CXX object tiplog/CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o
+[ 25%] Linking CXX static library libtiplog_index.a
+[ 29%] Linking CXX static library libtiplog_ref.a
+[ 29%] Built target tiplog_index
+[ 32%] Building CXX object tiplog/CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o
+[ 35%] Linking CXX static library libtiplog_merge.a
+[ 35%] Built target tiplog_ref
+[ 38%] Building CXX object tiplog/CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 38%] Built target tiplog_merge
+[ 41%] Building CXX object tiplog/CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/exact.cpp.o
+[ 45%] Building CXX object tiplog/CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/global.cpp.o
+[ 48%] Linking CXX static library libtiplog_trace.a
+[ 48%] Built target tiplog_trace
+[ 51%] Building CXX object CMakeFiles/audit_trace_test.dir/cpp/audit_trace_test.cpp.o
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_trace_test.cpp: In function ‘tiplog::trace::{anonymous}::Built tiplog::trace::{anonymous}::build_trace(std::mt19937_64&)’:
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_trace_test.cpp:54:39: warning: conversion to ‘std::vector<std::byte>::size_type’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+   54 |   for (int i = 0; i < 8; ++i) b.bytes[i] = static_cast<std::byte>(magic[i]);
+      |                                       ^
+[ 54%] Linking CXX static library libtiplog_layout_lib.a
+[ 54%] Built target tiplog_layout_lib
+[ 58%] Building CXX object CMakeFiles/audit_layout_test.dir/cpp/audit_layout_test.cpp.o
+[ 61%] Linking CXX static library libtiplog_topics_subs.a
+[ 61%] Built target tiplog_topics_subs
+[ 64%] Building CXX object tiplog/CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 67%] Linking CXX executable audit_trace_test
+[ 67%] Built target audit_trace_test
+[ 70%] Linking CXX static library libtiplog_engine.a
+[ 70%] Built target tiplog_engine
+[ 70%] Building CXX object CMakeFiles/audit_red_spec_test.dir/cpp/audit_red_spec_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_redteam_test.dir/cpp/audit_redteam_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_pressure_test.dir/cpp/audit_pressure_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_engine_test.dir/cpp/audit_engine_test.cpp.o
+[ 80%] Building CXX object CMakeFiles/audit_checker_test.dir/cpp/audit_checker_test.cpp.o
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_redteam_test.cpp: In member function ‘virtual void tiplog::{anonymous}::AuditRedTeam_TraceDictionaryMemoryAmplification_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_redteam_test.cpp:114:37: warning: conversion to ‘std::vector<std::byte>::size_type’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+  114 |   for (int i = 0; i < 8; ++i) bytes[i] = static_cast<std::byte>(magic[i]);
+      |                                     ^
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_redteam_test.cpp: In lambda function:
+/home/abc/Desktop/Jane Street/audit/tests/cpp/audit_redteam_test.cpp:116:44: warning: conversion to ‘std::size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+  116 |     for (int i = 0; i < n; ++i) bytes[at + i] = static_cast<std::byte>((v >> (8 * i)) & 0xff);
+      |                                            ^
+[ 83%] Linking CXX executable audit_layout_test
+[ 83%] Built target audit_layout_test
+[ 87%] Linking CXX executable audit_red_spec_test
+[ 90%] Linking CXX executable audit_checker_test
+[ 90%] Built target audit_red_spec_test
+[ 90%] Built target audit_checker_test
+[ 93%] Linking CXX executable audit_redteam_test
+[ 93%] Built target audit_redteam_test
+[ 96%] Linking CXX executable audit_engine_test
+[ 96%] Built target audit_engine_test
+[100%] Linking CXX executable audit_pressure_test
+[100%] Built target audit_pressure_test

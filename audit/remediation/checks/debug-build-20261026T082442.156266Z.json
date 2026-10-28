@@ -1,0 +1,24 @@
+{
+  "label": "debug-build",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "debug",
+    "--parallel",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:24:42.156649+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/debug-build-20261026T082442.156266Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 56.002370542999984,
+  "log_sha256": "98c4bb9db4a2927f71331aca7eded81d61c5451ec1362a7d2bf0873fa7567aec"
+}

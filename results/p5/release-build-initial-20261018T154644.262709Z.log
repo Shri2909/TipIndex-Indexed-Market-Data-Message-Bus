@@ -1,0 +1,53 @@
+[  3%] Built target tiplog_trace
+[  7%] Built target tiplog_topics_subs
+[ 10%] Built target tiplog_smoke_test
+[ 12%] Building CXX object CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 14%] Built target tiplog_ring
+[ 16%] Built target tiplog_index
+[ 19%] Built target tiplog_ref
+[ 22%] Built target tiplog_ring_test
+[ 24%] Built target tiplog_index_test
+[ 27%] Built target tiplog_index_memory
+[ 53%] Built target benchmark
+[ 55%] Built target tiplog_walk
+[ 58%] Built target tiplog_trace_check
+[ 61%] Built target tiplog_trace_test
+[ 63%] Built target tiplog_topics_subs_test
+[ 66%] Built target tiplog_driver
+[ 68%] Built target tiplog_oracle_test
+[ 71%] Built target benchmark_main
+[ 74%] Built target tiplog_driver_test
+[ 75%] Linking CXX static library libtiplog_merge.a
+[ 75%] Built target tiplog_merge
+[ 76%] Building CXX object CMakeFiles/tiplog_merge_test.dir/tests/unit/merge_test.cpp.o
+[ 77%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 79%] Building CXX object CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o
+[ 80%] Linking CXX static library libtiplog_engine.a
+[ 80%] Built target tiplog_engine
+[ 81%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 83%] Linking CXX executable tiplog_sim
+[ 83%] Built target tiplog_sim
+[ 84%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 85%] Linking CXX executable merge_bench
+[ 85%] Built target merge_bench
+[ 87%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 88%] Linking CXX executable tiplog_merge_test
+[ 88%] Built target tiplog_merge_test
+[ 89%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+/home/abc/Desktop/Jane Street/tests/unit/engine_merge_test.cpp: In member function ‘virtual void tiplog::{anonymous}::EngineMerge_V21FourKernelsAndAutoEqualIndependentOracle_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/unit/engine_merge_test.cpp:78:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+   78 |     if (choice.mode != ReplayMode::Scan)
+      |        ^
+[ 90%] Linking CXX executable tiplog_engine_test
+[ 90%] Built target tiplog_engine_test
+[ 92%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 93%] Linking CXX executable tiplog_engine_index_test
+[ 93%] Built target tiplog_engine_index_test
+[ 94%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[ 96%] Linking CXX executable tiplog_engine_merge_test
+[ 96%] Built target tiplog_engine_merge_test
+[ 97%] Building CXX object CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o
+[ 98%] Linking CXX executable tiplog_differential
+[ 98%] Built target tiplog_differential
+[100%] Linking CXX executable publish_bench
+[100%] Built target publish_bench

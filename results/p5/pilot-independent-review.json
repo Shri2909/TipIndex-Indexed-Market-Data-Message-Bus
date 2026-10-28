@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-19T01:10:59.618065+00:00",
+  "review_command": ".venv/bin/python - (independent standard-library terminal/raw-artifact audit; no benchmark execution)",
+  "session": "results/p5/pilot-latest.json",
+  "session_sha256": "238e9eeb992f7571df75013903f62a1e6e20bce7fe87b17ec2d6224931c116bb",
+  "root_audit_sha256": "386eea00da4810f51c5be1c14c4fec658b3ba865b50761621164632e9d47be7a",
+  "root_audit_checks": 3821,
+  "root_audit_status": "passed",
+  "blocks": [
+    {
+      "label": "M1",
+      "measured_rows": 225,
+      "profiles": 15,
+      "invocations": 275,
+      "settling_seconds": 60.028383397,
+      "all_outcomes_ok": true,
+      "cpu2_boundaries": true,
+      "AC_all_observed": true
+    },
+    {
+      "label": "M2-B256",
+      "measured_rows": 30,
+      "profiles": 2,
+      "invocations": 47,
+      "settling_seconds": 60.033299708,
+      "all_outcomes_ok": true,
+      "cpu2_boundaries": true,
+      "AC_all_observed": true
+    },
+    {
+      "label": "M2-B1024",
+      "measured_rows": 30,
+      "profiles": 2,
+      "invocations": 47,
+      "settling_seconds": 60.041769112,
+      "all_outcomes_ok": true,
+      "cpu2_boundaries": true,
+      "AC_all_observed": true
+    }
+  ],
+  "measured_repetitions": 285,
+  "all_invocations": 369,
+  "source_files_current_identity_verified": 84,
+  "benchmark_binaries_current_identity_verified": 2,
+  "large_input_hashes": "Root3821-check audit reverified all raw input/trace identities; this review inspected its records without duplicate6GiB hashing.",
+  "frequency": {
+    "endpoint_samples": 744,
+    "median_khz": 4162566.0,
+    "flagged_over_10_percent": 128,
+    "all_rows_retained": true
+  },
+  "cachegrind": {
+    "summary_sha256": "c12bba7c23e09bc7dbb86e6c1e08fae7f803e178e18e8aa1361c6275f34c36a5",
+    "status": "passed",
+    "profiles": 15,
+    "outputs_per_profile": 4096,
+    "scope": "Whole reduced process including startup, generation, expected-reference construction, allocations, all15 functional kernel/layout runs and teardown; no hot-loop/kernel-specific hardware attribution",
+    "hardware_counter_claims": false
+  },
+  "limitations": [
+    "P5 limited representative pilot only; full matrices/P6 calibration unrun.",
+    "Frequency endpoint samples vary;128flags retained. No constant-frequency or exclusive-host guarantee.",
+    "GBench random interleave seed unexposed; exact invocation order retained, bulk repetition JSON cannot map calibration invocations exactly.",
+    "Cachegrind counts include process setup, independent reference, allocations, all15 cases and teardown; simulated whole-process counts supply no per-kernel hardware attribution.",
+    "M2 adaptive arms consume differing-length prefixes; root checker verifies each prefix independently."
+  ]
+}

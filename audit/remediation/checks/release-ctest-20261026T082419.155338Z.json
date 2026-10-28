@@ -1,0 +1,24 @@
+{
+  "label": "release-ctest",
+  "argv": [
+    "ctest",
+    "--preset",
+    "release",
+    "--output-on-failure",
+    "--output-junit",
+    "audit/remediation/release.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:24:19.155493+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/release-ctest-20261026T082419.155338Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 5.027734427000041,
+  "log_sha256": "84b6b56cc3003e1511311a11f3785c900b88e949c0829ea14c6d06241e55eb32"
+}

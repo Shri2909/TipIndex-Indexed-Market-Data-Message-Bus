@@ -80,6 +80,8 @@ class Invocation {
     out << ",\"failed\":" << (failed ? "true" : "false")
         << ",\"details\":" << details_json
         << ",\"boundary\":\"whole function including setup; primary hot-loop time is gbench JSON\"}\n";
+    out.flush();
+    out.close();
     if (!out) throw std::runtime_error("cannot save benchmark invocation diagnostics");
   }
  private:

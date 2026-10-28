@@ -1,0 +1,29 @@
+{
+  "M1": {
+    "coefficient_of_variation": 0.018481089848235044,
+    "decision": "retain declared baseline repetitions",
+    "mean": 17.621837877344227,
+    "n": 30,
+    "response_required": false,
+    "sample_stdev": 0.32567076910223014,
+    "threshold": 0.03
+  },
+  "M1_raw": "/home/abc/Desktop/Jane Street/results/raw/P6/pilot-M1/20261024T033553.884469Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/runs.jsonl",
+  "M1_raw_sha256": "0e724d01d1b8c5b0bdde88db7bd845d1d876c744dfe98b4747b1dbe5f36ea0ff",
+  "T1": {
+    "coefficient_of_variation": 0.09873036570089837,
+    "decision": "increase repetitions or fix environment before protocol freeze",
+    "mean": 91481.53333333334,
+    "n": 30,
+    "response_required": true,
+    "sample_stdev": 9032.005240878925,
+    "threshold": 0.05
+  },
+  "T1_raw": "results/raw/P6/campaign-20261024/pilot/runs.jsonl",
+  "T1_raw_sha256": "42f2d154856c57b4b7bd7386643334164ebdb33125b605f91b61dc657e520e8e",
+  "end_to_end_repetitions": 20,
+  "limits": "More repetitions improve uncertainty estimation; low CV does not establish absence of measurement bias.",
+  "micro_repetitions": 15,
+  "rule": "CV above 3% M1 /5% T1 doubles baseline repetitions; all noisy observations retained",
+  "status": "decided"
+}

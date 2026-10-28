@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/index_bench",
+    "--trace",
+    "/tmp/tmplbqtiqg6/tiny.mdt",
+    "--benchmark_filter=^M3-seek/B64$",
+    "--benchmark_min_time=1x",
+    "--benchmark_out=/dev/full"
+  ],
+  "binary_sha256": "e6b956dddd4adf0d4f134790ce5a989e43a5fd5db3feb831ee23c4f9fc706bd0",
+  "returncode": 0,
+  "stdout": "----------------------------------------------------------------------\nBenchmark            Time             CPU   Iterations UserCounters...\n----------------------------------------------------------------------\nM3-seek/B64     251099 ns       250131 ns            1 block_entries=64 input_records=64 items_per_second=16.3754M/s live_entries=64 operations_per_iteration=4.096k requested_reserved_bytes=2.246k {\"profile\":\"M3-seek/B64\",\"seed\":20191230,\"block_entries\":64,\"records\":64,\"input_records\":64,\"diagnostic\":false,\"partition_slots\":2,\"logical_head\":2048,\"seek_queries\":4096,\"operations_per_iteration\":4096,\"trace_path\":\"/tmp/tmplbqtiqg6/tiny.mdt\",\"trace_file_bytes\":2127,\"record_limit\":18446744073709551615,\"input_hash_hex\":\"7ee120e6eed16225\",\"query_hash_hex\":\"57631dace22f191d\",\"expected_hash_hex\":\"fe1eba708ebd9669\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"input_hash_scope\":\"chronological (partition, aligned DATA position) words\",\"query_hash_scope\":\"(partition, lower bound) words in query order\",\"expected_hash_scope\":\"lower_bound result positions in query order, UINT64_MAX for end\"}\n",
+  "stderr": "2026-10-27T18:08:44+05:30\nRunning /home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/index_bench\nRun on (12 X 4400 MHz CPU s)\nCPU Caches:\n  L1 Data 48 KiB (x6)\n  L1 Instruction 32 KiB (x6)\n  L2 Unified 1280 KiB (x6)\n  L3 Unified 12288 KiB (x1)\nLoad Average: 2.65, 2.92, 1.48\n***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.\n***WARNING*** ASLR is enabled, the results may have unreproducible noise in them.\n"
+}

@@ -6,8 +6,8 @@ This file records authorization. It **cannot grant** it. Approval is recorded he
 |---|---|
 | Plan version | **v1.1** (2026-10-17), superseding proposed v1.0 |
 | Approval state | **APPROVED** by the user on 2026-10-17 with the proposed Tier B defaults; approval explicitly does not start implementation |
-| Authorized phase | **P1–P5 jointly authorized** by the user on 2026-10-17; P0–P4 complete, P5 executing. |
-| Workflow step | 4 of 5: execute P1 → P2 → P3 → P4 → P5, passing each gate before automatic continuation; stop after P5 |
+| Authorized phase | **P7 → P8 jointly authorized** by the user on 2026-10-25 ([instruction](../../results/p7/authorization.txt)), with a stop after P8. **P0–P8 complete.** |
+| Workflow step | 5 of 5: **stopped after P8** as instructed. The Tier B core is complete; Tier C and roadmap R1–R10 need a new explicit instruction. |
 | Selected tier | **Tier B**; effort estimates remain provisional and weekly availability is unspecified |
 | Approved defaults | 2019-12-30 Nasdaq data only; no privileged benchmark-setting changes; proposed writable repository setup preserving managed/read-only metadata |
 
@@ -51,7 +51,7 @@ At that approval boundary, P0–P8 remained unstarted and no phase was authorize
 
 ## Next action
 
-Finish P5 acceptance under the joint P1–P5 authorization. P0–P4 gates passed; P5 implementation, release/sanitizer tests and RC3 passed. Complete all-mode CC2, final integrated F3 and isolated M1/M1-touch/M2 pilot, then stop. No P6–P8, Tier C or roadmap work is authorized.
+None within the current authorization: execution stopped after P8. Any further work (Tier C, roadmap R1–R10, Git commit or publication) needs a new explicit instruction.
 
 ## Log
 
@@ -273,3 +273,474 @@ choices independently met its required seed/operation counts. Canonical aggregat
 outputs/outcomes match exactly across modes for each preset; only declared
 mode-specific execution counters and elapsed time are excluded. F3 and isolated
 pilot acceptance remain pending.
+
+
+### P5 integrated F3 terminal acceptance — 2026-10-19 (Asia/Kolkata)
+
+The saved run completed before this continuation. Root [terminal verification](../../results/p5/F3-terminal-verification-20261019T005756.227220Z.json)
+passed: **1,805.0595 confirmed monotonic seconds /104,457 executions /15 exit-0 segments**, peakRSS805MiB.
+[Verification details](../../results/p5/fuzz-gate-verified.json) check final statistics and totals,
+all log/binary/runner hashes, exact1,357-file corpus identity, leak/UB/full-length settings,
+all38 frozen sources unchanged and no crash artifact. The94-file implementation snapshot
+also remains unchanged. No elapsed host suspension is counted as fuzz execution.
+
+P5 remains open for the isolated reduced **simulated Cachegrind** diagnostic,
+M1/M1-touch/M2 pilot and independent post-run audit, final evidence/documentation and gate.
+No additional source fix or repeated test campaign is necessary from these outcomes.
+
+
+## Phase 5 completed gate and authorized stop — 2026-10-19 (Asia/Kolkata)
+
+**P5.1–P5.5 complete; every P5 criterion met.** [Authoritative phase gate](../../results/p5/phase-gate.json),
+[implementation manifest](../../results/p5/implementation-manifest.json), [independent final review](../../results/p5/review.md).
+Earlier live/pending entries are historical and superseded by this gate.
+
+- **Files/tasks:** checked k-cursor packed identities; StdPQ, early-exit BinHeap, aligned Quad and Loser;
+  multi-partition Indexed, explicit **uncalibrated** Auto; Tail re-arming/common checkpoints/expiry;
+  independent Tail oracle, deterministic driver/campaign, M1/M1-touch/M2 harnesses and pilot.
+- **Correctness:**157/157 release and157/157 ASan/UBSan tests; CC2 nine configurations per preset,
+  **90M release+18M sanitizer operations**, exact outputs/outcomes across all modes/kernels, real
+  multicursor execution. RC3:**180 runs/170 exact comparisons** across repeat GCC/Clang success/expiry.
+- **Fuzz:**1805.0595 confirmed monotonic seconds/104457 executions/15 clean segments,
+  all38 frozen sources and exact1357-file corpus verified; no unresolved crash or sanitizer report.
+- **Harness verification:**15 full-size M1/M1-touch cases and60 reduced-capacity M2 profiles
+  (120 on/off arms) passed. Full matrices are exposed; full-matrix timing remains deferred.
+- **Isolated pilot:**all three blocks passed, **285 measured rows/19 cases/369 invocations**,
+ 15 repetitions/case and zero non-ok rows. [Independent3821-check audit](../../results/p5/pilot-audit.json)
+  verifies every adaptive M2 prefix count/digest, M1 independent hashes, CPU2, AC, settling and
+  all source/binary/input/raw identities. [Pilot results and raw links](../../results/p5/pilot-results.md).
+- **Method/limits:**60s monotonic settling before each block, no concurrent project workloads,
+  actual SHA/dirty/flags/environment/order saved. All128 of744 flagged frequency endpoints retained.
+  Fresh per-process ASLR disable succeeded; no system setting changed. Hardware counters remain
+  denied; [reduced whole-process simulated Cachegrind](../../results/p5/cachegrind-summary.json) saved
+  separately. No hot-loop hardware-counter, constant-clock or exclusive-host claim.
+
+[Consolidated P1–P5 evidence and task/file map](../../results/p5/consolidated-evidence.md)
+links every phase gate and source→decision/invariant→task→code→check→executed evidence.
+[P5 merge](../../results/p5/merge-sources.md), [Engine](../../results/p5/engine-sources.md),
+[fuzz/reference](../../results/p5/fuzz-sources.md), [publisher](../../results/p5/publisher-sources.md),
+[pilot method](../../results/p5/pilot-method.md). Original inspected sections/revisions and unavailable
+source limits are preserved; no copied external code or unavailable Aria detail is claimed.
+
+Source snapshot: **aa13c1824ba5a7a3593a0f63c6f455cac851e822**, all94 source files unchanged.
+Pilot records its actual SHA and dirty evidence state; older runs retain their historical metadata.
+Managed read-only `.git` and master prompt remain unchanged; raw market data/traces/real seeds/F2 payload
+logs remain local/ignored. No publication occurred.
+
+**No implementation blocker remains for P1–P5.** Input BinaryFILE terminator absence/incomplete flag,
+clock variation, single-day/window scope, synthetic limited micro cases and uncalibrated Auto remain
+explicit limitations. **Stop here. P6–P8, Tier C and roadmap extensions remain unauthorized.**
+P6 is the next sequential phase available for explicit authorization.
+
+Final [artifact/provenance audit](../../results/p5/final-artifact-checks.json) passed, including all five phase gates, all16 P5 criteria,94 source hashes,38 binary hashes,11 accepted evidence identities,285 per-repetition provenance rows and preserved master/managed metadata. Final document checks also passed. No required P1–P5 task remains.
+
+
+## Joint P6–P8 execution authorization and preflight — 2026-10-19 (Asia/Kolkata)
+
+The user explicitly instructed:
+
+> Execute PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md as my execution instruction.
+> I authorize completing any remaining P5 prerequisites, then P6 → P7 → P8 of approved plan v1.1, Tier B.
+> Stop after P8, the final core phase.
+
+This supersedes the earlier stop-after-P5/separate-start requirements within this
+sequence. Tier C/R1–R10 and external publication/push remain outside authorization.
+Read MASTER/INDEX/PROGRESS and the complete execution prompt, then phase-relevant
+approved requirements. [Read-only preflight](../../results/p6/preflight.json)
+verified all P1–P5 gates passed, all94 accepted source files unchanged, preserved
+master/managed metadata and about13GiB free disk. P5's actual pilot, post-run audit,
+simulated fallback and final gate are complete; the prompt's preparation-time
+pending description is historical. No valid long campaign is restarted.
+
+P6.1 development begins: batched immutable-state C++ experiment processes, actual
+replay work counters, independent Python trace/synthetic outcome+digest reference,
+TOML/append-only experiment records, analysis/paired bootstrap and F06–F13.
+Timing starts only after development, correctness checks, P6.2 pilot response and
+protocol freeze. The complete Tier B matrices and original coverage/repetition
+thresholds remain required; no figure/result placeholder is acceptance evidence.
+
+### P6 continuation status — 2026-10-23 (Asia/Kolkata)
+
+The user requested current status; execution continues under the existing joint
+P6–P8 instruction. P6 remains **in progress**; P7/P8 have not started.
+
+- New replay work counters passed **163/163 release and 163/163 ASan/UBSan tests**.
+- [Instrumented all-mode differential checks](../../results/p6/CC2-all-configurations.json)
+  passed all18 campaigns: **90M release +18M sanitizer operations**, exact
+  canonical output/outcome equality across all nine modes/kernels per preset.
+- [Independently verified instrumented F3](../../results/p6/fuzz-gate-verified.json)
+  passed **1,802.145102438 confirmed monotonic seconds /100,617 executions /15
+  clean segments**, peak816MiB. All39 frozen source files, binary, segment logs
+  and exact1,391-file corpus identities agree; no unresolved crash artifact.
+- C++ experiment/M3, independent Python oracle, TOML runner and statistical/
+  figure pipeline are implemented and undergoing integration checks. Fresh RC3
+  is running against the instrumented core. Real-trace pilot oracle preparation
+  completed; the measurement runner/provenance/recovery audit is in progress.
+- **Unrun:** P6.2 timing pilots/CV response, Auto training/freeze and held-out
+  evaluation, full M1/M1-touch/M2/M3/T1/T2/T3/T5 timing campaigns, actual F06–F13,
+  results report and P6 gate. No timing result or P6 completion is inferred from
+  successful correctness checks. No P7/P8 completion is claimed.
+
+Continuation: finish integration/independent checks and source freeze, establish
+quiescence and fresh environment, execute the prescribed P6 pilot/calibration/
+campaigns, pass P6, then continue through P7 and P8 automatically. Existing raw
+evidence and managed metadata remain preserved.
+
+### P6 final source checks and measurement handoff — 2026-10-24 (Asia/Kolkata)
+
+The user instructed continuation under the same P6→P7→P8 authorization.
+The mandatory100,000-partition T3 functional case exposed quadratic subscription
+normalization/compilation. A semantic-preserving owned prefix-lookup repair is
+implemented with512 independent randomized normalizer comparisons, lexical
+boundary and100,000-term/future-topic regressions. [Traceability and checks](../../results/p6/subscriptions-scaling.md).
+
+- Final core unit suites: **166/166 release and166/166 ASan/UBSan**, with leak
+  checks enabled. Python full integration: **142 passed**; subsequent affected
+  scalar timestamp/dictionary/packed-limit checks: **54 passed**. Earlier180s
+  compiler timeout and interrupted slow oracle preparation remain recorded.
+- [Final CC2](../../results/p6/CC2-all-configurations.json) passed all18
+  campaigns, **90M release +18M sanitizer operations**, exact outputs/outcomes.
+- [Final RC3 independent verification](../../results/p6/rc3-final-verified.json)
+  passed **180 functional children /170 equalities**. The pre-repair run's
+  intentional source-change rejection remains historical evidence.
+- [Final F3 independent verification](../../results/p6/fuzz-prefix-final-verified.json)
+  passed **1802.644941419 confirmed monotonic seconds /39231 executions /15
+  clean segments**, peak801MiB, all39 frozen dependencies and final corpus/log/
+  binary identities checked. Earlier instrumented-only F3 remains preserved.
+- Real-trace oracle preparation now uses cached scalar binary searches over
+  timestamps. The restarted complete matrix prepared in281.24s: **41 workloads /
+  25,656 request rows per evaluation round**, including all27 synthetic P/Zipf/L
+  combinations. Pilot1 workload and training8 workloads are saved separately;
+  all prepared-case hashes matched on continuation.
+- Compact SHA-bound subscription dictionaries preserve exact input strings and
+  shuffled request order while avoiding repeated multi-megabyte TSV fields.
+  All unique subscriptions compile before timing; release/ASan independent tool
+  integration audits passed303 checks each. [Tool ledger](../../results/p6/cpp-sources.md),
+  [Python ledger](../../results/p6/python-sources.md), [micro method](../../results/p6/micro-method.md).
+- Final source checks are prerequisites, **not a passed P6 gate**. P6.2 timing
+  pilots, CV response, Auto calibration/freeze, full measurements, actual figures
+  and results report remain pending. `scripts/run_p6_campaigns.py` orchestrates
+  these stages with saved recovery points and independent result auditing.
+
+Next: finish the runner review, establish truthful quiescence/fresh environment,
+execute isolated pilots/training/full campaigns, then analyze/report and pass
+P6 before starting P7. No new phase permission is needed within this sequence.
+
+### P6 measurement preflight awaiting AC — 2026-10-24 (Asia/Kolkata)
+
+All final correctness/runner checks and independent oracle preparation passed.
+The [isolated campaign command](../../results/p6/isolated-campaigns-20261024T033541.967693Z.json)
+started after verified quiescence but stopped **before any benchmark timing**:
+fresh environment reports `ADP1.online=0`, `ac_online=false`, battery100% and
+`Discharging`. CPU2 affinity/P-core and per-process ASLR probes succeeded.
+VALIDATION §5.1 explicitly requires AC power; battery timing is not accepted.
+
+The failed micro preflight, command/stdout/stderr, full source/input provenance
+and fresh environment JSON are preserved under the local ignored path in
+`results/p6/micro-pilot-M1-latest.json`. Parent campaign:
+`results/raw/P6/campaign-20261024/campaign.json`. No timing observation was
+discarded; no pilot timing observation was produced. The user was asked to
+connect AC power through the asynchronous input control.
+
+**Exact continuation:** verify actual AC online, refresh truthful project
+quiescence and rerun the same `scripts/run_p6_campaigns.py --run` command with
+`--directory results/raw/P6/campaign-20261024 --resume` and the saved quiescence
+record. The saved source/prepared cases remain valid; resume the owned failed
+preflight session, without repeating correctness/fuzz/preparation gates. Then
+complete P6→P7→P8 under the existing authorization. P6 is not complete; P7/P8
+have not started. AC power is the immediate external prerequisite.
+
+### AC restored; pilots accepted and Auto training running — 2026-10-24
+
+AC was subsequently detected online and charging. Fresh host-visible
+[quiescence](../../results/p6/measurement-quiescence-ac.json) passed; the owned
+campaign resumed without repeating correctness/fuzz/input-preparation gates.
+
+Both prescribed30-repetition pilots completed. M1 CPU/output CV was **1.8481%**;
+T1 recovery CPU CV was **9.8730%**. The declared response retains15 micro
+repetitions and raises end-to-end measurements to **20 fresh processes per
+configuration**, plus one saved warm-up. [Pilot response](../../results/p6/pilot-response.json).
+This response does not claim that extra repetitions remove measurement bias.
+
+The first saved-output audit found equivalent relative/absolute metadata paths
+were compared as unequal strings. Only the postprocessing auditor was fixed;
+all31 T1 raw outcomes already matched the independent oracle. Its re-audit
+passed **2218 checks**. Original failed audit/source/provenance snapshots are
+preserved; [compatibility record](../../results/p6/auditor-path-fix/compatibility.json)
+and [independent review](../../results/p6/auditor-path-fix/independent-review.json)
+verify all66 measurement/command/state artifacts unchanged and every other
+source, executable and input unchanged. Current compatibility manifests name
+the original execution identity explicitly; no timing code was relabeled.
+
+The isolated campaign is now running its eight declared training workloads;
+two have completed with zero oracle mismatches. Frozen Auto thresholds and the
+full measurement protocol follow training and its independent audit. Full
+micro and held-out T evaluation remain pending. P6 is not complete; P7/P8 have
+not started. No builds, tests, research or optimizer work run during timing.
+
+### Interruption at M1 k256 and continuation in Claude Code — 2026-10-24 (Asia/Kolkata)
+
+**Training, freeze and first M1 blocks completed.** Training passed: 168
+processes, 14,400 measured query rows, 295,883 independent checks. The frozen
+[Auto policy](../../results/p6/auto-thresholds.json) is `max_partitions=64`,
+`max_fraction=1.0`, selected on training only, with no held-out claim. The
+[protocol freeze](../../results/p6/protocol-freeze.json) was recorded at
+04:40:43 UTC. M1 blocks k1, k2, k4, k8, k16 and k64 passed their audits
+(45 cases × 15 repetitions each).
+
+**Interruption.** The executing Codex session reached its usage limit. Its
+process tree, including the campaign, ended at 06:06:18 UTC during
+`M1-k256-attempt001`. `merge_bench` returned −15 (SIGTERM) and its gbench JSON
+was truncated (JSONDecodeError at character 495,699). The block audit therefore
+failed and the attempt is preserved as failed. The runner has no timeout of its
+own; the signal was external.
+
+**The user moved execution to Claude Code** and instructed: *finish P6, then
+stop* before P7. Pre-resume checks:
+- All 132 campaign-provenance files and 131 M1-session files are unchanged.
+- AC is online.
+- No visible competing project work; no Codex child processes.
+
+**Disk space.** 8.1 GB was free, against an estimated ~6.5 GB of remaining
+writes: roughly 513k evaluation rows at about 6.1 KB each, plus the consolidated
+copy. With the user's explicit approval:
+- The assembled gzip's SHA-256 was re-verified against `data/manifest.json`
+  (`ef03df46…c689`, match).
+- Only the 211 range-download data chunks in
+  `data/raw/12302019.NASDAQ_ITCH50.gz.parts/` were deleted. Together they were
+  exactly 3,524,013,057 B, the size of the assembled file.
+- The 633 `.headers`, `.command.json` and `.log` acquisition evidence files are
+  kept.
+- No frozen campaign input or code path reads the chunks. `fetch.py` uses them
+  only for a fresh ranged download.
+- Free space is now 12 GB. All affected paths are local and ignored.
+
+**Resumed** at 06:41:32 UTC, using the same command with `--resume`, through
+`run_check.py p6 isolated-campaigns-resume-claude`. It was launched with
+`setsid nohup`, so its process session (SID 31900) is independent of any agent
+session. Finished stages were verified, not re-measured. M1 resumed with
+`M1-k256-attempt002`.
+
+Remaining: M1 k256–k16384 and all M1-touch blocks, M2, M3, the held-out
+T1/T2/T3/T5 evaluation with audits, consolidation and F01–F13, then
+`docs/report/results_tip.md`, the claims table and the P6 gate. Stop after the
+P6 gate.
+
+
+### User-requested P6 pause — 2026-10-25 (Asia/Kolkata)
+
+The user asked to stop here and resume tomorrow. Execution is **paused**; no
+benchmark process remains in the verified campaign session31900. Only the owned
+evaluation driver and active benchmark received SIGINT; the parent processes
+saved their actual interrupted exits. This is not a correctness failure or a
+passed phase gate. [Signal/process evidence](../../results/p6/pause-20261025.json).
+
+Saved checkpoint: **34/41 workloads complete, 698/820 measured rounds** plus35
+warm-ups. Both real-data and all27 synthetic workloads are complete. Five
+memory workloads are complete; the sixth (`memory-B256-A36000000000000`) has
+**18/20** measured rounds, last rep17. All committed rounds have zero oracle
+mismatches or measurement-control failures. The active unconfirmed attempt is
+retained and will be repeated with a fresh attempt ID. No raw result was deleted.
+
+Top-level campaign/evaluation state labels and live-state now say paused;
+original JSONs are preserved in the pause snapshots. The evaluation stage's
+actual SIGINT returncode−2 and wrapper exit1 remain recorded. Frozen benchmark
+sources, binaries, inputs, Auto policy and protocol have not been edited.
+
+**Continuation after the user's resume instruction:** follow the exact
+[resume note](../../results/p6/resume-after-pause.md), verify AC and fresh
+quiescence/environment/frozen identities, restore status display labels to
+running, then resume the existing campaign. Two rounds of the current memory
+workload and six further memory workloads remain, followed by final audits,
+analysis, F06–F13, the results report/claims and P6 gate. The latest saved handoff
+stops after P6; P7/P8 have not started. Do not restart during this requested pause.
+
+
+### P6 final closeout authorized; audit correction accepted — 2026-10-25
+
+The user explicitly instructed: **"now finish the entire phase 6.. and stop"**,
+then continued the interrupted closeout. This latest instruction replaces the
+earlier automatic P6–P8 continuation boundary: finish P6 only and stop.
+
+All41 workloads,820 measured process rounds and41 saved warm-ups have finished.
+All900 M1/M1-touch,120 M2 and8 M3 configurations have completed15 accepted
+repetitions. The original full saved-output audit reported504 failures because
+it compared T5 raw work against a normalized dictionary intentionally enriched
+with allocator overhead. Independent review confirmed every shared counter and
+each allocator value unchanged across all504 flagged rows.
+
+The auditor now independently derives the additional field from raw allocator
+arithmetic before exact dictionary comparison. Its focused self-test passed
+2487 checks/11 fixture processes and rejected13 tamper cases. Original source,
+failed audit and provenance are preserved in
+[compatibility snapshots](../../results/p6/auditor-t5-compatibility/before.json).
+The explicit compatibility view changes only the auditor hash/size and adds an
+annotation; all other frozen source/binary/input identities and5364 measurement
+files (4,105,957,437bytes) were independently verified unchanged.
+
+The rerun actual saved-output audit passed **10,295,181 checks,0 failures**.
+Initial one-command analysis/figures also passed, producing6759 configuration
+records and status accounting:125700 measured ok,4320 expected invalid_config
+and1 preserved externally interrupted microbenchmark attempt. The crash has
+no accepted timing and is not an oracle mismatch among completed measurements.
+
+Remaining closeout: clarify overlapping F12 markers without altering numerical
+results; execute final figure regeneration and affected checks; finish the
+raw-linked results/claims report, independent gate review and final P6 gate.
+P6 is not marked complete at this intermediate record. P7/P8 remain unstarted.
+
+
+### P6 COMPLETE — final gate passed; execution stopped — 2026-10-25
+
+The latest user instruction was to finish the entire P6 and stop, followed by
+continuations after interruption. **P6.1–P6.5 are complete. All15 gate criteria
+are met; no required P6 check is unrun or blocked.**
+[Passed gate](../../results/p6/phase-gate.json),
+[results and C01–C11 raw-linked claims](../report/results_tip.md),
+[actual evidence/commands](../../results/p6/closeout-evidence.json).
+
+- Full campaigns:900 M1/M1-touch configurations,120 M2 and8 M3, each15 accepted
+  repetitions;41 T1/T2/T3/T5 workloads with820 measured process rounds plus41
+  saved warm-ups. Complete normalized data:135751rows/6759configuration entries;
+  measured outcomes125700ok,4320expected invalid_config and1retained externally
+  interrupted micro attempt. Completed measurement outputs have zero unresolved
+  oracle mismatches. Rejected or interrupted cases do not contribute speedups.
+- Final saved-output audit:10,295,181 checks,zero failures. Original failed
+  audits and source/provenance snapshots remain preserved. The auditor fix
+  independently derives T5 allocator enrichment; it does not ignore differences.
+  All5364 inventoried measurement files (4,105,957,437bytes) remain byte-identical.
+- Actual final one-command F01–F13 regeneration passed. All16 P6 PNG/PDF files
+  are hashed; F09/F12/F13 were visually reviewed. Corrections separate all8 F12
+  arms and show216unavailable cells, factor oversized legends and fix titles/
+  footers. All four full numerical summary/table/input artifacts stayed
+  byte-identical across presentation changes.
+- Final Python suite:143 passed.266 current source/tool/child integrity checks
+  preserve accepted166-release/166-ASan tests,108million differential operations,
+  RC3 and1,802.644941s/39,231-execution final F3 evidence. Those long checks were
+  reused only after unchanged-dependency verification, not relabeled as reruns.
+- Final coverage/statistics review:176731 checks over74660 metric summaries and
+  every paired ratio; artifact closeout:13710 checks. Supplementary T2
+  maintenance-adjusted paired CIs cover8cohorts/64comparisons; T5 historical
+  high-water extraction covers240 accepted measured processes.
+
+Key conditional result: BOOK-top1 recovery at10:00,1GiB,10s backlog,repeat-warm
+uses40.619× less CPU than Scan (95% paired CI39.452–41.693). The broad BOOK-top1000
+case instead has Scan/Indexed ratio0.585 (0.581–0.593). Publisher overhead,
+residual Auto losses, assumed sparse W2 workloads, full requested-memory/slack
+and allocator boundaries, nonexclusive/noisy host and input incompleteness
+are explicitly reported. No hardware-counter, latency, physical-I/O, complete
+session, durability, concurrency, trading-profit or universal-winner claim.
+
+**STOPPED at the P6 boundary. P7/P8, Tier C and roadmap implementation have not
+started.** The next available core phase is P7, but a new explicit instruction
+is required under the latest stop request. Master prompt and managed metadata
+are preserved; no raw market-message data was added to tracked packaging.
+
+
+### P7 → P8 jointly authorized — 2026-10-25; P7 in progress
+
+The user explicitly supplied [the execution instruction](../../results/p7/authorization.txt), authorizing P7 implementation, studies and verification, automatic continuation to P8 after its gate, local packaging and a stop after P8. This supersedes the previous stop-after-P6. P0–P6 remain accepted; the [P6 gate](../../results/p6/phase-gate.json) and [pre-change source/binary baseline](../../results/p7/baseline.json) were verified. No P7 gate has passed yet.
+
+P7.1–P7.5 implementation is underway in an isolated layout library. The strict initial compiler syntax check passed. The [study protocol](../../results/p7/protocol.json) declares solver limits before studies; coverage is measured rather than presumed. The existing [ST-09 original-source reading record](../../results/p6/p7-study.md) is reused with its limitations. No engine benchmark campaign, data download or roadmap work is authorized by this continuation.
+
+P7 verification update: all186 C++ tests pass in release and ASan/UBSan (including20 layout cases). CC-5 passes10,000 identical-seed instances in both builds:57,461 exact-count and57,461 at-most comparisons,96,322 reconstructions, zero mismatches; the complete summaries are identical. The computed worked example passes both builds. Input generation covers214,668 cases/32files with declared pre-study caps.
+
+The first study invocation was interrupted after2complete batches and a partial third. Its partial output and original logs remain unaccepted and preserved. On continuation, a read-only host process check found no optimizer process; the campaign resumed from the2accepted batches under `studies-resume-20261025T140605.837147Z`. P7/P8 gates remain pending. The [timing clarification](../../results/p7/timing-clarification.md) records the exact existing boundaries without changing the frozen protocol or solver source.
+
+
+### P7 COMPLETE — gate passed; continuing to P8 — 2026-10-25
+
+The Codex session driving P7 stopped at 20:08 IST (usage limit) during the controlled runtime campaign. Claude Code continued the same authorized P7 → P8 instruction as the only agent.
+
+**Controlled runtime and host contamination.** The first controlled DP runtime attempt (14:33–14:45 UTC) completed, but its own process snapshots showed CPU-bound processes from another project's agent session sharing solver CPU 2 in 9 of 10 measured rounds. At the user's instruction its readings were deleted, not preserved, and the study was rerun. A host-quiescence rule was declared before any rerun ([rule](../../results/p7/runtime-quiescence-rule.json)). The second attempt was rejected by that rule (warm-up had 3.52 s of foreign CPU 2/3 time from the editor and the agent session, limit 3.0 s) and likewise deleted. The third attempt (15:34–15:46 UTC) passed every round: CPU-2 settling idle 0.956–0.980, foreign CPU 2/3 time 0.32–1.77 s, CPU-3 idle ≥0.987. [Campaign](../../results/p7/runtime-campaign.json), [quiescence result](../../results/p7/runtime-quiescence.json). Results: 8,850 solves and 150 `state_limit` outcomes in 9,000 measured attempts; 885/900 inputs solved in all ten rounds; 1,626 frequency-flagged rows retained. Earlier cost studies, analysis and global audit had finished before the other session started (19:56 IST) and are deterministic exact-cost results with no timeouts, so they were not affected.
+
+**Final checks.** Per-input runtime analysis, one-command F01–F18 regeneration and the P1/P6 figure-compatibility check passed. On the final source tree, full release and ASan/UBSan CTest each passed 186/186 with zero sanitizer reports, and pytest passed 151. The [P7 gate checker](../../results/p7/gate-checks.json) passed 259 checks with no failures, including the L2 metric set (stores touched, max waste, worst ratio with/without the 4 KiB floor) and the quiescence rule. F14–F18 were visually reviewed. [Layout results report](../report/results_layout.md) now includes the L3 runtime section and figure map.
+
+**[P7 gate](../../results/p7/phase-gate.json): passed.** P7.1–P7.6 complete. All mandatory P7 criteria are met. Results remain modeled, not measured disk I/O. W0 exact coverage is incomplete under the frozen caps, so W0 has no global certificate. Continuing to P8 under the same authorization; stop after P8.
+
+
+### P8 COMPLETE — core closeout; execution stopped — 2026-10-25
+
+P8 started after the [P7 gate](../../results/p7/phase-gate.json) passed, under the same P7 → P8 instruction.
+
+**Deliverables.** [REPORT.md](../report/REPORT.md) follows IMPLEMENTATION_PLAN §11. It covers the implementation, correctness evidence, P6 measurements, P7 modeled results, uncertainty, exact coverage, failures and limitations, and includes resume bullets with measured numbers only. [REPRODUCE.md](../report/REPRODUCE.md) lists the executed commands, dependencies, checksums, seeds, configurations and local-data requirements. README, INDEX and the IMPLEMENTATION_PLAN §10.1 checklist (ticked with evidence links) were updated.
+
+**Verification.** [The acceptance review](../../results/p8/acceptance-evidence.json) records CC-1–CC-6, RC-1–RC-3 and the eight §10.1 items, each with hashed executed evidence and binding the final source/document identities. `scripts/check_core_closeout.py` checks the P0–P7 gate chain, the pre-P7 baseline (19 core binaries and engine/parser/oracle/fuzz dependencies unchanged), the long P1–P6 correctness evidence, CC-5 and the worked example, the controlled runtime campaign, all local Markdown links and the packaging inventory. Its result is `results/p8/checks.json` and the inventory `results/p8/artifact-manifest.json`. One-command F01–F18 regeneration is the accepted P7 run, whose inputs have not changed since.
+
+**Closeout repairs (no measurement affected).** (1) The managed empty `.git` directory's mode had changed from the recorded 0555 to 0755 on 2026-10-25 14:10 IST, at the same moment empty `.agents`/`.aws`/`.codex` directories appeared (most likely the Codex sandbox); it was restored to 0555. (2) A no-op verification build at 15:55 UTC replaced five CMake `compiler_depend.make` placeholder files, which the runtime campaign had recorded, with consolidated dependency lists. Nothing was compiled or linked, binaries were unchanged, and the exact placeholder bytes were restored. (3) The closeout checker compared RC-3's start-of-run source snapshot against the bench tool, which RC-3's declared scope excludes and which P6 changed before its campaigns. The checker now verifies RC-3's declared dependencies and binds the bench tool to the accepted P6 campaign provenance.
+
+**Packaging.** Local inventory only. No files were staged, committed or pushed, and no external publication was made. Message-level Nasdaq data, traces, real fuzz seeds and large raw results remain in ignored local directories.
+
+**Final core gate:** `results/p8/phase-gate.json` — written only after the closeout checker passed with zero failures. **Execution stopped after P8.** Tier C and roadmap R1–R10 are not authorized.
+
+### Approved audit corrections COMPLETE — 2026-10-26; execution stopped
+
+The user approved the independent audit remediation and instructed a stop after the fixes, before
+work-budgeted replay/tail polling. **All 26 numbered findings and five additional observations are
+closed/resolved**, with decisions and compatibility limits in [REMEDIATION.md](../report/REMEDIATION.md)
+and the appended [audit closeout](../../audit/AUDIT_REPORT.md#17-approved-remediation-closeout--2026-10-26).
+
+Final combined-source validation: **205/205 CTests in each of four presets**, **259 Python/script
+tests from root**, **225 package tests from `py/`**, **108M independent-oracle differential
+operations**, all three fuzzers at **10,000 runs each**, and **10,000 CC-5 cases in both Release and
+sanitizer builds**. All pass; final ASan/UBSan checks enable leak detection outside tracing. Worked
+examples are byte-identical to the historical snapshot. Three vacuous checker mutations are killed.
+
+The reporting discrepancy was reconciled by exact reconstruction of all four frozen derived hashes;
+divergent copies are retained. All **5,364 original P6 measurement files (4,105,957,437 bytes)** match
+their original saved identities. Historical gates, accepted figures and P8 evidence remain unchanged.
+The new [current-source acceptance](../../audit/remediation/acceptance.json) and
+[passing verifier](../../audit/remediation/checks.json) validate the corrected source separately.
+Historical performance and long fuzz campaigns are not relabelled as new measurements; hosted CI
+execution is not claimed. No source commits, push, deployment or data reacquisition was performed.
+
+**Execution stopped after remediation. F-01 remains deferred.** No work-budgeted polling was added;
+the engine replay/tail source/API files remain byte-identical to the remediation-start baseline.
+
+### F-01 approved — implementation in progress — 2026-10-26
+
+The user explicitly approved the researched feature: “approved... build the feature”.
+This authorizes the optional inspection-budget API described in [RESEARCH §9](RESEARCH.md#9-f-01-research-work-budgeted-replay-and-tail-polling--2026-10-26).
+The [feature baseline](../../results/f01/baseline.json) preserves the pre-change source identities
+and historical acceptance artifacts. New validation and measurements belong to `results/f01/`;
+P1–P8 and remediation evidence remain historical. Implementation, independent correctness checks,
+sanitizer/fuzz validation, and responsiveness/throughput measurements are in progress.
+
+### F-01 COMPLETE — 2026-10-27
+
+Implemented the approved optional inspection-budget overloads for Replay and Tail:
+exact traversal charging, resumable rejected-candidate progress, explicit stop
+reasons, and one Tail allowance/work delta across captured ranges. Existing
+output-only calls retain legacy semantics and avoid the new result bookkeeping.
+No finite default, runtime dependency, scheduler, or persistent physical cursor
+was added. [Contract and integration example](../report/POLL_BUDGET.md).
+
+**Final verification:** 229/229 CTests in each of Debug, Release, ASan/UBSan and
+fuzz presets; 302 Python/script tests; 108M legacy and 12M new independent-model
+differential operations. A supplementary 2M Release run exactly matches the
+same 2M sanitizer run's counters and digest. Four fuzzers completed 10,000 runs
+each. All 23 contract tests pass and all four research-specified mutations are
+killed; the acceptance checker has 43 passing positive/negative selftests,
+including full result serialization after fixing its first final-run reporting error.
+Leak detection remains enabled outside tracing. The initial allocator-hook
+sanitizer failure and interrupted attempts are preserved, with the test-only
+fix and accepted reruns distinguished in the report.
+
+**Measurements:** [2,274 accepted rows / 758 arms / three fresh processes per
+arm](../../results/f01/studies/final-20261027/manifest.json), plus six separate
+resource-control rows and 12 benchmark contract checks. The million-nonmatch
+Scan example changes one ~17 ms turn into 1,000 turns with median per-process
+p99 ~30 µs at budget 1,000; total scheduled completion is ~18.6 ms. Budget one
+and large explicit Indexed selections show substantial overhead. The complete
+[results and figures](../report/POLL_BUDGET_RESULTS.md) report sample counts,
+setup exclusions, caller-scheduling effects, unlimited-path cost and host limits.
+These are synthetic observations; no maximum-latency/default-budget claim.
+
+The new [acceptance manifest](../../results/f01/acceptance.json),
+[passing verifier](../../results/f01/checks.json), and
+[feature gate](../../results/f01/phase-gate.json) bind the final source/evidence.
+All 13 saved historical gate/audit/acceptance identities remain unchanged.
+New artifacts are confined to the feature's evidence namespace and ignored
+build directory. No commit, push, deployment, old-gate rewrite or data download
+was performed. **F-01 implementation and verification are complete.**
+

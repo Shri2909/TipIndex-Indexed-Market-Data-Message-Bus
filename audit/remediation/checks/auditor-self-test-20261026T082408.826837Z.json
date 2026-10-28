@@ -1,0 +1,21 @@
+{
+  "label": "auditor-self-test",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/check_p6_experiments.py",
+    "--self-test"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:24:08.826957+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/auditor-self-test-20261026T082408.826837Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.32897530100001404,
+  "log_sha256": "9e3d1f0267ecd74f8ba2335b090557d423ac005bcdb85ae9637555bbe34104d8"
+}

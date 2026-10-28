@@ -123,7 +123,18 @@ def _active_classes(topics):
     return sets
 
 
-def write_tables(stats: Statistics, directory: str | Path, prefix: str):
+TABLE_SUFFIXES = ("topic_volumes.csv", "H-flat_topic_volumes.csv", "partition_volumes.csv",
+                  "family_volumes.csv", "run_lengths.csv", "per_second.csv",
+                  "partition_complexity.csv", "summary.json")
+
+
+def table_paths(directory, prefix):
+    if Path(prefix).name != prefix or prefix in ("", ".", ".."):
+        raise ValueError("table prefix must be a nonempty filename")
+    return [Path(directory) / f"{prefix}_{suffix}" for suffix in TABLE_SUFFIXES]
+
+
+def write_tables(stats: Statistics, directory: str | Path, prefix: str, *, destinations=None):
     """Save L1 inputs; record_bytes = align8(16+payload), excluding ring PAD.
 
     raw b counts active consumers; effective b combines identical nonempty match
@@ -134,6 +145,9 @@ def write_tables(stats: Statistics, directory: str | Path, prefix: str):
 
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
+    def target(suffix):
+        path = directory / f"{prefix}_{suffix}"
+        return destinations[path] if destinations is not None else path
     metric_columns = ["count", "payload_bytes", "framed_bytes", "record_bytes"]
     topics = []
     flat = defaultdict(_counter)
@@ -152,19 +166,19 @@ def write_tables(stats: Statistics, directory: str | Path, prefix: str):
             partitions[partition][index] += value
             families[partition, family][index] += value
         partition_topics[partition].append(topic)
-    _csv(directory / f"{prefix}_topic_volumes.csv", ["hierarchy", "topic", "partition", "type"] + metric_columns, topics)
-    _csv(directory / f"{prefix}_H-flat_topic_volumes.csv", ["hierarchy", "topic", "partition"] + metric_columns,
+    _csv(target("topic_volumes.csv"), ["hierarchy", "topic", "partition", "type"] + metric_columns, topics)
+    _csv(target("H-flat_topic_volumes.csv"), ["hierarchy", "topic", "partition"] + metric_columns,
          ({"hierarchy": "H-flat", "topic": topic, "partition": "/".join(topic.split("/")[:2]),
            **counter_dict(values)} for topic, values in sorted(flat.items())))
-    _csv(directory / f"{prefix}_partition_volumes.csv", ["partition"] + metric_columns,
+    _csv(target("partition_volumes.csv"), ["partition"] + metric_columns,
          ({"partition": partition, **counter_dict(values)} for partition, values in sorted(partitions.items())))
-    _csv(directory / f"{prefix}_family_volumes.csv", ["partition", "family"] + metric_columns,
+    _csv(target("family_volumes.csv"), ["partition", "family"] + metric_columns,
          ({"partition": partition, "family": family, **counter_dict(values)}
           for (partition, family), values in sorted(families.items())))
-    _csv(directory / f"{prefix}_run_lengths.csv", ["run_length", "runs", "messages"],
+    _csv(target("run_lengths.csv"), ["run_length", "runs", "messages"],
          ({"run_length": length, "runs": runs, "messages": length * runs}
           for length, runs in sorted(stats.runs().items())))
-    _csv(directory / f"{prefix}_per_second.csv", ["second_since_midnight"] + metric_columns,
+    _csv(target("per_second.csv"), ["second_since_midnight"] + metric_columns,
          ({"second_since_midnight": second, **counter_dict(values)} for second, values in sorted(stats.per_second.items())))
 
     ranked = sorted((partition for partition in partitions if not partition.split("/")[1].startswith("_")),
@@ -204,7 +218,7 @@ def write_tables(stats: Statistics, directory: str | Path, prefix: str):
                            "b_W2_effective": effective2, "b_W3_raw": b3, "b_W3_effective": effective3})
     complexity_fields = ["partition", "nodes", "edges", "positive_topics", "b_W0_raw", "b_W1_raw",
                          "b_W1_effective", "b_W2_raw", "b_W2_effective", "b_W3_raw", "b_W3_effective"]
-    _csv(directory / f"{prefix}_partition_complexity.csv", complexity_fields, complexity)
+    _csv(target("partition_complexity.csv"), complexity_fields, complexity)
     symbols = [partitions[partition] for partition in ranked]
     summary = {
         "prefix": prefix, "symbol_partitions": len(symbols), "partitions": len(partitions),
@@ -217,5 +231,5 @@ def write_tables(stats: Statistics, directory: str | Path, prefix: str):
         "complexity_histograms": {field: dict(sorted(Counter(row[field] for row in complexity).items()))
                                   for field in complexity_fields[1:]},
     }
-    (directory / f"{prefix}_summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
+    (target("summary.json")).write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
     return summary

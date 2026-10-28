@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "date": "2026-10-23",
+  "recorded_utc": "2026-10-23T14:45:57.147006+00:00",
+  "scope": "Tool-only deterministic precompilation and compact term-dictionary functional integration; no timing campaign",
+  "files": [
+    {
+      "path": "tools/tiplog_bench/main.cpp",
+      "bytes": 38141,
+      "sha256": "5f0b341591556751e4a183184bbc18f3709ab438d053c81d65056c8b4c0ce385"
+    },
+    {
+      "path": "results/p6/request-precompile-check.py",
+      "bytes": 10555,
+      "sha256": "e0daedfd068e41c49a4b1d5b59d6658dd34a8ce166272ad7e30566aa097a38c0"
+    },
+    {
+      "path": "build/release/tiplog_bench",
+      "bytes": 5426952,
+      "sha256": "8626525fb5c93e98cb84866a3e987e9954ca203ce8215bc0e3b6a26fb1306b50"
+    },
+    {
+      "path": "build/asan-ubsan/tiplog_bench",
+      "bytes": 5748384,
+      "sha256": "178931e4163fab637b0b08b4ab18024d21d9d7d10420dd87ea844befabb49da3"
+    }
+  ],
+  "executed_checks": [
+    {
+      "path": "results/p6/request-dictionary-release-build-20261023T144428.263660Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "release",
+        "--parallel",
+        "2",
+        "--target",
+        "tiplog_bench"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/request-dictionary-sanitizer-build-20261023T144428.296303Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "asan-ubsan",
+        "--parallel",
+        "2",
+        "--target",
+        "tiplog_bench"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/request-precompile-dictionary-release-functional-20261023T144450.902132Z.json",
+      "argv": [
+        ".venv/bin/python",
+        "results/p6/request-precompile-check.py",
+        "--binary",
+        "build/release/tiplog_bench",
+        "--output",
+        "results/p6/request-precompile-dictionary-release-functional.json"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/request-precompile-dictionary-sanitizer-functional-20261023T144458.085177Z.json",
+      "argv": [
+        ".venv/bin/python",
+        "results/p6/request-precompile-check.py",
+        "--binary",
+        "build/asan-ubsan/tiplog_bench",
+        "--output",
+        "results/p6/request-precompile-dictionary-sanitizer-functional.json"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    }
+  ],
+  "checks_per_preset": 303,
+  "retained_initial_fixture_rejection": "results/p6/request-precompile-release-functional-20261023T144219.998371Z.json",
+  "core_source_or_cmake_changed": false,
+  "unchanged_subscription_source_sha256": "a0d9c9cbc3d0b164fcc9c6db3e1c21f77111448e56de0ed65069aea47079c794"
+}

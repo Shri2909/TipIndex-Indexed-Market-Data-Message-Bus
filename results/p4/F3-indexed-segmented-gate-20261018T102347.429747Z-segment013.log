@@ -1,0 +1,23 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191242
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x64b6bdcaf0e8, 0x64b6bdcb08da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x64b6bdcb08e0,0x64b6bdcc8800), 
+INFO:      941 files found in tests/fuzz/corpus/ops_indexed
+INFO: seed corpus: files: 941 min: 1b max: 47712b total: 1291554b rss: 34Mb
+#942	INITED cov: 1796 ft: 8059 corp: 608/873Kb exec/s: 26 rss: 550Mb
+#1024	pulse  cov: 1796 ft: 8059 corp: 608/873Kb lim: 65536 exec/s: 28 rss: 550Mb
+#1456	REDUCE cov: 1796 ft: 8059 corp: 608/873Kb lim: 65536 exec/s: 20 rss: 585Mb L: 834/47712 MS: 4 InsertByte-InsertByte-EraseBytes-ChangeBinInt-
+#1479	REDUCE cov: 1796 ft: 8059 corp: 608/873Kb lim: 65536 exec/s: 19 rss: 585Mb L: 149/47712 MS: 3 InsertRepeatedBytes-ShuffleBytes-EraseBytes-
+#1577	NEW    cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 19 rss: 585Mb L: 4747/47712 MS: 3 ChangeBit-ShuffleBytes-CopyPart-
+#2048	pulse  cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 22 rss: 585Mb
+#2290	REDUCE cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 22 rss: 629Mb L: 289/47712 MS: 3 ChangeBit-ChangeByte-EraseBytes-
+#2371	REDUCE cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 22 rss: 629Mb L: 130/47712 MS: 1 EraseBytes-
+#2419	REDUCE cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 22 rss: 629Mb L: 416/47712 MS: 3 EraseBytes-ChangeBit-EraseBytes-
+#2551	REDUCE cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 21 rss: 629Mb L: 62/47712 MS: 2 ChangeByte-EraseBytes-
+#2596	DONE   cov: 1796 ft: 8060 corp: 609/877Kb lim: 65536 exec/s: 21 rss: 629Mb
+Done 2596 runs in 122 second(s)
+stat::number_of_executed_units: 2596
+stat::average_exec_per_sec:     21
+stat::new_units_added:          7
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              629

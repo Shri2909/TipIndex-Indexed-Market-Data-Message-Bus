@@ -1,0 +1,56 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 19 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 2 tests from V06Registry
+[ RUN      ] V06Registry.AncestorsPartitionsAndDenseLocalIds
+[       OK ] V06Registry.AncestorsPartitionsAndDenseLocalIds (0 ms)
+[ RUN      ] V06Registry.PathValidationAndLookup
+[       OK ] V06Registry.PathValidationAndLookup (0 ms)
+[----------] 2 tests from V06Registry (0 ms total)
+
+[----------] 6 tests from V07Subscriptions
+[ RUN      ] V07Subscriptions.DeterministicNormalizationPreservesUnion
+[       OK ] V07Subscriptions.DeterministicNormalizationPreservesUnion (0 ms)
+[ RUN      ] V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+[       OK ] V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher (538 ms)
+[ RUN      ] V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds
+[       OK ] V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds (0 ms)
+[ RUN      ] V07Subscriptions.NormalizationMatchesIndependentAllPairs
+[       OK ] V07Subscriptions.NormalizationMatchesIndependentAllPairs (134 ms)
+[ RUN      ] V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions
+[       OK ] V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions (309 ms)
+[ RUN      ] V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+[       OK ] V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms (0 ms)
+[----------] 6 tests from V07Subscriptions (982 ms total)
+
+[----------] 6 tests from V08Subscriptions
+[ RUN      ] V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+[       OK ] V08Subscriptions.FutureSubtreesRespectSegmentBoundaries (0 ms)
+[ RUN      ] V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+[       OK ] V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow (0 ms)
+[ RUN      ] V08Subscriptions.ExactPreinternedAndNoHookNeeded
+[       OK ] V08Subscriptions.ExactPreinternedAndNoHookNeeded (0 ms)
+[ RUN      ] V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+[       OK ] V08Subscriptions.CopyMoveAndDestructionReleaseHooks (0 ms)
+[ RUN      ] V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+[       OK ] V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor (0 ms)
+[ RUN      ] V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+[       OK ] V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit (0 ms)
+[----------] 6 tests from V08Subscriptions (0 ms total)
+
+[----------] 5 tests from V38Registry
+[ RUN      ] V38Registry.TopicLimitPreflightsEntireAncestorChain
+[       OK ] V38Registry.TopicLimitPreflightsEntireAncestorChain (0 ms)
+[ RUN      ] V38Registry.PartitionLimitAndReservedOwnerSentinel
+[       OK ] V38Registry.PartitionLimitAndReservedOwnerSentinel (0 ms)
+[ RUN      ] V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+[       OK ] V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged (0 ms)
+[ RUN      ] V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+[       OK ] V38Registry.FullUint16BoundaryAndLateBitsetGrowth (27 ms)
+[ RUN      ] V38Registry.ZeroCapacityRejectsWithoutMutation
+[       OK ] V38Registry.ZeroCapacityRejectsWithoutMutation (0 ms)
+[----------] 5 tests from V38Registry (27 ms total)
+
+[----------] Global test environment tear-down
+[==========] 19 tests from 4 test suites ran. (1010 ms total)
+[  PASSED  ] 19 tests.

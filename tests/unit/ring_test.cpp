@@ -352,4 +352,31 @@ TEST(RingAccess, RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries) {
   EXPECT_FALSE(ring.is_boundary(104));
   ring.check_invariants();
 }
+
+TEST(RingFraming, CheckedAccessRejectsForgedInteriorHeadersAndAcceptsWrappedBoundaries) {
+  Ring ring({128, 64});
+  std::vector<std::byte> forged(40, std::byte{0});
+  forged[0] = std::byte{24};
+  forged[4] = std::byte{1};
+  forged[8] = std::byte{57};
+  ring.append(1, forged);
+  EXPECT_FALSE(ring.is_boundary(16));
+  EXPECT_THROW((void)ring.at_checked(16), std::out_of_range);
+  EXPECT_EQ(ring.at_checked(0).seq, 1U);
+  EXPECT_THROW((void)ring.at_checked(ring.head_pos()), std::out_of_range);
+  EXPECT_THROW((void)ring.at_checked(1), std::out_of_range);
+  ring.append(2, payload(40));
+  ring.append(3, payload(8));
+  EXPECT_THROW((void)ring.at_checked(0), std::out_of_range);
+  bool saw_pad = false;
+  for (auto pos = ring.tail_pos(); pos < ring.head_pos();) {
+    const auto checked = ring.at_checked(pos);
+    EXPECT_EQ(checked.pos, pos);
+    EXPECT_EQ(checked.seq, ring.at(pos).seq);
+    saw_pad |= checked.pad;
+    pos += checked.size;
+  }
+  EXPECT_TRUE(saw_pad);
+  ring.check_invariants();
+}
 }  // namespace

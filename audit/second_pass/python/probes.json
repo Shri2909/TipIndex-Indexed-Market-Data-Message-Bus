@@ -1,0 +1,49 @@
+{
+  "acceptance_without_measured_commands": "passed",
+  "convert_input_equals_temporary_output": {
+    "before_bytes": 16,
+    "exception": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-python-audit-dr47_uqp/source.mdt.partial'",
+    "input_exists_after": false,
+    "input_preserved": false
+  },
+  "measure_output_equals_input": {
+    "after_bytes": 1682,
+    "before_bytes": 16,
+    "input_preserved": false,
+    "replacement_schema_version": 1
+  },
+  "pending_journal_torn_final_line": {
+    "exception": "JSONDecodeError: Unterminated string starting at: line 1 column 28 (char 27)",
+    "marker_still_pending": true
+  },
+  "synthetic_max_payload": "OverflowError: Python integer 65552 out of bounds for uint16",
+  "t2_configurable_backlog": {
+    "aggregated_market_seconds": 10,
+    "correct_cpu_seconds_per_market_second": 1,
+    "reported_cpu_seconds_per_market_second": 2.0,
+    "requested_seconds": 20
+  },
+  "valid_trace_payload_boundary": [
+    {
+      "cpp_trace_check_returncode": 0,
+      "oracle_exception": null,
+      "oracle_record_size": 65528,
+      "payload_bytes": 65512,
+      "trace_reader_records": 1
+    },
+    {
+      "cpp_trace_check_returncode": 0,
+      "oracle_exception": "OverflowError: Python integer 65536 out of bounds for uint16",
+      "oracle_record_size": null,
+      "payload_bytes": 65513,
+      "trace_reader_records": 1
+    },
+    {
+      "cpp_trace_check_returncode": 0,
+      "oracle_exception": "OverflowError: Python integer 65552 out of bounds for uint16",
+      "oracle_record_size": null,
+      "payload_bytes": 65535,
+      "trace_reader_records": 1
+    }
+  ]
+}

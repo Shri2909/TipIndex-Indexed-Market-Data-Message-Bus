@@ -1,0 +1,109 @@
+test_output_aliases_preserve_all_source_inputs (tool_contracts_import.ToolContracts.test_output_aliases_preserve_all_source_inputs) ... FAIL
+test_microbenchmark_outputs_preserve_inputs_and_remain_distinct (tool_contracts_import.ToolContracts.test_microbenchmark_outputs_preserve_inputs_and_remain_distinct) ... FAIL
+test_request_read_errors_fail_before_output_creation (tool_contracts_import.ToolContracts.test_request_read_errors_fail_before_output_creation) ... FAIL
+test_microbenchmark_verification_rejects_ignored_and_malformed_arguments (tool_contracts_import.ToolContracts.test_microbenchmark_verification_rejects_ignored_and_malformed_arguments) ... FAIL
+test_request_id_named_id_is_not_mistaken_for_a_header (tool_contracts_import.ToolContracts.test_request_id_named_id_is_not_mistaken_for_a_header) ... FAIL
+test_m3_filtering_precedes_input_preparation (tool_contracts_import.ToolContracts.test_m3_filtering_precedes_input_preparation) ... FAIL
+
+======================================================================
+FAIL: test_output_aliases_preserve_all_source_inputs (tool_contracts_import.ToolContracts.test_output_aliases_preserve_all_source_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/layout/tool_contracts.py", line 209, in test_output_aliases_preserve_all_source_inputs
+    self.command("tiplog_walk", framed, "--out", alias(framed), success=False)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 
+
+======================================================================
+FAIL: test_microbenchmark_outputs_preserve_inputs_and_remain_distinct (tool_contracts_import.ToolContracts.test_microbenchmark_outputs_preserve_inputs_and_remain_distinct)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/layout/tool_contracts.py", line 232, in test_microbenchmark_outputs_preserve_inputs_and_remain_distinct
+    self.command(name, *args, "--benchmark_filter=DOES_NOT_MATCH",
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 env={**os.environ, variable: str(target)}, success=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 
+
+======================================================================
+FAIL: test_request_read_errors_fail_before_output_creation (tool_contracts_import.ToolContracts.test_request_read_errors_fail_before_output_creation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/layout/tool_contracts.py", line 247, in test_request_read_errors_fail_before_output_creation
+    self.bench(rejected, "--requests", self.root, success=False)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "tests/layout/tool_contracts.py", line 53, in bench
+    return self.command("tiplog_bench", "--synthetic", "--records", "100",
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "--partitions", "4", "--mix", self.mix,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "--ring-bytes", "8192", "--output", output,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        *args, success=success)
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 
+
+======================================================================
+FAIL: test_microbenchmark_verification_rejects_ignored_and_malformed_arguments (tool_contracts_import.ToolContracts.test_microbenchmark_verification_rejects_ignored_and_malformed_arguments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/layout/tool_contracts.py", line 275, in test_microbenchmark_verification_rejects_ignored_and_malformed_arguments
+    self.command("merge_bench", "--diagnostic", "--profile=uniform64",
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 "--outputs=8", option, success=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : {"status":"passed","actual_hash_hex":"e262ca1a581e6cb2","input":{"profile":"M1/k64/uniform/N8/diagnostic","kernel":"StdPQ","seed":20191230,"requested_k":64,"active_k":8,"outputs":8,"input_hash_hex":"f842618abf12e678","expected_hash_hex":"e262ca1a581e6cb2","hash_algorithm":"word-xor-multiply64-v1","observed_owner_runs":8,"observed_run_mean":1,"nominal_geometric_mean":0,"k1_degenerate":false,"touch_initialized_bytes":0,"touch_initialization":"splitmix64-index-v1","touch_initialization_hash_hex":"cbf29ce484222325","touch_address_span_bytes":0,"touch_distinct_64B_line_bytes":0,"touch_loaded_bytes":0,"quad_padding_words":3,"diagnostic":true}}
+{"status":"passed","actual_hash_hex":"e262ca1a581e6cb2","input":{"profile":"M1/k64/uniform/N8/diagnostic","kernel":"BinHeap","seed":20191230,"requested_k":64,"active_k":8,"outputs":8,"input_hash_hex":"f842618abf12e678","expected_hash_hex":"e262ca1a581e6cb2","hash_algorithm":"word-xor-multiply64-v1","observed_owner_runs":8,"observed_run_mean":1,"nominal_geometric_mean":0,"k1_degenerate":false,"touch_initialized_bytes":0,"touch_initialization":"splitmix64-index-v1","touch_initialization_hash_hex":"cbf29ce484222325","touch_address_span_bytes":0,"touch_distinct_64B_line_bytes":0,"touch_loaded_bytes":0,"quad_padding_words":3,"diagnostic":true}}
+{"status":"passed","actual_hash_hex":"e262ca1a581e6cb2","input":{"profile":"M1/k64/uniform/N8/diagnostic","kernel":"Quad-pad3","seed":20191230,"requested_k":64,"active_k":8,"outputs":8,"input_hash_hex":"f842618abf12e678","expected_hash_hex":"e262ca1a581e6cb2","hash_algorithm":"word-xor-multiply64-v1","observed_owner_runs":8,"observed_run_mean":1,"nominal_geometric_mean":0,"k1_degenerate":false,"touch_initialized_bytes":0,"touch_initialization":"splitmix64-index-v1","touch_initialization_hash_hex":"cbf29ce484222325","touch_address_span_bytes":0,"touch_distinct_64B_line_bytes":0,"touch_loaded_bytes":0,"quad_padding_words":3,"diagnostic":true}}
+{"status":"passed","actual_hash_hex":"e262ca1a581e6cb2","input":{"profile":"M1/k64/uniform/N8/diagnostic","kernel":"Loser","seed":20191230,"requested_k":64,"active_k":8,"outputs":8,"input_hash_hex":"f842618abf12e678","expected_hash_hex":"e262ca1a581e6cb2","hash_algorithm":"word-xor-multiply64-v1","observed_owner_runs":8,"observed_run_mean":1,"nominal_geometric_mean":0,"k1_degenerate":false,"touch_initialized_bytes":0,"touch_initialization":"splitmix64-index-v1","touch_initialization_hash_hex":"cbf29ce484222325","touch_address_span_bytes":0,"touch_distinct_64B_line_bytes":0,"touch_loaded_bytes":0,"quad_padding_words":3,"diagnostic":true}}
+
+
+======================================================================
+FAIL: test_request_id_named_id_is_not_mistaken_for_a_header (tool_contracts_import.ToolContracts.test_request_id_named_id_is_not_mistaken_for_a_header)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/layout/tool_contracts.py", line 263, in test_request_id_named_id_is_not_mistaken_for_a_header
+    self.assertEqual([row["kind"] for row in rows], ["prefill", "replay"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['prefill'] != ['prefill', 'replay']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'replay'
+
+- ['prefill']
++ ['prefill', 'replay']
+
+======================================================================
+FAIL: test_m3_filtering_precedes_input_preparation (tool_contracts_import.ToolContracts.test_m3_filtering_precedes_input_preparation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "tests/layout/tool_contracts.py", line 156, in test_m3_filtering_precedes_input_preparation
+    failed = self.command("index_bench", "--trace", trace,
+                          "--benchmark_filter=^M3-seek/B64$", "--benchmark_min_time=1x",
+                          "--benchmark_out=/dev/full", success=False)
+  File "tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : ----------------------------------------------------------------------
+Benchmark            Time             CPU   Iterations UserCounters...
+----------------------------------------------------------------------
+M3-seek/B64     296331 ns       294616 ns            1 block_entries=64 input_records=64 items_per_second=13.9028M/s live_entries=64 operations_per_iteration=4.096k requested_reserved_bytes=2.246k {"profile":"M3-seek/B64","seed":20191230,"block_entries":64,"records":64,"input_records":64,"diagnostic":false,"partition_slots":2,"logical_head":2048,"seek_queries":4096,"operations_per_iteration":4096,"trace_path":"/tmp/tiplog-tools-efwccnmn/records.mdt","trace_file_bytes":2127,"record_limit":18446744073709551615,"input_hash_hex":"7ee120e6eed16225","query_hash_hex":"57631dace22f191d","expected_hash_hex":"fe1eba708ebd9669","hash_algorithm":"word-xor-multiply64-v1","input_hash_scope":"chronological (partition, aligned DATA position) words","query_hash_scope":"(partition, lower bound) words in query order","expected_hash_scope":"lower_bound result positions in query order, UINT64_MAX for end"}
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.150s
+
+FAILED (failures=6)

@@ -1,0 +1,89 @@
+{"preparing": "synth-P10-Z0.0-L1-S20191230", "index": 0, "total": 8}
+{"preparing": "synth-P10-Z0.0-L16-S20191230", "index": 1, "total": 8}
+{"preparing": "synth-P10-Z0.8-L1-S20191230", "index": 2, "total": 8}
+{"preparing": "synth-P10-Z0.8-L16-S20191230", "index": 3, "total": 8}
+{"preparing": "synth-P1000-Z0.0-L1-S20191230", "index": 4, "total": 8}
+{"preparing": "synth-P1000-Z0.0-L16-S20191230", "index": 5, "total": 8}
+{"preparing": "synth-P1000-Z0.8-L1-S20191230", "index": 6, "total": 8}
+{"preparing": "synth-P1000-Z0.8-L16-S20191230", "index": 7, "total": 8}
+{
+  "status": "prepared",
+  "suite": "training",
+  "config": "configs/P6/matrix.toml",
+  "config_sha256": "5595d13b437fa44b02473483883b1ec836aa0344950819e13cd1375caa06c905",
+  "workloads": [
+    {
+      "id": "synth-P10-Z0.0-L1-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P10-Z0.0-L1-S20191230.json.gz",
+      "sha256": "d93e50071c80ba64ca4c8a91a8fcfafa88b450d9e858a1e3a70c183df230623d",
+      "requests": 90
+    },
+    {
+      "id": "synth-P10-Z0.0-L16-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P10-Z0.0-L16-S20191230.json.gz",
+      "sha256": "f6e5b0787530bef6ec5f7905ab8d45602dfd32702096fd249ddabbaaf5cfc1c4",
+      "requests": 90
+    },
+    {
+      "id": "synth-P10-Z0.8-L1-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P10-Z0.8-L1-S20191230.json.gz",
+      "sha256": "1dde12738a826c07b36284416edb939a3fec939099d8e2da426e6cbaffae9e53",
+      "requests": 90
+    },
+    {
+      "id": "synth-P10-Z0.8-L16-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P10-Z0.8-L16-S20191230.json.gz",
+      "sha256": "3645ff5b2764b97ade45162dbeea230e96bbacb5ac02f28f41372257a75e49fb",
+      "requests": 90
+    },
+    {
+      "id": "synth-P1000-Z0.0-L1-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P1000-Z0.0-L1-S20191230.json.gz",
+      "sha256": "1686cfae12e3439c6ce64e0ad153713e0235597f249adbeb8f58d537764e87e9",
+      "requests": 90
+    },
+    {
+      "id": "synth-P1000-Z0.0-L16-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P1000-Z0.0-L16-S20191230.json.gz",
+      "sha256": "01da3d74fc089225b4ae8d15e925939becc987bd202f6cde9f736968f7647812",
+      "requests": 90
+    },
+    {
+      "id": "synth-P1000-Z0.8-L1-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P1000-Z0.8-L1-S20191230.json.gz",
+      "sha256": "d51b35e075c613350c04dc947703037f133125bf0917c8f445307b226a24f3d1",
+      "requests": 90
+    },
+    {
+      "id": "synth-P1000-Z0.8-L16-S20191230",
+      "path": "results/raw/P6/prepared-training/synth-P1000-Z0.8-L16-S20191230.json.gz",
+      "sha256": "c1128c702efc660cf3b12b9173d2bcbb206198a3d16e251914ca1cea72b3699f",
+      "requests": 90
+    }
+  ],
+  "independent_accelerator": {
+    "argv": [
+      "/usr/bin/cc",
+      "-std=c11",
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "/home/abc/Desktop/Jane Street/py/tiplog_py/exp/hash_bytes.c",
+      "-o",
+      "/home/abc/Desktop/Jane Street/build/python-oracle/libtiplog_oracle_bytes.so"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "compiler_version": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "source": "/home/abc/Desktop/Jane Street/py/tiplog_py/exp/hash_bytes.c",
+    "source_sha256": "7910f385aaac9f4365b150276ed4578e2fb6b08b35e5f78bc973da7b1f611612",
+    "binary": "/home/abc/Desktop/Jane Street/build/python-oracle/libtiplog_oracle_bytes.so",
+    "binary_sha256": "1e75970da2687584545498da6111f98d316229da23a1642ca5262e6dc66da235"
+  },
+  "created_utc": "2026-10-23T14:35:12.179743+00:00",
+  "matrix_choice": "T1 C1GiB all backlogs and C2GiB longest; T3 k=1/sqrt(P)/P and local selectivity .01/.1/1"
+}

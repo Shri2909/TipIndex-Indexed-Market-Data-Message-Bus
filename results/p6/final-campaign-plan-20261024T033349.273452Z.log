@@ -1,0 +1,16 @@
+{
+  "status": "plan-only",
+  "stages": [
+    "pilot-M1:30",
+    "pilot-T1:30 separate processes",
+    "CV response",
+    "training:8 independent synthetic workloads",
+    "Auto freeze and protocol freeze",
+    "M1/M1-touch:900 cases",
+    "M2:120 cases",
+    "M3:8 cases",
+    "evaluation:41 workloads, all required T configurations",
+    "independent saved-output audit",
+    "consolidation and F01\u2013F13 regeneration"
+  ]
+}

@@ -1,6 +1,8 @@
 #include "tiplog/subs/compiled.hpp"
 
 #include <algorithm>
+#include <functional>
+#include <unordered_set>
 #include <utility>
 #include <type_traits>
 
@@ -8,25 +10,57 @@ namespace tiplog::subs {
 namespace {
 static_assert(std::is_nothrow_move_constructible_v<PartitionFilter>);
 static_assert(std::is_nothrow_move_assignable_v<PartitionFilter>);
-bool prefix_at_boundary(std::string_view root, std::string_view path) {
-  return path == root || (path.size() > root.size() && path.starts_with(root) &&
-                          path[root.size()] == '/');
+struct PathHash {
+  using is_transparent = void;
+  std::size_t operator()(std::string_view path) const noexcept {
+    return std::hash<std::string_view>{}(path);
+  }
+};
+using Paths = std::unordered_set<std::string, PathHash, std::equal_to<>>;
+
+bool has_subtree_prefix(const Paths& roots, std::string_view path,
+                        bool include_self = true) {
+  if (roots.empty()) return false;
+  if (include_self && roots.contains(path)) return true;
+  for (auto end = path.find('/'); end != std::string_view::npos;
+       end = path.find('/', end + 1)) {
+    if (roots.contains(path.substr(0, end))) return true;
+  }
+  return false;
 }
-bool term_matches(const Term& term, std::string_view path) {
-  return term.kind == Term::Exact ? term.path == path : prefix_at_boundary(term.path, path);
-}
-bool matches_any(std::span<const Term> terms, std::string_view path) {
-  return std::any_of(terms.begin(), terms.end(),
-                     [path](const Term& term) { return term_matches(term, path); });
-}
-bool covers_partition(std::span<const Term> terms, const topics::Topic& topic) {
-  // A matching subtree of depth one/two covers every topic in this partition.
-  return std::any_of(terms.begin(), terms.end(), [&topic](const Term& term) {
-    return term.kind == Term::Subtree &&
-           std::count(term.path.begin(), term.path.end(), '/') < 2 &&
-           prefix_at_boundary(term.path, topic.path);
-  });
-}
+
+// Own the strings rather than views into terms, so the lookup lifetime is
+// independent of vector moves. Transparent lookup allocates no path prefixes.
+// Matching uses one exact lookup plus one lookup per segment boundary, never
+// a scan through the subscription's terms. No iteration order affects output.
+struct Matching {
+  Paths exact, subtree, whole_partition;
+  explicit Matching(std::span<const Term> terms) {
+    const auto subtrees = static_cast<std::size_t>(std::count_if(
+        terms.begin(), terms.end(), [](const Term& term) {
+          return term.kind == Term::Subtree;
+        }));
+    exact.reserve(terms.size() - subtrees);
+    subtree.reserve(subtrees);
+    whole_partition.reserve(subtrees);
+    for (const auto& term : terms) {
+      if (term.kind == Term::Exact) {
+        exact.insert(term.path);
+      } else {
+        subtree.insert(term.path);
+        // A depth-one/two subtree covers every topic in its partition.
+        if (std::count(term.path.begin(), term.path.end(), '/') < 2)
+          whole_partition.insert(term.path);
+      }
+    }
+  }
+  bool matches(std::string_view path) const {
+    return exact.contains(path) || has_subtree_prefix(subtree, path);
+  }
+  bool covers_partition(std::string_view path) const {
+    return has_subtree_prefix(whole_partition, path);
+  }
+};
 auto find_filter(auto& filters, PartitionId partition) {
   return std::lower_bound(filters.begin(), filters.end(), partition,
                           [](const PartitionFilter& filter, PartitionId id) {
@@ -66,15 +100,16 @@ SubscriptionSpec normalize(const SubscriptionSpec& spec) {
     return a.kind < b.kind;
   });
   result.terms.erase(std::unique(result.terms.begin(), result.terms.end()), result.terms.end());
+  Paths subtrees;
+  subtrees.reserve(result.terms.size());
+  for (const auto& term : result.terms) {
+    if (term.kind == Term::Subtree) subtrees.insert(term.path);
+  }
   std::vector<Term> retained;
   retained.reserve(result.terms.size());
   for (const auto& term : result.terms) {
-    const bool covered = std::any_of(result.terms.begin(), result.terms.end(),
-                                    [&term](const Term& other) {
-      if (other.kind != Term::Subtree) return false;
-      if (term.kind == Term::Subtree && term.path == other.path) return false;
-      return prefix_at_boundary(other.path, term.path);
-    });
+    const bool covered = has_subtree_prefix(subtrees, term.path,
+                                            term.kind == Term::Exact);
     if (!covered) retained.push_back(term);
   }
   result.terms = std::move(retained);
@@ -86,12 +121,14 @@ struct CompiledState final : topics::TopicObserver {
   topics::Registry* registry;
   std::weak_ptr<const topics::Registry::Lifetime> identity;
   std::vector<Term> terms;
+  const Matching matching;
   std::vector<PartitionFilter> filters;
   std::vector<topics::ObserverHandle> hooks;
   bool wide{};
 
   CompiledState(topics::Registry& source, std::vector<Term> normalized)
-      : registry(&source), identity(source.identity()), terms(std::move(normalized)) {}
+      : registry(&source), identity(source.identity()), terms(std::move(normalized)),
+        matching(terms) {}
 
   struct Prepared final : Update {
     CompiledState& state;
@@ -116,7 +153,7 @@ struct CompiledState final : topics::TopicObserver {
   std::unique_ptr<Update> prepare(std::span<const topics::Topic> pending) override {
     auto update = std::make_unique<Prepared>(*this);
     for (const auto& topic : pending) {
-      if (!matches_any(terms, topic.path)) continue;
+      if (!matching.matches(topic.path)) continue;
       const auto current = find_filter(filters, topic.partition);
       const bool exists = current != filters.end() && current->partition == topic.partition;
       if (exists && current->all) continue;
@@ -125,7 +162,7 @@ struct CompiledState final : topics::TopicObserver {
       if (filter == staged.end() || filter->partition != topic.partition) {
         filter = staged.insert(filter, exists ? *current : PartitionFilter{topic.partition, false, {}});
       }
-      include(*filter, topic, covers_partition(terms, topic));
+      include(*filter, topic, matching.covers_partition(topic.path));
     }
     const auto required = filters.size() + update->added.size();
     if (required > filters.capacity()) {
@@ -179,12 +216,12 @@ CompiledSubscription compile(topics::Registry& registry, const SubscriptionSpec&
     }
   }
   for (const auto& topic : registry.all_topics()) {
-    if (!matches_any(state->terms, topic.path)) continue;
+    if (!state->matching.matches(topic.path)) continue;
     auto filter = find_filter(state->filters, topic.partition);
     if (filter == state->filters.end() || filter->partition != topic.partition) {
       filter = state->filters.insert(filter, PartitionFilter{topic.partition, false, {}});
     }
-    include(*filter, topic, covers_partition(state->terms, topic));
+    include(*filter, topic, state->matching.covers_partition(topic.path));
   }
   state->hooks.reserve(state->terms.size());
   for (std::size_t i = 0; i < state->terms.size(); ++i) {

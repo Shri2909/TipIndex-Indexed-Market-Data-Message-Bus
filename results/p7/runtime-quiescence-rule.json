@@ -1,0 +1,26 @@
+{
+  "schema": "tiplog-p7-runtime-quiescence-rule-v1",
+  "declared_utc": "2026-10-25T15:07:59+00:00",
+  "declared_before": "the controlled DP runtime campaign that replaces the discarded first attempt; no rerun timing value had been observed",
+  "reason": "The first controlled runtime attempt (2026-10-25 14:33-14:45 UTC) was discarded at the user's instruction: its own process snapshots showed CPU-bound processes from another project sharing solver CPU 2 in 9 of 10 measured rounds. Its readings were deleted, not retained.",
+  "campaign": "results/p7/runtime-campaign.json",
+  "sampler": "scripts/p7_cpu_sampler.py",
+  "sampler_output": "results/raw/P7/runtime-host/cpu-samples.jsonl",
+  "sampler_placement": "CPU 11, nice 19; reads only /proc/stat cpu2/cpu3 every 0.5 s",
+  "checker": "scripts/check_p7_runtime_quiescence.py",
+  "clock_ticks_per_second": 100,
+  "thresholds": {
+    "cpu2_settle_idle_min": 0.9,
+    "foreign_cpu23_seconds_max": 3.0,
+    "cpu3_idle_ratio_min": 0.9
+  },
+  "definitions": {
+    "cpu2_settle_idle": "CPU2 (idle+iowait)/total /proc/stat tick fraction between the first and last sampler readings inside each round's 60 s settling window; the solver is not running then.",
+    "foreign_cpu23_seconds": "Sum of user+system CPU seconds accrued between consecutive runner process snapshots by processes outside the round launcher's process tree whose sampled CPU is 2 or 3 at both snapshots.",
+    "cpu3_idle_ratio": "The runner's own recorded CPU3 /proc/stat idle fraction across settling and the runtime process."
+  },
+  "applies_to": "every round, including the saved warm-up",
+  "consequence": "Any failed round rejects the whole campaign. A rejected campaign is not analyzed or reported; it is discarded and rerun under the unchanged runtime protocol after the host is quiet.",
+  "calibration": "Thresholds were chosen before the rerun from the discarded attempt's process snapshots only (about 1.1 s foreign CPU2/3 time in its two clean rounds versus 16-65 s in contaminated rounds), never from its timing values, and from a 30 s quiet-host mpstat baseline (CPU2 94.5% idle with desktop background, CPU3 99.5%).",
+  "unchanged": "results/p7/runtime-supplement.json protocol, solver caps, inputs, shuffle seed, settling, warm-up/measured rounds, statistics and acceptance."
+}

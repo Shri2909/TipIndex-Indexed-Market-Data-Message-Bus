@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-25T07:52:30.267883+00:00",
+  "files_verified": 5364,
+  "bytes_verified": 4105957437,
+  "changed_files": [],
+  "scope": "All5364 measured files remain byte-identical after auditor/report/rendering postprocessing. Audit and compatibility provenance are separately preserved/versioned."
+}

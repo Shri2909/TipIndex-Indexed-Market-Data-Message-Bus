@@ -123,9 +123,16 @@ class Ring {
   [[nodiscard]] Published commit(Plan&& plan, TopicId topic) noexcept;
   Seq append(TopicId topic, std::span<const std::byte> payload);
 
-  // pos must be a retained item boundary. Borrowed payload is valid only until
-  // the next mutation. Malformed/range-invalid positions throw before access.
+  // O(1) access: the caller must prove pos is a retained DATA/PAD boundary,
+  // for example from tail_pos(), seek_after(), an index posting, or traversal
+  // by prior item.size. Alignment/range checks alone do not prove a boundary;
+  // an aligned interior position violates this precondition in every build.
+  // Borrowed payload is valid only until the next mutation. Range/alignment and
+  // malformed framing throw. Use at_checked() for untrusted positions.
   [[nodiscard]] Item at(LogPos pos) const;
+  // Validates membership by walking from the retained tail, O(retained items).
+  // Interior positions, head_pos(), and unretained positions throw out_of_range.
+  [[nodiscard]] Item at_checked(LogPos pos) const;
   [[nodiscard]] bool is_boundary(LogPos pos) const;
   // First retained DATA with seq>after, or head_pos. Expired history throws;
   // after>=head_seq-1 is empty and never computes an overflowing after+1.

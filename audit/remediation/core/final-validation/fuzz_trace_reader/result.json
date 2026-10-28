@@ -1,0 +1,35 @@
+{
+  "binary_sha256_after": "22b07a54beea044400a7ef3ecfe7d0500def48dab641093149e98fd87d825036",
+  "binary_sha256_before": "22b07a54beea044400a7ef3ecfe7d0500def48dab641093149e98fd87d825036",
+  "binary_unchanged": true,
+  "command": [
+    "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_trace_reader",
+    "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_trace_reader-corpus",
+    "-runs=10000",
+    "-seed=1",
+    "-max_len=65536",
+    "-detect_leaks=1",
+    "-print_final_stats=1",
+    "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_trace_reader-artifacts/"
+  ],
+  "elapsed_monotonic_seconds": 0.41589753500011284,
+  "environment": {},
+  "exit_status": 0,
+  "final_stats": [
+    "stat::number_of_executed_units: 10000",
+    "stat::average_exec_per_sec:     0",
+    "stat::new_units_added:          0",
+    "stat::slowest_unit_time_sec:    0",
+    "stat::peak_rss_mb:              43"
+  ],
+  "finished_utc": "2026-10-26T08:48:49.220352+00:00",
+  "id": "fuzz_trace_reader",
+  "kind": "fuzz",
+  "passed": true,
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+  },
+  "seed_corpus_source": "tests/fuzz/corpus/trace_reader",
+  "started_utc": "2026-10-26T08:48:48.798215+00:00"
+}

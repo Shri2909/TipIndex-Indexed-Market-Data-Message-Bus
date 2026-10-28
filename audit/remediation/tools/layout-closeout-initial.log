@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/audit/remediation/tools/run_layout_closeout.py", line 49, in <module>
+    raise RuntimeError('select worked-example snapshot from '+repr(candidates))
+RuntimeError: select worked-example snapshot from [PosixPath('/home/abc/Desktop/Jane Street/results/p7/worked-example.json'), PosixPath('/home/abc/Desktop/Jane Street/results/p7/worked-example-release-20261025T084010.443196Z.json'), PosixPath('/home/abc/Desktop/Jane Street/results/p7/worked-example-asan-ubsan-20261025T084012.156304Z.json'), PosixPath('/home/abc/Desktop/Jane Street/results/p7/worked-example-asan-ubsan.json')]

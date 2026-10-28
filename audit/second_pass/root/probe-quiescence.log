@@ -1,0 +1,8 @@
+{
+  "checker_status": "passed",
+  "checker_exit_code": 0,
+  "selected_file": "round-00-attempt-b.process-audit.jsonl",
+  "accepted_file": "round-00-attempt-a.process-audit.jsonl",
+  "reported_foreign_cpu_seconds": 0.0,
+  "accepted_attempt_foreign_cpu_seconds": 10.0
+}

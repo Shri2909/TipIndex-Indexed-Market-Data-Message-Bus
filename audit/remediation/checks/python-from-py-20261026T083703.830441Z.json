@@ -1,0 +1,21 @@
+{
+  "label": "python-from-py",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "import os, pytest; os.chdir(\"py\"); raise SystemExit(pytest.main([\"-q\", \"--junitxml=../audit/remediation/python-from-py.xml\"]))"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:37:03.830759+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/python-from-py-20261026T083703.830441Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 19.910181227000066,
+  "log_sha256": "ba18fa925d87009dac33bd32335ee6d7250fa82ffe268f47fec9b6295ab3046d"
+}

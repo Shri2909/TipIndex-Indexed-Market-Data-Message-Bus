@@ -1,0 +1,46 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191238
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x5a44f6c0f0e8, 0x5a44f6c108da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x5a44f6c108e0,0x5a44f6c28800), 
+INFO:      891 files found in tests/fuzz/corpus/ops_indexed
+INFO: seed corpus: files: 891 min: 1b max: 41225b total: 1048494b rss: 34Mb
+#892	INITED cov: 1796 ft: 8037 corp: 607/718Kb exec/s: 37 rss: 549Mb
+#938	NEW    cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 37 rss: 549Mb L: 1025/41225 MS: 1 InsertByte-
+#976	REDUCE cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 39 rss: 549Mb L: 658/41225 MS: 3 CMP-ChangeBinInt-EraseBytes- DE: "\001\000\000\000"-
+#1017	REDUCE cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 39 rss: 552Mb L: 62/41225 MS: 1 EraseBytes-
+#1024	pulse  cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 39 rss: 552Mb
+#1027	REDUCE cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 39 rss: 552Mb L: 172/41225 MS: 5 ChangeByte-InsertRepeatedBytes-ChangeBit-PersAutoDict-EraseBytes- DE: "\001\000\000\000"-
+#1081	REDUCE cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 34 rss: 565Mb L: 30/41225 MS: 4 CMP-ChangeBit-ChangeBit-EraseBytes- DE: "\012\000\000\000\000\000\000\000"-
+#1166	REDUCE cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 35 rss: 565Mb L: 56/41225 MS: 5 ChangeByte-ChangeBit-ChangeBinInt-EraseBytes-ShuffleBytes-
+#1542	REDUCE cov: 1796 ft: 8038 corp: 608/719Kb lim: 65536 exec/s: 39 rss: 589Mb L: 7591/41225 MS: 1 EraseBytes-
+#1728	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 40 rss: 589Mb L: 1155/41225 MS: 1 EraseBytes-
+#1759	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 39 rss: 589Mb L: 24/41225 MS: 1 EraseBytes-
+#1805	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 41 rss: 589Mb L: 24/41225 MS: 1 EraseBytes-
+#2041	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 40 rss: 589Mb L: 397/41225 MS: 1 EraseBytes-
+#2048	pulse  cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 40 rss: 589Mb
+#2587	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 41 rss: 602Mb L: 448/41225 MS: 1 EraseBytes-
+#3133	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 39 rss: 648Mb L: 29/41225 MS: 1 EraseBytes-
+#3138	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 39 rss: 648Mb L: 4009/41225 MS: 5 InsertByte-PersAutoDict-PersAutoDict-CMP-EraseBytes- DE: "\012\000\000\000\000\000\000\000"-"\012\000\000\000\000\000\000\000"-"/A"-
+#3388	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 39 rss: 674Mb L: 146/41225 MS: 5 PersAutoDict-ChangeBit-ChangeBinInt-ChangeBinInt-EraseBytes- DE: "\001\000\000\000"-
+#3471	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 40 rss: 674Mb L: 896/41225 MS: 3 PersAutoDict-ChangeBit-EraseBytes- DE: "/A"-
+#3486	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 40 rss: 674Mb L: 131/41225 MS: 5 EraseBytes-CrossOver-InsertByte-ShuffleBytes-CMP- DE: "A\207\316\211}r\000\000"-
+#3562	REDUCE cov: 1796 ft: 8038 corp: 608/718Kb lim: 65536 exec/s: 41 rss: 674Mb L: 155/41225 MS: 1 EraseBytes-
+#3896	NEW    cov: 1796 ft: 8051 corp: 609/755Kb lim: 65536 exec/s: 38 rss: 674Mb L: 38394/41225 MS: 4 ShuffleBytes-ShuffleBytes-ChangeBit-CopyPart-
+#3910	REDUCE cov: 1796 ft: 8051 corp: 609/755Kb lim: 65536 exec/s: 37 rss: 674Mb L: 3774/41225 MS: 4 CMP-InsertRepeatedBytes-EraseBytes-InsertByte- DE: "\000\000"-
+#4096	pulse  cov: 1796 ft: 8051 corp: 609/755Kb lim: 65536 exec/s: 37 rss: 674Mb
+#4262	REDUCE cov: 1796 ft: 8051 corp: 609/755Kb lim: 65536 exec/s: 39 rss: 674Mb L: 28/41225 MS: 2 ChangeBit-EraseBytes-
+#4288	REDUCE cov: 1796 ft: 8051 corp: 609/755Kb lim: 65536 exec/s: 39 rss: 674Mb L: 18/41225 MS: 1 EraseBytes-
+#4773	DONE   cov: 1796 ft: 8051 corp: 609/755Kb lim: 65536 exec/s: 39 rss: 674Mb
+###### Recommended dictionary. ######
+"\001\000\000\000" # Uses: 137
+"\012\000\000\000\000\000\000\000" # Uses: 120
+"/A" # Uses: 32
+"A\207\316\211}r\000\000" # Uses: 30
+"\000\000" # Uses: 12
+###### End of recommended dictionary. ######
+Done 4773 runs in 121 second(s)
+stat::number_of_executed_units: 4773
+stat::average_exec_per_sec:     39
+stat::new_units_added:          22
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              674

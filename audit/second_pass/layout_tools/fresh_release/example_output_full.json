@@ -1,0 +1,12 @@
+{
+  "name": "example_output_full",
+  "argv": [
+    "/tmp/tiplog-second-pass/release/tiplog_layout_example",
+    "--output",
+    "/dev/full"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.0015241380006045802,
+  "stdout": "",
+  "stderr": ""
+}

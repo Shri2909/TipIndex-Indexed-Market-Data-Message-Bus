@@ -1,6 +1,6 @@
 # IMPLEMENTATION PLAN — phases, hours, gates, fallback, roadmap
 
-Plan version **v1.1** · 2026-10-17 · **Approved with Tier B defaults. P0 complete; P1–P5 jointly authorized in dependency order.** The user approved 2019-12-30 Nasdaq data only, no privileged benchmark-setting changes and the proposed writable repository setup. The subsequent joint execution instruction supersedes separate start messages within P1–P5 only; passing each gate permits automatic continuation through P5. P6–P8, Tier C and roadmap work remain outside this authorization. §14 records the amendments to the original estimates/tasks. [Approval and execution record](PROGRESS.md).
+Plan version **v1.1** · 2026-10-17 · **Approved with Tier B defaults. P0–P8 complete (Tier B core); execution stopped after P8 as instructed on 2026-10-25.** The user approved 2019-12-30 Nasdaq data only, no privileged benchmark-setting changes and the writable repository setup. The historical [execution instruction](../../results/p7/authorization.txt) permitted automatic continuation to P8 only after P7's gate and required a stop after P8. Subsequent audit fixes and the researched optional [F-01 polling feature](../report/POLL_BUDGET.md) were approved separately. Tier C and roadmap work remain outside those approvals. The phase tasks and acceptance criteria below remain v1.1. §14 records the amendments to the original estimates/tasks. [Approval and execution record](PROGRESS.md).
 
 ---
 
@@ -335,14 +335,17 @@ These items are part of the intended system. Listing them authorizes nothing. Ea
 ## 10. Completion checklists
 
 ### 10.1 Core (to tick at P8, with evidence links)
-- [ ] All core phase DoDs met. PROGRESS lists the evidence per phase.
-- [ ] CC-1…CC-6 and RC-1…RC-3 satisfied (VALIDATION §1.1).
-- [ ] Every fuzz target ran ≥30 min at its last gate; crashes regressed.
-- [ ] `data/manifest.json` with SHA-256 for every input; no raw or derived message-level data in git.
-- [ ] Every figure regenerates via `figures.build --all`; the claims table points to raw files.
-- [ ] Non-`ok` statuses reported; no p99.9 without n ≥ 10⁵; no throughput→latency claims.
-- [ ] Optimizer claims scoped (ARCHITECTURE §6.9); worked example reproduced.
-- [ ] Report includes limitations and threats to validity; resume bullets filled with measured numbers or removed.
+
+Ticked at P8 on 2026-10-25 after the closeout verification; the full review with hashed evidence is in [the acceptance evidence](../../results/p8/acceptance-evidence.json).
+
+- [x] All core phase DoDs met. PROGRESS lists the evidence per phase. Gates: [P1](../../results/p1/phase-gate.json)–[P6](../../results/p6/phase-gate.json), [P7](../../results/p7/phase-gate.json); [PROGRESS](PROGRESS.md).
+- [x] CC-1…CC-6 and RC-1…RC-3 satisfied (VALIDATION §1.1). Summary table with links: [REPORT §5](../report/REPORT.md#5-correctness-evidence).
+- [x] Every fuzz target ran ≥30 min at its last gate; crashes regressed. F1 1,801.9 s and F2 1,801.8 s ([P1](../../results/p1/fuzz-gate-verified.json)); F3 1,802.6 s ([P6](../../results/p6/fuzz-prefix-final-verified.json)). No crash was found, so none needed regression.
+- [x] `data/manifest.json` with SHA-256 for every input; no raw or derived message-level data in git. [Manifest](../../data/manifest.json); trace hashes in the [data gate](../../results/p1/data-gate.json); packaging inventory `results/p8/artifact-manifest.json`.
+- [x] Every figure regenerates via `figures.build --all`; the claims table points to raw files. [F01–F18 regeneration](../../results/p7/figures-all-final-20261025T154953.610882Z.json); claims tables in [results_tip.md](../report/results_tip.md) and [results_layout.md](../report/results_layout.md).
+- [x] Non-`ok` statuses reported; no p99.9 without n ≥ 10⁵; no throughput→latency claims. Outcome accounting in [results_tip.md](../report/results_tip.md) and solver-cap coverage in [results_layout.md](../report/results_layout.md); no percentile latency is reported.
+- [x] Optimizer claims scoped (ARCHITECTURE §6.9); worked example reproduced. [Worked example](../../results/p7/worked-example.json), [P7 gate](../../results/p7/phase-gate.json), [REPORT §8](../report/REPORT.md#8-storage-layout-optimization-p7).
+- [x] Report includes limitations and threats to validity; resume bullets filled with measured numbers or removed. [REPORT §9 and resume bullets](../report/REPORT.md#9-limitations-and-threats-to-validity).
 
 ### 10.2 Full project
 - [ ] R1–R4 gates passed (R5, R6, R8, R10 if chosen); disk claims only for tested crash models.

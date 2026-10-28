@@ -1,0 +1,5 @@
+outer_returned=3 outer_find=3 outer_get_path=r/s/inner topic_count=4
+id=1 local_id=0 path=r
+id=2 local_id=0 path=r/s
+id=3 local_id=1 path=r/s/inner
+id=3 local_id=1 path=r/s/outer

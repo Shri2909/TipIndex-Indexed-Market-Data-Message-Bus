@@ -1,0 +1,23 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191243
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x60f8fb9700e8, 0x60f8fb9718da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x60f8fb9718e0,0x60f8fb989800), 
+INFO:      948 files found in tests/fuzz/corpus/ops_indexed
+INFO: seed corpus: files: 948 min: 1b max: 47712b total: 1298181b rss: 34Mb
+#949	INITED cov: 1796 ft: 8060 corp: 611/879Kb exec/s: 26 rss: 546Mb
+#981	REDUCE cov: 1796 ft: 8060 corp: 611/878Kb lim: 65536 exec/s: 26 rss: 546Mb L: 913/47712 MS: 2 CMP-EraseBytes- DE: "md/future/sub"-
+#1024	pulse  cov: 1796 ft: 8060 corp: 611/878Kb lim: 65536 exec/s: 27 rss: 546Mb
+#1848	REDUCE cov: 1796 ft: 8060 corp: 611/878Kb lim: 65536 exec/s: 23 rss: 634Mb L: 8339/47712 MS: 2 CopyPart-EraseBytes-
+#2048	pulse  cov: 1796 ft: 8060 corp: 611/878Kb lim: 65536 exec/s: 24 rss: 634Mb
+#2567	NEW    cov: 1797 ft: 8067 corp: 612/883Kb lim: 65536 exec/s: 27 rss: 634Mb L: 4923/47712 MS: 4 PersAutoDict-CopyPart-EraseBytes-CrossOver- DE: "md/future/sub"-
+#2828	REDUCE cov: 1797 ft: 8067 corp: 612/883Kb lim: 65536 exec/s: 27 rss: 634Mb L: 7298/47712 MS: 1 EraseBytes-
+#3573	DONE   cov: 1797 ft: 8067 corp: 612/883Kb lim: 65536 exec/s: 29 rss: 634Mb
+###### Recommended dictionary. ######
+"md/future/sub" # Uses: 242
+###### End of recommended dictionary. ######
+Done 3573 runs in 121 second(s)
+stat::number_of_executed_units: 3573
+stat::average_exec_per_sec:     29
+stat::new_units_added:          4
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              634

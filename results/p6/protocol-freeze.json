@@ -1,0 +1,22 @@
+{
+  "cache_treatments": [
+    "repeat-warm",
+    "scratch-thrashed"
+  ],
+  "counters": null,
+  "end_to_end_repetitions": 20,
+  "evaluation_observations_used": 0,
+  "frozen_utc": "2026-10-24T04:40:43.791987+00:00",
+  "micro_design": "Independent random-interleaved repetitions; no invented process pairing",
+  "micro_repetitions": 15,
+  "paired_rounds": "Shared trace/generator state, seeded shuffled arms, fresh child each workload/round",
+  "pilot_response": "results/raw/P6/campaign-20261024/pilot-response.json",
+  "pilot_response_sha256": "a127629d44a25ece011f6d54625417c4ea94e52ef1aa335b6fd50ecf999cb092",
+  "privileged_settings_changed": false,
+  "provenance": "results/raw/P6/campaign-20261024/campaign-provenance.json",
+  "settle_seconds_per_block": 60,
+  "statistics": "Seeded10000-resample percentile bootstrap, whole paired rounds for paired ratios",
+  "status": "frozen",
+  "thresholds": "results/p6/auto-thresholds.json",
+  "thresholds_sha256": "fa2c537820bb436c239a4a38bba53ff537289c629a7e7f570806c7f8ee5018a3"
+}

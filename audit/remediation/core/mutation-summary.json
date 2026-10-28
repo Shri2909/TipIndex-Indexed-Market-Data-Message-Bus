@@ -1,0 +1,17 @@
+[
+  {
+    "no_op_checker": "ring",
+    "exit_code": 1,
+    "negative_control_killed": true
+  },
+  {
+    "no_op_checker": "index",
+    "exit_code": 1,
+    "negative_control_killed": true
+  },
+  {
+    "no_op_checker": "engine",
+    "exit_code": 1,
+    "negative_control_killed": true
+  }
+]

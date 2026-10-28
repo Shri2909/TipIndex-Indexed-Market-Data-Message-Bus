@@ -1,0 +1,31 @@
+{
+  "label": "python-bound-from-py",
+  "argv": [
+    "/home/abc/Desktop/Jane Street/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--junitxml=/home/abc/Desktop/Jane Street/audit/remediation/python-from-py.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street/py",
+  "started_utc": "2026-10-26T08:54:40.339514+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "c87ea132a9b2d51ef4e0f97239ac7833a25ba0803f23c0067074684a3b728e32"
+  },
+  "log": "audit/remediation/checks/python-bound-from-py-20261026T085440.339251Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 20.816058509999948,
+  "log_sha256": "3595e87fa09af391f02ef1154f4800187bb715a8085f77886c07fd26e16901b9",
+  "input_sets_after": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "c87ea132a9b2d51ef4e0f97239ac7833a25ba0803f23c0067074684a3b728e32"
+  }
+}

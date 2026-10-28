@@ -1,0 +1,70 @@
+{
+  "results/p7/p6-figure-extension-baseline.json": {
+    "sha256": "466f39388abb448ad8e467747ab4ea45d316c259edbd668c45573b8d854fbe85",
+    "bytes": 1484
+  },
+  "results/p8/acceptance-evidence.json": {
+    "sha256": "ea6bbf7c67e02b8b7cf22276391221cc5e4fd3bff6823af6ef2097228d9132de",
+    "bytes": 59851
+  },
+  "results/p8/checks.json": {
+    "sha256": "b5ea01e901d28105292b16f330528200d9799419b233e026de64e1826dac7ae3",
+    "bytes": 647982
+  },
+  "results/p8/artifact-manifest.json": {
+    "sha256": "6a004d52988f06541c56065937a4c9444455e70e21381bad54ac7c48cb3f2f73",
+    "bytes": 1757453
+  },
+  "results/p8/phase-gate.json": {
+    "sha256": "168f4727d634eb0142588f6f5511226feb13c73fb1c9eb2b666c37740038d9d2",
+    "bytes": 6281
+  },
+  "results/p1/phase-gate.json": {
+    "sha256": "5fc3c5adec3365a6ba9bb381df88cf8f50f1a803f778b7a6e2b3ce09ca2ead10",
+    "bytes": 2343
+  },
+  "results/p2/phase-gate.json": {
+    "sha256": "5a9f0c85001f5ce1fb3709873040b569c000b1e96cb658c3d20aa43953f36923",
+    "bytes": 1680
+  },
+  "results/p3/phase-gate.json": {
+    "sha256": "94fce9155bf0b252817d8960b6701a54131ec494c572459d95ae9bb73263739b",
+    "bytes": 1591
+  },
+  "results/p4/phase-gate.json": {
+    "sha256": "499f55a873822a5eb79d505042298270602e54b164ded0ec6a4703c5fef61142",
+    "bytes": 3302
+  },
+  "results/p5/phase-gate.json": {
+    "sha256": "8665225a93ec1f17da905cffcc9e37f34e91cffda13b1484d25765705e8f1f76",
+    "bytes": 4726
+  },
+  "results/p6/phase-gate.json": {
+    "sha256": "e0fb98941859929d8f7d1798a679b49caf8295309e5e2bdd0e3ae8886b35d068",
+    "bytes": 7774
+  },
+  "results/p7/phase-gate.json": {
+    "sha256": "891fd7abdf9864c75bc52de5ac31e0699baf031d52792e4dc54195f6d509e076",
+    "bytes": 59192
+  },
+  "results/derived/tip-summary.json": {
+    "sha256": "001c85eaa23cca33c4550f370d44c4c0285c84204225bb224ac72a14a6136649",
+    "bytes": 84497181
+  },
+  "results/derived/tip-statistics.csv": {
+    "sha256": "afe11759fd2aec533cbdc7bda33630f8e4f5299ac30d854b94bb2897302aec80",
+    "bytes": 176441423
+  },
+  "results/derived/tip-outcomes.csv": {
+    "sha256": "8465e03d7a254030e795a70e2a3b6424a94927c647cbad834480e6468aab8014",
+    "bytes": 16959323
+  },
+  "results/derived/tip-paired-ratios.csv": {
+    "sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866",
+    "bytes": 14080408
+  },
+  "results/p6/analysis-inputs.json": {
+    "sha256": "3e48f0b0f1ab3315b92c973bdc208b4f23d1c7e8f70d4cdc911988ec92e64498",
+    "bytes": 1110
+  }
+}

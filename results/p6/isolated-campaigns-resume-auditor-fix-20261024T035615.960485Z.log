@@ -1,0 +1,17 @@
+{"stage": "pilot-independent-audit", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/pilot-independent-audit-attempt002.stdout.log"}
+{"stage": "training", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/training-attempt001.stdout.log"}
+{"stage": "training-independent-audit", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/training-independent-audit-attempt001.stdout.log"}
+{"stage": "M1", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/M1-attempt001.stdout.log"}
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 291, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 276, in main
+    micro_inputs = [micro(kind, decision['micro_repetitions']) for kind in ('M1', 'M2', 'M3')]
+                    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 230, in micro
+    stage(kind, command, micro_pointer=pointer)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 197, in stage
+    raise RuntimeError('campaign stage failed; evidence preserved: ' + name)
+RuntimeError: campaign stage failed; evidence preserved: M1

@@ -1,0 +1,43 @@
+Test project /home/abc/Desktop/Jane Street/build/release
+      Start 16: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds
+ 1/19 Test #16: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds ..................................   Passed    0.01 sec
+      Start 17: topics.subs.V06Registry.PathValidationAndLookup
+ 2/19 Test #17: topics.subs.V06Registry.PathValidationAndLookup ..............................................   Passed    0.01 sec
+      Start 18: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion
+ 3/19 Test #18: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion ........................   Passed    0.01 sec
+      Start 19: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+ 4/19 Test #19: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher ..............   Passed    0.49 sec
+      Start 20: topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds
+ 5/19 Test #20: topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds .........   Passed    0.01 sec
+      Start 21: topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs
+ 6/19 Test #21: topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs .........................   Passed    0.15 sec
+      Start 22: topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions
+ 7/19 Test #22: topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions ...   Passed    0.31 sec
+      Start 23: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+ 8/19 Test #23: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms ......................   Passed    0.01 sec
+      Start 24: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+ 9/19 Test #24: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries ..........................   Passed    0.01 sec
+      Start 25: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+10/19 Test #25: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow ......   Passed    0.01 sec
+      Start 26: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded
+11/19 Test #26: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded .................................   Passed    0.01 sec
+      Start 27: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+12/19 Test #27: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks ..............................   Passed    0.01 sec
+      Start 28: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+13/19 Test #28: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor ............   Passed    0.01 sec
+      Start 29: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+14/19 Test #29: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit ..........   Passed    0.01 sec
+      Start 30: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain
+15/19 Test #30: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain ..............................   Passed    0.01 sec
+      Start 31: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel
+16/19 Test #31: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel ...............................   Passed    0.01 sec
+      Start 32: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+17/19 Test #32: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged ......   Passed    0.01 sec
+      Start 33: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+18/19 Test #33: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth ................................   Passed    0.04 sec
+      Start 34: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation
+19/19 Test #34: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation ...................................   Passed    0.01 sec
+
+100% tests passed out of 19
+
+Total Test time (real) =   1.31 sec

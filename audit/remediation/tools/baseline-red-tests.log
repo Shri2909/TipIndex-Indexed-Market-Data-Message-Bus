@@ -1,0 +1,104 @@
+FFFFFF
+======================================================================
+FAIL: test_expected_config_rejections_are_explicit_rows (__main__.ToolContracts.test_expected_config_rejections_are_explicit_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 136, in test_expected_config_rejections_are_explicit_rows
+    self.assertEqual([row["status"] for row in rows[1:]], ["invalid_config", "invalid_config"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['invalid_config', 'ok'] != ['invalid_config', 'invalid_config']
+
+First differing element 1:
+'ok'
+'invalid_config'
+
+- ['invalid_config', 'ok']
+?                      ^
+
++ ['invalid_config', 'invalid_config']
+?                     +++++++++ ^^^^
+
+
+======================================================================
+FAIL: test_final_evidence_write_failures (__main__.ToolContracts.test_final_evidence_write_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 61, in test_final_evidence_write_failures
+    self.bench("/dev/full", success=False)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 53, in bench
+    return self.command("tiplog_bench", "--synthetic", "--records", "100",
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "--partitions", "4", "--mix", self.mix,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "--ring-bytes", "8192", "--output", output,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        *args, success=success)
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 
+
+======================================================================
+FAIL: test_layout_run_budgets_cover_aggregate_curves_input_and_preparation (__main__.ToolContracts.test_layout_run_budgets_cover_aggregate_curves_input_and_preparation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 112, in test_layout_run_budgets_cover_aggregate_curves_input_and_preparation
+    self.assertIn("aggregate CURVE entries", failed.stdout)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'aggregate CURVE entries' not found in '{"type":"error","status":"error","id":"","line":0,"message":"unknown option: --max-curve-entries"}\n'
+
+======================================================================
+FAIL: test_m3_filtering_precedes_input_preparation (__main__.ToolContracts.test_m3_filtering_precedes_input_preparation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 141, in test_m3_filtering_precedes_input_preparation
+    self.command("index_bench", "--trace", self.root / "absent.mdt",
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 "--benchmark_filter=DOES_NOT_MATCH")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 47, in command
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : index_bench: open trace: No such file or directory
+
+
+======================================================================
+FAIL: test_mix_validates_all_rows_and_uint64_sum (__main__.ToolContracts.test_mix_validates_all_rows_and_uint64_sum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 86, in test_mix_validates_all_rows_and_uint64_sum
+    self.bench(output, success=False)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 53, in bench
+    return self.command("tiplog_bench", "--synthetic", "--records", "100",
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "--partitions", "4", "--mix", self.mix,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        "--ring-bytes", "8192", "--output", output,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        *args, success=success)
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 
+
+======================================================================
+FAIL: test_sim_fraction_validation_is_backend_independent (__main__.ToolContracts.test_sim_fraction_validation_is_backend_independent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 97, in test_sim_fraction_validation_is_backend_independent
+    result = self.command("tiplog_sim", "--trace", self.trace, "--backend", backend,
+                          "--auto-max-index-fraction", value, success=False)
+  File "/home/abc/Desktop/Jane Street/tests/layout/tool_contracts.py", line 49, in command
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : {"backend":"recording","mode":"scan","kernel":"stdpq","reader":"none","effective_last_range_mode":"scan","auto_policy_calibrated":false,"auto_max_partitions":64,"auto_max_index_fraction":nan,"seed":1,"published":0,"first_seq":0,"last_seq":0,"payload_bytes":0,"publication_digest_fnv1a64":14695981039346656037,"schedule_digest_fnv1a64":14695981039346656037,"delivered":0,"replay_digest_fnv1a64":14695981039346656037,"batches":0,"snapshots":0,"outcome":"done","head_pos":0,"tail_pos":0,"head_seq":0,"tail_seq":0,"pressure_data_evicted":0,"pressure_bytes_evicted":0}
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.193s
+
+FAILED (failures=6)

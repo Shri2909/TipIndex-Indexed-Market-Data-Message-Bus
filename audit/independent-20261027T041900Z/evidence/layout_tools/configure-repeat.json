@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "cmake",
+    "-S",
+    "/home/abc/Desktop/Jane Street",
+    "-B",
+    "/home/abc/Desktop/Jane Street/build/independent-layout-tools-final"
+  ],
+  "source_before": "4fc57e51c4bf1aa76e8c61bc4538f4a00fce0f03dd96e8f8ba577870da16fce8",
+  "archive_before": "f82705a2726d8f6cdcda274b841f6314dbfc6f731cdda06c946f310ec1cc3ad9",
+  "mtime_before": 1793104818755241910,
+  "returncode": 0,
+  "source_after": "4fc57e51c4bf1aa76e8c61bc4538f4a00fce0f03dd96e8f8ba577870da16fce8",
+  "archive_after": "f82705a2726d8f6cdcda274b841f6314dbfc6f731cdda06c946f310ec1cc3ad9",
+  "mtime_after": 1793104818755241910
+}

@@ -1,0 +1,31 @@
+[ 15%] Built target tiplog_ring
+[ 30%] Built target tiplog_topics_subs
+[ 46%] Built target tiplog_index
+[ 61%] Built target tiplog_merge
+[ 76%] Built target tiplog_trace
+[ 92%] Built target tiplog_engine
+[100%] Built target tiplog_bench
+[ 10%] Built target tiplog_merge
+[ 90%] Built target benchmark
+[ 95%] Building CXX object CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o
+/home/abc/Desktop/Jane Street/bench/micro/merge_bench.cpp:337:13: warning: ‘std::size_t {anonymous}::size(std::string_view)’ defined but not used [-Wunused-function]
+  337 | std::size_t size(std::string_view text) {
+      |             ^~~~
+[100%] Linking CXX executable merge_bench
+[100%] Built target merge_bench
+[ 14%] Built target tiplog_ring
+[ 14%] Built target tiplog_topics_subs
+[ 21%] Built target tiplog_index
+[ 28%] Built target tiplog_merge
+[ 35%] Built target tiplog_engine
+[ 92%] Built target benchmark
+[ 96%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[100%] Linking CXX executable publish_bench
+[100%] Built target publish_bench
+[  8%] Built target tiplog_index
+[ 78%] Built target benchmark
+[ 86%] Built target tiplog_trace
+[ 95%] Built target tiplog_topics_subs
+[ 95%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[100%] Linking CXX executable index_bench
+[100%] Built target index_bench

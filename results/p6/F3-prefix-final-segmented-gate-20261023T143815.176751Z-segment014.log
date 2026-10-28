@@ -1,0 +1,28 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191243
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x58b607558ed8, 0x58b60755abaf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x58b60755abb0,0x58b607577920), 
+INFO:     1497 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1497 min: 1b max: 64773b total: 4116822b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10355 corp: 624/155Kb exec/s: 341 rss: 372Mb
+#1498	INITED cov: 2250 ft: 11611 corp: 882/2326Kb exec/s: 23 rss: 636Mb
+#1532	REDUCE cov: 2250 ft: 11611 corp: 882/2326Kb lim: 65536 exec/s: 23 rss: 636Mb L: 51/64773 MS: 4 ShuffleBytes-EraseBytes-ChangeBinInt-InsertByte-
+#1589	REDUCE cov: 2250 ft: 11611 corp: 882/2326Kb lim: 65536 exec/s: 23 rss: 636Mb L: 121/64773 MS: 2 EraseBytes-CopyPart-
+#1656	REDUCE cov: 2250 ft: 11611 corp: 882/2326Kb lim: 65536 exec/s: 23 rss: 656Mb L: 92/64773 MS: 2 CopyPart-EraseBytes-
+#2048	pulse  cov: 2250 ft: 11611 corp: 882/2326Kb lim: 65536 exec/s: 25 rss: 715Mb
+#2217	REDUCE cov: 2250 ft: 11611 corp: 882/2326Kb lim: 65536 exec/s: 22 rss: 726Mb L: 103/64773 MS: 1 EraseBytes-
+#2359	NEW    cov: 2250 ft: 11613 corp: 883/2326Kb lim: 65536 exec/s: 22 rss: 726Mb L: 422/64773 MS: 2 EraseBytes-CrossOver-
+#2412	NEW    cov: 2250 ft: 11614 corp: 884/2327Kb lim: 65536 exec/s: 23 rss: 726Mb L: 647/64773 MS: 3 ChangeBinInt-ChangeByte-EraseBytes-
+#2476	NEW    cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 23 rss: 726Mb L: 30691/64773 MS: 4 ChangeByte-ChangeASCIIInt-ChangeBinInt-CrossOver-
+#2532	REDUCE cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 23 rss: 726Mb L: 200/64773 MS: 1 EraseBytes-
+#2653	REDUCE cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 23 rss: 735Mb L: 848/64773 MS: 1 EraseBytes-
+#2655	REDUCE cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 23 rss: 735Mb L: 545/64773 MS: 2 ChangeByte-EraseBytes-
+#2877	REDUCE cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 24 rss: 735Mb L: 2849/64773 MS: 2 CopyPart-EraseBytes-
+#2903	REDUCE cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 24 rss: 735Mb L: 90/64773 MS: 1 EraseBytes-
+#2908	DONE   cov: 2250 ft: 11620 corp: 885/2357Kb lim: 65536 exec/s: 23 rss: 735Mb
+Done 2908 runs in 125 second(s)
+stat::number_of_executed_units: 2908
+stat::average_exec_per_sec:     23
+stat::new_units_added:          12
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              735

@@ -1,0 +1,21 @@
+{
+  "label": "runtime-smoke-controls",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "import json; from pathlib import Path; a=[json.loads(x) for x in Path(\"results/p7/runtime-smoke-release.jsonl\").read_text().splitlines()]; b=[json.loads(x) for x in Path(\"results/p7/runtime-smoke-asan-ubsan.jsonl\").read_text().splitlines()]; assert len(a)==len(b)==90; assert all(r[\"cpu_before\"]==r[\"cpu_after\"]==2 and r[\"ac_before\"] is True and r[\"ac_after\"] is True and r[\"freq_before_khz\"]>0 and r[\"freq_after_khz\"]>0 for r in a+b); fields=(\"id\",\"objective\",\"scale\",\"stores\",\"read_bytes\",\"useful_bytes\",\"waste_bytes\",\"stores_touched\",\"curve\",\"cuts\"); assert [[r.get(k) for k in fields] for r in a]==[[r.get(k) for k in fields] for r in b]; print(\"90 control-valid cases per build, identical exact costs/curves/layouts\")"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T142247.384546Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/runtime-smoke-controls-20261025T142247.384546Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.024392787000124372
+}

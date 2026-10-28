@@ -1,0 +1,20 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191240
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x5a6a954bc0e8, 0x5a6a954bd8da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x5a6a954bd8e0,0x5a6a954d5800), 
+INFO:      924 files found in tests/fuzz/corpus/ops_indexed
+INFO: seed corpus: files: 924 min: 1b max: 41225b total: 1172259b rss: 34Mb
+#925	INITED cov: 1796 ft: 8053 corp: 609/769Kb exec/s: 31 rss: 542Mb
+#1024	pulse  cov: 1796 ft: 8053 corp: 609/769Kb lim: 65536 exec/s: 32 rss: 543Mb
+#1391	REDUCE cov: 1796 ft: 8053 corp: 609/769Kb lim: 65536 exec/s: 26 rss: 584Mb L: 186/40901 MS: 1 EraseBytes-
+#1400	REDUCE cov: 1796 ft: 8053 corp: 609/769Kb lim: 65536 exec/s: 26 rss: 584Mb L: 109/40901 MS: 4 InsertByte-ChangeBinInt-ChangeBit-EraseBytes-
+#1652	NEW    cov: 1796 ft: 8054 corp: 610/806Kb lim: 65536 exec/s: 26 rss: 584Mb L: 38395/40901 MS: 2 InsertByte-ChangeByte-
+#1841	REDUCE cov: 1796 ft: 8054 corp: 610/806Kb lim: 65536 exec/s: 27 rss: 604Mb L: 428/40901 MS: 4 ChangeByte-ShuffleBytes-ChangeByte-EraseBytes-
+#2048	pulse  cov: 1796 ft: 8054 corp: 610/806Kb lim: 65536 exec/s: 28 rss: 634Mb
+#2521	DONE   cov: 1796 ft: 8054 corp: 610/806Kb lim: 65536 exec/s: 20 rss: 634Mb
+Done 2521 runs in 125 second(s)
+stat::number_of_executed_units: 2521
+stat::average_exec_per_sec:     20
+stat::new_units_added:          4
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              634

@@ -1,0 +1,26 @@
+{
+  "label": "studies-resume",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/run_p7_studies.py",
+    "--manifest",
+    "results/p7/input-manifest.json",
+    "--output",
+    "results/raw/P7/studies",
+    "--cpu",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T140605.837147Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/studies-resume-20261025T140605.837147Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 857.1028276349998
+}

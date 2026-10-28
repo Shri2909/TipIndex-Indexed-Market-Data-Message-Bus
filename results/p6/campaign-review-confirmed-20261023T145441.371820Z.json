@@ -1,0 +1,21 @@
+{
+  "label": "campaign-review-confirmed",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "import hashlib,json,sys,tempfile\nfrom pathlib import Path\nsys.path[:0]=['py','scripts']\nimport run_p6_campaigns as c\nimport run_p6_micro as m\nchecks=0\nwith tempfile.TemporaryDirectory(prefix='tiplog-campaign-review-',dir='/tmp') as tmp:\n p=Path(tmp); a=p/'a.jsonl';b=p/'b.jsonl';out=p/'combined.jsonl'\n a.write_bytes(b'{\"synthetic\":\"a\"}\\n');b.write_bytes(b'{\"synthetic\":\"b\"}\\n')\n out.write_bytes(a.read_bytes()[:4])\n result=c.consolidate([a,b],out)\n assert out.read_bytes()==a.read_bytes()+b.read_bytes(); checks+=1\n assert result['sha256']==hashlib.sha256(out.read_bytes()).hexdigest();checks+=1\n assert len(list(p.glob('combined.jsonl.interrupted-*')))==1;checks+=1\n previous=out.stat().st_mtime_ns\n assert c.consolidate([a,b],out)==result and out.stat().st_mtime_ns==previous;checks+=1\n local=p/'local.json';latest=p/'latest.json'\n local.write_text(json.dumps({'output_directory':str(p/'owned')}))\n latest.write_text('malformed unrelated latest')\n assert c.saved_micro_session({'status':'passed'},'M1',15,local,latest)==p/'owned/session.json';checks+=1\n local.unlink()\n assert c.saved_micro_session({'child_session':str(p/'bound/session.json')},'M1',15,local,latest)==p/'bound/session.json';checks+=1\n latest.write_text(json.dumps({'configuration':{'kind':'M1','repetitions':15},'started_utc':'2026-10-23T15:00:01+00:00','output_directory':str(p/'candidate')}))\n assert c.saved_micro_session({'started_utc':'2026-10-23T15:00:00+00:00'},'M1',15,local,latest)==p/'candidate/session.json';checks+=1\n try:c.saved_micro_session({'started_utc':'2026-10-23T15:00:00+00:00'},'M2',15,local,latest)\n except RuntimeError:checks+=1\n else:raise AssertionError('unattributable candidate accepted')\n row=m.failed_process_row({'run_id':'synthetic-test','provenance':{'git':{'sha':'synthetic'}}},{'kind':'M3','label':'M3-fixture','cases':8,'seed':20191230},1,m.ROOT/'build/p6/synthetic-review-only',15,['broken JSON'])\n assert row['status']=='crash' and row['oracle_validated'] is False and row['error']==['broken JSON'];checks+=1\nfor kind,count in [('M1',900),('M2',120),('M3',8)]:\n names=[name for block in m.plan(kind,20191230) for name in m.expected_names(block)]\n assert len(names)==len(set(names))==count;checks+=1\nprint(json.dumps({'status':'passed','checks':checks,'timing_campaign':False,'scope':'independent patched recovery and declaration checks'}))\n"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261023T145441.371820Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/campaign-review-confirmed-20261023T145441.371820Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.171697365
+}

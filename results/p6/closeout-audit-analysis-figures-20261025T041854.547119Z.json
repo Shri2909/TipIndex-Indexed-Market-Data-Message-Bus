@@ -1,0 +1,26 @@
+{
+  "label": "closeout-audit-analysis-figures",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/run_p6_campaigns.py",
+    "--run",
+    "--directory",
+    "results/raw/P6/campaign-20261024",
+    "--resume",
+    "--quiescence-record",
+    "results/p6/measurement-quiescence-resume.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T041854.547119Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/closeout-audit-analysis-figures-20261025T041854.547119Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 292.93873169499966
+}

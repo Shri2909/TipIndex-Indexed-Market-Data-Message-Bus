@@ -1,0 +1,29 @@
+{
+  "label": "python-tests",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-c",
+    "py/pytest.ini",
+    "py/tests",
+    "tests/scripts",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--junitxml=audit/remediation/python.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:24:39.102116+00:00",
+  "status": "failed",
+  "log": "audit/remediation/checks/python-tests-20261026T082439.101929Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 28.81650809200005,
+  "log_sha256": "7ded9be6636ac3e709b206d9166ea0cf1c396e5416f39a9381590f067ecaef23"
+}

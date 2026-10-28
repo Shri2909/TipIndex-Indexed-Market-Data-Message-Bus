@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "check": "Failed-analysis CSV and successful analysis CSV are byte-identical; removal of optional aggregate exact mean changes no costs, individual gaps, coverage or case metrics.",
+  "files": {
+    "results/raw/P7/layout-claim-metrics.csv": "2d222dfa8361f052d13d63a9956bb1cdc7d7750de49763cd6d1bfd2ebc4678b0",
+    "results/raw/P7/layout-claim-metrics.failed-exact-mean.csv": "2d222dfa8361f052d13d63a9956bb1cdc7d7750de49763cd6d1bfd2ebc4678b0"
+  },
+  "accepted_analysis": "results/p7/analyze-full-matrix-no-ratio-mean-20261025T142754.019962Z.json"
+}

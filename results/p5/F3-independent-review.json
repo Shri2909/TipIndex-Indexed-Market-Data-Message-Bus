@@ -1,0 +1,225 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-19T00:58:32.201580+00:00",
+  "audit_command": ".venv/bin/python - (independent inline standard-library audit; no gate-helper import or fuzz execution)",
+  "gate": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z.json",
+  "gate_sha256": "5772d697ba3150e108068952eef60d6ca081c24c1757e1ed99d4c8d0b23a9358",
+  "checks": [
+    "terminal passed with no active attempt or resumption",
+    "all15 exit0 logs, independently parsed final stats and DONE markers, hashes and no sanitizer diagnostics",
+    "sum of confirmed monotonic segment durations exceeds1800s; wall/monotonic discontinuities below1ms",
+    "binary and runner unchanged",
+    "exact1357-file terminal corpus identity unchanged",
+    "all38 frozen sources unchanged",
+    "all mode grammar, full-length, leak/UB flags retained",
+    "no failure artifacts"
+  ],
+  "monotonic_seconds": 1805.0594934080023,
+  "executed_units": 104457,
+  "segments": 15,
+  "peak_rss_MiB": 805,
+  "corpus_files": 1357,
+  "source_files": 38,
+  "source_freeze_sha256": "eac5858da7b9a56e41d4876198350e045538f94e723cfd60539a9e76f3aad980",
+  "binary_sha256": "cf050fa28039bd171ef951ea89ca3cd60c1f9a988b961216822637880d92ac6a",
+  "runner_sha256": "4ac054b12770d91726813ef79fd53788536a5adce61314aa6eed421ac43e12cc",
+  "artifact_count": 0,
+  "logs": [
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment001.log",
+      "sha256": "93189d5bb119b63424d6c60ca162b9d4d3b664c54923691e41ff01bc2a30d6ea",
+      "exit_code": 0,
+      "monotonic_seconds": 121.47446498999989,
+      "stats": {
+        "number_of_executed_units": 27196,
+        "average_exec_per_sec": 224,
+        "new_units_added": 1149,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 592
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment002.log",
+      "sha256": "94076b9b67cf3ebd8e12980b845ddf0be2591583eb01e4c314a3bbf1986680c1",
+      "exit_code": 0,
+      "monotonic_seconds": 121.43846369899984,
+      "stats": {
+        "number_of_executed_units": 10044,
+        "average_exec_per_sec": 83,
+        "new_units_added": 121,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 608
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment003.log",
+      "sha256": "0cb23c15263fd88ea63036bb452d9c477cb09ab0abe8d6c46cd482012229fa8c",
+      "exit_code": 0,
+      "monotonic_seconds": 121.39459105700007,
+      "stats": {
+        "number_of_executed_units": 8234,
+        "average_exec_per_sec": 68,
+        "new_units_added": 71,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 617
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment004.log",
+      "sha256": "50032ec8e7c354bdb94af6bf7cf20b7e0f74d8b5277ee3ba1eca6313a4c17bbb",
+      "exit_code": 0,
+      "monotonic_seconds": 121.34053035900024,
+      "stats": {
+        "number_of_executed_units": 5952,
+        "average_exec_per_sec": 49,
+        "new_units_added": 42,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 715
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment005.log",
+      "sha256": "025bf8ba5a6b6582e027af8827d4e8d0b193cd702ff303c525d5cba6581ca723",
+      "exit_code": 0,
+      "monotonic_seconds": 121.71113969999988,
+      "stats": {
+        "number_of_executed_units": 6779,
+        "average_exec_per_sec": 56,
+        "new_units_added": 45,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 749
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment006.log",
+      "sha256": "e60149b951a826891f0e5c07c01998d90e5e7a24077ad87f653f0a26d725ec3f",
+      "exit_code": 0,
+      "monotonic_seconds": 121.31378049199975,
+      "stats": {
+        "number_of_executed_units": 5324,
+        "average_exec_per_sec": 44,
+        "new_units_added": 35,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 723
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment007.log",
+      "sha256": "0df68d08a9914ddb7a41ffce196b417fd66691ca5fa9c4406cbe2b13519c8dcb",
+      "exit_code": 0,
+      "monotonic_seconds": 121.47097630800044,
+      "stats": {
+        "number_of_executed_units": 5343,
+        "average_exec_per_sec": 44,
+        "new_units_added": 31,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 736
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment008.log",
+      "sha256": "128f261d9ea5e93e0867f71d7aabef51b3999d54b18882b3ce43471c025eb4f9",
+      "exit_code": 0,
+      "monotonic_seconds": 122.99272034100068,
+      "stats": {
+        "number_of_executed_units": 5414,
+        "average_exec_per_sec": 44,
+        "new_units_added": 21,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 741
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment009.log",
+      "sha256": "0bb9273e400458cda59dbdc792e93d88478302832885e0225582ac9a69cc0d3b",
+      "exit_code": 0,
+      "monotonic_seconds": 121.68090030200074,
+      "stats": {
+        "number_of_executed_units": 4100,
+        "average_exec_per_sec": 33,
+        "new_units_added": 21,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 774
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment010.log",
+      "sha256": "a12682dfda09f5cb840e04d57c73b942f63d2b248fac127e11e473d1fe36c486",
+      "exit_code": 0,
+      "monotonic_seconds": 122.85630439299985,
+      "stats": {
+        "number_of_executed_units": 4928,
+        "average_exec_per_sec": 40,
+        "new_units_added": 21,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 771
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment011.log",
+      "sha256": "3630e6336adb6773034ed56076f9e66cd3efcde96d2d83f38ea9f00407336d35",
+      "exit_code": 0,
+      "monotonic_seconds": 122.53416431400001,
+      "stats": {
+        "number_of_executed_units": 4501,
+        "average_exec_per_sec": 36,
+        "new_units_added": 12,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 781
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment012.log",
+      "sha256": "f33927e27dbe28f3377423f93c3f284ca79ce6a7ad77f4cabd7d5256221c2dbf",
+      "exit_code": 0,
+      "monotonic_seconds": 121.28593553500014,
+      "stats": {
+        "number_of_executed_units": 4856,
+        "average_exec_per_sec": 40,
+        "new_units_added": 10,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 726
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment013.log",
+      "sha256": "396cdec6ab0e8b4bc83b3ab4ebc9754cde64a5d44a43c08c231673ead63ff624",
+      "exit_code": 0,
+      "monotonic_seconds": 123.48187173400038,
+      "stats": {
+        "number_of_executed_units": 4273,
+        "average_exec_per_sec": 34,
+        "new_units_added": 10,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 787
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment014.log",
+      "sha256": "f498b0590546e984ba9fed1398d1bdf0d3415ff26cb701cfb4a4631ddf9f2993",
+      "exit_code": 0,
+      "monotonic_seconds": 121.27407022300031,
+      "stats": {
+        "number_of_executed_units": 4269,
+        "average_exec_per_sec": 35,
+        "new_units_added": 13,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 805
+      }
+    },
+    {
+      "path": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z-segment015.log",
+      "sha256": "27a6e21773b1442b6289cad0ca4e356af27f3936ee82c8d2b2834030ade3b0b6",
+      "exit_code": 0,
+      "monotonic_seconds": 98.80957996100005,
+      "stats": {
+        "number_of_executed_units": 3244,
+        "average_exec_per_sec": 33,
+        "new_units_added": 10,
+        "slowest_unit_time_sec": 0,
+        "peak_rss_mb": 795
+      }
+    }
+  ],
+  "audit_elapsed_seconds": 0.045310565000008296
+}

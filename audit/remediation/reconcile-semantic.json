@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "summary_configurations_with_noise_counter_changes": 6542,
+  "sample_changes": [
+    {
+      "exp": "M1",
+      "config_id": "M1/k1/geometric1/N4194304/BinHeap",
+      "before": {
+        "noise_flagged_count": 0,
+        "noise_observed_count": 0,
+        "noise_unknown_count": 15
+      },
+      "after": {
+        "noise_flagged_count": 15,
+        "noise_observed_count": 15,
+        "noise_unknown_count": 0
+      }
+    },
+    {
+      "exp": "M1",
+      "config_id": "M1/k1/geometric1/N4194304/Loser",
+      "before": {
+        "noise_flagged_count": 0,
+        "noise_observed_count": 0,
+        "noise_unknown_count": 15
+      },
+      "after": {
+        "noise_flagged_count": 15,
+        "noise_observed_count": 15,
+        "noise_unknown_count": 0
+      }
+    },
+    {
+      "exp": "M1",
+      "config_id": "M1/k1/geometric1/N4194304/Quad-pad0",
+      "before": {
+        "noise_flagged_count": 0,
+        "noise_observed_count": 0,
+        "noise_unknown_count": 15
+      },
+      "after": {
+        "noise_flagged_count": 15,
+        "noise_observed_count": 15,
+        "noise_unknown_count": 0
+      }
+    }
+  ],
+  "all_other_summary_fields_identical": true,
+  "csv": {
+    "tip-statistics.csv": {
+      "rows": 74660,
+      "rows_with_noise_counter_changes": 74660,
+      "other_fields_identical": true
+    },
+    "tip-outcomes.csv": {
+      "rows": 6759,
+      "rows_with_noise_counter_changes": 6542,
+      "other_fields_identical": true
+    }
+  },
+  "restored_frozen_identities": {
+    "results/derived/tip-summary.json": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb",
+    "results/derived/tip-statistics.csv": "7b728d08490344bef5eb1f0bda25a99450048c9a4a1b8e0ea6030e0880002549",
+    "results/derived/tip-outcomes.csv": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24",
+    "results/derived/tip-paired-ratios.csv": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866"
+  },
+  "original_divergent_files": "build/remediation/retained/derived/",
+  "raw_measurements_modified": false
+}

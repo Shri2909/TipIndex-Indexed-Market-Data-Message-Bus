@@ -1,0 +1,79 @@
+{
+  "scope": "Exploratory diagnostic on a noisy host with concurrent builds, seven paired PROCESS_CPUTIME_ID rounds; no guaranteed nonregression, speedup or deployment claim.",
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-g",
+    "-march=x86-64-v3",
+    "-DNDEBUG"
+  ],
+  "measurement": {
+    "clock": "CLOCK_PROCESS_CPUTIME_ID",
+    "repetitions": 7,
+    "scenarios": [
+      "scan_reject",
+      "indexed_reject",
+      "scan_one",
+      "indexed_one",
+      "terminal"
+    ],
+    "alternation": "baseline first on even repetition, compared arm first on odd"
+  },
+  "shared_sources_identical_to_baseline": {
+    "src/tiplog/driver/trace_driver.cpp": "37a76cc9ad8b2aeb5a63216df83ea4a53167c295aca451557f77322964762206",
+    "src/tiplog/driver/trace_driver.hpp": "7a6cb9d77427ea0710f15c4bbb8ee69a7046df85ae614582b1e0f440ed084509",
+    "src/tiplog/index/index.cpp": "06ea54460567e61a50445713cc471e7f80c30f54be8e73b4aa59df87bd0bdebf",
+    "src/tiplog/index/index.hpp": "b8d528a685b10e4177f5fe20a9c39b92d24650225146b2647ef44efa019402f6",
+    "src/tiplog/layout/exact.cpp": "9a099018607b8706de3de2ec1e189aadb17025a842fa378596a1a55b068c26ff",
+    "src/tiplog/layout/exact.hpp": "484fc99bea3a7d91b367803d6e4d2dd12412c8370cabbe0771dd0b767d51dea4",
+    "src/tiplog/layout/global.cpp": "00bc7c4cc1f964da64605de7a78b8d66d2b72df92d09132ddfb5d3bd31ae6fc0",
+    "src/tiplog/layout/global.hpp": "ee8a645ecafc8227dc41370bf1471d98e0de455d36a122a6f6254779bacfef65",
+    "src/tiplog/layout/model.cpp": "4bddd6718ed5e2a2495a49953289ad274a03e88afaae0a06f6eac87c48608ad6",
+    "src/tiplog/layout/model.hpp": "fec5e107685d83577d1ea0d7b4c997f01633eb48fb0115febf1398d2184bc42c",
+    "src/tiplog/merge/kernels.cpp": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c",
+    "src/tiplog/merge/kernels.hpp": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8",
+    "src/tiplog/ring/ring.cpp": "59e019624d91db81d10a0f07e8278ba1000bbc0706557d14af1839ad1bcc72a8",
+    "src/tiplog/ring/ring.hpp": "ec3c4a87a192fcd52220061de28c199eb3a34d694699ff708814159bd4ba73c5",
+    "src/tiplog/subs/compiled.cpp": "024548e8f69b13cba1ea2a2bab56a2503b8d52aafb440f354879d03941e74550",
+    "src/tiplog/subs/compiled.hpp": "5863990621090092c14e62136fcfb2227e47558b313d76b90d03df8f94a60fb3",
+    "src/tiplog/topics/registry.cpp": "a9b170f653fb2b85404df4f028fa10801b7a1a77318e01e0ec5e2f40fa983679",
+    "src/tiplog/topics/registry.hpp": "322326e92311ff26567efafdd71333f33ca279e48d2ac343e97a981b545c2f13",
+    "src/tiplog/trace/itch_walker.cpp": "817c1b0fb326a4c57e9cacd7b1a1978ad765bde6370ee7c8aa2717999dbe1838",
+    "src/tiplog/trace/itch_walker.hpp": "32ce404c8ccf69aca4ff5c7e0adcda1688e425394c3ec794cad4a87bf617f15a",
+    "src/tiplog/trace/reader.cpp": "561d3025a5d8278c78cc10748776331b26926060d4320027fb0dad98406c5ecd",
+    "src/tiplog/trace/reader.hpp": "8212dc84f0d0a11cd1bd1c9b726e9e2ce649abd11be98ed677e95cc7a102a3c0",
+    "src/tiplog/types.hpp": "e3a516da36e0e58cf81755da8009511dd56689b617d318e7faefeccf38125375"
+  },
+  "file_identities": {
+    "results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.cpp": "8d1dd35bf1178756fd8cd991cd28f0ab75e7c61af07f36829f2a89baf0c382ec",
+    "results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.hpp": "cfe7a9cb9944fbbe247856d43a94dbf761ca25782b1ea1d7dd07b92093ab176e",
+    "results/f01/legacy-diagnostic/final/tiplog/engine/engine.cpp": "26d24e8409617c63a489dddeab5968faec5f44564aee01908caf1f27cf750596",
+    "results/f01/legacy-diagnostic/final/tiplog/engine/engine.hpp": "a9d7b453b1576f780986dfa378a4f206dc54823bd9d9fff82de67fff43b2c6e6",
+    "results/f01/legacy-diagnostic/focused-build.log": "b0f8ed1286db0fef5245c00826d3875aa55986a3c9469f597077952c64c89240",
+    "results/f01/legacy-diagnostic/focused-ctest.log": "95bfdb5704699701c2f3a5e847ecaea576d18fc1663e70cf27b31c2c74388bb8",
+    "results/f01/legacy-diagnostic/legacy_diagnostic.cpp": "90cacaf971b04aebb14aeb57779cf7da1a54ef6f4ffc89056d82b10861dc78df",
+    "results/f01/legacy-diagnostic/legacy_diagnostic.json": "4e546f41e83e246c79b8dd3799a8b77ea1c1f02ab8b69ddefe7be062ddceea78",
+    "results/f01/legacy-diagnostic/legacy_diagnostic_final.json": "0d9f7f005977ada51054aa9ddeed36f3628296754d976c48457482fc06d8efd8",
+    "results/f01/legacy-diagnostic/legacy_diagnostic_optimized.json": "782b38f9b7f23df69ce9f26e93cd6967a38ae358d8a442241a3405a41032b08b",
+    "build/f01/core-review/baseline": "bf8dbacb70ae385be63b17666fe7c2f00c1736f50288b50006c656e9be753f64",
+    "build/f01/core-review/current": "e0ec3642b8be162727c0d7b6a70d2733b348e0983cdc2bae0ba1974fd686f30d",
+    "build/f01/core-review/optimized": "05266690a44bc3bdf4111f630fd474d3a8c43da81a0aa752b4a530a5fcfa4b92",
+    "build/f01/core-review/final": "3c387cdc879356f863052d07e4be30c09b8c411652683c1c0060e63cdcd995de",
+    "build/f01/core-review/baseline_engine.o": "80c0c9abc11490aee648a8239d4ad92777336c6602ab511ac04d5c63ea33df3f",
+    "build/f01/core-review/optimized_engine.o": "2151e7962655f8be52ad2e41305e249fbebfd1285dbb0b4885b81969976acaf4",
+    "build/f01/core-review/final_engine.o": "1c1d3f4a4e88f003c473fca8d1a022dcb11505c47199c823972ba5880c078e29",
+    "build/f01/core/libtiplog_ring.a": "ee3b47552f0720cf5f574df5044a2cc6244efdf1bfa1132c457d799830f54afd",
+    "build/f01/core/libtiplog_topics_subs.a": "02930281fadc7b221bcfa5747d6ff11427ec96deaa98b416f6786f056aaa8348",
+    "build/f01/core/libtiplog_index.a": "60422354d910309daeda5500a0755f588babc0190a11576f5ea2486e2cc7e7fc",
+    "build/f01/core/libtiplog_merge.a": "3fbb86aca227e1a6b743169ab9a5d3ee7a8a9e30f95cae6d664483cee00781c3",
+    "results/f01/legacy-diagnostic/README.md": "0bed1c4ccd7362485c5b2216a2e82fe1197724c7e125ba1f88579aa818249a9a",
+    "results/f01/legacy-diagnostic/reproduce.py": "d5fcd07ee61a7539a15e926c1c943d3b960147c1bfda6da8641fe1a76f91ddc7",
+    "results/f01/legacy-diagnostic/reproduce-compile-check.json": "e616818a5736f1562b1ca5877b3dd0ad0c6add6a9c931011eddc37cfc1b303d6"
+  },
+  "test_result": {
+    "ctest_passed": 77,
+    "ctest_failed": 0
+  },
+  "reproducer_compile_check": "passed; both retained arms rebuilt; no new measurements"
+}

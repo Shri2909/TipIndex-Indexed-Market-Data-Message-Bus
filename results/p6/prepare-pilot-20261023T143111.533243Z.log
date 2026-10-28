@@ -1,0 +1,40 @@
+{"preparing": "real-C1073741824-B1024", "index": 0, "total": 1}
+{
+  "status": "prepared",
+  "suite": "pilot",
+  "config": "configs/P6/matrix.toml",
+  "config_sha256": "5595d13b437fa44b02473483883b1ec836aa0344950819e13cd1375caa06c905",
+  "workloads": [
+    {
+      "id": "real-C1073741824-B1024",
+      "path": "results/raw/P6/prepared-pilot/real-C1073741824-B1024.json.gz",
+      "sha256": "c0104d98d6a9f77de0ceb81d7ffc7fe51b0f355306609514c691fb0c36db42c9",
+      "requests": 1
+    }
+  ],
+  "independent_accelerator": {
+    "argv": [
+      "/usr/bin/cc",
+      "-std=c11",
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "/home/abc/Desktop/Jane Street/py/tiplog_py/exp/hash_bytes.c",
+      "-o",
+      "/home/abc/Desktop/Jane Street/build/python-oracle/libtiplog_oracle_bytes.so"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "compiler_version": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "source": "/home/abc/Desktop/Jane Street/py/tiplog_py/exp/hash_bytes.c",
+    "source_sha256": "7910f385aaac9f4365b150276ed4578e2fb6b08b35e5f78bc973da7b1f611612",
+    "binary": "/home/abc/Desktop/Jane Street/build/python-oracle/libtiplog_oracle_bytes.so",
+    "binary_sha256": "1e75970da2687584545498da6111f98d316229da23a1642ca5262e6dc66da235"
+  },
+  "created_utc": "2026-10-23T14:31:36.163130+00:00",
+  "matrix_choice": "T1 C1GiB all backlogs and C2GiB longest; T3 k=1/sqrt(P)/P and local selectivity .01/.1/1"
+}

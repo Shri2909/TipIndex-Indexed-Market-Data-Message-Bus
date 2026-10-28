@@ -1,0 +1,12 @@
+{
+  "result": {
+    "tests": 229,
+    "poll_budget": 23,
+    "poll_differential": 1
+  },
+  "snapshot_configuration": {
+    "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+  },
+  "cache": "CMAKE_HOME_DIRECTORY:INTERNAL=/tmp/tiplog-peer-provenance-fokqfa40\nCMAKE_CACHEFILE_DIR:INTERNAL=/tmp/tiplog-peer-provenance-fokqfa40/build/asan-ubsan\nCMAKE_CXX_COMPILER:FILEPATH=/tmp/tiplog-peer-provenance-fokqfa40/compiler\nCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON\n",
+  "problem": "asan-ubsan acceptance does not require compiler or linker sanitizer flags in captured configuration or compile commands"
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "tiplog.f01.benchmark-contract-check.v1",
+  "status": "passed",
+  "binary": "/home/abc/Desktop/Jane Street/build/release/tiplog_poll_bench",
+  "binary_sha256": "fc5b38a7875c696c1380b1155c6c36d6b22beb84ea08c0680900276dbabc7b5e",
+  "checks": [
+    {
+      "name": "independent_matrix_validation",
+      "status": "passed",
+      "rows": 96,
+      "sources": [
+        {
+          "path": "/home/abc/Desktop/Jane Street/results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl",
+          "sha256": "f1c5c1cf74d03f6cfc1c4df8dd11bb2fc64c30914b2b435927040e867738c7e3",
+          "bytes": 224989
+        }
+      ]
+    },
+    {
+      "name": "wrong_publication_oracle",
+      "status": "killed"
+    },
+    {
+      "name": "missing_physical_fetch",
+      "status": "killed"
+    },
+    {
+      "name": "wrong_stop_total",
+      "status": "killed"
+    },
+    {
+      "name": "wrong_final_range",
+      "status": "killed"
+    },
+    {
+      "name": "finite_cap_exceeded",
+      "status": "killed"
+    },
+    {
+      "name": "wrong_service_sample_count",
+      "status": "killed"
+    },
+    {
+      "name": "invalid_cli_rejected_before_output",
+      "status": "passed",
+      "cases": 9
+    },
+    {
+      "name": "existing_output_preserved",
+      "status": "passed"
+    },
+    {
+      "name": "historical_output_namespace_protected",
+      "status": "passed"
+    },
+    {
+      "name": "infeasible_fixture_recorded_without_timing",
+      "status": "passed"
+    },
+    {
+      "name": "legal_packed_K_still_obeys_resource_cap",
+      "status": "passed"
+    }
+  ]
+}

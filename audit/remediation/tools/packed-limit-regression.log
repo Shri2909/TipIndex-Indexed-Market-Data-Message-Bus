@@ -1,0 +1,1 @@
+PASS: existing packed-limit Python regression against final tools binary; all explicit Indexed arms are invalid_config, all Auto arms scan, oracle comparisons pass

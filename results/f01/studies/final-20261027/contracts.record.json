@@ -1,0 +1,214 @@
+{
+  "label": "contracts",
+  "argv": [
+    "/usr/bin/python3",
+    "/home/abc/Desktop/Jane Street/results/f01/check_tool.py",
+    "--binary",
+    "/home/abc/Desktop/Jane Street/build/release/tiplog_poll_bench",
+    "--matrix",
+    "/home/abc/Desktop/Jane Street/results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl",
+    "--output",
+    "/home/abc/Desktop/Jane Street/results/f01/studies/final-20261027/contracts.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-27T01:36:27.827056+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "ee8f05f3195b30557eccc9a57a34291e446f550695b90f9e0049ac08a3c0ba0c"
+  },
+  "log": "results/f01/studies/final-20261027/contracts.log",
+  "binding": {
+    "binary": "build/release/tiplog_poll_bench",
+    "binary_sha256": "fc5b38a7875c696c1380b1155c6c36d6b22beb84ea08c0680900276dbabc7b5e",
+    "source_freeze": "results/f01/source-freeze-final.json",
+    "source_freeze_sha256": "16c52bee96301d574231533842f21dc19f77e6d9c1d955b999304d410c01697d",
+    "cpp_input_set": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "protocol": "results/f01/protocol.json",
+    "protocol_sha256": "8b7fdc06ada75691d5d9ae2dec81638514185654f2277f43fb6f1d2e2de631b6",
+    "plan": "results/f01/study-plan-final.json",
+    "plan_sha256": "1853d3abc40bb67f138f4e7fdb4228cf86dde2db1863e58630fe9ce901723194",
+    "runner": "scripts/run_f01_study.py",
+    "runner_sha256": "68d145b2079894b7a75df48b192418be92c6c2f06e52d14221bd3f04029188da",
+    "build_record": "results/f01/checks/final2-build-release-20261027T012424.459838Z.json",
+    "build_record_sha256": "1f4c6c8847e61b541bd2331591709ae11620c0030119e2e34c38ba6b334f9467"
+  },
+  "binary_sha256": "fc5b38a7875c696c1380b1155c6c36d6b22beb84ea08c0680900276dbabc7b5e",
+  "environment": {
+    "ASAN_OPTIONS": null,
+    "UBSAN_OPTIONS": null,
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "host_before": {
+    "utc": "2026-10-27T01:36:28.066005+00:00",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "uname": [
+      "Linux",
+      "abc-HP-Laptop-15s-fq5xxx",
+      "7.0.0-38-generic",
+      "#38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026",
+      "x86_64",
+      ""
+    ],
+    "load_average": [
+      1.23388671875,
+      1.78271484375,
+      1.28076171875
+    ],
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "cpu_count": 12,
+    "stat": "cpu  174380 204 18459 1163668 1590 0 916 0 0 0\ncpu0 22365 5 2149 87246 178 0 0 0 0 0\ncpu1 40385 9 1644 71061 82 0 21 0 0 0\ncpu2 27556 68 2093 83055 196 0 6 0 0 0\ncpu3 37376 55 974 74735 108 0 3 0 0 0\ncpu4 0 0 0 114181 0 0 0 0 0 0\ncpu5 0 0 0 113922 0 0 0 0 0 0\ncpu6 6212 6 1952 104790 183 0 1 0 0 0\ncpu7 5167 3 1511 106572 127 0 1 0 0 0\ncpu8 6537 23 2059 104518 191 0 1 0 0 0\ncpu9 7159 4 2327 102662 158 0 878 0 0 0\ncpu10 7656 19 1965 103325 194 0 0 0 0 0\ncpu11 13963 7 1779 97595 167 0 1 0 0 0\nintr 5983675 0 710 0 0 0 0 0 0 0 14431 0 0 0 0 13781 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 121868 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 149 1 1159 0 0 0 0 0 0 0 47 13781 18862 8965 23294 10543 13930 12477 14617 12016 0 0 15891 11676 49 58692 97429 1485 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\nctxt 6599411\nbtime 1793063846\nprocesses 14850\nprocs_running 1\nprocs_blocked 0\nsoftirq 2591160 469 242487 220 61260 5220 0 32257 1309921 5552 933774\n",
+    "meminfo": "MemTotal:       15510612 kB\nMemFree:         6159664 kB\nMemAvailable:   10360976 kB\nBuffers:          248064 kB\nCached:          4664240 kB\nSwapCached:            0 kB\nActive:          5708876 kB\nInactive:        2150244 kB\nActive(anon):    3652728 kB\nInactive(anon):        0 kB\nActive(file):    2056148 kB\nInactive(file):  2150244 kB\nUnevictable:      554428 kB\nMlocked:              64 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:             12680 kB\nWriteback:             0 kB\nAnonPages:       3501532 kB\nMapped:          1064784 kB\nShmem:            706224 kB\nKReclaimable:     339824 kB\nSlab:             591220 kB\nSReclaimable:     339824 kB\nSUnreclaim:       251396 kB\nKernelStack:       19376 kB\nPageTables:        59032 kB\nSecPageTables:      3680 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    11949604 kB\nCommitted_AS:   21463728 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       65180 kB\nVmallocChunk:          0 kB\nPercpu:            12240 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:   530432 kB\nShmemPmdMapped:        0 kB\nFileHugePages:     47104 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      251640 kB\nDirectMap2M:     4655104 kB\nDirectMap1G:    11534336 kB\n",
+    "cpu_frequency_observations": {
+      "0": {
+        "scaling_cur_freq": "584060",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "1": {
+        "scaling_cur_freq": "1028430",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "2": {
+        "scaling_cur_freq": "4335612",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "3": {
+        "scaling_cur_freq": "400000",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "6": {
+        "scaling_cur_freq": "2163160",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      },
+      "7": {
+        "scaling_cur_freq": "2453481",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      },
+      "8": {
+        "scaling_cur_freq": "1189005",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      },
+      "9": {
+        "scaling_cur_freq": "3100181",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      }
+    }
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.0783082939999531,
+  "finished_utc": "2026-10-27T01:36:28.145005+00:00",
+  "log_sha256": "e024c21bb324843695bdb231491127002ba622c28dafb8e8a7f421f0844e5746",
+  "input_sets_after": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "ee8f05f3195b30557eccc9a57a34291e446f550695b90f9e0049ac08a3c0ba0c"
+  },
+  "host_after": {
+    "utc": "2026-10-27T01:36:28.385799+00:00",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "uname": [
+      "Linux",
+      "abc-HP-Laptop-15s-fq5xxx",
+      "7.0.0-38-generic",
+      "#38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026",
+      "x86_64",
+      ""
+    ],
+    "load_average": [
+      1.23388671875,
+      1.78271484375,
+      1.28076171875
+    ],
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "cpu_count": 12,
+    "stat": "cpu  174409 204 18467 1164012 1590 0 916 0 0 0\ncpu0 22367 5 2150 87275 178 0 0 0 0 0\ncpu1 40385 9 1644 71092 82 0 21 0 0 0\ncpu2 27579 68 2099 83058 196 0 6 0 0 0\ncpu3 37376 55 974 74766 108 0 3 0 0 0\ncpu4 0 0 0 114213 0 0 0 0 0 0\ncpu5 0 0 0 113954 0 0 0 0 0 0\ncpu6 6212 6 1952 104822 183 0 1 0 0 0\ncpu7 5168 3 1511 106603 127 0 1 0 0 0\ncpu8 6537 23 2060 104549 191 0 1 0 0 0\ncpu9 7159 4 2328 102692 158 0 878 0 0 0\ncpu10 7657 19 1966 103356 194 0 0 0 0 0\ncpu11 13964 7 1779 97625 167 0 1 0 0 0\nintr 5985654 0 710 0 0 0 0 0 0 0 14440 0 0 0 0 13781 0 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 121868 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 149 1 1159 0 0 0 0 0 0 0 47 13781 18862 8965 23294 10543 13930 12477 14617 12016 0 0 15891 11676 49 58696 97442 1485 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\nctxt 6600619\nbtime 1793063846\nprocesses 14864\nprocs_running 1\nprocs_blocked 0\nsoftirq 2591740 469 242537 220 61264 5220 0 32257 1310254 5552 933967\n",
+    "meminfo": "MemTotal:       15510612 kB\nMemFree:         6167064 kB\nMemAvailable:   10368392 kB\nBuffers:          248064 kB\nCached:          4664200 kB\nSwapCached:            0 kB\nActive:          5709132 kB\nInactive:        2150256 kB\nActive(anon):    3652980 kB\nInactive(anon):        0 kB\nActive(file):    2056152 kB\nInactive(file):  2150256 kB\nUnevictable:      554364 kB\nMlocked:              64 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:             12704 kB\nWriteback:             0 kB\nAnonPages:       3501904 kB\nMapped:          1064928 kB\nShmem:            706160 kB\nKReclaimable:     339824 kB\nSlab:             591220 kB\nSReclaimable:     339824 kB\nSUnreclaim:       251396 kB\nKernelStack:       19424 kB\nPageTables:        59356 kB\nSecPageTables:      3680 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    11949604 kB\nCommitted_AS:   21463664 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       65164 kB\nVmallocChunk:          0 kB\nPercpu:            12240 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:   530432 kB\nShmemPmdMapped:        0 kB\nFileHugePages:     47104 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      251640 kB\nDirectMap2M:     4655104 kB\nDirectMap1G:    11534336 kB\n",
+    "cpu_frequency_observations": {
+      "0": {
+        "scaling_cur_freq": "1715872",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "1": {
+        "scaling_cur_freq": "1164708",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "2": {
+        "scaling_cur_freq": "4135132",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "3": {
+        "scaling_cur_freq": "4126005",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "4400000"
+      },
+      "6": {
+        "scaling_cur_freq": "400000",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      },
+      "7": {
+        "scaling_cur_freq": "400000",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      },
+      "8": {
+        "scaling_cur_freq": "400000",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      },
+      "9": {
+        "scaling_cur_freq": "912734",
+        "scaling_governor": "powersave",
+        "scaling_min_freq": "400000",
+        "scaling_max_freq": "3300000"
+      }
+    }
+  }
+}

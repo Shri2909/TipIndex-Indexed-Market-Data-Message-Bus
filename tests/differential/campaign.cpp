@@ -121,9 +121,17 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
         if (random() % 89 == 0)
           length = capacity / 2; // strong-rejection fixture
         std::vector<std::byte> bytes(length);
-        const auto fill = static_cast<std::byte>(random() % 256);
-        std::fill(bytes.begin(), bytes.end(),
-                  fill); // equal-valued independent events occur
+        if (random() % 4 == 0) {
+          // Preserve repeated-byte/equal-valued events as deliberate cases.
+          std::fill(bytes.begin(), bytes.end(), static_cast<std::byte>(random() % 256));
+        } else {
+          std::uint64_t word = 0;
+          for (std::size_t i = 0; i < bytes.size(); ++i) {
+            if (i % 8 == 0) word = random();
+            bytes[i] = static_cast<std::byte>(word & 255U);
+            word >>= 8U;
+          }
+        }
         const auto before = engine.stats();
         bool rejected = false;
         Seq seq{};
@@ -150,6 +158,9 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
                   "rejection mutated log");
         } else {
           ++result.publications;
+          if (!bytes.empty() && std::any_of(bytes.begin() + 1, bytes.end(),
+                [&](auto byte) { return byte != bytes.front(); }))
+            ++result.nonuniform_publications;
           require(seq == reference, "published sequence mismatch");
           digest(result.final_digest, seq);
         }
@@ -178,7 +189,7 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
           auto spec = subscription(random, paths);
           const auto upper = engine.stats().head_seq - 1;
           Seq after{};
-          switch (random() % 6) {
+          switch (random() % 8) {
           case 0:
             after = 0;
             break;
@@ -191,8 +202,15 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
           case 3:
             after = std::numeric_limits<Seq>::max();
             break;
-          default:
+          case 4:
             after = random() % (upper + 1);
+            break;
+          default:
+            // Most opens should have retained work. Keep the expired/future/
+            // empty cases above, but sample valid checkpoints independently
+            // from the oracle's retained interval as well.
+            after = oracle.tail_seq() - 1 +
+                    random() % (oracle.head_seq() - oracle.tail_seq() + 1);
             break;
           }
           auto compiled = engine.compile(spec);
@@ -213,7 +231,22 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
             ++result.history_expired;
         }
       } else if (action < 97) {
-        const auto slot = static_cast<std::size_t>(random() % replays.size());
+        auto slot = static_cast<std::size_t>(random() % replays.size());
+        if (random() % 4 != 0) {
+          // Preserve arbitrary/stale-handle batches in one quarter of choices.
+          // Otherwise use a still-live reader before it is overwritten/evicted.
+          for (std::size_t offset = 0; offset < replays.size(); ++offset) {
+            const auto candidate = (slot + offset) % replays.size();
+            if (replays[candidate] && replays[candidate]->actual.status() == Status::More) {
+              const auto checkpoint = replays[candidate]->actual.checkpoint();
+              if (checkpoint && checkpoint->next_pos >= engine.stats().tail_pos &&
+                  checkpoint->next_pos < replays[candidate]->actual.upper_pos()) {
+                slot = candidate;
+                break;
+              }
+            }
+          }
+        }
         if (replays[slot]) {
           auto &pair = *replays[slot];
           const auto budget = static_cast<std::size_t>(random() % 18);

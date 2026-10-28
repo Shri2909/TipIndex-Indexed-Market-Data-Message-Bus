@@ -1,0 +1,159 @@
+Test project /home/abc/Desktop/Jane Street/build/f01/core
+      Start 12: engine.Engine.V12EmptyAndExtremeFutureRanges
+ 1/77 Test #12: engine.Engine.V12EmptyAndExtremeFutureRanges .................................................   Passed    0.08 sec
+      Start 13: engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing
+ 2/77 Test #13: engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing ..........................   Passed    0.05 sec
+      Start 14: engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook
+ 3/77 Test #14: engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook ...........................   Passed    0.08 sec
+      Start 15: engine.Engine.V13HistoryExpiredFieldsAndTerminalStability
+ 4/77 Test #15: engine.Engine.V13HistoryExpiredFieldsAndTerminalStability ....................................   Passed    0.06 sec
+      Start 16: engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor
+ 5/77 Test #16: engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor ..................   Passed    0.05 sec
+      Start 17: engine.Engine.V35IrrelevantRecordExpiryIsConservative
+ 6/77 Test #17: engine.Engine.V35IrrelevantRecordExpiryIsConservative ........................................   Passed    0.04 sec
+      Start 18: engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry
+ 7/77 Test #18: engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry .......................................   Passed    0.05 sec
+      Start 19: engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap
+ 8/77 Test #19: engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap ....................................   Passed    0.04 sec
+      Start 20: engine.Engine.V14CapturedUpperExcludesLaterPublish
+ 9/77 Test #20: engine.Engine.V14CapturedUpperExcludesLaterPublish ...........................................   Passed    0.04 sec
+      Start 21: engine.Engine.V14ZeroOutputSnapshotAdvancesChain
+10/77 Test #21: engine.Engine.V14ZeroOutputSnapshotAdvancesChain .............................................   Passed    0.06 sec
+      Start 22: engine.Engine.V14ChainedRangesEqualSingleRange
+11/77 Test #22: engine.Engine.V14ChainedRangesEqualSingleRange ...............................................   Passed    0.05 sec
+      Start 23: engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries
+12/77 Test #23: engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries ..........................   Passed    0.09 sec
+      Start 24: engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry
+13/77 Test #24: engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry ........................   Passed    0.04 sec
+      Start 25: engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek
+14/77 Test #25: engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek ..............................   Passed    0.05 sec
+      Start 26: engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState
+15/77 Test #26: engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState ..........................   Passed    0.05 sec
+      Start 27: engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected
+16/77 Test #27: engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected ................................   Passed    0.08 sec
+      Start 28: engine.Engine.ReplayLifetimeAndMoveAreChecked
+17/77 Test #28: engine.Engine.ReplayLifetimeAndMoveAreChecked ................................................   Passed    0.06 sec
+      Start 29: poll_budget.PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture
+18/77 Test #29: poll_budget.PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture ...................   Passed    0.02 sec
+      Start 30: poll_budget.PollBudget.V03EmptyFutureFinishedAndMaximumCaps
+19/77 Test #30: poll_budget.PollBudget.V03EmptyFutureFinishedAndMaximumCaps ..................................   Passed    0.03 sec
+      Start 31: poll_budget.PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection
+20/77 Test #31: poll_budget.PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection ..............   Passed    0.03 sec
+      Start 32: poll_budget.PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+21/77 Test #32: poll_budget.PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress .................   Passed    0.26 sec
+      Start 33: poll_budget.PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+22/77 Test #33: poll_budget.PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating ...............   Passed    0.03 sec
+      Start 34: poll_budget.PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress
+23/77 Test #34: poll_budget.PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress .............   Passed    0.03 sec
+      Start 35: poll_budget.PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+24/77 Test #35: poll_budget.PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges ...................   Passed    0.03 sec
+      Start 36: poll_budget.PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted
+25/77 Test #36: poll_budget.PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted ..............   Passed    0.05 sec
+      Start 37: poll_budget.PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData
+26/77 Test #37: poll_budget.PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData .......   Passed    0.03 sec
+      Start 38: poll_budget.PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels
+27/77 Test #38: poll_budget.PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels ........   Passed    0.06 sec
+      Start 39: poll_budget.PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry
+28/77 Test #39: poll_budget.PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry ...............   Passed    0.03 sec
+      Start 40: poll_budget.PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires
+29/77 Test #40: poll_budget.PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires ........   Passed    0.03 sec
+      Start 41: poll_budget.PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress
+30/77 Test #41: poll_budget.PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress ..........................   Passed    0.04 sec
+      Start 42: poll_budget.PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime
+31/77 Test #42: poll_budget.PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime ..........................   Passed    0.05 sec
+      Start 43: poll_budget.PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint
+32/77 Test #43: poll_budget.PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint ................   Passed    0.04 sec
+      Start 44: poll_budget.PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary
+33/77 Test #44: poll_budget.PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary .........................   Passed    0.03 sec
+      Start 45: poll_budget.PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds
+34/77 Test #45: poll_budget.PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds ...   Passed    0.04 sec
+      Start 46: poll_budget.PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors
+35/77 Test #46: poll_budget.PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors ........   Passed    0.03 sec
+      Start 47: poll_budget.PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess
+36/77 Test #47: poll_budget.PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess .........   Passed    0.03 sec
+      Start 48: poll_budget.PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch
+37/77 Test #48: poll_budget.PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch ...............   Passed    0.03 sec
+      Start 49: poll_budget.PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries
+38/77 Test #49: poll_budget.PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries .........   Passed    0.03 sec
+      Start 50: poll_budget.PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions
+39/77 Test #50: poll_budget.PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions .....   Passed    0.04 sec
+      Start 51: engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor
+40/77 Test #51: engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor .............................   Passed    0.02 sec
+      Start 52: engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint
+41/77 Test #52: engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint ..............   Passed    0.03 sec
+      Start 53: engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad
+42/77 Test #53: engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad ...............   Passed    0.04 sec
+      Start 54: engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction
+43/77 Test #54: engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction ...............   Passed    0.02 sec
+      Start 55: engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction
+44/77 Test #55: engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction ........................   Passed    0.02 sec
+      Start 56: engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo
+45/77 Test #56: engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo ................   Passed    0.04 sec
+      Start 57: engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum
+46/77 Test #57: engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum .........................   Passed    0.06 sec
+      Start 58: engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress
+47/77 Test #58: engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress ........................   Passed    0.03 sec
+      Start 59: engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry
+48/77 Test #59: engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry ..................   Passed    0.05 sec
+      Start 60: engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess
+49/77 Test #60: engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess ...............   Passed    0.04 sec
+      Start 61: engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap
+50/77 Test #61: engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap .............................   Passed    0.05 sec
+      Start 62: engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers
+51/77 Test #62: engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers ..................   Passed    0.02 sec
+      Start 63: engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge
+52/77 Test #63: engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge ..........................   Passed    0.02 sec
+      Start 64: engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed
+53/77 Test #64: engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed ......................   Passed    0.02 sec
+      Start 65: engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative
+54/77 Test #65: engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative .........................   Passed    0.03 sec
+      Start 66: engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation
+55/77 Test #66: engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation .................   Passed    0.03 sec
+      Start 67: engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse
+56/77 Test #67: engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse ...........................   Passed    0.03 sec
+      Start 68: engine_index.EngineIndex.AutoUsesRecentSparsePostingInPartiallyOverlappingBlock
+57/77 Test #68: engine_index.EngineIndex.AutoUsesRecentSparsePostingInPartiallyOverlappingBlock ..............   Passed    0.04 sec
+      Start 69: engine_merge.EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle
+58/77 Test #69: engine_merge.EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle .........................   Passed    0.02 sec
+      Start 70: engine_merge.EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix
+59/77 Test #70: engine_merge.EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix ...............   Passed    0.03 sec
+      Start 71: engine_merge.EngineMerge.V35AllModesConservativeIrrelevantExpiry
+60/77 Test #71: engine_merge.EngineMerge.V35AllModesConservativeIrrelevantExpiry .............................   Passed    0.04 sec
+      Start 72: engine_merge.EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry
+61/77 Test #72: engine_merge.EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry ..........................   Passed    0.02 sec
+      Start 73: engine_merge.EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe
+62/77 Test #73: engine_merge.EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe ...........................   Passed    0.03 sec
+      Start 74: engine_merge.EngineMerge.V23WideTermsAlwaysUseScan
+63/77 Test #74: engine_merge.EngineMerge.V23WideTermsAlwaysUseScan ...........................................   Passed    0.02 sec
+      Start 75: engine_merge.EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion
+64/77 Test #75: engine_merge.EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion ............................   Passed    0.02 sec
+      Start 76: engine_merge.EngineMerge.V38LargeNonPowerOfTwoCursorSet
+65/77 Test #76: engine_merge.EngineMerge.V38LargeNonPowerOfTwoCursorSet ......................................   Passed    0.03 sec
+      Start 77: engine_merge.EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated
+66/77 Test #77: engine_merge.EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated .....................   Passed    0.02 sec
+      Start 78: engine_merge.EngineMerge.AutoWithDisabledIndexFallsBackToScan
+67/77 Test #78: engine_merge.EngineMerge.AutoWithDisabledIndexFallsBackToScan ................................   Passed    0.02 sec
+      Start 79: engine_merge.EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine
+68/77 Test #79: engine_merge.EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine .......................   Passed    0.02 sec
+      Start 80: engine_merge.EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel
+69/77 Test #80: engine_merge.EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel ...................   Passed    0.02 sec
+      Start 81: engine_merge.EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions
+70/77 Test #81: engine_merge.EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions ........................   Passed    0.04 sec
+      Start 82: engine_merge.EngineTail.V24WideHookIncludesNewMatchingPartitions
+71/77 Test #82: engine_merge.EngineTail.V24WideHookIncludesNewMatchingPartitions .............................   Passed    0.03 sec
+      Start 83: engine_merge.EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress
+72/77 Test #83: engine_merge.EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress ..........................   Passed    0.02 sec
+      Start 84: engine_merge.EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget
+73/77 Test #84: engine_merge.EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget ...............   Passed    0.03 sec
+      Start 85: engine_merge.EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields
+74/77 Test #85: engine_merge.EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields ..........   Passed    0.02 sec
+      Start 86: engine_merge.EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained
+75/77 Test #86: engine_merge.EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained .............   Passed    0.02 sec
+      Start 87: engine_merge.EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct
+76/77 Test #87: engine_merge.EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct ....................   Passed    0.02 sec
+      Start 88: engine_merge.EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll
+77/77 Test #88: engine_merge.EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll ................   Passed    0.02 sec
+
+100% tests passed out of 77
+
+Total Test time (real) =   3.33 sec

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "eligible_files": 2649,
+  "eligible_bytes": 37038519,
+  "real_prefix_sha256": "a6d9d955c6385dbd76460a6cb07042c2ecefee0dc03de8e26cdb0d91ca783bae",
+  "high_entropy_24_byte_signatures": 1865,
+  "matching_paths": [],
+  "forbidden_message_paths": [],
+  "selection": "git ls-files --cached --others --exclude-standard -z",
+  "script_sha256": "5b411d0c0408290670818d8c6067e3b3446cb393ec91b604b61f1d1f6ea2cf3a",
+  "limitations": "A signature/provenance audit supports exclusion; it cannot prove absence of every short payload fragment. Tracked test/fuzz bytes derive only from synthetic fixtures. Raw input, traces, real seed and F2 raw logs remain ignored."
+}

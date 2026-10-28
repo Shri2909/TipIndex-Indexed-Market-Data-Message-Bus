@@ -12,14 +12,14 @@ import subprocess
 import shutil
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", choices=["nasdaq"], required=True)
     parser.add_argument("--file", choices=["12302019.NASDAQ_ITCH50.gz"], required=True)
     parser.add_argument("--dest", type=Path, default=Path("data/raw"))
     parser.add_argument("--manifest", type=Path, default=Path("data/manifest.json"))
     parser.add_argument("--connections", type=int, choices=range(1, 17), default=1)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     url = "https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/" + args.file
     args.dest.mkdir(parents=True, exist_ok=True)
     path = args.dest / args.file
@@ -50,8 +50,8 @@ def main():
     size = int(fields["content-length"])
     if path.exists() and path.stat().st_size > size:
         raise ValueError("Existing file exceeds the source size; preserving it for inspection")
-    if args.manifest.exists() and path.exists():
-        old = json.loads(args.manifest.read_text())
+    old = json.loads(args.manifest.read_text()) if args.manifest.exists() else None
+    if old is not None:
         if old.get("source_url") != url or old.get("last_modified") != fields.get("last-modified"):
             raise ValueError("Source identity changed; preserving existing file instead of resuming")
     identity = {"url": url, "size_bytes": size, "last_modified": fields.get("last-modified"), "etag": fields.get("etag")}
@@ -113,6 +113,8 @@ def main():
     run(["gzip", "-t", str(path)])
     with path.open("rb") as source:
         digest = hashlib.file_digest(source, "sha256").hexdigest()
+    if old is not None and old.get("sha256") is not None and digest != old["sha256"]:
+        raise ValueError("Downloaded SHA-256 differs from recorded source identity; preserving file and manifest for inspection")
     manifest = {"source": args.source, "source_url": url, "path": str(path), "size_bytes": size,
                 "last_modified": fields.get("last-modified"), "etag": fields.get("etag"),
                 "accept_ranges": fields.get("accept-ranges"), "sha256": digest,

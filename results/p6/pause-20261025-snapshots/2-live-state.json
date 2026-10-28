@@ -1,0 +1,66 @@
+{
+  "phase": "P6",
+  "status": "measuring_full_microbenchmarks",
+  "at_utc": "2026-10-24T04:42:05.448450+00:00",
+  "authorization": "Existing joint P6-P8; stop after P8",
+  "completed_checks": {
+    "cpp_release": 166,
+    "cpp_sanitizer": 166,
+    "python_full_suite": 142,
+    "cross_compiler_runs": 180,
+    "cross_compiler_equalities": 170,
+    "CC2_status": "passed",
+    "CC2_operations": {
+      "release": 90000000,
+      "sanitizer": 18000000
+    }
+  },
+  "final_fuzz": {
+    "status": "passed",
+    "confirmed_monotonic_seconds": 1802.6449414189983,
+    "required_seconds": 1800,
+    "gate": "results/p6/F3-prefix-final-segmented-gate-20261023T143815.176751Z.json",
+    "executions": 39231,
+    "verification": "results/p6/fuzz-prefix-final-verified.json"
+  },
+  "unrun": [
+    "P6 timing pilot/CV response",
+    "Auto training/freeze",
+    "Full P6 campaigns",
+    "Actual F06-F13/results_tip report",
+    "P6 gate",
+    "P7",
+    "P8"
+  ],
+  "continuation": "Finish independent oracle preparation and final F3; verify quiescence/fresh environment; run scripts/run_p6_campaigns.py using saved prepared cases and final source. No routine permission required.",
+  "measurement_preflight": {
+    "status": "passed_after_verified_ac_connection",
+    "reason": "AC disconnected, battery discharging; VALIDATION section5.1 requires AC",
+    "campaign": "results/raw/P6/campaign-20261024/campaign.json",
+    "resume": "--directory results/raw/P6/campaign-20261024 --resume",
+    "quiescence": "results/p6/measurement-quiescence-ac.json"
+  },
+  "campaign": "results/raw/P6/campaign-20261024/campaign.json",
+  "pilot_M1": "passed",
+  "pilot_T1": "passed",
+  "training": {
+    "status": "passed",
+    "processes": 168,
+    "measured_query_rows": 14400,
+    "independent_checks": 295883
+  },
+  "auto_policy": {
+    "max_fraction": 1.0,
+    "max_partitions": 64,
+    "training_sum_median_cpu_ns": 3585027177.5
+  },
+  "protocol_freeze": "results/p6/protocol-freeze.json",
+  "remaining": [
+    "Full M1/M1-touch/M2/M3 matrices",
+    "Held-out T1/T2/T3/T5",
+    "Analysis and actual F06-F13",
+    "P6 gate",
+    "P7",
+    "P8"
+  ]
+}

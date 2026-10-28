@@ -41,6 +41,8 @@ struct Limits {
 
 // Updates are prepared before any registration is committed. A subscription may
 // allocate in prepare(), but commit() must only perform nonthrowing mutations.
+// Callbacks may read this Registry; nested intern()/observe() calls throw
+// logic_error before mutation. ObserverHandle::reset() remains permitted.
 class TopicObserver {
  public:
   class Update {
@@ -91,6 +93,8 @@ class Registry {
   Registry(Registry&&) = delete;
   Registry& operator=(Registry&&) = delete;
 
+  // Paths are bounded by max_topic_path_bytes/max_topic_depth; exceeding either
+  // throws RepresentationLimit before allocation or mutation.
   // Invalid paths or exhausted representations leave all topics/partitions and
   // subscription filters unchanged. References/spans may invalidate on intern.
   TopicId intern(std::string_view path);
@@ -120,6 +124,7 @@ class Registry {
   PathMap paths_;
   std::shared_ptr<detail::ObserverHub> observers_;
   std::shared_ptr<Lifetime> lifetime_;
+  bool mutating_{};
 };
 
 }  // namespace tiplog::topics

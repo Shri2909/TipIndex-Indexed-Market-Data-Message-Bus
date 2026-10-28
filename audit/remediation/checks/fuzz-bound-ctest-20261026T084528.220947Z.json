@@ -1,0 +1,33 @@
+{
+  "label": "fuzz-bound-ctest",
+  "argv": [
+    "ctest",
+    "--preset",
+    "fuzz",
+    "--output-on-failure",
+    "--no-tests=error",
+    "--output-junit",
+    "/home/abc/Desktop/Jane Street/audit/remediation/fuzz.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:45:28.221228+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "60d4193b9a524ca2dcc85ac2e221cb06ec1d7dfd9db3d600c08701cf7dea6328"
+  },
+  "log": "audit/remediation/checks/fuzz-bound-ctest-20261026T084528.220947Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 35.667854885,
+  "log_sha256": "aa692fb56b30cd01da158b5002ee11dd27d1dc74b0e2037facf0896e9fa6fb7d",
+  "input_sets_after": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "60d4193b9a524ca2dcc85ac2e221cb06ec1d7dfd9db3d600c08701cf7dea6328"
+  }
+}

@@ -369,6 +369,7 @@ bool Index::advance(Cursor &c, LogPos current_tail) const {
 }
 std::uint64_t Index::estimate_count(PartitionId p, LogPos lower,
                                     LogPos upper) const noexcept {
+  lower = std::max(lower, tail_);
   if (p >= partitions_.size() || lower >= upper)
     return 0;
   const auto &state = partitions_[p];
@@ -381,8 +382,22 @@ std::uint64_t Index::estimate_count(PartitionId p, LogPos lower,
       first, state.ids.end(), upper,
       [this](std::uint32_t b, LogPos pos) { return meta_[b].base_pos < pos; });
   std::uint64_t result = 0;
-  for (auto it = first; it != end; ++it)
-    result += meta_[*it].count;
+  for (auto it = first; it != end; ++it) {
+    const auto block = *it;
+    const auto& meta = meta_[block];
+    auto lower_entry = [this, block, &meta](LogPos position) {
+      std::uint32_t left = 0, right = meta.count;
+      while (left < right) {
+        const auto middle = left + (right - left) / 2;
+        if (decode(block, middle) < position) left = middle + 1;
+        else right = middle;
+      }
+      return left;
+    };
+    const auto start = meta.base_pos < lower ? lower_entry(lower) : 0;
+    const auto stop = meta.last_pos >= upper ? lower_entry(upper) : meta.count;
+    result += stop - start;
+  }
   return result;
 }
 Memory Index::memory() const {

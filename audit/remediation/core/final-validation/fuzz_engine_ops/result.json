@@ -1,0 +1,37 @@
+{
+  "binary_sha256_after": "ce29df4186e0c2da0a7658f8c611b64ad06010d8b6df5cf758634055d17ddae0",
+  "binary_sha256_before": "ce29df4186e0c2da0a7658f8c611b64ad06010d8b6df5cf758634055d17ddae0",
+  "binary_unchanged": true,
+  "command": [
+    "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_engine_ops",
+    "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_engine_ops-corpus",
+    "-runs=10000",
+    "-seed=1",
+    "-max_len=65536",
+    "-detect_leaks=1",
+    "-print_final_stats=1",
+    "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_engine_ops-artifacts/"
+  ],
+  "elapsed_monotonic_seconds": 43.139986681999744,
+  "environment": {
+    "TIPLOG_FUZZ_MODE": "all"
+  },
+  "exit_status": 0,
+  "final_stats": [
+    "stat::number_of_executed_units: 10000",
+    "stat::average_exec_per_sec:     238",
+    "stat::new_units_added:          99",
+    "stat::slowest_unit_time_sec:    0",
+    "stat::peak_rss_mb:              542"
+  ],
+  "finished_utc": "2026-10-26T08:49:42.384238+00:00",
+  "id": "fuzz_engine_ops",
+  "kind": "fuzz",
+  "passed": true,
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+  },
+  "seed_corpus_source": "tests/fuzz/corpus/ops_integrated",
+  "started_utc": "2026-10-26T08:48:59.230295+00:00"
+}

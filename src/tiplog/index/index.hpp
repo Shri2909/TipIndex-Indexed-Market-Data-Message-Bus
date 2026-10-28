@@ -148,6 +148,8 @@ public:
               std::uint64_t retained_data_count) noexcept;
   [[nodiscard]] Cursor seek(PartitionId partition, LogPos lower_pos) const;
   bool advance(Cursor &cursor, LogPos current_tail) const;
+  // Count postings in [max(lower_pos, retained tail), upper_pos). Whole blocks
+  // use metadata; only overlapping boundaries binary-search encoded deltas.
   [[nodiscard]] std::uint64_t estimate_count(PartitionId partition,
                                              LogPos lower_pos,
                                              LogPos upper_pos) const noexcept;

@@ -528,3 +528,341 @@ program instruction and **simulated** cache/branch counts, including setup;
 these are neither modern-PMU observations nor isolated hot-loop attribution.
 This reading changes no approved dependency, semantics, scope or gate. Actual
 checks and pending/complete status remain in PROGRESS and the P5 phase gate.
+
+
+**P5 actual execution confirmation — 2026-10-19:** the fresh nonprivileged
+per-process ASLR probe succeeded outside sandbox tracing; measured children
+used setarch-R with no system setting change. This is the protocol's existing
+conditional behavior, not a new privileged setup requirement. Hardware counters
+remain unavailable, while the reduced whole-program Cachegrind fallback explicitly
+records instruction tracing and simulated cache/branch counts. [Actual pilot
+environment, frequencies, results and reading links](../../results/p5/pilot-results.md).
+All128 flagged frequency endpoints were retained. These limited selected
+measurements do not calibrate Auto or establish full-matrix/generalized gains.
+
+## 9. F-01 research: work-budgeted replay and tail polling — 2026-10-26
+
+**Status: research and proposal ready for approval; implementation has not started.** The user
+requested a fresh web/literature/source-code study before approving this feature. This appendix
+and [STUDY_PLAN §5](STUDY_PLAN.md#5-f-01-study-and-review-plan--2026-10-26) record that work.
+Earlier dated material is preserved. The completed [audit remediation](../report/REMEDIATION.md)
+and its acceptance snapshot remain separate historical evidence; their expected identities are not
+regenerated to conceal these subsequent documentation changes.
+
+**Recommendation [D]: implement an optional, deterministic inspection-unit budget first.** Charge
+rejected records and PAD as well as matches, preserve resumable progress, and share one allowance
+through the entire public tail poll. Keep the existing API as the unlimited compatibility path.
+Name the guarantee precisely: this limits traversal inspections; preparation, seeks, Auto planning,
+merge construction and allocation are outside that first contract and must be measured separately.
+It is not a hard wall-clock, CPU-instruction or complete-call-work limit. A broader metadata-budgeted
+state machine is an explicit alternative in §9.7, rather than an implicit promise.
+
+### 9.1 Search method, coverage and reading limits
+
+Access date: **2026-10-26, Asia/Kolkata**. Parallel source studies covered bounded transport/ring
+polling; cooperative runtimes and scheduler research; resumable query execution; and this project's
+actual replay, index, merge and retention code. Searches included combinations of `bounded poll`,
+`controlledPoll ABORT BREAK COMMIT`, `NAPI budget zero`, `cooperative operation budget`,
+`empty batch filter cancellation`, `preemptable iterator`, `query suspend resume`, `morsel scheduling`,
+and `2024 2025 2026 cooperative/preemptive scheduling`. Citation following connected recent work
+to foundational studies. Primary repositories, author/publisher papers and official engineering
+articles support the conclusions; third-party summaries were discovery aids only.
+
+The ledger records **20 source families**, including ten paper studies/screens. “Read” means
+the indicated text/code was actually inspected; a repository pin does not mean its entire repository
+was audited. Paper evaluations were not reproduced, and unread sections are not claimed read.
+This is a broad, bounded survey, not every page on the Internet or proof that no other prior art exists.
+Collection stopped after accounting, continuation, lifetime, completion, compatibility and measurement
+decisions each had primary evidence or an explicit project-specific test requirement.
+
+Some moving GitHub pages were stale, immutable pages returned browser cache misses, and a versioned
+Tokio docs URL was inaccessible through the browser. Read-only GitHub API/raw retrieval supplied the
+listed immutable code and license inspection; publisher/API text supplied the remaining evidence.
+Search-engine crawl/upload dates were not used as publication dates. No upstream repository was
+cloned, installed, compiled or adapted. No project benchmarks, dataset processing or feature code ran.
+
+### 9.2 What the current project actually does [V, source inspection]
+
+The [audit's F-01 reproduction](../../audit/AUDIT_REPORT.md#165-the-single-feature-worth-adding-work-budgeted-replay-and-tail-polling)
+found that requesting one output can inspect one million nonmatching records. That is historical
+executed evidence, not a new measurement from this research pass. Current source inspection confirms:
+
+| Existing location | Verified behavior | Consequence for the proposal [I] |
+|---|---|---|
+| [Replay API / ReplayWork](../../src/tiplog/engine/engine.hpp) | `next_batch(max, out)` limits outputs. Work includes record/posting/PAD/span counters and separate seek counters. | Keep output and inspection budgets independent. Logical byte spans are not hardware memory-traffic measurements. |
+| [Replay constructor](../../src/tiplog/engine/engine.cpp), `Replay::Replay` | Captures upper sequence/position; seeks the start; Auto may estimate all selected partitions. | Opening is real work. Tail invokes opening inside `poll`, so include it in whole-call timing even when excluded from the inspection cap. |
+| Same file, `next_batch_into`, Scan branch | Rejected DATA and PAD already advance the checkpoint. PAD contributes to logical byte work. | Each traversed DATA/PAD item must spend one inspection, including zero-output calls. |
+| Same file, Indexed branch | Each batch reconstructs cursor/head/filter vectors, seeks every selected partition and builds a merge kernel. Progress checkpoint currently advances only after a delivered match. | A counter plus early return is insufficient: rejected postings must commit progress, or every bounded call can revisit the same prefix. |
+| [Index seek/estimate/advance](../../src/tiplog/index/index.cpp) | `seek` binary-searches block IDs and then entries. `estimate_count` traverses overlapping blocks. Cursor validation checks position/generation before using recycled storage. | Do not misdescribe seek as a linear chain walk. Cost still depends on partition/block counts; estimates can be substantial outside the proposed cap. |
+| [Packed merge representation](../../src/tiplog/merge/kernels.hpp) | Explicit Indexed permits up to 65,535 cursors; Auto normally limits selected partitions to 64. | Repeated preparation may dominate small budgets. Finite representation limits are not a useful latency guarantee. |
+| [Tail implementation](../../src/tiplog/engine/engine.cpp), `Tail::poll` | Can finish its old captured range and open the current head range in one call. Internal Replay counters reset when that Replay is replaced. | Pass one remaining allowance through both ranges. Aggregate per-call telemetry across rollover; subtracting only the final Replay's counters is wrong. |
+| Same Replay/Tail implementation and API comments | Expiry checks precede resumed storage access; outputs borrow ring storage until engine mutation. `push_back` succeeds before a matching-record checkpoint advances. | Preserve expiry-before-dereference, reacquire filters, and retain allocation-failure retry behavior. A work cap does not pin history or extend borrowed lifetimes. |
+
+### 9.3 Primary engineering sources: mechanisms and traps
+
+These are official documentation or first-party implementation reports. Publication dates are given
+only when verified; living documentation was read on the access date. Immutable implementation
+revisions and licensing appear in §9.5.
+
+| ID | Source / actual reading | Supported finding and application; limit |
+|---|---|---|
+| F01-S01 | Aeron [Controlled Polling](https://aeron.io/docs/aeron/publications-subscriptions/#controlled-polling); actual C image loops and C++ wrapper methods | ABORT retains the current fragment, BREAK consumes it and stops, COMMIT publishes progress and continues. Fragment count and stream-position bounds differ; PAD is not charged as a fragment. Borrow the consume/commit/stop distinction, not its PAD exemption, C callbacks or a claimed CPU bound. |
+| F01-S02 | Agrona `OneToOneRingBuffer.controlledRead` (entire method); [Duty Cycles](https://aeron.io/docs/agrona/duty-cycles/) and [Agents & Idle Strategies](https://aeron.io/docs/agrona/agents-idle-strategies/) | Physical traversal and message count differ. An empty delivered batch can still represent useful work. Borrow progress accounting and duty-cycle reasoning; destructive ring-consumer ownership, Java atomic accesses and exception-finalization policy do not transfer automatically. |
+| F01-S03 | Linux [NAPI Datapath API](https://docs.kernel.org/networking/napi.html#datapath-api), zero/exact-budget warnings and completion example; [netdev_budget](https://docs.kernel.org/admin-guide/sysctl/net.html#netdev-budget) | Completion and budget exhaustion cannot be inferred from the same integer alone, particularly at exact boundaries. NAPI excludes some work and defines special zero-budget behavior. Use an explicit stop reason; do not import its exclusions or integer workaround. |
+| F01-S04 | Tokio [operation-budget article](https://tokio.rs/blog/2020-04-preemption), 2020-04-01; current cooperative accounting, `consume_budget`, runtime fairness and `yield_now` contracts | Always-ready work needs cooperation points. Commit charges for progress at one accounting layer; avoid double-charging wrappers and leaves. Yielding alone does not guarantee another task runs. Its historical 128-operation value is not a calibrated tiplog default. |
+| F01-S05 | Seastar [tutorial, preemption/task quota](https://docs.seastar.io/master/tutorial.html#preemption-and-task-quota), §§4.2/5.6; actual `maybe_yield` and loop helpers | Continuations must preserve loop state and periodically return control. One expensive non-yielding operation can still monopolize execution. Reuse the safe-point idea through original synchronous C++; no reactor, future framework or imported time quota is required. |
+| F01-S06 | Pepijn Van Eeckhoudt, [DataFusion cancellation](https://datafusion.apache.org/blog/2025/06/30/cancellation/), 2025-06-30; actual `coop.rs`, filter loop, cooperation optimizer and relevant tests | Inner filtering can consume many inputs without output; enforce cooperation near work-producing operations. Independent branch budgets can be bypassed by a merge, motivating a shared allowance. Current code also charges ready empty batches. Its batch/task accounting is not a record-level proof for tiplog. |
+| F01-S07 | SQLite [progress handler](https://sqlite.org/c3ref/progress_handler.html), [interrupt](https://sqlite.org/c3ref/interrupt.html) and [reset](https://sqlite.org/c3ref/reset.html), complete short API text | Approximate VM-instruction progress is independent of returned rows. Interruption aborts an operation; reset restarts it. F-01 needs resumable yielding, not an interrupt-and-restart substitution. Do not introduce reentrant callbacks that mutate the executing engine. |
+| F01-S08 | RocksDB `ReadOptions` actual `max_skippable_internal_keys` / deadline declarations and comments | The skipped-key threshold is scoped to iterator Seek, and deadlines are best effort. Explicitly name which operation a cap covers. An `Incomplete`/deadline mechanism is not evidence of a general hard per-poll bound. |
+| F01-S09 | Kafka [4.1 consumer configuration, max.poll.records](https://kafka.apache.org/41/generated/consumer_config.html#max.poll.records), relevant poll/fetch sections | The record-return limit does not change underlying fetching/cache behavior. This cautions against promising bounded execution from output cardinality. Version 4.1 is a named reference, not a claim of the latest Kafka release. |
+| F01-S10 | Elasticsearch [search_after pagination](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/paginate-search-results) and [PIT lifetime](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-open-point-in-time), continuation/retention sections | A continuation key and preserved snapshot are separate contracts. PIT preserves old segments at resource cost. Keep tiplog's explicit FellBehind/HistoryExpired behavior; do not silently add snapshot pinning or durable continuation tokens. |
+
+### 9.4 Research papers: foundations, recent studies and exclusions
+
+The consequences here are analogies or design inputs [I], not transferred theorems, reproduced
+performance or recommendations to add multithreading. No upstream speedup is a tiplog target.
+
+| ID | Paper / verified date / read depth | Useful result and boundary of transfer |
+|---|---|---|
+| F01-P01 | Minier, Skaf-Molli, Molli, [SaGe: Web Preemption for Public SPARQL Query Services](https://arxiv.org/pdf/1902.04790), WWW 2019, DOI [10.1145/3308558.3313652](https://doi.org/10.1145/3308558.3313652); abstract, §§3.1–3.3, operator algorithms/Table 1 and update limitation | Suspension must preserve consistent operator state; cheap stopping can still require costly resumption. Its read-only-data assumption does not solve tiplog eviction between calls. The model excludes plan/resume costs from its quantum, reinforcing the need to state our own scope explicitly. |
+| F01-P02 | Leis, Boncz, Kemper, Neumann, [Morsel-Driven Parallelism](https://db.in.tum.de/~leis/papers/morsels.pdf), SIGMOD 2014, DOI [10.1145/2588555.2610507](https://doi.org/10.1145/2588555.2610507); abstract, §3.2 cancellation and §3.3 granularity | Small work chunks trade responsiveness against dispatch overhead. Choose a budget experimentally. NUMA placement, work stealing and the paper's morsel-size recommendation belong to its database/hardware setting, not this single-threaded engine. |
+| F01-P03 | Wagner, Kohn, Neumann, [Self-Tuning Query Scheduling for Analytical Workloads](https://db.in.tum.de/~kohn/papers/query-scheduling-sigmod21.pdf), SIGMOD 2021, DOI [10.1145/3448016.3457260](https://doi.org/10.1145/3448016.3457260); abstract and §3.1, neighboring policy context | Equal tuple counts can have very different execution costs; adaptive morsels address that variance. Deterministic inspection caps do not imply equal CPU slices or deadlines. Adaptive time-based tuning and stride priorities remain optional future policy, not initial dependencies. |
+| F01-P04 | Welsh, Culler, Brewer, [SEDA](https://www.sosp.org/2001/papers/welsh.pdf), SOSP 2001, DOI [10.1145/502059.502057](https://doi.org/10.1145/502059.502057); §3.4, Figure 7/batching-controller discussion | Batch size affects throughput and response time. Measure a useful budget that amortizes returns; do not restructure tiplog into queued stages and thread pools. |
+| F01-P05 | Hähnle, Henrio, [Provably Fair Cooperative Scheduling](https://programming-journal.org/2024/8/6/), Programming 2024 volume 8(2), article 6; publisher publication date 2023-10-15; [primary v1](https://arxiv.org/pdf/2312.16977v1), §3.3 and §7 | Its formal fairness setting requires tasks to reach cooperative scheduling points. Bounded local progress and the surrounding scheduler are distinct obligations. This does not prove tiplog fairness or real-time behavior. |
+| F01-P06 | Li et al., [LibPreemptible](https://people.csail.mit.edu/delimitrou/papers/2024.hpca.libpreemptible.pdf), HPCA 2024, pp. 922–936; §II-B/Figure 2 and selected evaluation/controller sections | Quantum/overhead tradeoffs vary with workload dispersion and load. Test rejection-heavy and delivery-heavy cases. Hardware-assisted user-level threading and adaptive timers are outside F-01. |
+| F01-P07 | Luo et al., [Efficient Microsecond-scale Blind Scheduling with Tiny Quanta](https://amyousterhout.com/papers/tinyquanta_asplos24.pdf), ASPLOS 2024, pp. 305–319, DOI [10.1145/3620665.3640381](https://doi.org/10.1145/3620665.3640381); §§1–2 | A short victim task alongside a long task is a useful responsiveness experiment. Compiler probes, physical-clock scheduling and multicore coroutine mechanisms are not adopted. |
+| F01-P08 | Guo, Zuberi, Garfinkel, Ousterhout, [Benefits and Limitations of User Interrupts for Preemptive Userspace Scheduling](https://www.usenix.org/conference/nsdi25/presentation/guo), NSDI 2025, pp. 1015–1032; [PDF](https://www.usenix.org/system/files/nsdi25-guo.pdf), §§2, 3.2–3.3, 4.3–4.4 | Mechanism, runtime policy and workload affect outcomes separately. Hold caller policy constant while varying budgets. UINTR, specialized kernel support and timer cores are unnecessary. |
+| F01-P09 | Xie, Jin, Vasilakis, [Towards Hybrid Cooperative-Preemptive Scheduling](https://nikos.vasilak.is/p/cocoon:plos:2025.pdf), PLOS 2025, DOI [10.1145/3764860.3768329](https://doi.org/10.1145/3764860.3768329); abstract, §§1–2/design | Safe-state yielding is relevant background. The paper describes implementation in progress; it is not an established drop-in library. Interrupt handlers and hybrid preemption are screened out. |
+| F01-P10 | Hu et al., [SBB: Eliminating Centralized Bottlenecks in Userspace Network Runtime](https://www.usenix.org/conference/osdi26/presentation/hu-kang), OSDI 2026, July, pp. 473–489; [PDF](https://www.usenix.org/system/files/osdi26-hu-kang.pdf), introduction/§2.1 | Request preemption, CPU allocation and cross-core load balancing are distinct. This recent work does not justify adding a DPDK/UINTR runtime, extra cores or network scheduling to F-01. |
+
+### 9.5 Repositories and code worth studying; licenses and revision pins
+
+These are inspected examples for a fresh C++ implementation, **not proposed dependencies or copied
+code**. No Rust/Java/transport implementation is transplanted. If later approval includes literal
+source reuse, retain its notices and review the exact adapted code then; paper availability alone
+does not grant a repository code license.
+
+| Repository / immutable inspected revision | Actual code paths | License inspected / reuse decision |
+|---|---|---|
+| Aeron `b940ee28a6abb1b5f52ddad6a7838e1fff32f741` (2026-10-23) | [C controlled/bounded poll](https://github.com/aeron-io/aeron/blob/b940ee28a6abb1b5f52ddad6a7838e1fff32f741/aeron-client/src/main/c/aeron_image.c#L327), [C++ Image wrapper](https://github.com/aeron-io/aeron/blob/b940ee28a6abb1b5f52ddad6a7838e1fff32f741/aeron-client/src/main/cpp_wrapper/Image.h#L375) | Apache-2.0 file headers. Study commit/stop semantics; no C ABI callback adoption. |
+| Agrona `4e576b8628ee8d5516c7352eae95720263b4dc59` (2026-10-20) | [controlledRead](https://github.com/aeron-io/agrona/blob/4e576b8628ee8d5516c7352eae95720263b4dc59/agrona/src/main/java/org/agrona/concurrent/ringbuffer/OneToOneRingBuffer.java#L241) | Apache-2.0 file header. Study separate bytes/progress/output and exception paths. |
+| Tokio 1.54.1 `b53b2001ed2ccfd9b87e32a0c6da1a1eebdc80b8` ([release](https://github.com/tokio-rs/tokio/releases/tag/tokio-1.54.1), 2026-10-21) | [coop accounting](https://github.com/tokio-rs/tokio/blob/b53b2001ed2ccfd9b87e32a0c6da1a1eebdc80b8/tokio/src/task/coop/mod.rs#L82), [consume_budget](https://github.com/tokio-rs/tokio/blob/b53b2001ed2ccfd9b87e32a0c6da1a1eebdc80b8/tokio/src/task/coop/consume_budget.rs#L25), [fairness contract](https://github.com/tokio-rs/tokio/blob/b53b2001ed2ccfd9b87e32a0c6da1a1eebdc80b8/tokio/src/runtime/mod.rs#L289) | [MIT](https://github.com/tokio-rs/tokio/blob/b53b2001ed2ccfd9b87e32a0c6da1a1eebdc80b8/LICENSE). Study authoritative progress charging and caller assumptions. |
+| Seastar `4735fc2f8b21359150a9043f0dd851f970132200` (2026-10-25) | [maybe_yield](https://github.com/scylladb/seastar/blob/4735fc2f8b21359150a9043f0dd851f970132200/include/seastar/coroutine/maybe_yield.hh#L31), [loop continuation](https://github.com/scylladb/seastar/blob/4735fc2f8b21359150a9043f0dd851f970132200/include/seastar/core/loop.hh#L127) | [Apache-2.0](https://github.com/scylladb/seastar/blob/4735fc2f8b21359150a9043f0dd851f970132200/LICENSE), [NOTICE](https://github.com/scylladb/seastar/blob/4735fc2f8b21359150a9043f0dd851f970132200/NOTICE). Study safe continuation boundaries; current implementation is in `loop.hh`. |
+| DataFusion `350ca76505c9513d16e7dd9910bcd9bde2c911ed` (2026-10-26) | [coop.rs](https://github.com/apache/datafusion/blob/350ca76505c9513d16e7dd9910bcd9bde2c911ed/datafusion/physical-plan/src/coop.rs#L144), [filter loop](https://github.com/apache/datafusion/blob/350ca76505c9513d16e7dd9910bcd9bde2c911ed/datafusion/physical-plan/src/filter.rs#L1658), [EnsureCooperative](https://github.com/apache/datafusion/blob/350ca76505c9513d16e7dd9910bcd9bde2c911ed/datafusion/physical-optimizer/src/ensure_coop.rs#L65) | [Apache-2.0](https://github.com/apache/datafusion/blob/350ca76505c9513d16e7dd9910bcd9bde2c911ed/LICENSE.txt). Study placement and empty-input progress; its tests do not prove a record-level hard bound. |
+| RocksDB `ea313605367281013c2c81158069e88411516357` (2026-10-23) | [ReadOptions limits](https://github.com/facebook/rocksdb/blob/ea313605367281013c2c81158069e88411516357/include/rocksdb/options.h#L2317) | [Apache-2.0 alternative](https://github.com/facebook/rocksdb/blob/ea313605367281013c2c81158069e88411516357/LICENSE.Apache) to GPLv2 verified. Study precise operation scoping; do not add an LSM dependency. |
+
+Recent upstream checks matter to choosing examples: Aeron [1.53.3](https://github.com/aeron-io/aeron/releases/tag/1.53.3)
+was released 2026-09-25, while inspected master identifies itself as unreleased 1.54.0. Its
+[2026-10-09 callback noexcept change](https://github.com/aeron-io/aeron/commit/4cb38a4d550bf2e8b2e2c75f35755ba51f35aa29)
+and [2026-07-03 controlled-peek/set-position removal](https://github.com/aeron-io/aeron/commit/e3fe1f2feaccfa4c768df5b9e1f4462a77995713)
+make older examples unsuitable for direct copying. Agrona [2.7.0](https://github.com/aeron-io/agrona/releases/tag/2.7.0)
+was released 2026-10-12; inspected master is unreleased 2.8.0. No release is treated as a reason to
+upgrade project dependencies. SQLite's [public-domain policy](https://sqlite.org/copyright.html)
+was also inspected; only API concepts are used here.
+
+### 9.6 Proposed feature contract [D, awaiting approval]
+
+**Accounting.** For the budgeted overload, one inspection is one Scan DATA/PAD item traversed, or
+one merged Indexed posting examined together with its referenced DATA item. Matching and rejected
+candidates cost the same unit. Indexed posting and DATA fetch are not charged twice. Empty selected
+partitions are preparation work, not candidate units. Auto uses its effective mode's accounting.
+For successful calls, Scan's inspection count should agree with the delta of `records_fetched +
+pads_inspected`; Indexed's should agree with `entries_visited`, without adding `records_fetched` again.
+An independent test-side trace must verify the actual bound rather than trusting the meter alone.
+
+Retain byte-span telemetry, but do not add a byte-cap option initially. A positive unit budget can
+always consume a complete permitted record; a strict byte cap smaller than one record would need
+an explicit oversize policy. Payload length, filter cost, memory/cache behavior and per-candidate
+merge cost vary, so equal inspection counts need not consume equal elapsed time.
+
+**API shape.** Add explicit budgeted overloads and keep existing signatures/status behavior unchanged.
+Use existing `Status` for state and a separate reason for why this call stopped. This is an
+**original illustrative interface**, not compiled code or an approved final ABI:
+
+```cpp
+struct PollLimits {
+  std::size_t max_outputs;
+  std::optional<std::uint64_t> max_inspections; // nullopt: unlimited
+};
+
+enum class PollStop {
+  NoWork, OutputLimit, InspectionLimit, SnapshotDone, CaughtUp, Error
+};
+
+struct PollResult {
+  Status status;
+  PollStop stop;
+  std::uint64_t inspections_used;
+  ReplayWork work_delta; // this public call; sum across Tail range rollover
+};
+
+// Proposed overloads only; the current size_t overloads remain available.
+PollResult Replay::next_batch(PollLimits, std::vector<Delivered>&);
+PollResult Tail::poll(PollLimits, std::vector<Delivered>&);
+```
+
+**Completion, limits and zero cases.** Validate lifetime before doing work or returning from a
+zero-work call; a moved-from/outlived reader must not bypass its existing lifetime guard. Preserve
+latched errors. Either zero output capacity or an explicit zero inspection budget clears output and
+does not inspect, capture a new range or advance the checkpoint; the new result reports `NoWork`
+with cached status. It does not claim a fresh observation that a live tail is caught up. An absent
+cap means unlimited; numeric zero must never be silently interpreted as unlimited.
+
+For positive calls, `More + InspectionLimit` is valid with zero deliveries and must retain progress.
+An output-limit stop takes precedence when both caps are reached on the same successful delivery;
+retain existing `More` at exact output boundaries. Known completion can be returned without an
+extra inspection when no output-limit return has already occurred. Do not read an additional item
+just to discover whether a budget-exhausted range has ended. For Replay, completion is permanent for
+its captured range; Tail's `CaughtUp` is an observation for that positive call, not permanent EOF.
+
+**Checkpoint progress for finite-budget calls.** After processing the minimum globally ordered Indexed candidate, every
+selected-partition candidate at or below its position has been handled. It is therefore safe [I,
+to be tested] to commit logical progress past that candidate even if its topic filter rejects it.
+Keep `last_delivered_` separate: advancing processed progress must not falsify the last output in
+error diagnostics. Scan continues to advance through rejected DATA/PAD. A stop before an unprocessed
+matching record must not commit it. If appending that delivery throws, leave that record unread.
+
+This incremental rejecting-posting checkpoint rule belongs to the finite-budget path. Both existing
+overloads and a new overload with `max_inspections = nullopt` must preserve the legacy Indexed
+checkpoint/error behavior, including the checkpoint visible after allocation failure. Do not silently
+change that behavior by routing every call through a helper that always commits rejected postings.
+Compatibility tests must distinguish the unlimited path from the explicitly finite-budget path.
+
+**Tail composition.** Create one meter at public-call entry; pass the remaining allowance to all
+internal replay work. Do not reset it when an old captured range completes or a fresh range opens.
+Sum per-call work from the completed and new Replay objects before discarding either. An empty
+`More + InspectionLimit` batch is a cooperative return; rotate to another runnable reader/publisher
+before resuming it. Conversely, a zero-output poll can consume work and legitimately finish with
+`Done + CaughtUp`. Use state/stop reason to distinguish these cases; output count alone is insufficient.
+
+When the final inspection unit completes the old captured range, do not open or prepare a fresh
+range with no allowance left. If a constant-time head-sequence comparison proves the checkpoint is
+at the current head, return `Done + CaughtUp`; if later DATA exists, retain the completed old boundary
+and return `More + InspectionLimit`, deferring fresh opening until the next positive-budget poll.
+A simultaneous output-limit return still takes precedence. `SnapshotDone` describes Replay completion;
+an internal completed range alone is not public Tail completion.
+
+**Retention and borrowing.** Keep current logical checkpoint/re-seek behavior initially. Across calls,
+publishing may evict bytes and recycle index blocks. Validate expiry before metadata/data dereference,
+reacquire filters, and do not cache naked filter pointers or borrowed payload spans. The checkpoint
+does not pin old storage. A completed Replay must remain Done after eviction; an unfinished expired
+one must fail before touching overwritten storage. Resuming a new Replay with a logical checkpoint
+captures a new upper bound: it is not restoration of the original snapshot. Continuation of that
+original captured range remains in the original Replay object.
+
+**Equivalence.** Without a cap, preserve existing output/status/checkpoint/error behavior and legacy
+Q7. With a cap and retained history, concatenating repeated positive bounded polls must yield the
+same ordered IDs, topics, payload bytes and final captured-range boundary as the unlimited reference.
+Scan, Indexed and Auto need not have equal intermediate checkpoints or yield counts: they perform
+different physical work. With publication/eviction between calls, safe progress and explicit expiry
+are required; equal error outcomes under every interleaving are not promised.
+
+### 9.7 Preparation costs, alternatives and selected scope
+
+| Option | Benefit | Cost / limitation | Recommendation |
+|---|---|---|---|
+| Output limit only, as today | Existing simple API | Does not fix the audited long rejection loop | Retain only as the legacy unlimited path. |
+| **Inspection cap plus explicit setup accounting** | Exact traversal bound; small API extension; preserves proven logical checkpoints/re-seek safety | Setup can dominate tiny budgets, especially large explicit Indexed or Auto planning; no whole-call latency promise | **Recommended initial F-01 scope.** Report that limitation alongside results. |
+| Add a byte cap as well | Constrains logical scanned spans across variable record sizes | Needs a progress/oversize policy and another boundary dimension | Defer until measurements show it is useful. |
+| Persistent physical cursors / merge heaps | May amortize repeated setup | Needs generation/mutation invalidation, filter reacquisition, move/destruction handling and reader-memory accounting | Profile first; not an unreviewed first-version optimization. |
+| Budgeted preparation/planning state machine | Can cap charged metadata work as well as candidates | Must make capture/seek/Auto estimation/partition initialization/kernel construction resumable, with precise units and reclamation rules | Separate larger approval option if complete-call work is required. |
+| Deadline, cancellation or asynchronous/hardware preemption | Different responsiveness controls | Nondeterministic cut points or substantially different runtime/lifetime model | Not needed for the proposed deterministic feature. |
+
+Preparation is finite under current configuration, but that does not provide a useful response-time
+bound. Benchmark all public-call time, including Tail's internal opening, and record opening/planning,
+index seeks, merge setup, candidate traversal and output growth separately. Existing counters do not
+fully count Auto's metadata probes; add narrowly scoped diagnostics if needed in the approved
+implementation, without redefining historical ReplayWork fields or old benchmark records.
+
+If a replay processes N selected candidates with budget B across K partitions, rebuilding all K
+cursors for every poll adds roughly `K * ceil(N / B)` seek operations, plus output-limit stops.
+Each seek uses binary searches and each kernel has its own initialization cost. This is a work model
+[I], not a timing prediction. Budget one can maximize scheduling opportunities and still make total
+completion slower. Choose a deployment budget from the observed throughput/response curve.
+
+### 9.8 Proposed correctness and regression gates [D, not executed]
+
+| Gate | Required cases / acceptance |
+|---|---|
+| F01-V01 — exact accounting | Every successful finite-budget call uses at most its supplied inspections and outputs. Independently record traversed DATA/PAD/postings; include nonmatches and avoid double-charge. |
+| F01-V02 — rejection progress | Million-record zero-match and match-at-the-end fixtures in Scan, Indexed and Auto; budget 1 and larger values. Positive calls advance or finish; rejected Indexed prefixes are not rescanned indefinitely. |
+| F01-V03 — boundaries | Zero/absent/maximum caps, zero outputs, exact budget/output ties, empty/future/finished ranges, PAD at wrap/tail/head boundaries, final nonmatch and match. No extra inspection to infer Done. |
+| F01-V04 — tail composition | Old snapshot completion plus new head range share one allowance. Test completion on the final unit with and without later DATA, no fresh preparation after exhaustion, counters across replacement, repeated caught-up polls and later publication. |
+| F01-V05 — snapshot equivalence | Random positive budget/output sequences against an independent unlimited Scan oracle; every kernel; exact/subtree/overlapping/wide/empty-selected coverage and nonuniform payloads. Compare eventual output and final range boundary while retained. |
+| F01-V06 — eviction and lifetime | Publish/ForceEvict between polls, recycled consumed/unread blocks, expired checkpoint, registry growth, Engine destruction, moves and completion after eviction. Detect expiry before accessing reclaimed storage; do not equate mode-specific error timing. |
+| F01-V07 — exception safety | Inject output allocation failure at a matching candidate; it remains unread and retry does not skip/duplicate it. Finite-budget rejecting progress may persist; legacy/nullopt calls retain their original visible checkpoints, including after a rejected prefix then a failed append. |
+| F01-V08 — compatibility | All current suites plus both unlimited API forms/reference-digest behavior remain valid, including exception paths. Finite-budget oracle/status/checkpoint tests stay distinct from legacy Q7. Existing trace/schema/performance evidence is not rewritten. |
+
+Extend randomized/fuzzer grammars only after approval: budget changes, zero-budget queries,
+publication between polls and tail rollover should be explicit operations. Add negative mutations
+for “charge matches only”, “PAD is free”, “reset allowance on Tail rollover” and “discard progress
+on an Indexed rejection”; each regression must fail under its mutation. These are planned tests,
+not assertions that a new oracle or implementation already exists.
+
+### 9.9 Proposed measurement protocol and choice of defaults [D, not executed]
+
+Keep deterministic accounting and output equivalence as hard functional gates. Measure responsiveness
+separately; no upstream performance number or budget constant is a promised result here.
+
+| Dimension | Proposed sweep / reason |
+|---|---|
+| Inspection allowance | 1, 8, 32, 128, 512, 2,048 and unlimited; screening points, not calibrated defaults. |
+| Output allowance | 1, small batches and effectively unlimited; distinguish output stops from inspection stops. |
+| Workload selectivity | Zero match, one late match, sparse/bursty and all match; same fixed input/seeds across compared arms. |
+| Record shape | Generic 16-byte records, representative ITCH sizes, variable large records and PAD-heavy wraps. |
+| Index shape | K=0/1/4/64 and larger explicit Indexed cases, including the highest feasible legal K under a predeclared resource cap; Auto with many overlapping blocks. Record infeasible stress arms explicitly. |
+| Consumer schedule | Same round-robin policy across budgets; long rejecting reader plus short victim reader and publisher work. Include immediate-redrain as a counterexample to automatic fairness. |
+| Retention | Captured static retained range for equivalence/throughput, then separately reported publish-between-polls/eviction experiment. |
+| Warmth and repetition | Separate first-open/cold setup from repeated polls; paired seeded arms, process repetitions, invocation order, host/frequency observations and raw non-ok outcomes retained. |
+
+Record per-poll delivered/inspection counts, zero-output returns, stop reasons, index seeks, total
+replay CPU/elapsed time, throughput, reader memory and preparation overhead. For a fixed caller
+schedule, record victim/publisher service delay as well as poll-duration distributions. Report sample
+counts with p50/p95/p99/max; maxima are observations, not worst-case guarantees. If arrivals are
+scheduled, measure delay from scheduled eligibility and retain work delayed during a long call.
+
+No automatic adaptive budget is proposed initially. Existing callers remain unlimited unless they
+explicitly select a cap. Prefer a Pareto curve of responsiveness versus total cost over one universal
+best budget. Publish no speedup/latency claim until the protocol runs and setup costs are visible.
+Hardware counters remain subject to existing host-access constraints; logical work counts are not
+substituted for them.
+
+### 9.10 Approval checklist and implementation sequence
+
+The recommended approval would authorize the following **future** work only after user approval:
+
+1. Fix the §9.6 contract: inspection units, no-cap/zero behavior, stop reasons and legacy compatibility.
+   Confirm §9.7 traversal-only scope or choose the larger metadata-budgeted variant.
+2. Write independent contract/oracle tests first, including the four negative accounting/progress mutations.
+3. Implement budgeted Replay, committing rejected Indexed progress safely; preserve unbudgeted
+   semantics and output-allocation behavior.
+4. Compose one allowance and per-call telemetry through Tail rollover; cover moves, expiry and borrowed
+   lifetimes. Avoid physical-cursor caching in the first implementation.
+5. Complete affected unit/differential/fuzzer checks and the existing build matrix; then run the declared
+   bounded performance study with original raw evidence retained.
+6. Review source, API documentation, results and limitations; create a new feature acceptance snapshot
+   rather than rewriting P1–P8 or remediation evidence.
+
+No production code, API, dependencies, tests, benchmark results or prior gate identities were changed
+by this research. **Implementation remains stopped pending the user's approval.**
+
+## 10. F-01 implementation follow-through — approved 2026-10-26
+
+The user subsequently approved implementation: “approved... build the feature”.
+Section 9 records the proposal as reviewed before that approval; its future-tense
+status labels are historical. The implemented contract and integration example
+are documented in [POLL_BUDGET.md](../report/POLL_BUDGET.md). The traversal-only
+scope was selected, with explicit opt-in limits, no finite default, no runtime
+dependency, and no physical cursor caching. Existing output-only and new
+unlimited overloads preserve legacy progress and exception behavior.
+
+The [initial baseline](../../results/f01/baseline.json) and
+[final compiled-source freeze](../../results/f01/source-freeze-final.json)
+separate this feature from previous accepted phases. The new independent logical
+poll model, deterministic contract cases, mutation controls, differential
+campaigns and fourth fuzz target validate bounded progress and Tail composition.
+The [measurement protocol](../../results/f01/protocol.json) and subsequently
+predeclared [exact study plan](../../results/f01/study-plan-final.json) retain the
+distinction between traversal bounds and complete-call timing/setup costs.
+Final execution evidence and any study limitations are recorded in the feature
+report rather than inferred from upstream results.

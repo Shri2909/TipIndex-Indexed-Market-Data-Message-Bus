@@ -1,0 +1,14 @@
+RC-3 real trace basket-success: all repeated GCC/Clang configurations passed
+RC-3 real trace basket-expiry: all repeated GCC/Clang configurations passed
+RC-3 real trace wide-success: all repeated GCC/Clang configurations passed
+RC-3 real trace wide-expiry: all repeated GCC/Clang configurations passed
+RC-3 synthetic scan/stdpq: repeated GCC/Clang outputs passed
+RC-3 synthetic indexed/stdpq: repeated GCC/Clang outputs passed
+RC-3 synthetic indexed/binheap: repeated GCC/Clang outputs passed
+RC-3 synthetic indexed/quad: repeated GCC/Clang outputs passed
+RC-3 synthetic indexed/loser: repeated GCC/Clang outputs passed
+RC-3 synthetic auto/stdpq: repeated GCC/Clang outputs passed
+RC-3 synthetic auto/binheap: repeated GCC/Clang outputs passed
+RC-3 synthetic auto/quad: repeated GCC/Clang outputs passed
+RC-3 synthetic auto/loser: repeated GCC/Clang outputs passed
+RC-3 passed: 180 child runs, 170 equalities

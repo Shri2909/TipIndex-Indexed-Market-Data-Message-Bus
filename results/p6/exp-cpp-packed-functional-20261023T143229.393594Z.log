@@ -1,0 +1,59 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_cpp_packed_limit_rejects_indexed_and_auto_falls_back ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-2/test_cpp_packed_limit_rejects_0')
+
+    def test_cpp_packed_limit_rejects_indexed_and_auto_falls_back(tmp_path):
+        partitions, capacity = 100000, 262144
+        data, rows, topics = schedule(records=128, partitions=partitions, zipf=1.2,
+                                     run_length=16, seed=20191231,
+                                     mix=empirical_mix(ROOT/'configs/m2_payload_mix.csv'))
+        oracle = OutcomeOracle(SimpleNamespace(data=data, rows=rows, topics=topics), capacity)
+        terms = ';'.join(f'subtree:synth/p{owner}' for owner in range(partitions))
+        requests = [dict(id=str(index), exp='functional-packed-limit', after_seq=0,
+                         terms=terms, mode=mode, kernel=kernel,
+                         cache_treatment='repeat-warm', batch=7)
+                    for index,(mode,kernel) in enumerate([('scan','stdpq')] +
+                        [(mode,kernel) for mode in ('indexed','auto')
+                         for kernel in ('stdpq','binheap','quad','loser')])]
+        request_path, output = tmp_path/'requests.tsv', tmp_path/'actual.jsonl'
+        write_requests(request_path, requests)
+>       subprocess.run([str(BINARY),'--synthetic','--records','128','--partitions',str(partitions),
+                        '--zipf','1.2','--run-length','16','--seed','20191231',
+                        '--ring-bytes',str(capacity),'--block-entries','64',
+                        '--requests',str(request_path),'--output',str(output)],
+                       cwd=ROOT, check=True, capture_output=True, text=True, timeout=180)
+
+py/tests/test_exp_cpp.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/subprocess.py:557: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1221: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:2154: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['/home/abc/Desktop/Jane Street/build/release/t...>
+endtime = 6869.104131983, orig_timeout = 180, stdout_seq = [], stderr_seq = []
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/home/abc/Desktop/Jane Street/build/release/tiplog_bench', '--synthetic', '--records', '128', '--partitions', '100000', '--zipf', '1.2', '--run-length', '16', '--seed', '20191231', '--ring-bytes', '262144', '--block-entries', '64', '--requests', '/tmp/pytest-of-abc/pytest-2/test_cpp_packed_limit_rejects_0/requests.tsv', '--output', '/tmp/pytest-of-abc/pytest-2/test_cpp_packed_limit_rejects_0/actual.jsonl']' timed out after 180 seconds
+
+/usr/lib/python3.14/subprocess.py:1268: TimeoutExpired
+=========================== short test summary info ============================
+FAILED py/tests/test_exp_cpp.py::test_cpp_packed_limit_rejects_indexed_and_auto_falls_back
+1 failed in 180.51s (0:03:00)

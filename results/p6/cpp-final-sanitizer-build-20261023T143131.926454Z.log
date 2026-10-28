@@ -1,0 +1,23 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[ 12%] Built target tiplog_merge
+[ 31%] Built target tiplog_topics_subs
+[ 43%] Built target tiplog_ring
+[ 56%] Built target tiplog_index
+[ 68%] Built target tiplog_engine
+[ 87%] Built target tiplog_trace
+[ 93%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[100%] Linking CXX executable tiplog_bench
+[100%] Built target tiplog_bench
+[ 10%] Built target tiplog_trace
+[ 76%] Built target benchmark
+[ 86%] Built target tiplog_topics_subs
+[ 93%] Built target tiplog_index
+[ 96%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[100%] Linking CXX executable index_bench
+[100%] Built target index_bench
+[ 15%] Built target tiplog_merge
+[ 38%] Built target tiplog_topics_subs
+[ 53%] Built target tiplog_ring
+[ 69%] Built target tiplog_index
+[ 84%] Built target tiplog_engine
+[100%] Built target tiplog_bench_contract_test

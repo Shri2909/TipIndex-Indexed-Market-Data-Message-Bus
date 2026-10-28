@@ -1,0 +1,1 @@
+{"status": "passed", "summary_sha256": "e5ad049a36d7adb3b8465345fd9d704e0b643dcce7636fe74253905395d55d02", "run_counts": {"basket-success": 36, "basket-expiry": 36, "wide-success": 36, "wide-expiry": 36, "synthetic": 36}, "source_and_binary_identity_current": true, "comparison_count": 170}

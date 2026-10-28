@@ -1,0 +1,29 @@
+{
+  "reason": "Actual visual review found default suptitle y=.98 places its label inside the first row of a63inch chart; anchor in physical points from the page top instead.",
+  "snapshots": [
+    {
+      "path": "py/tiplog_py/figures/tip.py",
+      "snapshot": "results/p6/f12-title-position-compatibility/0-tip.py",
+      "bytes": 26461,
+      "sha256": "f156ad50beb039315b48c95a9e10772a4e4d2c4377951f76562619489e8d758f"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/campaign-provenance.json",
+      "snapshot": "results/p6/f12-title-position-compatibility/1-campaign-provenance.json",
+      "bytes": 41373,
+      "sha256": "892cf7c28473b67fd4e4d2307d2d985daf015529ec662488b5cbae492f9d24d3"
+    },
+    {
+      "path": "results/figures/p6-figures.json",
+      "snapshot": "results/p6/f12-title-position-compatibility/2-p6-figures.json",
+      "bytes": 1888943,
+      "sha256": "1f29f77994b5486d87a240f69bb8a47378b82fa8276d1e47a6feb4cc544a15f9"
+    },
+    {
+      "path": "results/figures/F12_scan_index_crossover.png",
+      "snapshot": "results/p6/f12-title-position-compatibility/3-F12_scan_index_crossover.png",
+      "bytes": 2161290,
+      "sha256": "03d8f82187045f6fda85510badb4b9b850122459aca7cc4f7aa1aa602de60467"
+    }
+  ]
+}

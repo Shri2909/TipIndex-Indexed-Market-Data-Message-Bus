@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "preset": "release",
+  "seeds_per_campaign": 1000,
+  "operations_per_seed": 10000,
+  "legacy_pairs": [
+    [
+      "scan",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "binheap"
+    ],
+    [
+      "indexed",
+      "quad"
+    ],
+    [
+      "indexed",
+      "loser"
+    ],
+    [
+      "auto",
+      "stdpq"
+    ],
+    [
+      "auto",
+      "binheap"
+    ],
+    [
+      "auto",
+      "quad"
+    ],
+    [
+      "auto",
+      "loser"
+    ]
+  ],
+  "records": [
+    "results/f01/checks/legacy-release-scan-stdpq-20261026T144252.447334Z.json",
+    "results/f01/checks/legacy-release-indexed-stdpq-20261026T144437.888604Z.json",
+    "results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.json",
+    "results/f01/checks/legacy-release-indexed-quad-20261027T012619.471226Z.json",
+    "results/f01/checks/legacy-release-indexed-loser-20261027T012745.063733Z.json",
+    "results/f01/checks/legacy-release-auto-stdpq-20261027T012909.198672Z.json",
+    "results/f01/checks/legacy-release-auto-binheap-20261027T013032.057486Z.json",
+    "results/f01/checks/legacy-release-auto-quad-20261027T013154.124211Z.json",
+    "results/f01/checks/legacy-release-auto-loser-20261027T013314.778300Z.json",
+    "results/f01/checks/budget-release-20261027T013436.600121Z.json"
+  ],
+  "reused_compatible": [
+    "results/f01/checks/legacy-release-scan-stdpq-20261026T144252.447334Z.json",
+    "results/f01/checks/legacy-release-indexed-stdpq-20261026T144437.888604Z.json",
+    "results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.json"
+  ]
+}

@@ -1,0 +1,1 @@
+{"status": "passed", "fixture_scope": "temporary synthetic artifact validation only; no experiments executed", "successful_fixture_processes": 11, "successful_fixture_checks": 2223, "tampering_rejected": ["raw output digest tamper", "misleading first-reader group digest", "subscription dictionary semantic/hash tamper", "reused process PID"]}

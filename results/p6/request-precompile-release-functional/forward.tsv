@@ -1,0 +1,10 @@
+id	experiment	after_seq	terms	mode	kernel	cache	batch	readers
+all-scan	functional	0	subtree:x	scan	binheap	repeat-warm	2	1
+new-exact	functional	0	exact:z/new/e0	indexed	binheap	repeat-warm	2	1
+new-subtree	functional	0	subtree:z/new	indexed	binheap	repeat-warm	2	1
+bad-kind	functional	0	exact:z/valid;bad:wrong	scan	binheap	repeat-warm	2	1
+new-exact-later	functional	0	exact:z/new/e1	auto	binheap	repeat-warm	2	1
+new-earlier-root	functional	0	subtree:a/new	indexed	binheap	repeat-warm	2	1
+bad-path	functional	0	exact:bad//path	scan	binheap	repeat-warm	2	1
+existing	functional	0	exact:x/a/e0	indexed	binheap	repeat-warm	2	1
+new-exact-duplicate	functional	0	exact:z/new/e0	scan	binheap	repeat-warm	2	1

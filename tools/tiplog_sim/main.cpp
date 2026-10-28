@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <charconv>
+#include <cmath>
 #include <filesystem>
 #include <iostream>
 #include <limits>
@@ -25,8 +26,9 @@ double fraction(std::string_view value) {
   double result{};
   const auto parsed =
       std::from_chars(value.data(), value.data() + value.size(), result);
-  if (parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size())
-    throw std::invalid_argument("expected Auto fraction in [0,1]");
+  if (parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size() ||
+      !std::isfinite(result) || result < 0 || result > 1)
+    throw std::invalid_argument("expected finite Auto fraction in [0,1]");
   return result;
 }
 void hash_number(std::uint64_t &state, std::uint64_t value) {
@@ -277,6 +279,8 @@ int main(int argc, char **argv) {
                 << ",\"oldest_retained\":" << final_error->oldest_retained
                 << '}';
     std::cout << "}\n";
+    std::cout.flush();
+    if (!std::cout) throw std::runtime_error("failed writing stdout result");
     return 0;
   } catch (const std::exception &error) {
     std::cerr << "tiplog_sim: " << error.what() << '\n';

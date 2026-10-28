@@ -1,0 +1,9 @@
+{
+  "commit": "d4e5b8323dd43a77c5d5f97fc46f2be25f5a0006",
+  "created_utc": "2026-10-18T10:33:30.441359+00:00",
+  "matched_frozen_source_files": 49,
+  "scope": "Local snapshot; no push or publication",
+  "managed_git_preserved": true,
+  "source_gate_state_at_commit": "P0-P3 complete; P4 timed F3 pending; no P5 implementation",
+  "historical_limit": "P0-P4 unit/CC2 commands predate this first commit and retain their honest source hashes/unborn HEAD status. This snapshot matches checked source; it is not retroactive run-time Git metadata. P5 pilot must capture its actual current revision and dirty flag."
+}

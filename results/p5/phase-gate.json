@@ -1,0 +1,96 @@
+{
+  "phase": "P5",
+  "status": "passed",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "updated_utc": "2026-10-19T01:12:52.115823+00:00",
+  "criteria": {
+    "P4 prerequisite and joint P1-P5 authorization": "met",
+    "P5.1 checked k-cursor packed limits/sentinel and identity": "met",
+    "P5.2 StdPQ real pop/push and early-exit BinHeap": "met",
+    "P5.2b original Loser and aligned Quad with guarded moves/exhaustion": "met",
+    "P5.3 multi-partition Indexed and configurable uncalibrated Auto": "met",
+    "P5.3 Tail re-arm/common progress/expiry/checkpoint and new topics": "met",
+    "P5.4 V21 V23-V25 V26 V35 V38 independent oracle and release/ASan suites": "met",
+    "CC2 each of9 configurations release1000x10000 sanitizer200x10000 and exact outcomes": "met",
+    "RC3 repeats and crosscompiler observable equality": "met",
+    "CC3 integrated F3 >=1800 confirmed monotonic seconds clean with final integrity audit": "met",
+    "P5.5 M1/M1-touch full matrix harness and full-size pilot functional hashes": "met",
+    "P5.5 M2 full matrix harness and all60 reduced functional on/off profiles": "met",
+    "Baseline/timing-boundary/source/generated-code review against VALIDATION7": "met",
+    "Isolated15-repetition M1/M1-touch/M2 pilot raw JSON and independent prefix audit": "met",
+    "Approved no-counter fallback with reduced simulated Cachegrind": "met",
+    "Final implementation/source-to-code-to-check evidence and documentation": "met"
+  },
+  "checks": {
+    "release_tests": "results/p5/release-tests-integration-20261018T155700.707669Z.json",
+    "sanitizer_tests": "results/p5/sanitizer-tests-integration-20261018T155840.807045Z.json",
+    "all_CC2": "results/p5/CC2-all-configurations.json",
+    "CC2_independent_audit": "results/p5/CC2-independent-review.json",
+    "RC3": "results/p5/rc3-summary.json",
+    "RC3_audit": "results/p5/rc3-integrity.json",
+    "M1_full_functional": "results/p5/M1-full-pilot-functional-20261018T160201.375404Z.json",
+    "M2_matrix_functional": "results/p5/M2-full-matrix-functional-20261018T160504.287611Z.json",
+    "generated_code": "results/p5/assembly-review.json",
+    "F3_verified": "results/p5/fuzz-gate-verified.json",
+    "F3_gate": "results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z.json",
+    "F3_independent_review": "results/p5/F3-independent-review.json",
+    "isolated_pilot_command": "results/p5/isolated-pilot-20261019T005945.699984Z.json",
+    "pilot_summary": "results/p5/pilot-summary.json",
+    "pilot_audit": "results/p5/pilot-audit.json",
+    "pilot_independent_review": "results/p5/pilot-independent-review.json",
+    "simulated_Cachegrind": "results/p5/cachegrind-summary.json",
+    "data_exclusion": "results/p5/git-data-audit.json",
+    "documents": "results/p5/document-checks.json",
+    "implementation_manifest": "results/p5/implementation-manifest.json",
+    "final_artifacts": "results/p5/final-artifact-checks.json"
+  },
+  "test_counts": {
+    "all_each_preset": 157,
+    "new_merge": 11,
+    "new_engine_merge": 20,
+    "new_independent_Tail": 5
+  },
+  "differential_operations": {
+    "release": 90000000,
+    "sanitizer": 18000000
+  },
+  "RC3": {
+    "runs": 180,
+    "equality_checks": 170
+  },
+  "out_of_scope": [
+    "V22 galloping/Tier C",
+    "P6 full experiments/noise study/held-out Auto calibration",
+    "P7-P8",
+    "roadmap"
+  ],
+  "continuation": "P1-P5 complete; STOP. P6 requires a separate explicit user instruction; P6-P8/Tier C/roadmap remain unauthorized.",
+  "fuzz": {
+    "monotonic_seconds": 1805.0594934080023,
+    "executions": 104457,
+    "segments": 15,
+    "peak_rss_MiB": 805
+  },
+  "completed_utc": "2026-10-19T01:12:52.115823+00:00",
+  "pilot": {
+    "profiles": 19,
+    "individual_repetitions": 285,
+    "invocations": 369,
+    "non_ok_repetitions": 0,
+    "independent_checks": 3821,
+    "frequency_flagged_endpoints": 128,
+    "frequency_total_endpoints": 744,
+    "all_flagged_data_retained": true,
+    "aslr_regime": "per-process disabled after successful fresh probe; no system setting change"
+  },
+  "source_revision": "results/p5/source-revision.json",
+  "review": "results/p5/review.md",
+  "limitations": [
+    "Intact Nasdaq gzip lacks BinaryFILE terminator; incomplete flag retained, no session-completeness claim",
+    "Single day/window and selected synthetic micro pilot only; full P6 experiments/noise study/CI/held-out Auto calibration remain unrun",
+    "128/744 sampled frequency endpoints flagged and retained; no constant-clock or host-isolation claim",
+    "Hardware counters denied; Cachegrind reduced whole-process instruction tracing and simulated cache/branch counts only",
+    "Core remains single-threaded and nondurable; Tier C and roadmap not implemented"
+  ]
+}

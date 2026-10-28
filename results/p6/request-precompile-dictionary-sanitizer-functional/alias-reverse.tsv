@@ -1,0 +1,10 @@
+id	experiment	after_seq	terms	mode	kernel	cache	batch	readers
+new-exact-duplicate	functional	0	@6b42b6474bc6bbd7d1721c5891dc219384bd5cf83f7c70dfc63e167361774f02	scan	binheap	repeat-warm	2	1
+existing	functional	0	@98c1a81f2c1cc0df3426d922d90b4be310708162d6eb19df43b9002f3cf2a0cf	indexed	binheap	repeat-warm	2	1
+bad-path	functional	0	@99c18b349984389d371454749dd678b39fafe76643b3f0044a2c8cca1ce03a3f	scan	binheap	repeat-warm	2	1
+new-earlier-root	functional	0	@69460ee3247ed18feeb4f87a6a1db02bdc995e02b06e3bd9fe1712e634ad5d25	indexed	binheap	repeat-warm	2	1
+new-exact-later	functional	0	@1dfafa879acc8b3a349921f5c351d5cfefd9bb7a7905501cd76cca2113e6f644	auto	binheap	repeat-warm	2	1
+bad-kind	functional	0	@19104ba5ba50b4325269465b3c550b88f89617aaccb7947c66d1fce694434593	scan	binheap	repeat-warm	2	1
+new-subtree	functional	0	@b39d81084aae63edaeaf6ee4f14422b3b0dd5993f74bec82b01fa851dbaaf2fd	indexed	binheap	repeat-warm	2	1
+new-exact	functional	0	@6b42b6474bc6bbd7d1721c5891dc219384bd5cf83f7c70dfc63e167361774f02	indexed	binheap	repeat-warm	2	1
+all-scan	functional	0	@acfb64d4cf9565d41a5ccade0078d31970656fe7851e71adccc66824a8ffe1f0	scan	binheap	repeat-warm	2	1

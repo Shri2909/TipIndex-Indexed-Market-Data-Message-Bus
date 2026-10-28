@@ -1,0 +1,43 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 17 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 17 tests from Engine
+[ RUN      ] Engine.V12EmptyAndExtremeFutureRanges
+[       OK ] Engine.V12EmptyAndExtremeFutureRanges (7 ms)
+[ RUN      ] Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing
+[       OK ] Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing (5 ms)
+[ RUN      ] Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook
+[       OK ] Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook (0 ms)
+[ RUN      ] Engine.V13HistoryExpiredFieldsAndTerminalStability
+[       OK ] Engine.V13HistoryExpiredFieldsAndTerminalStability (0 ms)
+[ RUN      ] Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor
+[       OK ] Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor (0 ms)
+[ RUN      ] Engine.V35IrrelevantRecordExpiryIsConservative
+[       OK ] Engine.V35IrrelevantRecordExpiryIsConservative (0 ms)
+[ RUN      ] Engine.V35ExactFinalBudgetCompletesBeforeExpiry
+[       OK ] Engine.V35ExactFinalBudgetCompletesBeforeExpiry (0 ms)
+[ RUN      ] Engine.V35FullBudgetDoesNotLookPastLongFilteredGap
+[       OK ] Engine.V35FullBudgetDoesNotLookPastLongFilteredGap (0 ms)
+[ RUN      ] Engine.V14CapturedUpperExcludesLaterPublish
+[       OK ] Engine.V14CapturedUpperExcludesLaterPublish (0 ms)
+[ RUN      ] Engine.V14ZeroOutputSnapshotAdvancesChain
+[       OK ] Engine.V14ZeroOutputSnapshotAdvancesChain (0 ms)
+[ RUN      ] Engine.V14ChainedRangesEqualSingleRange
+[       OK ] Engine.V14ChainedRangesEqualSingleRange (0 ms)
+[ RUN      ] Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries
+[       OK ] Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries (0 ms)
+[ RUN      ] Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry
+[       OK ] Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry (0 ms)
+[ RUN      ] Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek
+[       OK ] Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek (0 ms)
+[ RUN      ] Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState
+[       OK ] Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState (0 ms)
+[ RUN      ] Engine.V36InvalidConfigAndForeignSubscriptionsRejected
+[       OK ] Engine.V36InvalidConfigAndForeignSubscriptionsRejected (6 ms)
+[ RUN      ] Engine.ReplayLifetimeAndMoveAreChecked
+[       OK ] Engine.ReplayLifetimeAndMoveAreChecked (6 ms)
+[----------] 17 tests from Engine (32 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 1 test suite ran. (32 ms total)
+[  PASSED  ] 17 tests.

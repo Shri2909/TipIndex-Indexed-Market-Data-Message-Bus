@@ -1,0 +1,20 @@
+{
+  "label": "cli-isolated-boundaries",
+  "argv": [
+    "python3",
+    "/tmp/p7_cli_isolated.py"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T084027.890211Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/cli-isolated-boundaries-20261025T084027.890211Z.log",
+  "status": "failed",
+  "exit_code": 1,
+  "duration_seconds": 0.05387365500064334
+}

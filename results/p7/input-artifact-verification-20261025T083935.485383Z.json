@@ -1,0 +1,21 @@
+{
+  "label": "input-artifact-verification",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "from pathlib import Path\nfrom fractions import Fraction\nimport hashlib,json,shutil\nmanifest_path=Path(\"results/raw/P7/inputs/generation-manifest.json\")\nmanifest=json.loads(manifest_path.read_text())\ndry=json.loads(Path(\"results/p7/input-drycount-20261025T083752.158692Z.log\").read_text())\nassert manifest[\"case_count\"]==214668 and len(manifest[\"files\"])==32\nassert manifest[\"tsv_bytes\"]==dry[\"tsv_bytes\"]==321649118\nexpected={r[\"path\"]:r for r in dry[\"batches\"]}\nfor row in manifest[\"files\"]:\n    path=Path(row[\"path\"])\n    assert path.stat().st_size==row[\"bytes\"]==expected[row[\"path\"]][\"bytes\"]\n    assert hashlib.file_digest(path.open(\"rb\"),\"sha256\").hexdigest()==row[\"sha256\"]==expected[row[\"path\"]][\"sha256\"]\nmetadata_path=Path(manifest[\"metadata_path\"])\nassert hashlib.file_digest(metadata_path.open(\"rb\"),\"sha256\").hexdigest()==manifest[\"metadata_sha256\"]\nmeta=json.loads(metadata_path.read_text())\nassert len(meta[\"case_index\"])==214668\nassert sum(c[\"kind\"]==\"real\" for c in meta[\"case_index\"].values())==213768\nassert sum(c[\"kind\"]==\"synthetic\" for c in meta[\"case_index\"].values())==900\nfor case in meta[\"case_index\"].values():\n    classes=meta[\"partition_workloads\"][case[\"classes_metadata_key\"]]\n    if case[\"kind\"]==\"real\":\n        assert case[\"budget\"]==meta[\"trees\"][case[\"hierarchy\"]+\"/\"+case[\"partition\"]][\"baseline_stores\"]\n    else:\n        assert case[\"budget\"]<=case[\"n\"]\n        assert classes[\"effective_class_count\"]==case[\"requested_classes\"]\nfor h in (\"H-spec\",\"H-flat\"):\n    for w,expected_weight in ((\"W1\",Fraction(8906)),(\"W2\",Fraction(1900)),(\"W3\",Fraction(8906,10))):\n        classes=meta[\"partition_workloads\"][\"real/\"+h+\"/\"+w+\"/itch/_market\"]\n        assert Fraction(classes[\"active_class_weight\"])==expected_weight\nfor classes in meta[\"partition_workloads\"].values():\n    raw=classes[\"raw_classes\"]\n    weight=sum((Fraction(r[\"weight\"]) for r in raw if r[\"active\"]),Fraction())\n    assert weight==Fraction(classes[\"active_class_weight\"])\n    assert len(classes[\"effective_classes\"])==classes[\"effective_class_count\"]\n    assert sum(r[\"active\"] for r in raw)==classes[\"active_class_count\"]\n    members=[m for e in classes[\"effective_classes\"] for m in e[\"members\"]]\n    assert sorted(members)==[i for i,r in enumerate(raw) if r[\"active\"]]\n    for e in classes[\"effective_classes\"]:\n        assert sum((Fraction(raw[i][\"weight\"]) for i in e[\"members\"]),Fraction())==Fraction(e[\"weight\"])\nshutil.copyfile(manifest_path,\"results/p7/input-manifest.json\")\nprint(json.dumps({\"status\":\"passed\",\"cases\":214668,\"real_cases\":213768,\"synthetic_cases\":900,\"files\":32,\"tsv_bytes\":manifest[\"tsv_bytes\"],\"metadata_bytes\":manifest[\"metadata_bytes\"],\"drycount_hash_match\":True,\"class_membership_weights\":\"exact\",\"manifest\":\"results/p7/input-manifest.json\"},sort_keys=True))\n"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T083935.485383Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/input-artifact-verification-20261025T083935.485383Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 4.070308851998561
+}

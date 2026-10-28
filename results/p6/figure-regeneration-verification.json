@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-25T07:58:51.742294+00:00",
+  "command": "PYTHONPATH=py .venv/bin/python -m tiplog_py.figures.build --all",
+  "command_evidence": "results/p6/figures-final-title-regeneration-20261025T075429.868488Z.json",
+  "checks": [
+    {
+      "check": "numerical artifact unchanged:results/derived/tip-summary.json",
+      "status": "passed",
+      "sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb"
+    },
+    {
+      "check": "numerical artifact unchanged:results/derived/tip-outcomes.csv",
+      "status": "passed",
+      "sha256": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24"
+    },
+    {
+      "check": "numerical artifact unchanged:results/derived/tip-paired-ratios.csv",
+      "status": "passed",
+      "sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866"
+    },
+    {
+      "check": "numerical artifact unchanged:results/p6/analysis-inputs.json",
+      "status": "passed",
+      "sha256": "3e48f0b0f1ab3315b92c973bdc208b4f23d1c7e8f70d4cdc911988ec92e64498"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F06_merge_cost_vs_k.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F06_merge_cost_vs_k.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F07_merge_run_length.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F07_merge_run_length.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F08_publish_index_cost.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F08_publish_index_cost.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F09_catchup_breadth.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F09_catchup_breadth.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F10_replay_work.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F10_replay_work.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F11_many_readers_cpu.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F11_many_readers_cpu.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F12_scan_index_crossover.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F12_scan_index_crossover.png",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F13_index_memory_slack.pdf",
+      "status": "passed"
+    },
+    {
+      "check": "regenerated artifact:results/figures/F13_index_memory_slack.png",
+      "status": "passed"
+    },
+    {
+      "check": "actual command:figures-final-title-regeneration-20261025T075429.868488Z.json",
+      "status": "passed"
+    },
+    {
+      "check": "actual command:python-final-title-check-20261025T075429.867981Z.json",
+      "status": "passed"
+    }
+  ],
+  "visual_review": {
+    "reviewer": "root",
+    "artifacts": [
+      "F09_catchup_breadth.png",
+      "F12_scan_index_crossover.png",
+      "F13_index_memory_slack.png"
+    ],
+    "result": "Factorized legends fit, F12 arms occupy distinct slots with unavailable ratios explicit, titles/footer visible and F12 global title outside data panels. All54F12 strata retained.",
+    "scope": "Actual final generated PNGs inspected; PDF identities validated. No data edits."
+  },
+  "figure_source_sha256": "09ec02d27c7709c2e0a7a81268bfb3f8570a9ebf229126246e715f52e4de4000",
+  "note": "RC1 requires regeneration, not identical PDF metadata. All four complete numerical summary/input artifacts are byte-identical across the presentation fixes."
+}

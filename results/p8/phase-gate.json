@@ -1,0 +1,131 @@
+{
+  "phase": "P8",
+  "status": "passed",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "completed_utc": "2026-10-25T16:09:51.226118+00:00",
+  "authorization": "Explicit user instruction 2026-10-25 (results/p7/authorization.txt): P7 then P8, stop after P8. Local packaging only; no external publication or push.",
+  "criteria": {
+    "Entry: P6 and P7 gates passed": "met",
+    "P8.1 docs/report/REPORT.md follows IMPLEMENTATION_PLAN section 11 and integrates implementation, correctness evidence, P6 measurements, P7 modeled results, uncertainty, exact coverage, failures and limitations": "met",
+    "P8.2 docs/report/REPRODUCE.md with executed commands, dependencies, checksums, seeds, configurations and local-data requirements; one-command figure regeneration verified": "met",
+    "P8.2 resume bullets use only supported, scoped numbers": "met",
+    "CC-1-CC-6, RC-1-RC-3 and IMPLEMENTATION_PLAN 10.1 verified against final source, each with hashed executed evidence": "met",
+    "IMPLEMENTATION_PLAN 10.1 checklist ticked with evidence links": "met",
+    "Input incompleteness, host/noise/counter limits, assumed workloads and sequential-reader scope preserved; modeled savings distinguished from measured performance": "met",
+    "P8.3 README, INDEX and PROGRESS updated; all 452 local Markdown links resolve; artifact identities verified": "met",
+    "Tracked packaging excludes message-level Nasdaq data, real fuzz inputs and large artifacts": "met",
+    "Closeout checker passed with zero failures": "met"
+  },
+  "tasks_completed": [
+    "P8.1",
+    "P8.2",
+    "P8.3"
+  ],
+  "inapplicable": [
+    "Tier C (L6, H-LS, F20, T4, galloping, Binance, tagged entries): not authorized",
+    "Roadmap R1-R10: not authorized",
+    "Git commit/push and external publication: not requested"
+  ],
+  "evidence": {
+    "acceptance_evidence": "results/p8/acceptance-evidence.json",
+    "acceptance_generator": "results/p8/build-acceptance-evidence.py",
+    "closeout_checks": "results/p8/checks.json",
+    "artifact_manifest": "results/p8/artifact-manifest.json",
+    "checker": "scripts/check_core_closeout.py",
+    "checker_design": "results/p8/checker-design.md",
+    "report": "docs/report/REPORT.md",
+    "reproduce": "docs/report/REPRODUCE.md",
+    "readme": "README.md",
+    "index": "docs/plan/INDEX.md",
+    "progress": "docs/plan/PROGRESS.md",
+    "implementation_plan": "docs/plan/IMPLEMENTATION_PLAN.md",
+    "p7_gate": "results/p7/phase-gate.json",
+    "figure_regeneration": "results/p7/figures-all-final-20261025T154953.610882Z.json",
+    "gitignore": ".gitignore"
+  },
+  "verification": {
+    "closeout_checks": 2063,
+    "closeout_failures": 0,
+    "markdown_links_checked": 452,
+    "final_source_and_document_identities": 240,
+    "checker_sha256": "ce3f8295d95adeb86436c77920250086fefedc1624c98f8efe7a903f17a4f26d"
+  },
+  "closeout_repairs": [
+    "Managed empty .git mode restored from 0755 to the recorded 0555 (changed 2026-10-25 14:10 IST, most likely by the Codex sandbox).",
+    "Five build/release compiler_depend.make placeholder files rewritten by a no-op verification build were restored byte-for-byte; nothing was compiled or linked.",
+    "check_core_closeout.py: RC-3 dependency check limited to RC-3 declared sources; the bench tool is bound to accepted P6 campaign provenance.",
+    ".gitignore: four >10 MiB P6 derived aggregates and synthetic P6 .mdt fixtures ignored (none were tracked)."
+  ],
+  "limitations": [
+    "All P7 byte costs are modeled; no disk I/O measured.",
+    "One laptop, one historical Nasdaq day (incomplete=true), nonexclusive host, no hardware counters.",
+    "Assumed consumer workloads; sequential readers with the publisher paused; no latency percentiles.",
+    "W0 exact coverage incomplete under frozen caps."
+  ],
+  "core_complete": true,
+  "continuation": "STOP. The Tier B core (P0-P8) is complete. Tier C, roadmap R1-R10, commits and publication require a new explicit user instruction.",
+  "final_artifact_identities": {
+    ".gitignore": {
+      "sha256": "f2a4e555f2fb781914010fa81b041ff39aa46208147a0dc481c3bafb02dd011b",
+      "bytes": 759
+    },
+    "README.md": {
+      "sha256": "a72184b8fc383ca3a129efe57125bc64bb1c1fc0d655e54482cecd6e64834335",
+      "bytes": 11473
+    },
+    "docs/plan/IMPLEMENTATION_PLAN.md": {
+      "sha256": "f4f899b8d3d250ed7c6a6babbd718411a001408a9615e1524ee35c5efb02f4b1",
+      "bytes": 30824
+    },
+    "docs/plan/INDEX.md": {
+      "sha256": "7a9a7ba6fc1c4405def41e7c9429c5048ce35244d8fb4a5ca7ab7cba839b8b63",
+      "bytes": 11789
+    },
+    "docs/plan/PROGRESS.md": {
+      "sha256": "b4f3c179bca39fd5a55b73dec6ba5ea2fed06b9ce68a3e3912eaab9df605e9ad",
+      "bytes": 79268
+    },
+    "docs/report/REPORT.md": {
+      "sha256": "9f8f96c3aa9e40e35f36157160074f319385c31ee641b833ee1a39d08b842862",
+      "bytes": 31964
+    },
+    "docs/report/REPRODUCE.md": {
+      "sha256": "bddd826d71d8dff1199e05b121c94a7ce49201288049d6c5d512fe0aac4d3dff",
+      "bytes": 13572
+    },
+    "results/p7/figures-all-final-20261025T154953.610882Z.json": {
+      "sha256": "eda7395498e08f7fa903b505bae01b9859e533e5b92c0bffc467a51730b80a44",
+      "bytes": 665
+    },
+    "results/p7/phase-gate.json": {
+      "sha256": "891fd7abdf9864c75bc52de5ac31e0699baf031d52792e4dc54195f6d509e076",
+      "bytes": 59192
+    },
+    "results/p8/acceptance-evidence.json": {
+      "sha256": "ea6bbf7c67e02b8b7cf22276391221cc5e4fd3bff6823af6ef2097228d9132de",
+      "bytes": 59851
+    },
+    "results/p8/artifact-manifest.json": {
+      "sha256": "6a004d52988f06541c56065937a4c9444455e70e21381bad54ac7c48cb3f2f73",
+      "bytes": 1757453
+    },
+    "results/p8/build-acceptance-evidence.py": {
+      "sha256": "96ac1176c69f169645a24ece263302f9ff04df88b4170cb7155d029d6ede2e5c",
+      "bytes": 9712
+    },
+    "results/p8/checker-design.md": {
+      "sha256": "efb57272e2d0845c636313ad2d2ce0cdc20704a1941c9d4c5478eb478b2bff97",
+      "bytes": 16900
+    },
+    "results/p8/checks.json": {
+      "sha256": "b5ea01e901d28105292b16f330528200d9799419b233e026de64e1826dac7ae3",
+      "bytes": 647982
+    },
+    "scripts/check_core_closeout.py": {
+      "sha256": "ce3f8295d95adeb86436c77920250086fefedc1624c98f8efe7a903f17a4f26d",
+      "bytes": 57128
+    }
+  },
+  "final_verified_utc": "2026-10-25T16:09:51.226118+00:00"
+}

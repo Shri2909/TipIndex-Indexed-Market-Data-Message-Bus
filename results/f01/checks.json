@@ -1,0 +1,1154 @@
+{
+  "schema": "tiplog-f01-check-v1",
+  "status": "passed",
+  "checked_utc": "2026-10-27T01:49:56.639661+00:00",
+  "checks": [
+    {
+      "check": "scope",
+      "status": "passed",
+      "details": null
+    },
+    {
+      "check": "sources",
+      "status": "passed",
+      "details": {
+        "source_files": 6869,
+        "compatible_differential_cpp_sets": 2
+      }
+    },
+    {
+      "check": "historical",
+      "status": "passed",
+      "details": {
+        "unchanged_historical_files": 13
+      }
+    },
+    {
+      "check": "ctest",
+      "status": "passed",
+      "details": {
+        "debug": {
+          "tests": 229,
+          "poll_budget": 23,
+          "poll_differential": 1
+        },
+        "release": {
+          "tests": 229,
+          "poll_budget": 23,
+          "poll_differential": 1
+        },
+        "asan-ubsan": {
+          "tests": 229,
+          "poll_budget": 23,
+          "poll_differential": 1
+        },
+        "fuzz": {
+          "tests": 229,
+          "poll_budget": 23,
+          "poll_differential": 1
+        }
+      }
+    },
+    {
+      "check": "python",
+      "status": "passed",
+      "details": {
+        "tests": 302
+      }
+    },
+    {
+      "check": "differentials",
+      "status": "passed",
+      "details": {
+        "release": {
+          "legacy_operations": 90000000,
+          "budget_operations": 10000000
+        },
+        "asan-ubsan": {
+          "legacy_operations": 18000000,
+          "budget_operations": 2000000
+        }
+      }
+    },
+    {
+      "check": "fuzz",
+      "status": "passed",
+      "details": {
+        "targets": 4,
+        "minimum_executions": 40000,
+        "leak_detection": true
+      }
+    },
+    {
+      "check": "benchmarks",
+      "status": "passed",
+      "details": {
+        "validated_rows": 2274,
+        "arm_groups": 758,
+        "fresh_processes": 18,
+        "interpretation": "Observed synthetic Replay timing only; no hard latency, throughput nonregression or shared-engine Tail timing guarantee."
+      }
+    },
+    {
+      "check": "mutations",
+      "status": "passed",
+      "details": {
+        "positive_controls": 1,
+        "killed_contract_mutations": 4
+      }
+    },
+    {
+      "check": "evidence:build/asan-ubsan/tiplog_differential",
+      "status": "passed",
+      "details": "build/asan-ubsan/tiplog_differential"
+    },
+    {
+      "check": "evidence:build/asan-ubsan/tiplog_poll_differential",
+      "status": "passed",
+      "details": "build/asan-ubsan/tiplog_poll_differential"
+    },
+    {
+      "check": "evidence:build/f01/fuzz-20261027T012622.112538Z/fuzz_engine_ops/stderr.log",
+      "status": "passed",
+      "details": "build/f01/fuzz-20261027T012622.112538Z/fuzz_engine_ops/stderr.log"
+    },
+    {
+      "check": "evidence:build/f01/fuzz-20261027T012622.112538Z/fuzz_itch_walker/stderr.log",
+      "status": "passed",
+      "details": "build/f01/fuzz-20261027T012622.112538Z/fuzz_itch_walker/stderr.log"
+    },
+    {
+      "check": "evidence:build/f01/fuzz-20261027T012622.112538Z/fuzz_poll_budget/stderr.log",
+      "status": "passed",
+      "details": "build/f01/fuzz-20261027T012622.112538Z/fuzz_poll_budget/stderr.log"
+    },
+    {
+      "check": "evidence:build/f01/fuzz-20261027T012622.112538Z/fuzz_trace_reader/stderr.log",
+      "status": "passed",
+      "details": "build/f01/fuzz-20261027T012622.112538Z/fuzz_trace_reader/stderr.log"
+    },
+    {
+      "check": "evidence:build/fuzz/fuzz_engine_ops",
+      "status": "passed",
+      "details": "build/fuzz/fuzz_engine_ops"
+    },
+    {
+      "check": "evidence:build/fuzz/fuzz_itch_walker",
+      "status": "passed",
+      "details": "build/fuzz/fuzz_itch_walker"
+    },
+    {
+      "check": "evidence:build/fuzz/fuzz_poll_budget",
+      "status": "passed",
+      "details": "build/fuzz/fuzz_poll_budget"
+    },
+    {
+      "check": "evidence:build/fuzz/fuzz_trace_reader",
+      "status": "passed",
+      "details": "build/fuzz/fuzz_trace_reader"
+    },
+    {
+      "check": "evidence:build/release/tiplog_differential",
+      "status": "passed",
+      "details": "build/release/tiplog_differential"
+    },
+    {
+      "check": "evidence:build/release/tiplog_poll_bench",
+      "status": "passed",
+      "details": "build/release/tiplog_poll_bench"
+    },
+    {
+      "check": "evidence:build/release/tiplog_poll_differential",
+      "status": "passed",
+      "details": "build/release/tiplog_poll_differential"
+    },
+    {
+      "check": "evidence:results/f01/baseline.json",
+      "status": "passed",
+      "details": "results/f01/baseline.json"
+    },
+    {
+      "check": "evidence:results/f01/budget-build-parity.json",
+      "status": "passed",
+      "details": "results/f01/budget-build-parity.json"
+    },
+    {
+      "check": "evidence:results/f01/check_tool.py",
+      "status": "passed",
+      "details": "results/f01/check_tool.py"
+    },
+    {
+      "check": "evidence:results/f01/checks/budget-asan-ubsan-20261027T013430.911368Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/budget-asan-ubsan-20261027T013430.911368Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/budget-asan-ubsan-20261027T013430.911368Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/budget-asan-ubsan-20261027T013430.911368Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/budget-release-20261027T013436.600121Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/budget-release-20261027T013436.600121Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/budget-release-20261027T013436.600121Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/budget-release-20261027T013436.600121Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/budget-release-asan-parity-20261027T013327.664566Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/budget-release-asan-parity-20261027T013327.664566Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/budget-release-asan-parity-20261027T013327.664566Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/budget-release-asan-parity-20261027T013327.664566Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-asan-ubsan-20261027T012445.115166Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-asan-ubsan-20261027T012445.115166Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-asan-ubsan-20261027T012445.115166Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-asan-ubsan-20261027T012445.115166Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-debug-20261027T012428.601750Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-debug-20261027T012428.601750Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-debug-20261027T012428.601750Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-debug-20261027T012428.601750Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-fuzz-20261027T012501.941927Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-fuzz-20261027T012501.941927Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-fuzz-20261027T012501.941927Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-fuzz-20261027T012501.941927Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-release-20261027T012436.919580Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-release-20261027T012436.919580Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-ctest-release-20261027T012436.919580Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final-ctest-release-20261027T012436.919580Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-fuzz-20261027T012621.859027Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final-fuzz-20261027T012621.859027Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-fuzz-20261027T012621.859027Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final-fuzz-20261027T012621.859027Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-pytest-20261027T014906.029203Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final-pytest-20261027T014906.029203Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final-pytest-20261027T014906.029203Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final-pytest-20261027T014906.029203Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/final2-build-release-20261027T012424.459838Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/final2-build-release-20261027T012424.459838Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/final2-build-release-20261027T012424.459838Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/final2-build-release-20261027T012424.459838Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-binheap-20261027T013136.488689Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-binheap-20261027T013136.488689Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-binheap-20261027T013136.488689Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-binheap-20261027T013136.488689Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-loser-20261027T013332.888966Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-loser-20261027T013332.888966Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-loser-20261027T013332.888966Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-loser-20261027T013332.888966Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-quad-20261027T013234.264240Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-quad-20261027T013234.264240Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-quad-20261027T013234.264240Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-quad-20261027T013234.264240Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-stdpq-20261027T013036.983664Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-stdpq-20261027T013036.983664Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-auto-stdpq-20261027T013036.983664Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-auto-stdpq-20261027T013036.983664Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-binheap-20261027T012724.944379Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-binheap-20261027T012724.944379Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-binheap-20261027T012724.944379Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-binheap-20261027T012724.944379Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-loser-20261027T012937.245489Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-loser-20261027T012937.245489Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-loser-20261027T012937.245489Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-loser-20261027T012937.245489Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-quad-20261027T012837.792275Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-quad-20261027T012837.792275Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-quad-20261027T012837.792275Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-quad-20261027T012837.792275Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-stdpq-20261027T012622.268274Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-stdpq-20261027T012622.268274Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-indexed-stdpq-20261027T012622.268274Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-indexed-stdpq-20261027T012622.268274Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-scan-stdpq-20261026T144254.921089Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-scan-stdpq-20261026T144254.921089Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-asan-ubsan-scan-stdpq-20261026T144254.921089Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-asan-ubsan-scan-stdpq-20261026T144254.921089Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-binheap-20261027T013032.057486Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-binheap-20261027T013032.057486Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-binheap-20261027T013032.057486Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-binheap-20261027T013032.057486Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-loser-20261027T013314.778300Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-loser-20261027T013314.778300Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-loser-20261027T013314.778300Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-loser-20261027T013314.778300Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-quad-20261027T013154.124211Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-quad-20261027T013154.124211Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-quad-20261027T013154.124211Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-quad-20261027T013154.124211Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-stdpq-20261027T012909.198672Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-stdpq-20261027T012909.198672Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-auto-stdpq-20261027T012909.198672Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-auto-stdpq-20261027T012909.198672Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-loser-20261027T012745.063733Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-loser-20261027T012745.063733Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-loser-20261027T012745.063733Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-loser-20261027T012745.063733Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-quad-20261027T012619.471226Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-quad-20261027T012619.471226Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-quad-20261027T012619.471226Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-quad-20261027T012619.471226Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-stdpq-20261026T144437.888604Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-stdpq-20261026T144437.888604Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-indexed-stdpq-20261026T144437.888604Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-indexed-stdpq-20261026T144437.888604Z.log"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-scan-stdpq-20261026T144252.447334Z.json",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-scan-stdpq-20261026T144252.447334Z.json"
+    },
+    {
+      "check": "evidence:results/f01/checks/legacy-release-scan-stdpq-20261026T144252.447334Z.log",
+      "status": "passed",
+      "details": "results/f01/checks/legacy-release-scan-stdpq-20261026T144252.447334Z.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/charge-matches-only.0.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/charge-matches-only.0.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/charge-matches-only.1.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/charge-matches-only.1.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/charge-matches-only.2.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/charge-matches-only.2.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/forget-rejected-indexed-progress.0.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/forget-rejected-indexed-progress.0.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/forget-rejected-indexed-progress.1.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/forget-rejected-indexed-progress.1.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/forget-rejected-indexed-progress.2.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/forget-rejected-indexed-progress.2.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/pad-is-free.0.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/pad-is-free.0.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/pad-is-free.1.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/pad-is-free.1.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/pad-is-free.2.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/pad-is-free.2.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/positive-control.0.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/positive-control.0.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/positive-control.1.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/positive-control.1.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/positive-control.2.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/positive-control.2.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/reset-tail-inspection-allowance.0.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/reset-tail-inspection-allowance.0.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/reset-tail-inspection-allowance.1.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/reset-tail-inspection-allowance.1.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/reset-tail-inspection-allowance.2.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/reset-tail-inspection-allowance.2.log"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/summary.json",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/summary.json"
+    },
+    {
+      "check": "evidence:results/f01/contract-mutations-20261027T012413Z/test-compile.0.log",
+      "status": "passed",
+      "details": "results/f01/contract-mutations-20261027T012413Z/test-compile.0.log"
+    },
+    {
+      "check": "evidence:results/f01/ctest-asan-ubsan-final.xml",
+      "status": "passed",
+      "details": "results/f01/ctest-asan-ubsan-final.xml"
+    },
+    {
+      "check": "evidence:results/f01/ctest-debug-final.xml",
+      "status": "passed",
+      "details": "results/f01/ctest-debug-final.xml"
+    },
+    {
+      "check": "evidence:results/f01/ctest-fuzz-final.xml",
+      "status": "passed",
+      "details": "results/f01/ctest-fuzz-final.xml"
+    },
+    {
+      "check": "evidence:results/f01/ctest-release-final.xml",
+      "status": "passed",
+      "details": "results/f01/ctest-release-final.xml"
+    },
+    {
+      "check": "evidence:results/f01/differential-asan-ubsan.json",
+      "status": "passed",
+      "details": "results/f01/differential-asan-ubsan.json"
+    },
+    {
+      "check": "evidence:results/f01/differential-release.json",
+      "status": "passed",
+      "details": "results/f01/differential-release.json"
+    },
+    {
+      "check": "evidence:results/f01/figure-review.json",
+      "status": "passed",
+      "details": "results/f01/figure-review.json"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/manifest.json",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/manifest.json"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/poll-budget-cost.pdf",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/poll-budget-cost.pdf"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/poll-budget-cost.svg",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/poll-budget-cost.svg"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/poll-budget-responsiveness.pdf",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/poll-budget-responsiveness.pdf"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/poll-budget-responsiveness.svg",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/poll-budget-responsiveness.svg"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/poll-budget-scheduling.pdf",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/poll-budget-scheduling.pdf"
+    },
+    {
+      "check": "evidence:results/f01/figures/final-20261027-v2/poll-budget-scheduling.svg",
+      "status": "passed",
+      "details": "results/f01/figures/final-20261027-v2/poll-budget-scheduling.svg"
+    },
+    {
+      "check": "evidence:results/f01/fuzz-20261027T012622.112538Z.json",
+      "status": "passed",
+      "details": "results/f01/fuzz-20261027T012622.112538Z.json"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/README.md",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/README.md"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.cpp",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.cpp"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.hpp",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/baseline/tiplog/engine/engine.hpp"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/final/tiplog/engine/engine.cpp",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/final/tiplog/engine/engine.cpp"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/final/tiplog/engine/engine.hpp",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/final/tiplog/engine/engine.hpp"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/focused-build.log",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/focused-build.log"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/focused-ctest.log",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/focused-ctest.log"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/legacy_diagnostic.cpp",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/legacy_diagnostic.cpp"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/legacy_diagnostic.json",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/legacy_diagnostic.json"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/legacy_diagnostic_final.json",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/legacy_diagnostic_final.json"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/legacy_diagnostic_optimized.json",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/legacy_diagnostic_optimized.json"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/manifest.json",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/manifest.json"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/reproduce-compile-check.json",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/reproduce-compile-check.json"
+    },
+    {
+      "check": "evidence:results/f01/legacy-diagnostic/reproduce.py",
+      "status": "passed",
+      "details": "results/f01/legacy-diagnostic/reproduce.py"
+    },
+    {
+      "check": "evidence:results/f01/protocol.json",
+      "status": "passed",
+      "details": "results/f01/protocol.json"
+    },
+    {
+      "check": "evidence:results/f01/python-final.xml",
+      "status": "passed",
+      "details": "results/f01/python-final.xml"
+    },
+    {
+      "check": "evidence:results/f01/source-freeze-final.json",
+      "status": "passed",
+      "details": "results/f01/source-freeze-final.json"
+    },
+    {
+      "check": "evidence:results/f01/source-freeze.json",
+      "status": "passed",
+      "details": "results/f01/source-freeze.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/contracts.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/contracts.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/contracts.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/contracts.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/contracts.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/contracts.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-00.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-00.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-00.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-00.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-00.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-00.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-00.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-00.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-01.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-01.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-01.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-01.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-01.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-01.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-01.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-01.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-02.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-02.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-02.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-02.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-02.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-02.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/demo-1m-process-02.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/demo-1m-process-02.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-00.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-00.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-00.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-00.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-00.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-00.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-00.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-00.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-01.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-01.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-01.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-01.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-01.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-01.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-01.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-01.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-02.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-02.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-02.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-02.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-02.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-02.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/dense-throughput-process-02.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/dense-throughput-process-02.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/manifest.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/manifest.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/normalization-plan.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/normalization-plan.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/normalization.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/normalization.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/normalization.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/normalization.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/normalization.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/normalization.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-00.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-00.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-00.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-00.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-00.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-00.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-01.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-01.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-01.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-01.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-01.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-01.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-01.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-01.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-02.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-02.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-02.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-02.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-02.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-02.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/pareto-100k-process-02.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/pareto-100k-process-02.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-00.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-00.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-00.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-00.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-01.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-01.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-01.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-01.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-02.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-02.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-02.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/record-shapes-kernels-process-02.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/resource-boundary.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/resource-boundary.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/resource-boundary.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/resource-boundary.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/resource-boundary.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/resource-boundary.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-00.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-00.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-00.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-00.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-00.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-00.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-00.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-00.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-01.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-01.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-01.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-01.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-01.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-01.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-01.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-01.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-02.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-02.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-02.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-02.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-02.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-02.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/scheduling-control-process-02.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/scheduling-control-process-02.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-00.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-00.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-00.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-00.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-00.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-00.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-00.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-00.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-01.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-01.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-01.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-01.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-01.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-01.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-01.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-01.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-02.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-02.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-02.log",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-02.log"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-02.normalized.jsonl",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-02.normalized.jsonl"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/setup-stress-process-02.record.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/setup-stress-process-02.record.json"
+    },
+    {
+      "check": "evidence:results/f01/studies/final-20261027/summary.json",
+      "status": "passed",
+      "details": "results/f01/studies/final-20261027/summary.json"
+    },
+    {
+      "check": "evidence:results/f01/study-plan-final.json",
+      "status": "passed",
+      "details": "results/f01/study-plan-final.json"
+    },
+    {
+      "check": "evidence:results/f01/summarize.py",
+      "status": "passed",
+      "details": "results/f01/summarize.py"
+    },
+    {
+      "check": "evidence:scripts/plot_f01_study.py",
+      "status": "passed",
+      "details": "scripts/plot_f01_study.py"
+    },
+    {
+      "check": "evidence:scripts/run_f01_study.py",
+      "status": "passed",
+      "details": "scripts/run_f01_study.py"
+    }
+  ],
+  "failures": [],
+  "scope": "Optional F-01 traversal budgets; setup remains outside the cap. Historical results remain historical. Recorded timing is observational.",
+  "manifest_sha256": "5ded35003f5b5e388c4495a17234ff461709d4f0d0995f9587d2f63fe4c6553b"
+}

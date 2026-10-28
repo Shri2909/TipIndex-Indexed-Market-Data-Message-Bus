@@ -1,0 +1,26 @@
+{
+  "label": "final-fuzz-terminal-verification",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/verify_p6_fuzz.py",
+    "--gate",
+    "results/p6/F3-prefix-final-segmented-gate-20261023T143815.176751Z.json",
+    "--freeze",
+    "results/p6/fuzz-source-freeze-prefix.json",
+    "--output",
+    "results/p6/fuzz-prefix-final-verified.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261024T033256.448159Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/final-fuzz-terminal-verification-20261024T033256.448159Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.4925616489999953
+}

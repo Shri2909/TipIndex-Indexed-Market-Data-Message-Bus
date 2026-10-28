@@ -1,0 +1,1310 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "verified_utc": "2026-10-23T14:32:11.915575+00:00",
+  "gate": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z.json",
+  "gate_sha256": "ba20ad616caebf826acb7660c52d7760bd545a6ee60646df8ab9581b76862ade",
+  "freeze": "results/p6/fuzz-source-freeze.json",
+  "freeze_sha256": "d70b906d3772ffd38c6fdb2a08336aa47fd4c0e284d17bdfa1b1963a57397400",
+  "verifier": "scripts/verify_p6_fuzz.py",
+  "verifier_sha256": "6b6bd7656f9c6a0882f504aef154b178b7c2d66eb3e8195ed3568d0362d300bc",
+  "binary": "build/fuzz/fuzz_engine_ops",
+  "binary_sha256": "2ebfdb1c9c7b40cf57f4de4ac8054a1b01361c46d832760242887dccb2bba395",
+  "confirmed_monotonic_seconds": 1802.1451024379999,
+  "executed_units": 100617,
+  "completed_segments": 15,
+  "peak_rss_mb": 816,
+  "frozen_source_count": 39,
+  "corpus_count": 1391,
+  "artifact_files": [],
+  "segments": [
+    {
+      "number": 1,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment001.log",
+      "log_sha256": "41cbde3e915c0833a50a9117ed57cc4ab62bba10b0150ebc4f98aa024e6355ba",
+      "monotonic_seconds": 121.37817718099996,
+      "number_of_executed_units": 24807,
+      "average_exec_per_sec": 205,
+      "new_units_added": 1063,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 601
+    },
+    {
+      "number": 2,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment002.log",
+      "log_sha256": "163fb2641df206b9cb5bf0768f1cf52055cbc25ed0b6febf0447c67a893aba49",
+      "monotonic_seconds": 121.37461881099989,
+      "number_of_executed_units": 10034,
+      "average_exec_per_sec": 82,
+      "new_units_added": 127,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 674
+    },
+    {
+      "number": 3,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment003.log",
+      "log_sha256": "cee3648d5c60b2b3aecb12ac7832186f47bc6d471024ec90a796683a141d8527",
+      "monotonic_seconds": 121.94305251300011,
+      "number_of_executed_units": 8680,
+      "average_exec_per_sec": 71,
+      "new_units_added": 82,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 678
+    },
+    {
+      "number": 4,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment004.log",
+      "log_sha256": "a60c417b3d38bb2dd3056ec2511ea46f6d394d86943d3aa59479be9c9adc1bb9",
+      "monotonic_seconds": 121.90425255699984,
+      "number_of_executed_units": 6454,
+      "average_exec_per_sec": 53,
+      "new_units_added": 52,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 796
+    },
+    {
+      "number": 5,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment005.log",
+      "log_sha256": "f0ce112d050c375f2eb01ede3292bf0552e34cd395eacb516bdfdf6dc15ceadf",
+      "monotonic_seconds": 121.96709073400007,
+      "number_of_executed_units": 6763,
+      "average_exec_per_sec": 55,
+      "new_units_added": 56,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 796
+    },
+    {
+      "number": 6,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment006.log",
+      "log_sha256": "b605da13c52dbc9f924d18a735a5e5254caf501a20c7066da6ec89d69eaa65e6",
+      "monotonic_seconds": 121.53732395499992,
+      "number_of_executed_units": 5562,
+      "average_exec_per_sec": 45,
+      "new_units_added": 36,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 762
+    },
+    {
+      "number": 7,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment007.log",
+      "log_sha256": "7f402be3010d603ce33a199be6a27e141deb62f3aeaa20774843a2aee374244d",
+      "monotonic_seconds": 121.75517307900009,
+      "number_of_executed_units": 5319,
+      "average_exec_per_sec": 43,
+      "new_units_added": 27,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 783
+    },
+    {
+      "number": 8,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment008.log",
+      "log_sha256": "712503a365f1c31d1b889d7bd48207183c91189225b6862b2728f1c46a11f0bc",
+      "monotonic_seconds": 121.49783034699976,
+      "number_of_executed_units": 4316,
+      "average_exec_per_sec": 35,
+      "new_units_added": 19,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 814
+    },
+    {
+      "number": 9,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment009.log",
+      "log_sha256": "2669f0b93438c1ab1ec99ffc3488ccda63ffd2a79d9046ef1a8dcb6784e2497e",
+      "monotonic_seconds": 121.31131334600013,
+      "number_of_executed_units": 3827,
+      "average_exec_per_sec": 31,
+      "new_units_added": 19,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 757
+    },
+    {
+      "number": 10,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment010.log",
+      "log_sha256": "7dedad30d13fc06d62f28f427b506f92f506431ec22d648e6ebdafc64d3363c5",
+      "monotonic_seconds": 121.3294781630002,
+      "number_of_executed_units": 4765,
+      "average_exec_per_sec": 39,
+      "new_units_added": 26,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 816
+    },
+    {
+      "number": 11,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment011.log",
+      "log_sha256": "46cead0e255914102edfcba848202fe4b4cca84d0fa68cb1daaa80b1871fb68b",
+      "monotonic_seconds": 121.49089845800017,
+      "number_of_executed_units": 4489,
+      "average_exec_per_sec": 37,
+      "new_units_added": 17,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 778
+    },
+    {
+      "number": 12,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment012.log",
+      "log_sha256": "4016817fea00323c96cba5d8e23e65187432d41127c401552d72adcd08de27ca",
+      "monotonic_seconds": 121.37785434099987,
+      "number_of_executed_units": 4467,
+      "average_exec_per_sec": 36,
+      "new_units_added": 24,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 721
+    },
+    {
+      "number": 13,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment013.log",
+      "log_sha256": "1f190859f8a20eb0ffa4db07a52a57935b302cdea74f5f1f3e1099563d921ba5",
+      "monotonic_seconds": 121.69404139300013,
+      "number_of_executed_units": 3218,
+      "average_exec_per_sec": 26,
+      "new_units_added": 12,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 758
+    },
+    {
+      "number": 14,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment014.log",
+      "log_sha256": "2f4f9acf04380002437cc6f9d97aad955d350e9cca74760f2d34fb28a71d1244",
+      "monotonic_seconds": 122.53895178199991,
+      "number_of_executed_units": 3864,
+      "average_exec_per_sec": 31,
+      "new_units_added": 16,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 722
+    },
+    {
+      "number": 15,
+      "log": "results/p6/F3-instrumented-segmented-gate-20261019T013136.964232Z-segment015.log",
+      "log_sha256": "1cc5dab34b38b241d851e3c3655e0978ee4818245233a16e1467fd604ea3d354",
+      "monotonic_seconds": 99.0450457779998,
+      "number_of_executed_units": 4052,
+      "average_exec_per_sec": 41,
+      "new_units_added": 20,
+      "slowest_unit_time_sec": 0,
+      "peak_rss_mb": 738
+    }
+  ],
+  "checks": [
+    {
+      "check": "terminal schema/status",
+      "status": "passed"
+    },
+    {
+      "check": "no unconfirmed active segment",
+      "status": "passed"
+    },
+    {
+      "check": "required gate duration >=1800 seconds",
+      "status": "passed"
+    },
+    {
+      "check": "confirmed monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "phase and CPU identity",
+      "status": "passed"
+    },
+    {
+      "check": "sanitizer environment identity",
+      "status": "passed"
+    },
+    {
+      "check": "ASan and leak checking enabled",
+      "status": "passed"
+    },
+    {
+      "check": "UBSan halt enabled",
+      "status": "passed"
+    },
+    {
+      "check": "all replay mode/kernel coverage requested",
+      "status": "passed"
+    },
+    {
+      "check": "sanitizer execution context recorded",
+      "status": "passed"
+    },
+    {
+      "check": "current binary matches frozen binary",
+      "status": "passed"
+    },
+    {
+      "check": "gate runner hash",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:CMakeLists.txt",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:CMakePresets.json",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/deps.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p1.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p2.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p2_ref.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p3_engine.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p3_fuzz.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p3_ring.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p4_index.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p5_bench.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p5_merge.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/driver/trace_driver.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/driver/trace_driver.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/engine/engine.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/engine/engine.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/index/index.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/index/index.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/merge/kernels.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/merge/kernels.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/ring/ring.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/ring/ring.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/subs/compiled.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/subs/compiled.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/topics/registry.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/topics/registry.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/trace/itch_walker.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/trace/itch_walker.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/trace/reader.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/trace/reader.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:src/tiplog/types.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/fuzz/pressure_fixture.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/fuzz/targets/fuzz_engine_ops.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/fuzz/targets/fuzz_itch_walker.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/fuzz/targets/fuzz_trace_reader.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/ref/oracle_tail.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/ref/scan_oracle.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:tests/ref/scan_oracle.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "frozen source:cmake/p6_bench.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment001:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment002:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment003:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment004:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment005:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment006:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment007:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment008:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment009:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment010:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment011:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment012:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment013:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment014:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:terminal successful child",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:log hash",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:one final number_of_executed_units",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:one final average_exec_per_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:one final new_units_added",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:one final slowest_unit_time_sec",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:one final peak_rss_mb",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:independent final stats reconciliation",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:completed DONE marker",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:no sanitizer/fuzzer error",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:pinned binary argv",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:all fixed fuzz flags",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:seed schedule",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:positive monotonic duration",
+      "status": "passed"
+    },
+    {
+      "check": "segment015:clock bookkeeping",
+      "status": "passed"
+    },
+    {
+      "check": "independent monotonic sum",
+      "status": "passed"
+    },
+    {
+      "check": "independent execution count sum",
+      "status": "passed"
+    },
+    {
+      "check": "all final corpus names and hashes exactly preserved",
+      "status": "passed"
+    },
+    {
+      "check": "no saved crash/timeout/OOM artifacts",
+      "status": "passed"
+    }
+  ],
+  "failures": []
+}

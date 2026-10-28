@@ -1,0 +1,32 @@
+{
+  "impossible_record_count": {
+    "input_bytes": 68,
+    "exception": "error('unpack_from requires a buffer of at least 80 bytes for unpacking 16 bytes at offset 64 (actual buffer size is 68)')",
+    "cache_files": [
+      {
+        "name": "9b1c2ec55ea9b7da253cc53daf8ddf800e28d48f2e952487e8f41c8fc6cc725a.partial.npy",
+        "bytes": 260192
+      }
+    ]
+  },
+  "writer_failure": {
+    "exception": "OSError('injected publication failure')",
+    "partial_exists": true,
+    "closed": false,
+    "destination": "old"
+  },
+  "quiescence_empty": [
+    0.0,
+    {}
+  ],
+  "quiescence_singleton": [
+    0.0,
+    {}
+  ],
+  "quiescence_regressing": [
+    -10.0,
+    {
+      "foreign": -10.0
+    }
+  ]
+}

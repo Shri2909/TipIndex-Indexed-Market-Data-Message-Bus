@@ -1,0 +1,26 @@
+{
+  "label": "build-cli-timing-release",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "release",
+    "--target",
+    "tiplog_layout",
+    "-j",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T083647.233621Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/build-cli-timing-release-20261025T083647.233621Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 3.079465450002317
+}

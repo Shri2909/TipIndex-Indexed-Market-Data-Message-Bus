@@ -7,10 +7,11 @@ from pathlib import Path
 import sys
 import time
 
-from .characterize import Statistics, write_tables
+from .characterize import Statistics, write_tables, table_paths
 from .protocol import BinaryFileReader
 from .routing import Router
 from tiplog_py.trace import TraceWriter, sha256_file
+from tiplog_py._outputs import OutputTransaction
 
 
 def time_ns(value):
@@ -45,7 +46,7 @@ def _write_json(path, content):
     path.write_text(json.dumps(content, indent=2, sort_keys=True) + "\n")
 
 
-def measurement_result(args, full, window, reader, router, elapsed, boundary):
+def measurement_result(args, full, window, reader, router, elapsed, boundary, *, destinations=None):
     result = full.summary() | {
         "schema_version": 1, "input": str(args.input),
         "total_uncompressed_bytes": reader.total_uncompressed_bytes,
@@ -60,13 +61,29 @@ def measurement_result(args, full, window, reader, router, elapsed, boundary):
     }
     if args.volumes_dir:
         result["l1"] = {
-            "full_day": write_tables(full, args.volumes_dir, args.prefix + "_full_day"),
-            "window": write_tables(window, args.volumes_dir, args.prefix + "_window"),
+            "full_day": write_tables(full, args.volumes_dir, args.prefix + "_full_day", destinations=destinations),
+            "window": write_tables(window, args.volumes_dir, args.prefix + "_window", destinations=destinations),
         }
     return result
 
 
+def _table_outputs(args, *, full_day):
+    if not args.volumes_dir:
+        return []
+    prefixes = ([args.prefix + "_full_day"] if full_day else []) + [args.prefix + "_window"]
+    return [path for prefix in prefixes for path in table_paths(args.volumes_dir, prefix)]
+
+
 def measure(args):
+    targets = [args.output] + _table_outputs(args, full_day=True)
+    with OutputTransaction(args.input, targets) as outputs:
+        result = _measure(args, outputs)
+        outputs.commit()
+    print(json.dumps({key: result[key] for key in ("message_count", "total_uncompressed_bytes", "terminated", "incomplete", "limited", "elapsed_seconds", "uncompressed_bytes_per_second")}))
+    return 0
+
+
+def _measure(args, outputs):
     begin = time.perf_counter()
     full = Statistics()
     window = Statistics()
@@ -81,10 +98,10 @@ def measure(args):
                 window.add(payload, topic, timestamp)
     elapsed = time.perf_counter() - begin
     result = measurement_result(args, full, window, reader, router, elapsed,
-                                "decompression, framing, validation, routing and full L1 aggregate updates; excludes JSON/CSV output")
-    _write_json(args.output, result)
-    print(json.dumps({key: result[key] for key in ("message_count", "total_uncompressed_bytes", "terminated", "incomplete", "limited", "elapsed_seconds", "uncompressed_bytes_per_second")}))
-    return 0
+                                "decompression, framing, validation, routing and full L1 aggregate updates; excludes JSON/CSV output",
+                                destinations=outputs.staged)
+    _write_json(outputs.path(args.output), result)
+    return result
 
 
 def convert(args):
@@ -96,17 +113,22 @@ def convert(args):
     targets = traces + [Path(str(target) + ".meta.json") for target in traces]
     if args.counts_output:
         targets.append(args.counts_output)
-    resolved = [Path(target).resolve() for target in targets]
-    if len(set(resolved)) != len(resolved) or Path(args.input).resolve() in resolved:
-        raise ValueError("trace outputs must be distinct and preserve the source input")
+    targets += _table_outputs(args, full_day=bool(args.counts_output))
+    with OutputTransaction(args.input, targets) as outputs:
+        result = _convert(args, traces, outputs)
+        outputs.commit()
+    print(json.dumps(result))
+    return 0
+
+
+def _convert(args, traces, outputs):
     source_hash = sha256_file(args.input)
     if args.source_sha256 is not None and args.source_sha256.lower() != source_hash:
         raise ValueError("source SHA-256 does not match actual input file")
-    writers = [TraceWriter(args.output, source_hash)]
+    writers = []
     router = Router(args.hierarchy)
     hierarchies = [args.hierarchy]
     if args.also_flat:
-        writers.append(TraceWriter(args.also_flat, source_hash))
         hierarchies.append("H-flat")
     count_by_type = {}
     window_stats = Statistics()
@@ -115,6 +137,8 @@ def convert(args):
     previous_ts = None
     inversions = 0
     try:
+        for trace in traces:
+            writers.append(TraceWriter(outputs.path(trace), source_hash))
         with open_input(args.input) as stream:
             reader = BinaryFileReader(stream, limit_bytes=args.limit_bytes)
             for payload in reader:
@@ -142,8 +166,8 @@ def convert(args):
             writer.abort()
         raise
     elapsed = time.perf_counter() - begin
-    outputs = []
-    for writer, hierarchy in zip(writers, hierarchies):
+    metadata_outputs = []
+    for writer, hierarchy, final in zip(writers, hierarchies, traces):
         metadata = {
             "schema_version": 1, "trace_format_version": 1,
             "source": {"path": str(args.input), "url": args.source_url,
@@ -151,7 +175,7 @@ def convert(args):
                        "sha256": source_hash, "uncompressed_bytes_scanned": reader.total_uncompressed_bytes,
                        "messages_scanned": reader.message_count, "terminated": reader.terminated,
                        "incomplete": reader.incomplete, "limited": reader.limited},
-            "trace": {"path": str(writer.path), "bytes": writer.path.stat().st_size,
+            "trace": {"path": str(final), "bytes": writer.path.stat().st_size,
                       "sha256": sha256_file(writer.path), "records": writer.count,
                       "topics": len(writer.topics)},
             "window": {"start_inclusive_ns": args.start, "end_exclusive_ns": args.end},
@@ -167,19 +191,19 @@ def convert(args):
                 "decompression, validation, routing, window aggregates and selected record encoding; excludes final trace hash and metadata"),
             "attribution": "Original converter; protocol field interpretation from Nasdaq TotalView-ITCH 5.0 and BinaryFILE 1.0, S05/S06. No Nasdaq payload redistribution.",
         }
-        _write_json(str(writer.path) + ".meta.json", metadata)
-        outputs.append(metadata)
+        _write_json(outputs.path(str(final) + ".meta.json"), metadata)
+        metadata_outputs.append(metadata)
     if full_stats is not None:
         result = measurement_result(args, full_stats, window_stats, reader, router, elapsed,
-                                    "combined full characterization and conversion: decompression, validation, routing, L1 aggregates and selected record encoding; excludes hashes/JSON/CSV output")
+                                    "combined full characterization and conversion: decompression, validation, routing, L1 aggregates and selected record encoding; excludes hashes/JSON/CSV output",
+                                    destinations=outputs.staged)
         result["source_sha256"] = source_hash
-        _write_json(args.counts_output, result)
+        _write_json(outputs.path(args.counts_output), result)
     elif args.volumes_dir:
-        write_tables(window_stats, args.volumes_dir, args.prefix + "_window")
-    print(json.dumps({"outputs": [metadata["trace"] for metadata in outputs], "elapsed_seconds": elapsed,
-                      "uncompressed_bytes_per_second": reader.total_uncompressed_bytes / elapsed,
-                      "limited": reader.limited, "terminated": reader.terminated}))
-    return 0
+        write_tables(window_stats, args.volumes_dir, args.prefix + "_window", destinations=outputs.staged)
+    return {"outputs": [metadata["trace"] for metadata in metadata_outputs], "elapsed_seconds": elapsed,
+            "uncompressed_bytes_per_second": reader.total_uncompressed_bytes / elapsed,
+            "limited": reader.limited, "terminated": reader.terminated}
 
 
 def main(argv=None):

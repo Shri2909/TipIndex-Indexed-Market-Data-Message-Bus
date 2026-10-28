@@ -1,0 +1,27 @@
+{
+  "binary_sha256_before": "40de8b36c369bf53e8266989e3cdf8dfaf60ae75fd066c40f810e00e8a202c6a",
+  "command": [
+    "/home/abc/Desktop/Jane Street/build/release/tiplog_differential",
+    "--seed-base",
+    "1",
+    "--seeds",
+    "1000",
+    "--operations",
+    "10000",
+    "--mode",
+    "auto",
+    "--kernel",
+    "quad"
+  ],
+  "id": "release-auto-quad",
+  "kernel": "quad",
+  "kind": "differential",
+  "mode": "auto",
+  "preset": "release",
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+  },
+  "seeds": 1000,
+  "started_utc": "2026-10-26T08:41:22.748600+00:00"
+}

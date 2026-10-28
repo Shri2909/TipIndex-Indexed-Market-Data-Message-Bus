@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-24T03:35:29.284380+00:00",
+  "fuzz_finished": true,
+  "conversion_finished": true,
+  "tests_finished": true,
+  "builds_finished": true,
+  "other_agents_quiescent": true,
+  "research_quiescent": true,
+  "optimizer_not_started": true,
+  "visible_processes": {
+    "at_utc": "2026-10-24T03:35:29.280241+00:00",
+    "pid_namespace": "pid:[4026531836]",
+    "proc1_comm": "systemd",
+    "offenders": [],
+    "read_errors": [],
+    "excluded_runner_ancestors": [
+      1,
+      1898,
+      2201,
+      3577,
+      4038,
+      4250,
+      6324,
+      6325
+    ],
+    "limit": "Visible process snapshot plus saved operator declaration; no host-wide isolation claim."
+  },
+  "basis": [
+    "FinalF3terminal+independentverificationpassed",
+    "FinalCC2/RC3/unitcheckscompleted",
+    "Preparedoracles1/8/41completeandhashchecked",
+    "Allreviewagentsconfirmedquiescent"
+  ],
+  "limits": "Visible processes plus completed project jobs; no claim of exclusive host or constant clocks. No privileged settings changed."
+}

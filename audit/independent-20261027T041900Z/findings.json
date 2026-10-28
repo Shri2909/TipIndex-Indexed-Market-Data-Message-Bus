@@ -1,0 +1,103 @@
+{
+  "schema": "tiplog-independent-findings-v1",
+  "findings": [
+    {
+      "id": "CORE-01",
+      "severity": "medium",
+      "title": "Tail error loses delivered prefix after allocation failure",
+      "status": "verified",
+      "detail": "findings/core.md"
+    },
+    {
+      "id": "PY-01",
+      "severity": "medium",
+      "title": "TraceIndex allocates from unvalidated record count",
+      "status": "verified",
+      "detail": "findings/python_evidence.md"
+    },
+    {
+      "id": "PY-02",
+      "severity": "low",
+      "title": "TraceWriter finish failure leaks staging",
+      "status": "verified",
+      "detail": "findings/python_evidence.md"
+    },
+    {
+      "id": "PY-03",
+      "severity": "medium",
+      "title": "Quiescence accepts absent or invalid samples",
+      "status": "verified",
+      "detail": "findings/python_evidence.md"
+    },
+    {
+      "id": "PY-04",
+      "severity": "medium",
+      "title": "Analysis outputs overwrite input or sibling output",
+      "status": "verified",
+      "detail": "findings/python_evidence.md"
+    },
+    {
+      "id": "PY-05",
+      "severity": "low",
+      "title": "Retention oracle invalid input, overflow and u64 precision",
+      "status": "verified",
+      "detail": "findings/python_evidence.md"
+    },
+    {
+      "id": "TOOL-01",
+      "severity": "medium",
+      "title": "Tool outputs alias and corrupt input files",
+      "status": "verified",
+      "detail": "findings/layout_tools.md"
+    },
+    {
+      "id": "TOOL-02",
+      "severity": "medium",
+      "title": "Request read errors become empty successful campaigns",
+      "status": "verified",
+      "detail": "findings/layout_tools.md"
+    },
+    {
+      "id": "TOOL-03",
+      "severity": "low",
+      "title": "Malformed or ignored verification options",
+      "status": "verified",
+      "detail": "findings/layout_tools.md"
+    },
+    {
+      "id": "TOOL-04",
+      "severity": "medium",
+      "title": "Valid request id skipped as header",
+      "status": "verified",
+      "detail": "findings/layout_tools.md"
+    },
+    {
+      "id": "TOOL-05",
+      "severity": "medium",
+      "title": "Benchmark result-file write failure returns success",
+      "status": "verified",
+      "detail": "findings/layout_tools.md"
+    },
+    {
+      "id": "F01-01",
+      "severity": "medium",
+      "title": "Forged benchmark digest and positions pass validation",
+      "status": "verified",
+      "detail": "findings/f01.md"
+    },
+    {
+      "id": "EVID-01",
+      "severity": "medium",
+      "title": "Execution evidence lacks build and instrumentation binding",
+      "status": "verified",
+      "detail": "findings/f01.md"
+    },
+    {
+      "id": "DOC-01",
+      "severity": "low",
+      "title": "Obsolete prospective/current acceptance wording",
+      "status": "verified",
+      "detail": "findings/docs.md"
+    }
+  ]
+}

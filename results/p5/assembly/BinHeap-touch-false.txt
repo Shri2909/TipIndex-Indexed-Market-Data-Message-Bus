@@ -1,0 +1,221 @@
+
+build/release/merge_bench:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000103b0 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]>:
+   103b0:	41 57                	push   %r15
+   103b2:	49 89 ff             	mov    %rdi,%r15
+   103b5:	48 89 d7             	mov    %rdx,%rdi
+   103b8:	41 56                	push   %r14
+   103ba:	41 55                	push   %r13
+   103bc:	41 54                	push   %r12
+   103be:	55                   	push   %rbp
+   103bf:	53                   	push   %rbx
+   103c0:	48 83 ec 28          	sub    $0x28,%rsp
+   103c4:	49 8b 57 08          	mov    0x8(%r15),%rdx
+   103c8:	49 8b 07             	mov    (%r15),%rax
+   103cb:	48 39 c2             	cmp    %rax,%rdx
+   103ce:	0f 84 ef 02 00 00    	je     106c3 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x313>
+   103d4:	4c 8b 0f             	mov    (%rdi),%r9
+   103d7:	48 8b 36             	mov    (%rsi),%rsi
+   103da:	45 31 c0             	xor    %r8d,%r8d
+   103dd:	48 bf 25 23 22 84 e4 	movabs $0xcbf29ce484222325,%rdi
+   103e4:	9c f2 cb 
+   103e7:	4c 89 4c 24 08       	mov    %r9,0x8(%rsp)
+   103ec:	4d 89 f9             	mov    %r15,%r9
+   103ef:	90                   	nop
+   103f0:	4c 8b 18             	mov    (%rax),%r11
+   103f3:	48 8b 5c 24 08       	mov    0x8(%rsp),%rbx
+   103f8:	49 83 c0 01          	add    $0x1,%r8
+   103fc:	4c 89 01             	mov    %r8,(%rcx)
+   103ff:	45 0f b7 c3          	movzwl %r11w,%r8d
+   10403:	4e 8b 3c c3          	mov    (%rbx,%r8,8),%r15
+   10407:	4d 8d 57 01          	lea    0x1(%r15),%r10
+   1040b:	4e 89 14 c3          	mov    %r10,(%rbx,%r8,8)
+   1040f:	4f 8d 04 40          	lea    (%r8,%r8,2),%r8
+   10413:	4e 8d 04 c6          	lea    (%rsi,%r8,8),%r8
+   10417:	49 8b 18             	mov    (%r8),%rbx
+   1041a:	4d 8b 40 08          	mov    0x8(%r8),%r8
+   1041e:	49 29 d8             	sub    %rbx,%r8
+   10421:	49 c1 f8 03          	sar    $0x3,%r8
+   10425:	4d 39 c2             	cmp    %r8,%r10
+   10428:	0f 84 d2 00 00 00    	je     10500 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x150>
+   1042e:	4c 8b 00             	mov    (%rax),%r8
+   10431:	4e 8b 2c d3          	mov    (%rbx,%r10,8),%r13
+   10435:	49 83 f8 ff          	cmp    $0xffffffffffffffff,%r8
+   10439:	0f 84 d7 80 ff ff    	je     8516 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   1043f:	49 83 fd ff          	cmp    $0xffffffffffffffff,%r13
+   10443:	0f 84 6f 01 00 00    	je     105b8 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x208>
+   10449:	4d 89 ea             	mov    %r13,%r10
+   1044c:	4d 31 c2             	xor    %r8,%r10
+   1044f:	66 45 85 d2          	test   %r10w,%r10w
+   10453:	0f 85 bd 80 ff ff    	jne    8516 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   10459:	4d 39 e8             	cmp    %r13,%r8
+   1045c:	0f 83 b4 80 ff ff    	jae    8516 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   10462:	48 29 c2             	sub    %rax,%rdx
+   10465:	48 c1 fa 03          	sar    $0x3,%rdx
+   10469:	49 89 d7             	mov    %rdx,%r15
+   1046c:	49 d1 ef             	shr    $1,%r15
+   1046f:	0f 84 3e 02 00 00    	je     106b3 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x303>
+   10475:	4c 89 5c 24 10       	mov    %r11,0x10(%rsp)
+   1047a:	31 db                	xor    %ebx,%ebx
+   1047c:	eb 11                	jmp    1048f <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0xdf>
+   1047e:	66 90                	xchg   %ax,%ax
+   10480:	4c 89 1b             	mov    %r11,(%rbx)
+   10483:	4d 39 fa             	cmp    %r15,%r10
+   10486:	0f 83 c4 01 00 00    	jae    10650 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2a0>
+   1048c:	4c 89 d3             	mov    %r10,%rbx
+   1048f:	4c 8d 04 1b          	lea    (%rbx,%rbx,1),%r8
+   10493:	4d 8d 50 01          	lea    0x1(%r8),%r10
+   10497:	49 83 c0 02          	add    $0x2,%r8
+   1049b:	4e 8d 24 d0          	lea    (%rax,%r10,8),%r12
+   1049f:	4d 8b 1c 24          	mov    (%r12),%r11
+   104a3:	49 39 d0             	cmp    %rdx,%r8
+   104a6:	73 1e                	jae    104c6 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x116>
+   104a8:	48 8d 6b 01          	lea    0x1(%rbx),%rbp
+   104ac:	48 c1 e5 04          	shl    $0x4,%rbp
+   104b0:	48 01 c5             	add    %rax,%rbp
+   104b3:	4c 8b 75 00          	mov    0x0(%rbp),%r14
+   104b7:	4d 39 de             	cmp    %r11,%r14
+   104ba:	4d 0f 42 de          	cmovb  %r14,%r11
+   104be:	4c 0f 42 e5          	cmovb  %rbp,%r12
+   104c2:	4d 0f 42 d0          	cmovb  %r8,%r10
+   104c6:	48 8d 1c d8          	lea    (%rax,%rbx,8),%rbx
+   104ca:	4d 39 eb             	cmp    %r13,%r11
+   104cd:	72 b1                	jb     10480 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0xd0>
+   104cf:	4c 8b 5c 24 10       	mov    0x10(%rsp),%r11
+   104d4:	49 8b 51 08          	mov    0x8(%r9),%rdx
+   104d8:	4c 89 2b             	mov    %r13,(%rbx)
+   104db:	4c 31 df             	xor    %r11,%rdi
+   104de:	48 bb b3 01 00 00 00 	movabs $0x100000001b3,%rbx
+   104e5:	01 00 00 
+   104e8:	48 0f af fb          	imul   %rbx,%rdi
+   104ec:	48 39 d0             	cmp    %rdx,%rax
+   104ef:	0f 84 7c 01 00 00    	je     10671 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2c1>
+   104f5:	4c 8b 01             	mov    (%rcx),%r8
+   104f8:	e9 f3 fe ff ff       	jmp    103f0 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x40>
+   104fd:	0f 1f 00             	nopl   (%rax)
+   10500:	4c 8b 72 f8          	mov    -0x8(%rdx),%r14
+   10504:	48 83 ea 08          	sub    $0x8,%rdx
+   10508:	49 89 51 08          	mov    %rdx,0x8(%r9)
+   1050c:	48 39 c2             	cmp    %rax,%rdx
+   1050f:	0f 84 4b 01 00 00    	je     10660 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2b0>
+   10515:	49 89 d4             	mov    %rdx,%r12
+   10518:	49 29 c4             	sub    %rax,%r12
+   1051b:	49 c1 fc 03          	sar    $0x3,%r12
+   1051f:	4d 89 e7             	mov    %r12,%r15
+   10522:	49 d1 ef             	shr    $1,%r15
+   10525:	0f 84 90 01 00 00    	je     106bb <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x30b>
+   1052b:	4c 89 5c 24 10       	mov    %r11,0x10(%rsp)
+   10530:	45 31 d2             	xor    %r10d,%r10d
+   10533:	48 89 74 24 18       	mov    %rsi,0x18(%rsp)
+   10538:	eb 15                	jmp    1054f <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x19f>
+   1053a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+   10540:	4d 89 1a             	mov    %r11,(%r10)
+   10543:	4d 39 f8             	cmp    %r15,%r8
+   10546:	0f 83 3c 01 00 00    	jae    10688 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2d8>
+   1054c:	4d 89 c2             	mov    %r8,%r10
+   1054f:	4b 8d 34 12          	lea    (%r10,%r10,1),%rsi
+   10553:	4c 8d 46 01          	lea    0x1(%rsi),%r8
+   10557:	48 83 c6 02          	add    $0x2,%rsi
+   1055b:	4a 8d 2c c0          	lea    (%rax,%r8,8),%rbp
+   1055f:	4c 8b 5d 00          	mov    0x0(%rbp),%r11
+   10563:	4c 39 e6             	cmp    %r12,%rsi
+   10566:	73 1d                	jae    10585 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1d5>
+   10568:	49 8d 5a 01          	lea    0x1(%r10),%rbx
+   1056c:	48 c1 e3 04          	shl    $0x4,%rbx
+   10570:	48 01 c3             	add    %rax,%rbx
+   10573:	4c 8b 2b             	mov    (%rbx),%r13
+   10576:	4d 39 dd             	cmp    %r11,%r13
+   10579:	4d 0f 42 dd          	cmovb  %r13,%r11
+   1057d:	48 0f 42 eb          	cmovb  %rbx,%rbp
+   10581:	4c 0f 42 c6          	cmovb  %rsi,%r8
+   10585:	4e 8d 14 d0          	lea    (%rax,%r10,8),%r10
+   10589:	4d 39 f3             	cmp    %r14,%r11
+   1058c:	72 b2                	jb     10540 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x190>
+   1058e:	4c 8b 5c 24 10       	mov    0x10(%rsp),%r11
+   10593:	48 8b 74 24 18       	mov    0x18(%rsp),%rsi
+   10598:	48 bb b3 01 00 00 00 	movabs $0x100000001b3,%rbx
+   1059f:	01 00 00 
+   105a2:	4c 31 df             	xor    %r11,%rdi
+   105a5:	4d 89 32             	mov    %r14,(%r10)
+   105a8:	48 0f af fb          	imul   %rbx,%rdi
+   105ac:	e9 44 ff ff ff       	jmp    104f5 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x145>
+   105b1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+   105b8:	4c 8b 72 f8          	mov    -0x8(%rdx),%r14
+   105bc:	48 83 ea 08          	sub    $0x8,%rdx
+   105c0:	49 89 51 08          	mov    %rdx,0x8(%r9)
+   105c4:	48 39 c2             	cmp    %rax,%rdx
+   105c7:	0f 84 d3 00 00 00    	je     106a0 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2f0>
+   105cd:	49 89 d4             	mov    %rdx,%r12
+   105d0:	49 29 c4             	sub    %rax,%r12
+   105d3:	49 c1 fc 03          	sar    $0x3,%r12
+   105d7:	4d 89 e7             	mov    %r12,%r15
+   105da:	49 d1 ef             	shr    $1,%r15
+   105dd:	0f 84 d8 00 00 00    	je     106bb <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x30b>
+   105e3:	4c 89 5c 24 10       	mov    %r11,0x10(%rsp)
+   105e8:	31 db                	xor    %ebx,%ebx
+   105ea:	48 89 74 24 18       	mov    %rsi,0x18(%rsp)
+   105ef:	eb 16                	jmp    10607 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x257>
+   105f1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+   105f8:	4d 89 1a             	mov    %r11,(%r10)
+   105fb:	4d 39 f8             	cmp    %r15,%r8
+   105fe:	0f 83 84 00 00 00    	jae    10688 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2d8>
+   10604:	4c 89 c3             	mov    %r8,%rbx
+   10607:	48 8d 34 1b          	lea    (%rbx,%rbx,1),%rsi
+   1060b:	4c 8d 46 01          	lea    0x1(%rsi),%r8
+   1060f:	48 83 c6 02          	add    $0x2,%rsi
+   10613:	4a 8d 2c c0          	lea    (%rax,%r8,8),%rbp
+   10617:	4c 8b 5d 00          	mov    0x0(%rbp),%r11
+   1061b:	4c 39 e6             	cmp    %r12,%rsi
+   1061e:	73 1d                	jae    1063d <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x28d>
+   10620:	4c 8d 53 01          	lea    0x1(%rbx),%r10
+   10624:	49 c1 e2 04          	shl    $0x4,%r10
+   10628:	49 01 c2             	add    %rax,%r10
+   1062b:	4d 8b 2a             	mov    (%r10),%r13
+   1062e:	4d 39 dd             	cmp    %r11,%r13
+   10631:	4d 0f 42 dd          	cmovb  %r13,%r11
+   10635:	49 0f 42 ea          	cmovb  %r10,%rbp
+   10639:	4c 0f 42 c6          	cmovb  %rsi,%r8
+   1063d:	4c 8d 14 d8          	lea    (%rax,%rbx,8),%r10
+   10641:	4d 39 f3             	cmp    %r14,%r11
+   10644:	72 b2                	jb     105f8 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x248>
+   10646:	e9 43 ff ff ff       	jmp    1058e <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1de>
+   1064b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   10650:	4c 8b 5c 24 10       	mov    0x10(%rsp),%r11
+   10655:	4c 89 e3             	mov    %r12,%rbx
+   10658:	e9 77 fe ff ff       	jmp    104d4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x124>
+   1065d:	0f 1f 00             	nopl   (%rax)
+   10660:	48 b8 b3 01 00 00 00 	movabs $0x100000001b3,%rax
+   10667:	01 00 00 
+   1066a:	4c 31 df             	xor    %r11,%rdi
+   1066d:	48 0f af f8          	imul   %rax,%rdi
+   10671:	48 83 c4 28          	add    $0x28,%rsp
+   10675:	48 89 f8             	mov    %rdi,%rax
+   10678:	5b                   	pop    %rbx
+   10679:	5d                   	pop    %rbp
+   1067a:	41 5c                	pop    %r12
+   1067c:	41 5d                	pop    %r13
+   1067e:	41 5e                	pop    %r14
+   10680:	41 5f                	pop    %r15
+   10682:	c3                   	ret
+   10683:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   10688:	4c 8b 5c 24 10       	mov    0x10(%rsp),%r11
+   1068d:	48 8b 74 24 18       	mov    0x18(%rsp),%rsi
+   10692:	49 89 ea             	mov    %rbp,%r10
+   10695:	e9 fe fe ff ff       	jmp    10598 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1e8>
+   1069a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+   106a0:	49 31 fb             	xor    %rdi,%r11
+   106a3:	48 bf b3 01 00 00 00 	movabs $0x100000001b3,%rdi
+   106aa:	01 00 00 
+   106ad:	49 0f af fb          	imul   %r11,%rdi
+   106b1:	eb be                	jmp    10671 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2c1>
+   106b3:	48 89 c3             	mov    %rax,%rbx
+   106b6:	e9 19 fe ff ff       	jmp    104d4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x124>
+   106bb:	49 89 c2             	mov    %rax,%r10
+   106be:	e9 d5 fe ff ff       	jmp    10598 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1e8>
+   106c3:	48 bf 25 23 22 84 e4 	movabs $0xcbf29ce484222325,%rdi
+   106ca:	9c f2 cb 
+   106cd:	eb a2                	jmp    10671 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2c1>

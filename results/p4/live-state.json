@@ -1,7 +1,7 @@
 {
   "phase": "P4",
-  "status": "awaiting_timed_F3",
-  "updated_utc": "2026-10-18T10:26:26.498730+00:00",
+  "status": "passed",
+  "updated_utc": "2026-10-18T10:55:26.953830+00:00",
   "passed": {
     "release_build": "results/p4/release-build-acceptance-20261018T102040.526332Z.json",
     "sanitizer_build": "results/p4/sanitizer-build-acceptance-20261018T102040.535818Z.json",
@@ -15,11 +15,15 @@
     "allocator_B256": "results/p4/memory-allocator-B256-20261018T102300.009793Z.json",
     "allocator_B1024": "results/p4/memory-allocator-B1024-20261018T102300.026336Z.json",
     "driver_scan": "results/p4/real-driver-scan-20261018T102456.662533Z.json",
-    "driver_indexed": "results/p4/real-driver-indexed-20261018T102456.662533Z.json"
+    "driver_indexed": "results/p4/real-driver-indexed-20261018T102456.662533Z.json",
+    "F3_verified": "results/p4/fuzz-gate-verified.json",
+    "indexed_selector_seed_smoke": "results/p4/indexed-selector-seed-smoke-20261018T102831.576885Z.json",
+    "real_driver_mode_comparison": "results/p4/real-driver-mode-comparison.json",
+    "git_data_exclusion_audit": "results/p4/git-data-audit.json"
   },
   "F3_gate": "results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json",
   "F3_session": 30205,
   "F3_resume_command": "TIPLOG_EXECUTION_CONTEXT=outside-sandbox TIPLOG_FUZZ_MODE=indexed .venv/bin/python scripts/run_fuzz_gate.py --phase p4 --label F3-indexed-segmented --binary build/fuzz/fuzz_engine_ops --corpus tests/fuzz/corpus/ops_indexed --cpu 6 --seconds 1800 --segment-seconds 120 --resume results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json",
   "source_freeze": "results/p4/implementation-freeze.json",
-  "continuation": "Verify terminal F3 >=1800 monotonic sec, logs/stats/hash/sourcefreeze; finish P4 gate/PROGRESS, then auto P5. P5 code not begun."
+  "continuation": "P5 starts automatically; stop after its gate. P6-P8/Tier C/roadmap remain unauthorized"
 }

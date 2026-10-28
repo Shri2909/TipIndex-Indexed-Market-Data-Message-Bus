@@ -1,0 +1,17 @@
+{
+  "results/derived/tip-summary.json": {
+    "bytes": 84497181,
+    "sha256": "001c85eaa23cca33c4550f370d44c4c0285c84204225bb224ac72a14a6136649",
+    "mtime_epoch": 1792977262.0093637
+  },
+  "results/derived/tip-statistics.csv": {
+    "bytes": 176441423,
+    "sha256": "afe11759fd2aec533cbdc7bda33630f8e4f5299ac30d854b94bb2897302aec80",
+    "mtime_epoch": 1792977265.0333638
+  },
+  "results/derived/tip-outcomes.csv": {
+    "bytes": 16959323,
+    "sha256": "8465e03d7a254030e795a70e2a3b6424a94927c647cbad834480e6468aab8014",
+    "mtime_epoch": 1792977265.6613638
+  }
+}

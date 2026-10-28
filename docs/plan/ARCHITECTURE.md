@@ -1,6 +1,12 @@
 # ARCHITECTURE — semantics, interfaces, invariants, data layouts, algorithms
 
-Plan version **v1.1** · 2026-10-17 · **Tier B design approved; P0 complete; P1–P5 jointly authorized and executing in dependency order.** P6–P8, Tier C and roadmap work remain outside this authorization. Labels follow RESEARCH §0: [A] article, [V] verified, [I] inference, [D] design choice, [S] assumption, [H] hypothesis, [Q] open question. Source IDs (S01…) refer to the RESEARCH ledger. §13 records this refresh and supersedes the corrected v1.0 contracts. Current implementation and executed gate evidence are in [PROGRESS](PROGRESS.md); design descriptions alone do not establish completion.
+Plan version **v1.1** · original design 2026-10-17; audit contract corrections 2026-10-26.
+P0–P8 have historical acceptance; subsequent audit remediation was approved separately.
+Optional [work-budgeted polling (F-01)](../report/POLL_BUDGET.md) was subsequently
+approved and implemented with separate evidence. Tier C and roadmap extensions remain deferred. Labels follow RESEARCH §0:
+[A] article, [V] verified, [I] inference, [D] design choice, [S] assumption, [H] hypothesis, [Q] open question.
+Source IDs (S01…) refer to the RESEARCH ledger. Current implementation and executed evidence are in
+[PROGRESS](PROGRESS.md) and [REMEDIATION](../report/REMEDIATION.md); design descriptions alone do not establish completion.
 
 Working name: **`tiplog`** (C++ namespace `tiplog`, Python package `tiplog_py`). The name can be changed at approval.
 
@@ -139,6 +145,13 @@ How skew will be **measured** (not assumed) is specified in VALIDATION_PLAN L1: 
 
 ### 3.6 Replays: boundaries, outcomes, errors
 
+The uniform intermediate checkpoint/status rules below describe the output-only
+API and the new overload with an absent inspection cap. With a finite cap,
+Scan/Indexed/Auto may yield at different processed boundaries and consequently
+expire at different times under interleaved publication. The captured-range,
+unread-data protection, and ordered output guarantees still apply; the complete
+[F-01 contract](../report/POLL_BUDGET.md) defines its additional stop reasons.
+
 ```
 open_replay(sub, after_seq, mode) → Replay   // delivers seq ∈ (after_seq, upper_seq]
 ```
@@ -159,6 +172,13 @@ open_replay(sub, after_seq, mode) → Replay   // delivers seq ∈ (after_seq, u
 - **Chaining is exact** (INV-Q6): the concatenation of polls equals one replay over the union range.
 - A reader that falls behind `tail_seq` gets `FellBehind`. In the core, recovery is then impossible (no disk), and the error is final for that cursor. With R2, the client switches to disk recovery (§7.6).
 - The driver models slow readers as consumption budgets per publish tick, or as pauses followed by catch-up.
+- **Optional inspection allowance (F-01).** `Tail::poll(PollLimits, out)` shares
+  one remaining traversal allowance across every internal captured range in the
+  call. Rejected candidates and Scan PAD consume units. A final-unit completion
+  either proves `CaughtUp` by the head sequence or defers opening a fresh range
+  with `InspectionLimit`. Returned work sums every internal range, including
+  fresh-open seek work. Opening/planning/merge preparation is outside this cap;
+  caller scheduling is required to let other work run between polls.
 
 ### 3.8 Disk recovery → live tip handoff (full version, R2)
 Given a request `(sub, after_seq = s)`:
@@ -231,6 +251,14 @@ Dictionary: u32 n, then n × { topic_id u32, path_len u16, path bytes }
 - The reader validates every length and offset. It is fuzzed (F1).
 
 ### 5.1 Topic registry
+
+**Audit resource policy (2026-10-26).** A topic path is at most 4,096 bytes and
+128 nonempty segments. Runtime/subscription validation rejects excess bounds
+before interning or preparing observers; trace readers/writers enforce the same
+UTF-8 byte/segment bounds. Registry mutations cannot reenter from observer callbacks:
+`intern`/`observe` throw `logic_error`; reads and handle reset remain permitted.
+New-topic notification visits each hooked ancestor once and deduplicates observer
+identities with hash sets before preparing each observer once.
 - Interning creates missing ancestors.
 - The partition of a topic is its ancestor at depth min(2, depth).
 - `local_id` is dense per partition (u16) and drives per-partition filter bitsets; reject exhaustion before registration mutation or explicitly select a wider configured representation.
@@ -244,6 +272,8 @@ Dictionary: u32 n, then n × { topic_id u32, path_len u16, path bytes }
 ### 5.3 Ring (tip store) [D] (S11)
 
 Capacity `C = 2^c` bytes (default 1 GiB, maximum 2 GiB on this machine). Records start at 8-byte-aligned logical positions; physical offset = `pos & (C−1)`. **Core precondition:** `16 ≤ max_record ≤ C/2`, aligned to 8. This makes `pad + need ≤ C` in the append algorithm; reject larger records without mutation. Generic zero-payload DATA occupies 16 B, even though valid ITCH records here occupy at least 32 B.
+
+`Ring::at(pos)` is O(1) access for a caller that has already proved `pos` is a retained item boundary. Alignment and range checks alone do not prove a boundary, including in debug builds. Use `Ring::at_checked(pos)` for arbitrary external locators; it validates boundary membership by walking from the retained tail in O(retained items), and rejects aligned payload interiors.
 
 ```
 RecordHeader (16 B):
@@ -343,7 +373,7 @@ reclaim(tail_pos):
 - **Open blocks of cold partitions** expire lazily on that partition's next append, or via `sweep_open_blocks()`, which runs on pool pressure and every N evictions. The sweep is O(P).
 - **Sizing rule (no pool pressure).** Let `R_max = C / r_min` be the maximum number of retained records and P the partition count. Use `r_min = 16` for the generic opaque-byte API; `r_min = 32` is valid only for a configuration enforcing the validated ITCH minimum. With C below the 32-GiB delta span, a per-partition tail-straddling sealed block and open block are covered by the 2P allowance. The proposed `N_blocks ≥ ⌈R_max/B⌉ + 2P + 1` bound must include allocated stale open blocks; sweep expired open blocks before declaring pressure, and check the bound in V19/P5. It is a proposed sizing argument, not a measured result.
   - Example: C = 1 GiB, r_min = 32 B (ITCH), B = 1024, P = 10⁴ gives 32,768 + 20,001 blocks, about **218 MB** (≈20% of C). Typical use is lower; T5 measures it.
-  - Smaller pools trigger the **pool-pressure policy** [D]: `force_evict` (default; advance the tail until a block frees, counted as retention loss) or `reject_publish`. The configuration is validated at startup.
+  - Smaller pools trigger the **pool-pressure policy** [D]: `force_evict` (default; advance the tail until a block frees, counted as retention loss) or `reject_publish`. Startup validates representation and positive pool size; it deliberately permits pools below this no-pressure sizing bound.
 - **Partially filled block overhead:** open slack = Σ over open blocks of `(B − count)` entries, at most P·(B−1)·4 bytes. Report unused capacity in delta-sealed partial blocks and expired-but-allocated entries separately; these are not included in open slack. Total index memory also includes the expiry heap and per-partition seek/list structures. Incremental gauges must match a brute-force recount (V17).
 - **Reader safety (single-threaded).** A cursor stores `(block, gen, idx)` and the cached key `pos` in the merge structure.
   - A block is freed only when all its entries are below `tail_pos`, so a recycled block always shows up as a cached key below the tail. Checking the **minimum key against `tail_pos`** therefore detects every stale cursor without touching recycled memory (INV-Q4).
@@ -522,7 +552,7 @@ The open part's byte cost α·F(Λ)·W(O_v) is already charged and is linear giv
 - It is **exact for its own problem** P_T: the minimum number of stores such that every store has W ≤ T or is a single topic.
   - Hot singletons are forced, because any store containing x has W ≥ w(x) > T.
   - The rest is the Kundu–Misra MinNum problem (S33, S34).
-  - Optimality **must be validated** against brute force in the authorized phase (V30); no check has run.
+  - Optimality **must be validated** against brute force (V30). P7's executed checks and their coverage are recorded in [the layout report](../report/results_layout.md); this requirement does not claim coverage of every possible input.
 - count(T) is non-increasing if H-KM implements the stated optimal threshold/count solver; V30 must check both the implementation and this property. Use deterministic node-id tie-breaking for equal child weights, exclude zero-only stores from the count, and report K=0 infeasible for positive volume. Related-problem NP-hardness in S34 is not a hardness proof for M-store.
 
 **Bisection variants for budget K** (the article's "greedy + binary search" is ambiguous, RESEARCH §1.3):
@@ -550,7 +580,7 @@ A subtree read of A favors the "after" layout (2 stores touched, no waste) over 
 V28 (two independent evaluators), V29 (MASK-DP = ENUM on ≥10⁴ random tiny trees, every k), V30 (KM vs brute-force minimum count), V31 (baseline construction), V32 (worked example). See VALIDATION_PLAN §3.
 
 ### 6.9 Claims discipline for the optimizer
-- **"Exact"** means optimal for M-store with the stated workload, scaled nonnegative costs, and budget, per partition. ENUM validation is required in P7 and has not run. Set explicit state/time limits for ENUM and MASK-DP and report per-workload coverage; W0 can exceed both methods' practical limits. Such rows are heuristic-only, without an exact optimality gap.
+- **"Exact"** means optimal for M-store with the stated workload, scaled nonnegative costs, and budget, per partition. P7's ENUM differential validation and per-workload coverage are recorded in [the layout report](../report/results_layout.md). Set explicit state/time limits for ENUM and MASK-DP; W0 can exceed both methods' practical limits. Such rows are heuristic-only, without an exact optimality gap.
 - It is not optimal for excluded layout models or unmodeled costs.
 - Greedy-vs-exact gaps are reported only on identical objectives and feasible sets. Anything else is labeled "not an optimality gap".
 
@@ -655,7 +685,7 @@ enum class PoolPolicy : std::uint8_t { ForceEvict, RejectPublish };
 struct EngineConfig {
   std::size_t ring_bytes;          // power of two
   std::uint32_t block_entries;     // B, power of two
-  std::uint32_t pool_blocks;       // validated against the sizing rule
+  std::uint32_t pool_blocks;       // positive; smaller pools use the pressure policy
   PoolPolicy pool_policy;
   std::uint32_t ckpt_log2;         // L
   std::size_t max_record_bytes;
@@ -682,7 +712,7 @@ class Engine {
   Replay open_replay(const CompiledSubscription&, Seq after_seq, ReplayMode, MergeKernel);
   Tail open_tail(const CompiledSubscription&, Seq after_seq, MergeKernel);  // chained polls (§3.7)
   EngineStats stats() const;          // memory, slack, evictions, pool high-water...
-  void check_invariants() const;      // debug/test builds
+  void check_invariants() const;      // explicit diagnostic, including release builds
 };
 }  // namespace tiplog
 ```
@@ -721,7 +751,7 @@ class Engine {
 - Q4: errors are justified (see §3.6).
 - Q5: nothing above `upper` is delivered.
 - Q6: chained replays equal one replay over the union range.
-- Q7: with identical interleaved API schedules and positive output budgets, Scan/Indexed/Auto produce identical output prefixes, statuses, progress checkpoints, and expiry outcomes under §3.6. `max=0` changes none of these.
+- Q7: with identical interleaved output-only API schedules (including the new overload with an absent inspection cap) and positive output budgets, Scan/Indexed/Auto produce identical output prefixes, statuses, progress checkpoints, and expiry outcomes under §3.6. `max=0` changes none of these. Finite inspection limits instead preserve eventual ordered output and the captured boundary while history remains retained; intermediate yields/checkpoints and expiry timing may differ by mode.
 
 **Merge**
 - M1: keys are distinct.
@@ -777,12 +807,12 @@ class Engine {
 | Missing BinaryFILE terminator | End-of-file check | Mark the trace `incomplete` in metadata |
 | Unknown locate | Directory lookup | Route to `_unmapped`, count |
 | Malformed trace | Reader bounds checks | Error; fuzzed |
-| Record too large | `publish` precondition | `std::errc::invalid_argument`, no state change |
+| Record too large | `publish` precondition | `std::length_error`, no state change |
 | Sequence/packed-position/generation limit | Checked preflight arithmetic | `RepresentationLimit`, no partial publish or silent wrap |
 | Pool exhausted | Allocation | ForceEvict (count retention loss) or RejectPublish |
 | Start already evicted | Open | HistoryExpired |
 | Evicted during replay | Common unread-checkpoint/tail check before either mode touches memory | FellBehind |
-| Invariant violation | `check_invariants` (debug) | Abort with state dump |
+| Invariant violation | Explicit `check_invariants()` diagnostic | Throw `std::logic_error` with the failed invariant; caller decides termination/logging |
 
 ## 13. Research and design review — 2026-10-17
 

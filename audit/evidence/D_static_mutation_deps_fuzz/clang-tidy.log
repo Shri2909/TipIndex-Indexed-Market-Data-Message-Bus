@@ -1,0 +1,213 @@
+[1/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/index_bench.cpp.
+120509 warnings generated.
+[2/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp.
+267014 warnings generated.
+[3/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/publish_bench.cpp.
+412710 warnings generated.
+[4/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/driver/trace_driver.cpp.
+513886 warnings generated.
+[5/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp.
+617491 warnings generated.
+[6/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/index/index.cpp.
+675155 warnings generated.
+[7/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/layout/exact.cpp.
+764586 warnings generated.
+[8/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/layout/global.cpp.
+819593 warnings generated.
+[9/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/layout/model.cpp.
+882060 warnings generated.
+[10/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp.
+971937 warnings generated.
+[11/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/ring/ring.cpp.
+1028050 warnings generated.
+[12/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/subs/compiled.cpp.
+1114995 warnings generated.
+[13/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/topics/registry.cpp.
+1198697 warnings generated.
+[14/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/trace/itch_walker.cpp.
+1284425 warnings generated.
+[15/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/trace/reader.cpp.
+1376806 warnings generated.
+[16/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_bench/main.cpp.
+1509627 warnings generated.
+[17/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_differential/main.cpp.
+1591938 warnings generated.
+[18/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp.
+1671079 warnings generated.
+[19/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/main.cpp.
+1769887 warnings generated.
+[20/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/runtime_main.cpp.
+1868699 warnings generated.
+[21/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp.
+1935105 warnings generated.
+[22/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_sim/main.cpp.
+2038963 warnings generated.
+[23/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_walk/main.cpp.
+2101849 warnings generated.
+[24/24] Processing file /tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_walk/trace_check.cpp.
+2174207 warnings generated.
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/index_bench.cpp:121:22: warning: function is not thread safe [concurrency-mt-unsafe]
+  121 |   const auto *path = std::getenv("TIPLOG_BENCH_INPUTS");
+      |                      ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:47:12: warning: enum 'Pattern' uses a larger base type ('int', size: 4 bytes) than necessary for its value set, consider using 'std::uint8_t' (1 byte) as the base type to reduce its size [performance-enum-size]
+   47 | enum class Pattern { Uniform, Geometric, Zipf };
+      |            ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:195:22: warning: function is not thread safe [concurrency-mt-unsafe]
+  195 |   const auto *path = std::getenv("TIPLOG_BENCH_INPUTS");
+      |                      ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:233:64: warning: the parameter 'kernel_name' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+  233 | void run(benchmark::State &state, Profile profile, std::string kernel_name) {
+      |                                                                ^
+      |                                                    const      &
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:251:46: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  251 |     hash = profile.touch ? merge_once<true>(*kernel, input, offsets, outputs)
+      |                                              ^~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:252:47: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  252 |                          : merge_once<false>(*kernel, input, offsets, outputs);
+      |                                               ^~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:284:45: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  284 |                         ? merge_once<true>(*kernel, input, offsets, outputs)
+      |                                             ^~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/bench/micro/merge_bench.cpp:285:46: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  285 |                         : merge_once<false>(*kernel, input, offsets, outputs);
+      |                                              ^~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:283:7: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  283 |   if (checkpoint_->next_pos == upper_pos_) {
+      |       ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:288:7: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  288 |   if (checkpoint_->next_pos < ring.tail_pos()) {
+      |       ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:308:59: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  308 |       auto cursor = engine_->index_->seek(partitions_[i], checkpoint_->next_pos);
+      |                                                           ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:354:10: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  354 |   while (checkpoint_->next_pos < upper_pos_) {
+      |          ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:355:31: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  355 |     const auto item = ring.at(checkpoint_->next_pos);
+      |                               ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:370:7: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  370 |       checkpoint_->next_pos += item.size;
+      |       ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:372:9: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  372 |         checkpoint_->after_seq = item.seq;
+      |         ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:399:11: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  399 |       if (checkpoint_->after_seq == engine_->ring_.head_seq() - 1) {
+      |           ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:403:45: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  403 |       replay_ = engine_->open_replay(sub_, *checkpoint_, mode_, kernel_);
+      |                                             ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:405:29: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  405 |         const auto error = *replay_.error();
+      |                             ^~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/engine/engine.cpp:419:27: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  419 |       const auto error = *replay_.error();
+      |                           ^~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.hpp:159:12: warning: Out of bound access to memory after the end of the heap area [clang-analyzer-security.ArrayBound]
+  159 |     return data_.get()[i + padding_];
+      |            ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:74:3: note: Control jumps to 'case Quad:'  at line 79
+   74 |   switch (kind) {
+      |   ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:80:12: note: Calling default constructor for 'Quad'
+   80 |     return Quad(heads);
+      |            ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:38:7: note: 'padding' is not equal to 0
+   38 |   if (padding != 0 && padding != 3)
+      |       ^~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:38:7: note: Left side of '&&' is true
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:38:23: note: 'padding' is equal to 3
+   38 |   if (padding != 0 && padding != 3)
+      |                       ^~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:38:3: note: Taking false branch
+   38 |   if (padding != 0 && padding != 3)
+      |   ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:45:9: note: Assuming 'key' is not equal to 'sentinel'
+   45 |     if (key != sentinel)
+      |         ^~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:45:5: note: Taking true branch
+   45 |     if (key != sentinel)
+      |     ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.cpp:46:7: note: Calling 'Quad::at'
+   46 |       at(size_++) = key;
+      |       ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/merge/kernels.hpp:159:12: note: Access of the heap area at index 3, while it holds only a single 'unsigned long' element
+  159 |     return data_.get()[i + padding_];
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/src/tiplog/topics/registry.cpp:231:69: warning: std::move of the variable 'partition_info' of the trivially-copyable type 'tiplog::topics::Partition' has no effect [performance-move-const-arg]
+  231 |   for (auto& partition_info : new_partitions) partitions_.push_back(std::move(partition_info));
+      |                                                                     ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_bench/main.cpp:100:7: warning: function is not thread safe [concurrency-mt-unsafe]
+  100 |       std::exit(0);
+      |       ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_bench/main.cpp:660:29: warning: function is not thread safe [concurrency-mt-unsafe]
+  660 |   if (const auto *preload = std::getenv("LD_PRELOAD"); preload && *preload)
+      |                             ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp:71:31: warning: function is not thread safe [concurrency-mt-unsafe]
+   71 |     if (const auto* preload = std::getenv("LD_PRELOAD"); preload && *preload)
+      |                               ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp:81:5: warning: the value returned by this function should not be disregarded; neglecting it may lead to errors [cert-err33-c]
+   81 |     std::setvbuf(stdout, nullptr, _IONBF, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp:81:5: note: cast the expression to void to silence this warning
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp:110:9: warning: function is not thread safe [concurrency-mt-unsafe]
+  110 |         std::getenv("GLIBC_TUNABLES") ? "true" : "false");
+      |         ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp:125:5: warning: the value returned by this function should not be disregarded; neglecting it may lead to errors [cert-err33-c]
+  125 |     std::fprintf(stderr, "index memory diagnostic: %s\n", error.what());
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_index_memory.cpp:125:5: note: cast the expression to void to silence this warning
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/runtime_main.cpp:84:5: warning: empty catch statements hide issues; to handle exceptions appropriately, consider re-throwing, handling, or avoiding catch altogether [bugprone-empty-catch]
+   84 |   } catch (const std::invalid_argument&) {
+      |     ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:171:13: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  171 |     require(enum_joint[budget]->objective == dp_joint[budget]->objective &&
+      |             ^~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:171:46: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  171 |     require(enum_joint[budget]->objective == dp_joint[budget]->objective &&
+      |                                              ^~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:172:13: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  172 |             enum_joint[budget]->stores == dp_joint[budget]->stores, "joint budget mismatch");
+      |             ^~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:172:43: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  172 |             enum_joint[budget]->stores == dp_joint[budget]->stores, "joint budget mismatch");
+      |                                           ^~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:173:33: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  173 |     for (const auto* point : {&*enum_joint[budget], &*dp_joint[budget]}) {
+      |                                 ^~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:173:55: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  173 |     for (const auto* point : {&*enum_joint[budget], &*dp_joint[budget]}) {
+      |                                                       ^~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:207:43: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  207 |   rows.push_back(row("enum", left, right, enum_joint[4]->left, enum_joint[4]->right));
+      |                                           ^~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:207:64: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  207 |   rows.push_back(row("enum", left, right, enum_joint[4]->left, enum_joint[4]->right));
+      |                                                                ^~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:208:41: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  208 |   rows.push_back(row("dp", left, right, dp_joint[4]->left, dp_joint[4]->right));
+      |                                         ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:208:60: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  208 |   rows.push_back(row("dp", left, right, dp_joint[4]->left, dp_joint[4]->right));
+      |                                                            ^~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:227:52: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  227 |     if (enum_joint[budget]) quote(out, cost_string(enum_joint[budget]->objective)); else out << "null";
+      |                                                    ^~~~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_layout/worked_example.cpp:229:50: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  229 |     if (dp_joint[budget]) quote(out, cost_string(dp_joint[budget]->objective)); else out << "null";
+      |                                                  ^~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_sim/main.cpp:233:13: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  233 |             final_checkpoint->after_seq == engine.stats().head_seq - 1)
+      |             ^~~~~~~~~~~~~~~~
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_walk/main.cpp:33:27: warning: performing an implicit widening conversion to type 'std::size_t' (aka 'unsigned long') of a multiplication performed in type 'int' [bugprone-implicit-widening-of-multiplication-result]
+   33 |     std::array<std::byte, 1024 * 1024> buffer{};
+      |                           ^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_walk/main.cpp:33:27: note: make conversion explicit to silence this warning
+    4 |     std::array<std::byte, 1024 * 1024> buffer{};
+      |                           ^~~~~~~~~~~
+      |                           static_cast<std::size_t>( )
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/tools/tiplog_walk/main.cpp:33:27: note: perform multiplication in a wider type
+   33 |     std::array<std::byte, 1024 * 1024> buffer{};
+      |                           ^~~~
+      |                           static_cast<long>( )

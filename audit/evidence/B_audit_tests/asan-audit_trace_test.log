@@ -1,0 +1,17 @@
+Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = -AuditRedTeam.PressurePublishCostIsProportionalToEviction
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from AuditTrace
+[ RUN      ] AuditTrace.ValidRoundTrip
+[       OK ] AuditTrace.ValidRoundTrip (17 ms)
+[ RUN      ] AuditTrace.MutatedTracesFailOnlyWithFormatError
+[audit] mutated traces accepted=1134 rejected=18866
+[       OK ] AuditTrace.MutatedTracesFailOnlyWithFormatError (1107 ms)
+[ RUN      ] AuditTrace.ItchWalkerIsChunkInvariant
+[       OK ] AuditTrace.ItchWalkerIsChunkInvariant (683 ms)
+[----------] 3 tests from AuditTrace (1808 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1808 ms total)
+[  PASSED  ] 3 tests.

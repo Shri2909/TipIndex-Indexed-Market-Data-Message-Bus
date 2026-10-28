@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="39" tests="151" time="6.241" timestamp="2026-10-26T09:00:57.357927+05:30" hostname="abc-HP-Laptop-15s-fq5xxx"><testcase classname="tests.test_analysis_figures" name="test_all_figures_use_only_supplied_rows_and_preserve_input_identity" time="4.632" /><testcase classname="tests.test_analysis_figures" name="test_factorized_legends_keep_every_curve_ci_and_stable_arm_color" time="0.068" /><testcase classname="tests.test_analysis_figures" name="test_missing_campaign_does_not_generate_placeholder_figures" time="0.001" /><testcase classname="tests.test_analysis_stats" name="test_median_bootstrap_constant_and_reproducible" time="0.003" /><testcase classname="tests.test_analysis_stats" name="test_paired_resampling_preserves_shared_round_noise" time="0.009" /><testcase classname="tests.test_analysis_stats" name="test_ragged_blocks_keep_all_observations" time="0.205" /><testcase classname="tests.test_analysis_stats" name="test_failed_outcomes_are_retained_and_never_become_fast_speedups" time="0.001" /><testcase classname="tests.test_analysis_stats" name="test_missing_or_unequal_pairings_are_explicit" time="0.004" /><testcase classname="tests.test_analysis_stats" name="test_oracle_failure_excludes_invalid_measurement_and_preserves_engine_status" time="0.001" /><testcase classname="tests.test_analysis_stats" name="test_incompatible_builds_do_not_become_one_confidence_interval" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_t2_adds_writer_delta_once_and_does_not_clamp_negative_noise" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_t2_summary_uses_actual_writer_cpu_and_scan_baseline" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_invalid_observations_rejected[values0]" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_invalid_observations_rejected[values1]" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_invalid_observations_rejected[values2]" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_input_reader_does_not_relabel_unknown_status" time="0.001" /><testcase classname="tests.test_analysis_stats" name="test_frequency_sidecar_flags_only_matching_block_and_attempt_without_rewriting" time="0.001" /><testcase classname="tests.test_analysis_stats" name="test_missing_frequency_evidence_remains_unknown_and_explicit_flags_survive" time="0.001" /><testcase classname="tests.test_analysis_stats" name="test_failed_measurement_command_does_not_make_a_valid_timing_or_ratio" time="0.000" /><testcase classname="tests.test_analysis_stats" name="test_t_frequency_annotations_match_process_repetition_and_warmup_exactly" time="0.001" /><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-1-0.0-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-1-0.0-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-1-0.8-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-1-0.8-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-1-1.2-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-1-1.2-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-16-0.0-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-16-0.0-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-16-0.8-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-16-0.8-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-16-1.2-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-16-1.2-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-256-0.0-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-256-0.0-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-256-0.8-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-256-0.8-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-256-1.2-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[2048-256-1.2-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-1-0.0-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-1-0.0-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-1-0.8-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-1-0.8-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-1-1.2-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-1-1.2-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-16-0.0-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-16-0.0-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-16-0.8-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-16-0.8-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-16-1.2-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-16-1.2-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-256-0.0-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-256-0.0-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-256-0.8-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-256-0.8-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-256-1.2-10]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_schedule_outcomes_and_digests[262144-256-1.2-1000]" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:32: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_packed_limit_rejects_indexed_and_auto_falls_back" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:81: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_cpp" name="test_cpp_term_dictionary_plain_alias_equivalence_and_rejections" time="0.000"><skipped type="pytest.skip" message="release tiplog_bench must be built for functional integration">/tmp/tiplog-second-pass/work/py/tests/test_exp_cpp.py:112: release tiplog_bench must be built for functional integration</skipped></testcase><testcase classname="tests.test_exp_oracle" name="test_independent_byte_accelerator_crossvectors_and_chunking" time="0.084" /><testcase classname="tests.test_exp_oracle" name="test_prefix_layout_matches_independent_whole_item_queue" time="0.011" /><testcase classname="tests.test_exp_oracle" name="test_trace_oracle_success_zero_match_expiry_future" time="0.002" /><testcase classname="tests.test_exp_oracle" name="test_raw_path_matching_boundaries" time="0.000" /><testcase classname="tests.test_exp_oracle" name="test_splitmix_vectors_and_synthetic_determinism" time="0.002" /><testcase classname="tests.test_exp_protocol" name="test_packed_limit_invalid_outcome_and_error_validation" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_micro_normalization_preserves_individuals_and_units" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_pilot_variance_and_repetition_gate" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_frequency_flags_keep_outliers" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_auto_uses_only_training_and_freezes_deterministic_tie" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_t2_group_sum_requires_each_seeded_reader" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_subscriptions_overlap_normalization_and_manifest_defaults" time="0.001" /><testcase classname="tests.test_exp_protocol" name="test_memory_snapshot_captures_independent_head_without_history_request" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_pending_process_journal_recovery_is_idempotent" time="0.001" /><testcase classname="tests.test_exp_protocol" name="test_completed_output_does_not_hide_ac_or_process_failure" time="0.000" /><testcase classname="tests.test_exp_protocol" name="test_request_dictionary_keeps_full_terms_once_and_exact_alias_binding" time="0.001" /><testcase classname="tests.test_itch_cli" name="test_cli_window_keeps_later_inverted_timestamps_and_hflat" time="0.006" /><testcase classname="tests.test_itch_cli" name="test_cli_measure_reconciles_all_counts_bytes_runs_and_window" time="0.003" /><testcase classname="tests.test_itch_cli" name="test_cli_missing_terminator_propagates_incomplete_metadata" time="0.002" /><testcase classname="tests.test_itch_cli" name="test_cli_rejects_mismatched_source_identity_before_output" time="0.001" /><testcase classname="tests.test_itch_cli" name="test_cli_combined_conversion_counts_equal_standalone_measurement" time="0.007" /><testcase classname="tests.test_itch_cli" name="test_cli_rejects_source_overwrite_and_duplicate_outputs" time="0.002" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[S]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[R]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[H]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[Y]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[L]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[V]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[W]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[K]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[J]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[h]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[A]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[F]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[E]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[C]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[X]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[D]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[U]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[P]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[Q]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[B]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[I]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[N]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v01_all_23_types_decode_golden_fields[O]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_chunk_boundaries_and_exact_byte_count[2]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_chunk_boundaries_and_exact_byte_count[3]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_chunk_boundaries_and_exact_byte_count[7]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_chunk_boundaries_and_exact_byte_count[13]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_chunk_boundaries_and_exact_byte_count[65536]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_missing_terminator_is_explicitly_incomplete" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_malformed_framing_fails_with_absolute_offset[\x00-truncated.*length]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_malformed_framing_fails_with_absolute_offset[\x00\x0cS\x00\x00-truncated.*payload]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_malformed_framing_fails_with_absolute_offset[\x00\x01?-unsupported ITCH]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_malformed_framing_fails_with_absolute_offset[\x00\x01S-length 1 != 12]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_malformed_framing_fails_with_absolute_offset[\x00\x00\x00-after.*terminator]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_malformed_framing_fails_with_absolute_offset[\x00\x00\x00\x0cS\x00\x00\x124\x1f\x1a\xd65\xbd\x15O\x00\x00-after.*terminator]" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_buffered_limit_never_splits_an_event" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_gzip_crc_and_truncation_errors_propagate" time="0.000" /><testcase classname="tests.test_itch_protocol" name="test_v02_concatenated_gzip_members_are_counted_as_one_stream" time="0.000" /><testcase classname="tests.test_itch_routing" name="test_v03_directory_locate_only_and_nonstandard_symbol_positions" time="0.000" /><testcase classname="tests.test_itch_routing" name="test_v03_symbol_messages_without_directory_stay_unmapped" time="0.001" /><testcase classname="tests.test_itch_routing" name="test_v03_k_routes_by_symbol_even_with_zero_or_unmapped_locate" time="0.000" /><testcase classname="tests.test_itch_routing" name="test_v03_market_routes_are_independent_of_directory" time="0.000" /><testcase classname="tests.test_itch_routing" name="test_v03_mismatch_and_directory_conflicts_preserve_first_day_mapping" time="0.000" /><testcase classname="tests.test_itch_routing" name="test_v03_percent_encoding_is_injective_and_preserves_dot" time="0.000" /><testcase classname="tests.test_itch_routing" name="test_v03_hflat_uses_message_type_as_third_segment" time="0.000" /><testcase classname="tests.test_layout_analysis" name="test_global_sweep_requires_all_rows_once" time="0.000" /><testcase classname="tests.test_layout_analysis" name="test_partial_coverage_uses_identical_feasible_exact_cohort" time="0.001" /><testcase classname="tests.test_layout_analysis" name="test_infeasible_baseline_never_enters_comparable_cohort" time="0.001" /><testcase classname="tests.test_layout_analysis" name="test_gap_quartiles_and_empty_schema" time="0.000" /><testcase classname="tests.test_layout_analysis" name="test_many_distinct_ratio_denominators_do_not_require_a_huge_exact_mean" time="0.000" /><testcase classname="tests.test_layout_cli" name="test_layout_cli_full_curve_has_separate_comparison_budget" time="0.001"><failure message="FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'">tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-4/test_layout_cli_full_curve_has0')
+
+    def test_layout_cli_full_curve_has_separate_comparison_budget(tmp_path):
+        text = ('CASE\tchain\t2\nCOST\t1\t0\t0\n'
+                'NODE\t-\t1\tr\nNODE\t0\t2\tr/a\nNODE\t1\t3\tr/a/b\n'
+                'CLASS\tone\t1\nTERM\tE\tr\nTERM\tE\tr/a/b\n'
+                'CLASS\ttwo\t1\nTERM\tE\tr/a\nEND\n')
+&gt;       result, rows = invoke(tmp_path, text, '--methods', 'enum,dp', '--full-curves')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:16: in invoke
+    result = subprocess.run(command, capture_output=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.14/subprocess.py:1875: in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: None args: ['/tmp/tiplog-second-pass/work/build/release/...&gt;
+args = ['/tmp/tiplog-second-pass/work/build/release/tiplog_layout', '--input', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_f...0/input.tsv', '--output', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_full_curve_has0/output.jsonl', '--methods', ...]
+executable = '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+env = None, restore_signals = True, close_fds = True, p2cread = -1
+p2cwrite = -1, c2pread = 18, c2pwrite = 19, errread = 20, errwrite = 21
+
+    def _posix_spawn(self, args, executable, env, restore_signals, close_fds,
+                     p2cread, p2cwrite,
+                     c2pread, c2pwrite,
+                     errread, errwrite):
+        """Execute program using os.posix_spawn()."""
+        kwargs = {}
+        if restore_signals:
+            # See _Py_RestoreSignals() in Python/pylifecycle.c
+            sigset = []
+            for signame in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                signum = getattr(signal, signame, None)
+                if signum is not None:
+                    sigset.append(signum)
+            kwargs['setsigdef'] = sigset
+    
+        file_actions = []
+        for fd in (p2cwrite, c2pread, errread):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_CLOSE, fd))
+        for fd, fd2 in (
+            (p2cread, 0),
+            (c2pwrite, 1),
+            (errwrite, 2),
+        ):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_DUP2, fd, fd2))
+    
+        if close_fds:
+            file_actions.append((os.POSIX_SPAWN_CLOSEFROM, 3))
+    
+        if file_actions:
+            kwargs['file_actions'] = file_actions
+    
+&gt;       self.pid = os.posix_spawn(executable, args, env, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+
+/usr/lib/python3.14/subprocess.py:1819: FileNotFoundError</failure></testcase><testcase classname="tests.test_layout_cli" name="test_layout_cli_invalid_input_and_caps_remain_explicit" time="0.001"><failure message="FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'">tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-4/test_layout_cli_invalid_input_0')
+
+    def test_layout_cli_invalid_input_and_caps_remain_explicit(tmp_path):
+&gt;       result, rows = invoke(tmp_path, 'CASE\tx\t1\nCOST\t1/0\t0\t0\nEND\n')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:16: in invoke
+    result = subprocess.run(command, capture_output=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.14/subprocess.py:1875: in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: None args: ['/tmp/tiplog-second-pass/work/build/release/...&gt;
+args = ['/tmp/tiplog-second-pass/work/build/release/tiplog_layout', '--input', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_invalid_input_0/input.tsv', '--output', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_invalid_input_0/output.jsonl']
+executable = '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+env = None, restore_signals = True, close_fds = True, p2cread = -1
+p2cwrite = -1, c2pread = 18, c2pwrite = 19, errread = 20, errwrite = 21
+
+    def _posix_spawn(self, args, executable, env, restore_signals, close_fds,
+                     p2cread, p2cwrite,
+                     c2pread, c2pwrite,
+                     errread, errwrite):
+        """Execute program using os.posix_spawn()."""
+        kwargs = {}
+        if restore_signals:
+            # See _Py_RestoreSignals() in Python/pylifecycle.c
+            sigset = []
+            for signame in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                signum = getattr(signal, signame, None)
+                if signum is not None:
+                    sigset.append(signum)
+            kwargs['setsigdef'] = sigset
+    
+        file_actions = []
+        for fd in (p2cwrite, c2pread, errread):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_CLOSE, fd))
+        for fd, fd2 in (
+            (p2cread, 0),
+            (c2pwrite, 1),
+            (errwrite, 2),
+        ):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_DUP2, fd, fd2))
+    
+        if close_fds:
+            file_actions.append((os.POSIX_SPAWN_CLOSEFROM, 3))
+    
+        if file_actions:
+            kwargs['file_actions'] = file_actions
+    
+&gt;       self.pid = os.posix_spawn(executable, args, env, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+
+/usr/lib/python3.14/subprocess.py:1819: FileNotFoundError</failure></testcase><testcase classname="tests.test_layout_cli" name="test_layout_cli_global_unsupported_and_incomplete_curves" time="0.001"><failure message="FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'">tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-4/test_layout_cli_global_unsuppo0')
+
+    def test_layout_cli_global_unsupported_and_incomplete_curves(tmp_path):
+        text = 'CURVE\tp\t1\t3\t1\nPOINT\t1\t10\nPOINT\t2\t8\nPOINT\t3\t0\nEND\n'
+&gt;       result, rows = invoke(tmp_path, text, '--multipliers', '5', '--budgets', '2', global_input=True)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/tiplog-second-pass/work/py/tests/test_layout_cli.py:16: in invoke
+    result = subprocess.run(command, capture_output=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/usr/lib/python3.14/subprocess.py:1875: in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: None args: ['/tmp/tiplog-second-pass/work/build/release/...&gt;
+args = ['/tmp/tiplog-second-pass/work/build/release/tiplog_layout', '--global-curves', '/tmp/pytest-of-abc/pytest-4/test_layo...put.tsv', '--output', '/tmp/pytest-of-abc/pytest-4/test_layout_cli_global_unsuppo0/output.jsonl', '--multipliers', ...]
+executable = '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+env = None, restore_signals = True, close_fds = True, p2cread = -1
+p2cwrite = -1, c2pread = 18, c2pwrite = 19, errread = 20, errwrite = 21
+
+    def _posix_spawn(self, args, executable, env, restore_signals, close_fds,
+                     p2cread, p2cwrite,
+                     c2pread, c2pwrite,
+                     errread, errwrite):
+        """Execute program using os.posix_spawn()."""
+        kwargs = {}
+        if restore_signals:
+            # See _Py_RestoreSignals() in Python/pylifecycle.c
+            sigset = []
+            for signame in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                signum = getattr(signal, signame, None)
+                if signum is not None:
+                    sigset.append(signum)
+            kwargs['setsigdef'] = sigset
+    
+        file_actions = []
+        for fd in (p2cwrite, c2pread, errread):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_CLOSE, fd))
+        for fd, fd2 in (
+            (p2cread, 0),
+            (c2pwrite, 1),
+            (errwrite, 2),
+        ):
+            if fd != -1:
+                file_actions.append((os.POSIX_SPAWN_DUP2, fd, fd2))
+    
+        if close_fds:
+            file_actions.append((os.POSIX_SPAWN_CLOSEFROM, 3))
+    
+        if file_actions:
+            kwargs['file_actions'] = file_actions
+    
+&gt;       self.pid = os.posix_spawn(executable, args, env, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tiplog-second-pass/work/build/release/tiplog_layout'
+
+/usr/lib/python3.14/subprocess.py:1819: FileNotFoundError</failure></testcase><testcase classname="tests.test_smoke" name="test_python_plumbing" time="0.035" /><testcase classname="tests.test_trace_format" name="test_v05_header_golden_and_python_round_trip" time="0.001" /><testcase classname="tests.test_trace_format" name="test_rc2_writer_is_byte_identical" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_all_truncated_prefixes_rejected" time="0.001" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[0-x]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[8-\x02]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[12-\x01]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[48-\x01]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[16-\xff\xff\xff\xff\xff\xff\xff\xff]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[24-?\x00\x00\x00\x00\x00\x00\x00]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[32-\xff\xff\xff\xff\xff\xff\xff\xff]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[64-c\x00\x00\x00]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[70-\x01]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_malformed_header_records_flags_padding[83-\x01]" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_rejects_duplicate_ids_paths_and_noncanonical_utf8" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_cpp_reader_agrees_on_independently_computed_payload_digest" time="0.000"><skipped type="pytest.skip" message="C++ release checker must be built for the cross-language P1 gate">/tmp/tiplog-second-pass/work/py/tests/test_trace_format.py:85: C++ release checker must be built for the cross-language P1 gate</skipped></testcase><testcase classname="tests.test_trace_format" name="test_v05_empty_trace_and_atomic_abort" time="0.000" /><testcase classname="tests.test_trace_format" name="test_v05_rejects_whitespace_shortened_sha256" time="0.000" /></testsuite></testsuites>

@@ -79,12 +79,15 @@ int main(int argc, char **argv) {
               << ",\"indexed_execution_batches\":" << r.indexed_execution_batches
               << ",\"scan_execution_batches\":" << r.scan_execution_batches
               << ",\"batches\":" << r.batches
+              << ",\"nonuniform_payload_publications\":" << r.nonuniform_publications
               << ",\"delivered\":" << r.delivered
               << ",\"history_expired_opens\":" << r.history_expired
               << ",\"fell_behind_batches\":" << r.fell_behind
               << ",\"empty_specs_rejected\":" << r.empty_specs_rejected
               << ",\"digest_fnv1a64\":" << r.final_digest
               << ",\"elapsed_monotonic_seconds\":" << seconds << "}\n";
+    std::cout.flush();
+    if (!std::cout) throw std::runtime_error("failed writing stdout result");
     return 0;
   } catch (const std::exception &error) {
     std::cerr << "tiplog_differential: " << error.what() << '\n';

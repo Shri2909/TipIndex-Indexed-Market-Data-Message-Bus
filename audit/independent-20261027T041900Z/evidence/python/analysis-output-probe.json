@@ -1,0 +1,9 @@
+{
+  "same_source": {
+    "raw_preserved": false,
+    "new_schema": null
+  },
+  "summary_table_collision": {
+    "summary_prefix": "exp,config_id,arm,metric,n,median,q1,q3,iqr,min,ma"
+  }
+}

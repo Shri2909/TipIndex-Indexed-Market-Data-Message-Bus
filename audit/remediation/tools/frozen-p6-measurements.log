@@ -1,0 +1,19 @@
+{
+  "schema": "tiplog-remediation-frozen-p6-identity-check-v1",
+  "at_utc": "2026-10-26T08:36:46.827433+00:00",
+  "scope": "Read-only comparison with original pre-postprocessing P6 file hashes; no measurements rerun",
+  "original_identity_manifest": "results/p6/auditor-t5-compatibility/measurement-files-before.json",
+  "identity_manifest_original_at_utc": "2026-10-25T04:17:09.873033+00:00",
+  "identity_manifest_current_sha256": "bb55daf11302249e837cf0391ef2a7972d348ed2b633372d6df5271043b0c775",
+  "identity_manifest_bytes_match_retained_p8_inventory": true,
+  "provenance_limit": "P8 inventories the measurement manifest by path/size, not by SHA256. The current audit baseline covers source/documents/corpus and does not include these raw files; the original 2026-10-25 manifest supplies their saved SHA256 identities.",
+  "retained_p8_manifest_sha256": "6a004d52988f06541c56065937a4c9444455e70e21381bad54ac7c48cb3f2f73",
+  "current_p8_manifest_sha256": "6a004d52988f06541c56065937a4c9444455e70e21381bad54ac7c48cb3f2f73",
+  "p8_manifest_matches_remediation_start_identity": true,
+  "original_files": 5364,
+  "files_verified": 5364,
+  "original_bytes": 4105957437,
+  "current_bytes_verified": 4105957437,
+  "changed_files": [],
+  "status": "passed"
+}

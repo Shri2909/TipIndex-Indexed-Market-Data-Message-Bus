@@ -1,0 +1,52 @@
+{
+  "fresh_binaries": "/tmp/tiplog-second-pass/release",
+  "results": [
+    {
+      "probe": "bench_output_full",
+      "returncode": 0,
+      "stderr": "",
+      "binary_sha256": "c20c7213023aee06f0e16ce82a0c984f6c3f189844cec939a0f57bd03ee53d7f"
+    },
+    {
+      "probe": "example_output_full",
+      "returncode": 0,
+      "stderr": "",
+      "binary_sha256": "418564a387cbed8fa45799cbbec7d8552c57c4b265bac1af98c5c06997b8b6db"
+    },
+    {
+      "probe": "cc5_output_full",
+      "returncode": 0,
+      "stderr": "",
+      "binary_sha256": "28e57141deb7a4c677a51d0a18e3ee4641136ac57e88787730cf7438febb4ab1"
+    },
+    {
+      "probe": "bench_output_full_with_request",
+      "returncode": 1,
+      "stderr": "tiplog_bench: failed writing result\n",
+      "binary_sha256": "c20c7213023aee06f0e16ce82a0c984f6c3f189844cec939a0f57bd03ee53d7f"
+    },
+    {
+      "probe": "bench_overflow_mix",
+      "returncode": 0,
+      "stderr": "",
+      "binary_sha256": "c20c7213023aee06f0e16ce82a0c984f6c3f189844cec939a0f57bd03ee53d7f"
+    },
+    {
+      "probe": "bench_equal_mix",
+      "returncode": 0,
+      "stderr": "",
+      "binary_sha256": "c20c7213023aee06f0e16ce82a0c984f6c3f189844cec939a0f57bd03ee53d7f"
+    },
+    {
+      "probe": "recording_nan_json",
+      "returncode": 0,
+      "stderr": "",
+      "binary_sha256": "06495044bfb353006b583a4846f660dea876d368df5abcbe671955ef0db9ba3b"
+    }
+  ],
+  "head_positions": {
+    "overflow_mix_output.jsonl": 3200,
+    "equal_mix_output.jsonl": 5568
+  },
+  "nan_json_confirmed": true
+}

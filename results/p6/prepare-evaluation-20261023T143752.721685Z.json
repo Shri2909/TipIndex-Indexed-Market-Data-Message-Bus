@@ -1,0 +1,27 @@
+{
+  "label": "prepare-evaluation",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "tiplog_py.exp.run",
+    "configs/P6/matrix.toml",
+    "--suite",
+    "evaluation",
+    "--prepare",
+    "--directory",
+    "results/raw/P6/prepared-evaluation"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261023T143752.721685Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/prepare-evaluation-20261023T143752.721685Z.log",
+  "status": "failed",
+  "exit_code": -15,
+  "duration_seconds": 709.9523639609997
+}

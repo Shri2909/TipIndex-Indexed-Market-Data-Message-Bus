@@ -1,0 +1,17 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191235
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x57466320aed8, 0x57466320cbaf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x57466320cbb0,0x574663229920), 
+INFO:     1413 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1413 min: 1b max: 64773b total: 3459308b rss: 35Mb
+#1024	pulse  cov: 2248 ft: 10504 corp: 647/184Kb exec/s: 170 rss: 424Mb
+#1414	INITED cov: 2250 ft: 11534 corp: 873/2125Kb exec/s: 18 rss: 643Mb
+#1559	NEW    cov: 2250 ft: 11535 corp: 874/2143Kb lim: 65536 exec/s: 16 rss: 696Mb L: 18036/64773 MS: 5 ChangeByte-ShuffleBytes-InsertByte-ShuffleBytes-InsertRepeatedBytes-
+#1912	NEW    cov: 2250 ft: 11536 corp: 875/2147Kb lim: 65536 exec/s: 17 rss: 696Mb L: 3906/64773 MS: 3 ChangeBinInt-ChangeBit-CrossOver-
+#1987	DONE   cov: 2250 ft: 11536 corp: 875/2147Kb lim: 65536 exec/s: 16 rss: 696Mb
+Done 1987 runs in 123 second(s)
+stat::number_of_executed_units: 1987
+stat::average_exec_per_sec:     16
+stat::new_units_added:          2
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              696

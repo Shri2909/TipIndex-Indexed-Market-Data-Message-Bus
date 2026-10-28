@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-25T04:15:30.663880+00:00",
+  "reason": "Postprocessing-only T5 allocator enrichment auditor correction; retain original failed audit and provenance",
+  "snapshots": [
+    {
+      "path": "scripts/check_p6_experiments.py",
+      "snapshot": "results/p6/auditor-t5-compatibility/0-check_p6_experiments.py",
+      "bytes": 45344,
+      "sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/evaluation/independent-audit.json",
+      "snapshot": "results/p6/auditor-t5-compatibility/1-independent-audit.json",
+      "bytes": 236879,
+      "sha256": "aa256c60ea7e16ef645524e2bee9c2e08d1b494010c42f5ac3649e204001d99d"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/campaign-provenance.json",
+      "snapshot": "results/p6/auditor-t5-compatibility/2-campaign-provenance.json",
+      "bytes": 39489,
+      "sha256": "8ce17c02b04787fb6dad9212567d07c480fe8aaa889a2a94e587f63e9e962d9c"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/evaluation/provenance.json",
+      "snapshot": "results/p6/auditor-t5-compatibility/3-provenance.json",
+      "bytes": 35523,
+      "sha256": "dcf94f1ccdc33df8efcf9c62769d494e20a31460e7de7e71c37cc59231b39876"
+    }
+  ]
+}

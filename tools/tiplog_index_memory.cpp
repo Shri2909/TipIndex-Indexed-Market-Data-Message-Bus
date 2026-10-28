@@ -120,6 +120,8 @@ int main(int argc, char** argv) {
         "or a portable allocator guarantee. No negative result is clamped.\"}\n",
         charged, system, stats.memory.reserved_bytes, overhead,
         stats.gauges.live_entries, stats.gauges.allocated_blocks);
+    if (std::fflush(stdout) != 0 || std::ferror(stdout))
+      throw std::runtime_error("failed writing index memory result");
     return 0;
   } catch (const std::exception& error) {
     std::fprintf(stderr, "index memory diagnostic: %s\n", error.what());

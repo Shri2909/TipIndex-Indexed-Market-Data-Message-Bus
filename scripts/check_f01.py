@@ -1,0 +1,757 @@
+#!/usr/bin/env python3
+"""Verify F-01 acceptance evidence without executing tests or rewriting history.
+
+This checks recorded execution, exact source/evidence identities, independent
+benchmark reconstruction and the declared functional coverage. Timing evidence
+remains observational: passing this checker establishes no latency guarantee or
+performance nonregression claim.
+"""
+from __future__ import annotations
+
+import argparse
+import copy
+from datetime import datetime, timezone
+import importlib.util
+import itertools
+import json
+import math
+from pathlib import Path
+import re
+import xml.etree.ElementTree as ET
+
+_HELPER_SPEC = importlib.util.spec_from_file_location(
+    'tiplog_f01_remediation_helpers', Path(__file__).with_name('check_remediation.py'))
+_HELPERS = importlib.util.module_from_spec(_HELPER_SPEC)
+_HELPER_SPEC.loader.exec_module(_HELPERS)
+_BENCH_SPEC = importlib.util.spec_from_file_location(
+    'tiplog_f01_fixture_contract', Path(__file__).with_name('f01_summary.py'))
+_BENCH = importlib.util.module_from_spec(_BENCH_SPEC)
+_BENCH_SPEC.loader.exec_module(_BENCH)
+_BUILD_SPEC = importlib.util.spec_from_file_location(
+    'tiplog_f01_build_provenance', Path(__file__).with_name('build_provenance.py'))
+_BUILD = importlib.util.module_from_spec(_BUILD_SPEC)
+_BUILD_SPEC.loader.exec_module(_BUILD)
+digest, input_sets, junit_counts, local, source_inventory = (
+    _HELPERS.digest, _HELPERS.input_sets, _HELPERS.junit_counts,
+    _HELPERS.local, _HELPERS.source_inventory)
+
+ROOT = Path(__file__).resolve().parents[1]
+SCHEMA = 'tiplog-f01-acceptance-v1'
+RESULT_SCHEMA = 'tiplog-f01-check-v1'
+PRESETS = ('debug', 'release', 'asan-ubsan', 'fuzz')
+PAIRS = {('scan', 'stdpq')} | {(mode, kernel) for mode in ('indexed', 'auto')
+                             for kernel in ('stdpq', 'binheap', 'quad', 'loser')}
+FUZZERS = {'fuzz_trace_reader', 'fuzz_itch_walker', 'fuzz_engine_ops', 'fuzz_poll_budget'}
+MUTATIONS = {
+    'charge-matches-only': 'PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress',
+    'pad-is-free': 'PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress',
+    'reset-tail-inspection-allowance': 'PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges',
+    'forget-rejected-indexed-progress': 'PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating',
+}
+SHA = re.compile(r'[0-9a-f]{64}\Z')
+SANITIZER_FAILURE = re.compile(
+    r'ERROR: (?:AddressSanitizer|LeakSanitizer)|SUMMARY: UndefinedBehaviorSanitizer|runtime error:')
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        require(key not in result, f'duplicate JSON key: {key}')
+        result[key] = value
+    return result
+
+
+def decode(text):
+    return json.loads(text, object_pairs_hook=unique_object,
+                      parse_constant=lambda value: (_ for _ in ()).throw(
+                          ValueError(f'nonfinite JSON number: {value}')))
+
+
+def integer(value, minimum=0):
+    return type(value) is int and value >= minimum
+
+
+def compiled_sources(sources):
+    return {name: sha for name, sha in sources.items()
+            if name.startswith(('src/', 'tools/', 'bench/', 'cmake/'))
+            or (name.startswith('tests/') and not name.startswith('tests/scripts/'))
+            or name in ('CMakeLists.txt', 'CMakePresets.json')}
+
+
+def mapping_hash(mapping):
+    import hashlib
+    return hashlib.sha256(json.dumps(mapping, sort_keys=True).encode()).hexdigest()
+
+
+def options(argv):
+    """Parse value-taking long options, refusing aliases and duplicate switches."""
+    require(isinstance(argv, list) and all(isinstance(item, str) for item in argv), 'invalid argument vector')
+    require(len(argv) % 2 == 0, 'unexpected positional or value-less command argument')
+    result = {}
+    for name, value in zip(argv[::2], argv[1::2], strict=True):
+        require(name.startswith('--') and name not in result and value, f'invalid/duplicate option: {name}')
+        result[name] = value
+    return result
+
+
+def sanitizers(environment):
+    for key, needed in (('ASAN_OPTIONS', {'detect_leaks': '1', 'abort_on_error': '1'}),
+                        ('UBSAN_OPTIONS', {'print_stacktrace': '1', 'halt_on_error': '1'})):
+        values = {}
+        for flag in environment.get(key, '').split(':'):
+            name, separator, value = flag.partition('=')
+            require(separator and name not in values, f'missing/duplicate sanitizer setting: {key}')
+            values[name] = value
+        require(all(values.get(name) == value for name, value in needed.items()), f'sanitizer disabled: {key}')
+
+
+FULL_SUITE_SELECTION_ENV = ('GTEST_FILTER', 'GTEST_TOTAL_SHARDS', 'GTEST_SHARD_INDEX',
+                            'GTEST_REPEAT', 'TESTBRIDGE_TEST_ONLY', 'CTEST_TESTS_TO_RUN',
+                            'PYTEST_ADDOPTS', 'PYTEST_PLUGINS')
+
+
+def full_suite_environment(record):
+    environment = record.get('environment')
+    require(isinstance(environment, dict), 'full suite environment is missing')
+    for name in FULL_SUITE_SELECTION_ENV:
+        require(name in environment, 'full suite selection environment was not recorded: '+name)
+        require(environment[name] in (None, ''), 'full suite selection/injection environment is active: '+name)
+    require(environment.get('PYTEST_DISABLE_PLUGIN_AUTOLOAD') == '1',
+            'full suite plugin autoload was not explicitly disabled')
+
+
+class Audit:
+    def __init__(self, manifest, root=ROOT):
+        self.manifest, self.root = manifest, Path(root).resolve()
+        self.evidence = manifest.get('evidence', {})
+        self.checks = []
+        self.current_inputs = input_sets(self.root)
+        self.allowed_differential_cpp = {self.current_inputs['cpp']}
+        self.verified_builds = {}
+
+    def section(self, name, action):
+        try:
+            details = action()
+        except (OSError, ValueError, KeyError, TypeError, AttributeError, ArithmeticError,
+                ImportError, ET.ParseError) as error:
+            self.checks.append({'check': name, 'status': 'failed',
+                                'details': f'{type(error).__name__}: {error}'})
+        else:
+            if isinstance(details, Path):
+                details = details.relative_to(self.root).as_posix()
+            self.checks.append({'check': name, 'status': 'passed', 'details': details})
+
+    def name(self, value):
+        require(isinstance(value, str) and value, 'empty or non-string evidence path')
+        return local(self.root, value).relative_to(self.root).as_posix()
+
+    def identity(self, name, expected):
+        path = local(self.root, name)
+        sha = expected.get('sha256') if isinstance(expected, dict) else expected
+        require(isinstance(sha, str) and SHA.fullmatch(sha), f'invalid hash: {name}')
+        require(path.is_file() and digest(path) == sha, f'changed or missing file: {name}')
+        if isinstance(expected, dict):
+            require(integer(expected.get('bytes')) and path.stat().st_size == expected['bytes'], f'changed byte count: {name}')
+        return path
+
+    def bound(self, name):
+        name = self.name(name)
+        require(name in self.evidence, f'unbound evidence: {name}')
+        require(isinstance(self.evidence[name], dict), f'evidence needs sha256 and bytes: {name}')
+        return self.identity(name, self.evidence[name])
+
+    def read(self, name):
+        return decode(self.bound(name).read_text())
+
+    def text(self, name, expected_sha=None):
+        path = self.bound(name)
+        if expected_sha is not None:
+            require(digest(path) == expected_sha, f'nested log/file hash disagrees: {name}')
+        return path.read_text(errors='strict')
+
+    def scope(self):
+        require(self.manifest.get('schema') == SCHEMA, 'unknown acceptance schema')
+        require(set(self.manifest['validations']) == {
+            'ctest', 'python', 'differentials', 'fuzz', 'benchmarks', 'mutations'}, 'incomplete validation sections')
+        require(isinstance(self.evidence, dict) and self.evidence, 'missing evidence inventory')
+        require(all(name == self.name(name) for name in self.evidence), 'evidence keys must be canonical relative paths')
+        require(set(self.manifest.get('builds', {})) == set(PRESETS), 'missing source-bound build matrix')
+
+    def sources(self):
+        current = source_inventory(self.root)
+        require(current == self.manifest['sources'], 'current source/document inventory changed or incomplete')
+        require(self.current_inputs == self.manifest['input_sets'], 'current input-set identities changed')
+        frozen = self.read(self.manifest['source_freeze'])
+        require(frozen['schema'] == 'tiplog-f01-source-freeze-v1', 'unknown source freeze schema')
+        require(frozen['compiled_sources'] == compiled_sources(current), 'final freeze does not cover exact compiled inputs')
+        require(frozen['cpp_input_set'] == mapping_hash(frozen['compiled_sources']) == self.current_inputs['cpp'], 'final C++ freeze identity disagrees')
+        self.text('results/f01/protocol.json', frozen['protocol_sha256'])
+        for name in self.manifest.get('compatible_cpp_freezes', []):
+            earlier = self.read(name)
+            require(earlier['schema'] == frozen['schema'], 'unknown compatible freeze schema')
+            require(set(earlier['compiled_sources']) == set(frozen['compiled_sources']), 'compatible freeze changed compiled file coverage')
+            changed = {path for path, sha in earlier['compiled_sources'].items()
+                       if frozen['compiled_sources'][path] != sha}
+            require(changed == {'tests/unit/poll_budget_test.cpp'}, 'compatible freeze changes production/campaign inputs')
+            require(earlier['cpp_input_set'] == mapping_hash(earlier['compiled_sources']), 'invalid compatible freeze identity')
+            require(earlier['protocol_sha256'] == frozen['protocol_sha256'], 'protocol changed between compatible freezes')
+            self.allowed_differential_cpp.add(earlier['cpp_input_set'])
+        return {'source_files': len(current), 'compatible_differential_cpp_sets': len(self.allowed_differential_cpp)}
+
+    def historical(self):
+        require(self.manifest['baseline'] == 'results/f01/baseline.json', 'unexpected feature baseline')
+        baseline = self.read(self.manifest['baseline'])
+        require(baseline['schema'] == 'tiplog-f01-start-v1' and baseline['feature'] == 'F-01', 'invalid feature baseline')
+        required = {f'results/p{number}/phase-gate.json' for number in range(1, 9)}
+        required |= {'audit/AUDIT_REPORT.md', 'audit/remediation/acceptance.json',
+                     'audit/remediation/checks.json', 'results/p8/acceptance-evidence.json',
+                     'results/p8/artifact-manifest.json'}
+        require(required <= set(baseline['historical_identities']), 'baseline omits historical closeout identities')
+        for name, identity in baseline['historical_identities'].items():
+            self.identity(name, identity)
+        return {'unchanged_historical_files': len(baseline['historical_identities'])}
+
+    def runner(self, name, *, group='cpp', compatible=False, exit_code=0):
+        record = self.read(name)
+        require(type(record.get('exit_code')) is int and record['exit_code'] == exit_code,
+                f'wrong or unfinished command exit: {name}')
+        require(record['status'] == ('passed' if exit_code == 0 else 'failed'), f'wrong command status: {name}')
+        require(Path(record['cwd']).resolve() == self.root, f'wrong command working directory: {name}')
+        require(isinstance(record['argv'], list) and record['argv']
+                and all(isinstance(item, str) for item in record['argv']), 'missing command arguments')
+        require(isinstance(record.get('elapsed_seconds'), (int, float))
+                and not isinstance(record['elapsed_seconds'], bool)
+                and math.isfinite(record['elapsed_seconds']) and record['elapsed_seconds'] >= 0,
+                'missing elapsed command duration')
+        allowed = self.allowed_differential_cpp if compatible else {self.current_inputs[group]}
+        require(record['input_sets_before'][group] in allowed
+                and record['input_sets_after'][group] in allowed, f'stale or changed executed {group} inputs: {name}')
+        log = self.text(record['log'], record['log_sha256'])
+        require(not SANITIZER_FAILURE.search(log), f'sanitizer failure in successful evidence: {name}')
+        return record, log
+
+    def build(self, preset):
+        """Require an actual full build and rehash the exact compiled artifacts."""
+        if preset in self.verified_builds:
+            return self.verified_builds[preset]
+        require(preset in self.manifest.get('builds', {}), 'missing source-bound build: '+preset)
+        record, _ = self.runner(self.manifest['builds'][preset])
+        argv = record['argv']
+        require(argv[:4] == ['cmake', '--build', '--preset', preset], 'wrong build command/preset')
+        tail = argv[4:]
+        require(not tail or (len(tail) == 2 and tail[0] == '--parallel' and re.fullmatch('[1-9][0-9]*', tail[1])),
+                'build must compile the complete preset')
+        require(record.get('build_execution') == {'preset': preset, 'kind': 'build', 'full_build': True},
+                'build record lacks full-preset provenance')
+        snapshot = record.get('build_provenance')
+        require(snapshot and snapshot == record.get('build_artifacts_after'), 'build has no final artifact snapshot')
+        _BUILD.verify_build(snapshot, self.root, preset, self.current_inputs['cpp'])
+        _BUILD.validate_configuration(snapshot, self.root, preset)
+        for name, identity in snapshot['artifacts'].items():
+            self.bound(name)
+            self.identity(name, identity)
+        self.verified_builds[preset] = snapshot
+        return snapshot
+
+    def execution(self, preset, record):
+        snapshot = self.build(preset)
+        require(record.get('build_artifacts_before') == snapshot == record.get('build_artifacts_after'),
+                'execution used missing, stale or changed build artifacts: '+preset)
+
+    def ctest_one(self, preset, reference):
+        record, _ = self.runner(reference['record'])
+        full_suite_environment(record)
+        argv = record['argv']
+        require(Path(argv[0]).name == 'ctest', 'CTest evidence ran another executable')
+        values, switches = {}, []
+        index = 1
+        while index < len(argv):
+            item = argv[index]
+            if item in ('--preset', '--output-junit', '--parallel', '-j'):
+                require(item not in values and index + 1 < len(argv), 'duplicate/missing CTest option value')
+                values[item] = argv[index + 1]
+                index += 2
+            else:
+                require(item in ('--output-on-failure', '--no-tests=error') or re.fullmatch(r'-j[1-9][0-9]*', item),
+                        f'filtered or unknown CTest option: {item}')
+                switches.append(item)
+                index += 1
+        require(values.get('--preset') == preset, 'wrong CTest preset')
+        require(self.name(values['--output-junit']) == self.name(reference['junit']), 'JUnit is not the executed CTest destination')
+        for option in ('--parallel', '-j'):
+            if option in values:
+                require(re.fullmatch(r'[1-9][0-9]*', values[option]), 'invalid CTest concurrency')
+        if preset in ('asan-ubsan', 'fuzz'):
+            sanitizers(record['environment'])
+        self.execution(preset, record)
+        path = self.bound(reference['junit'])
+        count = junit_counts(path, 229)
+        names = [case.get('name', '') for case in ET.parse(path).getroot().iter('testcase')]
+        contracts = sum(name.startswith('poll_budget.') for name in names)
+        differential = sum(name.startswith('poll_differential.') for name in names)
+        require(contracts >= 23 and differential >= 1 and count - contracts - differential >= 205,
+                'CTest omits legacy, contract or independent model tests')
+        return {'tests': count, 'poll_budget': contracts, 'poll_differential': differential}
+
+    def ctest(self):
+        matrix = self.manifest['validations']['ctest']
+        require(set(matrix) == set(PRESETS), 'incomplete four-preset CTest matrix')
+        require(len({item['record'] for item in matrix.values()}) == 4, 'CTest command records reused across presets')
+        return {preset: self.ctest_one(preset, matrix[preset]) for preset in PRESETS}
+
+    def python(self):
+        reference = self.manifest['validations']['python']
+        record, _ = self.runner(reference['record'], group='python')
+        full_suite_environment(record)
+        argv = record['argv']
+        require(argv[0] in ('.venv/bin/python', str(self.root / '.venv/bin/python'))
+                and argv[1:3] == ['-m', 'pytest'], 'Python check used another interpreter/command')
+        remaining = argv[3:]
+        require(len(remaining) == 6 and remaining[:5] == ['-c', 'py/pytest.ini', 'py/tests', 'tests/scripts', '-q']
+                and remaining[5].startswith('--junitxml='), 'Python suite omitted tests or changed selection')
+        require(self.name(remaining[5].split('=', 1)[1]) == self.name(reference['junit']), 'Python JUnit is not the executed destination')
+        return {'tests': junit_counts(self.bound(reference['junit']), 259)}
+
+    def differential_one(self, preset, name):
+        summary = self.read(name)
+        seeds = 1000 if preset == 'release' else 200
+        require(summary['status'] == 'passed' and summary['preset'] == preset
+                and summary['seeds_per_campaign'] == seeds and summary['operations_per_seed'] == 10000,
+                'incorrect differential campaign size/status')
+        require({tuple(pair) for pair in summary['legacy_pairs']} == PAIRS and len(summary['legacy_pairs']) == 9,
+                'missing/duplicate legacy mode-kernel pair')
+        require(len(summary['records']) == 10 and len(set(summary['records'])) == 10, 'missing/duplicate differential records')
+        pairs, digests, budget = set(), set(), None
+        for name in summary['records']:
+            record, log = self.runner(name, compatible=True)
+            if preset == 'asan-ubsan':
+                sanitizers(record['environment'])
+            argv = record['argv']
+            executable = self.name(argv[0])
+            self.execution(preset, record)
+            values = options(argv[1:])
+            result = decode(log)
+            require(result['status'] == 'passed' and result['seed_base'] == 1
+                    and result['seeds'] == seeds and result['operations_per_seed'] == 10000
+                    and result['operations'] == seeds * 10000, 'incomplete differential execution')
+            require(values.get('--seeds') == str(seeds) and values.get('--operations') == '10000'
+                    and values.get('--seed-base', '1') == '1', 'differential command size does not match result')
+            if executable == f'build/{preset}/tiplog_differential':
+                require(set(values) <= {'--seeds', '--operations', '--seed-base', '--mode', '--kernel'}, 'unexpected legacy campaign options')
+                pair = (values['--mode'], values['--kernel'])
+                require(pair in PAIRS and pair not in pairs and (result['mode'], result['kernel']) == pair,
+                        'duplicate/wrong executed legacy pair')
+                pairs.add(pair)
+                digests.add(result['digest_fnv1a64'])
+                require(all(integer(result[field], 1) for field in ('publications', 'opens', 'nonuniform_payload_publications', 'delivered')),
+                        'vacuous legacy campaign')
+            else:
+                require(executable == f'build/{preset}/tiplog_poll_differential' and budget is None, 'unexpected/duplicate budget campaign executable')
+                require(set(values) <= {'--seeds', '--operations', '--seed-base'}, 'unexpected budget campaign options')
+                require(result['mode_kernel_mask'] == 4095, 'budget campaign omits a mode/kernel')
+                require(all(integer(result[field], 1) for field in (
+                    'publications', 'replay_opens', 'tail_opens', 'polls', 'finite_polls', 'zero_polls',
+                    'inspection_yields', 'delivered', 'inspections', 'errors', 'pad_inspections')),
+                    'budget campaign omits progress/cap/zero/PAD/error coverage')
+                budget = result
+        require(pairs == PAIRS and len(digests) == 1 and budget is not None, 'differential oracle digests/coverage disagree')
+        return {'legacy_operations': 9 * seeds * 10000, 'budget_operations': budget['operations']}
+
+    def differentials(self):
+        matrix = self.manifest['validations']['differentials']
+        require(set(matrix) == {'release', 'asan-ubsan'}, 'missing differential preset')
+        return {preset: self.differential_one(preset, matrix[preset]) for preset in ('release', 'asan-ubsan')}
+
+    def fuzz(self):
+        reference = self.manifest['validations']['fuzz']
+        record, log = self.runner(reference['record'])
+        require(len(record['argv']) == 2 and re.fullmatch(r'python(?:3(?:\.[0-9]+)?)?', Path(record['argv'][0]).name)
+                and self.name(record['argv'][1]) == 'scripts/run_f01_fuzz.py', 'wrong fuzz launcher')
+        sanitizers(record['environment'])
+        self.execution('fuzz', record)
+        printed = [decode(line) for line in log.splitlines() if line.startswith('{')]
+        require(printed and printed[-1].get('summary') == reference['summary'], 'fuzz summary is not the executed output')
+        summary = self.read(reference['summary'])
+        require(summary['status'] == 'passed' and len(summary['targets']) == 4
+                and {item['target'] for item in summary['targets']} == FUZZERS, 'incomplete four-target fuzz regression')
+        for item in summary['targets']:
+            require(item['status'] == 'passed' and type(item['exit_code']) is int and item['exit_code'] == 0,
+                    'failed fuzz target')
+            sanitizers(item['environment'])
+            require(item['environment']['TIPLOG_FUZZ_MODE'] == 'all', 'fuzz target mode coverage disabled')
+            argv = item['argv']
+            require(self.name(argv[0]) == f"build/fuzz/{item['target']}" and len(argv) == 6
+                    and '-runs=10000' in argv and '-max_len=4096' in argv
+                    and '-print_final_stats=1' in argv, 'incorrect fuzz target/run bound')
+            require(local(self.root, argv[1]).is_relative_to(self.root / 'build/f01'), 'fuzzer modified historical corpus')
+            self.identity(argv[0], item['binary_sha256'])
+            raw = self.text(item['raw_log'], item['raw_log_sha256'])
+            require(not SANITIZER_FAILURE.search(raw), 'sanitizer failure in fuzz log')
+            completed = re.findall(r'#(\d+)\s+DONE', raw)
+            require(completed and int(completed[-1]) == item['completed_executions'] >= 10000,
+                    'fuzzer did not complete declared executions')
+            require(0 < len(item['initial_seeds']) <= 128, 'missing/unbounded fuzzer initial seeds')
+            for name, expected in item['initial_seeds'].items():
+                require(isinstance(expected, str) and SHA.fullmatch(expected), 'invalid initial seed identity')
+                if name.startswith('tests/'):
+                    self.identity(name, expected)
+        return {'targets': 4, 'minimum_executions': 40000, 'leak_detection': True}
+
+    def mutations(self):
+        summary = self.read(self.manifest['validations']['mutations'])
+        require(summary['status'] == 'passed' and summary['production_sources_unchanged'] is True, 'mutation controls failed or edited production')
+        expected_sources = {'src/tiplog/engine/engine.cpp', 'src/tiplog/engine/engine.hpp',
+                            'tests/unit/poll_budget_test.cpp', 'scripts/check_f01_contract_mutations.py'}
+        require(set(summary['source_identities']) == expected_sources, 'incomplete mutation source binding')
+        for name, identity in summary['source_identities'].items():
+            self.identity(name, identity)
+        compilation = summary['test_compile']
+        require(type(compilation['exit_code']) is int and compilation['exit_code'] == 0, 'mutation test compilation failed')
+        self.text(compilation['log'], compilation['log_sha256'])
+        controls = summary['controls']
+        require(len(controls) == 5 and {row['name'] for row in controls} == {'positive-control', *MUTATIONS},
+                'missing or duplicate contract mutation')
+        for control in controls:
+            positive = control['name'] == 'positive-control'
+            require(control['kind'] == ('positive-control' if positive else 'negative-control')
+                    and control['status'] == ('passed' if positive else 'killed'), 'wrong mutation outcome')
+            require(isinstance(control['source_sha256'], str) and SHA.fullmatch(control['source_sha256']), 'missing mutant identity')
+            require((control['source_sha256'] == summary['source_identities']['src/tiplog/engine/engine.cpp']) is positive,
+                    'positive source differs or negative source is unchanged')
+            require(len(control['phases']) == 3, 'mutation omitted compile/link/run phase')
+            for index, phase in enumerate(control['phases']):
+                expected_exit = 0 if positive or index < 2 else 1
+                require(type(phase['exit_code']) is int and phase['exit_code'] == expected_exit,
+                        'mutation killed by compilation failure/crash instead of assertion')
+                text = self.text(phase['log'], phase['log_sha256'])
+                if index == 2:
+                    expected_filter = 'PollBudget.*' if positive else MUTATIONS[control['name']]
+                    require('--gtest_filter=' + expected_filter in phase['argv'], 'wrong mutation regression selected')
+                    if positive:
+                        match = re.search(r'\[  PASSED  \]\s+(\d+) tests?\.', text)
+                        require(match and int(match[1]) >= 23, 'positive control omitted current contract tests')
+                    else:
+                        require('[  FAILED  ]' in text and '1 FAILED TEST' in text, 'negative control did not fail its assertion')
+        return {'positive_controls': 1, 'killed_contract_mutations': 4}
+
+    def benchmarks(self):
+        reference = self.manifest['validations']['benchmarks']
+        plan = self.read(reference['plan'])
+        require(plan['schema'] == 'tiplog.f01.study-plan.v1'
+                and plan['status'] == 'predeclared-before-study-timing', 'invalid benchmark study plan')
+        require(reference['source_freeze'] == self.manifest['source_freeze'], 'benchmark uses another source freeze')
+        require(reference['protocol'] == plan['protocol'] == 'results/f01/protocol.json', 'benchmark protocol differs')
+        self.text(reference['protocol'], plan['protocol_sha256'])
+        for field, expected in (('summarizer', {'results/f01/summarize.py', 'scripts/f01_summary.py'}),
+                                ('contracts', {'results/f01/check_tool.py'})):
+            require(plan['analysis'][field] in expected, 'unexpected benchmark analysis implementation')
+            self.text(plan['analysis'][field], plan['analysis'][field + '_sha256'])
+        module = _BENCH
+        jobs = plan['timed_jobs']
+        require(jobs and len({job['id'] for job in jobs}) == len(jobs), 'missing/duplicate study job')
+        expected_records = sum(job['process_repetitions'] for job in jobs)
+        require(all(type(job['process_repetitions']) is int and job['process_repetitions'] == 3 for job in jobs),
+                'study does not use three fresh processes per job')
+        for field in ('records', 'original_raw', 'raw'):
+            require(len(reference[field]) == expected_records and len(set(reference[field])) == expected_records,
+                    'missing or duplicate benchmark ' + field)
+        require(set(reference['original_raw']).isdisjoint(reference['raw']), 'normalization overwrote original raw output')
+        normalization = self.read(reference['normalization'])
+        require(normalization['schema'] == 'tiplog.f01.repetition-normalization.v1', 'unknown repetition normalization')
+        normalized = self.check_normalization(normalization, reference)
+        records = {}
+        for name in reference['records']:
+            record, _ = self.runner(name)
+            self.benchmark_binding(record, reference, plan)
+            require(record['label'] not in records, 'duplicate benchmark invocation label')
+            records[record['label']] = (name, record)
+        used_records, used_originals, used_outputs = set(), set(), set()
+        expected_total = 0
+        measured_rows = []
+        for job in jobs:
+            values = options(job['argv'])
+            require(values.get('--reps') == '1', 'tool repetitions must remain one in each fresh process')
+            expected = self.expected_benchmark_rows(module.IDENTITY, values)
+            require(job['expected_original_rows_per_process'] == len(expected)
+                    and job['expected_rows'] == 3 * len(expected), 'study plan row arithmetic disagrees')
+            expected_total += job['expected_rows']
+            for repetition in range(3):
+                label = f"{job['id']}-process-{repetition:02}"
+                require(label in records, 'missing fresh benchmark process: ' + label)
+                record_name, record = records[label]
+                argv = record['argv']
+                require(len(argv) == len(job['argv']) + 3 and argv[1:-2] == job['argv']
+                        and argv[-2] == '--output', 'benchmark command differs from predeclared job')
+                original = self.name(argv[-1])
+                require(original in normalized and original not in used_originals, 'raw original is missing/reused')
+                mapping = normalized[original]
+                require(mapping['record'] == record_name and mapping['process_repetition'] == repetition,
+                        'normalization associates another invocation/process repetition')
+                require(record.get('raw_output') == original, 'benchmark record does not bind its actual raw destination')
+                self.text(original, record['raw_sha256'])
+                rows = self.lines(original)
+                observed = set()
+                for row in rows:
+                    key = (*module.validate(row), row['repetition'])
+                    require(integer(row['repetition']) and key not in observed, 'duplicate/invalid original arm identity')
+                    observed.add(key)
+                require(observed == expected and len(rows) == len(expected), 'raw arms do not match executed command')
+                measured_rows.extend(rows)
+                used_records.add(record_name)
+                used_originals.add(original)
+                used_outputs.add(mapping['output'])
+        require(used_records == set(reference['records']) and used_originals == set(reference['original_raw'])
+                and used_outputs == set(reference['raw']), 'unclaimed/missing study process artifacts')
+        require(expected_total == plan['expected_timed_rows'], 'total plan row count disagrees')
+        self.normalizer(reference, normalization, plan)
+        fresh = module.summarize([self.bound(name) for name in reference['raw']])
+        saved = self.read(reference['summary'])
+        require(self.normalized_summary(saved) == self.normalized_summary(fresh), 'saved benchmark summary differs from independent reconstruction')
+        require(fresh['validated_rows'] == expected_total
+                and all(arm['repetitions'] == 3 and arm['repetition_labels'] == [0, 1, 2]
+                        and arm['legacy_pair_count'] == 3 for arm in fresh['arms']),
+                'benchmark arms lack three independent-process repetitions/legacy pairs')
+        self.benchmark_coverage(fresh['arms'])
+        require(any(row['effective_mode'] == 'scan' and row['poll_work']['pads_inspected'] > 0
+                    for row in measured_rows), 'benchmark wrap fixture never measured a Scan PAD')
+        self.preflight(reference, plan, module)
+        self.benchmark_contracts(reference, plan)
+        return {'validated_rows': fresh['validated_rows'], 'arm_groups': len(fresh['arms']),
+                'fresh_processes': expected_records,
+                'interpretation': 'Observed synthetic Replay timing only; no hard latency, throughput nonregression or shared-engine Tail timing guarantee.'}
+
+    def lines(self, name):
+        text = self.text(name)
+        rows = [decode(line) for line in text.splitlines()]
+        require(rows and all(isinstance(row, dict) for row in rows), 'empty/non-object JSONL evidence')
+        return rows
+
+    def check_normalization(self, normalization, reference):
+        entries = normalization['files']
+        require(len(entries) == len(reference['original_raw']), 'incomplete normalization mapping')
+        require({row['input'] for row in entries} == set(reference['original_raw'])
+                and {row['output'] for row in entries} == set(reference['raw'])
+                and len({row['input'] for row in entries}) == len(entries)
+                and len({row['output'] for row in entries}) == len(entries), 'duplicate/missing normalization input/output')
+        for entry in entries:
+            require(entry['input'] != entry['output'] and type(entry['tool_repetition']) is int
+                    and entry['tool_repetition'] == 0 and type(entry['process_repetition']) is int
+                    and entry['process_repetition'] in (0, 1, 2), 'invalid repetition normalization declaration')
+            self.text(entry['input'], entry['input_sha256'])
+            self.text(entry['output'], entry['output_sha256'])
+            original, derived = self.lines(entry['input']), self.lines(entry['output'])
+            require(len(original) == len(derived) == entry['rows'], 'normalization changed row count')
+            for before, after in zip(original, derived, strict=True):
+                require(type(before.get('repetition')) is int and before['repetition'] == 0,
+                        'normalization input was not a fresh-process tool repetition')
+                expected = dict(before, repetition=entry['process_repetition'])
+                require(json.dumps(after, sort_keys=True, allow_nan=False) == json.dumps(expected, sort_keys=True, allow_nan=False)
+                        and type(after.get('repetition')) is int,
+                        'normalization changed timing/work/payload evidence beyond repetition')
+        return {entry['input']: entry for entry in entries}
+
+    def normalizer(self, reference, normalization, plan):
+        record, log = self.runner(reference['normalizer_record'])
+        self.benchmark_binding(record, reference, plan, direct=False)
+        argv = record['argv']
+        require(len(argv) == 7 and self.name(argv[1]) == 'scripts/run_f01_study.py'
+                and argv[2] == 'normalize', 'wrong normalization command')
+        values = options(argv[3:])
+        require(set(values) == {'--mapping', '--output'}
+                and self.name(values['--output']) == reference['normalization'], 'normalizer wrote another destination')
+        declaration = self.read(values['--mapping'])
+        require(declaration['schema'] == 'tiplog.f01.normalization-plan.v1', 'invalid normalization input declaration')
+        wanted = [{key: value for key, value in item.items() if key not in ('output_sha256', 'rows')}
+                  for item in normalization['files']]
+        require(declaration['files'] == wanted, 'normalization output differs from executed mapping declaration')
+        result = decode(log)
+        require(result['status'] == 'passed' and result['files'] == len(wanted)
+                and result['rows'] == sum(item['rows'] for item in normalization['files']), 'normalizer log count disagrees')
+
+    def benchmark_binding(self, record, reference, plan, *, direct=True):
+        binding = record['binding']
+        require(binding['cpp_input_set'] == self.current_inputs['cpp'], 'benchmark binding is not the final source set')
+        for field in ('source_freeze', 'plan', 'protocol'):
+            require(binding[field] == reference[field], 'benchmark binding changed ' + field)
+            self.text(binding[field], binding[field + '_sha256'])
+        require(binding['runner'] == 'scripts/run_f01_study.py', 'unexpected study runner')
+        self.identity(binding['runner'], binding['runner_sha256'])
+        self.text(binding['build_record'], binding['build_record_sha256'])
+        build, _ = self.runner(binding['build_record'])
+        require(build['argv'][:4] == ['cmake', '--build', '--preset', 'release'], 'benchmark binary lacks a current Release build')
+        require(binding['build_record'] == self.manifest.get('builds', {}).get('release'),
+                'benchmark uses a different Release build record')
+        self.execution('release', record)
+        require(self.name(binding['binary']) == 'build/release/tiplog_poll_bench'
+                and record['binary_sha256'] == binding['binary_sha256'], 'benchmark binary binding differs')
+        self.identity(binding['binary'], binding['binary_sha256'])
+        if direct:
+            require(self.name(record['argv'][0]) == self.name(binding['binary']), 'record did not execute benchmark binary')
+        start = datetime.fromisoformat(record['started_utc'])
+        declared = datetime.fromisoformat(plan['created_utc'])
+        require(start.tzinfo is not None and declared.tzinfo is not None and start >= declared,
+                'study command predates its declared plan')
+        require(record.get('host_before') and record.get('host_after'), 'study omits host/noise observations')
+
+    @staticmethod
+    def expected_benchmark_rows(identity, values):
+        fields = {'records': ('--records', True), 'seed': ('--seed', True),
+                  'case': ('--cases', False), 'shape': ('--shapes', False),
+                  'configured_partitions': ('--partitions', True),
+                  'candidate_every': ('--candidate-every', True), 'mode': ('--modes', False),
+                  'kernel': ('--kernels', False), 'budget': ('--budgets', False),
+                  'schedule': ('--schedules', False), 'max_outputs': ('--max-outputs', True)}
+        require(set(values) == {name for name, _ in fields.values()} | {'--reps'}, 'unknown/missing benchmark job option')
+        dimensions = []
+        for name in identity:
+            option, numeric = fields[name]
+            items = values[option].split(',')
+            require(items and all(items) and len(set(items)) == len(items), 'duplicate/empty benchmark dimension')
+            dimensions.append([int(value) for value in items] if numeric else items)
+        repetitions = int(values['--reps'])
+        require(repetitions in (1, 3), 'unexpected benchmark tool repetitions')
+        return {(*key, repetition) for key in itertools.product(*dimensions) for repetition in range(repetitions)}
+
+    def normalized_summary(self, value):
+        value = copy.deepcopy(value)
+        for source in value['sources']:
+            source['path'] = self.name(source['path'])
+        return value
+
+    @staticmethod
+    def benchmark_coverage(arms):
+        dimensions = {
+            'budget': {'legacy', 'unlimited', '1', '8', '32', '128', '512', '2048'},
+            'case': {'no-match', 'late-match', 'sparse', 'dense'},
+            'shape': {'small', 'fixed', 'variable', 'wrapped-variable'},
+            'mode': {'scan', 'indexed', 'auto'},
+            'kernel': {'stdpq', 'binheap', 'quad', 'loser'},
+            'configured_partitions': {1, 4, 64, 256, 4096},
+            'schedule': {'round-robin', 'immediate-redrain'},
+            'candidate_every': {1, 8}, 'max_outputs': {1, 4096},
+        }
+        for name, wanted in dimensions.items():
+            require(wanted <= {arm[name] for arm in arms}, 'benchmark omits coverage dimension: ' + name)
+        demo = {(arm['mode'], arm['case'], arm['budget']) for arm in arms
+                if arm['records'] == 1000000 and arm['shape'] == 'small'
+                and arm['configured_partitions'] == 1 and arm['candidate_every'] == 1
+                and arm['max_outputs'] == 1 and arm['schedule'] == 'round-robin'}
+        require(set(itertools.product(('scan', 'indexed', 'auto'), ('no-match', 'late-match'),
+                                      ('legacy', 'unlimited', '1', '1000'))) <= demo,
+                'missing million-candidate budget-one/late-match demonstration')
+        require({arm['effective_mode'] for arm in arms if arm['mode'] == 'auto'} == {'scan', 'indexed'},
+                'Auto benchmark never exercises both effective modes')
+
+    def preflight(self, reference, plan, module):
+        records, raws = reference['preflight_records'], reference['preflight_raw']
+        require(len(records) == len(raws) == 1 and not set(raws).intersection(reference['original_raw'] + reference['raw']),
+                'resource control missing or admitted to successful timing evidence')
+        record, _ = self.runner(records[0], exit_code=1)
+        self.benchmark_binding(record, reference, plan)
+        argv = record['argv']
+        declared = plan['preflight']
+        require(argv[1:-2] == declared['argv'] and argv[-2] == '--output'
+                and self.name(argv[-1]) == raws[0] == record['raw_output'], 'resource control command differs from plan')
+        self.text(raws[0], record['raw_sha256'])
+        values = options(declared['argv'])
+        rows = self.lines(raws[0])
+        expected = self.expected_benchmark_rows(module.IDENTITY, values)
+        observed = {(*(row[field] for field in module.IDENTITY), row['repetition']) for row in rows}
+        require(len(rows) == len(expected) == declared['expected_rows'] and observed == expected, 'missing/duplicate resource-control arms')
+        statuses = declared['expected_status_by_partitions']
+        require(statuses == {'8192': 'ok', '12288': 'infeasible'}, 'resource control omits declared feasible/infeasible bracket')
+        for row in rows:
+            require(row['status'] == statuses[str(row['configured_partitions'])], 'resource-control outcome differs')
+            if row['status'] == 'ok':
+                module.validate(row)
+            else:
+                require(row['schema'] == 'tiplog.f01.poll-benchmark.v1' and row['reader'] == 'replay'
+                        and isinstance(row.get('error'), str) and 'cap' in row['error'], 'infeasible outcome lacks resource-cap diagnosis')
+
+    def benchmark_contracts(self, reference, plan):
+        record, _ = self.runner(reference['contract_record'])
+        self.benchmark_binding(record, reference, plan, direct=False)
+        argv = record['argv']
+        require(len(argv) == 8 and self.name(argv[1]) == plan['analysis']['contracts'], 'wrong benchmark contract command')
+        values = options(argv[2:])
+        require(set(values) == {'--binary', '--matrix', '--output'}
+                and self.name(values['--output']) == reference['contracts']
+                and self.name(values['--binary']) == 'build/release/tiplog_poll_bench'
+                and self.name(values['--matrix']) in set(reference['raw']), 'benchmark contracts used another binary/matrix/output')
+        result = self.read(reference['contracts'])
+        require(result['schema'] == 'tiplog.f01.benchmark-contract-check.v1' and result['status'] == 'passed', 'benchmark contract check failed')
+        require(self.name(result['binary']) == self.name(values['--binary']), 'contract check binary differs')
+        self.identity(result['binary'], result['binary_sha256'])
+        negatives = {'wrong_publication_oracle', 'missing_physical_fetch', 'wrong_stop_total',
+                     'wrong_final_range', 'finite_cap_exceeded', 'wrong_service_sample_count'}
+        positives = {'independent_matrix_validation', 'invalid_cli_rejected_before_output',
+                     'existing_output_preserved', 'historical_output_namespace_protected',
+                     'infeasible_fixture_recorded_without_timing', 'legal_packed_K_still_obeys_resource_cap'}
+        checks = result['checks']
+        require(len(checks) == len(positives | negatives) and {item['name'] for item in checks} == positives | negatives,
+                'missing/duplicate benchmark evidence or CLI negative control')
+        require(all(item['status'] == ('killed' if item['name'] in negatives else 'passed') for item in checks),
+                'benchmark evidence/CLI control survived')
+        matrix = next(item for item in checks if item['name'] == 'independent_matrix_validation')
+        require(len(matrix['sources']) == 1 and self.name(matrix['sources'][0]['path']) == self.name(values['--matrix']),
+                'contract matrix summary refers to another file')
+        self.identity(values['--matrix'], matrix['sources'][0])
+
+    def run(self):
+        for name in ('scope', 'sources', 'historical', 'ctest', 'python',
+                     'differentials', 'fuzz', 'benchmarks', 'mutations'):
+            self.section(name, getattr(self, name))
+        for name, identity in self.evidence.items():
+            self.section('evidence:' + str(name), lambda name=name, identity=identity: self.identity(name, identity))
+        failures = [item for item in self.checks if item['status'] == 'failed']
+        return {'schema': RESULT_SCHEMA, 'status': 'failed' if failures else 'passed',
+                'checked_utc': datetime.now(timezone.utc).isoformat(),
+                'checks': self.checks, 'failures': failures,
+                'scope': 'Optional F-01 traversal budgets; setup remains outside the cap. Historical results remain historical. Recorded timing is observational.'}
+
+
+def output_path(root, destination, manifest_path, manifest):
+    destination = local(root, str(destination))
+    require(any(destination.is_relative_to(root / name) for name in ('results/f01', 'build/f01')),
+            'checker output must remain under results/f01 or build/f01')
+    protected = {local(root, str(manifest_path))}
+    protected.update(local(root, name) for name in manifest.get('evidence', {}))
+    require(destination not in protected, 'output would overwrite manifest or bound evidence')
+    if destination.exists():
+        require(decode(destination.read_text()).get('schema') == RESULT_SCHEMA,
+                'existing output is not a prior F-01 checker result')
+    return destination
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--manifest', type=Path, default=ROOT / 'results/f01/acceptance.json')
+    parser.add_argument('--output', type=Path, default=ROOT / 'results/f01/checks.json')
+    args = parser.parse_args(argv)
+    manifest = {}
+    try:
+        manifest_path = local(ROOT, str(args.manifest))
+        manifest = decode(manifest_path.read_text())
+        result = Audit(manifest).run()
+        result['manifest_sha256'] = digest(manifest_path)
+    except (OSError, ValueError, TypeError, AttributeError, ArithmeticError) as error:
+        result = {'schema': RESULT_SCHEMA, 'status': 'failed', 'checks': [],
+                  'failures': [{'check': 'manifest readable', 'details': str(error)}]}
+    try:
+        destination = output_path(ROOT, args.output, args.manifest, manifest)
+    except (OSError, ValueError, TypeError, AttributeError) as error:
+        parser.error(str(error))
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(result, indent=2, allow_nan=False) + '\n')
+    print(json.dumps({'status': result['status'], 'checks': len(result['checks']),
+                      'failures': len(result['failures']), 'output': str(destination)}))
+    return 0 if result['status'] == 'passed' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

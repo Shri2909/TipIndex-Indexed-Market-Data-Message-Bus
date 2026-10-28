@@ -1,0 +1,2659 @@
+{
+  "status": "passed",
+  "documents": [
+    "README.md",
+    "docs/plan/ARCHITECTURE.md",
+    "docs/plan/IMPLEMENTATION_PLAN.md",
+    "docs/plan/INDEX.md",
+    "docs/plan/PROGRESS.md",
+    "docs/plan/RESEARCH.md",
+    "docs/plan/STUDY_PLAN.md",
+    "docs/report/POLL_BUDGET.md",
+    "docs/report/POLL_BUDGET_RESULTS.md",
+    "docs/report/REPORT.md",
+    "docs/report/REPRODUCE.md"
+  ],
+  "checked_links": 440,
+  "links": [
+    {
+      "document": "README.md",
+      "line": 4,
+      "target": "docs/plan/INDEX.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 5,
+      "target": "docs/report/REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 6,
+      "target": "docs/report/REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 7,
+      "target": "docs/report/results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 8,
+      "target": "docs/report/results_layout.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 9,
+      "target": "results/p6/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 10,
+      "target": "results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 11,
+      "target": "docs/plan/PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 14,
+      "target": "docs/report/REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 16,
+      "target": "docs/report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 18,
+      "target": "docs/report/POLL_BUDGET_RESULTS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 50,
+      "target": "py/requirements.txt",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 53,
+      "target": "results/env/p0-python.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 81,
+      "target": "results/p1/fuzz-segmented-notes.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 92,
+      "target": "docs/plan/RESEARCH.md#7-phase-0-just-in-time-source-inspection--2026-10-17",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 102,
+      "target": "data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 106,
+      "target": "results/p1/python-sources.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 107,
+      "target": "results/p1/cpp-sources.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 138,
+      "target": "src/tiplog/engine/engine.hpp",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 148,
+      "target": "docs/report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 158,
+      "target": "results/p5/rc3-evidence.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 175,
+      "target": "results/p5/pilot-method.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 194,
+      "target": "results/p6/closeout-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 195,
+      "target": "results/figures/p6-figures.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 196,
+      "target": "results/p6/p6-report-source-map.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 220,
+      "target": "docs/report/REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 225,
+      "target": "docs/report/REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "line": 226,
+      "target": "docs/report/REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/ARCHITECTURE.md",
+      "line": 5,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/ARCHITECTURE.md",
+      "line": 9,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/ARCHITECTURE.md",
+      "line": 9,
+      "target": "../report/REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/ARCHITECTURE.md",
+      "line": 153,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 3,
+      "target": "../../results/p7/authorization.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 3,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 3,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 41,
+      "target": "PROGRESS.md#phase-0-execution--2026-10-17-asiakolkata",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 339,
+      "target": "../../results/p8/acceptance-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 341,
+      "target": "../../results/p1/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 341,
+      "target": "../../results/p6/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 341,
+      "target": "../../results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 341,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 342,
+      "target": "../report/REPORT.md#5-correctness-evidence",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 343,
+      "target": "../../results/p1/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 343,
+      "target": "../../results/p6/fuzz-prefix-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 344,
+      "target": "../../data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 344,
+      "target": "../../results/p1/data-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 345,
+      "target": "../../results/p7/figures-all-final-20261025T154953.610882Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 345,
+      "target": "../report/results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 345,
+      "target": "../report/results_layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 346,
+      "target": "../report/results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 346,
+      "target": "../report/results_layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 347,
+      "target": "../../results/p7/worked-example.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 347,
+      "target": "../../results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 347,
+      "target": "../report/REPORT.md#8-storage-layout-optimization-p7",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/IMPLEMENTATION_PLAN.md",
+      "line": 348,
+      "target": "../report/REPORT.md#9-limitations-and-threats-to-validity",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 3,
+      "target": "../report/REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 3,
+      "target": "../../audit/AUDIT_REPORT.md#17-approved-remediation-closeout--2026-10-26",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 3,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 9,
+      "target": "../../results/p7/authorization.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 9,
+      "target": "../../results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 11,
+      "target": "../report/REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 11,
+      "target": "../report/REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 13,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 13,
+      "target": "REVIEW_2026-10-17.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 46,
+      "target": "REVIEW_2026-10-17.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 47,
+      "target": "FINDINGS_TO_IMPLEMENTATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 48,
+      "target": "PROBLEM_STATEMENT_AND_BENCHMARKS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 49,
+      "target": "../../IMPLEMENTATION_EXECUTION_PROMPT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 50,
+      "target": "../../PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 51,
+      "target": "../../PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 84,
+      "target": "../../results/p7/authorization.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 84,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 93,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/INDEX.md",
+      "line": 93,
+      "target": "../report/REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 9,
+      "target": "../../results/p7/authorization.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 73,
+      "target": "../../results/p0/preflight.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 79,
+      "target": "../../scripts/git.sh",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 79,
+      "target": "../../.gitignore",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 79,
+      "target": "../../README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 80,
+      "target": "../../CMakeLists.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 80,
+      "target": "../../CMakePresets.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 80,
+      "target": "../../cmake/deps.cmake",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 81,
+      "target": "../../py/requirements.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 81,
+      "target": "../../results/env/p0-python.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 82,
+      "target": "../../scripts/env_capture.sh",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 82,
+      "target": "../../scripts/env_capture.py",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 82,
+      "target": "../../results/env/p0-environment.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 83,
+      "target": "../../scripts/check_all.sh",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 83,
+      "target": "../../scripts/check_all.py",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 83,
+      "target": "../../py/tests/test_smoke.py",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 84,
+      "target": "RESEARCH.md#7-phase-0-just-in-time-source-inspection--2026-10-17",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 90,
+      "target": "../../results/p0/preflight.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 90,
+      "target": "../../results/p0/artifact-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 91,
+      "target": "../../results/p0/20261017T042909.444760Z/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 91,
+      "target": "../../results/p0/supplemental-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 91,
+      "target": "../../results/p0/build-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 92,
+      "target": "../../results/p0/20261017T042909.444760Z/asan-ubsan-ctest.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 92,
+      "target": "../../results/p0/20261017T042909.444760Z/fuzz-ctest.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 93,
+      "target": "../../results/p0/python-install-network.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 93,
+      "target": "../../results/env/p0-python.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 93,
+      "target": "../../results/p0/20261017T042909.444760Z/python-pytest.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 94,
+      "target": "../../results/env/p0-environment.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 94,
+      "target": "../../results/p0/artifact-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 95,
+      "target": "../../results/env/p0-environment.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 96,
+      "target": "../../results/p0/20261017T042909.444760Z/commands.jsonl",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 96,
+      "target": "../../results/p0/supplemental-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 104,
+      "target": "../../results/p0/python-install.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 105,
+      "target": "../../results/p0/build-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 106,
+      "target": "../../results/p0/20261017T042756.293032Z/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 106,
+      "target": "../../results/p0/sanitizer-sandbox-failure.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 107,
+      "target": "../../results/p0/asan-unsandboxed-configure.log",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 107,
+      "target": "../../results/p0/20261017T042909.444760Z/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 108,
+      "target": "../../results/p0/supplemental-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 109,
+      "target": "../../results/p0/artifact-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 123,
+      "target": "../../results/p0/artifact-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 131,
+      "target": "../../results/p1/preflight.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 135,
+      "target": "../../results/p1/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 136,
+      "target": "../../results/p2/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 145,
+      "target": "../../data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 145,
+      "target": "../../results/p1/cpp-full-day-consistency.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 149,
+      "target": "../../results/p1/F1-trace-segmented-gate-20261017T142028.416744Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 149,
+      "target": "../../results/p1/F2-framing-real-segmented-gate-20261017T142151.850263Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 149,
+      "target": "../../results/p1/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 149,
+      "target": "../../results/p1/fuzz-segmented-notes.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 151,
+      "target": "../../results/p1/python-final-metadata-check-20261017T142615.823401Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 151,
+      "target": "../../results/p1/traceability.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 151,
+      "target": "../../results/p1/final-review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 151,
+      "target": "../../results/p1/data-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 153,
+      "target": "../../results/p1/rk01-converter-decision.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 153,
+      "target": "../../results/env/p1-converter-pilot.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 157,
+      "target": "../../results/p1/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 157,
+      "target": "../../results/p1/implementation-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 161,
+      "target": "../../data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 161,
+      "target": "../../results/p1/range-acquisition-commands.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 162,
+      "target": "../../results/p1/cpp-full-day-consistency.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 162,
+      "target": "../../results/p1/rk01-converter-decision.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 165,
+      "target": "../../results/p1/cc6-reconciliation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 166,
+      "target": "../../results/p1/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 167,
+      "target": "../../results/p1/real-data-artifact-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 167,
+      "target": "../../results/p1/figure-visual-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 169,
+      "target": "../../results/p1/data-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 173,
+      "target": "../../results/p1/traceability.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 173,
+      "target": "../../results/p1/python-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 173,
+      "target": "../../results/p1/cpp-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 173,
+      "target": "../../results/p1/final-review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 175,
+      "target": "../../results/p1/privacy-audit.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 179,
+      "target": "../../results/p2/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 179,
+      "target": "../../results/p2/implementation-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 186,
+      "target": "../../results/p2/topics-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 186,
+      "target": "../../results/p2/oracle-driver-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 186,
+      "target": "../../results/p2/review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 192,
+      "target": "../../results/p3/release-tests-final-20261018T034022.019438Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 192,
+      "target": "../../results/p3/sanitizer-tests-final-20261018T034025.130173Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 194,
+      "target": "../../results/p3/differential-release-20261018T034047.389885Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 194,
+      "target": "../../results/p3/differential-sanitizer-20261018T034107.454243Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/F3-scan-segmented-gate-20261018T034111.719594Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/live-state.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/implementation-freeze.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/fuzz-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/ring-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/engine-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 196,
+      "target": "../../results/p3/review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 215,
+      "target": "../../results/p3/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 215,
+      "target": "../../results/p3/implementation-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 219,
+      "target": "../../results/p3/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 219,
+      "target": "../../results/p3/review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 221,
+      "target": "../../results/p3/ring-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 221,
+      "target": "../../results/p3/engine-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 221,
+      "target": "../../results/p3/fuzz-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 223,
+      "target": "../../results/p3/p4-handoff-review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 223,
+      "target": "../../results/p3/p4-pressure-fixture-plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 229,
+      "target": "../../tests/fuzz/pressure_fixture.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 229,
+      "target": "../../results/p4/fuzz-plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 233,
+      "target": "../../results/p4/live-state.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 233,
+      "target": "../../results/p4/implementation-freeze.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 235,
+      "target": "../../results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 237,
+      "target": "../../results/p4/memory-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 237,
+      "target": "../../results/p4/real-driver-mode-comparison.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 239,
+      "target": "../../results/p4/source-revision.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 243,
+      "target": "../../results/p4/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 243,
+      "target": "../../results/p4/implementation-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 243,
+      "target": "../../results/p4/review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 247,
+      "target": "../../results/p4/memory-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 249,
+      "target": "../../results/p4/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 251,
+      "target": "../../results/p4/index-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 251,
+      "target": "../../results/p4/engine-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 251,
+      "target": "../../results/p4/fuzz-plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 251,
+      "target": "../../results/p4/memory-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 253,
+      "target": "../../results/p4/p5-merge-study.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 253,
+      "target": "../../results/p4/p5-engine-study.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 253,
+      "target": "../../results/p4/p5-benchmark-handoff.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 260,
+      "target": "../../results/p5/release-tests-integration-20261018T155700.707669Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 260,
+      "target": "../../results/p5/sanitizer-tests-integration-20261018T155840.807045Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 261,
+      "target": "../../results/p5/rc3-summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 261,
+      "target": "../../results/p5/rc3-integrity.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 262,
+      "target": "../../results/p5/CC2-full-sequence-20261018T160119.265969Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 263,
+      "target": "../../results/p5/F3-integrated-segmented-gate-20261018T160110.829382Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 263,
+      "target": "../../results/p5/fuzz-source-freeze.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 263,
+      "target": "../../results/p5/named-corpus.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 264,
+      "target": "../../results/p5/M1-full-pilot-functional-20261018T160201.375404Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 265,
+      "target": "../../results/p5/pilot-method.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 267,
+      "target": "../../results/p5/engine-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 267,
+      "target": "../../results/p5/merge-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 267,
+      "target": "../../results/p5/rc3-evidence.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 270,
+      "target": "../../results/p5/CC2-all-configurations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 280,
+      "target": "../../results/p5/F3-terminal-verification-20261019T005756.227220Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 282,
+      "target": "../../results/p5/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 294,
+      "target": "../../results/p5/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 295,
+      "target": "../../results/p5/implementation-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 295,
+      "target": "../../results/p5/review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 309,
+      "target": "../../results/p5/pilot-audit.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 311,
+      "target": "../../results/p5/pilot-results.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 315,
+      "target": "../../results/p5/cachegrind-summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 318,
+      "target": "../../results/p5/consolidated-evidence.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 320,
+      "target": "../../results/p5/merge-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 320,
+      "target": "../../results/p5/engine-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 321,
+      "target": "../../results/p5/fuzz-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 321,
+      "target": "../../results/p5/publisher-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 322,
+      "target": "../../results/p5/pilot-method.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 335,
+      "target": "../../results/p5/final-artifact-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 349,
+      "target": "../../results/p6/preflight.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 368,
+      "target": "../../results/p6/CC2-all-configurations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 371,
+      "target": "../../results/p6/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 395,
+      "target": "../../results/p6/subscriptions-scaling.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 401,
+      "target": "../../results/p6/CC2-all-configurations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 403,
+      "target": "../../results/p6/rc3-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 406,
+      "target": "../../results/p6/fuzz-prefix-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 418,
+      "target": "../../results/p6/cpp-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 419,
+      "target": "../../results/p6/python-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 419,
+      "target": "../../results/p6/micro-method.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 432,
+      "target": "../../results/p6/isolated-campaigns-20261024T033541.967693Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 456,
+      "target": "../../results/p6/measurement-quiescence-ac.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 462,
+      "target": "../../results/p6/pilot-response.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 469,
+      "target": "../../results/p6/auditor-path-fix/compatibility.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 470,
+      "target": "../../results/p6/auditor-path-fix/independent-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 485,
+      "target": "../../results/p6/auto-thresholds.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 487,
+      "target": "../../results/p6/protocol-freeze.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 536,
+      "target": "../../results/p6/pause-20261025.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 551,
+      "target": "../../results/p6/resume-after-pause.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 576,
+      "target": "../../results/p6/auditor-t5-compatibility/before.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 598,
+      "target": "../../results/p6/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 599,
+      "target": "../report/results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 600,
+      "target": "../../results/p6/closeout-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 642,
+      "target": "../../results/p7/authorization.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 642,
+      "target": "../../results/p6/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 642,
+      "target": "../../results/p7/baseline.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 644,
+      "target": "../../results/p7/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 644,
+      "target": "../../results/p6/p7-study.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 648,
+      "target": "../../results/p7/timing-clarification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 655,
+      "target": "../../results/p7/runtime-quiescence-rule.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 655,
+      "target": "../../results/p7/runtime-campaign.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 655,
+      "target": "../../results/p7/runtime-quiescence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 657,
+      "target": "../../results/p7/gate-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 657,
+      "target": "../report/results_layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 659,
+      "target": "../../results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 664,
+      "target": "../../results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 666,
+      "target": "../report/REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 666,
+      "target": "../report/REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 668,
+      "target": "../../results/p8/acceptance-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 680,
+      "target": "../report/REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 681,
+      "target": "../../audit/AUDIT_REPORT.md#17-approved-remediation-closeout--2026-10-26",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 692,
+      "target": "../../audit/remediation/acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 693,
+      "target": "../../audit/remediation/checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 703,
+      "target": "RESEARCH.md#9-f-01-research-work-budgeted-replay-and-tail-polling--2026-10-26",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 704,
+      "target": "../../results/f01/baseline.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 716,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 735,
+      "target": "../report/POLL_BUDGET_RESULTS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 739,
+      "target": "../../results/f01/acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 740,
+      "target": "../../results/f01/checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/PROGRESS.md",
+      "line": 741,
+      "target": "../../results/f01/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 473,
+      "target": "../../results/p0/build-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 475,
+      "target": "../../results/p0/environment-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 477,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 481,
+      "target": "../../results/p1/python-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 481,
+      "target": "../../results/p1/cpp-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 483,
+      "target": "../../results/p1/acquisition-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 483,
+      "target": "../../data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 485,
+      "target": "../../results/data/itch_20191230_counts_cpp.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 485,
+      "target": "../../results/p1/cpp-full-day-consistency.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 489,
+      "target": "../../results/p1/review-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 491,
+      "target": "../../results/p1/fuzz-segmented-notes.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 491,
+      "target": "../../results/p1/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 493,
+      "target": "../../results/p1/fuzz-F2-real-seed.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 493,
+      "target": "../../results/p1/traceability.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 498,
+      "target": "../../results/p4/memory-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 500,
+      "target": "../../results/p4/engine-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 506,
+      "target": "../../results/p5/merge-sources.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 519,
+      "target": "../../results/p5/pilot-method.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 520,
+      "target": "../../results/p5/assembly-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 524,
+      "target": "../../results/p5/cachegrind-sources.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 547,
+      "target": "STUDY_PLAN.md#5-f-01-study-and-review-plan--2026-10-26",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 548,
+      "target": "../report/REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 586,
+      "target": "../../audit/AUDIT_REPORT.md#165-the-single-feature-worth-adding-work-budgeted-replay-and-tail-polling",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 592,
+      "target": "../../src/tiplog/engine/engine.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 593,
+      "target": "../../src/tiplog/engine/engine.cpp",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 596,
+      "target": "../../src/tiplog/index/index.cpp",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 597,
+      "target": "../../src/tiplog/merge/kernels.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 598,
+      "target": "../../src/tiplog/engine/engine.cpp",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 854,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 859,
+      "target": "../../results/f01/baseline.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 860,
+      "target": "../../results/f01/source-freeze-final.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 864,
+      "target": "../../results/f01/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/RESEARCH.md",
+      "line": 865,
+      "target": "../../results/f01/study-plan-final.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/STUDY_PLAN.md",
+      "line": 3,
+      "target": "PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/STUDY_PLAN.md",
+      "line": 219,
+      "target": "RESEARCH.md#9-f-01-research-work-budgeted-replay-and-tail-polling--2026-10-26",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/STUDY_PLAN.md",
+      "line": 304,
+      "target": "../report/POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/STUDY_PLAN.md",
+      "line": 305,
+      "target": "../../results/f01/source-freeze-final.json",
+      "exists": true
+    },
+    {
+      "document": "docs/plan/STUDY_PLAN.md",
+      "line": 306,
+      "target": "../../results/f01/study-plan-final.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 18,
+      "target": "../../src/tiplog/engine/engine.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 115,
+      "target": "../../results/f01/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 116,
+      "target": "../../results/f01/acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 117,
+      "target": "../../results/f01/checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 118,
+      "target": "POLL_BUDGET_RESULTS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 149,
+      "target": "../plan/RESEARCH.md#9-f-01-research-work-budgeted-replay-and-tail-polling--2026-10-26",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 150,
+      "target": "../../results/f01/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 152,
+      "target": "../../results/f01/baseline.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET.md",
+      "line": 185,
+      "target": "POLL_BUDGET_RESULTS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 5,
+      "target": "POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 9,
+      "target": "../../results/f01/study-plan-final.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 9,
+      "target": "../../results/f01/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 9,
+      "target": "../../results/f01/studies/final-20261027/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 9,
+      "target": "../../results/f01/studies/final-20261027/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 11,
+      "target": "../../results/f01/studies/final-20261027/normalization.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 23,
+      "target": "../../results/f01/studies/final-20261027/contracts.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 48,
+      "target": "../../results/f01/figures/final-20261027-v2/poll-budget-responsiveness.svg",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 83,
+      "target": "../../results/f01/studies/final-20261027/resource-boundary.jsonl",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 85,
+      "target": "../../results/f01/figures/final-20261027-v2/poll-budget-cost.svg",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 95,
+      "target": "../../results/f01/figures/final-20261027-v2/poll-budget-scheduling.svg",
+      "exists": true
+    },
+    {
+      "document": "docs/report/POLL_BUDGET_RESULTS.md",
+      "line": 114,
+      "target": "../../results/f01/figures/final-20261027-v2/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 4,
+      "target": "REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 6,
+      "target": "POLL_BUDGET.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 14,
+      "target": "REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 15,
+      "target": "results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 16,
+      "target": "results_layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 54,
+      "target": "../../data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 56,
+      "target": "../../results/p1/cc6-reconciliation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 64,
+      "target": "../plan/RESEARCH.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 79,
+      "target": "../plan/ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 97,
+      "target": "../plan/ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 101,
+      "target": "../../src/tiplog/engine/engine.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 103,
+      "target": "../../src/tiplog/ring/ring.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 107,
+      "target": "../../src/tiplog/index/index.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 112,
+      "target": "../../src/tiplog/merge/kernels.hpp",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 118,
+      "target": "../../results/p6/auto-thresholds.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 124,
+      "target": "../plan/VALIDATION_PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 128,
+      "target": "../../results/p7/final-release-tests-20261025T155552.324180Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 128,
+      "target": "../../results/p7/final-asan-ubsan-tests-20261025T155555.617470Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 128,
+      "target": "../../results/p7/final-python-p7-20261025T155605.212269Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 129,
+      "target": "../../results/p6/CC2-all-configurations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 130,
+      "target": "../../results/p1/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 130,
+      "target": "../../results/p6/fuzz-prefix-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 131,
+      "target": "../../results/p6/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 132,
+      "target": "../../results/p7/cc5-release.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 132,
+      "target": "../../results/p7/cc5-asan-ubsan.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 133,
+      "target": "../../results/p1/cc6-reconciliation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 134,
+      "target": "../../results/p7/figures-all-final-20261025T154953.610882Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 134,
+      "target": "../../results/p7/figure-extension-compatibility.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 135,
+      "target": "../../results/p1/data-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 136,
+      "target": "../../results/p6/rc3-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 142,
+      "target": "../../results/p7/p7-source-map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 145,
+      "target": "../../results/p7/gate-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 150,
+      "target": "results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 171,
+      "target": "results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 171,
+      "target": "../../results/derived/tip-summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 177,
+      "target": "../../results/figures/F06_merge_cost_vs_k.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 177,
+      "target": "../../results/figures/F07_merge_run_length.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 180,
+      "target": "../../results/figures/F08_publish_index_cost.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 187,
+      "target": "../../results/figures/F09_catchup_breadth.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 188,
+      "target": "../../results/figures/F10_replay_work.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 192,
+      "target": "../../results/figures/F11_many_readers_cpu.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 196,
+      "target": "../../results/figures/F12_scan_index_crossover.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 199,
+      "target": "../../results/figures/F13_index_memory_slack.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 205,
+      "target": "results_layout.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 205,
+      "target": "../plan/ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 236,
+      "target": "../../results/p7/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 242,
+      "target": "../../results/p7/worked-example.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 242,
+      "target": "../../results/figures/F17_layout_worked_example.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 257,
+      "target": "../../results/derived/layout-summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 257,
+      "target": "../../results/p7/gate-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 273,
+      "target": "../../results/figures/F16_layout_gaps_scaling.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 277,
+      "target": "../../results/figures/F14_layout_class_amplification.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 281,
+      "target": "../../results/figures/F15_layout_tradeoff.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 284,
+      "target": "../../results/figures/F18_layout_hierarchy.png",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 289,
+      "target": "../../results/p7/runtime-campaign.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 290,
+      "target": "../../results/p7/runtime-quiescence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 317,
+      "target": "../plan/RESEARCH.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 347,
+      "target": "../plan/IMPLEMENTATION_PLAN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 370,
+      "target": "REPRODUCE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 380,
+      "target": "../../results/figures/p6-figures.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 381,
+      "target": "../../results/figures/p7-figures.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 381,
+      "target": "../../results/p7/phase-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 386,
+      "target": "../../configs/P6/",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 386,
+      "target": "../../results/p6/protocol-freeze.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 386,
+      "target": "../../results/p6/auto-thresholds.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 387,
+      "target": "../../results/p7/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 387,
+      "target": "../../results/p7/input-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 387,
+      "target": "../../results/p7/runtime-supplement.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 393,
+      "target": "../../py/requirements.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 394,
+      "target": "../../results/env/p0-environment.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 395,
+      "target": "../../results/env/p6-closeout-20261025.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 395,
+      "target": "../../results/env/p7.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 399,
+      "target": "../plan/PROGRESS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 403,
+      "target": "results_tip.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPORT.md",
+      "line": 409,
+      "target": "../../results/p7/runtime-quiescence-rule.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 4,
+      "target": "REMEDIATION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 11,
+      "target": "REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 24,
+      "target": "../../py/requirements.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 29,
+      "target": "../../results/env/p0-environment.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 29,
+      "target": "../../results/env/p7.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 53,
+      "target": "../../data/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 58,
+      "target": "../../results/p1/data-gate.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 58,
+      "target": "../../results/p1/cc6-reconciliation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 85,
+      "target": "../../results/p7/final-release-tests-20261025T155552.324180Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 86,
+      "target": "../../results/p7/final-asan-ubsan-tests-20261025T155555.617470Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 87,
+      "target": "../../results/p7/final-python-p7-20261025T155605.212269Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 101,
+      "target": "../../results/p6/CC2-all-configurations.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 113,
+      "target": "../../results/p1/fuzz-segmented-notes.md",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 113,
+      "target": "../../results/p1/fuzz-gate-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 114,
+      "target": "../../results/p6/fuzz-prefix-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 124,
+      "target": "../../results/p6/rc3-final-verified.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 134,
+      "target": "../../results/p7/cc5-release.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 134,
+      "target": "../../results/p7/cc5-asan-ubsan.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 135,
+      "target": "../../results/p7/worked-example.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 139,
+      "target": "../../configs/P6/matrix.toml",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 140,
+      "target": "../../results/p6/protocol-freeze.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 140,
+      "target": "../../results/p6/auto-thresholds.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 156,
+      "target": "../../results/p6/measurement-quiescence-resume.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 157,
+      "target": "../../results/p6/closeout-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 161,
+      "target": "../../results/p7/protocol.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 171,
+      "target": "../../results/derived/layout-summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 171,
+      "target": "../../results/derived/layout-global.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 185,
+      "target": "../../results/p7/runtime-quiescence-rule.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 186,
+      "target": "../../results/p7/runtime-campaign.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 186,
+      "target": "../../results/p7/runtime-quiescence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 197,
+      "target": "../../results/p7/figures-all-final-20261025T154953.610882Z.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 198,
+      "target": "../../results/p7/figure-extension-compatibility.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 208,
+      "target": "../../results/p7/gate-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 211,
+      "target": "../../results/p8/acceptance-evidence.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 230,
+      "target": "../../results/f01/baseline.json",
+      "exists": true
+    },
+    {
+      "document": "docs/report/REPRODUCE.md",
+      "line": 231,
+      "target": "../../results/f01/source-freeze-final.json",
+      "exists": true
+    }
+  ]
+}

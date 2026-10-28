@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-10-25T14:07:53.128964+00:00",
+  "supplies": {
+    "ADP1": {
+      "online": "1",
+      "type": "Mains"
+    },
+    "BAT0": {
+      "type": "Battery",
+      "capacity": "100",
+      "status": "Full"
+    }
+  },
+  "boot_id": "ecbd7ec6-cf5f-427f-9914-fe3b430238ec",
+  "cpu2_governor": "powersave",
+  "affinity_observer": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "machine_settings_changed": false,
+  "note": "Fresh read-only observation on resumed P7 session. AC connected; no concurrent P6 campaign. P7 solver wall times diagnostic, first two batches from earlier session preserved."
+}

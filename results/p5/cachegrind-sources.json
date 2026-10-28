@@ -1,0 +1,44 @@
+{
+  "accessed_utc": "2026-10-18T16:08:23.366433+00:00",
+  "material": "Installed original Valgrind manual, Cachegrind chapter",
+  "path": "/usr/share/doc/valgrind/html/cg-manual.html",
+  "sha256": "0e96b48c8d563e92a0c71dcd1f26bea0e927b86b60d05920ba87b8dfde506868",
+  "version": "valgrind-3.26.0",
+  "sections_inspected": [
+    {
+      "section": "5.1 Overview; 5.2 intro and 5.2.1/5.2.2",
+      "html_lines": [
+        67,
+        166
+      ]
+    },
+    {
+      "section": "5.2.11 cache/branch event meanings; 5.3 command-line options",
+      "html_lines": [
+        668,
+        820
+      ]
+    },
+    {
+      "section": "5.8.1 cache simulation specifics",
+      "html_lines": [
+        959,
+        1060
+      ]
+    },
+    {
+      "section": "5.8.2 branch simulation and start of5.8.3 accuracy limitations",
+      "html_lines": [
+        1061,
+        1110
+      ]
+    }
+  ],
+  "decisions": [
+    "Explicit --cache-sim=yes and --branch-sim=yes: current installed defaults are off",
+    "Reduced whole-program diagnostic including setup, input generation and all selected merges, never hot-loop hardware counters",
+    "Retain actual simulated cache geometry from output, not infer modern hardware behavior",
+    "Instruction counts follow Valgrind semantics; REP behavior may differ from hardware counters"
+  ],
+  "status": "source_inspected_execution_pending"
+}

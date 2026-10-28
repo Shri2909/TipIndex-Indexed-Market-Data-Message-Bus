@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "preset": "asan-ubsan",
+  "seeds_per_campaign": 200,
+  "operations_per_seed": 10000,
+  "legacy_pairs": [
+    [
+      "scan",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "binheap"
+    ],
+    [
+      "indexed",
+      "quad"
+    ],
+    [
+      "indexed",
+      "loser"
+    ],
+    [
+      "auto",
+      "stdpq"
+    ],
+    [
+      "auto",
+      "binheap"
+    ],
+    [
+      "auto",
+      "quad"
+    ],
+    [
+      "auto",
+      "loser"
+    ]
+  ],
+  "legacy_operations": 18000000,
+  "budget_operations": 2000000,
+  "records": [
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-scan-stdpq-20261027T124844.251624Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-indexed-stdpq-20261027T125005.262051Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-indexed-binheap-20261027T125118.015552Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-indexed-quad-20261027T125244.525733Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-indexed-loser-20261027T125401.915038Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-auto-stdpq-20261027T125517.559676Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-auto-binheap-20261027T125630.262444Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-auto-quad-20261027T125742.416831Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-diff-asan-ubsan-auto-loser-20261027T125912.674358Z.json",
+    "audit/independent-20261027T041900Z/evidence/final-budget-diff-asan-ubsan-20261027T130042.544289Z.json"
+  ],
+  "legacy_digest": 13990326321313093666,
+  "budget_result": {
+    "status": "passed",
+    "seed_base": 1,
+    "seeds": 200,
+    "operations_per_seed": 10000,
+    "operations": 2000000,
+    "publications": 687556,
+    "replay_opens": 164113,
+    "tail_opens": 163940,
+    "polls": 1026101,
+    "finite_polls": 979766,
+    "zero_polls": 79617,
+    "inspection_yields": 63842,
+    "delivered": 68116,
+    "inspections": 237869,
+    "errors": 521568,
+    "pad_inspections": 12783,
+    "mode_kernel_mask": 4095,
+    "digest_fnv1a64": 10525489230088795740
+  },
+  "cpp_input_set": "4c6b5e59785282d4d936331c1487045b5ffb10ceb07e475db33a321bd585c595"
+}

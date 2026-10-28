@@ -1,0 +1,336 @@
+{
+  "auditor_sha256": "200c49939d5dee754e2ec7aaae8ef46c5b7eb90f190b3c18245aa1e73ba16371",
+  "checks": 2218,
+  "completed_processes": [
+    {
+      "process": "real-C1073741824-B1024-warmup-attempt00",
+      "rep": -1,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep00-attempt00",
+      "rep": 0,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep01-attempt00",
+      "rep": 1,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep02-attempt00",
+      "rep": 2,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep03-attempt00",
+      "rep": 3,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep04-attempt00",
+      "rep": 4,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep05-attempt00",
+      "rep": 5,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep06-attempt00",
+      "rep": 6,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep07-attempt00",
+      "rep": 7,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep08-attempt00",
+      "rep": 8,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep09-attempt00",
+      "rep": 9,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep10-attempt00",
+      "rep": 10,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep11-attempt00",
+      "rep": 11,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep12-attempt00",
+      "rep": 12,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep13-attempt00",
+      "rep": 13,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep14-attempt00",
+      "rep": 14,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep15-attempt00",
+      "rep": 15,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep16-attempt00",
+      "rep": 16,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep17-attempt00",
+      "rep": 17,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep18-attempt00",
+      "rep": 18,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep19-attempt00",
+      "rep": 19,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep20-attempt00",
+      "rep": 20,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep21-attempt00",
+      "rep": 21,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep22-attempt00",
+      "rep": 22,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep23-attempt00",
+      "rep": 23,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep24-attempt00",
+      "rep": 24,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep25-attempt00",
+      "rep": 25,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep26-attempt00",
+      "rep": 26,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep27-attempt00",
+      "rep": 27,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep28-attempt00",
+      "rep": 28,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    },
+    {
+      "process": "real-C1073741824-B1024-rep29-attempt00",
+      "rep": 29,
+      "status": "failed",
+      "workload": "real-C1073741824-B1024"
+    }
+  ],
+  "directory": "/home/abc/Desktop/Jane Street/results/raw/P6/campaign-20261024/pilot",
+  "distinct_files_hashed": 155,
+  "failures": [
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-warmup-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep00-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep01-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep02-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep03-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep04-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep05-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep06-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep07-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep08-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep09-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep10-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep11-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep12-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep13-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep14-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep15-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep16-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep17-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep18-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep19-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep20-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep21-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep22-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep23-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep24-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep25-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep26-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep27-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep28-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    },
+    {
+      "check": "real-C1073741824-B1024/real-C1073741824-B1024-rep29-attempt00:raw prefill/memory metadata retained",
+      "detail": null
+    }
+  ],
+  "measured_repetitions": 30,
+  "normalized_outcomes_including_warmup": {
+    "ok": 31
+  },
+  "plan": "/home/abc/Desktop/Jane Street/results/raw/P6/prepared-pilot/plan.json",
+  "plan_sha256": "a1f25e6ac76147896ab7a6bf61d300fe73532406b6d270e123dd308c6dd2a705",
+  "raw_request_outcomes_including_warmup": {
+    "ok": 31
+  },
+  "saved_warmups_per_configuration": 1,
+  "schema": 1,
+  "scope": "Prepared-plan coverage and independently expected saved outcomes; no engine execution, no measurement, and no claim of complete approved matrix unless the supplied prepared plan has separately passed its matrix review",
+  "status": "failed",
+  "suite": "pilot",
+  "unconfirmed_raw_attempts": [],
+  "verified_utc": "2026-10-24T03:52:08.420518+00:00"
+}

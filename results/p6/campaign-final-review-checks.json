@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "executed_utc": "2026-10-24T03:34:54.016040+00:00",
+  "scope": "Temporary artifact fixtures only; no benchmarks",
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "results/p6/campaign-final-review-fixtures.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"scope\": \"temporary artifact-format and recovery fixtures only; no measurements\",\n  \"checks\": [\n    \"partial concatenation retained and replaced completely\",\n    \"accepted concatenation reused by exact ordered source digest\",\n    \"owned session preferred over mutable latest pointer\",\n    \"bound interrupted child reused\",\n    \"narrow pre-binding interruption recovered\",\n    \"unattributable interruption rejected\",\n    \"explicit process failure retained once by append identity\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "scripts/check_p6_experiments.py",
+        "--self-test"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"passed\", \"fixture_scope\": \"temporary synthetic artifact validation only; no experiments executed\", \"successful_fixture_processes\": 11, \"successful_fixture_checks\": 2476, \"tampering_rejected\": [\"raw output digest tamper\", \"misleading first-reader group digest\", \"subscription dictionary semantic/hash tamper\", \"allocator arithmetic tamper\", \"missing required process repetition\", \"reused process PID\"]}\n",
+      "stderr": ""
+    }
+  ]
+}

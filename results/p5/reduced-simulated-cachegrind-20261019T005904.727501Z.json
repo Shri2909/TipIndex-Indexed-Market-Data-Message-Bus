@@ -1,0 +1,33 @@
+{
+  "label": "reduced-simulated-cachegrind",
+  "argv": [
+    "taskset",
+    "-c",
+    "2",
+    "valgrind",
+    "--tool=cachegrind",
+    "--cache-sim=yes",
+    "--branch-sim=yes",
+    "--cachegrind-out-file=results/raw/P5-cachegrind/reduced-20261019.out",
+    "--log-file=results/raw/P5-cachegrind/reduced-20261019.log",
+    "build/release/merge_bench",
+    "--profile=pilot",
+    "--diagnostic",
+    "--outputs=4096",
+    "--touch-bytes=1048576",
+    "--quad-padding-both"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261019T005904.727501Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p5/reduced-simulated-cachegrind-20261019T005904.727501Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.4596340760000146
+}

@@ -1,0 +1,25 @@
+{
+  "label": "debug-final-ctest",
+  "argv": [
+    "ctest",
+    "--preset",
+    "debug",
+    "--output-on-failure",
+    "--no-tests=error",
+    "--output-junit",
+    "/home/abc/Desktop/Jane Street/audit/remediation/debug.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:35:02.636456+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/debug-final-ctest-20261026T083502.636236Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 18.655417402000012,
+  "log_sha256": "6f8070bd174d9ca7b8a81c1e369d0c47089d2bd63d5e54da0cc0a4ea86f5ff10"
+}

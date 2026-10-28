@@ -1,0 +1,18 @@
+{
+  "debug": {
+    "passed": true,
+    "artifact_count": 36
+  },
+  "release": {
+    "passed": true,
+    "artifact_count": 37
+  },
+  "asan-ubsan": {
+    "passed": true,
+    "artifact_count": 36
+  },
+  "fuzz": {
+    "passed": true,
+    "artifact_count": 40
+  }
+}

@@ -1,0 +1,57 @@
+Running main() from /home/abc/Desktop/Jane Street/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 24 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 24 tests from PollBudget
+[ RUN      ] PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture
+[       OK ] PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture (0 ms)
+[ RUN      ] PollBudget.V03EmptyFutureFinishedAndMaximumCaps
+[       OK ] PollBudget.V03EmptyFutureFinishedAndMaximumCaps (0 ms)
+[ RUN      ] PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection
+[       OK ] PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection (0 ms)
+[ RUN      ] PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+[       OK ] PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress (67 ms)
+[ RUN      ] PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+[       OK ] PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating (0 ms)
+[ RUN      ] PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress
+[       OK ] PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress (0 ms)
+[ RUN      ] PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+[       OK ] PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges (0 ms)
+[ RUN      ] PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted
+[       OK ] PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted (0 ms)
+[ RUN      ] PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData
+[       OK ] PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData (0 ms)
+[ RUN      ] PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels
+[       OK ] PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels (7 ms)
+[ RUN      ] PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry
+[       OK ] PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry (0 ms)
+[ RUN      ] PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires
+[       OK ] PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires (0 ms)
+[ RUN      ] PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress
+[       OK ] PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress (2 ms)
+[ RUN      ] PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime
+[       OK ] PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime (0 ms)
+[ RUN      ] PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint
+[       OK ] PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint (0 ms)
+[ RUN      ] PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary
+[       OK ] PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary (0 ms)
+[ RUN      ] PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds
+[       OK ] PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds (0 ms)
+[ RUN      ] PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors
+[       OK ] PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors (0 ms)
+[ RUN      ] PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess
+[       OK ] PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess (0 ms)
+[ RUN      ] PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch
+[       OK ] PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch (0 ms)
+[ RUN      ] PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries
+[       OK ] PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries (0 ms)
+[ RUN      ] PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions
+[       OK ] PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions (0 ms)
+[ RUN      ] PollBudget.V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch
+[       OK ] PollBudget.V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch (0 ms)
+[ RUN      ] PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix
+[       OK ] PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix (0 ms)
+[----------] 24 tests from PollBudget (80 ms total)
+
+[----------] Global test environment tear-down
+[==========] 24 tests from 1 test suite ran. (80 ms total)
+[  PASSED  ] 24 tests.

@@ -1,0 +1,341 @@
+[
+ {
+  "id": "M01",
+  "file": "src/tiplog/ring/ring.cpp",
+  "desc": "ring check_invariants vacuous",
+  "killed_by_project": [],
+  "killed_by_audit": [
+   "audit_checker_test"
+  ],
+  "outcome": "survived_project_killed_audit",
+  "seconds": 8.8
+ },
+ {
+  "id": "M02",
+  "file": "src/tiplog/index/index.cpp",
+  "desc": "index check_invariants vacuous",
+  "killed_by_project": [],
+  "killed_by_audit": [
+   "audit_checker_test"
+  ],
+  "outcome": "survived_project_killed_audit",
+  "seconds": 9.0
+ },
+ {
+  "id": "M03",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "engine check_invariants vacuous",
+  "killed_by_project": [],
+  "killed_by_audit": [
+   "audit_checker_test"
+  ],
+  "outcome": "survived_project_killed_audit",
+  "seconds": 9.3
+ },
+ {
+  "id": "M04",
+  "file": "src/tiplog/ring/ring.cpp",
+  "desc": "seek_after off-by-one",
+  "killed_by_project": [
+   "tiplog_ring_test",
+   "tiplog_engine_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test",
+   "tiplog_bench_contract_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 7.3
+ },
+ {
+  "id": "M05",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "FellBehind on equality",
+  "killed_by_project": [
+   "tiplog_engine_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test",
+   "tiplog_bench_contract_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 8.2
+ },
+ {
+  "id": "M06",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "drop completed-checkpoint Done precheck",
+  "killed_by_project": [
+   "tiplog_engine_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 7.6
+ },
+ {
+  "id": "M07",
+  "file": "src/tiplog/index/index.cpp",
+  "desc": "reclaim one entry early",
+  "killed_by_project": [
+   "tiplog_index_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 7.8
+ },
+ {
+  "id": "M08",
+  "file": "src/tiplog/merge/kernels.hpp",
+  "desc": "BinHeap wrong child",
+  "killed_by_project": [
+   "tiplog_engine_merge_test",
+   "tiplog_merge_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 20.5
+ },
+ {
+  "id": "M09",
+  "file": "src/tiplog/topics/registry.cpp",
+  "desc": "partition depth rule",
+  "killed_by_project": [
+   "tiplog_engine_test",
+   "tiplog_engine_merge_test",
+   "tiplog_topics_subs_test",
+   "tiplog_bench_contract_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test",
+   "audit_checker_test"
+  ],
+  "outcome": "killed",
+  "seconds": 20.6
+ },
+ {
+  "id": "M10",
+  "file": "src/tiplog/ring/ring.cpp",
+  "desc": "PAD on exact fit",
+  "killed_by_project": [
+   "tiplog_ring_test",
+   "tiplog_engine_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 7.8
+ },
+ {
+  "id": "M11",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "pressure evicts one record too few",
+  "killed_by_project": [
+   "tiplog_engine_index_test"
+  ],
+  "killed_by_audit": [
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 9.1
+ },
+ {
+  "id": "M12",
+  "file": "src/tiplog/trace/reader.cpp",
+  "desc": "accept record flags",
+  "killed_by_project": [
+   "tiplog_trace_test"
+  ],
+  "killed_by_audit": [],
+  "outcome": "killed",
+  "seconds": 10.6
+ },
+ {
+  "id": "M13",
+  "file": "src/tiplog/trace/itch_walker.cpp",
+  "desc": "skip ITCH length check",
+  "killed_by_project": [
+   "tiplog_trace_test"
+  ],
+  "killed_by_audit": [],
+  "outcome": "killed",
+  "seconds": 9.2
+ },
+ {
+  "id": "M14",
+  "file": "src/tiplog/index/index.cpp",
+  "desc": "never seal full block",
+  "killed_by_project": [
+   "tiplog_index_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test",
+   "audit_checker_test"
+  ],
+  "outcome": "killed",
+  "seconds": 6.7
+ },
+ {
+  "id": "M15",
+  "file": "src/tiplog/ring/ring.cpp",
+  "desc": "stale fill bytes",
+  "killed_by_project": [
+   "tiplog_ring_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 6.8
+ },
+ {
+  "id": "M16",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "future tail by one accepted",
+  "killed_by_project": [
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [],
+  "outcome": "killed",
+  "seconds": 10.1
+ },
+ {
+  "id": "M17",
+  "file": "src/tiplog/subs/compiled.cpp",
+  "desc": "depth-2 subtree marked wide",
+  "killed_by_project": [
+   "tiplog_engine_merge_test",
+   "tiplog_topics_subs_test",
+   "tiplog_bench_contract_test"
+  ],
+  "killed_by_audit": [],
+  "outcome": "killed",
+  "seconds": 10.7
+ },
+ {
+  "id": "M18",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "tail reopen error kind",
+  "killed_by_project": [
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [],
+  "outcome": "killed",
+  "seconds": 10.7
+ },
+ {
+  "id": "M19",
+  "file": "src/tiplog/merge/kernels.hpp",
+  "desc": "loser tree inverted",
+  "killed_by_project": [
+   "tiplog_engine_merge_test",
+   "tiplog_merge_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 20.1
+ },
+ {
+  "id": "M20",
+  "file": "src/tiplog/subs/compiled.cpp",
+  "desc": "exact covered by equal subtree only",
+  "killed_by_project": [
+   "tiplog_engine_test",
+   "tiplog_engine_index_test",
+   "tiplog_engine_merge_test",
+   "tiplog_topics_subs_test",
+   "tiplog_bench_contract_test"
+  ],
+  "killed_by_audit": [
+   "audit_engine_test",
+   "audit_pressure_test"
+  ],
+  "outcome": "killed",
+  "seconds": 22.8
+ },
+ {
+  "id": "M21",
+  "file": "src/tiplog/index/index.cpp",
+  "desc": "seek ignores index tail (expected equivalent)",
+  "killed_by_project": [],
+  "killed_by_audit": [],
+  "outcome": "survived",
+  "seconds": 9.6
+ },
+ {
+  "id": "M22",
+  "file": "src/tiplog/engine/engine.cpp",
+  "desc": "accept non-PAD supplied tail boundary (expected equivalent)",
+  "killed_by_project": [],
+  "killed_by_audit": [],
+  "outcome": "survived",
+  "seconds": 10.3
+ },
+ {
+  "id": "M23",
+  "file": "src/tiplog/ring/ring.cpp",
+  "desc": "position limit off-by-one",
+  "killed_by_project": [
+   "tiplog_ring_test",
+   "tiplog_engine_merge_test"
+  ],
+  "killed_by_audit": [],
+  "outcome": "killed",
+  "seconds": 10.1
+ },
+ {
+  "id": "M24",
+  "file": "src/tiplog/layout/model.cpp",
+  "desc": "KM cuts one extra child at equality",
+  "killed_by_project": [
+   "tiplog_layout_test"
+  ],
+  "killed_by_audit": [
+   "audit_layout_test"
+  ],
+  "outcome": "killed",
+  "seconds": 9.2
+ },
+ {
+  "id": "M25",
+  "file": "src/tiplog/layout/exact.cpp",
+  "desc": "DP forgets closing fee for child stores",
+  "killed_by_project": [
+   "tiplog_layout_test"
+  ],
+  "killed_by_audit": [
+   "audit_layout_test"
+  ],
+  "outcome": "killed",
+  "seconds": 8.7
+ }
+]

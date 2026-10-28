@@ -1,0 +1,58 @@
+{
+  "at_utc": "2026-10-25T02:55:38.092240+00:00",
+  "builds_finished": true,
+  "conversion_finished": true,
+  "fuzz_finished": true,
+  "limits": "Visible process snapshot plus saved operator declaration; no exclusive-host claim.",
+  "optimizer_not_started": true,
+  "other_agents_quiescent": true,
+  "power": {
+    "ac_online": true,
+    "supplies": {
+      "ADP1": {
+        "capacity": null,
+        "online": "1",
+        "status": null,
+        "type": "Mains"
+      },
+      "BAT0": {
+        "capacity": "100",
+        "online": null,
+        "status": "Full",
+        "type": "Battery"
+      }
+    }
+  },
+  "research_quiescent": true,
+  "resume_context": {
+    "agents": "Claude Code is the only agent on this campaign; the VS Code Codex app-server processes have no child processes.",
+    "background_services": "predcup-recorder.service and predcup-stops.service (another project, user systemd) are running. The user journal shows both active for the whole previous boot (2026-10-24 09:01:32 to 2026-10-25 00:31:08 IST), so they were present during every committed P6 evaluation round. Left untouched.",
+    "boot_id": "25b4de3e-f0c9-40e7-a570-e5862d27868d",
+    "cpu_isolation": "isolcpus/nohz_full/rcu_nocbs=4,5 comes from /etc/default/grub (mtime 2026-07-14). Earlier P6 environment records do not save the cmdline, but their observer affinity [6] matches CPUs 4-5 being isolated then too.",
+    "frozen_identities": "All campaign-provenance (141) and evaluation provenance (121) entries, plan, matrix, protocol freeze, thresholds and binary re-hashed and matched before writing this record.",
+    "kernel_cmdline": "BOOT_IMAGE=/boot/vmlinuz-7.0.0-38-generic root=UUID=eddc1ba6-b7db-478c-8c64-0cc31e9883b4 ro isolcpus=4,5 nohz_full=4,5 rcu_nocbs=4,5 quiet splash crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M",
+    "kernel_release": "7.0.0-38-generic",
+    "per_process_aslr_probe_returncode": 0,
+    "reason": "User instruction \"resume phase 6\" after the saved 2026-10-25 user pause"
+  },
+  "status": "passed",
+  "tests_finished": true,
+  "visible_processes": {
+    "at_utc": "2026-10-25T02:55:38.078344+00:00",
+    "excluded_runner_ancestors": [
+      1,
+      1900,
+      2191,
+      7878,
+      8254,
+      9789,
+      10303,
+      10305
+    ],
+    "limit": "Visible process snapshot plus saved operator declaration; no host-wide isolation claim.",
+    "offenders": [],
+    "pid_namespace": "pid:[4026531836]",
+    "proc1_comm": "systemd",
+    "read_errors": []
+  }
+}

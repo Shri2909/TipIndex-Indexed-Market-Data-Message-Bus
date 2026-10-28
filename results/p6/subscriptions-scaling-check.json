@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "date": "2026-10-23",
+  "recorded_utc": "2026-10-23T14:38:48.247254+00:00",
+  "scope": "Subscription scaling repair builds and functional tests; not a Phase6 acceptance gate",
+  "files": [
+    {
+      "path": "src/tiplog/subs/compiled.cpp",
+      "bytes": 9771,
+      "sha256": "a0d9c9cbc3d0b164fcc9c6db3e1c21f77111448e56de0ed65069aea47079c794"
+    },
+    {
+      "path": "tests/unit/topics_subs_test.cpp",
+      "bytes": 19717,
+      "sha256": "f4e49ddf559681140fcb7fa5263262e2acec0cb0918d96678600d4a79598b12d"
+    },
+    {
+      "path": "build/release/tiplog_bench",
+      "bytes": 5191776,
+      "sha256": "b8237876094a020779093dec1c61eb7294fd2b27a155a8d160bc410c64652bf3"
+    },
+    {
+      "path": "build/asan-ubsan/tiplog_bench",
+      "bytes": 5587152,
+      "sha256": "6ec19f7679174042639884c9cd26dde6ff222e7fbf44c5ea6bd32c35d82fbc03"
+    },
+    {
+      "path": "build/fuzz/fuzz_engine_ops",
+      "bytes": 5750944,
+      "sha256": "257cc8980820846a6fc01e119718e147689c003266f50614bbe916014a90e9bd"
+    }
+  ],
+  "primary_headers_inspected": [
+    {
+      "path": "/usr/include/c++/15/bits/unordered_set.h",
+      "bytes": 71951,
+      "sha256": "334ab2482923e6875ad94913c492c5f52082bd841bf2b7d5feaf42234be05594"
+    },
+    {
+      "path": "/usr/include/c++/15/string_view",
+      "bytes": 28245,
+      "sha256": "76a5b73f62754dd766cc7c9322b36dcdd921337ba958e5e2edd3f13bbadbdf55"
+    }
+  ],
+  "executed_checks": [
+    {
+      "path": "results/p6/subscriptions-scale-release-build-20261023T143650.663894Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "release",
+        "--parallel",
+        "2"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/subscriptions-scale-sanitizer-build-20261023T143650.677501Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "asan-ubsan",
+        "--parallel",
+        "2"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/subscriptions-scale-fuzz-build-20261023T143650.684936Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "fuzz",
+        "--parallel",
+        "2"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/subscriptions-scale-release-tests-20261023T143717.259593Z.json",
+      "argv": [
+        "ctest",
+        "--preset",
+        "release",
+        "-R",
+        "topics.subs"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/subscriptions-scale-sanitizer-tests-20261023T143725.549974Z.json",
+      "argv": [
+        "ctest",
+        "--preset",
+        "asan-ubsan",
+        "-R",
+        "topics.subs"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    }
+  ],
+  "pending_controller_acceptance": [
+    "affected full CC2 differential campaign",
+    "final-source timed F3",
+    "affected RC3 cross-compiler check",
+    "packed P100000 oracle regression"
+  ]
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/results/p6/request-precompile-check.py", line 153, in <module>
+    main()
+    ~~~~^^
+  File "/home/abc/Desktop/Jane Street/results/p6/request-precompile-check.py", line 94, in main
+    assert process.returncode == 0, process.stderr
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: tiplog_bench: record below configured minimum DATA size
+

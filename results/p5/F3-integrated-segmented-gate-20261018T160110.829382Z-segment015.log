@@ -1,0 +1,29 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191244
+INFO: Loaded 1 modules   (7274 inline 8-bit counters): 7274 [0x5b031017e898, 0x5b0310180502), 
+INFO: Loaded 1 PC tables (7274 PCs): 7274 [0x5b0310180508,0x5b031019cba8), 
+INFO:     1347 files found in tests/fuzz/corpus/ops_integrated
+INFO: seed corpus: files: 1347 min: 1b max: 65386b total: 3403842b rss: 34Mb
+#1024	pulse  cov: 2198 ft: 10427 corp: 661/209Kb exec/s: 256 rss: 456Mb
+#1348	INITED cov: 2199 ft: 11504 corp: 874/2222Kb exec/s: 30 rss: 730Mb
+#1639	REDUCE cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 32 rss: 795Mb L: 209/65386 MS: 1 EraseBytes-
+#1782	REDUCE cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 34 rss: 795Mb L: 288/65386 MS: 3 ChangeByte-EraseBytes-CopyPart-
+#1843	REDUCE cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 34 rss: 795Mb L: 2456/65386 MS: 1 EraseBytes-
+#1899	REDUCE cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 35 rss: 795Mb L: 102/65386 MS: 1 EraseBytes-
+#1917	REDUCE cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 35 rss: 795Mb L: 125/65386 MS: 3 InsertByte-CrossOver-EraseBytes-
+#2004	REDUCE cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 37 rss: 795Mb L: 2451/65386 MS: 2 ChangeBit-EraseBytes-
+#2048	pulse  cov: 2199 ft: 11504 corp: 874/2222Kb lim: 65536 exec/s: 37 rss: 795Mb
+#2103	REDUCE cov: 2199 ft: 11504 corp: 874/2221Kb lim: 65536 exec/s: 36 rss: 795Mb L: 385/65386 MS: 4 CrossOver-CopyPart-EraseBytes-EraseBytes-
+#2442	NEW    cov: 2199 ft: 11506 corp: 875/2226Kb lim: 65536 exec/s: 31 rss: 795Mb L: 4489/65386 MS: 4 CMP-ShuffleBytes-CopyPart-InsertRepeatedBytes- DE: "\377\377rCE\344\314\031"-
+#2863	REDUCE cov: 2199 ft: 11506 corp: 875/2226Kb lim: 65536 exec/s: 33 rss: 795Mb L: 366/65386 MS: 1 EraseBytes-
+#3129	REDUCE cov: 2199 ft: 11506 corp: 875/2226Kb lim: 65536 exec/s: 34 rss: 795Mb L: 268/65386 MS: 1 EraseBytes-
+#3244	DONE   cov: 2199 ft: 11506 corp: 875/2226Kb lim: 65536 exec/s: 33 rss: 795Mb
+###### Recommended dictionary. ######
+"\377\377rCE\344\314\031" # Uses: 86
+###### End of recommended dictionary. ######
+Done 3244 runs in 98 second(s)
+stat::number_of_executed_units: 3244
+stat::average_exec_per_sec:     33
+stat::new_units_added:          10
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              795

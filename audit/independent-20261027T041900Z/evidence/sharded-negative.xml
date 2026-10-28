@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="1"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="0"
+	timestamp="2026-10-28T06:47:42"
+	>
+	<testcase name="tools.cli_contracts" classname="tools.cli_contracts" time="0.968978" status="run">
+		<properties/>
+		<system-out>.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.710s
+
+OK
+</system-out>
+	</testcase>
+</testsuite>

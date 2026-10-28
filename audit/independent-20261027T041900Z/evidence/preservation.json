@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "historical_files": 4262,
+  "historical_bytes": 419564963,
+  "p6_raw_files": 5364,
+  "p6_raw_bytes": 4105957437,
+  "changed_files": [],
+  "head_unchanged": true,
+  "historical_inventory_sha256": "13b24ce91f4af5c100a58c8fb835a7ec1af999066846cac250bd93dba39158e9",
+  "p6_original_inventory_sha256": "bb55daf11302249e837cf0391ef2a7972d348ed2b633372d6df5271043b0c775"
+}

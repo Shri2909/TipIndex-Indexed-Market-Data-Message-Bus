@@ -1,0 +1,109 @@
+Test project /home/abc/Desktop/Jane Street/build/independent-layout-tools-final
+      Start  2: trace.TraceV05.GoldenHeaderDictionaryAndRecord
+ 1/52 Test  #2: trace.TraceV05.GoldenHeaderDictionaryAndRecord ........................................   Passed    0.01 sec
+      Start  3: trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics
+ 2/52 Test  #3: trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics ................................   Passed    0.01 sec
+      Start  4: trace.TraceV05.EveryTruncationRejected
+ 3/52 Test  #4: trace.TraceV05.EveryTruncationRejected ................................................   Passed    0.01 sec
+      Start  5: trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected
+ 4/52 Test  #5: trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected .............................   Passed    0.01 sec
+      Start  6: trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected
+ 5/52 Test  #6: trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected ................   Passed    0.01 sec
+      Start  7: trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired
+ 6/52 Test  #7: trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired ..........................   Passed    0.01 sec
+      Start  8: trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected
+ 7/52 Test  #8: trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected ..........................   Passed    0.01 sec
+      Start  9: trace.TraceV05.CanonicalUtf8PathsRequired
+ 8/52 Test  #9: trace.TraceV05.CanonicalUtf8PathsRequired .............................................   Passed    0.01 sec
+      Start 10: trace.TraceV05.TopicResourceBoundariesMatchRegistryContract
+ 9/52 Test #10: trace.TraceV05.TopicResourceBoundariesMatchRegistryContract ...........................   Passed    0.01 sec
+      Start 11: trace.TraceV05.FlagsPaddingAndTrailingBytesRejected
+10/52 Test #11: trace.TraceV05.FlagsPaddingAndTrailingBytesRejected ...................................   Passed    0.01 sec
+      Start 12: trace.TraceV05.FileMappingMoveAndRewind
+11/52 Test #12: trace.TraceV05.FileMappingMoveAndRewind ...............................................   Passed    0.01 sec
+      Start 13: trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries
+12/52 Test #13: trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries ...........................   Passed    0.01 sec
+      Start 14: trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected
+13/52 Test #14: trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected ....................   Passed    0.02 sec
+      Start 15: trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected
+14/52 Test #15: trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected .........................   Passed    0.01 sec
+      Start 16: trace.ItchWalkerV04.TimestampInversionsAndJson
+15/52 Test #16: trace.ItchWalkerV04.TimestampInversionsAndJson ........................................   Passed    0.01 sec
+      Start 17: trace.ItchWalkerV04.ErrorsIdentifyFrameByteOffsetIndependentOfChunking
+16/52 Test #17: trace.ItchWalkerV04.ErrorsIdentifyFrameByteOffsetIndependentOfChunking ................   Passed    0.01 sec
+      Start 21: driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder
+17/52 Test #21: driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder ....................   Passed    0.01 sec
+      Start 22: driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic
+18/52 Test #22: driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic .................   Passed    0.01 sec
+      Start 23: driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay
+19/52 Test #23: driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay ...............   Passed    0.01 sec
+      Start 24: driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit
+20/52 Test #24: driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit ............   Passed    0.01 sec
+      Start 25: driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications
+21/52 Test #25: driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications ........................   Passed    0.01 sec
+      Start 35: bench_contract.BenchDigest.Sha256EmptyAbcAndMillionA
+22/52 Test #35: bench_contract.BenchDigest.Sha256EmptyAbcAndMillionA ..................................   Passed    0.02 sec
+      Start 36: bench_contract.BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies
+23/52 Test #36: bench_contract.BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies ................   Passed    0.01 sec
+      Start 37: bench_contract.BenchDigest.SequenceEndianAndPayloadSink
+24/52 Test #37: bench_contract.BenchDigest.SequenceEndianAndPayloadSink ...............................   Passed    0.01 sec
+      Start 38: bench_contract.BenchPayloadMix.RejectsOverflowAndMalformedRowsBeforeSampling
+25/52 Test #38: bench_contract.BenchPayloadMix.RejectsOverflowAndMalformedRowsBeforeSampling ..........   Passed    0.01 sec
+      Start 39: bench_contract.BenchValidation.InjectedReplayDisagreementHasDistinctFailureType
+26/52 Test #39: bench_contract.BenchValidation.InjectedReplayDisagreementHasDistinctFailureType .......   Passed    0.01 sec
+      Start 40: bench_contract.BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts
+27/52 Test #40: bench_contract.BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts .......   Passed    0.02 sec
+      Start 41: bench_contract.BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts
+28/52 Test #41: bench_contract.BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts .................   Passed    0.02 sec
+      Start 42: bench_contract.BenchReplayWork.WrappedPadCountsOnlyInScanTraversal
+29/52 Test #42: bench_contract.BenchReplayWork.WrappedPadCountsOnlyInScanTraversal ....................   Passed    0.02 sec
+      Start 43: layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries
+30/52 Test #43: layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries ..........................   Passed    0.01 sec
+      Start 44: layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes
+31/52 Test #44: layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes ....................   Passed    0.01 sec
+      Start 45: layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores
+32/52 Test #45: layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores .....................   Passed    0.01 sec
+      Start 46: layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity
+33/52 Test #46: layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity .......   Passed    0.02 sec
+      Start 47: layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau
+34/52 Test #47: layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau ....................   Passed    0.01 sec
+      Start 48: layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale
+35/52 Test #48: layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale ............   Passed    0.01 sec
+      Start 49: layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow
+36/52 Test #49: layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow ..............   Passed    0.01 sec
+      Start 50: layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction
+37/52 Test #50: layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction ........................   Passed    0.01 sec
+      Start 51: layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget
+38/52 Test #51: layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget ...............................   Passed    0.01 sec
+      Start 52: layout.LayoutExact.ForwardParentIdsAndMultipleChildStages
+39/52 Test #52: layout.LayoutExact.ForwardParentIdsAndMultipleChildStages .............................   Passed    0.01 sec
+      Start 53: layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit
+40/52 Test #53: layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit ......................   Passed    0.01 sec
+      Start 54: layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected
+41/52 Test #54: layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected .........................   Passed    0.01 sec
+      Start 55: layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses
+42/52 Test #55: layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses ...   Passed    0.01 sec
+      Start 56: layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints
+43/52 Test #56: layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints .........   Passed    0.01 sec
+      Start 57: layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget
+44/52 Test #57: layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget ..............   Passed    0.01 sec
+      Start 58: layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint
+45/52 Test #58: layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint ...........   Passed    0.01 sec
+      Start 59: layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale
+46/52 Test #59: layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale ........................   Passed    0.01 sec
+      Start 60: layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates
+47/52 Test #60: layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates .............   Passed    0.01 sec
+      Start 61: layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds
+48/52 Test #61: layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds ......................   Passed    0.01 sec
+      Start 62: layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow
+49/52 Test #62: layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow .................   Passed    0.01 sec
+      Start 63: layout.LayoutResourceBounds.PreparationRejectsWorkAndMembershipExcess
+50/52 Test #63: layout.LayoutResourceBounds.PreparationRejectsWorkAndMembershipExcess .................   Passed    0.01 sec
+      Start 64: layout.LayoutResourceBounds.FrontendBudgetsAreAggregateAndCheckBeforeGrowth
+51/52 Test #64: layout.LayoutResourceBounds.FrontendBudgetsAreAggregateAndCheckBeforeGrowth ...........   Passed    0.01 sec
+      Start 66: tools.cli_contracts
+52/52 Test #66: tools.cli_contracts ...................................................................   Passed    0.73 sec
+
+100% tests passed out of 52
+
+Total Test time (real) =   1.46 sec

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "fuzz_finished": true,
+  "conversion_finished": true,
+  "tests_finished": true,
+  "builds_finished": true,
+  "other_agents_quiescent": true,
+  "created_utc": "2026-10-19T00:59:37.393967+00:00",
+  "evidence": [
+    "results/p5/fuzz-gate-verified.json",
+    "results/p5/F3-independent-review.json",
+    "results/p5/CC2-all-configurations.json",
+    "results/p5/rc3-summary.json",
+    "results/p5/cachegrind-summary.json"
+  ],
+  "builds": "Final warning-free release/ASan/fuzz builds, benchmark objects newer than their source/header dependencies; all94 frozen source files unchanged",
+  "root_declaration": "All authorized test/fuzz/conversion/build/diagnostic jobs completed, independent reviewers reported quiescent. Root will do no source/doc edits or other CPU work during timing. No host-wide isolation guarantee.",
+  "visible_process_snapshot": {
+    "at_utc": "2026-10-19T00:59:37.393101+00:00",
+    "pid_namespace": "pid:[4026532774]",
+    "proc1_comm": "codex",
+    "offenders": [],
+    "read_errors": [],
+    "excluded_runner_ancestors": [
+      1,
+      2,
+      3
+    ],
+    "limit": "Visible process snapshot plus saved operator declaration; no host-wide isolation claim."
+  },
+  "source_revision": "aa13c1824ba5a7a3593a0f63c6f455cac851e822"
+}

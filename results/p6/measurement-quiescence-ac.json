@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-24T03:44:16.389022+00:00",
+  "fuzz_finished": true,
+  "conversion_finished": true,
+  "tests_finished": true,
+  "builds_finished": true,
+  "other_agents_quiescent": true,
+  "research_quiescent": true,
+  "optimizer_not_started": true,
+  "power": {
+    "supplies": {
+      "ADP1": {
+        "type": "Mains",
+        "online": "1",
+        "status": null,
+        "capacity": null
+      },
+      "BAT0": {
+        "type": "Battery",
+        "online": null,
+        "status": "Charging",
+        "capacity": "93"
+      }
+    },
+    "ac_online": true
+  },
+  "visible_processes": {
+    "at_utc": "2026-10-24T03:44:16.386686+00:00",
+    "pid_namespace": "pid:[4026531836]",
+    "proc1_comm": "systemd",
+    "offenders": [],
+    "read_errors": [],
+    "excluded_runner_ancestors": [
+      1,
+      1898,
+      2201,
+      3577,
+      4038,
+      4250,
+      7042,
+      7043
+    ],
+    "limit": "Visible process snapshot plus saved operator declaration; no host-wide isolation claim."
+  },
+  "limits": "Visible project process check; no exclusive-host claim. AC now verified online. Previous failed preflight preserved."
+}

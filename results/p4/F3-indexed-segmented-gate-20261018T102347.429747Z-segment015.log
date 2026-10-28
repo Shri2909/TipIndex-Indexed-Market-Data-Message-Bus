@@ -1,0 +1,35 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191244
+INFO: Loaded 1 modules   (6130 inline 8-bit counters): 6130 [0x5cef2323f0e8, 0x5cef232408da), 
+INFO: Loaded 1 PC tables (6130 PCs): 6130 [0x5cef232408e0,0x5cef23258800), 
+INFO:      952 files found in tests/fuzz/corpus/ops_indexed
+INFO: seed corpus: files: 952 min: 1b max: 47712b total: 1319654b rss: 34Mb
+#953	INITED cov: 1797 ft: 8067 corp: 615/876Kb exec/s: 25 rss: 549Mb
+#1023	NEW    cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 26 rss: 549Mb L: 1117/47712 MS: 5 ChangeByte-EraseBytes-CrossOver-ShuffleBytes-CrossOver-
+#1024	pulse  cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 26 rss: 549Mb
+#1052	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 27 rss: 549Mb L: 3430/47712 MS: 3 CMP-ShuffleBytes-EraseBytes- DE: "md/future/sub/new55"-
+#1440	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 29 rss: 618Mb L: 186/47712 MS: 3 EraseBytes-CopyPart-CMP- DE: "\023\000\000\000"-
+#1485	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 29 rss: 622Mb L: 604/47712 MS: 5 ChangeBinInt-CMP-InsertByte-CMP-EraseBytes- DE: "\001\000\000\000\000\000\000\001"-"j\000\000\000"-
+#1930	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 33 rss: 633Mb L: 54/47712 MS: 5 PersAutoDict-CrossOver-EraseBytes-ShuffleBytes-CopyPart- DE: "j\000\000\000"-
+#1938	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 33 rss: 633Mb L: 88/47712 MS: 3 ChangeByte-ChangeByte-EraseBytes-
+#1989	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 26 rss: 633Mb L: 163/47712 MS: 1 EraseBytes-
+#1998	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 27 rss: 633Mb L: 625/47712 MS: 4 CopyPart-ChangeBinInt-ChangeByte-EraseBytes-
+#2010	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 27 rss: 633Mb L: 4339/47712 MS: 2 EraseBytes-CMP- DE: "8\000\000\000"-
+#2018	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 27 rss: 633Mb L: 134/47712 MS: 3 ChangeBinInt-InsertByte-EraseBytes-
+#2048	pulse  cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 27 rss: 633Mb
+#2089	REDUCE cov: 1797 ft: 8069 corp: 616/877Kb lim: 65536 exec/s: 27 rss: 633Mb L: 641/47712 MS: 1 EraseBytes-
+#2436	NEW    cov: 1797 ft: 8070 corp: 617/923Kb lim: 65536 exec/s: 27 rss: 633Mb L: 47712/47712 MS: 2 ChangeBinInt-CrossOver-
+#2436	DONE   cov: 1797 ft: 8070 corp: 617/923Kb lim: 65536 exec/s: 27 rss: 633Mb
+###### Recommended dictionary. ######
+"md/future/sub/new55" # Uses: 57
+"\023\000\000\000" # Uses: 20
+"\001\000\000\000\000\000\000\001" # Uses: 27
+"j\000\000\000" # Uses: 21
+"8\000\000\000" # Uses: 9
+###### End of recommended dictionary. ######
+Done 2436 runs in 89 second(s)
+stat::number_of_executed_units: 2436
+stat::average_exec_per_sec:     27
+stat::new_units_added:          12
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              633

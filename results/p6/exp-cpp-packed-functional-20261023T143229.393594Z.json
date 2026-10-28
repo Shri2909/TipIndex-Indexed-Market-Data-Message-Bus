@@ -1,0 +1,23 @@
+{
+  "label": "exp-cpp-packed-functional",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "py/tests/test_exp_cpp.py::test_cpp_packed_limit_rejects_indexed_and_auto_falls_back"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261023T143229.393594Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/exp-cpp-packed-functional-20261023T143229.393594Z.log",
+  "status": "failed",
+  "exit_code": 1,
+  "duration_seconds": 180.87813950500004
+}

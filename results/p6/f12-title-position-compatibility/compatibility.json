@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "change": {
+    "at_utc": "2026-10-25T07:54:19.098451+00:00",
+    "source": "py/tiplog_py/figures/tip.py",
+    "before_sha256": "f156ad50beb039315b48c95a9e10772a4e4d2c4377951f76562619489e8d758f",
+    "after_sha256": "09ec02d27c7709c2e0a7a81268bfb3f8570a9ebf229126246e715f52e4de4000",
+    "reason": "Actual visual review found default suptitle y=.98 places its label inside the first row of a63inch chart; anchor in physical points from the page top instead.",
+    "original_provenance_snapshot": "results/p6/f12-title-position-compatibility/1-campaign-provenance.json",
+    "scope": "Title placement only; all plotted data, ratio calculations, summaries and measurements unchanged."
+  },
+  "before_entry": {
+    "bytes": 26461,
+    "path": "py/tiplog_py/figures/tip.py",
+    "sha256": "f156ad50beb039315b48c95a9e10772a4e4d2c4377951f76562619489e8d758f"
+  },
+  "after_entry": {
+    "bytes": 26771,
+    "path": "py/tiplog_py/figures/tip.py",
+    "sha256": "09ec02d27c7709c2e0a7a81268bfb3f8570a9ebf229126246e715f52e4de4000"
+  },
+  "structural_diff": "Exactly one figure source hash/size plus explicit annotation; originals preserved."
+}

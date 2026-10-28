@@ -1,0 +1,121 @@
+{
+  "declared_utc": "2026-10-25T08:34:51.065557+00:00",
+  "global": {
+    "budgets": "baseline forest store count and each evaluated supported total; report other requested budgets only with feasible upper/lower bound or unavailable",
+    "certification": "complete exact curves for every partition required; otherwise feasible candidates only and no global lower bound",
+    "curve_selection": "DP complete preferred, ENUM complete fallback; known feasible heuristic points only where exact incomplete",
+    "lambda": [
+      "0",
+      "1",
+      "65536",
+      "1048576",
+      "16777216",
+      "268435456",
+      "4294967296"
+    ]
+  },
+  "limits_rationale": "Declared fixed guards for candidate/state memory and runtime. Work counts include candidates and preprocessing. No target exact coverage fraction; every case attempted; unsolved rows excluded from exact gaps.",
+  "methods": [
+    "base",
+    "km-min",
+    "km-max",
+    "enum",
+    "dp"
+  ],
+  "real": {
+    "alpha": "1",
+    "beta": [
+      0,
+      65536,
+      1048576
+    ],
+    "budget": "materialized H-BASE per-partition store count",
+    "class_compression": "drop zero-weight or inactive local classes; merge identical positive-topic incidence and sum rational weights; preserve membership/raw counts",
+    "exact_domain": "all materialized counts through positive_nodes, independent of comparison budget",
+    "gamma": "0",
+    "hierarchies": [
+      "H-spec",
+      "H-flat"
+    ],
+    "partitions": "all 8907 including itch/_market",
+    "random_basket_population": "sorted ranked symbol paths; same as P1",
+    "random_basket_seed": 20191230,
+    "rank": "message count descending then path",
+    "volume_basis": "full observed source record_bytes, incomplete source retained",
+    "workloads": [
+      "W0",
+      "W1",
+      "W2",
+      "W3"
+    ]
+  },
+  "reporting": {
+    "coverage": [
+      "partition count",
+      "record bytes",
+      "sum active per-partition class weights"
+    ],
+    "gaps": "exact solved only, same case and requested budget/objective",
+    "memory": "solver state/work counts plus process max RSS; states are not allocated-byte claims",
+    "outcomes": "retain timeout/state_limit/representation_limit/heuristic-only/error outcomes; never substitute incumbents for OPT",
+    "runtime": "steady solver wall seconds excluding prepare and independent reconstructed evaluation; diagnostic nonexclusive host"
+  },
+  "scope": "approved v1.1 Tier B L2/L3/L4/L5; modeled record bytes, no physical disk I/O",
+  "solver_limits": {
+    "dp_max_classes": 16,
+    "enum_max_edges": 22,
+    "max_states": 2000000,
+    "max_work": 2000000,
+    "time_limit_ms": 500
+  },
+  "synthetic": {
+    "alpha": 1,
+    "beta": 65536,
+    "budget_rule": "cap to n and deduplicate",
+    "budgets": [
+      1,
+      4,
+      16,
+      64
+    ],
+    "classes": [
+      1,
+      4
+    ],
+    "exact_domain": "counts through requested capped budget; partial curves never global certified",
+    "gamma": 0,
+    "n": [
+      5,
+      10,
+      20,
+      50,
+      100,
+      250,
+      500,
+      1000
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "shape": [
+      "chain",
+      "star",
+      "random"
+    ],
+    "volumes": "floor(1e9/rank**1.2), shuffled deterministically"
+  },
+  "validation": {
+    "cc5_instances": 10000,
+    "cc5_seed": 20191230,
+    "every_applicable_k": true,
+    "presets": [
+      "release",
+      "asan-ubsan"
+    ]
+  },
+  "version": "P7-v1"
+}

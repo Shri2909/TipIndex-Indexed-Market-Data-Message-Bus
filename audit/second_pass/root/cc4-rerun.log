@@ -1,0 +1,2 @@
+{"status": "failed", "checks": 10295181, "failures": [{"check": "frozen source_files:SHA256", "detail": "/home/abc/Desktop/Jane Street/CMakeLists.txt"}, {"check": "frozen source_files:SHA256", "detail": "/home/abc/Desktop/Jane Street/build/release/compile_commands.json"}], "distinct_files_hashed": 1066}
+elapsed_seconds 68.98749278600008

@@ -1,0 +1,372 @@
+{
+  "schema": "tiplog-p7-figure-compatibility-v1",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "P6 numerical/source byte identity:results/derived/tip-summary.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:results/p6/analysis-inputs.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:py/tiplog_py/figures/tip.py",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:results/derived/tip-statistics.csv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:results/derived/tip-outcomes.csv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:results/derived/tip-paired-ratios.csv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:results/derived/t2-adjusted-paired.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 numerical/source byte identity:results/derived/t5-high-water.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F01_itch_type_mix.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "de4bae0ff86d07339695288cf47fa2c551de321da63486e6e179f8f1f8681ecc",
+        "old_sha256": "516150d7aa371ef0ee4629716dd91e58add8e32f3c241497c981cb7fd0086046",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F01_itch_type_mix.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "c1ee6519d9ae68fdf82577abf3da924e5c59bdf70f31f10f51646c31cd54564e",
+        "old_sha256": "c1ee6519d9ae68fdf82577abf3da924e5c59bdf70f31f10f51646c31cd54564e",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F02_symbol_volume_skew.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "5052d19c463ac4bb546bb212eb5656f223c734474ddc79b4dd87c224c40c68b1",
+        "old_sha256": "4f33041bcfb200988ad7b483b5bf7615d8e21b53288f69e12cc500229928c041",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F02_symbol_volume_skew.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "e7fedd90be7300a8e43aa839a363721fe2a05710a8b3f8a9e86a2a99fade9c0f",
+        "old_sha256": "e7fedd90be7300a8e43aa839a363721fe2a05710a8b3f8a9e86a2a99fade9c0f",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F03_family_composition.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "bfdf6363e7ebe1c03d74c534e5fa599a25cd8161ef157f7f3b721809e9870880",
+        "old_sha256": "509b1445640439046c0997bab0b0a9ca6d6f448b37e573ed164115096534bc05",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F03_family_composition.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "da1ce22a26c00761f92ffb57d62c6a832b8dd26b52afc46169bdeb4f20fbdb8e",
+        "old_sha256": "da1ce22a26c00761f92ffb57d62c6a832b8dd26b52afc46169bdeb4f20fbdb8e",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F04_runs_and_bursts.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "6a60b1df9cf15cace931b492a3869aad070bff405b26f78facdafdbf2f874e0a",
+        "old_sha256": "2e366fd85e7f74453e6ff914e23cb306a684b355be66719dad0639d2c8e1bcaf",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F04_runs_and_bursts.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "b68e2ad1799bc204e2ec96a8a15cd5f47efb5bf637d2fcd20abb32fc3961bad3",
+        "old_sha256": "b68e2ad1799bc204e2ec96a8a15cd5f47efb5bf637d2fcd20abb32fc3961bad3",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F05_tree_and_class_sizes.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "4a274fe1cb4117516629a808abc708a0288166aa09e75291c4e13797d3068c57",
+        "old_sha256": "03d2641671869963e6f62fed39ad76244df5966e4ab0652d5cb1d4ca680db56f",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F05_tree_and_class_sizes.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "a4646a96ba36df7bce1769876b5da1142d65d56ff79c364fbbf8ab31d35d2e4d",
+        "old_sha256": "a4646a96ba36df7bce1769876b5da1142d65d56ff79c364fbbf8ab31d35d2e4d",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F06_merge_cost_vs_k.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "16ba21446d40fceccbec346b312edac116316c4f606447daab2e8f9757c1da58",
+        "old_sha256": "48122f9fc5f7fad6e52919433c125c1a42698e746c90e17f3441c6988c8bf46b",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F06_merge_cost_vs_k.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "583b7cecb552a9b02f7a3da13194394924ff3649043fa2a7fb54f9e6131a741d",
+        "old_sha256": "583b7cecb552a9b02f7a3da13194394924ff3649043fa2a7fb54f9e6131a741d",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F07_merge_run_length.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "3664d94f83ecb5b1f46eef44009faaefd42420df4eb6d0f4817ec70ed5c85aa8",
+        "old_sha256": "290572be854dc3a4ae396f0309a50133df135080d30abc6cc9be577477f5f51c",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F07_merge_run_length.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "5c9e1158b7095ff97c44654584c8bb018482e1bed0194c7c0ab7e02e3b2124d6",
+        "old_sha256": "5c9e1158b7095ff97c44654584c8bb018482e1bed0194c7c0ab7e02e3b2124d6",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F08_publish_index_cost.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "3e8f24ab9b8f419b4fe7ec7771f5ce11c94e26246c097a72651d8162f8008edc",
+        "old_sha256": "2198220a75fd5b364d50d447a2656b524d9c003cfd38e947d5727d6ac50f8646",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F08_publish_index_cost.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "30bfe6515f1dc7b9c0befcb92eac202bb50d8e24775d73542cf28b312b6ebbb2",
+        "old_sha256": "30bfe6515f1dc7b9c0befcb92eac202bb50d8e24775d73542cf28b312b6ebbb2",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F09_catchup_breadth.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "1d13fd3a58be24a93c15ff8fdddbb11d1632559e476e9877eea6df7170aeba61",
+        "old_sha256": "759f176fdbd4c6c8827f143d3855dd4900d861c112129e1c44363fdf685f31b6",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F09_catchup_breadth.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "801e5df120094831b4b80590bd6994735de2b03b88d0e29c543cbc509ac158e6",
+        "old_sha256": "801e5df120094831b4b80590bd6994735de2b03b88d0e29c543cbc509ac158e6",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F10_replay_work.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "46236424672ddabd66c8136192f04288f4ad54d31b714ae2b74eff54d724fa80",
+        "old_sha256": "7f9c586c38dc9dcbac9f1fa9402fa64c4b565dbce500636d83bb0715e11bee31",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F10_replay_work.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "b2c72a9e2de042818da6c367f0a320914e402298f6020608e839dd2ab34164e6",
+        "old_sha256": "b2c72a9e2de042818da6c367f0a320914e402298f6020608e839dd2ab34164e6",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F11_many_readers_cpu.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "456ee58d2cc111533bdaa44c9a94abcda6d34c7c317c5721c5dbcccffa4ea2d7",
+        "old_sha256": "595a485ac159c92abbcc60e9680d507ffeb7ca2f7d2af9a5311d537301eb2e4b",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F11_many_readers_cpu.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "a2753af77ea7d2b47690ab2a1c429cae884619aa901c8b652603f5ea55985a7e",
+        "old_sha256": "a2753af77ea7d2b47690ab2a1c429cae884619aa901c8b652603f5ea55985a7e",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F12_scan_index_crossover.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "7cd83f61f57c15bbb9c02cd9220a6d3d54259cf42834b0e6552307a78be3ba02",
+        "old_sha256": "a03a87aac2373b99ad64445101e3e2b04540c5961ffc4e423f3c05b11828d996",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F12_scan_index_crossover.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "bb0ce216decf073fdd22ac046b49e160364b25daa8763aede12dbe922fa780a1",
+        "old_sha256": "bb0ce216decf073fdd22ac046b49e160364b25daa8763aede12dbe922fa780a1",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F13_index_memory_slack.pdf",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "0e35054fcf2746ab50d005649f71877c9f0abcffcf1aa96d22ed3602e36519b0",
+        "old_sha256": "21fa03b83e930d3cdd160e2d487f63361a04c9addfd9807006544295d9e460e8",
+        "normalization": "PDF CreationDate only"
+      }
+    },
+    {
+      "check": "P1/P6 rendered content identity:results/figures/F13_index_memory_slack.png",
+      "status": "passed",
+      "detail": {
+        "current_sha256": "c5aea8930dfdb89be95dd7c48265b636b3a7e5e679d455c507d4ef563fb7b12b",
+        "old_sha256": "c5aea8930dfdb89be95dd7c48265b636b3a7e5e679d455c507d4ef563fb7b12b",
+        "normalization": "none"
+      }
+    },
+    {
+      "check": "P6 manifest semantic fields unchanged",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 manifest artifact names unchanged",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F06_merge_cost_vs_k.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F06_merge_cost_vs_k.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F07_merge_run_length.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F07_merge_run_length.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F08_publish_index_cost.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F08_publish_index_cost.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F09_catchup_breadth.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F09_catchup_breadth.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F10_replay_work.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F10_replay_work.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F11_many_readers_cpu.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F11_many_readers_cpu.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F12_scan_index_crossover.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F12_scan_index_crossover.png",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F13_index_memory_slack.pdf",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "P6 regenerated manifest actual artifact:results/figures/F13_index_memory_slack.png",
+      "status": "passed",
+      "detail": null
+    }
+  ],
+  "failures": [],
+  "scope": "P6 numerical/source byte identities, P1/P6 PNG bytes, PDF content except CreationDate, current manifest artifacts. Additive builder AST equivalence checked by core closeout."
+}

@@ -1,0 +1,45 @@
+# Python audit remediation — 2026-10-26
+
+Approved implementation scope: AUD-005/006/009/014/015/016/017/018/019, Python topic-resource policy support for AUD-001, and safe redirected analysis/figure output supporting AUD-026. Work-budgeted polling (F-01) is intentionally deferred. This work did not download data, run measurements, modify append-only campaign rows, or regenerate historical acceptance artifacts.
+
+## Changes and closure evidence
+
+| Finding | Implemented correction | Regression evidence |
+|---|---|---|
+| AUD-001 (Python support) | Writer/reader topic validation uses 4,096 UTF-8 bytes and 128 segments. The independent oracle independently enforces the same path limits on dictionaries and subscription terms. | UTF-8 byte boundary, segment boundary and oversized subscription tests. Existing trace vectors still pass. |
+| AUD-005 | BinaryFILE framing validates empty symbol fields for every symbol-bearing ITCH type before routing and raises `FramingError` at the absolute payload/frame offset. Direct message validation rejects the same fields. | All 14 symbol-bearing types, after an earlier frame and across three-byte chunks. |
+| AUD-006 | Test matrix path is anchored to the repository. P7 figure source identity is repository-relative, independent of the caller's current directory. | Complete suite run from `py/`: 211 passed at that checkpoint; dedicated figure provenance test changes CWD outside the repository. |
+| AUD-009 | A recorded acquisition SHA-256 is verified before writing a replacement manifest, including reacquisition with a missing local source. Mismatch preserves the prior manifest and downloaded file for inspection. | Three fully mocked HEAD/download/gzip tests: existing mismatch, reacquired mismatch, unchanged identity. No network request or genuine acquisition was made. |
+| AUD-014 | Preflight covers the complete trace/metadata/count/table write set and detects resolved-path, symlink and existing inode aliases with the source or other outputs. Lexical and resolved ancestor overlaps are rejected, preserving source paths reached through directory symlinks. Every temporary is uniquely reserved and owned. TraceWriter never opens or removes a predictable `.partial` pathname. Conversion/measurement stage all outputs before publication; handled publication failures restore prior outputs. Writer construction, finish and later metadata/table failures clean up owned staging files. | Source, symlink, hardlink and CSV aliases; source named like the historical temporary; cross-writer historical temporary spelling; injected second-constructor, second-finish, metadata, backup-rename and publication-rename failures, preserving an entire old bundle and unrelated `.partial` files. Existing deterministic conversion/count reconciliation passes. |
+| AUD-015 | Pending journals record pre-publication collection offsets. Resume streams complete rows, requires every row at/after the saved boundary to continue the exact authoritative journal sequence, checks duplicates, and repairs only a final unterminated byte prefix of the next pending row. Legacy markers without offsets recognize a contiguous exact pending prefix, preserve earlier complete history, and reject any later sequence departure. Torn bytes are fsynced into separate evidence and referenced from the pending marker before truncation. Interior, unrelated and pre-boundary corruption is rejected. Failed append retries invalidate cached identities. | Every byte boundary of a representative Unicode-containing two-row publication resumes to exact bytes with each row once; repeated recovery, missing newline, malformed/interior/invalid UTF-8 tails, empty extra line, lost committed prefix and injected disk-full append failure. JSON serialization escapes non-ASCII characters, so its actual publication bytes are exercised at every escape boundary. |
+| AUD-016 | PAD deltas are accumulated once, then applied with one prefix sum; whole suffixes are never rewritten per wrap. | Existing independent scalar whole-item retention comparisons plus a 2,000-record small-capacity fixture with an instrumented linear element-update bound. |
+| AUD-017 | Aligned record size is u32 in both trace indexes and synthetic schedules. Cache parser version is 2; parser-version-1 caches are rebuilt. Payload length remains u16. | Payloads 65,512 / 65,513 / 65,535: writer/reader, independent index, synthetic schedule, retention position, cache invalidation and C++ trace-check agreement. |
+| AUD-018 | T2 aggregation preserves declared positive duration; every reader must agree on shared configuration, source, workload, seed, process, repetition and warm-up identity. Comparison identity includes duration/backlog/anchor/source/workload/seed. New prepared plans and aggregate rows explicitly declare `t2_group_identity_version=2`; root updates the independent auditor to retain historical version-1 compatibility. | 1/10/20/60-second cohorts produce correct replay and writer-amortized CPU rates; mixed duration/capacity/anchor cohorts reject; different durations produce different comparison IDs. |
+| AUD-019 | Command controls must be explicitly `True`. Repetition labels are exact and unique; warm-up is repetition -1. Optional `expected_manifest` maps expected config IDs to measured repetition lists and detects missing/unexpected configurations. Without a manifest the result explicitly says `supplied-rows-only` and campaign coverage is unverified. The stronger independent final campaign gate remains required. | Absent/null/false controls fail; complete controls pass; supplied manifest detects missing groups and duplicate/wrong labels. Internal benchmark error statuses cannot validate as legitimate invalid configurations. |
+| AUD-026 support | Redirected figure builds default their summary under the redirected output's sibling `derived/` directory; `--summary-output` can override it. `--evidence-root` propagates through figure/analysis APIs and resolves relative frequency sidecars exclusively from the declared workspace. Missing referenced sidecars in that explicit mode raise before any derived output is written. Legacy diagnostic mode retains explicit unknown flags. | Custom/explicit summary output routing; copied bundle with a conflicting module workspace sidecar uses the declared bundle; missing bundle sidecar rejects before summary creation. Root owns the actual frozen-evidence reconciliation. |
+
+## Executed checks
+
+All invocations used `PYTHONDONTWRITEBYTECODE=1` and disabled pytest's cache provider.
+
+- Initial full Python suite, after the principal corrections and first 56 added cases: **207 passed in 26.23 s**.
+- Full Python suite with CWD `py/`, after output-routing and declared-workspace support: **211 passed in 35.10 s**. The relative virtualenv invocation emitted environment prefix warnings; no test failed.
+- Affected-package checks after independent-oracle limits and explicit-workspace hardening: **94 passed in 4.56 s**, including **61 new remediation regression cases**. Persisted output: [python-pytest.log](python-pytest.log).
+
+- Final T2 schema marker regression and affected protocol checks: **73 passed in 2.72 s**, including **62 new remediation cases** overall. Output: [python-t2-version-pytest.log](python-t2-version-pytest.log).
+
+- Independent peer review then reproduced two additional edge cases in these new fixes: an unexpected valid JSON journal row after publication started, and replacement of a directory symlink that was an ancestor of the source pathname. Both were corrected with **12 additional regressions** (saved/legacy journal sequencing, preserved old prefix and lexical/resolved ancestor overlaps). **91 affected tests passed**, including **74 remediation cases** overall. Output: [python-review-pytest.log](python-review-pytest.log).
+
+Principal affected-package command:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=py .venv/bin/python -m pytest -c py/pytest.ini -p no:cacheprovider py/tests/test_audit_remediation.py py/tests/test_exp_protocol.py py/tests/test_exp_oracle.py py/tests/test_analysis_stats.py --basetemp=/tmp/tiplog-remediation-python-final
+```
+
+## Limits and integration notes
+
+- Individual artifact replacement is atomic and ordinary multi-output exceptions roll back the bundle. Process termination or power loss between multiple filesystem renames cannot make the entire bundle crash-atomic; owned backups remain recoverable rather than being discarded. Source paths are never temporary write targets.
+- The acquisition checksum is trust on first use only when no recorded checksum exists. Tests use mocks and do not establish the current Nasdaq server state.
+- New T2 comparison IDs deliberately distinguish future configurations that the former identity could conflate. Existing accepted rows are immutable and were not relabelled.
+- Existing C++ checker paths were used when present. Root's integrated rebuild/tests remain the authoritative verification of all C++ source changes.
+- Standalone acceptance remains a controls/coverage audit, not a replacement for the final independent campaign validation.

@@ -1,0 +1,236 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-18T16:05:49.603429+00:00",
+  "scope": "Read-only release generated-code extraction; no benchmark execution or performance claims",
+  "binary": "build/release/merge_bench",
+  "binary_sha256": "7ae9d903b4b19f036416556db5d33934ff0e242a9659a697c6b06e1d3fb2533d",
+  "versions": {
+    "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.46",
+    "nm": "GNU nm (GNU Binutils for Ubuntu) 2.46",
+    "g++": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0"
+  },
+  "compile_commands": [
+    {
+      "directory": "/home/abc/Desktop/Jane Street/build/release",
+      "command": "/usr/bin/g++  -I\"/home/abc/Desktop/Jane Street/src\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp\"",
+      "file": "/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp",
+      "output": "CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o"
+    },
+    {
+      "directory": "/home/abc/Desktop/Jane Street/build/release",
+      "command": "/usr/bin/g++ -DBENCHMARK_STATIC_DEFINE -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/release/_deps/benchmark-src/include\" -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o -c \"/home/abc/Desktop/Jane Street/bench/micro/merge_bench.cpp\"",
+      "file": "/home/abc/Desktop/Jane Street/bench/micro/merge_bench.cpp",
+      "output": "CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o"
+    }
+  ],
+  "source_sha256": {
+    "bench/micro/merge_bench.cpp": "d99cdf2bdce2720320beb6d5c80572918b654a936d697e996f4539b6e33474ad",
+    "bench/micro/bench_log.hpp": "ec6b23fb822986d2bdd0e07ce015068c66ec6c91ff25e9f37135e9dd1cafdbd1",
+    "src/tiplog/merge/kernels.hpp": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8",
+    "src/tiplog/merge/kernels.cpp": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c"
+  },
+  "selected_symbols": [
+    {
+      "kernel": "Quad",
+      "touch": "false",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0x106d0",
+      "end_exclusive": "0x10b1e",
+      "assembly_file": "results/p5/assembly/Quad-touch-false.txt"
+    },
+    {
+      "kernel": "Loser",
+      "touch": "false",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Loser>(tiplog::merge::Loser&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0xf7d0",
+      "end_exclusive": "0xf97c",
+      "assembly_file": "results/p5/assembly/Loser-touch-false.txt"
+    },
+    {
+      "kernel": "StdPQ",
+      "touch": "false",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::StdPQ>(tiplog::merge::StdPQ&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0x10c10",
+      "end_exclusive": "0x10e62",
+      "assembly_file": "results/p5/assembly/StdPQ-touch-false.txt"
+    },
+    {
+      "kernel": "BinHeap",
+      "touch": "false",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0x103b0",
+      "end_exclusive": "0x106cf",
+      "assembly_file": "results/p5/assembly/BinHeap-touch-false.txt"
+    },
+    {
+      "kernel": "Quad",
+      "touch": "true",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<true, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0xfef0",
+      "end_exclusive": "0x103a6",
+      "assembly_file": "results/p5/assembly/Quad-touch-true.txt"
+    },
+    {
+      "kernel": "Loser",
+      "touch": "true",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<true, tiplog::merge::Loser>(tiplog::merge::Loser&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0xf980",
+      "end_exclusive": "0xfb60",
+      "assembly_file": "results/p5/assembly/Loser-touch-true.txt"
+    },
+    {
+      "kernel": "StdPQ",
+      "touch": "true",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<true, tiplog::merge::StdPQ>(tiplog::merge::StdPQ&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0x10b20",
+      "end_exclusive": "0x10c04",
+      "assembly_file": "results/p5/assembly/StdPQ-touch-true.txt"
+    },
+    {
+      "kernel": "BinHeap",
+      "touch": "true",
+      "symbol": "unsigned long (anonymous namespace)::merge_once<true, tiplog::merge::BinHeap>(tiplog::merge::BinHeap&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]",
+      "start": "0xfb60",
+      "end_exclusive": "0xfeee",
+      "assembly_file": "results/p5/assembly/BinHeap-touch-true.txt"
+    },
+    {
+      "kernel": "StdPQ",
+      "touch": "wrapper",
+      "symbol": "tiplog::merge::StdPQ::replace_top(unsigned long)",
+      "start": "0x193c0",
+      "end_exclusive": "0x19803",
+      "assembly_file": "results/p5/assembly/StdPQ-touch-wrapper.txt"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "nm",
+        "-S",
+        "-C",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/symbols.txt",
+      "output_sha256": "485dc6e0a5cab36537d44e59e705b515f2cea98c75bce7bf6b8dc70e9b4abd65"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x106d0",
+        "--stop-address=0x10b1e",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/Quad-touch-false.txt",
+      "output_sha256": "b8dbcdac1f593539680a5f0b94c61e50e5e2b9b83d8bd749d2d49c032abaa1fd"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xf7d0",
+        "--stop-address=0xf97c",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/Loser-touch-false.txt",
+      "output_sha256": "00c8f57000c2525ceb056b515dd5ffa302ee37fde2da118fd94aef44f4c116d2"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x10c10",
+        "--stop-address=0x10e62",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/StdPQ-touch-false.txt",
+      "output_sha256": "3c0d9dd0a9b72cb2f3895a5787ad1e50e3adbe4d8c5e4b6ccf186253f7483f4e"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x103b0",
+        "--stop-address=0x106cf",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/BinHeap-touch-false.txt",
+      "output_sha256": "b6bd59ae16cb146f4bfce861c410dac5ace4d923a93335db261e9c325f54b7af"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xfef0",
+        "--stop-address=0x103a6",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/Quad-touch-true.txt",
+      "output_sha256": "f8c604d10f94e439a680e3ae0a516f09623836746888e839a9618033ed031741"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xf980",
+        "--stop-address=0xfb60",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/Loser-touch-true.txt",
+      "output_sha256": "adc25b68188fcf62d1c3f009fdf75a4ae321372a35e247eaa00cd08e537be3fd"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x10b20",
+        "--stop-address=0x10c04",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/StdPQ-touch-true.txt",
+      "output_sha256": "e479e2a6981e94ae4739a468e97167818f6e9073c9a96c8fc18eec31387875c2"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0xfb60",
+        "--stop-address=0xfeee",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/BinHeap-touch-true.txt",
+      "output_sha256": "a6e8257401cfe3e9a11911d0dbad16498ab4127b1ba1132d53ab8ee149f0e93e"
+    },
+    {
+      "argv": [
+        "objdump",
+        "-d",
+        "-C",
+        "--start-address=0x193c0",
+        "--stop-address=0x19803",
+        "build/release/merge_bench"
+      ],
+      "exit_code": 0,
+      "output": "results/p5/assembly/StdPQ-touch-wrapper.txt",
+      "output_sha256": "5428601cc384b9d69428539d6206121a9371bb20628b22b5cfb8ca5596192eac"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "prepare_4000",
+  "argv": [
+    "/home/abc/Desktop/Jane Street/build/release/tiplog_layout",
+    "--input",
+    "/home/abc/Desktop/Jane Street/audit/second_pass/layout_tools/prepare_4000.tsv",
+    "--methods",
+    "dp",
+    "--time-limit-ms",
+    "1",
+    "--max-work",
+    "1"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.039777119000063976,
+  "stdout": "{\"type\":\"layout\",\"id\":\"prepare_probe\",\"budget\":1,\"method\":\"dp\",\"status\":\"representation_limit\",\"solver_status\":\"representation_limit\",\"exact\":false,\"scale\":\"1\",\"nodes\":4001,\"classes\":4000,\"positive_nodes\":4000,\"total_bytes\":4000,\"active_class_weight\":\"0\",\"class_weight_scale\":\"1\",\"alpha\":\"1/1\",\"beta\":\"0/1\",\"gamma\":\"0/1\",\"threshold\":null,\"work\":0,\"states\":0,\"seconds\":3.2685999999999998e-05,\"verified_seconds\":3.341e-05,\"objective\":null,\"stores\":null,\"read_bytes\":null,\"useful_bytes\":null,\"waste_bytes\":null,\"stores_touched\":null,\"cuts\":null,\"curve\":[null,null],\"complete_domain\":false}\n",
+  "stderr": ""
+}

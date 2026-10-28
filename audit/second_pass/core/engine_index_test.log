@@ -1,0 +1,43 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 17 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 17 tests from EngineIndex
+[ RUN      ] EngineIndex.V18RecycledBlockCannotServeUnreadCursor
+[       OK ] EngineIndex.V18RecycledBlockCannotServeUnreadCursor (0 ms)
+[ RUN      ] EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint
+[       OK ] EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint (0 ms)
+[ RUN      ] EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad
+[       OK ] EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad (0 ms)
+[ RUN      ] EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction
+[       OK ] EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction (0 ms)
+[ RUN      ] EngineIndex.V19GenerationExhaustionRejectsBeforeEviction
+[       OK ] EngineIndex.V19GenerationExhaustionRejectsBeforeEviction (0 ms)
+[ RUN      ] EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo
+[       OK ] EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo (0 ms)
+[ RUN      ] EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum
+[       OK ] EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum (3 ms)
+[ RUN      ] EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress
+[       OK ] EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress (0 ms)
+[ RUN      ] EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry
+[       OK ] EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry (0 ms)
+[ RUN      ] EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess
+[       OK ] EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess (0 ms)
+[ RUN      ] EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap
+[       OK ] EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap (0 ms)
+[ RUN      ] EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers
+[       OK ] EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers (0 ms)
+[ RUN      ] EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge
+[       OK ] EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge (0 ms)
+[ RUN      ] EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed
+[       OK ] EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed (0 ms)
+[ RUN      ] EngineIndex.V20RetainedPadCheckpointRemainsConservative
+[       OK ] EngineIndex.V20RetainedPadCheckpointRemainsConservative (0 ms)
+[ RUN      ] EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation
+[       OK ] EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation (0 ms)
+[ RUN      ] EngineIndex.V19MinimumConfigurationValidatedBeforeUse
+[       OK ] EngineIndex.V19MinimumConfigurationValidatedBeforeUse (0 ms)
+[----------] 17 tests from EngineIndex (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 17 tests.

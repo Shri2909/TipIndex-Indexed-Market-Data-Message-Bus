@@ -1,0 +1,24 @@
+{
+  "binary_sha256_before": "ce29df4186e0c2da0a7658f8c611b64ad06010d8b6df5cf758634055d17ddae0",
+  "command": [
+    "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_engine_ops",
+    "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_engine_ops-corpus",
+    "-runs=10000",
+    "-seed=1",
+    "-max_len=65536",
+    "-detect_leaks=1",
+    "-print_final_stats=1",
+    "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_engine_ops-artifacts/"
+  ],
+  "environment": {
+    "TIPLOG_FUZZ_MODE": "all"
+  },
+  "id": "fuzz_engine_ops",
+  "kind": "fuzz",
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+  },
+  "seed_corpus_source": "tests/fuzz/corpus/ops_integrated",
+  "started_utc": "2026-10-26T08:48:59.230295+00:00"
+}

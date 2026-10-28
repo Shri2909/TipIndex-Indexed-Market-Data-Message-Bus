@@ -1,0 +1,63 @@
+{
+  "at_utc": "2026-10-25T08:02:22.262829+00:00",
+  "authorization": "Existing joint P6-P8; stop after P8",
+  "auto_policy": {
+    "max_fraction": 1.0,
+    "max_partitions": 64,
+    "training_sum_median_cpu_ns": 3585027177.5
+  },
+  "campaign": "results/raw/P6/campaign-20261024/campaign.json",
+  "completed_checks": {
+    "CC2_operations": {
+      "release": 90000000,
+      "sanitizer": 18000000
+    },
+    "CC2_status": "passed",
+    "cpp_release": 166,
+    "cpp_sanitizer": 166,
+    "cross_compiler_equalities": 170,
+    "cross_compiler_runs": 180,
+    "python_full_suite": 142
+  },
+  "completed_measured_rounds": 820,
+  "completed_workloads": 41,
+  "continuation": "STOP. Phase6 is complete. P7/P8 have not started; await an explicit new user instruction.",
+  "current_workload": "memory-B256-A36000000000000",
+  "current_workload_measured_rounds": 18,
+  "final_fuzz": {
+    "confirmed_monotonic_seconds": 1802.6449414189983,
+    "executions": 39231,
+    "gate": "results/p6/F3-prefix-final-segmented-gate-20261023T143815.176751Z.json",
+    "required_seconds": 1800,
+    "status": "passed",
+    "verification": "results/p6/fuzz-prefix-final-verified.json"
+  },
+  "measurement_preflight": {
+    "campaign": "results/raw/P6/campaign-20261024/campaign.json",
+    "quiescence": "results/p6/measurement-quiescence-ac.json",
+    "reason": "AC disconnected, battery discharging; VALIDATION section5.1 requires AC",
+    "resume": "--directory results/raw/P6/campaign-20261024 --resume",
+    "status": "passed_after_verified_ac_connection"
+  },
+  "pause_evidence": "results/p6/pause-20261025.json",
+  "phase": "P6",
+  "pilot_M1": "passed",
+  "pilot_T1": "passed",
+  "protocol_freeze": "results/p6/protocol-freeze.json",
+  "quiescence_resume": "results/p6/measurement-quiescence-resume.json",
+  "remaining": [],
+  "resumed_utc": "2026-10-25T02:55:52.630718+00:00",
+  "status": "complete",
+  "training": {
+    "independent_checks": 295883,
+    "measured_query_rows": 14400,
+    "processes": 168,
+    "status": "passed"
+  },
+  "unrun": [
+    "P7",
+    "P8",
+    "TierC and roadmap extensions"
+  ],
+  "phase_gate": "results/p6/phase-gate.json"
+}

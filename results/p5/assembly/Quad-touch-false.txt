@@ -1,0 +1,288 @@
+
+build/release/merge_bench:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000106d0 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]>:
+   106d0:	48 83 7f 08 00       	cmpq   $0x0,0x8(%rdi)
+   106d5:	0f 84 2d 04 00 00    	je     10b08 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x438>
+   106db:	41 57                	push   %r15
+   106dd:	49 89 fa             	mov    %rdi,%r10
+   106e0:	48 89 c8             	mov    %rcx,%rax
+   106e3:	45 31 c9             	xor    %r9d,%r9d
+   106e6:	49 b8 25 23 22 84 e4 	movabs $0xcbf29ce484222325,%r8
+   106ed:	9c f2 cb 
+   106f0:	41 56                	push   %r14
+   106f2:	41 55                	push   %r13
+   106f4:	41 54                	push   %r12
+   106f6:	55                   	push   %rbp
+   106f7:	53                   	push   %rbx
+   106f8:	48 83 ec 28          	sub    $0x28,%rsp
+   106fc:	48 8b 12             	mov    (%rdx),%rdx
+   106ff:	48 8b 3f             	mov    (%rdi),%rdi
+   10702:	41 8b 4a 10          	mov    0x10(%r10),%ecx
+   10706:	48 8b 2e             	mov    (%rsi),%rbp
+   10709:	48 89 54 24 10       	mov    %rdx,0x10(%rsp)
+   1070e:	4c 8d 5f 10          	lea    0x10(%rdi),%r11
+   10712:	48 8d 1c cf          	lea    (%rdi,%rcx,8),%rbx
+   10716:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   1071d:	00 00 00 
+   10720:	48 8b 13             	mov    (%rbx),%rdx
+   10723:	49 83 c1 01          	add    $0x1,%r9
+   10727:	48 be b3 01 00 00 00 	movabs $0x100000001b3,%rsi
+   1072e:	01 00 00 
+   10731:	4c 89 08             	mov    %r9,(%rax)
+   10734:	49 31 d0             	xor    %rdx,%r8
+   10737:	0f b7 d2             	movzwl %dx,%edx
+   1073a:	4c 0f af c6          	imul   %rsi,%r8
+   1073e:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
+   10743:	4c 8d 0c d6          	lea    (%rsi,%rdx,8),%r9
+   10747:	48 8d 14 52          	lea    (%rdx,%rdx,2),%rdx
+   1074b:	49 8b 31             	mov    (%r9),%rsi
+   1074e:	4c 8d 66 01          	lea    0x1(%rsi),%r12
+   10752:	4d 89 21             	mov    %r12,(%r9)
+   10755:	4c 8d 4c d5 00       	lea    0x0(%rbp,%rdx,8),%r9
+   1075a:	49 8b 52 08          	mov    0x8(%r10),%rdx
+   1075e:	4d 8b 29             	mov    (%r9),%r13
+   10761:	4d 8b 49 08          	mov    0x8(%r9),%r9
+   10765:	4d 29 e9             	sub    %r13,%r9
+   10768:	49 c1 f9 03          	sar    $0x3,%r9
+   1076c:	4d 39 cc             	cmp    %r9,%r12
+   1076f:	0f 84 55 01 00 00    	je     108ca <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1fa>
+   10775:	48 85 d2             	test   %rdx,%rdx
+   10778:	0f 84 e4 7d ff ff    	je     8562 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   1077e:	4c 8b 0b             	mov    (%rbx),%r9
+   10781:	4f 8b 7c e5 00       	mov    0x0(%r13,%r12,8),%r15
+   10786:	49 83 f9 ff          	cmp    $0xffffffffffffffff,%r9
+   1078a:	0f 84 d2 7d ff ff    	je     8562 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   10790:	49 83 ff ff          	cmp    $0xffffffffffffffff,%r15
+   10794:	0f 84 61 01 00 00    	je     108fb <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x22b>
+   1079a:	4d 89 fc             	mov    %r15,%r12
+   1079d:	4d 31 cc             	xor    %r9,%r12
+   107a0:	66 45 85 e4          	test   %r12w,%r12w
+   107a4:	0f 85 b8 7d ff ff    	jne    8562 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   107aa:	4d 39 f9             	cmp    %r15,%r9
+   107ad:	0f 83 af 7d ff ff    	jae    8562 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]>
+   107b3:	45 31 f6             	xor    %r14d,%r14d
+   107b6:	49 89 dd             	mov    %rbx,%r13
+   107b9:	48 83 fa 01          	cmp    $0x1,%rdx
+   107bd:	0f 84 e1 00 00 00    	je     108a4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1d4>
+   107c3:	48 8d 72 fe          	lea    -0x2(%rdx),%rsi
+   107c7:	48 c1 ee 02          	shr    $0x2,%rsi
+   107cb:	4c 39 f6             	cmp    %r14,%rsi
+   107ce:	0f 82 c9 00 00 00    	jb     1089d <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1cd>
+   107d4:	90                   	nop
+   107d5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   107dc:	00 00 00 00 
+   107e0:	4a 8d 34 b5 00 00 00 	lea    0x0(,%r14,4),%rsi
+   107e7:	00 
+   107e8:	4c 8d 6e 05          	lea    0x5(%rsi),%r13
+   107ec:	4c 8d 66 01          	lea    0x1(%rsi),%r12
+   107f0:	49 39 d5             	cmp    %rdx,%r13
+   107f3:	4c 0f 47 ea          	cmova  %rdx,%r13
+   107f7:	48 8d 56 02          	lea    0x2(%rsi),%rdx
+   107fb:	4c 39 ea             	cmp    %r13,%rdx
+   107fe:	0f 83 bc 00 00 00    	jae    108c0 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1f0>
+   10804:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   10809:	48 01 ce             	add    %rcx,%rsi
+   1080c:	49 8d 34 f3          	lea    (%r11,%rsi,8),%rsi
+   10810:	0f 1f 40 00          	nopl   0x0(%rax)
+   10814:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1081b:	00 00 00 00 
+   1081f:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   10826:	00 00 00 00 
+   1082a:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   10831:	00 00 00 00 
+   10835:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1083c:	00 00 00 00 
+   10840:	4e 8d 0c 21          	lea    (%rcx,%r12,1),%r9
+   10844:	4e 8d 0c cf          	lea    (%rdi,%r9,8),%r9
+   10848:	49 8b 01             	mov    (%r9),%rax
+   1084b:	48 39 06             	cmp    %rax,(%rsi)
+   1084e:	4c 0f 42 ce          	cmovb  %rsi,%r9
+   10852:	4c 0f 42 e2          	cmovb  %rdx,%r12
+   10856:	48 83 c2 01          	add    $0x1,%rdx
+   1085a:	48 83 c6 08          	add    $0x8,%rsi
+   1085e:	4c 39 ea             	cmp    %r13,%rdx
+   10861:	75 dd                	jne    10840 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x170>
+   10863:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+   10868:	49 8b 11             	mov    (%r9),%rdx
+   1086b:	49 01 ce             	add    %rcx,%r14
+   1086e:	4e 8d 2c f7          	lea    (%rdi,%r14,8),%r13
+   10872:	4c 39 fa             	cmp    %r15,%rdx
+   10875:	73 2d                	jae    108a4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1d4>
+   10877:	49 89 55 00          	mov    %rdx,0x0(%r13)
+   1087b:	49 8b 52 08          	mov    0x8(%r10),%rdx
+   1087f:	48 83 fa 01          	cmp    $0x1,%rdx
+   10883:	0f 86 6e 01 00 00    	jbe    109f7 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x327>
+   10889:	48 8d 72 fe          	lea    -0x2(%rdx),%rsi
+   1088d:	4d 89 e6             	mov    %r12,%r14
+   10890:	48 c1 ee 02          	shr    $0x2,%rsi
+   10894:	4c 39 f6             	cmp    %r14,%rsi
+   10897:	0f 83 43 ff ff ff    	jae    107e0 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x110>
+   1089d:	49 01 ce             	add    %rcx,%r14
+   108a0:	4e 8d 2c f7          	lea    (%rdi,%r14,8),%r13
+   108a4:	4d 89 7d 00          	mov    %r15,0x0(%r13)
+   108a8:	49 83 7a 08 00       	cmpq   $0x0,0x8(%r10)
+   108ad:	74 3a                	je     108e9 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x219>
+   108af:	4c 8b 08             	mov    (%rax),%r9
+   108b2:	e9 69 fe ff ff       	jmp    10720 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x50>
+   108b7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+   108be:	00 00 
+   108c0:	4a 8d 14 21          	lea    (%rcx,%r12,1),%rdx
+   108c4:	4c 8d 0c d7          	lea    (%rdi,%rdx,8),%r9
+   108c8:	eb 9e                	jmp    10868 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x198>
+   108ca:	48 85 d2             	test   %rdx,%rdx
+   108cd:	0f 84 c1 7c ff ff    	je     8594 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0] [clone .cold]+0x32>
+   108d3:	48 83 ea 01          	sub    $0x1,%rdx
+   108d7:	4c 8d 0c 11          	lea    (%rcx,%rdx,1),%r9
+   108db:	4e 8b 34 cf          	mov    (%rdi,%r9,8),%r14
+   108df:	49 89 52 08          	mov    %rdx,0x8(%r10)
+   108e3:	0f 85 16 01 00 00    	jne    109ff <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x32f>
+   108e9:	48 83 c4 28          	add    $0x28,%rsp
+   108ed:	4c 89 c0             	mov    %r8,%rax
+   108f0:	5b                   	pop    %rbx
+   108f1:	5d                   	pop    %rbp
+   108f2:	41 5c                	pop    %r12
+   108f4:	41 5d                	pop    %r13
+   108f6:	41 5e                	pop    %r14
+   108f8:	41 5f                	pop    %r15
+   108fa:	c3                   	ret
+   108fb:	48 83 ea 01          	sub    $0x1,%rdx
+   108ff:	4c 8d 0c 11          	lea    (%rcx,%rdx,1),%r9
+   10903:	4e 8b 34 cf          	mov    (%rdi,%r9,8),%r14
+   10907:	49 89 52 08          	mov    %rdx,0x8(%r10)
+   1090b:	74 dc                	je     108e9 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x219>
+   1090d:	45 31 ed             	xor    %r13d,%r13d
+   10910:	4c 8d 7f 10          	lea    0x10(%rdi),%r15
+   10914:	48 83 fa 01          	cmp    $0x1,%rdx
+   10918:	0f 84 f8 01 00 00    	je     10b16 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x446>
+   1091e:	48 8d 72 fe          	lea    -0x2(%rdx),%rsi
+   10922:	48 89 6c 24 18       	mov    %rbp,0x18(%rsp)
+   10927:	48 c1 ee 02          	shr    $0x2,%rsi
+   1092b:	4c 39 ee             	cmp    %r13,%rsi
+   1092e:	0f 82 ae 00 00 00    	jb     109e2 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x312>
+   10934:	90                   	nop
+   10935:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1093c:	00 00 00 00 
+   10940:	4a 8d 34 ad 00 00 00 	lea    0x0(,%r13,4),%rsi
+   10947:	00 
+   10948:	4c 8d 66 05          	lea    0x5(%rsi),%r12
+   1094c:	48 8d 6e 01          	lea    0x1(%rsi),%rbp
+   10950:	49 39 d4             	cmp    %rdx,%r12
+   10953:	4c 0f 47 e2          	cmova  %rdx,%r12
+   10957:	48 8d 56 02          	lea    0x2(%rsi),%rdx
+   1095b:	4c 39 e2             	cmp    %r12,%rdx
+   1095e:	0f 83 8a 01 00 00    	jae    10aee <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x41e>
+   10964:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   10969:	48 01 ce             	add    %rcx,%rsi
+   1096c:	49 8d 34 f7          	lea    (%r15,%rsi,8),%rsi
+   10970:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   10975:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1097c:	00 00 00 00 
+   10980:	4c 8d 4c 0d 00       	lea    0x0(%rbp,%rcx,1),%r9
+   10985:	4e 8d 0c cf          	lea    (%rdi,%r9,8),%r9
+   10989:	49 8b 01             	mov    (%r9),%rax
+   1098c:	48 39 06             	cmp    %rax,(%rsi)
+   1098f:	48 0f 42 ea          	cmovb  %rdx,%rbp
+   10993:	4c 0f 42 ce          	cmovb  %rsi,%r9
+   10997:	48 83 c2 01          	add    $0x1,%rdx
+   1099b:	48 83 c6 08          	add    $0x8,%rsi
+   1099f:	49 39 d4             	cmp    %rdx,%r12
+   109a2:	75 dc                	jne    10980 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2b0>
+   109a4:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+   109a9:	49 8b 11             	mov    (%r9),%rdx
+   109ac:	49 01 cd             	add    %rcx,%r13
+   109af:	4e 8d 2c ef          	lea    (%rdi,%r13,8),%r13
+   109b3:	4c 39 f2             	cmp    %r14,%rdx
+   109b6:	0f 83 28 01 00 00    	jae    10ae4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x414>
+   109bc:	49 89 55 00          	mov    %rdx,0x0(%r13)
+   109c0:	49 8b 52 08          	mov    0x8(%r10),%rdx
+   109c4:	48 83 fa 01          	cmp    $0x1,%rdx
+   109c8:	0f 86 2d 01 00 00    	jbe    10afb <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x42b>
+   109ce:	48 8d 72 fe          	lea    -0x2(%rdx),%rsi
+   109d2:	49 89 ed             	mov    %rbp,%r13
+   109d5:	48 c1 ee 02          	shr    $0x2,%rsi
+   109d9:	4c 39 ee             	cmp    %r13,%rsi
+   109dc:	0f 83 5e ff ff ff    	jae    10940 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x270>
+   109e2:	49 01 cd             	add    %rcx,%r13
+   109e5:	48 8b 6c 24 18       	mov    0x18(%rsp),%rbp
+   109ea:	4e 8d 2c ef          	lea    (%rdi,%r13,8),%r13
+   109ee:	4d 89 75 00          	mov    %r14,0x0(%r13)
+   109f2:	e9 b1 fe ff ff       	jmp    108a8 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1d8>
+   109f7:	4d 89 cd             	mov    %r9,%r13
+   109fa:	e9 a5 fe ff ff       	jmp    108a4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x1d4>
+   109ff:	45 31 ed             	xor    %r13d,%r13d
+   10a02:	4c 8d 7f 10          	lea    0x10(%rdi),%r15
+   10a06:	48 83 fa 01          	cmp    $0x1,%rdx
+   10a0a:	0f 84 06 01 00 00    	je     10b16 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x446>
+   10a10:	48 89 6c 24 18       	mov    %rbp,0x18(%rsp)
+   10a15:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   10a1c:	00 00 00 00 
+   10a20:	48 8d 72 fe          	lea    -0x2(%rdx),%rsi
+   10a24:	48 c1 ee 02          	shr    $0x2,%rsi
+   10a28:	4c 39 ee             	cmp    %r13,%rsi
+   10a2b:	72 b5                	jb     109e2 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x312>
+   10a2d:	4a 8d 34 ad 00 00 00 	lea    0x0(,%r13,4),%rsi
+   10a34:	00 
+   10a35:	4c 8d 66 05          	lea    0x5(%rsi),%r12
+   10a39:	48 8d 6e 01          	lea    0x1(%rsi),%rbp
+   10a3d:	49 39 d4             	cmp    %rdx,%r12
+   10a40:	4c 0f 47 e2          	cmova  %rdx,%r12
+   10a44:	48 8d 56 02          	lea    0x2(%rsi),%rdx
+   10a48:	4c 39 e2             	cmp    %r12,%rdx
+   10a4b:	0f 83 7c 00 00 00    	jae    10acd <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x3fd>
+   10a51:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   10a56:	48 01 ce             	add    %rcx,%rsi
+   10a59:	49 8d 34 f7          	lea    (%r15,%rsi,8),%rsi
+   10a5d:	66 90                	xchg   %ax,%ax
+   10a5f:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   10a66:	00 00 00 00 
+   10a6a:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   10a71:	00 00 00 00 
+   10a75:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   10a7c:	00 00 00 00 
+   10a80:	4c 8d 0c 29          	lea    (%rcx,%rbp,1),%r9
+   10a84:	4e 8d 0c cf          	lea    (%rdi,%r9,8),%r9
+   10a88:	49 8b 01             	mov    (%r9),%rax
+   10a8b:	48 39 06             	cmp    %rax,(%rsi)
+   10a8e:	4c 0f 42 ce          	cmovb  %rsi,%r9
+   10a92:	48 0f 42 ea          	cmovb  %rdx,%rbp
+   10a96:	48 83 c2 01          	add    $0x1,%rdx
+   10a9a:	48 83 c6 08          	add    $0x8,%rsi
+   10a9e:	49 39 d4             	cmp    %rdx,%r12
+   10aa1:	75 dd                	jne    10a80 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x3b0>
+   10aa3:	49 8b 11             	mov    (%r9),%rdx
+   10aa6:	49 01 cd             	add    %rcx,%r13
+   10aa9:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+   10aae:	4e 8d 2c ef          	lea    (%rdi,%r13,8),%r13
+   10ab2:	4c 39 f2             	cmp    %r14,%rdx
+   10ab5:	73 2d                	jae    10ae4 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x414>
+   10ab7:	49 89 55 00          	mov    %rdx,0x0(%r13)
+   10abb:	49 8b 52 08          	mov    0x8(%r10),%rdx
+   10abf:	48 83 fa 01          	cmp    $0x1,%rdx
+   10ac3:	76 36                	jbe    10afb <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x42b>
+   10ac5:	49 89 ed             	mov    %rbp,%r13
+   10ac8:	e9 53 ff ff ff       	jmp    10a20 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x350>
+   10acd:	48 8d 14 29          	lea    (%rcx,%rbp,1),%rdx
+   10ad1:	49 01 cd             	add    %rcx,%r13
+   10ad4:	4c 8d 0c d7          	lea    (%rdi,%rdx,8),%r9
+   10ad8:	4e 8d 2c ef          	lea    (%rdi,%r13,8),%r13
+   10adc:	49 8b 11             	mov    (%r9),%rdx
+   10adf:	4c 39 f2             	cmp    %r14,%rdx
+   10ae2:	72 d3                	jb     10ab7 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x3e7>
+   10ae4:	48 8b 6c 24 18       	mov    0x18(%rsp),%rbp
+   10ae9:	e9 00 ff ff ff       	jmp    109ee <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x31e>
+   10aee:	48 8d 14 29          	lea    (%rcx,%rbp,1),%rdx
+   10af2:	4c 8d 0c d7          	lea    (%rdi,%rdx,8),%r9
+   10af6:	e9 ae fe ff ff       	jmp    109a9 <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x2d9>
+   10afb:	48 8b 6c 24 18       	mov    0x18(%rsp),%rbp
+   10b00:	4d 89 cd             	mov    %r9,%r13
+   10b03:	e9 e6 fe ff ff       	jmp    109ee <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x31e>
+   10b08:	49 b8 25 23 22 84 e4 	movabs $0xcbf29ce484222325,%r8
+   10b0f:	9c f2 cb 
+   10b12:	4c 89 c0             	mov    %r8,%rax
+   10b15:	c3                   	ret
+   10b16:	49 89 dd             	mov    %rbx,%r13
+   10b19:	e9 d0 fe ff ff       	jmp    109ee <unsigned long (anonymous namespace)::merge_once<false, tiplog::merge::Quad>(tiplog::merge::Quad&, (anonymous namespace)::Input const&, std::vector<unsigned long, std::allocator<unsigned long> >&, unsigned long&) [clone .constprop.0]+0x31e>

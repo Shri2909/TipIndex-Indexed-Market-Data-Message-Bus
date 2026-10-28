@@ -1,0 +1,17 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from AuditChecker
+[ RUN      ] AuditChecker.RingDetectsNonzeroFill
+[       OK ] AuditChecker.RingDetectsNonzeroFill (0 ms)
+[ RUN      ] AuditChecker.RingDetectsSequenceGap
+[       OK ] AuditChecker.RingDetectsSequenceGap (0 ms)
+[ RUN      ] AuditChecker.IndexDetectsCorruptedBlockCount
+[       OK ] AuditChecker.IndexDetectsCorruptedBlockCount (0 ms)
+[ RUN      ] AuditChecker.EngineDetectsRetainedRecordOnWrongTopicPartition
+[       OK ] AuditChecker.EngineDetectsRetainedRecordOnWrongTopicPartition (0 ms)
+[----------] 4 tests from AuditChecker (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.

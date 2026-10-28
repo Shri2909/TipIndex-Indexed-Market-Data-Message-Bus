@@ -1,0 +1,1418 @@
+{
+  "schema": "tiplog.f01.poll-figures.v1",
+  "summary": "results/f01/studies/final-20261027/summary.json",
+  "summary_sha256": "6344babc8dc0b820cd946f6cc3a0a86773c600a0cf7078e37dff79d99ecc8cd2",
+  "script": "scripts/plot_f01_study.py",
+  "script_sha256": "c5e4d200ffb7afe464ab46cac0812d278b17ab16a1e1d2e54d9208c8d2f0bb23",
+  "matplotlib_version": "3.11.0",
+  "selections": {
+    "demo-legacy": {
+      "criteria": {
+        "records": 1000000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "demo-unlimited": {
+      "criteria": {
+        "records": 1000000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "demo-1000": {
+      "criteria": {
+        "records": 1000000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "1000",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1000,
+        1000,
+        1000
+      ],
+      "service_sample_counts": [
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "pareto-legacy": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "pareto-unlimited": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "pareto-1": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        100000,
+        100000,
+        100000
+      ],
+      "service_sample_counts": [
+        100000,
+        100000,
+        100000
+      ]
+    },
+    "pareto-8": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "8",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        12500,
+        12500,
+        12500
+      ],
+      "service_sample_counts": [
+        12500,
+        12500,
+        12500
+      ]
+    },
+    "pareto-32": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "32",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        3125,
+        3125,
+        3125
+      ],
+      "service_sample_counts": [
+        3125,
+        3125,
+        3125
+      ]
+    },
+    "pareto-128": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        782,
+        782,
+        782
+      ],
+      "service_sample_counts": [
+        782,
+        782,
+        782
+      ]
+    },
+    "pareto-512": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "512",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        196,
+        196,
+        196
+      ],
+      "service_sample_counts": [
+        196,
+        196,
+        196
+      ]
+    },
+    "pareto-2048": {
+      "criteria": {
+        "records": 100000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        49,
+        49,
+        49
+      ],
+      "service_sample_counts": [
+        49,
+        49,
+        49
+      ]
+    },
+    "dense-scan-legacy": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        25,
+        25,
+        25
+      ],
+      "service_sample_counts": [
+        25,
+        25,
+        25
+      ]
+    },
+    "dense-scan-unlimited": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        25,
+        25,
+        25
+      ],
+      "service_sample_counts": [
+        25,
+        25,
+        25
+      ]
+    },
+    "dense-scan-1": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        100000,
+        100000,
+        100000
+      ],
+      "service_sample_counts": [
+        100000,
+        100000,
+        100000
+      ]
+    },
+    "dense-scan-8": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "8",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        12500,
+        12500,
+        12500
+      ],
+      "service_sample_counts": [
+        12500,
+        12500,
+        12500
+      ]
+    },
+    "dense-scan-32": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "32",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        3125,
+        3125,
+        3125
+      ],
+      "service_sample_counts": [
+        3125,
+        3125,
+        3125
+      ]
+    },
+    "dense-scan-128": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        782,
+        782,
+        782
+      ],
+      "service_sample_counts": [
+        782,
+        782,
+        782
+      ]
+    },
+    "dense-scan-512": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "512",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        196,
+        196,
+        196
+      ],
+      "service_sample_counts": [
+        196,
+        196,
+        196
+      ]
+    },
+    "dense-scan-2048": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        49,
+        49,
+        49
+      ],
+      "service_sample_counts": [
+        49,
+        49,
+        49
+      ]
+    },
+    "dense-indexed-legacy": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        25,
+        25,
+        25
+      ],
+      "service_sample_counts": [
+        25,
+        25,
+        25
+      ]
+    },
+    "dense-indexed-unlimited": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        25,
+        25,
+        25
+      ],
+      "service_sample_counts": [
+        25,
+        25,
+        25
+      ]
+    },
+    "dense-indexed-1": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        100000,
+        100000,
+        100000
+      ],
+      "service_sample_counts": [
+        100000,
+        100000,
+        100000
+      ]
+    },
+    "dense-indexed-8": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "8",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        12500,
+        12500,
+        12500
+      ],
+      "service_sample_counts": [
+        12500,
+        12500,
+        12500
+      ]
+    },
+    "dense-indexed-32": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "32",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        3125,
+        3125,
+        3125
+      ],
+      "service_sample_counts": [
+        3125,
+        3125,
+        3125
+      ]
+    },
+    "dense-indexed-128": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        782,
+        782,
+        782
+      ],
+      "service_sample_counts": [
+        782,
+        782,
+        782
+      ]
+    },
+    "dense-indexed-512": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "512",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        196,
+        196,
+        196
+      ],
+      "service_sample_counts": [
+        196,
+        196,
+        196
+      ]
+    },
+    "dense-indexed-2048": {
+      "criteria": {
+        "records": 100000,
+        "case": "dense",
+        "shape": "small",
+        "configured_partitions": 4,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "round-robin",
+        "max_outputs": 4096
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        49,
+        49,
+        49
+      ],
+      "service_sample_counts": [
+        49,
+        49,
+        49
+      ]
+    },
+    "setup-64-1": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 64,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1000,
+        1000,
+        1000
+      ],
+      "service_sample_counts": [
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "setup-256-1": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 256,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1000,
+        1000,
+        1000
+      ],
+      "service_sample_counts": [
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "setup-4096-1": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4096,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1000,
+        1000,
+        1000
+      ],
+      "service_sample_counts": [
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "setup-64-128": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 64,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        8,
+        8,
+        8
+      ],
+      "service_sample_counts": [
+        8,
+        8,
+        8
+      ]
+    },
+    "setup-256-128": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 256,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        8,
+        8,
+        8
+      ],
+      "service_sample_counts": [
+        8,
+        8,
+        8
+      ]
+    },
+    "setup-4096-128": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4096,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        8,
+        8,
+        8
+      ],
+      "service_sample_counts": [
+        8,
+        8,
+        8
+      ]
+    },
+    "setup-64-unlimited": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 64,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "setup-256-unlimited": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 256,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "setup-4096-unlimited": {
+      "criteria": {
+        "records": 1000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 4096,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-round-robin-legacy": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-round-robin-unlimited": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-round-robin-1": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        200000,
+        200000,
+        200000
+      ],
+      "service_sample_counts": [
+        200000,
+        200000,
+        200000
+      ]
+    },
+    "control-scan-round-robin-128": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1563,
+        1563,
+        1563
+      ],
+      "service_sample_counts": [
+        1563,
+        1563,
+        1563
+      ]
+    },
+    "control-scan-round-robin-2048": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        98,
+        98,
+        98
+      ],
+      "service_sample_counts": [
+        98,
+        98,
+        98
+      ]
+    },
+    "control-scan-immediate-redrain-legacy": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-immediate-redrain-unlimited": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-immediate-redrain-1": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        200000,
+        200000,
+        200000
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-immediate-redrain-128": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1563,
+        1563,
+        1563
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-scan-immediate-redrain-2048": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "scan",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        98,
+        98,
+        98
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-round-robin-legacy": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-round-robin-unlimited": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-round-robin-1": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        200000,
+        200000,
+        200000
+      ],
+      "service_sample_counts": [
+        200000,
+        200000,
+        200000
+      ]
+    },
+    "control-indexed-round-robin-128": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1563,
+        1563,
+        1563
+      ],
+      "service_sample_counts": [
+        1563,
+        1563,
+        1563
+      ]
+    },
+    "control-indexed-round-robin-2048": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "round-robin",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        98,
+        98,
+        98
+      ],
+      "service_sample_counts": [
+        98,
+        98,
+        98
+      ]
+    },
+    "control-indexed-immediate-redrain-legacy": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "legacy",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-immediate-redrain-unlimited": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "unlimited",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1,
+        1,
+        1
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-immediate-redrain-1": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "1",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        200000,
+        200000,
+        200000
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-immediate-redrain-128": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "128",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        1563,
+        1563,
+        1563
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    },
+    "control-indexed-immediate-redrain-2048": {
+      "criteria": {
+        "records": 200000,
+        "case": "no-match",
+        "shape": "small",
+        "configured_partitions": 1,
+        "candidate_every": 1,
+        "mode": "indexed",
+        "kernel": "stdpq",
+        "budget": "2048",
+        "schedule": "immediate-redrain",
+        "max_outputs": 1
+      },
+      "repetitions": 3,
+      "poll_sample_counts": [
+        98,
+        98,
+        98
+      ],
+      "service_sample_counts": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "outputs": {
+    "results/f01/figures/final-20261027/poll-budget-responsiveness.svg": "d7e005cc26ce6672434ac8c42751bbbd6e8f6f081cb9c2f20ba5c0d659ee0c46",
+    "results/f01/figures/final-20261027/poll-budget-responsiveness.pdf": "b617558d11381c6f48d9b95bd1501e3317d4f90ba99d8910a1f6afe43c634b69",
+    "results/f01/figures/final-20261027/poll-budget-cost.svg": "ecd3a15a73a18670fc5bd553762a7ae6fa6ac2d0c6a2a21b7bbd974e6cee50b2",
+    "results/f01/figures/final-20261027/poll-budget-cost.pdf": "5a01de200190ec0a00d148f06399b8caa4384e8e28e99bd6b739b80e9c10a5f0",
+    "results/f01/figures/final-20261027/poll-budget-scheduling.svg": "e4d84b7ad05dea3e4dee608f64dc05ecc9140e42843a12ba2321aff74e40a377",
+    "results/f01/figures/final-20261027/poll-budget-scheduling.pdf": "a26dbe8f5bc8fffc99721cfffbf9c2e7e41288f94beba640398d5177e1a73bc9"
+  }
+}

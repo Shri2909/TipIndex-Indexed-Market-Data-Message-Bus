@@ -1,0 +1,7 @@
+{
+  "m3_4096_record_verify_json_identical": true,
+  "m2_default_verify_stdout_identical": true,
+  "worked_example_stdout_byte_identical": true,
+  "baseline_binaries": "build/release",
+  "fixed_binaries": "build/remediation/tools"
+}

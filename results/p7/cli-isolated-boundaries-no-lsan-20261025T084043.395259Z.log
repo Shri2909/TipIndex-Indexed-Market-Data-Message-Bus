@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "sanitizer_leaks": "disabled: LSan cannot operate under sandbox ptrace",
+  "checks": [
+    {
+      "preset": "release",
+      "check": "quoted_id_full_curve_at_budget",
+      "status": "passed"
+    },
+    {
+      "preset": "release",
+      "check": "unsupported_global_budget_bound",
+      "status": "passed"
+    },
+    {
+      "preset": "release",
+      "check": "unknown_incomplete_curve_withholds_certificate",
+      "status": "passed"
+    },
+    {
+      "preset": "release",
+      "check": "mixed_global_scales",
+      "status": "passed"
+    },
+    {
+      "preset": "asan-ubsan",
+      "check": "quoted_id_full_curve_at_budget",
+      "status": "passed"
+    },
+    {
+      "preset": "asan-ubsan",
+      "check": "unsupported_global_budget_bound",
+      "status": "passed"
+    },
+    {
+      "preset": "asan-ubsan",
+      "check": "unknown_incomplete_curve_withholds_certificate",
+      "status": "passed"
+    },
+    {
+      "preset": "asan-ubsan",
+      "check": "mixed_global_scales",
+      "status": "passed"
+    },
+    {
+      "preset": "release",
+      "check": "computed_worked_example",
+      "status": "passed"
+    }
+  ]
+}

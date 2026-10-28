@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "guard_source_sha256": "d9de1ff2b2af47470aac74c6b43e24637f3d083beca4a2d8a18a2384d9d12b30",
+  "negative_controls": [
+    {
+      "extra": [
+        "@audit/independent-20261027T041900Z/evidence/core/sanitizer-disable.rsp"
+      ],
+      "status": "rejected",
+      "reason": "indirect compiler flags or undeclared compilation inputs are unsupported"
+    },
+    {
+      "extra": [
+        "-fsanitize-ignorelist=external.txt"
+      ],
+      "status": "rejected",
+      "reason": "undeclared sanitizer suppression or configuration flag"
+    },
+    {
+      "extra": [
+        "-fsanitize-blacklist=external.txt"
+      ],
+      "status": "rejected",
+      "reason": "undeclared sanitizer suppression or configuration flag"
+    },
+    {
+      "extra": [
+        "-Xclang=-disable-llvm-passes"
+      ],
+      "status": "rejected",
+      "reason": "indirect compiler flags or undeclared compilation inputs are unsupported"
+    },
+    {
+      "extra": [
+        "-mllvm",
+        "-asan-instrument-reads=false"
+      ],
+      "status": "rejected",
+      "reason": "indirect compiler flags or undeclared compilation inputs are unsupported"
+    },
+    {
+      "extra": [
+        "-include",
+        "unbound-header.h"
+      ],
+      "status": "rejected",
+      "reason": "indirect compiler flags or undeclared compilation inputs are unsupported"
+    },
+    {
+      "extra": [
+        "-Wl,@linker.rsp"
+      ],
+      "status": "rejected",
+      "reason": "indirect compiler flags or undeclared compilation inputs are unsupported"
+    },
+    {
+      "extra": [
+        "-D",
+        "NDEBUG"
+      ],
+      "status": "rejected",
+      "reason": "NDEBUG disables assertions required by the declared preset"
+    }
+  ],
+  "ordinary_warning_control": "accepted",
+  "actual_snapshot_configuration_controls": {
+    "debug": true,
+    "release": true,
+    "asan-ubsan": true,
+    "fuzz": true
+  },
+  "scope": "independent exact response-file regression and suppression controls; metadata validation, no duplicate C++ execution"
+}

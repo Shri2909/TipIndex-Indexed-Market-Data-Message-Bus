@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-25T07:58:52.979051+00:00",
+  "checks": 176731,
+  "metric_summaries_reviewed": 74660,
+  "failures": [],
+  "delegated_review_completed_before_final_rendering": {
+    "task": "/root/p6_gate_audit",
+    "scope": "Independent source/matrix review, original auditor amendment and5364-file identity review,65 statistics/report checks and28 T5/noise-table checks reported in session messages before final presentation-only title positioning.",
+    "limits": "The final rendering was inspected by the root, not represented as a later delegated review."
+  },
+  "root_closeout_review": "Rechecks explicit approved workload coverage, all completed rounds, every numerical summary/pair and exact nonoverlapping crossover metadata. Final visual review covers F09,F12,F13 and title placement; prior accepted hot-source and raw-file integrity are separately recorded.",
+  "numerical_source": {
+    "path": "results/derived/tip-summary.json",
+    "sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb"
+  }
+}

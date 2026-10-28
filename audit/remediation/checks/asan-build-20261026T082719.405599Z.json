@@ -1,0 +1,24 @@
+{
+  "label": "asan-build",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "asan-ubsan",
+    "--parallel",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:27:19.405896+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/asan-build-20261026T082719.405599Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 122.63281793300007,
+  "log_sha256": "a69ffcc860f61f2cdd9d4d14799bc435d64c0a02f2f57d1f7b1ccd935abbff66"
+}

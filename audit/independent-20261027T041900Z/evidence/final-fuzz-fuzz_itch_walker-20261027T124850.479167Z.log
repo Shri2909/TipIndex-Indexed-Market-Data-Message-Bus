@@ -1,0 +1,17 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20261027
+INFO: Loaded 1 modules   (368 inline 8-bit counters): 368 [0x5ca996451420, 0x5ca996451590), 
+INFO: Loaded 1 PC tables (368 PCs): 368 [0x5ca996451590,0x5ca996452c90), 
+INFO:       74 files found in /home/abc/Desktop/Jane Street/audit/independent-20261027T041900Z/evidence/private-fuzz/fuzz_itch_walker/corpus
+INFO: seed corpus: files: 74 min: 1b max: 742b total: 9017b rss: 36Mb
+#75	INITED cov: 106 ft: 203 corp: 24/1761b exec/s: 0 rss: 234Mb
+#2048	pulse  cov: 106 ft: 203 corp: 24/1761b lim: 558 exec/s: 1024 rss: 329Mb
+#4096	pulse  cov: 106 ft: 203 corp: 24/1761b lim: 576 exec/s: 1024 rss: 329Mb
+#8192	pulse  cov: 106 ft: 203 corp: 24/1761b lim: 621 exec/s: 910 rss: 329Mb
+#10000	DONE   cov: 106 ft: 203 corp: 24/1761b lim: 639 exec/s: 833 rss: 329Mb
+Done 10000 runs in 12 second(s)
+stat::number_of_executed_units: 10000
+stat::average_exec_per_sec:     833
+stat::new_units_added:          0
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              329

@@ -42,7 +42,6 @@ void compare_state(const Engine& engine, const ref::ScanOracle& oracle) {
   require(stats.tail_pos == oracle.tail_pos());
   require(stats.head_seq == oracle.head_seq());
   require(stats.tail_seq == oracle.tail_seq());
-  engine.check_invariants();
 }
 
 void compare_reader(const ReaderPair& pair) {
@@ -102,11 +101,21 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
   const bool indexed = mode_name != nullptr && std::string_view(mode_name) == "indexed";
   const bool integrated = mode_name != nullptr && std::string_view(mode_name) == "all";
   const auto mode = indexed ? ReplayMode::Indexed : ReplayMode::Scan;
-  if (indexed && (configuration & 128U) != 0) tiplog::fuzz::pressure_fixture();
-  if (integrated && (configuration & 128U) != 0)
-    for (const auto kernel : {MergeKernel::StdPQ, MergeKernel::BinHeap,
-                             MergeKernel::Quad, MergeKernel::Loser})
-      tiplog::fuzz::pressure_fixture(kernel);
+  if (indexed || integrated) {
+    // The fixture has no input-dependent branches. Exercise it once in each
+    // fuzzer process, then spend the mutation budget on the actual grammar.
+    static const bool pressure_checked = [integrated] {
+      if (integrated) {
+        for (const auto kernel : {MergeKernel::StdPQ, MergeKernel::BinHeap,
+                                 MergeKernel::Quad, MergeKernel::Loser})
+          tiplog::fuzz::pressure_fixture(kernel);
+      } else {
+        tiplog::fuzz::pressure_fixture();
+      }
+      return true;
+    }();
+    (void)pressure_checked;
+  }
   const std::size_t capacity = std::size_t{1} << (6U + configuration % 8U);
   EngineConfig config;
   config.ring_bytes = capacity;
@@ -137,8 +146,11 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
       {{{Term::Subtree, "md/future/sub"}}},
       {{{Term::Exact, "root"}}},
       {{{Term::Subtree, "other"}, {Term::Subtree, "md/C"}}}};
-  std::vector<subs::CompiledSubscription> compiled;
-  for (const auto& spec : specs) compiled.push_back(engine.compile(spec));
+  std::array<std::optional<subs::CompiledSubscription>, 8> compiled;
+  auto compiled_sub = [&](std::size_t subscription) -> const subs::CompiledSubscription& {
+    if (!compiled[subscription]) compiled[subscription].emplace(engine.compile(specs[subscription]));
+    return *compiled[subscription];
+  };
   std::array<ReaderPair, 4> readers;
   std::array<TailPair, 4> tails;
   for (std::size_t operations = 0; input.offset < input.size && operations < 16384;
@@ -158,8 +170,12 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
         topic = *found;
       }
       const auto length = input.take() % (config.max_record_bytes - 16 + 1);
-      const auto value = static_cast<std::byte>(input.take());
-      const std::vector<std::byte> payload(length, value);
+      const auto value = input.take();
+      std::vector<std::byte> payload(length);
+      // Keep the existing operation framing while varying bytes within a
+      // publication, so offset/copy corruption cannot hide behind uniform fill.
+      for (std::size_t i = 0; i < payload.size(); ++i)
+        payload[i] = static_cast<std::byte>((value + i * 37U) & 255U);
       require(engine.publish(topic, payload) == oracle.publish(path, payload));
     } else if (opcode == 1U) {
       const auto choice = input.take();
@@ -178,7 +194,7 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
       else if (selection == 7U) after = oracle.tail_seq() > 1 ? oracle.tail_seq() - 2 : 0;
       const auto selected_mode = integrated ? static_cast<ReplayMode>(input.take() % 3U) : mode;
       const auto kernel = integrated ? static_cast<MergeKernel>(input.take() % 4U) : MergeKernel::StdPQ;
-      pair.actual.emplace(engine.open_replay(compiled[subscription], after, selected_mode, kernel));
+      pair.actual.emplace(engine.open_replay(compiled_sub(subscription), after, selected_mode, kernel));
       pair.expected.emplace(oracle.open_replay(specs[subscription], after));
       compare_reader(pair);
     } else if (opcode == 2U) {
@@ -223,7 +239,7 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
       const auto selected_mode = static_cast<ReplayMode>(input.take() % 3U);
       const auto kernel = static_cast<MergeKernel>(input.take() % 4U);
       bool actual_rejected = false, expected_rejected = false;
-      try { tail.actual.emplace(engine.open_tail(compiled[subscription], after, selected_mode, kernel)); }
+      try { tail.actual.emplace(engine.open_tail(compiled_sub(subscription), after, selected_mode, kernel)); }
       catch (const InvalidRange&) { actual_rejected = true; }
       try { tail.expected.emplace(ref::OracleTail(oracle, specs[subscription], after)); }
       catch (const std::invalid_argument&) { expected_rejected = true; }
@@ -237,6 +253,9 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
       for (auto& tail : tails) tail_batch(tail, engine, 8);
     }
     compare_state(engine, oracle);
+    // Boundary/output comparisons remain per-operation. Full recounts walk the
+    // entire ring and index pool: sample them, and always check the final state.
+    if (operations % 32 == 0) engine.check_invariants();
   }
   for (auto& pair : readers) {
     for (unsigned count = 0; count < 1024U && pair.actual &&
@@ -244,5 +263,6 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
       batch(pair, engine, 32);
   }
   for (auto& tail : tails) tail_batch(tail, engine, 32);
+  engine.check_invariants();
   return 0;
 }

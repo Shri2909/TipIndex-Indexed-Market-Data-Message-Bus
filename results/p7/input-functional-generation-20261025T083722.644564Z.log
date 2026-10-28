@@ -1,0 +1,185 @@
+{
+  "schema": "tiplog-layout-inputs-v1",
+  "case_count": 138,
+  "tsv_bytes": 85571,
+  "estimate_only": false,
+  "batches": [
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W0-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2458,
+      "sha256": "d96e498f5f7bda0b7aeb5e079fad4f6ceb617fdc29a9cbe3499519379a2bfc68"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W0-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2474,
+      "sha256": "cf6fa462eacf481ede172c6a90babedf027e06867836b0572c1c34b3fd2130f4"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W0-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2482,
+      "sha256": "261814f6ac37eb41a9550e4f0c39e87363426789b0e88412fd8f4165cc2175cd"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W1-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2625,
+      "sha256": "5ec77ecfc19666f3428ca80f318c942afc1b8c37dea63ba18d0e39bc15b10f81"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W1-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2641,
+      "sha256": "780740781f71a29a2e868da3c7a6b76e80a51bedf4ca5d41809a169449ce23da"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W1-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2649,
+      "sha256": "7266fe7962cf1c72484fbed778e5a5779142e3b465d091ef6459e0178948eb8e"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W2-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2625,
+      "sha256": "e13e7a9af11b678c828ab9a84c73a6daeecb8166ebb05919ae339897c67762c2"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W2-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2641,
+      "sha256": "9b078008ad47dae30f82d7da7f4607596304e32f44d3cc7ab4ca1ffeb4d5f97d"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W2-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2649,
+      "sha256": "85f43f846d9b7ab167f0ead174d8575b229d3eb8c6a5f27fce62ed96202bfcbd"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W3-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2633,
+      "sha256": "1e5e0f0370f297b0aae1d40fee9ebd872df0128c1c059e8094ad6837eef0f9df"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W3-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2649,
+      "sha256": "244f72be5f8b6a5193de018f517dd7e7c32ed98bcecb9f78ecfa31271d298956"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-spec-W3-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 2657,
+      "sha256": "95d0d28aab9ef5c7b36633d2438d0920be2bfa27ef4c609d96a189e9a7a0ab6f"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W0-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1582,
+      "sha256": "37a58d938074ceb7c41c214ac07b179cd528a914564c732db2a018a06cc7f7c0"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W0-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1598,
+      "sha256": "29de3ead7bf2663beecfe5659115a99b0e0a7891fbe6d93a302d82752a33b368"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W0-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1606,
+      "sha256": "0c796bdfca42746e43ff06b3eb894a14d7e599c85b2dd2781bf55f6dabc5ddd1"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W1-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1545,
+      "sha256": "40a8c8444a7271b3a6354c0e0bdf989742451a010c9c0c789a88f233fec1f657"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W1-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1561,
+      "sha256": "997ba7269796ce7b26e3168d8a347c53b4b148f19119db59b4ca12470ccd0c99"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W1-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1569,
+      "sha256": "dcb5dac267e0c902cc078c5f7b0a01d288724dff1a976d4f62325d6a3a9ceda4"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W2-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1545,
+      "sha256": "2f77984922a33e74e44f00dac39ad07c80f4038530bf0741bd4ae7da599b75db"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W2-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1561,
+      "sha256": "6f3adad3790265ca782e543219226c2111a457889e39152d49b19192423abf9e"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W2-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1569,
+      "sha256": "661a9aec881a0fe4f01b0c9d081569b50a4db3829a0db8a07d46754135dee79c"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W3-beta0.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1553,
+      "sha256": "3649e15e2fb094cbc9b21aa562e481e197497c2164623284773a1afaa23fefcf"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W3-beta65536.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1569,
+      "sha256": "d89375babb8903ebac57cc4dbe48092476b3430a4f3d4386a32c1fb50c3596e6"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/real-H-flat-W3-beta1048576.tsv",
+      "kind": "real",
+      "cases": 2,
+      "bytes": 1577,
+      "sha256": "86533ef5b93c40174c6d1e39022bf7c1950438c3ae917262ffb69a5c63932c1c"
+    },
+    {
+      "path": "/tmp/tiplog-p7-input-functional/synthetic-n5.tsv",
+      "kind": "synthetic",
+      "cases": 90,
+      "bytes": 35553,
+      "sha256": "7ee165f8d8a296e1a4dd897a59fd0ab81f69945c1bb7176391f2c6319d908833"
+    }
+  ],
+  "metadata_path": "/tmp/tiplog-p7-input-functional/metadata.json",
+  "metadata_bytes": 217589
+}

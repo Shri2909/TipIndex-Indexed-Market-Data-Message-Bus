@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "validated_rows": 2274,
+  "arm_groups": 758,
+  "summary_matches_historical": true,
+  "record": "audit/independent-20261027T041900Z/evidence/final-historical-f01-validation-20261027T130427.910838Z.json",
+  "new_summary": "build/f01/independent-20261027-historical-summary.json"
+}

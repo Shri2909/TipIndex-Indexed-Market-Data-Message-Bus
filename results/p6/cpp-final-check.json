@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "client_date": "2026-10-23",
+  "recorded_utc": "2026-10-23T14:34:25.586607+00:00",
+  "scope": "C++ benchmark integration functional checks only; no measurements or P6 gate claim",
+  "source_and_binary_files": [
+    {
+      "path": "bench/micro/index_bench.cpp",
+      "bytes": 11511,
+      "sha256": "a4bcf8ff628ac75047860f41795c7bff799836d281730a55ab5b03bcaf56f04c"
+    },
+    {
+      "path": "tools/tiplog_bench/main.cpp",
+      "bytes": 34559,
+      "sha256": "bb2d59d6ca2c27ea0f3ac8aa2b6e4103d0066077da0ccd81d99d295d2cf8499f"
+    },
+    {
+      "path": "tools/tiplog_bench/contracts.hpp",
+      "bytes": 7063,
+      "sha256": "df4e015277f1857ed4620892acd7a5a47c24af0823e1b261fe4cef2db93ddc92"
+    },
+    {
+      "path": "tests/unit/bench_contract_test.cpp",
+      "bytes": 5048,
+      "sha256": "770d549b7a4a8d3d9fc32d01e95fe7aeb74d0d352111c40f1e80cb458a4725e3"
+    },
+    {
+      "path": "results/p6/cpp-final-m3-check.py",
+      "bytes": 6435,
+      "sha256": "f8c378adaca57e7fd3992ce64cd431790efe5cca66be220757100b842f42970c"
+    },
+    {
+      "path": "build/release/index_bench",
+      "bytes": 10983232,
+      "sha256": "9aae7adb151aed5f481866577de4b2b4a6faad02637cd8dc2a685e621eb27532"
+    },
+    {
+      "path": "build/release/tiplog_bench",
+      "bytes": 5108040,
+      "sha256": "428af8eb33ed914f5f891356472554fd02bb0d8bb3e5b53e4ae66b9da8c98780"
+    },
+    {
+      "path": "build/asan-ubsan/index_bench",
+      "bytes": 9033536,
+      "sha256": "c4d6f8936080425497ad33060c87d3a6ed52c9bd2c495e49a2d4287e979a5f3e"
+    },
+    {
+      "path": "build/asan-ubsan/tiplog_bench",
+      "bytes": 5482872,
+      "sha256": "3cabf7b7baca4e6e94f57d3017f884771a8ae1004a34be1f0c1119c22b91b439"
+    }
+  ],
+  "executed_checks": [
+    {
+      "path": "results/p6/cpp-final-metadata-release-build-20261023T143233.049261Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "release",
+        "--parallel",
+        "2",
+        "--target",
+        "tiplog_bench",
+        "index_bench",
+        "tiplog_bench_contract_test"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/cpp-final-metadata-sanitizer-build-20261023T143233.019930Z.json",
+      "argv": [
+        "cmake",
+        "--build",
+        "--preset",
+        "asan-ubsan",
+        "--parallel",
+        "2",
+        "--target",
+        "tiplog_bench",
+        "index_bench",
+        "tiplog_bench_contract_test"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/cpp-final-m3-reference-release-20261023T143324.694615Z.json",
+      "argv": [
+        ".venv/bin/python",
+        "results/p6/cpp-final-m3-check.py",
+        "--binary",
+        "build/release/index_bench",
+        "--output",
+        "results/p6/cpp-final-m3-release-reference.json"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "path": "results/p6/cpp-final-m3-reference-sanitizer-20261023T143334.436237Z.json",
+      "argv": [
+        ".venv/bin/python",
+        "results/p6/cpp-final-m3-check.py",
+        "--binary",
+        "build/asan-ubsan/index_bench",
+        "--output",
+        "results/p6/cpp-final-m3-sanitizer-reference.json"
+      ],
+      "status": "passed",
+      "exit_code": 0
+    }
+  ],
+  "engine_or_cmake_changed": false
+}

@@ -1,0 +1,29 @@
+{
+  "label": "debug-bound-configure",
+  "argv": [
+    "cmake",
+    "--preset",
+    "debug"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:47:54.152320+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "552a92f3ed28ef5c9895e633f164261f46d71e225355e7533e82d65e1644bef9"
+  },
+  "log": "audit/remediation/checks/debug-bound-configure-20261026T084754.152049Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 1.4347609169999487,
+  "log_sha256": "2d4e8b2e1b0a8a562f783a455bc50a4842063d2e13f6c32e8a6cb93a22ebc401",
+  "input_sets_after": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "552a92f3ed28ef5c9895e633f164261f46d71e225355e7533e82d65e1644bef9"
+  }
+}

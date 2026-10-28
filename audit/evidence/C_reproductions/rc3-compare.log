@@ -1,0 +1,70 @@
+{
+ "pairs": {
+  "release-auto-binheap-expiry.json": {
+   "gcc_equals_clang": true,
+   "outcome": "error",
+   "delivered": 0,
+   "effective_mode": "indexed",
+   "error": "FellBehind"
+  },
+  "release-auto-binheap-narrow.json": {
+   "gcc_equals_clang": true,
+   "outcome": "done",
+   "delivered": 17760,
+   "effective_mode": "indexed",
+   "error": null
+  },
+  "release-indexed-loser-expiry.json": {
+   "gcc_equals_clang": true,
+   "outcome": "error",
+   "delivered": 0,
+   "effective_mode": "indexed",
+   "error": "FellBehind"
+  },
+  "release-indexed-loser-narrow.json": {
+   "gcc_equals_clang": true,
+   "outcome": "done",
+   "delivered": 17760,
+   "effective_mode": "indexed",
+   "error": null
+  },
+  "release-indexed-quad-expiry.json": {
+   "gcc_equals_clang": true,
+   "outcome": "error",
+   "delivered": 0,
+   "effective_mode": "indexed",
+   "error": "FellBehind"
+  },
+  "release-indexed-quad-narrow.json": {
+   "gcc_equals_clang": true,
+   "outcome": "done",
+   "delivered": 17760,
+   "effective_mode": "indexed",
+   "error": null
+  },
+  "release-scan-stdpq-expiry.json": {
+   "gcc_equals_clang": true,
+   "outcome": "error",
+   "delivered": 0,
+   "effective_mode": "scan",
+   "error": "FellBehind"
+  },
+  "release-scan-stdpq-narrow.json": {
+   "gcc_equals_clang": true,
+   "outcome": "done",
+   "delivered": 17760,
+   "effective_mode": "scan",
+   "error": null
+  },
+  "release-scan-wide.json": {
+   "gcc_equals_clang": true,
+   "outcome": "done",
+   "delivered": 2000000,
+   "effective_mode": "scan",
+   "error": null
+  }
+ },
+ "modes_identical_narrow": true,
+ "modes_identical_expiry": true,
+ "verdict": "PASS"
+}

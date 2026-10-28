@@ -1,0 +1,161 @@
+{
+  "status": "stopped",
+  "reason": "User requested stopping here and resuming tomorrow; planned interruption, not a correctness failure.",
+  "at_utc": "2026-10-24T18:58:08.062344+00:00",
+  "before": [
+    {
+      "pid": 31900,
+      "session": 31900,
+      "group": 31900,
+      "state": "S",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/run_check.py",
+        "p6",
+        "isolated-campaigns-resume-claude",
+        "--",
+        ".venv/bin/python",
+        "scripts/run_p6_campaigns.py",
+        "--run",
+        "--directory",
+        "results/raw/P6/campaign-20261024",
+        "--resume",
+        "--quiescence-record",
+        "results/p6/measurement-quiescence-ac.json"
+      ]
+    },
+    {
+      "pid": 31902,
+      "session": 31900,
+      "group": 31900,
+      "state": "S",
+      "argv": [
+        ".venv/bin/python",
+        "scripts/run_p6_campaigns.py",
+        "--run",
+        "--directory",
+        "results/raw/P6/campaign-20261024",
+        "--resume",
+        "--quiescence-record",
+        "results/p6/measurement-quiescence-ac.json"
+      ]
+    },
+    {
+      "pid": 52334,
+      "session": 31900,
+      "group": 31900,
+      "state": "S",
+      "argv": [
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-m",
+        "tiplog_py.exp.run",
+        "configs/P6/matrix.toml",
+        "--suite",
+        "evaluation",
+        "--plan",
+        "results/raw/P6/prepared-evaluation/plan.json",
+        "--directory",
+        "results/raw/P6/campaign-20261024/evaluation",
+        "--quiescence-record",
+        "results/p6/measurement-quiescence-ac.json",
+        "--reps",
+        "20",
+        "--thresholds",
+        "results/p6/auto-thresholds.json"
+      ]
+    },
+    {
+      "pid": 73752,
+      "session": 31900,
+      "group": 31900,
+      "state": "R",
+      "argv": [
+        "build/release/tiplog_bench",
+        "--requests",
+        "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/memory-B256-A36000000000000-rep18-attempt00.tsv",
+        "--output",
+        "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/memory-B256-A36000000000000-rep18-attempt00.jsonl",
+        "--ring-bytes",
+        "1073741824",
+        "--block-entries",
+        "256",
+        "--seed",
+        "20191230",
+        "--trace",
+        "data/traces/itch_20191230_0930_1000_spec.mdt",
+        "--anchor-ts",
+        "36000000000000",
+        "--memory",
+        "--allocator-replay",
+        "--term-dictionary",
+        "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/subscription-terms.tsv",
+        "--auto-max-partitions",
+        "64",
+        "--auto-max-fraction",
+        "1.0"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "pid": 52334,
+      "signal": "SIGINT",
+      "role": "evaluation driver"
+    },
+    {
+      "pid": 73752,
+      "signal": "SIGINT",
+      "role": "active benchmark"
+    }
+  ],
+  "after": [],
+  "finished_utc": "2026-10-24T18:58:08.434388+00:00",
+  "checkpoint": {
+    "status": "paused",
+    "user_request": "Stop here and resume tomorrow",
+    "at_utc": "2026-10-24T18:59:42.112131+00:00",
+    "process_session": 31900,
+    "verified_no_remaining_processes": true,
+    "completed_workloads": 34,
+    "total_workloads": 41,
+    "completed_measured_rounds": 698,
+    "total_measured_rounds": 820,
+    "completed_warmup_rounds": 35,
+    "last_completed_process": {
+      "id": "memory-B256-A36000000000000-rep17-attempt00",
+      "measurement_command_ok": true,
+      "oracle_failures": 0,
+      "rep": 17,
+      "returncode": 0,
+      "rows": 2,
+      "workload_id": "memory-B256-A36000000000000"
+    },
+    "correctness_mismatches": 0,
+    "completed_measurement_control_failures": 0,
+    "interrupted_attempt_artifacts": [
+      {
+        "path": "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/memory-B256-A36000000000000-rep18-attempt00.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/memory-B256-A36000000000000-rep18-attempt00.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/memory-B256-A36000000000000-rep18-attempt00.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "results/raw/P6/campaign-20261024/evaluation/memory-B256-A36000000000000/memory-B256-A36000000000000-rep18-attempt00.tsv",
+        "bytes": 325,
+        "sha256": "f60524a2b79176483f2be70fd4650bd7fd67f67a733991010e189089941e6a26"
+      }
+    ],
+    "snapshots": "results/p6/pause-20261025-snapshots",
+    "note": "Driver SIGINT returncode -2 and parent exit 1 are preserved as a user-requested interruption, not a correctness failure. Current interrupted attempt is unconfirmed and must not enter timing statistics. Resume repeats it with a new attempt ID."
+  },
+  "finished_recording_utc": "2026-10-24T18:59:42.112131+00:00"
+}

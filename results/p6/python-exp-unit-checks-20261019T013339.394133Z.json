@@ -1,0 +1,24 @@
+{
+  "label": "python-exp-unit-checks",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "py/tests/test_exp_oracle.py",
+    "py/tests/test_exp_protocol.py"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261019T013339.394133Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/python-exp-unit-checks-20261019T013339.394133Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.6615704650002954
+}

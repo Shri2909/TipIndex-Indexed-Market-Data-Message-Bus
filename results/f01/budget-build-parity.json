@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "release_record": "results/f01/checks/budget-release-asan-parity-20261027T013327.664566Z.json",
+  "sanitizer_record": "results/f01/checks/budget-asan-ubsan-20261027T013430.911368Z.json",
+  "comparison": "Entire deterministic JSON counter and digest result is identical for the same 200 seeds x10000 operations.",
+  "result": {
+    "status": "passed",
+    "seed_base": 1,
+    "seeds": 200,
+    "operations_per_seed": 10000,
+    "operations": 2000000,
+    "publications": 687556,
+    "replay_opens": 164113,
+    "tail_opens": 163940,
+    "polls": 1026101,
+    "finite_polls": 979766,
+    "zero_polls": 79617,
+    "inspection_yields": 63842,
+    "delivered": 68116,
+    "inspections": 237869,
+    "errors": 521568,
+    "pad_inspections": 12783,
+    "mode_kernel_mask": 4095,
+    "digest_fnv1a64": 10525489230088795740
+  }
+}

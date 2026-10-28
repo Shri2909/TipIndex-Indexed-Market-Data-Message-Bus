@@ -1,0 +1,291 @@
+
+build/release/merge_bench:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000193c0 <tiplog::merge::StdPQ::replace_top(unsigned long)>:
+   193c0:	f3 0f 1e fa          	endbr64
+   193c4:	41 57                	push   %r15
+   193c6:	41 56                	push   %r14
+   193c8:	41 55                	push   %r13
+   193ca:	41 54                	push   %r12
+   193cc:	55                   	push   %rbp
+   193cd:	53                   	push   %rbx
+   193ce:	48 83 ec 28          	sub    $0x28,%rsp
+   193d2:	4c 8b 47 08          	mov    0x8(%rdi),%r8
+   193d6:	48 8b 0f             	mov    (%rdi),%rcx
+   193d9:	49 39 c8             	cmp    %rcx,%r8
+   193dc:	0f 84 d5 03 00 00    	je     197b7 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3f7>
+   193e2:	48 8b 01             	mov    (%rcx),%rax
+   193e5:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+   193e9:	0f 84 c8 03 00 00    	je     197b7 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3f7>
+   193ef:	49 89 f9             	mov    %rdi,%r9
+   193f2:	49 89 f2             	mov    %rsi,%r10
+   193f5:	48 83 fe ff          	cmp    $0xffffffffffffffff,%rsi
+   193f9:	0f 84 19 02 00 00    	je     19618 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x258>
+   193ff:	48 89 c2             	mov    %rax,%rdx
+   19402:	48 31 f2             	xor    %rsi,%rdx
+   19405:	66 85 d2             	test   %dx,%dx
+   19408:	0f 85 a9 03 00 00    	jne    197b7 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3f7>
+   1940e:	48 39 f0             	cmp    %rsi,%rax
+   19411:	0f 83 a0 03 00 00    	jae    197b7 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3f7>
+   19417:	4c 89 c2             	mov    %r8,%rdx
+   1941a:	48 29 ca             	sub    %rcx,%rdx
+   1941d:	48 83 fa 08          	cmp    $0x8,%rdx
+   19421:	0f 8f a1 00 00 00    	jg     194c8 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x108>
+   19427:	49 8d 70 f8          	lea    -0x8(%r8),%rsi
+   1942b:	48 89 77 08          	mov    %rsi,0x8(%rdi)
+   1942f:	49 3b 71 10          	cmp    0x10(%r9),%rsi
+   19433:	0f 84 67 02 00 00    	je     196a0 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x2e0>
+   19439:	4c 89 16             	mov    %r10,(%rsi)
+   1943c:	4d 89 41 08          	mov    %r8,0x8(%r9)
+   19440:	4d 8b 48 f8          	mov    -0x8(%r8),%r9
+   19444:	49 29 c8             	sub    %rcx,%r8
+   19447:	4c 89 c0             	mov    %r8,%rax
+   1944a:	48 c1 f8 03          	sar    $0x3,%rax
+   1944e:	48 8d 70 ff          	lea    -0x1(%rax),%rsi
+   19452:	48 85 f6             	test   %rsi,%rsi
+   19455:	0f 8e 46 03 00 00    	jle    197a1 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3e1>
+   1945b:	48 83 e8 02          	sub    $0x2,%rax
+   1945f:	48 d1 f8             	sar    $1,%rax
+   19462:	eb 3b                	jmp    1949f <tiplog::merge::StdPQ::replace_top(unsigned long)+0xdf>
+   19464:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+   1946a:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   19471:	00 00 00 00 
+   19475:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1947c:	00 00 00 00 
+   19480:	48 89 16             	mov    %rdx,(%rsi)
+   19483:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+   19487:	48 89 c6             	mov    %rax,%rsi
+   1948a:	48 c1 ea 3f          	shr    $0x3f,%rdx
+   1948e:	48 85 c0             	test   %rax,%rax
+   19491:	0f 84 a9 01 00 00    	je     19640 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x280>
+   19497:	48 8d 44 10 ff       	lea    -0x1(%rax,%rdx,1),%rax
+   1949c:	48 d1 f8             	sar    $1,%rax
+   1949f:	48 8d 3c c1          	lea    (%rcx,%rax,8),%rdi
+   194a3:	48 8d 34 f1          	lea    (%rcx,%rsi,8),%rsi
+   194a7:	48 8b 17             	mov    (%rdi),%rdx
+   194aa:	49 39 d1             	cmp    %rdx,%r9
+   194ad:	72 d1                	jb     19480 <tiplog::merge::StdPQ::replace_top(unsigned long)+0xc0>
+   194af:	4c 89 0e             	mov    %r9,(%rsi)
+   194b2:	48 83 c4 28          	add    $0x28,%rsp
+   194b6:	5b                   	pop    %rbx
+   194b7:	5d                   	pop    %rbp
+   194b8:	41 5c                	pop    %r12
+   194ba:	41 5d                	pop    %r13
+   194bc:	41 5e                	pop    %r14
+   194be:	41 5f                	pop    %r15
+   194c0:	c3                   	ret
+   194c1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+   194c8:	49 8d 70 f8          	lea    -0x8(%r8),%rsi
+   194cc:	4d 8b 58 f8          	mov    -0x8(%r8),%r11
+   194d0:	49 89 40 f8          	mov    %rax,-0x8(%r8)
+   194d4:	48 89 f5             	mov    %rsi,%rbp
+   194d7:	48 29 cd             	sub    %rcx,%rbp
+   194da:	48 89 e8             	mov    %rbp,%rax
+   194dd:	48 c1 f8 03          	sar    $0x3,%rax
+   194e1:	49 89 c6             	mov    %rax,%r14
+   194e4:	48 83 fd 10          	cmp    $0x10,%rbp
+   194e8:	0f 8e 95 02 00 00    	jle    19783 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3c3>
+   194ee:	48 8d 58 ff          	lea    -0x1(%rax),%rbx
+   194f2:	4c 89 54 24 08       	mov    %r10,0x8(%rsp)
+   194f7:	4d 89 cf             	mov    %r9,%r15
+   194fa:	49 89 f2             	mov    %rsi,%r10
+   194fd:	48 d1 fb             	sar    $1,%rbx
+   19500:	4d 89 c1             	mov    %r8,%r9
+   19503:	31 f6                	xor    %esi,%esi
+   19505:	49 89 d8             	mov    %rbx,%r8
+   19508:	eb 39                	jmp    19543 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x183>
+   1950a:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   19511:	00 00 00 
+   19514:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1951b:	00 00 00 00 
+   1951f:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   19526:	00 00 00 00 
+   1952a:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   19531:	00 00 00 00 
+   19535:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   1953c:	00 00 00 00 
+   19540:	48 89 d6             	mov    %rdx,%rsi
+   19543:	48 8d 46 01          	lea    0x1(%rsi),%rax
+   19547:	48 8d 14 00          	lea    (%rax,%rax,1),%rdx
+   1954b:	48 c1 e0 04          	shl    $0x4,%rax
+   1954f:	48 8d 7a ff          	lea    -0x1(%rdx),%rdi
+   19553:	48 01 c8             	add    %rcx,%rax
+   19556:	48 8d 1c f9          	lea    (%rcx,%rdi,8),%rbx
+   1955a:	4c 8b 20             	mov    (%rax),%r12
+   1955d:	4c 8b 2b             	mov    (%rbx),%r13
+   19560:	4d 39 e5             	cmp    %r12,%r13
+   19563:	4d 0f 42 e5          	cmovb  %r13,%r12
+   19567:	48 0f 42 d7          	cmovb  %rdi,%rdx
+   1956b:	48 0f 42 c3          	cmovb  %rbx,%rax
+   1956f:	4c 89 24 f1          	mov    %r12,(%rcx,%rsi,8)
+   19573:	49 39 d0             	cmp    %rdx,%r8
+   19576:	7f c8                	jg     19540 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x180>
+   19578:	41 83 e6 01          	and    $0x1,%r14d
+   1957c:	4d 89 c8             	mov    %r9,%r8
+   1957f:	4c 89 d6             	mov    %r10,%rsi
+   19582:	4d 89 f9             	mov    %r15,%r9
+   19585:	4c 8b 54 24 08       	mov    0x8(%rsp),%r10
+   1958a:	0f 84 c0 00 00 00    	je     19650 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x290>
+   19590:	48 8d 7a ff          	lea    -0x1(%rdx),%rdi
+   19594:	48 c1 ef 3f          	shr    $0x3f,%rdi
+   19598:	48 8d 7c 3a ff       	lea    -0x1(%rdx,%rdi,1),%rdi
+   1959d:	48 d1 ff             	sar    $1,%rdi
+   195a0:	48 85 d2             	test   %rdx,%rdx
+   195a3:	75 3d                	jne    195e2 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x222>
+   195a5:	eb 4c                	jmp    195f3 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x233>
+   195a7:	0f 1f 00             	nopl   (%rax)
+   195aa:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   195b1:	00 00 00 00 
+   195b5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+   195bc:	00 00 00 00 
+   195c0:	48 89 18             	mov    %rbx,(%rax)
+   195c3:	48 8d 47 ff          	lea    -0x1(%rdi),%rax
+   195c7:	48 89 fa             	mov    %rdi,%rdx
+   195ca:	48 c1 e8 3f          	shr    $0x3f,%rax
+   195ce:	48 8d 44 38 ff       	lea    -0x1(%rax,%rdi,1),%rax
+   195d3:	48 85 ff             	test   %rdi,%rdi
+   195d6:	0f 84 a4 00 00 00    	je     19680 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x2c0>
+   195dc:	48 d1 f8             	sar    $1,%rax
+   195df:	48 89 c7             	mov    %rax,%rdi
+   195e2:	48 8d 2c f9          	lea    (%rcx,%rdi,8),%rbp
+   195e6:	48 8d 04 d1          	lea    (%rcx,%rdx,8),%rax
+   195ea:	48 8b 5d 00          	mov    0x0(%rbp),%rbx
+   195ee:	49 39 db             	cmp    %rbx,%r11
+   195f1:	72 cd                	jb     195c0 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x200>
+   195f3:	4c 89 18             	mov    %r11,(%rax)
+   195f6:	49 89 71 08          	mov    %rsi,0x8(%r9)
+   195fa:	49 83 fa ff          	cmp    $0xffffffffffffffff,%r10
+   195fe:	0f 85 2b fe ff ff    	jne    1942f <tiplog::merge::StdPQ::replace_top(unsigned long)+0x6f>
+   19604:	48 83 c4 28          	add    $0x28,%rsp
+   19608:	5b                   	pop    %rbx
+   19609:	5d                   	pop    %rbp
+   1960a:	41 5c                	pop    %r12
+   1960c:	41 5d                	pop    %r13
+   1960e:	41 5e                	pop    %r14
+   19610:	41 5f                	pop    %r15
+   19612:	c3                   	ret
+   19613:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   19618:	4c 89 c2             	mov    %r8,%rdx
+   1961b:	48 29 ca             	sub    %rcx,%rdx
+   1961e:	48 83 fa 08          	cmp    $0x8,%rdx
+   19622:	0f 8f a0 fe ff ff    	jg     194c8 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x108>
+   19628:	49 83 e8 08          	sub    $0x8,%r8
+   1962c:	4c 89 47 08          	mov    %r8,0x8(%rdi)
+   19630:	48 83 c4 28          	add    $0x28,%rsp
+   19634:	5b                   	pop    %rbx
+   19635:	5d                   	pop    %rbp
+   19636:	41 5c                	pop    %r12
+   19638:	41 5d                	pop    %r13
+   1963a:	41 5e                	pop    %r14
+   1963c:	41 5f                	pop    %r15
+   1963e:	c3                   	ret
+   1963f:	90                   	nop
+   19640:	48 89 fe             	mov    %rdi,%rsi
+   19643:	e9 67 fe ff ff       	jmp    194af <tiplog::merge::StdPQ::replace_top(unsigned long)+0xef>
+   19648:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+   1964f:	00 
+   19650:	48 89 ef             	mov    %rbp,%rdi
+   19653:	48 c1 ff 04          	sar    $0x4,%rdi
+   19657:	48 83 ef 01          	sub    $0x1,%rdi
+   1965b:	48 39 d7             	cmp    %rdx,%rdi
+   1965e:	0f 85 2c ff ff ff    	jne    19590 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x1d0>
+   19664:	48 8d 5c 12 01       	lea    0x1(%rdx,%rdx,1),%rbx
+   19669:	48 8b 3c d9          	mov    (%rcx,%rbx,8),%rdi
+   1966d:	48 89 38             	mov    %rdi,(%rax)
+   19670:	48 89 d7             	mov    %rdx,%rdi
+   19673:	48 89 da             	mov    %rbx,%rdx
+   19676:	e9 67 ff ff ff       	jmp    195e2 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x222>
+   1967b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   19680:	48 89 e8             	mov    %rbp,%rax
+   19683:	4c 89 18             	mov    %r11,(%rax)
+   19686:	49 89 71 08          	mov    %rsi,0x8(%r9)
+   1968a:	49 83 fa ff          	cmp    $0xffffffffffffffff,%r10
+   1968e:	0f 84 70 ff ff ff    	je     19604 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x244>
+   19694:	e9 96 fd ff ff       	jmp    1942f <tiplog::merge::StdPQ::replace_top(unsigned long)+0x6f>
+   19699:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+   196a0:	48 b8 ff ff ff ff ff 	movabs $0xfffffffffffffff,%rax
+   196a7:	ff ff 0f 
+   196aa:	48 89 f3             	mov    %rsi,%rbx
+   196ad:	48 29 cb             	sub    %rcx,%rbx
+   196b0:	48 89 de             	mov    %rbx,%rsi
+   196b3:	48 c1 fe 03          	sar    $0x3,%rsi
+   196b7:	48 39 c6             	cmp    %rax,%rsi
+   196ba:	0f 84 eb 00 00 00    	je     197ab <tiplog::merge::StdPQ::replace_top(unsigned long)+0x3eb>
+   196c0:	48 85 f6             	test   %rsi,%rsi
+   196c3:	b8 01 00 00 00       	mov    $0x1,%eax
+   196c8:	4c 89 54 24 18       	mov    %r10,0x18(%rsp)
+   196cd:	48 0f 45 c6          	cmovne %rsi,%rax
+   196d1:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+   196d6:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+   196db:	48 01 f0             	add    %rsi,%rax
+   196de:	48 be ff ff ff ff ff 	movabs $0xfffffffffffffff,%rsi
+   196e5:	ff ff 0f 
+   196e8:	48 39 f0             	cmp    %rsi,%rax
+   196eb:	48 0f 47 c6          	cmova  %rsi,%rax
+   196ef:	48 8d 3c c5 00 00 00 	lea    0x0(,%rax,8),%rdi
+   196f6:	00 
+   196f7:	4c 8d 3c c5 00 00 00 	lea    0x0(,%rax,8),%r15
+   196fe:	00 
+   196ff:	e8 2c e6 fe ff       	call   7d30 <operator new(unsigned long)@plt>
+   19704:	4c 8b 54 24 18       	mov    0x18(%rsp),%r10
+   19709:	48 85 db             	test   %rbx,%rbx
+   1970c:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+   19711:	4c 8b 4c 24 10       	mov    0x10(%rsp),%r9
+   19716:	48 89 c5             	mov    %rax,%rbp
+   19719:	4c 8d 40 08          	lea    0x8(%rax),%r8
+   1971d:	4c 89 14 18          	mov    %r10,(%rax,%rbx,1)
+   19721:	75 37                	jne    1975a <tiplog::merge::StdPQ::replace_top(unsigned long)+0x39a>
+   19723:	48 89 cf             	mov    %rcx,%rdi
+   19726:	48 89 de             	mov    %rbx,%rsi
+   19729:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+   1972e:	4c 89 44 24 08       	mov    %r8,0x8(%rsp)
+   19733:	e8 08 e6 fe ff       	call   7d40 <operator delete(void*, unsigned long)@plt>
+   19738:	4c 8b 4c 24 10       	mov    0x10(%rsp),%r9
+   1973d:	4c 8b 44 24 08       	mov    0x8(%rsp),%r8
+   19742:	48 89 e9             	mov    %rbp,%rcx
+   19745:	4a 8d 44 3d 00       	lea    0x0(%rbp,%r15,1),%rax
+   1974a:	49 89 29             	mov    %rbp,(%r9)
+   1974d:	4d 89 41 08          	mov    %r8,0x8(%r9)
+   19751:	49 89 41 10          	mov    %rax,0x10(%r9)
+   19755:	e9 e6 fc ff ff       	jmp    19440 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x80>
+   1975a:	48 89 ce             	mov    %rcx,%rsi
+   1975d:	48 89 da             	mov    %rbx,%rdx
+   19760:	48 89 c7             	mov    %rax,%rdi
+   19763:	4c 89 4c 24 10       	mov    %r9,0x10(%rsp)
+   19768:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+   1976d:	e8 1e e5 fe ff       	call   7c90 <memcpy@plt>
+   19772:	4c 8b 4c 24 10       	mov    0x10(%rsp),%r9
+   19777:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+   1977c:	4c 8d 44 1d 08       	lea    0x8(%rbp,%rbx,1),%r8
+   19781:	eb a0                	jmp    19723 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x363>
+   19783:	41 83 e6 01          	and    $0x1,%r14d
+   19787:	48 89 c8             	mov    %rcx,%rax
+   1978a:	0f 85 63 fe ff ff    	jne    195f3 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x233>
+   19790:	48 83 fd 10          	cmp    $0x10,%rbp
+   19794:	0f 85 59 fe ff ff    	jne    195f3 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x233>
+   1979a:	31 d2                	xor    %edx,%edx
+   1979c:	e9 c3 fe ff ff       	jmp    19664 <tiplog::merge::StdPQ::replace_top(unsigned long)+0x2a4>
+   197a1:	4a 8d 74 01 f8       	lea    -0x8(%rcx,%r8,1),%rsi
+   197a6:	e9 04 fd ff ff       	jmp    194af <tiplog::merge::StdPQ::replace_top(unsigned long)+0xef>
+   197ab:	48 8d 3d a8 b1 04 00 	lea    0x4b1a8(%rip),%rdi        # 6495a <_IO_stdin_used+0x195a>
+   197b2:	e8 49 e3 fe ff       	call   7b00 <std::__throw_length_error(char const*)@plt>
+   197b7:	bf 10 00 00 00       	mov    $0x10,%edi
+   197bc:	e8 ff e2 fe ff       	call   7ac0 <__cxa_allocate_exception@plt>
+   197c1:	48 8d 35 b0 98 04 00 	lea    0x498b0(%rip),%rsi        # 63078 <_IO_stdin_used+0x78>
+   197c8:	48 89 c7             	mov    %rax,%rdi
+   197cb:	48 89 c3             	mov    %rax,%rbx
+   197ce:	e8 9d e9 fe ff       	call   8170 <std::invalid_argument::invalid_argument(char const*)@plt>
+   197d3:	48 8b 15 f6 c7 05 00 	mov    0x5c7f6(%rip),%rdx        # 75fd0 <std::invalid_argument::~invalid_argument()@GLIBCXX_3.4>
+   197da:	48 8d 35 1f bd 05 00 	lea    0x5bd1f(%rip),%rsi        # 75500 <typeinfo for std::invalid_argument@GLIBCXX_3.4>
+   197e1:	48 89 df             	mov    %rbx,%rdi
+   197e4:	e8 87 e8 fe ff       	call   8070 <__cxa_throw@plt>
+   197e9:	f3 0f 1e fa          	endbr64
+   197ed:	48 89 c5             	mov    %rax,%rbp
+   197f0:	48 89 df             	mov    %rbx,%rdi
+   197f3:	c5 f8 77             	vzeroupper
+   197f6:	e8 35 e4 fe ff       	call   7c30 <__cxa_free_exception@plt>
+   197fb:	48 89 ef             	mov    %rbp,%rdi
+   197fe:	e8 bd e8 fe ff       	call   80c0 <_Unwind_Resume@plt>

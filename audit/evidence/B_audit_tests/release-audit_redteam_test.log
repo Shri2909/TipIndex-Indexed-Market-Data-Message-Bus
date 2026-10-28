@@ -1,0 +1,29 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from AuditRedTeam
+[ RUN      ] AuditRedTeam.DeepTopicPathCostGrowth
+[audit] depth=250 path_bytes=499 topics=252 heap_delta=165856 intern_s=0.0005 compile_s=0.0016
+[audit] depth=500 path_bytes=999 topics=502 heap_delta=445296 intern_s=0.0014 compile_s=0.0108
+[audit] depth=1000 path_bytes=1999 topics=1002 heap_delta=1644880 intern_s=0.0037 compile_s=0.0464
+[audit] depth=2000 path_bytes=3999 topics=2002 heap_delta=7771856 intern_s=0.0103 compile_s=0.3791
+[       OK ] AuditRedTeam.DeepTopicPathCostGrowth (479 ms)
+[ RUN      ] AuditRedTeam.SubscriptionFanoutInternCost
+[audit] subscriptions=500 per_new_topic_ms=0.063
+[audit] subscriptions=2000 per_new_topic_ms=0.533
+[audit] subscriptions=8000 per_new_topic_ms=7.721
+[       OK ] AuditRedTeam.SubscriptionFanoutInternCost (204 ms)
+[ RUN      ] AuditRedTeam.PressurePublishCostIsProportionalToEviction
+[audit] 1M publishes: sized_ms=74.4 (pressure_evicted=0) undersized_ms=86.9 (pressure_evicted=3606481) ratio=1.17
+[       OK ] AuditRedTeam.PressurePublishCostIsProportionalToEviction (679 ms)
+[ RUN      ] AuditRedTeam.TraceDictionaryMemoryAmplification
+[audit] trace_bytes=2600068 dictionary_entries=200000 reader_heap_bytes=19694080 amplification=7.6x
+[       OK ] AuditRedTeam.TraceDictionaryMemoryAmplification (104 ms)
+[ RUN      ] AuditRedTeam.RingAtInteriorPositionFabricatesItem
+[audit] ring.at(16) threw=0 pad=0 seq=57 size=24
+[       OK ] AuditRedTeam.RingAtInteriorPositionFabricatesItem (1 ms)
+[----------] 5 tests from AuditRedTeam (1470 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (1470 ms total)
+[  PASSED  ] 5 tests.

@@ -1,0 +1,118 @@
+{
+  "at_utc": "2026-10-25T04:25:48.257977+00:00",
+  "reason": "Improve F12 visibility: multiple arms at the same coordinate currently obscure each other. Plot-only change; original raw observations and statistics retained. Actual visual review also found combinatorial legends overflowing F09/F10 and long titles/footer clipping in F13; preserve all series and values while fixing their presentation.",
+  "snapshots": [
+    {
+      "path": "py/tiplog_py/figures/tip.py",
+      "snapshot": "results/p6/f12-layout-compatibility/0-tip.py",
+      "bytes": 18740,
+      "sha256": "ac147a18650b79fdd33915bf66761e8a2106b7da090454314e0dc8fab43284f7"
+    },
+    {
+      "path": "py/tests/test_analysis_figures.py",
+      "snapshot": "results/p6/f12-layout-compatibility/1-test_analysis_figures.py",
+      "bytes": 5405,
+      "sha256": "9e3c64356e9e4d38097c87fe1f00444b0e0ce709646ad3a8359189b3c735aef3"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/campaign-provenance.json",
+      "snapshot": "results/p6/f12-layout-compatibility/2-campaign-provenance.json",
+      "bytes": 40413,
+      "sha256": "90bc76706a18138813ac361970083f75acb789fd013cadb7c63fc47d663ff4d0"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/evaluation/provenance.json",
+      "snapshot": "results/p6/f12-layout-compatibility/3-provenance.json",
+      "bytes": 36438,
+      "sha256": "a3951c796cba45d55d7805e7c9af1a082e0ae84a62a5218267d7dedee1c5d1a1"
+    },
+    {
+      "path": "results/figures/p6-figures.json",
+      "snapshot": "results/p6/f12-layout-compatibility/4-p6-figures.json",
+      "bytes": 471659,
+      "sha256": "a7b7a98ca338e3d86e9b6ddadbd8331aa2f0cbacaf02b7fe545270815f1e470f"
+    },
+    {
+      "path": "results/figures/F12_scan_index_crossover.png",
+      "snapshot": "results/p6/f12-layout-compatibility/5-F12_scan_index_crossover.png",
+      "bytes": 1894422,
+      "sha256": "c8d9933d212f10f8f3f4499e45b68d538473e45de16b1b564c2bde125ab9255c"
+    },
+    {
+      "path": "results/figures/F12_scan_index_crossover.pdf",
+      "snapshot": "results/p6/f12-layout-compatibility/6-F12_scan_index_crossover.pdf",
+      "bytes": 361963,
+      "sha256": "eb468e2f95f8a3cd256d350c871c1a09323a43a646505b65afb24dcb68c5ac6f"
+    },
+    {
+      "path": "results/figures/F09_catchup_breadth.png",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F09_catchup_breadth.png",
+      "bytes": 1412403,
+      "sha256": "a584390e37f80c3b5c9235d34b720c6d138541f5bd6bc2b71d0a6e57c6c98780"
+    },
+    {
+      "path": "results/figures/F09_catchup_breadth.pdf",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F09_catchup_breadth.pdf",
+      "bytes": 284982,
+      "sha256": "b8fcceb8bcc6d35707b3706ba7d1d56fc7122e6b4f3bc5f20ef1e28aef9049da"
+    },
+    {
+      "path": "results/figures/F10_replay_work.png",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F10_replay_work.png",
+      "bytes": 3493995,
+      "sha256": "56926f43e5c7e3b9b66def8fd04b25f5aff379bc8a8c0c58db3bfd8f53376a04"
+    },
+    {
+      "path": "results/figures/F10_replay_work.pdf",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F10_replay_work.pdf",
+      "bytes": 645556,
+      "sha256": "a616e33a61e33b4ab83d57523c6679245e2654bfd3e17c755e7d5e306a154a6c"
+    },
+    {
+      "path": "results/figures/F11_many_readers_cpu.png",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F11_many_readers_cpu.png",
+      "bytes": 131796,
+      "sha256": "eb5863b5df3b0d99c16a3c49d8d7d0cf4433273f0824bc5a96ac41aaa5ffeaab"
+    },
+    {
+      "path": "results/figures/F11_many_readers_cpu.pdf",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F11_many_readers_cpu.pdf",
+      "bytes": 40889,
+      "sha256": "4de74bb78e21fbd295872d75f268d4d86393b02780c32916248b4daed880fd40"
+    },
+    {
+      "path": "results/figures/F13_index_memory_slack.png",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F13_index_memory_slack.png",
+      "bytes": 612456,
+      "sha256": "20f30cf0ab2b8f4dd75a500b72b0e0a564fa7b0e4bd8c240a75918f29b6ce90c"
+    },
+    {
+      "path": "results/figures/F13_index_memory_slack.pdf",
+      "snapshot": "results/p6/f12-layout-compatibility/before-F13_index_memory_slack.pdf",
+      "bytes": 49111,
+      "sha256": "56b63c4ec5163be4fea3a905fb2caae289b67934d38334df873b6505d87f3321"
+    }
+  ],
+  "numerical_artifacts_before": [
+    {
+      "path": "results/derived/tip-summary.json",
+      "bytes": 84501291,
+      "sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb"
+    },
+    {
+      "path": "results/derived/tip-outcomes.csv",
+      "bytes": 16963433,
+      "sha256": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24"
+    },
+    {
+      "path": "results/derived/tip-paired-ratios.csv",
+      "bytes": 14080408,
+      "sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866"
+    },
+    {
+      "path": "results/p6/analysis-inputs.json",
+      "bytes": 1110,
+      "sha256": "3e48f0b0f1ab3315b92c973bdc208b4f23d1c7e8f70d4cdc911988ec92e64498"
+    }
+  ]
+}

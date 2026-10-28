@@ -1,0 +1,2 @@
+usage: env_capture.py [-h] [--cpu CPU] [--preset PRESET]
+env_capture.py: error: unrecognized arguments: --output results/env/p7.json

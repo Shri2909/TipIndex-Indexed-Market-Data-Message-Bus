@@ -1,0 +1,52 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 20 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 12 tests from EngineMerge
+[ RUN      ] EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle
+[       OK ] EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle (0 ms)
+[ RUN      ] EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix
+[       OK ] EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix (0 ms)
+[ RUN      ] EngineMerge.V35AllModesConservativeIrrelevantExpiry
+[       OK ] EngineMerge.V35AllModesConservativeIrrelevantExpiry (0 ms)
+[ RUN      ] EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry
+[       OK ] EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry (0 ms)
+[ RUN      ] EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe
+[       OK ] EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe (0 ms)
+[ RUN      ] EngineMerge.V23WideTermsAlwaysUseScan
+[       OK ] EngineMerge.V23WideTermsAlwaysUseScan (0 ms)
+[ RUN      ] EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion
+[       OK ] EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion (0 ms)
+[ RUN      ] EngineMerge.V38LargeNonPowerOfTwoCursorSet
+[       OK ] EngineMerge.V38LargeNonPowerOfTwoCursorSet (1 ms)
+[ RUN      ] EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated
+[       OK ] EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated (0 ms)
+[ RUN      ] EngineMerge.AutoWithDisabledIndexFallsBackToScan
+[       OK ] EngineMerge.AutoWithDisabledIndexFallsBackToScan (0 ms)
+[ RUN      ] EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine
+[       OK ] EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine (0 ms)
+[ RUN      ] EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel
+[       OK ] EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel (0 ms)
+[----------] 12 tests from EngineMerge (3 ms total)
+
+[----------] 8 tests from EngineTail
+[ RUN      ] EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions
+[       OK ] EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions (0 ms)
+[ RUN      ] EngineTail.V24WideHookIncludesNewMatchingPartitions
+[       OK ] EngineTail.V24WideHookIncludesNewMatchingPartitions (0 ms)
+[ RUN      ] EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress
+[       OK ] EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress (0 ms)
+[ RUN      ] EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget
+[       OK ] EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget (0 ms)
+[ RUN      ] EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields
+[       OK ] EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields (0 ms)
+[ RUN      ] EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained
+[       OK ] EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained (0 ms)
+[ RUN      ] EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct
+[       OK ] EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct (0 ms)
+[ RUN      ] EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll
+[       OK ] EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll (0 ms)
+[----------] 8 tests from EngineTail (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 2 test suites ran. (4 ms total)
+[  PASSED  ] 20 tests.

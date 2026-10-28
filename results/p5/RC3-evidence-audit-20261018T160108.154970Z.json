@@ -1,0 +1,21 @@
+{
+  "label": "RC3-evidence-audit",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "import collections,hashlib,json;from pathlib import Path;p=Path(\"results/p5/rc3-summary.json\");d=json.loads(p.read_text());assert d[\"status\"]==\"passed\" and d[\"run_count\"]==180 and len(d[\"runs\"])==len(set(d[\"runs\"]))==180;assert len(d[\"comparisons\"])==170 and all(x[\"status\"]==\"passed\" for x in d[\"comparisons\"]);counts=collections.Counter();digests={};\nfor name in d[\"runs\"]:\n r=json.loads(Path(name).read_text());assert r[\"exit_code\"]==0 and not r[\"stderr\"] and r[\"parsed_output\"]==json.loads(r[\"stdout\"]);counts[r[\"case\"]]+=1;digests[name]=hashlib.sha256(Path(name).read_bytes()).hexdigest()\nassert dict(counts)=={\"basket-success\":36,\"basket-expiry\":36,\"wide-success\":36,\"wide-expiry\":36,\"synthetic\":36};assert d[\"trace_sha256\"]==\"6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70\";\nfor name,expected in d[\"source_sha256\"].items():\n assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==expected,name\nfor build in d[\"builds\"].values():\n for name,expected in build[\"binaries\"].items():\n  assert hashlib.sha256((Path(build[\"directory\"])/name).read_bytes()).hexdigest()==expected,name\nout={\"status\":\"passed\",\"summary_sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"run_counts\":dict(counts),\"child_record_sha256\":digests,\"source_and_binary_identity_current\":True,\"comparison_count\":len(d[\"comparisons\"])};Path(\"results/p5/rc3-integrity.json\").write_text(json.dumps(out,indent=2)+\"\\n\");print(json.dumps({k:v for k,v in out.items() if k!=\"child_record_sha256\"}))"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T160108.154970Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/RC3-evidence-audit-20261018T160108.154970Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.043508916000064346
+}

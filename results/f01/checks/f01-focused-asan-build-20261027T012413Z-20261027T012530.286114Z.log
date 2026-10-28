@@ -1,0 +1,37 @@
+[  5%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+In file included from /home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/googletest-src/googletest/src/gtest-all.cc:38:
+In file included from /home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/googletest-src/googletest/include/gtest/gtest.h:64:
+In file included from /home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/googletest-src/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/googletest-src/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/googletest-src/googletest/include/gtest/gtest-matchers.h:49:
+/home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/googletest-src/googletest/include/gtest/gtest-printers.h:528:35: warning: implicit conversion from 'char8_t' to 'char32_t' may change the meaning of the represented code unit [-Wcharacter-conversion]
+  528 |   PrintTo(ImplicitCast_<char32_t>(c), os);
+      |           ~~~~~~~~~~~~~           ^
+1 warning generated.
+[ 11%] Linking CXX static library ../../../lib/libgtest.a
+[ 11%] Built target gtest
+[ 16%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 22%] Linking CXX static library ../../../lib/libgtest_main.a
+[ 22%] Built target gtest_main
+[ 27%] Building CXX object CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o
+[ 33%] Linking CXX static library libtiplog_index.a
+[ 33%] Built target tiplog_index
+[ 38%] Building CXX object CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o
+[ 44%] Linking CXX static library libtiplog_merge.a
+[ 44%] Built target tiplog_merge
+[ 44%] Building CXX object CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o
+[ 50%] Linking CXX static library libtiplog_ring.a
+[ 50%] Built target tiplog_ring
+[ 55%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o
+[ 61%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 66%] Linking CXX static library libtiplog_topics_subs.a
+[ 66%] Built target tiplog_topics_subs
+[ 72%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 77%] Linking CXX static library libtiplog_engine.a
+[ 77%] Built target tiplog_engine
+[ 83%] Building CXX object CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o
+[ 88%] Linking CXX static library libtiplog_ref.a
+[ 88%] Built target tiplog_ref
+[ 94%] Building CXX object CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o
+[100%] Linking CXX executable tiplog_poll_budget_test
+[100%] Built target tiplog_poll_budget_test

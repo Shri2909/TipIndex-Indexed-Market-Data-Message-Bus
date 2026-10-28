@@ -1,0 +1,9 @@
+[ 20%] Built target tiplog_topics_subs
+[ 33%] Built target tiplog_ring
+[ 46%] Built target tiplog_merge
+[ 60%] Built target tiplog_index
+[ 73%] Built target tiplog_ref
+[ 86%] Built target tiplog_engine
+[ 93%] Building CXX object CMakeFiles/fuzz_engine_ops.dir/tests/fuzz/targets/fuzz_engine_ops.cpp.o
+[100%] Linking CXX executable fuzz_engine_ops
+[100%] Built target fuzz_engine_ops

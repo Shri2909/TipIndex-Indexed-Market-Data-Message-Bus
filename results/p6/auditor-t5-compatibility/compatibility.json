@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-25T04:18:20.516053+00:00",
+  "scope": "Postprocessing-only auditor correction. No engine, benchmark, driver, input, threshold, matrix, timing or acceptance criterion changed.",
+  "source": "scripts/check_p6_experiments.py",
+  "before_sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab",
+  "after_sha256": "2531f9e9c5f4a8272a207522edb92055b7fe20e44f46deac2efc0d290fb16f44",
+  "changes": [
+    {
+      "provenance": "results/raw/P6/campaign-20261024/campaign-provenance.json",
+      "before": {
+        "bytes": 45344,
+        "path": "scripts/check_p6_experiments.py",
+        "sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab"
+      },
+      "after": {
+        "bytes": 48835,
+        "path": "scripts/check_p6_experiments.py",
+        "sha256": "2531f9e9c5f4a8272a207522edb92055b7fe20e44f46deac2efc0d290fb16f44"
+      },
+      "amendment": {
+        "at_utc": "2026-10-25T04:18:20.516053+00:00",
+        "reason": "Validate intentional T5 allocator enrichment against independent raw allocator arithmetic while retaining exact replay-counter equality.",
+        "source": "scripts/check_p6_experiments.py",
+        "original_execution_auditor_sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab",
+        "auditor_sha256": "2531f9e9c5f4a8272a207522edb92055b7fe20e44f46deac2efc0d290fb16f44",
+        "original_provenance_snapshot": "results/p6/auditor-t5-compatibility/2-campaign-provenance.json",
+        "original_provenance_sha256": "8ce17c02b04787fb6dad9212567d07c480fe8aaa889a2a94e587f63e9e962d9c",
+        "compatibility_record": "results/p6/auditor-t5-compatibility/compatibility.json",
+        "note": "Compatibility view only; original execution provenance and failed audit remain immutable snapshots."
+      }
+    },
+    {
+      "provenance": "results/raw/P6/campaign-20261024/evaluation/provenance.json",
+      "before": {
+        "bytes": 45344,
+        "path": "scripts/check_p6_experiments.py",
+        "sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab"
+      },
+      "after": {
+        "bytes": 48835,
+        "path": "scripts/check_p6_experiments.py",
+        "sha256": "2531f9e9c5f4a8272a207522edb92055b7fe20e44f46deac2efc0d290fb16f44"
+      },
+      "amendment": {
+        "at_utc": "2026-10-25T04:18:20.516053+00:00",
+        "reason": "Validate intentional T5 allocator enrichment against independent raw allocator arithmetic while retaining exact replay-counter equality.",
+        "source": "scripts/check_p6_experiments.py",
+        "original_execution_auditor_sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab",
+        "auditor_sha256": "2531f9e9c5f4a8272a207522edb92055b7fe20e44f46deac2efc0d290fb16f44",
+        "original_provenance_snapshot": "results/p6/auditor-t5-compatibility/3-provenance.json",
+        "original_provenance_sha256": "dcf94f1ccdc33df8efcf9c62769d494e20a31460e7de7e71c37cc59231b39876",
+        "compatibility_record": "results/p6/auditor-t5-compatibility/compatibility.json",
+        "note": "Compatibility view only; original execution provenance and failed audit remain immutable snapshots."
+      }
+    }
+  ],
+  "self_test": "results/p6/auditor-t5-enrichment-self-test-20261025T041647.001633Z.json",
+  "failed_original_audit": "results/p6/auditor-t5-compatibility/1-independent-audit.json",
+  "measurement_inventory": "results/p6/auditor-t5-compatibility/measurement-files-before.json",
+  "other_unique_files_verified": 141
+}

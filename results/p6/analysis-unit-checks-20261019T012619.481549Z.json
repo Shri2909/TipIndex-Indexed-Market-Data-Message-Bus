@@ -1,0 +1,24 @@
+{
+  "label": "analysis-unit-checks",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "py/tests/test_analysis_stats.py",
+    "py/tests/test_analysis_figures.py",
+    "-q"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261019T012619.481549Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/analysis-unit-checks-20261019T012619.481549Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 7.559292436000078
+}

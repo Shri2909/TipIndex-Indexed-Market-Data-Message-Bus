@@ -1,0 +1,10 @@
+[
+  {
+    "forged_configured_partitions": 12288,
+    "accepted": true
+  },
+  {
+    "forged_configured_partitions": 65535,
+    "accepted": true
+  }
+]

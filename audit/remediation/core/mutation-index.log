@@ -1,0 +1,20 @@
+Running main() from /home/abc/Desktop/Jane Street/build/remediation-core/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = InvariantChecker.Index*
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from InvariantChecker
+[ RUN      ] InvariantChecker.IndexDetectsCorruptedBlockCount
+/home/abc/Desktop/Jane Street/tests/unit/checker_test.cpp:61: Failure
+Expected: engine.index()->check_invariants(engine.ring().tail_pos()) throws an exception of type std::logic_error.
+  Actual: it throws nothing.
+
+[  FAILED  ] InvariantChecker.IndexDetectsCorruptedBlockCount (0 ms)
+[----------] 1 test from InvariantChecker (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] InvariantChecker.IndexDetectsCorruptedBlockCount
+
+ 1 FAILED TEST

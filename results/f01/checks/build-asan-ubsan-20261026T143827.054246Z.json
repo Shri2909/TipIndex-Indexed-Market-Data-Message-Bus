@@ -1,0 +1,31 @@
+{
+  "label": "build-asan-ubsan",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "asan-ubsan",
+    "-j3"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T14:38:27.054713+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "9fd6d52da2422100f122d8052a5d4e57c4ec2e681f7b6026f7fffae09da7edfd",
+    "python": "30e870af5e42acebb178fa4c2faa62bccb5755fd67ee5881798518bace5660f1"
+  },
+  "log": "results/f01/checks/build-asan-ubsan-20261026T143827.054246Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 127.79683269400266,
+  "log_sha256": "5e2a417ca790a13b073e94c316afac2d00a9577000d79a5ca1acf17da802eef5",
+  "input_sets_after": {
+    "cpp": "969ea67d1a82764ca585809548266fca4a2c759d248d1d3a8c193440ba95e162",
+    "python": "c52279f7447177c8e6687666ebcfa20e2788788201df790673ab813e7f2553a1"
+  }
+}

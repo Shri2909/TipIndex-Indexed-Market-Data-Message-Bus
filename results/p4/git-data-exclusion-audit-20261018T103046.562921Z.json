@@ -14,5 +14,7 @@
     "TIPLOG_EXECUTION_CONTEXT": null
   },
   "log": "results/p4/git-data-exclusion-audit-20261018T103046.562921Z.log",
-  "status": "running"
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 159.653864656
 }

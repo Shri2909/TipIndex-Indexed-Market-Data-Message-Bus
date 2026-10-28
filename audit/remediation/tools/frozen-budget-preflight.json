@@ -1,0 +1,552 @@
+{
+  "schema": "tiplog-remediation-frozen-budget-preflight-v1",
+  "scope": "Read-only counting and SHA256; no exact/heuristic solver invocation or timing measurement",
+  "batches": [
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W0-beta0.tsv",
+      "bytes": 10491212,
+      "cases": 8907,
+      "sha256": "acfc2982682e91ac140e08ff68cba28a7bf73640f709148eae0fba102e90cc9f",
+      "aggregate_preparation_work_bound": 2855154,
+      "maximum_case_preparation_work_bound": 512,
+      "maximum_case_membership_upper_bound": 256,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W0-beta65536.tsv",
+      "bytes": 10562468,
+      "cases": 8907,
+      "sha256": "f1bd41c8f8ec74b47b42d8de229f931cea6ad2b1644df00c2e29a3d73cd738a1",
+      "aggregate_preparation_work_bound": 2855154,
+      "maximum_case_preparation_work_bound": 512,
+      "maximum_case_membership_upper_bound": 256,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W0-beta1048576.tsv",
+      "bytes": 10598096,
+      "cases": 8907,
+      "sha256": "559242c99298818d0df8d53d6c3f305ae4f3906874f927de4e8b876826ea7494",
+      "aggregate_preparation_work_bound": 2855154,
+      "maximum_case_preparation_work_bound": 512,
+      "maximum_case_membership_upper_bound": 256,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W1-beta0.tsv",
+      "bytes": 11331603,
+      "cases": 8907,
+      "sha256": "1e47cbc7d96bb41334d188659d5518377d335efbce3fde3cc1c0debe7ee30bbe",
+      "aggregate_preparation_work_bound": 2588170,
+      "maximum_case_preparation_work_bound": 464,
+      "maximum_case_membership_upper_bound": 64,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W1-beta65536.tsv",
+      "bytes": 11402859,
+      "cases": 8907,
+      "sha256": "ad8a27bc3cee88e32495fa4c1a8fe75655ac4e4816d1841f41324c6121c97080",
+      "aggregate_preparation_work_bound": 2588170,
+      "maximum_case_preparation_work_bound": 464,
+      "maximum_case_membership_upper_bound": 64,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W1-beta1048576.tsv",
+      "bytes": 11438487,
+      "cases": 8907,
+      "sha256": "f86f7430e9fcc31cbb5239b7859188b7540bdddaf547f01ee3c53eb826a53d70",
+      "aggregate_preparation_work_bound": 2588170,
+      "maximum_case_preparation_work_bound": 464,
+      "maximum_case_membership_upper_bound": 64,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W2-beta0.tsv",
+      "bytes": 7421649,
+      "cases": 8907,
+      "sha256": "f3bf6ba761cdb92b8d3013bb9e089825960111dab3bb9f974ea3c25aa68ffb18",
+      "aggregate_preparation_work_bound": 837352,
+      "maximum_case_preparation_work_bound": 350,
+      "maximum_case_membership_upper_bound": 56,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W2-beta65536.tsv",
+      "bytes": 7492905,
+      "cases": 8907,
+      "sha256": "48a1643aaa340a3d8ad450afa1be2c5dd2887def0b63fa4305aaf6070f85e1f0",
+      "aggregate_preparation_work_bound": 837352,
+      "maximum_case_preparation_work_bound": 350,
+      "maximum_case_membership_upper_bound": 56,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W2-beta1048576.tsv",
+      "bytes": 7528533,
+      "cases": 8907,
+      "sha256": "7271e0a3d6e8152b7855418f70f99ca6a05dcb915b5e461f9c7fb005a889be6b",
+      "aggregate_preparation_work_bound": 837352,
+      "maximum_case_preparation_work_bound": 350,
+      "maximum_case_membership_upper_bound": 56,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W3-beta0.tsv",
+      "bytes": 11451787,
+      "cases": 8907,
+      "sha256": "045862bb3c3181d9fc5ffa15c8fc8f54dfa61487be7a29822aa169fd989cea6b",
+      "aggregate_preparation_work_bound": 2626386,
+      "maximum_case_preparation_work_bound": 560,
+      "maximum_case_membership_upper_bound": 70,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W3-beta65536.tsv",
+      "bytes": 11523043,
+      "cases": 8907,
+      "sha256": "9eacf52609c6b042813444c9ace604da42a489efcc174958239a53102b4db578",
+      "aggregate_preparation_work_bound": 2626386,
+      "maximum_case_preparation_work_bound": 560,
+      "maximum_case_membership_upper_bound": 70,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-spec-W3-beta1048576.tsv",
+      "bytes": 11558671,
+      "cases": 8907,
+      "sha256": "5b79f56187515c36e2b50d8a2d17da4c136dd8f35edb6962f194a5e569814bf4",
+      "aggregate_preparation_work_bound": 2626386,
+      "maximum_case_preparation_work_bound": 560,
+      "maximum_case_membership_upper_bound": 70,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W0-beta0.tsv",
+      "bytes": 6869833,
+      "cases": 8907,
+      "sha256": "ad99a362597aee0c04f8002f1a5192d86d6ea9e63380d323fd374316e57ee17e",
+      "aggregate_preparation_work_bound": 2855154,
+      "maximum_case_preparation_work_bound": 512,
+      "maximum_case_membership_upper_bound": 256,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W0-beta65536.tsv",
+      "bytes": 6941089,
+      "cases": 8907,
+      "sha256": "3b1ea5ade55ba9eb5d6e85428e5b9ff614bcc638977677650ffce6bec18ed79c",
+      "aggregate_preparation_work_bound": 2855154,
+      "maximum_case_preparation_work_bound": 512,
+      "maximum_case_membership_upper_bound": 256,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W0-beta1048576.tsv",
+      "bytes": 6976717,
+      "cases": 8907,
+      "sha256": "775b71de73cf0047c6487dfeec671402ccb1310452a5345045c3947f7a2a17f7",
+      "aggregate_preparation_work_bound": 2855154,
+      "maximum_case_preparation_work_bound": 512,
+      "maximum_case_membership_upper_bound": 256,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W1-beta0.tsv",
+      "bytes": 6906031,
+      "cases": 8907,
+      "sha256": "bd71636268e0388790e7014ccb76bfafbc8a3ee956ce6966a994408a0bc04fea",
+      "aggregate_preparation_work_bound": 2588170,
+      "maximum_case_preparation_work_bound": 464,
+      "maximum_case_membership_upper_bound": 64,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W1-beta65536.tsv",
+      "bytes": 6977287,
+      "cases": 8907,
+      "sha256": "583756615810d61fd52a7e4d618cf4e48e045fbed14441835ac6fb363cef684c",
+      "aggregate_preparation_work_bound": 2588170,
+      "maximum_case_preparation_work_bound": 464,
+      "maximum_case_membership_upper_bound": 64,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W1-beta1048576.tsv",
+      "bytes": 7012915,
+      "cases": 8907,
+      "sha256": "6ecf9bbadfea20bb4aacf6f6e9a5bdabc7d0d973b923c8999bd0cd0da6c884ef",
+      "aggregate_preparation_work_bound": 2588170,
+      "maximum_case_preparation_work_bound": 464,
+      "maximum_case_membership_upper_bound": 64,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W2-beta0.tsv",
+      "bytes": 4420065,
+      "cases": 8907,
+      "sha256": "97dc28164d9e29a6d0f8b39ab89d8a1783743aa89ed38260ff1e29b9a3cd435e",
+      "aggregate_preparation_work_bound": 837352,
+      "maximum_case_preparation_work_bound": 350,
+      "maximum_case_membership_upper_bound": 56,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W2-beta65536.tsv",
+      "bytes": 4491321,
+      "cases": 8907,
+      "sha256": "79dfd31656fe934702f04dcfd743e4b3796a3f0c443d56f83eb1363af4f5d9dd",
+      "aggregate_preparation_work_bound": 837352,
+      "maximum_case_preparation_work_bound": 350,
+      "maximum_case_membership_upper_bound": 56,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W2-beta1048576.tsv",
+      "bytes": 4526949,
+      "cases": 8907,
+      "sha256": "6a6035df52a4cf40dff98dc9c8432da362d9cdfed4b7ecd1e014243baeaad822",
+      "aggregate_preparation_work_bound": 837352,
+      "maximum_case_preparation_work_bound": 350,
+      "maximum_case_membership_upper_bound": 56,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W3-beta0.tsv",
+      "bytes": 6993342,
+      "cases": 8907,
+      "sha256": "feb3b0dc938942dc2746ddae238142cc3ac85144c94ff8187ef092f6f451e62b",
+      "aggregate_preparation_work_bound": 2626386,
+      "maximum_case_preparation_work_bound": 560,
+      "maximum_case_membership_upper_bound": 70,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W3-beta65536.tsv",
+      "bytes": 7064598,
+      "cases": 8907,
+      "sha256": "2060861ff7c8da3b667f823d06755dfd568507d866ef9794fec608e80faa6486",
+      "aggregate_preparation_work_bound": 2626386,
+      "maximum_case_preparation_work_bound": 560,
+      "maximum_case_membership_upper_bound": 70,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/real-H-flat-W3-beta1048576.tsv",
+      "bytes": 7100226,
+      "cases": 8907,
+      "sha256": "4677467132c4b2e989ac01a5e137e17740809fd4c4959fc36e90407e54d0bded",
+      "aggregate_preparation_work_bound": 2626386,
+      "maximum_case_preparation_work_bound": 560,
+      "maximum_case_membership_upper_bound": 70,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n5.tsv",
+      "bytes": 35553,
+      "cases": 90,
+      "sha256": "7ee165f8d8a296e1a4dd897a59fd0ab81f69945c1bb7176391f2c6319d908833",
+      "aggregate_preparation_work_bound": 3375,
+      "maximum_case_preparation_work_bound": 45,
+      "maximum_case_membership_upper_bound": 20,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n10.tsv",
+      "bytes": 67551,
+      "cases": 90,
+      "sha256": "4df44481782ef19c1e510a89ebda228d86b5988a2f3be9faf25c332a49fd8a8a",
+      "aggregate_preparation_work_bound": 11250,
+      "maximum_case_preparation_work_bound": 140,
+      "maximum_case_membership_upper_bound": 40,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n20.tsv",
+      "bytes": 188036,
+      "cases": 120,
+      "sha256": "822f4fcb8f616ec4907b63de9d61c2fa804ed43d8f1d96a092fcdc2509f24271",
+      "aggregate_preparation_work_bound": 54000,
+      "maximum_case_preparation_work_bound": 480,
+      "maximum_case_membership_upper_bound": 80,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n50.tsv",
+      "bytes": 600764,
+      "cases": 120,
+      "sha256": "5b8681fde64b1f1c84be42950f6e21919e5ea3c38dc1aec93a0d4844e740b3e7",
+      "aggregate_preparation_work_bound": 315000,
+      "maximum_case_preparation_work_bound": 2700,
+      "maximum_case_membership_upper_bound": 200,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n100.tsv",
+      "bytes": 1585932,
+      "cases": 120,
+      "sha256": "d8e19a0e34eefd46e44c7d8e4d4aa390bb80579c9d21226edffdced50e8ce7b4",
+      "aggregate_preparation_work_bound": 1230000,
+      "maximum_case_preparation_work_bound": 10400,
+      "maximum_case_membership_upper_bound": 400,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n250.tsv",
+      "bytes": 7060356,
+      "cases": 120,
+      "sha256": "8a72fb71551fc2aa0a80c6f0c9c763942a650b94e505826b3e0c2b0982ba92db",
+      "aggregate_preparation_work_bound": 7575000,
+      "maximum_case_preparation_work_bound": 63500,
+      "maximum_case_membership_upper_bound": 1000,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n500.tsv",
+      "bytes": 24310924,
+      "cases": 120,
+      "sha256": "6e22b62c68b2464d648322f7e801ffcd0af85cc041460ab2719fa9ff9cdf6d4e",
+      "aggregate_preparation_work_bound": 30150000,
+      "maximum_case_preparation_work_bound": 252000,
+      "maximum_case_membership_upper_bound": 2000,
+      "matches_frozen_sha256": true
+    },
+    {
+      "path": "results/raw/P7/inputs/synthetic-n1000.tsv",
+      "bytes": 88718316,
+      "cases": 120,
+      "sha256": "24b09e182c07f9353fb88cbff2ca5ad9a93b6f44b36db2de8e90652ba4121318",
+      "aggregate_preparation_work_bound": 120300000,
+      "maximum_case_preparation_work_bound": 1004000,
+      "maximum_case_membership_upper_bound": 4000,
+      "matches_frozen_sha256": true
+    }
+  ],
+  "global_curve_batches": [
+    {
+      "path": "results/raw/P7/global/real-H-flat-W0-beta0.curves.tsv",
+      "bytes": 2170328,
+      "sha256": "3903c51a8add4fdf7578ecd10d1c2b952061b12a6c4866491e629b53b0e24533",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W0-beta1048576.curves.tsv",
+      "bytes": 2415456,
+      "sha256": "40280a57067270bb49617a9eea423675dda480b4d528eb327ce682059629dbb5",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W0-beta65536.curves.tsv",
+      "bytes": 2263004,
+      "sha256": "908b2b9ac31f8f9ce9abb9ef7e046b3e2602388256e9622d38c0686d0a280312",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W1-beta0.curves.tsv",
+      "bytes": 2158174,
+      "sha256": "5f087d01d4e862d78541621357500f1a581c3661fd18782da415c44788b434b5",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W1-beta1048576.curves.tsv",
+      "bytes": 2372513,
+      "sha256": "3d5949bb39ba63bea13fbad93fca690a22c4b1ef30127220176a8dcde8531284",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W1-beta65536.curves.tsv",
+      "bytes": 2250090,
+      "sha256": "0faaf29fd6bbbe79c22e5cb9312c8354b1b7d49f9fc9edc6d9d34e453a20f057",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W2-beta0.curves.tsv",
+      "bytes": 1985193,
+      "sha256": "4105fd11c0af8fc8d27e71a73b404f202c647e3cd1d3e41d2215022ed7c97275",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W2-beta1048576.curves.tsv",
+      "bytes": 2318887,
+      "sha256": "88ad97751bde36ed465f21316adf191f300e788616a76963d9b5ecc7fc9e85cf",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W2-beta65536.curves.tsv",
+      "bytes": 2147254,
+      "sha256": "9d1044955d696d96d8f593a9c4dd4a9a9a14b16348528bf522efbe3ecfb42b21",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W3-beta0.curves.tsv",
+      "bytes": 2169573,
+      "sha256": "0d222869e81f0ce0d0ba9a0779f2209e0b2bbcfdae18b2dcbb623b5d7520fcc7",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W3-beta1048576.curves.tsv",
+      "bytes": 2383789,
+      "sha256": "30e1a5543cfe18b591537cca7a641c237f270fabb4201cca33aedc798265e3fb",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-flat-W3-beta65536.curves.tsv",
+      "bytes": 2261422,
+      "sha256": "3d971e32ad0bf79bbd4049984f23ca197dfce4149cd2fb12a0d6ef8d1b93328c",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W0-beta0.curves.tsv",
+      "bytes": 1143866,
+      "sha256": "4979fa28670d0f193a0383767d89f0f102a1f8b25fc40eb89e60722e64e56514",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W0-beta1048576.curves.tsv",
+      "bytes": 1305629,
+      "sha256": "c715f66ec2a230549803820325cdb8dd8561532859255bc31034590244ae8646",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W0-beta65536.curves.tsv",
+      "bytes": 1212539,
+      "sha256": "907da0ee16878156dfae9a65b6f06d7d5eecc7e991441792202705842d11d803",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W1-beta0.curves.tsv",
+      "bytes": 2156736,
+      "sha256": "13c44c8258bca353a9ab0a80acb0961411dea619bf2c9fd3ecc35837917439bb",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W1-beta1048576.curves.tsv",
+      "bytes": 2372351,
+      "sha256": "b262e10564bfdc454d2136860d543a8a4681ed55a9780e5d875748241d6cd462",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W1-beta65536.curves.tsv",
+      "bytes": 2249395,
+      "sha256": "4379e72cc9257c06539f11ba013ad9b920ef5af5eae79a4d961933f4c1a905ae",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W2-beta0.curves.tsv",
+      "bytes": 1949534,
+      "sha256": "6ded5f9d54467b7b6a5d289bbb8cc150f102fd032cd92d880b3d10cdebb398a1",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W2-beta1048576.curves.tsv",
+      "bytes": 2318884,
+      "sha256": "ada1224c491614efd0cc753ec2d2674047c30143f17e1db87be1c69ebf256294",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W2-beta65536.curves.tsv",
+      "bytes": 2129687,
+      "sha256": "d01f746bb484a03174444f584280a494a5d79bee5ad7526ca09ad51b5f021824",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W3-beta0.curves.tsv",
+      "bytes": 2168151,
+      "sha256": "91df0d9f6a5df7be01e2aec986f7a66d885ffbbe778e36a98a3957c554366a90",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W3-beta1048576.curves.tsv",
+      "bytes": 2383629,
+      "sha256": "4b3c92538fd8162ae4d2f086939e5ba8b65b5b4b0926bc590ca45dee02903296",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    },
+    {
+      "path": "results/raw/P7/global/real-H-spec-W3-beta65536.curves.tsv",
+      "bytes": 2260738,
+      "sha256": "7b5cd03a9efe50e63850088c9e5fee7a7c113510d57b0a7d4cfbf6f2cedb66c7",
+      "curves": 8907,
+      "aggregate_entries": 120904,
+      "maximum_curve_entries": 17
+    }
+  ],
+  "maxima": {
+    "batch_bytes": 88718316,
+    "aggregate_preparation_work_bound": 120300000,
+    "case_preparation_work_bound": 1004000,
+    "case_membership_upper_bound": 4000,
+    "global_batch_bytes": 2415456,
+    "global_aggregate_entries": 120904
+  },
+  "default_budget_checks": {
+    "initial": {
+      "max_input_bytes": 67108864,
+      "max_prepare_work": 100000000,
+      "max_curve_entries": 2000000,
+      "max_prepared_entries": 2000000,
+      "rejected_case_batches": [
+        "results/raw/P7/inputs/synthetic-n1000.tsv"
+      ],
+      "rejected_curve_batches": [],
+      "all_frozen_batches_fit": false
+    },
+    "current": {
+      "max_input_bytes": 134217728,
+      "max_prepare_work": 200000000,
+      "max_curve_entries": 2000000,
+      "max_prepared_entries": 2000000,
+      "rejected_case_batches": [],
+      "rejected_curve_batches": [],
+      "all_frozen_batches_fit": true
+    }
+  },
+  "budget_source_header": "tools/tiplog_layout/input_budget.hpp",
+  "budget_source_header_sha256": "8d333dbbfe037aeed3924a2779f4603f68504a71d4b7db8ee98dda7ef36cef8e"
+}

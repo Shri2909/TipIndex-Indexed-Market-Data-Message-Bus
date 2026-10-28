@@ -1,0 +1,26 @@
+{
+  "label": "request-dictionary-sanitizer-build",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "asan-ubsan",
+    "--parallel",
+    "2",
+    "--target",
+    "tiplog_bench"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261023T144428.296303Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/request-dictionary-sanitizer-build-20261023T144428.296303Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 16.633990188000098
+}

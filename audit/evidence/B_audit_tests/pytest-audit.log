@@ -1,0 +1,106 @@
+........................................................................ [  6%]
+........................................................................ [ 13%]
+........................................................................ [ 20%]
+........................................................................ [ 26%]
+........................................................................ [ 33%]
+........................................................................ [ 40%]
+........................................................................ [ 46%]
+........................................................................ [ 53%]
+........................................................................ [ 60%]
+........................................................................ [ 66%]
+........................................................................ [ 73%]
+........................................................................ [ 80%]
+........................................................................ [ 87%]
+........................................................................ [ 93%]
+.....................................................FF............      [100%]
+=================================== FAILURES ===================================
+_________ test_red02_blank_symbol_aborts_with_framing_error_and_offset _________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-2/test_red02_blank_symbol_aborts0')
+
+    def test_red02_blank_symbol_aborts_with_framing_error_and_offset(tmp_path):
+        """RED-02 (AUD-005). ARCHITECTURE 12: malformed ITCH aborts in strict mode
+        *with a byte offset*. A Stock Directory message with an all-space symbol is
+        malformed; the converter must raise FramingError carrying .offset.
+        Baseline: routing.encode_symbol raises a plain ValueError('empty stock
+        symbol') with no offset, so this test fails."""
+        stream = struct.pack(">H", 12) + b"S" + bytes(11)
+        stream += struct.pack(">H", 39) + _r_message(1, b"        ")
+        source = tmp_path / "blank.itch"
+        source.write_bytes(stream)
+        argv = ["convert", str(source), "--output", str(tmp_path / "out.mdt"),
+                "--start", "0", "--end", "86400000000000"]
+        with pytest.raises(FramingError) as caught:
+>           itch_cli.main(argv)
+
+audit/tests/py/test_audit_parsers.py:195: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/itch/__main__.py:209: in main
+    return measure(args) if args.command == "measure" else convert(args)
+                                                           ^^^^^^^^^^^^^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/itch/__main__.py:125: in convert
+    topic = router.route(payload, validated=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/itch/routing.py:74: in route
+    path = f"itch/{encode_symbol(mapped)}/{self._suffix(kind)}"
+                   ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+symbol = b''
+
+    def encode_symbol(symbol: bytes | str) -> str:
+        """Trim trailing spaces; percent-encode every byte outside [A-Z0-9.]."""
+        if isinstance(symbol, str):
+            symbol = symbol.encode("ascii")
+        symbol = symbol.rstrip(b" ")
+        if not symbol:
+>           raise ValueError("empty stock symbol")
+E           ValueError: empty stock symbol
+
+/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/itch/routing.py:25: ValueError
+_________ test_red03_project_tests_do_not_depend_on_working_directory __________
+
+    def test_red03_project_tests_do_not_depend_on_working_directory():
+        """RED-03 (AUD-006). The suite's own config sets pythonpath/testpaths
+        relative to py/pytest.ini, so running it from py/ is a supported
+        invocation. Baseline: test_exp_protocol.py loads 'configs/P6/matrix.toml'
+        relative to the CWD and fails with FileNotFoundError from py/."""
+        env = dict(os.environ, PYTEST_DISABLE_PLUGIN_AUTOLOAD="1",
+                   MPLCONFIGDIR=os.environ.get("MPLCONFIGDIR", "/tmp"))
+        target = "tests/test_exp_protocol.py::test_subscriptions_overlap_normalization_and_manifest_defaults"
+        result = subprocess.run([sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider", target],
+                                cwd=ROOT / "py", env=env, capture_output=True, text=True)
+>       assert result.returncode == 0, result.stdout[-2000:]
+E       AssertionError: F                                                                        [100%]
+E         =================================== FAILURES ===================================
+E         ________ test_subscriptions_overlap_normalization_and_manifest_defaults ________
+E         
+E         tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-3/test_subscriptions_overlap_nor0')
+E         
+E             def test_subscriptions_overlap_normalization_and_manifest_defaults(tmp_path):
+E         >       config = load('configs/P6/matrix.toml')
+E                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         
+E         tests/test_exp_protocol.py:113: 
+E         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+E         
+E         path = 'configs/P6/matrix.toml'
+E         
+E             def load(path: str | Path) -> dict:
+E         >       with open(path, 'rb') as stream: return tomllib.load(stream)
+E                      ^^^^^^^^^^^^^^^^
+E         E       FileNotFoundError: [Errno 2] No such file or directory: 'configs/P6/matrix.toml'
+E         
+E         tiplog_py/exp/matrix.py:22: FileNotFoundError
+E         =========================== short test summary info ============================
+E         FAILED tests/test_exp_protocol.py::test_subscriptions_overlap_normalization_and_manifest_defaults
+E         1 failed in 0.09s
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/home/abc/Desktop/Jane Street/.venv/bin/python', '-m', 'pytest', '-q', '-p', 'no:cacheprovider.../test_exp_protocol.py::test_subscriptions_overlap_normalization_and_manifest_defaults\n1 failed in 0.09s\n", stderr='').returncode
+
+audit/tests/py/test_audit_repo_hygiene.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED audit/tests/py/test_audit_parsers.py::test_red02_blank_symbol_aborts_with_framing_error_and_offset
+FAILED audit/tests/py/test_audit_repo_hygiene.py::test_red03_project_tests_do_not_depend_on_working_directory
+2 failed, 1073 passed in 3.17s

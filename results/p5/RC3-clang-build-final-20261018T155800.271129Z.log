@@ -1,0 +1,15 @@
+[ 11%] Built target tiplog_merge
+[ 27%] Built target tiplog_topics_subs
+[ 38%] Built target tiplog_index
+[ 50%] Built target tiplog_ring
+[ 66%] Built target tiplog_trace
+[ 77%] Built target tiplog_engine
+[ 88%] Built target tiplog_driver
+[100%] Built target tiplog_sim
+[ 18%] Built target tiplog_topics_subs
+[ 31%] Built target tiplog_merge
+[ 43%] Built target tiplog_index
+[ 56%] Built target tiplog_ring
+[ 68%] Built target tiplog_engine
+[ 81%] Built target tiplog_ref
+[100%] Built target tiplog_differential

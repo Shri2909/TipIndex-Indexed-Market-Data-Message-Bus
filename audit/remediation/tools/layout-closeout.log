@@ -1,0 +1,91 @@
+{
+  "schema": "tiplog-remediation-layout-correctness-closeout-v1",
+  "at_utc": "2026-10-26T08:37:40.011359+00:00",
+  "scope": "Correctness only; no performance claims. Historical artifacts read only.",
+  "cc5": [
+    {
+      "preset": "release",
+      "command": [
+        "/home/abc/Desktop/Jane Street/build/release/tiplog_layout_cc5",
+        "--instances",
+        "10000",
+        "--seed",
+        "20191230",
+        "--output",
+        "/home/abc/Desktop/Jane Street/audit/remediation/tools/cc5-final-release.json"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "d8109c3d7d47be2bf28f94bf62f046f71162684c60aadcdbde738a818e6ae262",
+      "binary_unchanged_during_check": true,
+      "verify_existing_outputs_only": true,
+      "output": "audit/remediation/tools/cc5-final-release.json",
+      "output_sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "stdout_matches_output": true,
+      "matches_historical_cc5_json": true,
+      "completed_instances": 10000,
+      "result_fnv1a64": "c4b17e0577e35cab",
+      "stderr_empty": true
+    },
+    {
+      "preset": "asan-ubsan",
+      "command": [
+        "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_layout_cc5",
+        "--instances",
+        "10000",
+        "--seed",
+        "20191230",
+        "--output",
+        "/home/abc/Desktop/Jane Street/audit/remediation/tools/cc5-final-asan-ubsan.json"
+      ],
+      "exit_code": 0,
+      "binary_sha256": "0f7a6890f3739829be7325cb9e9d7393c32e887efe57021a2d19943943b021a2",
+      "binary_unchanged_during_check": true,
+      "verify_existing_outputs_only": true,
+      "output": "audit/remediation/tools/cc5-final-asan-ubsan.json",
+      "output_sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "stdout_matches_output": true,
+      "matches_historical_cc5_json": true,
+      "completed_instances": 10000,
+      "result_fnv1a64": "c4b17e0577e35cab",
+      "stderr_empty": false
+    }
+  ],
+  "worked_example": [
+    {
+      "preset": "release",
+      "command": [
+        "/home/abc/Desktop/Jane Street/build/release/tiplog_layout_example"
+      ],
+      "binary_sha256": "280c1ccd5cba141d3a0e28498d7585bff41ac1defc299ec672cd2cd6eb76fc9c",
+      "exit_code": 0,
+      "output": "audit/remediation/tools/worked-example-final-release.json",
+      "output_sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "snapshot": "results/p7/worked-example.json",
+      "snapshot_sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "byte_identical_to_snapshot": true,
+      "json_identical_to_snapshot": true,
+      "stderr_empty": true
+    },
+    {
+      "preset": "asan-ubsan",
+      "command": [
+        "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_layout_example"
+      ],
+      "binary_sha256": "d62bf8ffee4c25354f5bf31f8b9d9034004dcef4234baf497147df6731ff1176",
+      "exit_code": 1,
+      "output": "audit/remediation/tools/worked-example-final-asan-ubsan.json",
+      "output_sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "snapshot": "results/p7/worked-example.json",
+      "snapshot_sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "byte_identical_to_snapshot": true,
+      "json_identical_to_snapshot": true,
+      "stderr_empty": false
+    }
+  ],
+  "status": "failed"
+}
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/audit/remediation/tools/run_layout_closeout.py", line 76, in <module>
+    assert summary['status']=='passed'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

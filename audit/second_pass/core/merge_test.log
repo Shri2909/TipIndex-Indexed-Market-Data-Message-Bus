@@ -1,0 +1,40 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 11 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKeys
+[ RUN      ] MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards
+[       OK ] MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards (0 ms)
+[----------] 1 test from MergeKeys (0 ms total)
+
+[----------] 7 tests from MergeKernels
+[ RUN      ] MergeKernels.V21EmptySingletonAndInitialEmptyLeaves
+[       OK ] MergeKernels.V21EmptySingletonAndInitialEmptyLeaves (0 ms)
+[ RUN      ] MergeKernels.V21PackedMaximumAndSentinelExhaustion
+[       OK ] MergeKernels.V21PackedMaximumAndSentinelExhaustion (0 ms)
+[ RUN      ] MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion
+[       OK ] MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion (3 ms)
+[ RUN      ] MergeKernels.V21UniformRandomListsVersusIndependentStdMerge
+[       OK ] MergeKernels.V21UniformRandomListsVersusIndependentStdMerge (55 ms)
+[ RUN      ] MergeKernels.V21SevereSkewLongRunsAndAlternation
+[       OK ] MergeKernels.V21SevereSkewLongRunsAndAlternation (4 ms)
+[ RUN      ] MergeKernels.V21LargeAndMaximumCursorCounts
+[       OK ] MergeKernels.V21LargeAndMaximumCursorCounts (17 ms)
+[ RUN      ] MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation
+[       OK ] MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation (0 ms)
+[----------] 7 tests from MergeKernels (80 ms total)
+
+[----------] 1 test from MergeQuad
+[ RUN      ] MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry
+[       OK ] MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry (0 ms)
+[----------] 1 test from MergeQuad (0 ms total)
+
+[----------] 2 tests from MergeLoser
+[ RUN      ] MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath
+[       OK ] MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath (0 ms)
+[ RUN      ] MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource
+[       OK ] MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource (0 ms)
+[----------] 2 tests from MergeLoser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 4 test suites ran. (80 ms total)
+[  PASSED  ] 11 tests.

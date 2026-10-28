@@ -1,0 +1,4 @@
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object CMakeFiles/tiplog_layout_runtime.dir/tools/tiplog_layout/runtime_main.cpp.o
+[100%] Linking CXX executable tiplog_layout_runtime
+[100%] Built target tiplog_layout_runtime

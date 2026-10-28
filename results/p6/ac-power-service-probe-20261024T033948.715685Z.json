@@ -1,0 +1,20 @@
+{
+  "label": "ac-power-service-probe",
+  "argv": [
+    ".venv/bin/python",
+    "-"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261024T033948.715685Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/ac-power-service-probe-20261024T033948.715685Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.059252517000004445
+}

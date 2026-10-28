@@ -1,0 +1,28 @@
+{
+  "label": "legacy-asan-ubsan-indexed-quad",
+  "argv": [
+    "build/asan-ubsan/tiplog_differential",
+    "--seeds",
+    "200",
+    "--operations",
+    "10000",
+    "--mode",
+    "indexed",
+    "--kernel",
+    "quad"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T14:46:45.587719+00:00",
+  "status": "running",
+  "input_sets_before": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "3d3c765b71b53f9d753767dda6cbacd00af4ad32ba7a2ebfe561d3d24c44ea2f"
+  },
+  "log": "results/f01/checks/legacy-asan-ubsan-indexed-quad-20261026T144645.587419Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

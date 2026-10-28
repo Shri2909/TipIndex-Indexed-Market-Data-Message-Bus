@@ -1,0 +1,27 @@
+-- Failed to find LLVM FileCheck
+-- Google Benchmark version: v1.9.5, normalized to 1.9.5
+-- tiplog GoogleTest provider: system 1.17.0
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/abc/Desktop/Jane Street/build/clang-release
+[ 11%] Built target tiplog_merge
+[ 27%] Built target tiplog_index
+[ 33%] Built target tiplog_ring
+[ 50%] Built target tiplog_topics_subs
+[ 66%] Built target tiplog_trace
+[ 72%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 83%] Built target tiplog_driver
+[ 88%] Linking CXX static library libtiplog_engine.a
+[ 88%] Built target tiplog_engine
+[ 94%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[100%] Linking CXX executable tiplog_sim
+[100%] Built target tiplog_sim
+[ 12%] Built target tiplog_ring
+[ 25%] Built target tiplog_merge
+[ 37%] Built target tiplog_index
+[ 56%] Built target tiplog_topics_subs
+[ 68%] Built target tiplog_ref
+[ 81%] Built target tiplog_engine
+[ 87%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 93%] Linking CXX executable tiplog_differential
+[100%] Built target tiplog_differential

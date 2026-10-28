@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "command": [
+    "/home/abc/Desktop/Jane Street/.venv/bin/python",
+    "/home/abc/Desktop/Jane Street/build/p5/run_runner_validation.py"
+  ],
+  "checks": [
+    {
+      "check": "three sequential prescribed blocks",
+      "status": "passed"
+    },
+    {
+      "check": "expected case counts",
+      "status": "passed"
+    },
+    {
+      "check": "approved micro flags",
+      "status": "passed"
+    },
+    {
+      "check": "225 individual synthetic repetitions accepted",
+      "status": "passed"
+    },
+    {
+      "check": "ns/item denominator correct",
+      "status": "passed"
+    },
+    {
+      "check": "duplicated repetition rejected",
+      "status": "passed"
+    },
+    {
+      "check": "non-ok repetition retained and counted",
+      "status": "passed"
+    },
+    {
+      "check": "actual CPU mismatch rejected",
+      "status": "passed"
+    },
+    {
+      "check": "frequency outlier flagged without deletion",
+      "status": "passed"
+    },
+    {
+      "check": "frequency summary preserves original rows",
+      "status": "passed"
+    },
+    {
+      "check": "missing quiescence conditions rejected",
+      "status": "passed"
+    },
+    {
+      "check": "visible fuzz process blocks timing",
+      "status": "passed"
+    }
+  ],
+  "runner_sha256": "4556d459d6940e2678c0ea3e4822fcc589baf1e551bdeff69db4d5a594599656",
+  "fixture": "build/p5/runner-validation",
+  "fixture_scope": "Synthetic JSON only; no benchmark execution, elapsed-time measurement or performance evidence."
+}

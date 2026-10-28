@@ -1,0 +1,32 @@
+{
+  "label": "release-bound-build",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "release",
+    "--parallel",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:48:08.431010+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "552a92f3ed28ef5c9895e633f164261f46d71e225355e7533e82d65e1644bef9"
+  },
+  "log": "audit/remediation/checks/release-bound-build-20261026T084808.430699Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.7357646230002501,
+  "log_sha256": "feafdb935e5c005f3473059650a5c5ab2f782cf0e83b90a134a795e62d7c5bdb",
+  "input_sets_after": {
+    "cpp": "cdf93a01d798025c91ba0bea20a1af2726d19e1793e8de7ae2cfa0fa0ed40989",
+    "python": "552a92f3ed28ef5c9895e633f164261f46d71e225355e7533e82d65e1644bef9"
+  }
+}

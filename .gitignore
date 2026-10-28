@@ -17,3 +17,18 @@ __pycache__/
 /results/p1/F2*.log
 /results/p1/fuzz-artifacts/
 /results/p1/fuzz-crashes/
+
+# P6 derived aggregates over 10 MiB, regenerated from local raw results (docs/report/REPRODUCE.md)
+results/derived/tip-outcomes.csv
+results/derived/tip-paired-ratios.csv
+results/derived/tip-statistics.csv
+results/derived/tip-summary.json
+# Synthetic binary trace fixtures produced by P6 functional checks
+results/p6/**/*.mdt
+
+# Remediation fuzzing uses private local copies of the original seed corpora.
+# Logs can contain byte dictionaries derived from those inputs; keep only
+# command/statistics/hash summaries in reviewable packaging.
+/audit/remediation/core/final-validation/*-corpus/
+/audit/remediation/core/final-validation/*-artifacts/
+/audit/remediation/core/final-validation/fuzz_*/stderr.log

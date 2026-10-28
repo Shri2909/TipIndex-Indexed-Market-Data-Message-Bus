@@ -1,0 +1,23 @@
+{
+  "label": "global-sweep",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "tiplog_py.layout.global_study",
+    "--campaign",
+    "results/raw/P7/studies/campaign.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T142106.815885Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/global-sweep-20261025T142106.815885Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 71.85168167899974
+}

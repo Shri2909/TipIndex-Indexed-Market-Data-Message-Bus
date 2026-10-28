@@ -1,0 +1,9 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[ 18%] Built target tiplog_merge
+[ 36%] Built target tiplog_topics_subs
+[ 54%] Built target tiplog_ring
+[ 72%] Built target tiplog_index
+[ 90%] Built target tiplog_engine
+[100%] Building CXX object CMakeFiles/tiplog_poll_bench.dir/tools/tiplog_poll_bench.cpp.o
+[100%] Linking CXX executable tiplog_poll_bench
+[100%] Built target tiplog_poll_bench

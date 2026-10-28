@@ -1,0 +1,52 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[  2%] Built target tiplog_smoke_test
+[  6%] Built target tiplog_trace
+[  8%] Built target tiplog_merge
+[ 12%] Built target tiplog_topics_subs
+[ 14%] Built target tiplog_ring
+[ 16%] Built target tiplog_index
+[ 19%] Built target tiplog_ref
+[ 21%] Built target tiplog_ring_test
+[ 24%] Built target tiplog_merge_test
+[ 26%] Built target tiplog_index_test
+[ 28%] Built target tiplog_walk
+[ 53%] Built target benchmark
+[ 55%] Built target tiplog_trace_check
+[ 57%] Built target tiplog_trace_test
+[ 60%] Built target tiplog_topics_subs_test
+[ 62%] Built target tiplog_driver
+[ 63%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 66%] Built target tiplog_oracle_test
+[ 68%] Built target tiplog_oracle_tail_test
+[ 71%] Built target tiplog_driver_test
+[ 73%] Built target merge_bench
+[ 74%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[ 75%] Linking CXX executable index_bench
+[ 75%] Built target index_bench
+[ 78%] Built target benchmark_main
+[ 79%] Linking CXX static library libtiplog_engine.a
+[ 79%] Built target tiplog_engine
+[ 81%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 81%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 83%] Linking CXX executable tiplog_sim
+[ 83%] Built target tiplog_sim
+[ 84%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 85%] Linking CXX executable tiplog_engine_index_test
+[ 85%] Built target tiplog_engine_index_test
+[ 86%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+[ 87%] Linking CXX executable tiplog_engine_test
+[ 87%] Built target tiplog_engine_test
+[ 89%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 90%] Linking CXX executable tiplog_differential
+[ 91%] Built target tiplog_differential
+[ 92%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[ 93%] Linking CXX executable tiplog_engine_merge_test
+[ 93%] Built target tiplog_engine_merge_test
+[ 95%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[ 96%] Linking CXX executable tiplog_bench
+[ 96%] Built target tiplog_bench
+[ 97%] Building CXX object CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o
+[ 98%] Linking CXX executable publish_bench
+[ 98%] Built target publish_bench
+[100%] Linking CXX executable tiplog_bench_contract_test
+[100%] Built target tiplog_bench_contract_test

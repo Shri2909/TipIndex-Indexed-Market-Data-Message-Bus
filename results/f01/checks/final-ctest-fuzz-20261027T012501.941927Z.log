@@ -1,0 +1,463 @@
+Test project /home/abc/Desktop/Jane Street/build/fuzz
+        Start  21: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+        Start 119: differential.DifferentialCoverage.RetainedExecutionAndVariedPayloadsAcrossModesAndKernels
+        Start 103: index.IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure
+        Start  24: topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions
+  1/229 Test #103: index.IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure ........................   Passed    2.40 sec
+        Start 102: index.IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory
+  2/229 Test  #24: topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions .....   Passed    3.43 sec
+        Start  23: topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs
+  3/229 Test #102: index.IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory .........................   Passed    2.35 sec
+        Start 229: tools.cli_contracts
+  4/229 Test #119: differential.DifferentialCoverage.RetainedExecutionAndVariedPayloadsAcrossModesAndKernels ......   Passed    5.38 sec
+        Start  32: topics.subs.V08Subscriptions.FanoutNotifiesEachObserverOnceAcrossOverlappingRoots
+  5/229 Test  #21: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher ................   Passed    5.44 sec
+        Start  38: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+  6/229 Test  #23: topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs ...........................   Passed    2.15 sec
+        Start 108: merge.MergeKernels.V21UniformRandomListsVersusIndependentStdMerge
+  7/229 Test  #38: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth ..................................   Passed    0.56 sec
+        Start 110: merge.MergeKernels.V21LargeAndMaximumCursorCounts
+  8/229 Test #108: merge.MergeKernels.V21UniformRandomListsVersusIndependentStdMerge ..............................   Passed    0.66 sec
+        Start  83: ring.RingInvariants.V11RandomizedAppendChecksEveryOperation
+  9/229 Test #229: tools.cli_contracts ............................................................................   Passed    1.53 sec
+        Start 109: merge.MergeKernels.V21SevereSkewLongRunsAndAlternation
+ 10/229 Test #110: merge.MergeKernels.V21LargeAndMaximumCursorCounts ..............................................   Passed    0.38 sec
+        Start  80: ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum
+ 11/229 Test #109: merge.MergeKernels.V21SevereSkewLongRunsAndAlternation .........................................   Passed    0.13 sec
+        Start 166: engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum
+ 12/229 Test  #83: ring.RingInvariants.V11RandomizedAppendChecksEveryOperation ....................................   Passed    0.22 sec
+        Start 209: layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity
+ 13/229 Test  #80: ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum ................................   Passed    0.10 sec
+        Start  14: trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected
+ 14/229 Test #166: engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum ...........................   Passed    0.09 sec
+        Start 107: merge.MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion
+ 15/229 Test #209: layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity ................   Passed    0.09 sec
+        Start 136: engine.Engine.ReplayLifetimeAndMoveAreChecked
+ 16/229 Test  #14: trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected .............................   Passed    0.09 sec
+        Start 135: engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected
+ 17/229 Test #107: merge.MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion .............................   Passed    0.08 sec
+        Start  17: trace.ItchWalkerV04.ErrorsIdentifyFrameByteOffsetIndependentOfChunking
+ 18/229 Test  #17: trace.ItchWalkerV04.ErrorsIdentifyFrameByteOffsetIndependentOfChunking .........................   Passed    0.06 sec
+        Start 182: engine_merge.EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe
+ 19/229 Test #136: engine.Engine.ReplayLifetimeAndMoveAreChecked ..................................................   Passed    0.08 sec
+        Start 121: engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing
+ 20/229 Test #135: engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected ..................................   Passed    0.08 sec
+        Start 134: engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState
+ 21/229 Test #182: engine_merge.EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe .............................   Passed    0.04 sec
+        Start 130: engine.Engine.V14ChainedRangesEqualSingleRange
+ 22/229 Test #121: engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing ............................   Passed    0.05 sec
+        Start 123: engine.Engine.V13HistoryExpiredFieldsAndTerminalStability
+ 23/229 Test #134: engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState ............................   Passed    0.05 sec
+        Start 131: engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries
+ 24/229 Test #130: engine.Engine.V14ChainedRangesEqualSingleRange .................................................   Passed    0.05 sec
+        Start 120: engine.Engine.V12EmptyAndExtremeFutureRanges
+ 25/229 Test #123: engine.Engine.V13HistoryExpiredFieldsAndTerminalStability ......................................   Passed    0.05 sec
+        Start 133: engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek
+ 26/229 Test #131: engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries ............................   Passed    0.05 sec
+        Start 132: engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry
+ 27/229 Test #120: engine.Engine.V12EmptyAndExtremeFutureRanges ...................................................   Passed    0.05 sec
+        Start 126: engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry
+ 28/229 Test #133: engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek ................................   Passed    0.05 sec
+        Start 128: engine.Engine.V14CapturedUpperExcludesLaterPublish
+ 29/229 Test #132: engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry ..........................   Passed    0.05 sec
+        Start 129: engine.Engine.V14ZeroOutputSnapshotAdvancesChain
+ 30/229 Test  #32: topics.subs.V08Subscriptions.FanoutNotifiesEachObserverOnceAcrossOverlappingRoots ..............   Passed    1.44 sec
+        Start 127: engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap
+ 31/229 Test #126: engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry .........................................   Passed    0.05 sec
+        Start 124: engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor
+ 32/229 Test #128: engine.Engine.V14CapturedUpperExcludesLaterPublish .............................................   Passed    0.05 sec
+        Start 125: engine.Engine.V35IrrelevantRecordExpiryIsConservative
+ 33/229 Test #129: engine.Engine.V14ZeroOutputSnapshotAdvancesChain ...............................................   Passed    0.05 sec
+        Start 122: engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook
+ 34/229 Test #127: engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap ......................................   Passed    0.05 sec
+        Start 205: bench_contract.BenchReplayWork.WrappedPadCountsOnlyInScanTraversal
+ 35/229 Test #124: engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor ....................   Passed    0.05 sec
+        Start 203: bench_contract.BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts
+ 36/229 Test #125: engine.Engine.V35IrrelevantRecordExpiryIsConservative ..........................................   Passed    0.05 sec
+        Start 204: bench_contract.BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts
+ 37/229 Test #122: engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook .............................   Passed    0.05 sec
+        Start  87: index.IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement
+ 38/229 Test #205: bench_contract.BenchReplayWork.WrappedPadCountsOnlyInScanTraversal .............................   Passed    0.05 sec
+        Start 185: engine_merge.EngineMerge.V38LargeNonPowerOfTwoCursorSet
+ 39/229 Test #203: bench_contract.BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts ................   Passed    0.05 sec
+        Start   4: trace.TraceV05.EveryTruncationRejected
+ 40/229 Test  #87: index.IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement .........................   Passed    0.04 sec
+        Start  13: trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries
+ 41/229 Test #204: bench_contract.BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts ..........................   Passed    0.05 sec
+        Start  15: trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected
+ 42/229 Test #185: engine_merge.EngineMerge.V38LargeNonPowerOfTwoCursorSet ........................................   Passed    0.04 sec
+        Start  81: ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors
+ 43/229 Test   #4: trace.TraceV05.EveryTruncationRejected .........................................................   Passed    0.04 sec
+        Start 178: engine_merge.EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle
+ 44/229 Test  #15: trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected ..................................   Passed    0.03 sec
+        Start 227: layout.LayoutResourceBounds.FrontendBudgetsAreAggregateAndCheckBeforeGrowth
+ 45/229 Test  #13: trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries ....................................   Passed    0.04 sec
+        Start  40: topics.subs.V38Registry.TopicPathBoundsRejectBeforeMutationAndAcceptExactBounds
+ 46/229 Test  #81: ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors ........................   Passed    0.03 sec
+        Start 184: engine_merge.EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion
+ 47/229 Test #227: layout.LayoutResourceBounds.FrontendBudgetsAreAggregateAndCheckBeforeGrowth ....................   Passed    0.03 sec
+        Start  29: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+ 48/229 Test #178: engine_merge.EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle ...........................   Passed    0.05 sec
+        Start 177: engine_index.EngineIndex.AutoUsesRecentSparsePostingInPartiallyOverlappingBlock
+ 49/229 Test #184: engine_merge.EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion ..............................   Passed    0.03 sec
+        Start 171: engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers
+ 50/229 Test  #40: topics.subs.V38Registry.TopicPathBoundsRejectBeforeMutationAndAcceptExactBounds ................   Passed    0.04 sec
+        Start  48: oracle.OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState
+ 51/229 Test  #29: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks ................................   Passed    0.03 sec
+        Start   3: trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics
+ 52/229 Test  #48: oracle.OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState .........................   Passed    0.02 sec
+        Start  89: index.IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree
+ 53/229 Test #171: engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers ....................   Passed    0.03 sec
+        Start  11: trace.TraceV05.FlagsPaddingAndTrailingBytesRejected
+ 54/229 Test #177: engine_index.EngineIndex.AutoUsesRecentSparsePostingInPartiallyOverlappingBlock ................   Passed    0.05 sec
+        Start 172: engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge
+ 55/229 Test   #3: trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics .........................................   Passed    0.03 sec
+        Start   5: trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected
+ 56/229 Test  #89: index.IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree .........................   Passed    0.03 sec
+        Start   6: trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected
+ 57/229 Test  #11: trace.TraceV05.FlagsPaddingAndTrailingBytesRejected ............................................   Passed    0.02 sec
+        Start  99: index.IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks
+ 58/229 Test #172: engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge ............................   Passed    0.03 sec
+        Start  67: ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord
+ 59/229 Test   #6: trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected .........................   Passed    0.02 sec
+        Start   2: trace.TraceV05.GoldenHeaderDictionaryAndRecord
+ 60/229 Test   #5: trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected ......................................   Passed    0.03 sec
+        Start   8: trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected
+ 61/229 Test  #99: index.IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks .......................   Passed    0.03 sec
+        Start  22: topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds
+ 62/229 Test   #2: trace.TraceV05.GoldenHeaderDictionaryAndRecord .................................................   Passed    0.03 sec
+        Start   9: trace.TraceV05.CanonicalUtf8PathsRequired
+ 63/229 Test  #67: ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord .......................................   Passed    0.03 sec
+ 64/229 Test   #8: trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected ...................................   Passed    0.03 sec
+        Start  10: trace.TraceV05.TopicResourceBoundariesMatchRegistryContract
+        Start 219: layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints
+ 65/229 Test  #22: topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds ...........   Passed    0.03 sec
+        Start  12: trace.TraceV05.FileMappingMoveAndRewind
+ 66/229 Test   #9: trace.TraceV05.CanonicalUtf8PathsRequired ......................................................   Passed    0.03 sec
+        Start 183: engine_merge.EngineMerge.V23WideTermsAlwaysUseScan
+ 67/229 Test  #10: trace.TraceV05.TopicResourceBoundariesMatchRegistryContract ....................................   Passed    0.03 sec
+        Start  65: driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit
+ 68/229 Test #219: layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints ..................   Passed    0.03 sec
+        Start   7: trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired
+ 69/229 Test  #12: trace.TraceV05.FileMappingMoveAndRewind ........................................................   Passed    0.03 sec
+        Start  73: ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged
+ 70/229 Test #183: engine_merge.EngineMerge.V23WideTermsAlwaysUseScan .............................................   Passed    0.03 sec
+        Start  33: topics.subs.V08Subscriptions.ObserverReentrantMutationRejectsWithConsistentCommitAndRollback
+ 71/229 Test  #65: driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit .....................   Passed    0.03 sec
+        Start  95: index.IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed
+ 72/229 Test   #7: trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired ...................................   Passed    0.03 sec
+        Start  96: index.IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal
+ 73/229 Test  #73: ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged ......................   Passed    0.03 sec
+        Start  74: ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction
+ 74/229 Test  #33: topics.subs.V08Subscriptions.ObserverReentrantMutationRejectsWithConsistentCommitAndRollback ...   Passed    0.03 sec
+        Start 198: bench_contract.BenchDigest.Sha256EmptyAbcAndMillionA
+ 75/229 Test  #95: index.IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed ..............................   Passed    0.03 sec
+        Start  82: ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted
+ 76/229 Test  #96: index.IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal ..........................   Passed    0.03 sec
+        Start  34: topics.subs.V08Subscriptions.ObserverCommitMayReadAndUnregisterButCannotReenterMutation
+ 77/229 Test  #74: ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction .....................................   Passed    0.03 sec
+        Start  19: topics.subs.V06Registry.PathValidationAndLookup
+ 78/229 Test  #82: ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted ......................   Passed    0.03 sec
+        Start  98: index.IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact
+ 79/229 Test  #34: topics.subs.V08Subscriptions.ObserverCommitMayReadAndUnregisterButCannotReenterMutation ........   Passed    0.03 sec
+        Start  75: ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention
+ 80/229 Test #198: bench_contract.BenchDigest.Sha256EmptyAbcAndMillionA ...........................................   Passed    0.04 sec
+        Start  20: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion
+ 81/229 Test  #19: topics.subs.V06Registry.PathValidationAndLookup ................................................   Passed    0.03 sec
+        Start  85: index.IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic
+ 82/229 Test  #98: index.IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact .........................   Passed    0.03 sec
+        Start  94: index.IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt
+ 83/229 Test  #75: ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention ......................   Passed    0.03 sec
+        Start  76: ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState
+ 84/229 Test  #20: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion ..........................   Passed    0.03 sec
+        Start  88: index.IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges
+ 85/229 Test  #85: index.IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic ...........................   Passed    0.03 sec
+        Start  93: index.IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims
+ 86/229 Test  #76: ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState ..............................   Passed    0.03 sec
+        Start  68: ring.RingFraming.V10V36HandComputedEightBytePadAndWrap
+ 87/229 Test  #94: index.IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt ..........................   Passed    0.03 sec
+        Start 179: engine_merge.EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix
+ 88/229 Test  #88: index.IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges ...........................   Passed    0.03 sec
+        Start  86: index.IndexPool.V15InitialFreeListAndExactReservedMemory
+ 89/229 Test  #93: index.IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims .......................   Passed    0.03 sec
+        Start  97: index.IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary
+ 90/229 Test  #68: ring.RingFraming.V10V36HandComputedEightBytePadAndWrap .........................................   Passed    0.03 sec
+        Start  37: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+ 91/229 Test #179: engine_merge.EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix .................   Passed    0.04 sec
+        Start  36: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel
+ 92/229 Test  #97: index.IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary .....................   Passed    0.02 sec
+        Start  35: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain
+ 93/229 Test  #86: index.IndexPool.V15InitialFreeListAndExactReservedMemory .......................................   Passed    0.03 sec
+        Start  52: oracle.OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap
+ 94/229 Test  #37: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged ........   Passed    0.03 sec
+        Start  72: ring.RingFraming.CheckedAccessRejectsForgedInteriorHeadersAndAcceptsWrappedBoundaries
+ 95/229 Test  #35: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain ................................   Passed    0.03 sec
+        Start  70: ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen
+ 96/229 Test  #36: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel .................................   Passed    0.03 sec
+        Start  79: ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad
+ 97/229 Test  #52: oracle.OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap ................................   Passed    0.03 sec
+        Start 186: engine_merge.EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated
+ 98/229 Test  #70: ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen ......................................   Passed    0.02 sec
+        Start  57: oracle_tail.OracleTail.EmptyFutureAndZeroBudget
+ 99/229 Test  #72: ring.RingFraming.CheckedAccessRejectsForgedInteriorHeadersAndAcceptsWrappedBoundaries ..........   Passed    0.03 sec
+        Start  30: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+100/229 Test  #79: ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad ....................................   Passed    0.03 sec
+        Start  58: oracle_tail.OracleTail.SharedBudgetCompletesOldAndFreshRanges
+101/229 Test #186: engine_merge.EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated .......................   Passed    0.03 sec
+        Start  59: oracle_tail.OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix
+102/229 Test  #57: oracle_tail.OracleTail.EmptyFutureAndZeroBudget ................................................   Passed    0.03 sec
+        Start  26: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+103/229 Test  #30: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor ..............   Passed    0.03 sec
+        Start  54: oracle.OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow
+104/229 Test  #59: oracle_tail.OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix ...............................   Passed    0.03 sec
+        Start  50: oracle.OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered
+105/229 Test  #58: oracle_tail.OracleTail.SharedBudgetCompletesOldAndFreshRanges ..................................   Passed    0.03 sec
+        Start  77: ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites
+106/229 Test  #26: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries ............................   Passed    0.03 sec
+        Start  16: trace.ItchWalkerV04.TimestampInversionsAndJson
+107/229 Test  #54: oracle.OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow ..................................   Passed    0.03 sec
+        Start  56: oracle.OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion
+108/229 Test  #50: oracle.OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered .........................   Passed    0.03 sec
+        Start  18: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds
+109/229 Test  #77: ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites ...............................   Passed    0.03 sec
+        Start  60: oracle_tail.OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData
+110/229 Test  #56: oracle.OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion ..............................   Passed    0.03 sec
+        Start  71: ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill
+111/229 Test  #16: trace.ItchWalkerV04.TimestampInversionsAndJson .................................................   Passed    0.03 sec
+        Start  64: driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay
+112/229 Test  #60: oracle_tail.OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData ..............................   Passed    0.03 sec
+        Start  28: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded
+113/229 Test  #18: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds ....................................   Passed    0.03 sec
+        Start  78: ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction
+114/229 Test  #64: driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay ........................   Passed    0.02 sec
+        Start  69: ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad
+115/229 Test  #71: ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill ..........................................   Passed    0.03 sec
+        Start  55: oracle.OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad
+116/229 Test  #28: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded ...................................   Passed    0.03 sec
+        Start 189: engine_merge.EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel
+117/229 Test  #78: ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction ......................   Passed    0.03 sec
+        Start  63: driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic
+118/229 Test  #69: ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad ...........................................   Passed    0.02 sec
+        Start  53: oracle.OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper
+119/229 Test  #55: oracle.OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad ....................   Passed    0.03 sec
+        Start  62: driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder
+120/229 Test #189: engine_merge.EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel .....................   Passed    0.03 sec
+        Start 101: index.IndexCursor.EstimateCountsExactRangesAcrossPartialExpiredAndDeltaSealedBlocks
+121/229 Test  #63: driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic ..........................   Passed    0.03 sec
+        Start 181: engine_merge.EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry
+122/229 Test  #53: oracle.OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper ..............   Passed    0.03 sec
+        Start  66: driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications
+123/229 Test  #62: driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder .............................   Passed    0.03 sec
+        Start  27: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+124/229 Test #101: index.IndexCursor.EstimateCountsExactRangesAcrossPartialExpiredAndDeltaSealedBlocks ............   Passed    0.03 sec
+        Start  47: oracle.OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload
+125/229 Test #181: engine_merge.EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry ............................   Passed    0.03 sec
+        Start 111: merge.MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation
+126/229 Test  #66: driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications .................................   Passed    0.03 sec
+        Start  61: oracle_tail.OracleTail.InitialHistoryExpiredRemainsInitial
+127/229 Test  #27: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow ........   Passed    0.03 sec
+        Start 226: layout.LayoutResourceBounds.PreparationRejectsWorkAndMembershipExcess
+128/229 Test  #47: oracle.OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload ......................   Passed    0.03 sec
+        Start  31: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+129/229 Test #111: merge.MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation ..........................   Passed    0.03 sec
+        Start  49: oracle.OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck
+130/229 Test  #61: oracle_tail.OracleTail.InitialHistoryExpiredRemainsInitial .....................................   Passed    0.03 sec
+        Start 218: layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses
+131/229 Test #226: layout.LayoutResourceBounds.PreparationRejectsWorkAndMembershipExcess ..........................   Passed    0.03 sec
+        Start 201: bench_contract.BenchPayloadMix.RejectsOverflowAndMalformedRowsBeforeSampling
+132/229 Test  #31: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit ............   Passed    0.03 sec
+        Start  51: oracle.OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall
+133/229 Test  #49: oracle.OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck ........   Passed    0.03 sec
+        Start  44: oracle.OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation
+134/229 Test #218: layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses ............   Passed    0.03 sec
+        Start 170: engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap
+135/229 Test #201: bench_contract.BenchPayloadMix.RejectsOverflowAndMalformedRowsBeforeSampling ...................   Passed    0.03 sec
+        Start 225: layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow
+136/229 Test  #51: oracle.OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall .......................   Passed    0.03 sec
+        Start 187: engine_merge.EngineMerge.AutoWithDisabledIndexFallsBackToScan
+137/229 Test #170: engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap ...............................   Passed    0.03 sec
+        Start 164: engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction
+138/229 Test  #44: oracle.OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation ............................   Passed    0.03 sec
+        Start 112: merge.MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry
+139/229 Test #225: layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow ..........................   Passed    0.03 sec
+        Start  46: oracle.OracleMatching.InvalidSubscriptionsAreRejectedIndependently
+140/229 Test #187: engine_merge.EngineMerge.AutoWithDisabledIndexFallsBackToScan ..................................   Passed    0.03 sec
+        Start 160: engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor
+141/229 Test #164: engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction ..........................   Passed    0.03 sec
+        Start 188: engine_merge.EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine
+142/229 Test #112: merge.MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry ................................   Passed    0.03 sec
+        Start 211: layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale
+143/229 Test  #46: oracle.OracleMatching.InvalidSubscriptionsAreRejectedIndependently .............................   Passed    0.03 sec
+        Start 215: layout.LayoutExact.ForwardParentIdsAndMultipleChildStages
+144/229 Test #160: engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor ...............................   Passed    0.03 sec
+        Start 162: engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad
+145/229 Test #188: engine_merge.EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine .........................   Passed    0.03 sec
+        Start 167: engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress
+146/229 Test #211: layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale .....................   Passed    0.03 sec
+        Start 165: engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo
+147/229 Test #215: layout.LayoutExact.ForwardParentIdsAndMultipleChildStages ......................................   Passed    0.03 sec
+        Start 163: engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction
+148/229 Test #162: engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad .................   Passed    0.02 sec
+        Start 115: checker.InvariantChecker.RingDetectsNonzeroFill
+149/229 Test #167: engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress ..........................   Passed    0.03 sec
+        Start 195: engine_merge.EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained
+150/229 Test #165: engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo ..................   Passed    0.03 sec
+        Start  84: ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries
+151/229 Test #163: engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction .................   Passed    0.03 sec
+        Start  41: oracle.OracleRetention.V09HandComputedPadAndWrap
+152/229 Test #115: checker.InvariantChecker.RingDetectsNonzeroFill ................................................   Passed    0.03 sec
+        Start 116: checker.InvariantChecker.RingDetectsSequenceGap
+153/229 Test  #84: ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries .....................   Passed    0.02 sec
+        Start  25: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+154/229 Test #195: engine_merge.EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained ...............   Passed    0.03 sec
+        Start  45: oracle.OracleMatching.IndependentPathBoundaryAndUnion
+155/229 Test  #41: oracle.OracleRetention.V09HandComputedPadAndWrap ...............................................   Passed    0.03 sec
+        Start 168: engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry
+156/229 Test #116: checker.InvariantChecker.RingDetectsSequenceGap ................................................   Passed    0.03 sec
+        Start 169: engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess
+157/229 Test  #45: oracle.OracleMatching.IndependentPathBoundaryAndUnion ..........................................   Passed    0.03 sec
+        Start 161: engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint
+158/229 Test  #25: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms ........................   Passed    0.03 sec
+        Start 118: checker.InvariantChecker.EngineDetectsRetainedRecordOnWrongTopicPartition
+159/229 Test #168: engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry ....................   Passed    0.03 sec
+        Start 117: checker.InvariantChecker.IndexDetectsCorruptedBlockCount
+160/229 Test #169: engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess .................   Passed    0.03 sec
+        Start 217: layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected
+161/229 Test #118: checker.InvariantChecker.EngineDetectsRetainedRecordOnWrongTopicPartition ......................   Passed    0.03 sec
+        Start 100: index.IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth
+162/229 Test #161: engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint ................   Passed    0.03 sec
+        Start 105: merge.MergeKernels.V21EmptySingletonAndInitialEmptyLeaves
+163/229 Test #117: checker.InvariantChecker.IndexDetectsCorruptedBlockCount .......................................   Passed    0.03 sec
+        Start  39: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation
+164/229 Test #217: layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected ..................................   Passed    0.03 sec
+        Start  92: index.IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation
+165/229 Test #100: index.IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth .....................   Passed    0.03 sec
+        Start 106: merge.MergeKernels.V21PackedMaximumAndSentinelExhaustion
+166/229 Test #105: merge.MergeKernels.V21EmptySingletonAndInitialEmptyLeaves ......................................   Passed    0.03 sec
+        Start 213: layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction
+167/229 Test  #39: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation .....................................   Passed    0.03 sec
+        Start 197: engine_merge.EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll
+168/229 Test  #92: index.IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation ...........................   Passed    0.03 sec
+        Start 216: layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit
+169/229 Test #106: merge.MergeKernels.V21PackedMaximumAndSentinelExhaustion .......................................   Passed    0.03 sec
+        Start 210: layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau
+170/229 Test #213: layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction .................................   Passed    0.03 sec
+        Start 212: layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow
+171/229 Test #197: engine_merge.EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll ..................   Passed    0.03 sec
+        Start 196: engine_merge.EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct
+172/229 Test #216: layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit ...............................   Passed    0.03 sec
+        Start  90: index.IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim
+173/229 Test #210: layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau .............................   Passed    0.03 sec
+        Start 214: layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget
+174/229 Test #212: layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow .......................   Passed    0.03 sec
+        Start  43: oracle.OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation
+175/229 Test  #90: index.IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim ..........................   Passed    0.03 sec
+        Start 222: layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale
+176/229 Test #196: engine_merge.EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct ......................   Passed    0.03 sec
+        Start 104: merge.MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards
+177/229 Test  #43: oracle.OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation .............   Passed    0.03 sec
+        Start 223: layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates
+178/229 Test #214: layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget ........................................   Passed    0.03 sec
+        Start 208: layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores
+179/229 Test #222: layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale .................................   Passed    0.03 sec
+        Start 220: layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget
+180/229 Test #104: merge.MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards ..................................   Passed    0.03 sec
+        Start 193: engine_merge.EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget
+181/229 Test #223: layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates ......................   Passed    0.03 sec
+        Start 221: layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint
+182/229 Test #208: layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores ..............................   Passed    0.03 sec
+        Start 114: merge.MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource
+183/229 Test #193: engine_merge.EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget .................   Passed    0.03 sec
+        Start 113: merge.MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath
+184/229 Test #220: layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget .......................   Passed    0.03 sec
+        Start 224: layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds
+185/229 Test #114: merge.MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource ..................................   Passed    0.03 sec
+        Start 192: engine_merge.EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress
+186/229 Test #221: layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint ....................   Passed    0.03 sec
+        Start 202: bench_contract.BenchValidation.InjectedReplayDisagreementHasDistinctFailureType
+187/229 Test #224: layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds ...............................   Passed    0.02 sec
+        Start 190: engine_merge.EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions
+188/229 Test #113: merge.MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath ..............................   Passed    0.03 sec
+        Start 175: engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation
+189/229 Test #202: bench_contract.BenchValidation.InjectedReplayDisagreementHasDistinctFailureType ................   Passed    0.03 sec
+        Start 173: engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed
+190/229 Test #192: engine_merge.EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress ............................   Passed    0.03 sec
+        Start 194: engine_merge.EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields
+191/229 Test #175: engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation ...................   Passed    0.03 sec
+        Start  91: index.IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership
+192/229 Test #190: engine_merge.EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions ..........................   Passed    0.03 sec
+        Start 200: bench_contract.BenchDigest.SequenceEndianAndPayloadSink
+193/229 Test #173: engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed ........................   Passed    0.03 sec
+        Start 207: layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes
+194/229 Test #194: engine_merge.EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields ............   Passed    0.03 sec
+        Start 191: engine_merge.EngineTail.V24WideHookIncludesNewMatchingPartitions
+195/229 Test  #91: index.IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership .........................   Passed    0.03 sec
+        Start 174: engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative
+196/229 Test #200: bench_contract.BenchDigest.SequenceEndianAndPayloadSink ........................................   Passed    0.03 sec
+        Start 199: bench_contract.BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies
+197/229 Test #207: layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes .............................   Passed    0.03 sec
+        Start 180: engine_merge.EngineMerge.V35AllModesConservativeIrrelevantExpiry
+198/229 Test #191: engine_merge.EngineTail.V24WideHookIncludesNewMatchingPartitions ...............................   Passed    0.03 sec
+        Start  42: oracle.OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction
+199/229 Test #174: engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative ...........................   Passed    0.03 sec
+        Start 206: layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries
+200/229 Test #199: bench_contract.BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies .........................   Passed    0.03 sec
+        Start   1: plumbing.Plumbing.Cxx20AndGoogleTest
+201/229 Test #180: engine_merge.EngineMerge.V35AllModesConservativeIrrelevantExpiry ...............................   Passed    0.03 sec
+        Start 176: engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse
+202/229 Test  #42: oracle.OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction .......................   Passed    0.03 sec
+        Start 137: poll_budget.PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture
+203/229 Test #206: layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries ...................................   Passed    0.03 sec
+        Start 138: poll_budget.PollBudget.V03EmptyFutureFinishedAndMaximumCaps
+204/229 Test   #1: plumbing.Plumbing.Cxx20AndGoogleTest ...........................................................   Passed    0.03 sec
+        Start 139: poll_budget.PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection
+205/229 Test #176: engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse .............................   Passed    0.03 sec
+        Start 140: poll_budget.PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress
+206/229 Test #137: poll_budget.PollBudget.V03ZeroCapsPreserveReplayAndTailWithoutFreshCapture .....................   Passed    0.03 sec
+        Start 141: poll_budget.PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating
+207/229 Test #138: poll_budget.PollBudget.V03EmptyFutureFinishedAndMaximumCaps ....................................   Passed    0.03 sec
+        Start 142: poll_budget.PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress
+208/229 Test #139: poll_budget.PollBudget.V03OutputLimitWinsExactTieAndCompletionNeedsNoInspection ................   Passed    0.04 sec
+        Start 143: poll_budget.PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+209/229 Test #142: poll_budget.PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress ...............   Passed    0.03 sec
+        Start 144: poll_budget.PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted
+210/229 Test #141: poll_budget.PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating .................   Passed    0.04 sec
+        Start 145: poll_budget.PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData
+211/229 Test #143: poll_budget.PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges .....................   Passed    0.03 sec
+        Start 146: poll_budget.PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels
+212/229 Test #144: poll_budget.PollBudget.V04TailExactOldCompletionDefersFreshOpeningWhenExhausted ................   Passed    0.04 sec
+        Start 147: poll_budget.PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry
+213/229 Test #145: poll_budget.PollBudget.V04TailExactFinalRejectionReportsCaughtUpAndCanObserveLaterData .........   Passed    0.04 sec
+        Start 148: poll_budget.PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires
+214/229 Test #147: poll_budget.PollBudget.V06RejectingProgressDoesNotFalsifyLastDeliveredOnExpiry .................   Passed    0.03 sec
+        Start 149: poll_budget.PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress
+215/229 Test #148: poll_budget.PollBudget.V06ConsumedRecycledBlockCanReseekAndUnreadRecycledBlockExpires ..........   Passed    0.03 sec
+        Start 150: poll_budget.PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime
+216/229 Test #150: poll_budget.PollBudget.V06OutlivedZeroWorkReaderStillChecksLifetime ............................   Passed    0.04 sec
+        Start 151: poll_budget.PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint
+217/229 Test #149: poll_budget.PollBudget.V06RegistryGrowthAndMovesKeepLogicalProgress ............................   Passed    0.07 sec
+        Start 152: poll_budget.PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary
+218/229 Test #151: poll_budget.PollBudget.V07FailedAppendPreservesUnreadMatchAndLegacyCheckpoint ..................   Passed    0.03 sec
+        Start 153: poll_budget.PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds
+219/229 Test #152: poll_budget.PollBudget.V08NulloptMatchesLegacyAtEveryVisibleBoundary ...........................   Passed    0.04 sec
+        Start 154: poll_budget.PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors
+220/229 Test #153: poll_budget.PollBudget.V05ContinuingSnapshotAndReopeningCheckpointHaveDifferentUpperBounds .....   Passed    0.03 sec
+        Start 155: poll_budget.PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess
+221/229 Test #146: poll_budget.PollBudget.V05IndependentCandidateTraceAndPayloadOracleAllModesAndKernels ..........   Passed    0.18 sec
+        Start 156: poll_budget.PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch
+222/229 Test #154: poll_budget.PollBudget.V04TailRejectingProgressKeepsGlobalErrorPrefixAndLatchedErrors ..........   Passed    0.03 sec
+        Start 157: poll_budget.PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries
+223/229 Test #155: poll_budget.PollBudget.V06PoolPressureExpiresUnreadRangeBeforeRecycledMetadataAccess ...........   Passed    0.03 sec
+        Start 158: poll_budget.PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions
+224/229 Test #156: poll_budget.PollBudget.V07FailedSecondAppendKeepsDeliveredPrefixAndUnreadMatch .................   Passed    0.03 sec
+        Start 159: poll_budget.PollBudget.V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch
+225/229 Test #158: poll_budget.PollBudget.V05AutoFallbackUsesScanAccountingAndWideTailCapturesNewPartitions .......   Passed    0.03 sec
+        Start 228: poll_differential.PollDifferential.InterleavedRetainedAndExpiredReadersAgainstLogicalOracle
+226/229 Test #157: poll_budget.PollBudget.V08UnlimitedTailMatchesLegacyAcrossCaptureAndOutputBoundaries ...........   Passed    0.04 sec
+227/229 Test #159: poll_budget.PollBudget.V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch ...............   Passed    0.03 sec
+228/229 Test #140: poll_budget.PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress ...................   Passed    0.33 sec
+229/229 Test #228: poll_differential.PollDifferential.InterleavedRetainedAndExpiredReadersAgainstLogicalOracle ....   Passed    0.28 sec
+
+100% tests passed out of 229
+
+Total Test time (real) =   9.33 sec

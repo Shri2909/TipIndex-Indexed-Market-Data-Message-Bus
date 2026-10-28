@@ -1,0 +1,12 @@
+{
+  "name": "example_output_full",
+  "argv": [
+    "/home/abc/Desktop/Jane Street/build/release/tiplog_layout_example",
+    "--output",
+    "/dev/full"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.0016408349983976223,
+  "stdout": "",
+  "stderr": ""
+}

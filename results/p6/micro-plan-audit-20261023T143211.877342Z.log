@@ -1,0 +1,1 @@
+{"status": "passed", "checks": {"M1": {"blocks": 20, "cases": 900}, "M2": {"blocks": 6, "cases": 120}, "M3": {"blocks": 1, "cases": 8}, "pilot-M1": {"blocks": 1, "cases": 1}}}

@@ -1,14 +1,17 @@
 #include "bench_log.hpp"
 #include "tiplog/merge/kernels.hpp"
+#include "../../tools/file_safety.hpp"
 
 #include <benchmark/benchmark.h>
 
 #include <array>
+#include <charconv>
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <numeric>
 #include <optional>
 #include <random>
@@ -197,6 +200,8 @@ void save_metadata(const std::string &line) {
     return;
   std::ofstream out(path, std::ios::app);
   out << line << '\n';
+  out.flush();
+  out.close();
   if (!out)
     throw std::runtime_error("cannot write benchmark input manifest");
 }
@@ -322,6 +327,19 @@ void add_profile(const Profile &profile, bool verification, bool quad_plain) {
 std::string value(std::string_view arg, std::string_view prefix) {
   return std::string(arg.substr(prefix.size()));
 }
+std::uint64_t number(std::string_view text) {
+  std::uint64_t result{};
+  const auto parsed = std::from_chars(text.data(), text.data() + text.size(), result);
+  if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size())
+    throw std::invalid_argument("expected unsigned decimal integer");
+  return result;
+}
+std::size_t parse_size(std::string_view text) {
+  const auto result = number(text);
+  if (result > std::numeric_limits<std::size_t>::max())
+    throw std::invalid_argument("size exceeds size_t representation");
+  return static_cast<std::size_t>(result);
+}
 } // namespace
 int main(int argc, char **argv) {
   try {
@@ -342,11 +360,11 @@ int main(int argc, char **argv) {
       else if (arg.starts_with("--profile="))
         selection = value(arg, "--profile=");
       else if (arg.starts_with("--outputs="))
-        base.outputs = std::stoull(value(arg, "--outputs="));
+        base.outputs = parse_size(value(arg, "--outputs="));
       else if (arg.starts_with("--touch-bytes="))
-        base.touch_bytes = std::stoull(value(arg, "--touch-bytes="));
+        base.touch_bytes = parse_size(value(arg, "--touch-bytes="));
       else if (arg.starts_with("--seed="))
-        base.seed = std::stoull(value(arg, "--seed="));
+        base.seed = number(value(arg, "--seed="));
       else if (arg == "--tiplog-help") {
         std::cout
             << "merge_bench --profile=pilot|full|uniform64|geometric64|touch64 "
@@ -360,7 +378,12 @@ int main(int argc, char **argv) {
       } else
         benchmark_args.push_back(argv[i]);
     }
+    if (verification && benchmark_args.size() != 1)
+      throw std::invalid_argument("unrecognized argument in verification mode: " +
+                                  std::string(benchmark_args[1]));
     if (!verification) {
+      tiplog::cli::check_benchmark_outputs(static_cast<int>(benchmark_args.size()),
+                                          benchmark_args.data());
       auto count = static_cast<int>(benchmark_args.size());
       benchmark_args.push_back(nullptr);
       benchmark::Initialize(&count, benchmark_args.data());
@@ -423,6 +446,8 @@ int main(int argc, char **argv) {
       benchmark::RunSpecifiedBenchmarks();
       benchmark::Shutdown();
     }
+    std::cout.flush();
+    if (!std::cout) throw std::runtime_error("failed writing stdout result");
     return 0;
   } catch (const std::exception &e) {
     std::cerr << "merge_bench: " << e.what() << '\n';

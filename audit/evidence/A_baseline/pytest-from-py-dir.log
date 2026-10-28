@@ -1,0 +1,26 @@
+.....................................................................F.. [ 47%]
+........................................................................ [ 95%]
+.......                                                                  [100%]
+=================================== FAILURES ===================================
+________ test_subscriptions_overlap_normalization_and_manifest_defaults ________
+
+tmp_path = PosixPath('/tmp/pytest-of-abc/pytest-1/test_subscriptions_overlap_nor0')
+
+    def test_subscriptions_overlap_normalization_and_manifest_defaults(tmp_path):
+>       config = load('configs/P6/matrix.toml')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_exp_protocol.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = 'configs/P6/matrix.toml'
+
+    def load(path: str | Path) -> dict:
+>       with open(path, 'rb') as stream: return tomllib.load(stream)
+             ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'configs/P6/matrix.toml'
+
+tiplog_py/exp/matrix.py:22: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_exp_protocol.py::test_subscriptions_overlap_normalization_and_manifest_defaults
+1 failed, 150 passed in 9.73s

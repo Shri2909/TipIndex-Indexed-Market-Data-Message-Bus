@@ -390,4 +390,30 @@ TEST(IndexPreparation, V15RejectsInvalidInputsWithoutLogicalMutation) {
   EXPECT_THROW((void)pool.prepare_append(0, 0, 0, 4), std::invalid_argument);
   EXPECT_EQ(pool.metadata(), metadata);
 }
+
+TEST(IndexCursor, EstimateCountsExactRangesAcrossPartialExpiredAndDeltaSealedBlocks) {
+  for (const std::uint32_t delta_bits : {5U, 32U}) {
+    Index pool({64, 4, 0, delta_bits});
+    std::vector<LogPos> history;
+    for (std::uint32_t i = 0; i < 13; ++i) {
+      const auto pos = static_cast<LogPos>(i) * 16;
+      history.push_back(pos);
+      const LogPos tail = i >= 7 ? 40 : 0;
+      const auto live = static_cast<std::uint64_t>(std::count_if(
+          history.begin(), history.end(), [tail](auto value) { return value >= tail; }));
+      append(pool, 0, pos, tail, live, 1, i == 7 ? 3 : 0);
+    }
+    // Exhaustive exact and between-posting boundaries, including a single
+    // shared boundary block, wholly expired blocks and empty/reversed ranges.
+    for (LogPos lower = 0; lower <= 224; lower += 8) {
+      for (LogPos upper = 0; upper <= 224; upper += 8) {
+        const auto expected = std::count_if(history.begin(), history.end(), [&](auto value) {
+          return value >= 40 && value >= lower && value < upper;
+        });
+        EXPECT_EQ(pool.estimate_count(0, lower, upper), static_cast<std::uint64_t>(expected))
+            << "lower=" << lower << " upper=" << upper << " delta_bits=" << delta_bits;
+      }
+    }
+  }
+}
 } // namespace

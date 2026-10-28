@@ -1,0 +1,24 @@
+{
+  "label": "M2-full-matrix-functional",
+  "argv": [
+    "taskset",
+    "-c",
+    "7",
+    "build/release/publish_bench",
+    "--matrix",
+    "--verify-only"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T160504.287611Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/M2-full-matrix-functional-20261018T160504.287611Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 2.799274690999937
+}

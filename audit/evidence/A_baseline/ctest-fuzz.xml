@@ -1,0 +1,2987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="186"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="5"
+	timestamp="2026-10-26T06:35:54"
+	>
+	<testcase name="plumbing.Plumbing.Cxx20AndGoogleTest" classname="plumbing.Plumbing.Cxx20AndGoogleTest" time="0.0209998" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Plumbing.Cxx20AndGoogleTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Plumbing
+[ RUN      ] Plumbing.Cxx20AndGoogleTest
+[       OK ] Plumbing.Cxx20AndGoogleTest (0 ms)
+[----------] 1 test from Plumbing (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.GoldenHeaderDictionaryAndRecord" classname="trace.TraceV05.GoldenHeaderDictionaryAndRecord" time="0.0215356" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.GoldenHeaderDictionaryAndRecord
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.GoldenHeaderDictionaryAndRecord
+[       OK ] TraceV05.GoldenHeaderDictionaryAndRecord (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics" classname="trace.TraceV05.EmptyAndMaximumPayloadAndMultipleTopics" time="0.0240007" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.EmptyAndMaximumPayloadAndMultipleTopics
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.EmptyAndMaximumPayloadAndMultipleTopics
+[       OK ] TraceV05.EmptyAndMaximumPayloadAndMultipleTopics (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.EveryTruncationRejected" classname="trace.TraceV05.EveryTruncationRejected" time="0.0271319" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.EveryTruncationRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.EveryTruncationRejected
+[       OK ] TraceV05.EveryTruncationRejected (4 ms)
+[----------] 1 test from TraceV05 (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (5 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected" classname="trace.TraceV05.HeaderFlagsReservedVersionAndMagicRejected" time="0.0263529" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.HeaderFlagsReservedVersionAndMagicRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.HeaderFlagsReservedVersionAndMagicRejected
+[       OK ] TraceV05.HeaderFlagsReservedVersionAndMagicRejected (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected" classname="trace.TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected" time="0.0320445" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected
+[       OK ] TraceV05.DictionaryOffsetLengthOverflowAlignmentAndCountRejected (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired" classname="trace.TraceV05.ExactRecordCountAndDictionaryBoundaryRequired" time="0.0303" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.ExactRecordCountAndDictionaryBoundaryRequired
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.ExactRecordCountAndDictionaryBoundaryRequired
+[       OK ] TraceV05.ExactRecordCountAndDictionaryBoundaryRequired (1 ms)
+[----------] 1 test from TraceV05 (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected" classname="trace.TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected" time="0.0323648" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected
+[       OK ] TraceV05.MissingIdsZeroIdsDuplicateIdsAndPathsRejected (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.CanonicalUtf8PathsRequired" classname="trace.TraceV05.CanonicalUtf8PathsRequired" time="0.0297265" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.CanonicalUtf8PathsRequired
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.CanonicalUtf8PathsRequired
+[       OK ] TraceV05.CanonicalUtf8PathsRequired (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.FlagsPaddingAndTrailingBytesRejected" classname="trace.TraceV05.FlagsPaddingAndTrailingBytesRejected" time="0.0254017" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.FlagsPaddingAndTrailingBytesRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.FlagsPaddingAndTrailingBytesRejected
+[       OK ] TraceV05.FlagsPaddingAndTrailingBytesRejected (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.TraceV05.FileMappingMoveAndRewind" classname="trace.TraceV05.FileMappingMoveAndRewind" time="0.023956" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceV05.FileMappingMoveAndRewind
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceV05
+[ RUN      ] TraceV05.FileMappingMoveAndRewind
+[       OK ] TraceV05.FileMappingMoveAndRewind (0 ms)
+[----------] 1 test from TraceV05 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries" classname="trace.ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries" time="0.0365765" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ItchWalkerV04
+[ RUN      ] ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries
+[       OK ] ItchWalkerV04.IndependentAll23TypesAndChunkBoundaries (6 ms)
+[----------] 1 test from ItchWalkerV04 (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (6 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected" classname="trace.ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected" time="0.0701719" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ItchWalkerV04
+[ RUN      ] ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected
+[       OK ] ItchWalkerV04.IncompleteAllowedButPartialAndTrailingRejected (41 ms)
+[----------] 1 test from ItchWalkerV04 (42 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (42 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected" classname="trace.ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected" time="0.0254099" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ItchWalkerV04
+[ RUN      ] ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected
+[       OK ] ItchWalkerV04.UnknownTypeWrongLengthAndOversizeRejected (3 ms)
+[----------] 1 test from ItchWalkerV04 (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="trace.ItchWalkerV04.TimestampInversionsAndJson" classname="trace.ItchWalkerV04.TimestampInversionsAndJson" time="0.0263002" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = ItchWalkerV04.TimestampInversionsAndJson
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ItchWalkerV04
+[ RUN      ] ItchWalkerV04.TimestampInversionsAndJson
+[       OK ] ItchWalkerV04.TimestampInversionsAndJson (1 ms)
+[----------] 1 test from ItchWalkerV04 (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds" classname="topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds" time="0.0258438" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V06Registry.AncestorsPartitionsAndDenseLocalIds
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V06Registry
+[ RUN      ] V06Registry.AncestorsPartitionsAndDenseLocalIds
+[       OK ] V06Registry.AncestorsPartitionsAndDenseLocalIds (0 ms)
+[----------] 1 test from V06Registry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V06Registry.PathValidationAndLookup" classname="topics.subs.V06Registry.PathValidationAndLookup" time="0.0240537" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V06Registry.PathValidationAndLookup
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V06Registry
+[ RUN      ] V06Registry.PathValidationAndLookup
+[       OK ] V06Registry.PathValidationAndLookup (0 ms)
+[----------] 1 test from V06Registry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion" classname="topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion" time="0.0236217" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V07Subscriptions.DeterministicNormalizationPreservesUnion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V07Subscriptions
+[ RUN      ] V07Subscriptions.DeterministicNormalizationPreservesUnion
+[       OK ] V07Subscriptions.DeterministicNormalizationPreservesUnion (0 ms)
+[----------] 1 test from V07Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher" classname="topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher" time="5.31063" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V07Subscriptions
+[ RUN      ] V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+[       OK ] V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher (5080 ms)
+[----------] 1 test from V07Subscriptions (5080 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (5080 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds" classname="topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds" time="0.0262548" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V07Subscriptions
+[ RUN      ] V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds
+[       OK ] V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds (1 ms)
+[----------] 1 test from V07Subscriptions (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs" classname="topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs" time="1.47643" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V07Subscriptions.NormalizationMatchesIndependentAllPairs
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V07Subscriptions
+[ RUN      ] V07Subscriptions.NormalizationMatchesIndependentAllPairs
+[       OK ] V07Subscriptions.NormalizationMatchesIndependentAllPairs (1325 ms)
+[----------] 1 test from V07Subscriptions (1325 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1326 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions" classname="topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions" time="2.6405" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V07Subscriptions
+[ RUN      ] V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions
+[       OK ] V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions (2496 ms)
+[----------] 1 test from V07Subscriptions (2496 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2496 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms" classname="topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms" time="0.0239956" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V07Subscriptions
+[ RUN      ] V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+[       OK ] V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms (0 ms)
+[----------] 1 test from V07Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries" classname="topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries" time="0.0263976" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V08Subscriptions
+[ RUN      ] V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+[       OK ] V08Subscriptions.FutureSubtreesRespectSegmentBoundaries (0 ms)
+[----------] 1 test from V08Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow" classname="topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow" time="0.0259996" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V08Subscriptions
+[ RUN      ] V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+[       OK ] V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow (0 ms)
+[----------] 1 test from V08Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded" classname="topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded" time="0.0239728" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V08Subscriptions.ExactPreinternedAndNoHookNeeded
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V08Subscriptions
+[ RUN      ] V08Subscriptions.ExactPreinternedAndNoHookNeeded
+[       OK ] V08Subscriptions.ExactPreinternedAndNoHookNeeded (0 ms)
+[----------] 1 test from V08Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks" classname="topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks" time="0.0274108" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V08Subscriptions
+[ RUN      ] V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+[       OK ] V08Subscriptions.CopyMoveAndDestructionReleaseHooks (1 ms)
+[----------] 1 test from V08Subscriptions (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor" classname="topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor" time="0.0265384" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V08Subscriptions
+[ RUN      ] V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+[       OK ] V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor (0 ms)
+[----------] 1 test from V08Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit" classname="topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit" time="0.0261666" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V08Subscriptions
+[ RUN      ] V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+[       OK ] V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit (0 ms)
+[----------] 1 test from V08Subscriptions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain" classname="topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain" time="0.0258525" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V38Registry.TopicLimitPreflightsEntireAncestorChain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V38Registry
+[ RUN      ] V38Registry.TopicLimitPreflightsEntireAncestorChain
+[       OK ] V38Registry.TopicLimitPreflightsEntireAncestorChain (0 ms)
+[----------] 1 test from V38Registry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel" classname="topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel" time="0.0260729" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V38Registry.PartitionLimitAndReservedOwnerSentinel
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V38Registry
+[ RUN      ] V38Registry.PartitionLimitAndReservedOwnerSentinel
+[       OK ] V38Registry.PartitionLimitAndReservedOwnerSentinel (0 ms)
+[----------] 1 test from V38Registry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged" classname="topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged" time="0.0264895" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V38Registry
+[ RUN      ] V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+[       OK ] V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged (0 ms)
+[----------] 1 test from V38Registry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth" classname="topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth" time="0.364136" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V38Registry
+[ RUN      ] V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+[       OK ] V38Registry.FullUint16BoundaryAndLateBitsetGrowth (319 ms)
+[----------] 1 test from V38Registry (319 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (319 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation" classname="topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation" time="0.0288322" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = V38Registry.ZeroCapacityRejectsWithoutMutation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from V38Registry
+[ RUN      ] V38Registry.ZeroCapacityRejectsWithoutMutation
+[       OK ] V38Registry.ZeroCapacityRejectsWithoutMutation (0 ms)
+[----------] 1 test from V38Registry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleRetention.V09HandComputedPadAndWrap" classname="oracle.OracleRetention.V09HandComputedPadAndWrap" time="0.0286785" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleRetention.V09HandComputedPadAndWrap
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleRetention
+[ RUN      ] OracleRetention.V09HandComputedPadAndWrap
+[       OK ] OracleRetention.V09HandComputedPadAndWrap (0 ms)
+[----------] 1 test from OracleRetention (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction" classname="oracle.OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction" time="0.0281" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleRetention
+[ RUN      ] OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction
+[       OK ] OracleRetention.V09ExactPhysicalFitHasNoPadAndWholeRecordEviction (0 ms)
+[----------] 1 test from OracleRetention (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation" classname="oracle.OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation" time="0.0287421" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleRetention
+[ RUN      ] OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation
+[       OK ] OracleRetention.RejectsInvalidConfigsAndOversizedPublicationWithoutMutation (0 ms)
+[----------] 1 test from OracleRetention (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation" classname="oracle.OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation" time="0.0281199" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleRetention
+[ RUN      ] OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation
+[       OK ] OracleRetention.RejectsSyntheticLifetimeLimitsBeforeMutation (0 ms)
+[----------] 1 test from OracleRetention (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleMatching.IndependentPathBoundaryAndUnion" classname="oracle.OracleMatching.IndependentPathBoundaryAndUnion" time="0.0284007" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleMatching.IndependentPathBoundaryAndUnion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleMatching
+[ RUN      ] OracleMatching.IndependentPathBoundaryAndUnion
+[       OK ] OracleMatching.IndependentPathBoundaryAndUnion (0 ms)
+[----------] 1 test from OracleMatching (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleMatching.InvalidSubscriptionsAreRejectedIndependently" classname="oracle.OracleMatching.InvalidSubscriptionsAreRejectedIndependently" time="0.0286541" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleMatching.InvalidSubscriptionsAreRejectedIndependently
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleMatching
+[ RUN      ] OracleMatching.InvalidSubscriptionsAreRejectedIndependently
+[       OK ] OracleMatching.InvalidSubscriptionsAreRejectedIndependently (0 ms)
+[----------] 1 test from OracleMatching (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload" classname="oracle.OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload" time="0.0294982" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload
+[       OK ] OracleReplay.CapturedUpperExcludesLaterPublicationAndCopiesPayload (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState" classname="oracle.OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState" time="0.0297253" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState
+[       OK ] OracleReplay.HistoryExpiredHasExactFieldsAndStableTerminalState (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck" classname="oracle.OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck" time="0.0303247" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck
+[       OK ] OracleReplay.ConservativeExpiryIncludesIrrelevantRecordsAndZeroBudgetDefersCheck (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered" classname="oracle.OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered" time="0.027566" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered
+[       OK ] OracleReplay.ErrorPreservesExactDeliveredPrefixAndLastDelivered (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall" classname="oracle.OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall" time="0.0246318" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall
+[       OK ] OracleReplay.ExactFinalBudgetIsDoneBeforeExpiryOnNextPositiveCall (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap" classname="oracle.OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap" time="0.0257223" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap
+[       OK ] OracleReplay.FullBudgetDoesNotLookAheadAcrossFilteredGap (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper" classname="oracle.OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper" time="0.0262978" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper
+[       OK ] OracleReplay.CompletedZeroOutputSnapshotAdvancesProgressAndChainsFromUpper (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow" classname="oracle.OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow" time="0.0279978" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow
+[       OK ] OracleReplay.EmptyFutureAndExtremeQueriesAvoidOverflow (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad" classname="oracle.OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad" time="0.0226046" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad
+[       OK ] OracleReplay.SeqOnlyOpenSkipsPadWhileFullBatchCanCheckpointBeforePad (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle.OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion" classname="oracle.OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion" time="0.0265009" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleReplay
+[ RUN      ] OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion
+[       OK ] OracleReplay.EqualValuedDistinctSequenceEventsSurviveUnion (0 ms)
+[----------] 1 test from OracleReplay (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle_tail.OracleTail.EmptyFutureAndZeroBudget" classname="oracle_tail.OracleTail.EmptyFutureAndZeroBudget" time="0.0265063" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleTail.EmptyFutureAndZeroBudget
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleTail
+[ RUN      ] OracleTail.EmptyFutureAndZeroBudget
+[       OK ] OracleTail.EmptyFutureAndZeroBudget (0 ms)
+[----------] 1 test from OracleTail (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle_tail.OracleTail.SharedBudgetCompletesOldAndFreshRanges" classname="oracle_tail.OracleTail.SharedBudgetCompletesOldAndFreshRanges" time="0.02685" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleTail.SharedBudgetCompletesOldAndFreshRanges
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleTail
+[ RUN      ] OracleTail.SharedBudgetCompletesOldAndFreshRanges
+[       OK ] OracleTail.SharedBudgetCompletesOldAndFreshRanges (0 ms)
+[----------] 1 test from OracleTail (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle_tail.OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix" classname="oracle_tail.OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix" time="0.0289317" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleTail
+[ RUN      ] OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix
+[       OK ] OracleTail.ZeroOutputRangesPreserveGlobalErrorPrefix (0 ms)
+[----------] 1 test from OracleTail (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle_tail.OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData" classname="oracle_tail.OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData" time="0.028777" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleTail
+[ RUN      ] OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData
+[       OK ] OracleTail.ExpiredCompletedPadDoesNotLoseRetainedData (0 ms)
+[----------] 1 test from OracleTail (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="oracle_tail.OracleTail.InitialHistoryExpiredRemainsInitial" classname="oracle_tail.OracleTail.InitialHistoryExpiredRemainsInitial" time="0.0287662" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = OracleTail.InitialHistoryExpiredRemainsInitial
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OracleTail
+[ RUN      ] OracleTail.InitialHistoryExpiredRemainsInitial
+[       OK ] OracleTail.InitialHistoryExpiredRemainsInitial (0 ms)
+[----------] 1 test from OracleTail (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder" classname="driver.TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder" time="0.0292037" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceDriver
+[ RUN      ] TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder
+[       OK ] TraceDriver.SparseIdsMapPathsAndOpaquePayloadsInGlobalOrder (0 ms)
+[----------] 1 test from TraceDriver (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic" classname="driver.TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic" time="0.0295347" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceDriver
+[ RUN      ] TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic
+[       OK ] TraceDriver.ScriptedPausesCadenceAndMaxRecordsAreDeterministic (0 ms)
+[----------] 1 test from TraceDriver (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay" classname="driver.TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay" time="0.0295558" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceDriver
+[ RUN      ] TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay
+[       OK ] TraceDriver.SeededBudgetsRepeatAndZeroBudgetDoesNotAdvanceReplay (0 ms)
+[----------] 1 test from TraceDriver (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit" classname="driver.TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit" time="0.029065" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceDriver
+[ RUN      ] TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit
+[       OK ] TraceDriver.InvalidConfigurationsAndPublisherFailuresRemainExplicit (0 ms)
+[----------] 1 test from TraceDriver (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications" classname="driver.TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications" time="0.0296143" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TraceDriver
+[ RUN      ] TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications
+[       OK ] TraceDriver.EmptyLimitAndEmptyTraceReportNoPublications (0 ms)
+[----------] 1 test from TraceDriver (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord" classname="ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord" time="0.0306504" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingConfig
+[ RUN      ] RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord
+[       OK ] RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord (0 ms)
+[----------] 1 test from RingConfig (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingFraming.V10V36HandComputedEightBytePadAndWrap" classname="ring.RingFraming.V10V36HandComputedEightBytePadAndWrap" time="0.0304855" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingFraming.V10V36HandComputedEightBytePadAndWrap
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingFraming
+[ RUN      ] RingFraming.V10V36HandComputedEightBytePadAndWrap
+[       OK ] RingFraming.V10V36HandComputedEightBytePadAndWrap (0 ms)
+[----------] 1 test from RingFraming (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad" classname="ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad" time="0.0253765" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingFraming.V10ExactFitAndFullCapacityHaveNoPad
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingFraming
+[ RUN      ] RingFraming.V10ExactFitAndFullCapacityHaveNoPad
+[       OK ] RingFraming.V10ExactFitAndFullCapacityHaveNoPad (0 ms)
+[----------] 1 test from RingFraming (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen" classname="ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen" time="0.0269772" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingFraming
+[ RUN      ] RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen
+[       OK ] RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen (0 ms)
+[----------] 1 test from RingFraming (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill" classname="ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill" time="0.0270475" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingFraming.V10ExplicitLittleEndianHeaderAndFill
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingFraming
+[ RUN      ] RingFraming.V10ExplicitLittleEndianHeaderAndFill
+[       OK ] RingFraming.V10ExplicitLittleEndianHeaderAndFill (0 ms)
+[----------] 1 test from RingFraming (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged" classname="ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged" time="0.0241624" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingRejection
+[ RUN      ] RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged
+[       OK ] RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged (0 ms)
+[----------] 1 test from RingRejection (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction" classname="ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction" time="0.0289806" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingRejection.V36PositionLimitIsCheckedBeforeEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingRejection
+[ RUN      ] RingRejection.V36PositionLimitIsCheckedBeforeEviction
+[       OK ] RingRejection.V36PositionLimitIsCheckedBeforeEviction (0 ms)
+[----------] 1 test from RingRejection (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention" classname="ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention" time="0.0254341" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingRejection
+[ RUN      ] RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention
+[       OK ] RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention (0 ms)
+[----------] 1 test from RingRejection (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState" classname="ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState" time="0.0283609" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingTransaction
+[ RUN      ] RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState
+[       OK ] RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState (0 ms)
+[----------] 1 test from RingTransaction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites" classname="ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites" time="0.0247963" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingTransaction
+[ RUN      ] RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites
+[       OK ] RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites (0 ms)
+[----------] 1 test from RingTransaction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction" classname="ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction" time="0.0286246" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingTransaction
+[ RUN      ] RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction
+[       OK ] RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction (0 ms)
+[----------] 1 test from RingTransaction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad" classname="ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad" time="0.0232631" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingSeek
+[ RUN      ] RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad
+[       OK ] RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad (0 ms)
+[----------] 1 test from RingSeek (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum" classname="ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum" time="0.0953673" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingSeek
+[ RUN      ] RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum
+[       OK ] RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum (65 ms)
+[----------] 1 test from RingSeek (65 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (65 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors" classname="ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors" time="0.0310921" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingSeek
+[ RUN      ] RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors
+[       OK ] RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors (5 ms)
+[----------] 1 test from RingSeek (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (5 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted" classname="ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted" time="0.0253335" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingRetention
+[ RUN      ] RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted
+[       OK ] RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted (0 ms)
+[----------] 1 test from RingRetention (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingInvariants.V11RandomizedAppendChecksEveryOperation" classname="ring.RingInvariants.V11RandomizedAppendChecksEveryOperation" time="0.181682" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingInvariants.V11RandomizedAppendChecksEveryOperation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingInvariants
+[ RUN      ] RingInvariants.V11RandomizedAppendChecksEveryOperation
+[       OK ] RingInvariants.V11RandomizedAppendChecksEveryOperation (146 ms)
+[----------] 1 test from RingInvariants (146 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (146 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries" classname="ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries" time="0.030504" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RingAccess
+[ RUN      ] RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries
+[       OK ] RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries (0 ms)
+[----------] 1 test from RingAccess (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic" classname="index.IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic" time="0.0316725" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexConfig
+[ RUN      ] IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic
+[       OK ] IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic (0 ms)
+[----------] 1 test from IndexConfig (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPool.V15InitialFreeListAndExactReservedMemory" classname="index.IndexPool.V15InitialFreeListAndExactReservedMemory" time="0.0298942" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPool.V15InitialFreeListAndExactReservedMemory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPool
+[ RUN      ] IndexPool.V15InitialFreeListAndExactReservedMemory
+[       OK ] IndexPool.V15InitialFreeListAndExactReservedMemory (0 ms)
+[----------] 1 test from IndexPool (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement" classname="index.IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement" time="0.0383728" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPool
+[ RUN      ] IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement
+[       OK ] IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement (8 ms)
+[----------] 1 test from IndexPool (8 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (8 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges" classname="index.IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges" time="0.0265563" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPool
+[ RUN      ] IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges
+[       OK ] IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges (0 ms)
+[----------] 1 test from IndexPool (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree" classname="index.IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree" time="0.0299786" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPool
+[ RUN      ] IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree
+[       OK ] IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree (0 ms)
+[----------] 1 test from IndexPool (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim" classname="index.IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim" time="0.0256233" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPreparation
+[ RUN      ] IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim
+[       OK ] IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim (0 ms)
+[----------] 1 test from IndexPreparation (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership" classname="index.IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership" time="0.0285997" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPreparation
+[ RUN      ] IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership
+[       OK ] IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership (0 ms)
+[----------] 1 test from IndexPreparation (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation" classname="index.IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation" time="0.0266111" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexPreparation
+[ RUN      ] IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation
+[       OK ] IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation (0 ms)
+[----------] 1 test from IndexPreparation (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims" classname="index.IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims" time="0.0266587" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexExpiry
+[ RUN      ] IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims
+[       OK ] IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims (0 ms)
+[----------] 1 test from IndexExpiry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt" classname="index.IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt" time="0.0311057" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexExpiry
+[ RUN      ] IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt
+[       OK ] IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt (0 ms)
+[----------] 1 test from IndexExpiry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed" classname="index.IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed" time="0.0256015" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexExpiry
+[ RUN      ] IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed
+[       OK ] IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed (0 ms)
+[----------] 1 test from IndexExpiry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal" classname="index.IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal" time="0.031687" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexExpiry
+[ RUN      ] IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal
+[       OK ] IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal (0 ms)
+[----------] 1 test from IndexExpiry (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary" classname="index.IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary" time="0.0267196" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexDelta
+[ RUN      ] IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary
+[       OK ] IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary (0 ms)
+[----------] 1 test from IndexDelta (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact" classname="index.IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact" time="0.0314938" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexAccounting
+[ RUN      ] IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact
+[       OK ] IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact (0 ms)
+[----------] 1 test from IndexAccounting (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks" classname="index.IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks" time="0.0283498" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexCursor
+[ RUN      ] IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks
+[       OK ] IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks (0 ms)
+[----------] 1 test from IndexCursor (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth" classname="index.IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth" time="0.0324789" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexCursor
+[ RUN      ] IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth
+[       OK ] IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth (3 ms)
+[----------] 1 test from IndexCursor (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory" classname="index.IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory" time="2.20788" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexRandom
+[ RUN      ] IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory
+[       OK ] IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory (2053 ms)
+[----------] 1 test from IndexRandom (2053 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2053 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="index.IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure" classname="index.IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure" time="2.91915" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexSizing
+[ RUN      ] IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure
+[       OK ] IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure (2869 ms)
+[----------] 1 test from IndexSizing (2869 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2870 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards" classname="merge.MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards" time="0.0290671" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKeys
+[ RUN      ] MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards
+[       OK ] MergeKeys.V35BoundarySentinelIdentityAndAlignmentGuards (0 ms)
+[----------] 1 test from MergeKeys (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V21EmptySingletonAndInitialEmptyLeaves" classname="merge.MergeKernels.V21EmptySingletonAndInitialEmptyLeaves" time="0.0299032" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V21EmptySingletonAndInitialEmptyLeaves
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V21EmptySingletonAndInitialEmptyLeaves
+[       OK ] MergeKernels.V21EmptySingletonAndInitialEmptyLeaves (0 ms)
+[----------] 1 test from MergeKernels (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V21PackedMaximumAndSentinelExhaustion" classname="merge.MergeKernels.V21PackedMaximumAndSentinelExhaustion" time="0.0280186" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V21PackedMaximumAndSentinelExhaustion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V21PackedMaximumAndSentinelExhaustion
+[       OK ] MergeKernels.V21PackedMaximumAndSentinelExhaustion (0 ms)
+[----------] 1 test from MergeKernels (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion" classname="merge.MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion" time="0.0738363" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion
+[       OK ] MergeKernels.V21AllNonPowerOfTwoCountsAndStaggeredExhaustion (42 ms)
+[----------] 1 test from MergeKernels (42 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (42 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V21UniformRandomListsVersusIndependentStdMerge" classname="merge.MergeKernels.V21UniformRandomListsVersusIndependentStdMerge" time="0.558281" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V21UniformRandomListsVersusIndependentStdMerge
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V21UniformRandomListsVersusIndependentStdMerge
+[       OK ] MergeKernels.V21UniformRandomListsVersusIndependentStdMerge (516 ms)
+[----------] 1 test from MergeKernels (517 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (517 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V21SevereSkewLongRunsAndAlternation" classname="merge.MergeKernels.V21SevereSkewLongRunsAndAlternation" time="0.125961" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V21SevereSkewLongRunsAndAlternation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V21SevereSkewLongRunsAndAlternation
+[       OK ] MergeKernels.V21SevereSkewLongRunsAndAlternation (94 ms)
+[----------] 1 test from MergeKernels (94 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (94 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V21LargeAndMaximumCursorCounts" classname="merge.MergeKernels.V21LargeAndMaximumCursorCounts" time="0.344584" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V21LargeAndMaximumCursorCounts
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V21LargeAndMaximumCursorCounts
+[       OK ] MergeKernels.V21LargeAndMaximumCursorCounts (297 ms)
+[----------] 1 test from MergeKernels (297 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (298 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation" classname="merge.MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation" time="0.0310031" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeKernels
+[ RUN      ] MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation
+[       OK ] MergeKernels.V35RejectsInvalidHeadsAndReplacementBeforeMutation (1 ms)
+[----------] 1 test from MergeKernels (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry" classname="merge.MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry" time="0.0309702" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeQuad
+[ RUN      ] MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry
+[       OK ] MergeQuad.V21AlignedAllocationAndThreeWordPaddingGeometry (0 ms)
+[----------] 1 test from MergeQuad (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath" classname="merge.MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath" time="0.0305206" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeLoser
+[ RUN      ] MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath
+[       OK ] MergeLoser.V21PaddedLeavesAndIdentityChangesAlongReplayPath (0 ms)
+[----------] 1 test from MergeLoser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="merge.MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource" classname="merge.MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource" time="0.0299757" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MergeLoser
+[ RUN      ] MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource
+[       OK ] MergeLoser.V21MovesTransferOwnershipAndLeaveEmptySource (0 ms)
+[----------] 1 test from MergeLoser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V12EmptyAndExtremeFutureRanges" classname="engine.Engine.V12EmptyAndExtremeFutureRanges" time="0.04677" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V12EmptyAndExtremeFutureRanges
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V12EmptyAndExtremeFutureRanges
+[       OK ] Engine.V12EmptyAndExtremeFutureRanges (15 ms)
+[----------] 1 test from Engine (15 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (16 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing" classname="engine.Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing" time="0.0461629" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing
+[       OK ] Engine.V12EmptySpecRejectedAndNonexistentExactMatchesNothing (16 ms)
+[----------] 1 test from Engine (16 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (16 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook" classname="engine.Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook" time="0.054065" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook
+[       OK ] Engine.V12OverlapUnionDistinctEqualEventsAndFutureTopicHook (25 ms)
+[----------] 1 test from Engine (25 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (25 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V13HistoryExpiredFieldsAndTerminalStability" classname="engine.Engine.V13HistoryExpiredFieldsAndTerminalStability" time="0.0500737" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V13HistoryExpiredFieldsAndTerminalStability
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V13HistoryExpiredFieldsAndTerminalStability
+[       OK ] Engine.V13HistoryExpiredFieldsAndTerminalStability (21 ms)
+[----------] 1 test from Engine (21 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (21 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor" classname="engine.Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor" time="0.0490317" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor
+[       OK ] Engine.V13FellBehindPreservesCorrectDeliveredPrefixAndRequestedFloor (16 ms)
+[----------] 1 test from Engine (16 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (16 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V35IrrelevantRecordExpiryIsConservative" classname="engine.Engine.V35IrrelevantRecordExpiryIsConservative" time="0.0495457" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V35IrrelevantRecordExpiryIsConservative
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V35IrrelevantRecordExpiryIsConservative
+[       OK ] Engine.V35IrrelevantRecordExpiryIsConservative (17 ms)
+[----------] 1 test from Engine (17 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (17 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry" classname="engine.Engine.V35ExactFinalBudgetCompletesBeforeExpiry" time="0.0495341" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V35ExactFinalBudgetCompletesBeforeExpiry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V35ExactFinalBudgetCompletesBeforeExpiry
+[       OK ] Engine.V35ExactFinalBudgetCompletesBeforeExpiry (17 ms)
+[----------] 1 test from Engine (17 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (17 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap" classname="engine.Engine.V35FullBudgetDoesNotLookPastLongFilteredGap" time="0.0528638" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V35FullBudgetDoesNotLookPastLongFilteredGap
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V35FullBudgetDoesNotLookPastLongFilteredGap
+[       OK ] Engine.V35FullBudgetDoesNotLookPastLongFilteredGap (22 ms)
+[----------] 1 test from Engine (22 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (22 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V14CapturedUpperExcludesLaterPublish" classname="engine.Engine.V14CapturedUpperExcludesLaterPublish" time="0.0504819" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V14CapturedUpperExcludesLaterPublish
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V14CapturedUpperExcludesLaterPublish
+[       OK ] Engine.V14CapturedUpperExcludesLaterPublish (17 ms)
+[----------] 1 test from Engine (17 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (17 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V14ZeroOutputSnapshotAdvancesChain" classname="engine.Engine.V14ZeroOutputSnapshotAdvancesChain" time="0.0501339" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V14ZeroOutputSnapshotAdvancesChain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V14ZeroOutputSnapshotAdvancesChain
+[       OK ] Engine.V14ZeroOutputSnapshotAdvancesChain (21 ms)
+[----------] 1 test from Engine (21 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (21 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V14ChainedRangesEqualSingleRange" classname="engine.Engine.V14ChainedRangesEqualSingleRange" time="0.0492134" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V14ChainedRangesEqualSingleRange
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V14ChainedRangesEqualSingleRange
+[       OK ] Engine.V14ChainedRangesEqualSingleRange (17 ms)
+[----------] 1 test from Engine (17 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (17 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries" classname="engine.Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries" time="0.0477439" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries
+[       OK ] Engine.V36PadCheckpointAndSequenceSeekHaveExplicitBoundaries (16 ms)
+[----------] 1 test from Engine (16 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (16 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry" classname="engine.Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry" time="0.0469544" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry
+[       OK ] Engine.V36RetainedTailPadCheckpointSurvivesPrecedingDataExpiry (20 ms)
+[----------] 1 test from Engine (20 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (21 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek" classname="engine.Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek" time="0.0468674" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek
+[       OK ] Engine.V36MalformedCheckpointFallsBackToSafeSequenceSeek (16 ms)
+[----------] 1 test from Engine (16 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (16 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState" classname="engine.Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState" time="0.049429" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState
+[       OK ] Engine.V36OversizeInvalidTopicAndLifetimeLimitsPreserveState (17 ms)
+[----------] 1 test from Engine (17 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (17 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected" classname="engine.Engine.V36InvalidConfigAndForeignSubscriptionsRejected" time="0.0666099" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.V36InvalidConfigAndForeignSubscriptionsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.V36InvalidConfigAndForeignSubscriptionsRejected
+[       OK ] Engine.V36InvalidConfigAndForeignSubscriptionsRejected (33 ms)
+[----------] 1 test from Engine (33 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (33 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine.Engine.ReplayLifetimeAndMoveAreChecked" classname="engine.Engine.ReplayLifetimeAndMoveAreChecked" time="0.0705233" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = Engine.ReplayLifetimeAndMoveAreChecked
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Engine
+[ RUN      ] Engine.ReplayLifetimeAndMoveAreChecked
+[       OK ] Engine.ReplayLifetimeAndMoveAreChecked (38 ms)
+[----------] 1 test from Engine (38 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (38 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor" classname="engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor" time="0.0306111" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V18RecycledBlockCannotServeUnreadCursor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V18RecycledBlockCannotServeUnreadCursor
+[       OK ] EngineIndex.V18RecycledBlockCannotServeUnreadCursor (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint" classname="engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint" time="0.0302283" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint
+[       OK ] EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad" classname="engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad" time="0.0308996" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad
+[       OK ] EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction" classname="engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction" time="0.0314699" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction
+[       OK ] EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction" classname="engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction" time="0.0319961" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19GenerationExhaustionRejectsBeforeEviction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19GenerationExhaustionRejectsBeforeEviction
+[       OK ] EngineIndex.V19GenerationExhaustionRejectsBeforeEviction (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo" classname="engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo" time="0.031742" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo
+[       OK ] EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum" classname="engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum" time="0.107349" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum
+[       OK ] EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum (72 ms)
+[----------] 1 test from EngineIndex (72 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (72 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress" classname="engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress" time="0.0318077" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress
+[       OK ] EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry" classname="engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry" time="0.0305728" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry
+[       OK ] EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess" classname="engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess" time="0.0303951" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess
+[       OK ] EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap" classname="engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap" time="0.0305552" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap
+[       OK ] EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers" classname="engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers" time="0.0327192" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers
+[       OK ] EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers (3 ms)
+[----------] 1 test from EngineIndex (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (4 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge" classname="engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge" time="0.0315792" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge
+[       OK ] EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed" classname="engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed" time="0.030026" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed
+[       OK ] EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative" classname="engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative" time="0.0302945" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V20RetainedPadCheckpointRemainsConservative
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V20RetainedPadCheckpointRemainsConservative
+[       OK ] EngineIndex.V20RetainedPadCheckpointRemainsConservative (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation" classname="engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation" time="0.0298822" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation
+[       OK ] EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse" classname="engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse" time="0.0296205" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineIndex.V19MinimumConfigurationValidatedBeforeUse
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineIndex
+[ RUN      ] EngineIndex.V19MinimumConfigurationValidatedBeforeUse
+[       OK ] EngineIndex.V19MinimumConfigurationValidatedBeforeUse (0 ms)
+[----------] 1 test from EngineIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle" classname="engine_merge.EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle" time="0.044309" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle
+[       OK ] EngineMerge.V21FourKernelsAndAutoEqualIndependentOracle (13 ms)
+[----------] 1 test from EngineMerge (13 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (13 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix" classname="engine_merge.EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix" time="0.0365652" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix
+[       OK ] EngineMerge.V23InterleavedPublicationPreservesUpperAndErrorPrefix (5 ms)
+[----------] 1 test from EngineMerge (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (5 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V35AllModesConservativeIrrelevantExpiry" classname="engine_merge.EngineMerge.V35AllModesConservativeIrrelevantExpiry" time="0.0316284" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V35AllModesConservativeIrrelevantExpiry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V35AllModesConservativeIrrelevantExpiry
+[       OK ] EngineMerge.V35AllModesConservativeIrrelevantExpiry (1 ms)
+[----------] 1 test from EngineMerge (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry" classname="engine_merge.EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry" time="0.0328225" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry
+[       OK ] EngineMerge.V35FullBudgetAvoidsLookaheadAndFinalExpiry (1 ms)
+[----------] 1 test from EngineMerge (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe" classname="engine_merge.EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe" time="0.0477114" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe
+[       OK ] EngineMerge.V23GrowingFiltersBetweenBatchesRemainSafe (15 ms)
+[----------] 1 test from EngineMerge (15 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (16 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V23WideTermsAlwaysUseScan" classname="engine_merge.EngineMerge.V23WideTermsAlwaysUseScan" time="0.0301274" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V23WideTermsAlwaysUseScan
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V23WideTermsAlwaysUseScan
+[       OK ] EngineMerge.V23WideTermsAlwaysUseScan (0 ms)
+[----------] 1 test from EngineMerge (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion" classname="engine_merge.EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion" time="0.0338558" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion
+[       OK ] EngineMerge.V38EmptyActiveCursorsAndUnevenExhaustion (2 ms)
+[----------] 1 test from EngineMerge (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V38LargeNonPowerOfTwoCursorSet" classname="engine_merge.EngineMerge.V38LargeNonPowerOfTwoCursorSet" time="0.0461724" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V38LargeNonPowerOfTwoCursorSet
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V38LargeNonPowerOfTwoCursorSet
+[       OK ] EngineMerge.V38LargeNonPowerOfTwoCursorSet (14 ms)
+[----------] 1 test from EngineMerge (15 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (15 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated" classname="engine_merge.EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated" time="0.0273258" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated
+[       OK ] EngineMerge.AutoPoliciesAreExplicitValidatedAndUncalibrated (1 ms)
+[----------] 1 test from EngineMerge (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.AutoWithDisabledIndexFallsBackToScan" classname="engine_merge.EngineMerge.AutoWithDisabledIndexFallsBackToScan" time="0.0296196" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.AutoWithDisabledIndexFallsBackToScan
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.AutoWithDisabledIndexFallsBackToScan
+[       OK ] EngineMerge.AutoWithDisabledIndexFallsBackToScan (0 ms)
+[----------] 1 test from EngineMerge (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine" classname="engine_merge.EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine" time="0.0255033" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine
+[       OK ] EngineMerge.V38PackedPositionAndIDLimitsDoNotMutateEngine (0 ms)
+[----------] 1 test from EngineMerge (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel" classname="engine_merge.EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel" time="0.0305127" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineMerge
+[ RUN      ] EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel
+[       OK ] EngineMerge.V18RecycledDeliveredBlockIsReseekedForEveryKernel (2 ms)
+[----------] 1 test from EngineMerge (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions" classname="engine_merge.EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions" time="0.0279153" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions
+[       OK ] EngineTail.V14RearmsExhaustedAndInitiallyEmptyPartitions (1 ms)
+[----------] 1 test from EngineTail (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V24WideHookIncludesNewMatchingPartitions" classname="engine_merge.EngineTail.V24WideHookIncludesNewMatchingPartitions" time="0.0312735" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V24WideHookIncludesNewMatchingPartitions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V24WideHookIncludesNewMatchingPartitions
+[       OK ] EngineTail.V24WideHookIncludesNewMatchingPartitions (1 ms)
+[----------] 1 test from EngineTail (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress" classname="engine_merge.EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress" time="0.0311978" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress
+[       OK ] EngineTail.V35ZeroBudgetDoesNotCaptureOrChangeProgress (1 ms)
+[----------] 1 test from EngineTail (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget" classname="engine_merge.EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget" time="0.030532" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget
+[       OK ] EngineTail.V14OldRangeFinishesBeforeFreshRangeWithOneSharedBudget (2 ms)
+[----------] 1 test from EngineTail (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields" classname="engine_merge.EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields" time="0.0285642" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields
+[       OK ] EngineTail.V35ZeroOutputCompletionUsesRangeUpperAndGlobalFailureFields (2 ms)
+[----------] 1 test from EngineTail (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained" classname="engine_merge.EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained" time="0.0320398" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained
+[       OK ] EngineTail.V35CompletedPadCheckpointMayExpireWithAllNewDataRetained (1 ms)
+[----------] 1 test from EngineTail (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct" classname="engine_merge.EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct" time="0.0266259" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct
+[       OK ] EngineTail.V35InitialExpiryAndFutureTailInputsRemainDistinct (1 ms)
+[----------] 1 test from EngineTail (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="engine_merge.EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll" classname="engine_merge.EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll" time="0.0324185" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EngineTail
+[ RUN      ] EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll
+[       OK ] EngineTail.MoveTransfersSingleActiveRangeAndRejectsMovedFromPoll (1 ms)
+[----------] 1 test from EngineTail (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="bench_contract.BenchDigest.Sha256EmptyAbcAndMillionA" classname="bench_contract.BenchDigest.Sha256EmptyAbcAndMillionA" time="0.0432474" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = BenchDigest.Sha256EmptyAbcAndMillionA
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BenchDigest
+[ RUN      ] BenchDigest.Sha256EmptyAbcAndMillionA
+[       OK ] BenchDigest.Sha256EmptyAbcAndMillionA (11 ms)
+[----------] 1 test from BenchDigest (11 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (11 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="bench_contract.BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies" classname="bench_contract.BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies" time="0.0268495" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BenchDigest
+[ RUN      ] BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies
+[       OK ] BenchDigest.Sha256PaddingBoundariesAndIncrementalCopies (0 ms)
+[----------] 1 test from BenchDigest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="bench_contract.BenchDigest.SequenceEndianAndPayloadSink" classname="bench_contract.BenchDigest.SequenceEndianAndPayloadSink" time="0.0293805" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = BenchDigest.SequenceEndianAndPayloadSink
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BenchDigest
+[ RUN      ] BenchDigest.SequenceEndianAndPayloadSink
+[       OK ] BenchDigest.SequenceEndianAndPayloadSink (0 ms)
+[----------] 1 test from BenchDigest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="bench_contract.BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts" classname="bench_contract.BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts" time="0.0524032" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BenchReplayWork
+[ RUN      ] BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts
+[       OK ] BenchReplayWork.ScanAndAllIndexedKernelsHaveExactTraversalCounts (22 ms)
+[----------] 1 test from BenchReplayWork (22 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (22 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="bench_contract.BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts" classname="bench_contract.BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts" time="0.0483414" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BenchReplayWork
+[ RUN      ] BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts
+[       OK ] BenchReplayWork.ExpiredAndWideFallbackHaveHonestCounts (16 ms)
+[----------] 1 test from BenchReplayWork (16 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (17 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="bench_contract.BenchReplayWork.WrappedPadCountsOnlyInScanTraversal" classname="bench_contract.BenchReplayWork.WrappedPadCountsOnlyInScanTraversal" time="0.049865" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = BenchReplayWork.WrappedPadCountsOnlyInScanTraversal
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BenchReplayWork
+[ RUN      ] BenchReplayWork.WrappedPadCountsOnlyInScanTraversal
+[       OK ] BenchReplayWork.WrappedPadCountsOnlyInScanTraversal (19 ms)
+[----------] 1 test from BenchReplayWork (19 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (19 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries" classname="layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries" time="0.028577" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutPaths
+[ RUN      ] LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries
+[       OK ] LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries (0 ms)
+[----------] 1 test from LayoutPaths (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes" classname="layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes" time="0.0332816" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutEvaluation
+[ RUN      ] LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes
+[       OK ] LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes (0 ms)
+[----------] 1 test from LayoutEvaluation (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores" classname="layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores" time="0.0280507" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutBaseline
+[ RUN      ] LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores
+[       OK ] LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores (0 ms)
+[----------] 1 test from LayoutBaseline (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity" classname="layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity" time="0.0779757" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutThreshold
+[ RUN      ] LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity
+[       OK ] LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity (45 ms)
+[----------] 1 test from LayoutThreshold (45 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (46 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau" classname="layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau" time="0.0301204" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutThreshold
+[ RUN      ] LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau
+[       OK ] LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau (1 ms)
+[----------] 1 test from LayoutThreshold (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale" classname="layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale" time="0.0313804" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutArithmetic
+[ RUN      ] LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale
+[       OK ] LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale (0 ms)
+[----------] 1 test from LayoutArithmetic (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow" classname="layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow" time="0.0292123" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutArithmetic
+[ RUN      ] LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow
+[       OK ] LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow (0 ms)
+[----------] 1 test from LayoutArithmetic (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction" classname="layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction" time="0.030292" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutExact.HandDerivedChainEveryCountAndReconstruction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutExact
+[ RUN      ] LayoutExact.HandDerivedChainEveryCountAndReconstruction
+[       OK ] LayoutExact.HandDerivedChainEveryCountAndReconstruction (0 ms)
+[----------] 1 test from LayoutExact (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget" classname="layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget" time="0.0287498" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutExact
+[ RUN      ] LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget
+[       OK ] LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget (0 ms)
+[----------] 1 test from LayoutExact (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutExact.ForwardParentIdsAndMultipleChildStages" classname="layout.LayoutExact.ForwardParentIdsAndMultipleChildStages" time="0.0312946" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutExact.ForwardParentIdsAndMultipleChildStages
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutExact
+[ RUN      ] LayoutExact.ForwardParentIdsAndMultipleChildStages
+[       OK ] LayoutExact.ForwardParentIdsAndMultipleChildStages (1 ms)
+[----------] 1 test from LayoutExact (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit" classname="layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit" time="0.0262237" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutExact
+[ RUN      ] LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit
+[       OK ] LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit (0 ms)
+[----------] 1 test from LayoutExact (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected" classname="layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected" time="0.0312084" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutRepresentation.InvalidTreesAndLayoutsAreRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutRepresentation
+[ RUN      ] LayoutRepresentation.InvalidTreesAndLayoutsAreRejected
+[       OK ] LayoutRepresentation.InvalidTreesAndLayoutsAreRejected (0 ms)
+[----------] 1 test from LayoutRepresentation (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses" classname="layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses" time="0.0311327" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutRepresentation
+[ RUN      ] LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses
+[       OK ] LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses (1 ms)
+[----------] 1 test from LayoutRepresentation (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints" classname="layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints" time="0.02927" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutWorkedExample
+[ RUN      ] LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints
+[       OK ] LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints (4 ms)
+[----------] 1 test from LayoutWorkedExample (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (4 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget" classname="layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget" time="0.0304534" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutGlobal
+[ RUN      ] LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget
+[       OK ] LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget (0 ms)
+[----------] 1 test from LayoutGlobal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint" classname="layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint" time="0.0236268" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutGlobal
+[ RUN      ] LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint
+[       OK ] LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint (0 ms)
+[----------] 1 test from LayoutGlobal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale" classname="layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale" time="0.0338711" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutGlobal
+[ RUN      ] LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale
+[       OK ] LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale (0 ms)
+[----------] 1 test from LayoutGlobal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates" classname="layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates" time="0.0280189" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutGlobal
+[ RUN      ] LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates
+[       OK ] LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates (0 ms)
+[----------] 1 test from LayoutGlobal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds" classname="layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds" time="0.0332989" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutGlobal
+[ RUN      ] LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds
+[       OK ] LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds (0 ms)
+[----------] 1 test from LayoutGlobal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+	<testcase name="layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow" classname="layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow" time="0.0258993" status="run">
+		<properties/>
+		<system-out>Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LayoutGlobal
+[ RUN      ] LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow
+[       OK ] LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow (0 ms)
+[----------] 1 test from LayoutGlobal (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+</system-out>
+	</testcase>
+</testsuite>

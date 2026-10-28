@@ -1,0 +1,22 @@
+{
+ "rows": 26721,
+ "objective_totals_feasible_rows": {
+  "base": 19367265136,
+  "km-min": 14312697608,
+  "dp": 13964962856
+ },
+ "statuses": {
+  "base": {
+   "feasible": 8907
+  },
+  "km-min": {
+   "feasible": 8907
+  },
+  "dp": {
+   "feasible": 8907
+  }
+ },
+ "dp_vs_base_percent": -27.89,
+ "kmmin_vs_dp_percent": 2.49,
+ "verdict": "PASS"
+}

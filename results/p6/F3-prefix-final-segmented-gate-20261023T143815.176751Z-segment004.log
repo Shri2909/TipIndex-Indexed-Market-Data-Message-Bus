@@ -1,0 +1,18 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191233
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x58f3850aded8, 0x58f3850afbaf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x58f3850afbb0,0x58f3850cc920), 
+INFO:     1406 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1406 min: 1b max: 64773b total: 3441842b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10511 corp: 646/184Kb exec/s: 170 rss: 427Mb
+#1407	INITED cov: 2250 ft: 11531 corp: 869/2086Kb exec/s: 15 rss: 652Mb
+#1487	REDUCE cov: 2250 ft: 11531 corp: 869/2085Kb lim: 65536 exec/s: 15 rss: 658Mb L: 946/64773 MS: 5 ChangeBinInt-InsertRepeatedBytes-ChangeBinInt-ChangeBit-EraseBytes-
+#1544	REDUCE cov: 2250 ft: 11531 corp: 869/2085Kb lim: 65536 exec/s: 16 rss: 658Mb L: 973/64773 MS: 2 InsertByte-EraseBytes-
+#1744	NEW    cov: 2250 ft: 11532 corp: 870/2087Kb lim: 65536 exec/s: 16 rss: 658Mb L: 1524/64773 MS: 5 ChangeBit-CrossOver-InsertByte-ChangeByte-CopyPart-
+#2014	DONE   cov: 2250 ft: 11532 corp: 870/2087Kb lim: 65536 exec/s: 16 rss: 676Mb
+Done 2014 runs in 121 second(s)
+stat::number_of_executed_units: 2014
+stat::average_exec_per_sec:     16
+stat::new_units_added:          3
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              676

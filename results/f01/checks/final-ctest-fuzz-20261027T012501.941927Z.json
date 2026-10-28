@@ -1,0 +1,32 @@
+{
+  "label": "final-ctest-fuzz",
+  "argv": [
+    "ctest",
+    "--preset",
+    "fuzz",
+    "-j4",
+    "--output-junit",
+    "/home/abc/Desktop/Jane Street/results/f01/ctest-fuzz-final.xml"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-27T01:25:01.942062+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "3d3c765b71b53f9d753767dda6cbacd00af4ad32ba7a2ebfe561d3d24c44ea2f"
+  },
+  "log": "results/f01/checks/final-ctest-fuzz-20261027T012501.941927Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 9.345257805000017,
+  "log_sha256": "71dc8d685dae3e9084ae992de3920523f87a3a45349e82ab4bed0edfb7de034b",
+  "input_sets_after": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "3d3c765b71b53f9d753767dda6cbacd00af4ad32ba7a2ebfe561d3d24c44ea2f"
+  }
+}

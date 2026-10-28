@@ -1,0 +1,1326 @@
+{
+  "affinity": {
+    "capture_process": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "cpu_is_atom_pmu_member": false,
+    "cpu_is_core_pmu_member": true,
+    "limitation": "Affinity does not isolate shared caches, package power, thermals, or sibling activity.",
+    "pin_details": {
+      "affinity": [
+        2
+      ],
+      "checksum": 8386560,
+      "cpu_end": 2,
+      "cpu_start": 2,
+      "diagnostic_only_not_benchmark": true,
+      "errors": {},
+      "frequency_after_khz": 4201153,
+      "frequency_before_khz": 4201153,
+      "system_seconds": 5.999999999999929e-06,
+      "user_seconds": 2.599999999999998e-05,
+      "wall_ns": 25216
+    },
+    "pin_diagnostic": {
+      "argv": [
+        "taskset",
+        "-c",
+        "2",
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-c",
+        "\nimport ctypes, json, os, resource, time\nfrom pathlib import Path\ncpu = int(__import__(\"sys\").argv[1])\nerrors = {}\ndef frequency():\n    try:\n        return int(Path(f\"/sys/devices/system/cpu/cpu{cpu}/cpufreq/scaling_cur_freq\").read_text())\n    except (OSError, ValueError) as exc:\n        errors[\"frequency\"] = str(exc)\n        return None\nlibc = ctypes.CDLL(None, use_errno=True)\ndef current_cpu():\n    try:\n        value = libc.sched_getcpu()\n        if value < 0:\n            raise OSError(ctypes.get_errno(), \"sched_getcpu failed\")\n        return value\n    except (AttributeError, OSError) as exc:\n        errors[\"sched_getcpu\"] = str(exc)\n        return None\nbefore = frequency()\nstart_cpu = current_cpu()\nstart_usage = resource.getrusage(resource.RUSAGE_SELF)\nstart = time.perf_counter_ns()\nchecksum = sum(range(4096))\nelapsed = time.perf_counter_ns() - start\nend_usage = resource.getrusage(resource.RUSAGE_SELF)\nend_cpu = current_cpu()\nafter = frequency()\nprint(json.dumps({\"affinity\": sorted(os.sched_getaffinity(0)), \"cpu_start\": start_cpu,\n \"cpu_end\": end_cpu, \"frequency_before_khz\": before, \"frequency_after_khz\": after,\n \"diagnostic_only_not_benchmark\": True, \"checksum\": checksum,\n \"wall_ns\": elapsed, \"user_seconds\": end_usage.ru_utime - start_usage.ru_utime,\n \"system_seconds\": end_usage.ru_stime - start_usage.ru_stime, \"errors\": errors}))\n",
+        "2"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/taskset",
+      "resolved_executable": "/usr/bin/taskset",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"affinity\": [2], \"cpu_start\": 2, \"cpu_end\": 2, \"frequency_before_khz\": 4201153, \"frequency_after_khz\": 4201153, \"diagnostic_only_not_benchmark\": true, \"checksum\": 8386560, \"wall_ns\": 25216, \"user_seconds\": 2.599999999999998e-05, \"system_seconds\": 5.999999999999929e-06, \"errors\": {}}\n"
+    },
+    "pin_verified": true,
+    "requested_cpu": 2,
+    "smt_sibling_idle_verified": false,
+    "smt_siblings": [
+      2,
+      3
+    ]
+  },
+  "build": {
+    "cmake_caches": {
+      "build/asan-ubsan/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Debug",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/clang-release/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/debug/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Debug",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "g++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/gcc-ar-15",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/gcc-ranlib-15",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-O0 -g -D_GLIBCXX_ASSERTIONS",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/fuzz/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Debug",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "ON",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/gtest-fallback/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/g++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/gcc-ar-15",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/gcc-ranlib-15",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_C_COMPILER:FILEPATH": "/usr/bin/cc",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "ON",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "FetchContent v1.17.0"
+      },
+      "build/release-clang/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/clang++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/llvm-ar-21",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH": "/usr/bin/clang-scan-deps-21",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/llvm-ranlib-21",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      },
+      "build/release/CMakeCache.txt": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER:UNINITIALIZED": "g++",
+        "CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_AR:FILEPATH": "/usr/bin/gcc-ar-15",
+        "CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_COMPILER_RANLIB:FILEPATH": "/usr/bin/gcc-ranlib-15",
+        "CMAKE_CXX_EXTENSIONS:UNINITIALIZED": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_CXX_STANDARD:UNINITIALIZED": "20",
+        "CMAKE_GENERATOR:INTERNAL": "Unix Makefiles",
+        "TIPLOG_DOWNLOAD_CACHE:PATH": "/home/abc/Desktop/Jane Street/build/downloads",
+        "TIPLOG_ENABLE_FUZZING:BOOL": "OFF",
+        "TIPLOG_FORCE_FETCH_GTEST:BOOL": "OFF",
+        "TIPLOG_GTEST_PROVIDER:INTERNAL": "system 1.17.0"
+      }
+    },
+    "environment_flags": {
+      "CC": null,
+      "CFLAGS": null,
+      "CXX": null,
+      "CXXFLAGS": null,
+      "LDFLAGS": null
+    },
+    "presets": {
+      "buildPresets": [
+        {
+          "configurePreset": "debug",
+          "name": "debug"
+        },
+        {
+          "configurePreset": "release",
+          "name": "release"
+        },
+        {
+          "configurePreset": "asan-ubsan",
+          "name": "asan-ubsan"
+        },
+        {
+          "configurePreset": "fuzz",
+          "name": "fuzz"
+        }
+      ],
+      "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 30,
+        "patch": 0
+      },
+      "configurePresets": [
+        {
+          "binaryDir": "${sourceDir}/build/${presetName}",
+          "cacheVariables": {
+            "BUILD_TESTING": "ON",
+            "CMAKE_CXX_EXTENSIONS": "OFF",
+            "CMAKE_CXX_STANDARD": "20",
+            "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+          },
+          "generator": "Unix Makefiles",
+          "hidden": true,
+          "name": "base"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_COMPILER": "g++",
+            "CMAKE_CXX_FLAGS_DEBUG": "-O0 -g -D_GLIBCXX_ASSERTIONS"
+          },
+          "inherits": "base",
+          "name": "debug"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "CMAKE_CXX_COMPILER": "g++",
+            "CMAKE_CXX_FLAGS_RELEASE": "-O2 -g -march=x86-64-v3 -DNDEBUG"
+          },
+          "inherits": "base",
+          "name": "release"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_COMPILER": "clang++",
+            "CMAKE_CXX_FLAGS_DEBUG": "-O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+            "CMAKE_EXE_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all",
+            "CMAKE_SHARED_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all"
+          },
+          "inherits": "base",
+          "name": "asan-ubsan"
+        },
+        {
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_COMPILER": "clang++",
+            "CMAKE_CXX_FLAGS_DEBUG": "-O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer",
+            "CMAKE_EXE_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all",
+            "CMAKE_SHARED_LINKER_FLAGS": "-fsanitize=address,undefined -fno-sanitize-recover=all",
+            "TIPLOG_ENABLE_FUZZING": "ON"
+          },
+          "inherits": "base",
+          "name": "fuzz"
+        }
+      ],
+      "testPresets": [
+        {
+          "configurePreset": "debug",
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "debug",
+          "output": {
+            "outputOnFailure": true
+          }
+        },
+        {
+          "configurePreset": "release",
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "release",
+          "output": {
+            "outputOnFailure": true
+          }
+        },
+        {
+          "configurePreset": "asan-ubsan",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+            "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+          },
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "asan-ubsan",
+          "output": {
+            "outputOnFailure": true
+          }
+        },
+        {
+          "configurePreset": "fuzz",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+            "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+          },
+          "execution": {
+            "noTestsAction": "error"
+          },
+          "name": "fuzz",
+          "output": {
+            "outputOnFailure": true
+          }
+        }
+      ],
+      "version": 6
+    },
+    "target_flags": {
+      "build/asan-ubsan/CMakeFiles/index_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/merge_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/publish_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_bench_contract_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tools\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_differential.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_driver.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_driver_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_engine.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_engine_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_engine_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_engine_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_index.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_merge.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_oracle_tail_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_oracle_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_ref.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_ring.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_ring_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_sim.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_topics_subs.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_topics_subs_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/asan-ubsan/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/asan-ubsan/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/index_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/clang-release/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/merge_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/clang-release/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/publish_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/clang-release/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_bench_contract_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tools\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_differential.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_driver.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_driver_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_engine.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_engine_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_engine_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_engine_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_index.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_index_memory.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_merge.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_oracle_tail_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_oracle_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_ref.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_ring.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_ring_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_sim.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_topics_subs.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_topics_subs_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/clang-release/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/clang-release/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/debug/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O0 -g -D_GLIBCXX_ASSERTIONS -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/fuzz_engine_ops.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/fuzz_itch_walker.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/fuzz_trace_reader.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/index_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/fuzz/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/merge_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/fuzz/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/publish_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/fuzz/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_bench_contract_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tools\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_differential.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_driver.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_driver_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_engine.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_engine_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_engine_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_engine_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_index.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_merge.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_oracle_tail_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_oracle_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_ref.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_ring.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_ring_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_sim.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_topics_subs.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_topics_subs_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/fuzz/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/fuzz/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/gtest-fallback/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -isystem \"/home/abc/Desktop/Jane Street/build/gtest-fallback/_deps/googletest-src/googletest/include\" -isystem \"/home/abc/Desktop/Jane Street/build/gtest-fallback/_deps/googletest-src/googletest\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release-clang/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/clang++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/index_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/release/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/merge_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/release/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/publish_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = -DBENCHMARK_STATIC_DEFINE\n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/release/_deps/benchmark-src/include\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_bench.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_bench_contract_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tools\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_differential.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_driver.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_driver_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_engine.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_engine_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_engine_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_engine_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_index.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_index_memory.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_index_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_merge.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_merge_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_oracle_tail_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_oracle_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_ref.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_ring.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_ring_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_sim.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_smoke_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = \n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_topics_subs.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_topics_subs_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_trace.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_trace_check.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2",
+      "build/release/CMakeFiles/tiplog_trace_test.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1",
+      "build/release/CMakeFiles/tiplog_walk.dir/flags.make": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 4.4\n\n# compile CXX with /usr/bin/g++\nCXX_DEFINES = \n\nCXX_INCLUDES = -I\"/home/abc/Desktop/Jane Street/src\"\n\nCXX_FLAGS = -O2 -g -march=x86-64-v3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2"
+    }
+  },
+  "capture_invocation": [
+    "/home/abc/Desktop/Jane Street/scripts/env_capture.sh"
+  ],
+  "captured_at_utc": "2026-10-25T04:16:47.623524+00:00",
+  "controls": {
+    "ac_online": true,
+    "aslr_randomize_va_space": "2",
+    "no_turbo": "0",
+    "per_process_aslr_probe": {
+      "argv": [
+        "setarch",
+        "x86_64",
+        "-R",
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-c",
+        "import json; from pathlib import Path; print(json.dumps({'child_started': True, 'personality_hex': Path('/proc/self/personality').read_text().strip()}))"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/setarch",
+      "resolved_executable": "/usr/bin/setarch",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"child_started\": true, \"personality_hex\": \"00040000\"}\n"
+    },
+    "perf_event_paranoid": "4",
+    "smt_active": "1",
+    "smt_control": "on",
+    "supplies": {
+      "ADP1": {
+        "online": "1",
+        "type": "Mains"
+      },
+      "BAT0": {
+        "capacity": "100",
+        "status": "Full",
+        "type": "Battery"
+      }
+    },
+    "thermals": {
+      "thermal_zone0": {
+        "temp_millidegrees_c": "48000",
+        "type": "acpitz"
+      },
+      "thermal_zone1": {
+        "temp_millidegrees_c": "47050",
+        "type": "SEN1"
+      },
+      "thermal_zone2": {
+        "temp_millidegrees_c": "20000",
+        "type": "INT3400 Thermal"
+      },
+      "thermal_zone3": {
+        "temp_millidegrees_c": "59000",
+        "type": "TCPU"
+      },
+      "thermal_zone4": {
+        "temp_millidegrees_c": "59000",
+        "type": "TCPU_PCI"
+      },
+      "thermal_zone5": {
+        "temp_millidegrees_c": "59000",
+        "type": "x86_pkg_temp"
+      }
+    }
+  },
+  "cpu": {
+    "lscpu": {
+      "argv": [
+        "lscpu",
+        "--json"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/lscpu",
+      "resolved_executable": "/usr/bin/lscpu",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n   \"lscpu\": [\n      {\n         \"field\": \"Architecture:\",\n         \"data\": \"x86_64\"\n      },{\n         \"field\": \"CPU op-mode(s):\",\n         \"data\": \"32-bit, 64-bit\"\n      },{\n         \"field\": \"Address sizes:\",\n         \"data\": \"39 bits physical, 48 bits virtual\"\n      },{\n         \"field\": \"Byte Order:\",\n         \"data\": \"Little Endian\"\n      },{\n         \"field\": \"CPU(s):\",\n         \"data\": \"12\"\n      },{\n         \"field\": \"On-line CPU(s) list:\",\n         \"data\": \"0-11\"\n      },{\n         \"field\": \"Vendor ID:\",\n         \"data\": \"GenuineIntel\"\n      },{\n         \"field\": \"Model name:\",\n         \"data\": \"12th Gen Intel(R) Core(TM) i5-1235U\"\n      },{\n         \"field\": \"CPU family:\",\n         \"data\": \"6\"\n      },{\n         \"field\": \"Model:\",\n         \"data\": \"154\"\n      },{\n         \"field\": \"Thread(s) per core:\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Core(s) per socket:\",\n         \"data\": \"10\"\n      },{\n         \"field\": \"Socket(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"Stepping:\",\n         \"data\": \"4\"\n      },{\n         \"field\": \"CPU(s) scaling MHz:\",\n         \"data\": \"38%\"\n      },{\n         \"field\": \"CPU max MHz:\",\n         \"data\": \"4400.0000\"\n      },{\n         \"field\": \"CPU min MHz:\",\n         \"data\": \"400.0000\"\n      },{\n         \"field\": \"BogoMIPS:\",\n         \"data\": \"4992.00\"\n      },{\n         \"field\": \"Flags:\",\n         \"data\": \"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities\"\n      },{\n         \"field\": \"Virtualization:\",\n         \"data\": \"VT-x\"\n      },{\n         \"field\": \"L1d cache:\",\n         \"data\": \"352 KiB (10 instances)\"\n      },{\n         \"field\": \"L1i cache:\",\n         \"data\": \"576 KiB (10 instances)\"\n      },{\n         \"field\": \"L2 cache:\",\n         \"data\": \"6.5 MiB (4 instances)\"\n      },{\n         \"field\": \"L3 cache:\",\n         \"data\": \"12 MiB (1 instance)\"\n      },{\n         \"field\": \"NUMA node(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"NUMA node0 CPU(s):\",\n         \"data\": \"0-11\"\n      },{\n         \"field\": \"Vulnerability Gather data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Ghostwrite:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Indirect target selection:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Itlb multihit:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability L1tf:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Meltdown:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mmio stale data:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Old microcode:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Reg file data sampling:\",\n         \"data\": \"Mitigation; Clear Register File\"\n      },{\n         \"field\": \"Vulnerability Retbleed:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec rstack overflow:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec store bypass:\",\n         \"data\": \"Mitigation; Speculative Store Bypass disabled via prctl\"\n      },{\n         \"field\": \"Vulnerability Spectre v1:\",\n         \"data\": \"Mitigation; usercopy/swapgs barriers and __user pointer sanitization\"\n      },{\n         \"field\": \"Vulnerability Spectre v2:\",\n         \"data\": \"Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\"\n      },{\n         \"field\": \"Vulnerability Srbds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsa:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsx async abort:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Vmscape:\",\n         \"data\": \"Mitigation; IBPB before exit to userspace\"\n      }\n   ]\n}\n"
+    },
+    "models": [
+      "12th Gen Intel(R) Core(TM) i5-1235U"
+    ],
+    "online": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "pmus": {
+      "breakpoint": {
+        "type": "5"
+      },
+      "cpu_atom": {
+        "cpus": "4-11",
+        "events": {
+          "branch-instructions": "event=0xc4",
+          "branch-misses": "event=0xc5",
+          "bus-cycles": "event=0x3c,umask=0x01",
+          "cache-misses": "event=0x2e,umask=0x41",
+          "cache-references": "event=0x2e,umask=0x4f",
+          "cpu-cycles": "event=0x3c",
+          "instructions": "event=0xc0",
+          "mem-loads": "event=0xd0,umask=0x5,ldlat=3\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "mem-stores": "event=0xd0,umask=0x6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "ref-cycles": "event=0x3c,umask=0x01",
+          "topdown-bad-spec": "event=0x73,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "topdown-be-bound": "event=0x74,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "topdown-fe-bound": "event=0x71,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+          "topdown-retiring": "event=0xc2,umask=0x0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+        },
+        "type": "10"
+      },
+      "cpu_core": {
+        "cpus": "0-3",
+        "events": {
+          "branch-instructions": "event=0xc4",
+          "branch-misses": "event=0xc5",
+          "bus-cycles": "event=0x3c,umask=0x01",
+          "cache-misses": "event=0x2e,umask=0x41",
+          "cache-references": "event=0x2e,umask=0x4f",
+          "cpu-cycles": "event=0x3c",
+          "instructions": "event=0xc0",
+          "mem-loads": "event=0xcd,umask=0x1,ldlat=3",
+          "mem-loads-aux": "event=0x03,umask=0x82",
+          "mem-stores": "event=0xcd,umask=0x2",
+          "ref-cycles": "event=0x3c,umask=0x01",
+          "slots": "event=0x00,umask=0x4",
+          "topdown-bad-spec": "event=0x00,umask=0x81",
+          "topdown-be-bound": "event=0x00,umask=0x83",
+          "topdown-br-mispredict": "event=0x00,umask=0x85",
+          "topdown-fe-bound": "event=0x00,umask=0x82",
+          "topdown-fetch-lat": "event=0x00,umask=0x86",
+          "topdown-heavy-ops": "event=0x00,umask=0x84",
+          "topdown-mem-bound": "event=0x00,umask=0x87",
+          "topdown-retiring": "event=0x00,umask=0x80"
+        },
+        "type": "4"
+      },
+      "cstate_core": {
+        "type": "25"
+      },
+      "cstate_pkg": {
+        "type": "26"
+      },
+      "i915": {
+        "type": "28"
+      },
+      "intel_bts": {
+        "type": "11"
+      },
+      "intel_pt": {
+        "type": "12"
+      },
+      "kprobe": {
+        "type": "8"
+      },
+      "msr": {
+        "type": "13"
+      },
+      "power": {
+        "type": "27"
+      },
+      "software": {
+        "type": "1"
+      },
+      "tracepoint": {
+        "type": "2"
+      },
+      "uncore_arb_0": {
+        "type": "18"
+      },
+      "uncore_arb_1": {
+        "type": "19"
+      },
+      "uncore_cbox_0": {
+        "type": "14"
+      },
+      "uncore_cbox_1": {
+        "type": "15"
+      },
+      "uncore_cbox_2": {
+        "type": "16"
+      },
+      "uncore_cbox_3": {
+        "type": "17"
+      },
+      "uncore_clock": {
+        "type": "20"
+      },
+      "uncore_imc_0": {
+        "type": "21"
+      },
+      "uncore_imc_1": {
+        "type": "22"
+      },
+      "uncore_imc_free_running_0": {
+        "type": "23"
+      },
+      "uncore_imc_free_running_1": {
+        "type": "24"
+      },
+      "uprobe": {
+        "type": "9"
+      }
+    },
+    "topology": {
+      "0": {
+        "core_id": "0",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "0-1"
+      },
+      "1": {
+        "core_id": "0",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "0-1"
+      },
+      "10": {
+        "core_id": "14",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "10"
+      },
+      "11": {
+        "core_id": "15",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "11"
+      },
+      "2": {
+        "core_id": "4",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "2-3"
+      },
+      "3": {
+        "core_id": "4",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "4400000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "2-3"
+      },
+      "4": {
+        "core_id": "8",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "4"
+      },
+      "5": {
+        "core_id": "9",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "5"
+      },
+      "6": {
+        "core_id": "10",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "6"
+      },
+      "7": {
+        "core_id": "11",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "7"
+      },
+      "8": {
+        "core_id": "12",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "8"
+      },
+      "9": {
+        "core_id": "13",
+        "core_type": null,
+        "cpuinfo_max_freq_khz": "3300000",
+        "physical_package_id": "0",
+        "scaling_driver": "intel_pstate",
+        "scaling_governor": "powersave",
+        "thread_siblings_list": "9"
+      }
+    }
+  },
+  "git": {
+    "dirty": true,
+    "head": {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "--git-dir=/home/abc/Desktop/Jane Street/.tiplog-git",
+        "--work-tree=/home/abc/Desktop/Jane Street",
+        "rev-parse",
+        "--verify",
+        "HEAD"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/git",
+      "resolved_executable": "/usr/bin/git",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "aa13c1824ba5a7a3593a0f63c6f455cac851e822\n"
+    },
+    "managed_metadata_preserved": "/home/abc/Desktop/Jane Street/.git",
+    "metadata": "/home/abc/Desktop/Jane Street/.tiplog-git",
+    "sha": "aa13c1824ba5a7a3593a0f63c6f455cac851e822",
+    "status": {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "--git-dir=/home/abc/Desktop/Jane Street/.tiplog-git",
+        "--work-tree=/home/abc/Desktop/Jane Street",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/git",
+      "resolved_executable": "/usr/bin/git",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": " M CMakeLists.txt\n M docs/plan/IMPLEMENTATION_PLAN.md\n M docs/plan/INDEX.md\n M docs/plan/PROGRESS.md\n M docs/plan/RESEARCH.md\n M py/tiplog_py/figures/build.py\n M results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment005.log\n M results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json\n M results/p4/commands.jsonl\n M results/p4/git-data-exclusion-audit-20261018T103046.562921Z.json\n M results/p4/git-data-exclusion-audit-20261018T103046.562921Z.log\n M results/p4/live-state.json\n M results/p4/p5-method-reading.json\n M results/p4/review.md\n M src/tiplog/engine/engine.cpp\n M src/tiplog/engine/engine.hpp\n M src/tiplog/subs/compiled.cpp\n M tests/unit/topics_subs_test.cpp\n?? PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md\n?? PHASE_2_INTERVIEW_PREP_PROMPT.md\n?? bench/micro/index_bench.cpp\n?? cmake/p6_bench.cmake\n?? configs/P6/\n?? docs/interview/\n?? py/tests/test_analysis_figures.py\n?? py/tests/test_analysis_stats.py\n?? py/tests/test_exp_cpp.py\n?? py/tests/test_exp_oracle.py\n?? py/tests/test_exp_protocol.py\n?? py/tiplog_py/analysis/\n?? py/tiplog_py/exp/\n?? py/tiplog_py/figures/tip.py\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment006.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment007.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment008.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment009.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment010.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment011.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment012.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment013.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment014.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment015.log\n?? results/p4/fuzz-gate-verified.json\n?? results/p4/git-data-audit.json\n?? results/p4/implementation-manifest.json\n?? results/p4/p5-benchmark-handoff.md\n?? results/p4/p5-benchmark-review.md\n?? results/p4/phase-gate.json\n?? results/p4/source-revision.json\n?? results/p5/\n?? results/p6/\n?? scripts/check_p6_experiments.py\n?? scripts/check_p6_rc3.py\n?? scripts/run_p6_campaigns.py\n?? scripts/run_p6_differential.py\n?? scripts/run_p6_micro.py\n?? scripts/verify_p6_fuzz.py\n?? scripts/verify_p6_rc3.py\n?? tests/fuzz/corpus/ops_indexed/006fc6333cf072cbb052c0803217888d4d10c148\n?? tests/fuzz/corpus/ops_indexed/00b95decff06997d4277d91733dd89cfaee30050\n?? tests/fuzz/corpus/ops_indexed/0131287cf2c5c87a72ec787c96221f2ecb79d5df\n?? tests/fuzz/corpus/ops_indexed/04a77ab9458cda2bec8a8f33ceaff5e8f785e3ad\n?? tests/fuzz/corpus/ops_indexed/05b428aa3a94ed4993c92836f978b84a95d0c038\n?? tests/fuzz/corpus/ops_indexed/0702e3e2c230e91bdc72678bfb508e95b98fa7f8\n?? tests/fuzz/corpus/ops_indexed/09e2f085ce0fff36554972a93ad2402cdb155d5e\n?? tests/fuzz/corpus/ops_indexed/0c24a4d0c8e5e19b5650a9c2fbe013b6c76cfffb\n?? tests/fuzz/corpus/ops_indexed/0d81d086d42f38427f73ed9918aaf150f4328ddf\n?? tests/fuzz/corpus/ops_indexed/0f3ddbed287018e744f972d908f95d785f8415bb\n?? tests/fuzz/corpus/ops_indexed/116f5e9ff57b841f3e2c382426e269332d3cf300\n?? tests/fuzz/corpus/ops_indexed/11c414c5ac238f56dd3eb3ec197a3a4e48184b50\n?? tests/fuzz/corpus/ops_indexed/11d360845063ccfe3736c9546617fd2f9768acc3\n?? tests/fuzz/corpus/ops_indexed/12c18c92995ea0f3c858aeeae5da317b4f890510\n?? tests/fuzz/corpus/ops_indexed/141e83a0714dd647a57f9d7812ccff800407107f\n?? tests/fuzz/corpus/ops_indexed/17eae2e4c0e6277b2f2bb04e9c266ace1b3d6db0\n?? tests/fuzz/corpus/ops_indexed/1b505e55d9d3313fcefc089a1658ff2469462258\n?? tests/fuzz/corpus/ops_indexed/1ebb3a97b285229d352ee489eafe2e22a56f8198\n?? tests/fuzz/corpus/ops_indexed/1fd0be5412290ba241855446b86a81dbce6ef495\n?? tests/fuzz/corpus/ops_indexed/237e1c4f866918c40ce65b1a327c5f061710aca1\n?? tests/fuzz/corpus/ops_indexed/2542e8fced3b9e12788fe4c2425d972efa7b4403\n?? tests/fuzz/corpus/ops_indexed/2552b45aae08d1f79a5585d0db76a2ae460237e5\n?? tests/fuzz/corpus/ops_indexed/26186cb3e5ed49482022c7e078d8254bda34d6db\n?? tests/fuzz/corpus/ops_indexed/2692bdfa1a0dbdb7daadea5c74a7ba8e78f230bd\n?? tests/fuzz/corpus/ops_indexed/2807a3fd0c6f315e0948f14dacd87a543b02b510\n?? tests/fuzz/corpus/ops_indexed/286d22f57194416719649e324e43b618e73dbf56\n?? tests/fuzz/corpus/ops_indexed/2876ccde039c317b95568a11b084a8e46cbc782f\n?? tests/fuzz/corpus/ops_indexed/2a66811a0cdc3827f1350fa39a0bde06d3ebce3d\n?? tests/fuzz/corpus/ops_indexed/2e14509840ac0cdbb0fecafb04176353398541eb\n?? tests/fuzz/corpus/ops_indexed/2ff0404f551ae5e212d4743059eab8c5c1e02b10\n?? tests/fuzz/corpus/ops_indexed/3177e9a1bf03da92df0a2802b1bd27db877a79db\n?? tests/fuzz/corpus/ops_indexed/31a046ff80fcdf42b44b1264d4b724b404953896\n?? tests/fuzz/corpus/ops_indexed/325a6b8766adb765a6da9dfd0cdf7e0f74758da3\n?? tests/fuzz/corpus/ops_indexed/32a883be1a639a6129ee67bd759e005b938357f7\n?? tests/fuzz/corpus/ops_indexed/32c3799bca6631519490511d1d9c31110546ce36\n?? tests/fuzz/corpus/ops_indexed/3310bd7e6bd97d21135ec4588df30978c358bc84\n?? tests/fuzz/corpus/ops_indexed/33a3067ad9758baea0e65b5cb6c3ee0d071bc4f2\n?? tests/fuzz/corpus/ops_indexed/35869dc97938ad273bf04bed3be1607c10c239c7\n?? tests/fuzz/corpus/ops_indexed/3655591ba55102f8472c72905992e591b1b683aa\n?? tests/fuzz/corpus/ops_indexed/37a2a0accd80f786fb1350204d9a3ab9f9a0af11\n?? tests/fuzz/corpus/ops_indexed/38f3b75a076f48ad4a4ce1c8501377b0206d7ac9\n?? tests/fuzz/corpus/ops_indexed/3a7470c60a3b35bf104eef5d77f762828476a264\n?? tests/fuzz/corpus/ops_indexed/3c86d4b2be7fb8823b89e6caa70e2f2e94f93b7f\n?? tests/fuzz/corpus/ops_indexed/3d66d8e75154399b6067434d4b05938e954b2a86\n?? tests/fuzz/corpus/ops_indexed/3e15e51c2b5db97741c9906e5abe2c61e8c5db3f\n?? tests/fuzz/corpus/ops_indexed/3e8c5a55304a178c7814048413e817570ac14417\n?? tests/fuzz/corpus/ops_indexed/406b8557074bc0190287935c88aab49e8a711922\n?? tests/fuzz/corpus/ops_indexed/415cb0524124f112a90e30d597df13747c6d01bd\n?? tests/fuzz/corpus/ops_indexed/44dbacf6c4499ca559ec5cbc6f604f5be00770db\n?? tests/fuzz/corpus/ops_indexed/44e09abe144096750450c201f21995c722750de9\n?? tests/fuzz/corpus/ops_indexed/45bc452fd0e31c04262e4004d52d05f62a2a7ba7\n?? tests/fuzz/corpus/ops_indexed/471edb50b73f59a5d7319c93ef7253189c194411\n?? tests/fuzz/corpus/ops_indexed/476e788c6d55a585d5c8ab167ed6ae97b452f843\n?? tests/fuzz/corpus/ops_indexed/486e76350815239623f74831e1c3a7f62a493ecb\n?? tests/fuzz/corpus/ops_indexed/4889c56bee869e9c8e3d75c270157910d4f4030d\n?? tests/fuzz/corpus/ops_indexed/4a4668d173ef687d459772d05f9abf38e9932f2d\n?? tests/fuzz/corpus/ops_indexed/4b9090f770365e99314205a3d085bf6487dab71f\n?? tests/fuzz/corpus/ops_indexed/4b9cf766d7a3cd68e9fec21518dd3b01d54881aa\n?? tests/fuzz/corpus/ops_indexed/4cd8d4fd3e29ab25a63eba30e9b4ac3f7e11e8c9\n?? tests/fuzz/corpus/ops_indexed/4e44e917798aaa8dde49153919d9573ebd7e483c\n?? tests/fuzz/corpus/ops_indexed/4ed4ed2a4dabf7da52dc5e706f3f2409057a2667\n?? tests/fuzz/corpus/ops_indexed/4f4358ec876931d01e671b7a2febb2889cff5782\n?? tests/fuzz/corpus/ops_indexed/5147192bd6335e27c43e69c8ad19824f8b400513\n?? tests/fuzz/corpus/ops_indexed/519203ec7d0b9f442f0fba1d96b34d7939b6b2e3\n?? tests/fuzz/corpus/ops_indexed/51f0b92ab9d95b4dba85db9a5ae7f1f8a6bee626\n?? tests/fuzz/corpus/ops_indexed/51f4c901b60762d7bc7fda5f130dbad03b542f33\n?? tests/fuzz/corpus/ops_indexed/57377d72ae0536a8454b85c4380f0bf507208858\n?? tests/fuzz/corpus/ops_indexed/58206e18ca7664a6fbf7bab5418f8b9b60f09e83\n?? tests/fuzz/corpus/ops_indexed/582998bcafe4a9272e4dda245f92ab1e2a621822\n?? tests/fuzz/corpus/ops_indexed/58b19a34d5038753199d751ea07f88ecd63da56a\n?? tests/fuzz/corpus/ops_indexed/5a3b3a147a04eb11ec8236fe5f509965a1532508\n?? tests/fuzz/corpus/ops_indexed/5b2672d31cd622da9fc9dfb60d2c0d72dfb134d8\n?? tests/fuzz/corpus/ops_indexed/5c1d9d2a912c57a0dda789ca993d5b40758e72e0\n?? tests/fuzz/corpus/ops_indexed/5cfa5d7b8b76b70913600aaf44ef47cc67975d1d\n?? tests/fuzz/corpus/ops_indexed/5d519dd81ccd1de1eb10da49b0e1f06158eca064\n?? tests/fuzz/corpus/ops_indexed/5e0d5aa670a487a62a53e497e17fef3b308ea085\n?? tests/fuzz/corpus/ops_indexed/5e36bb9b7df96ef4f93615a894acdf6227b49c6b\n?? tests/fuzz/corpus/ops_indexed/60a5350422f999950d09ecdd4502ef7792eee307\n?? tests/fuzz/corpus/ops_indexed/62e30c9234afa15fc2c2df8a283ceb050e5bb23d\n?? tests/fuzz/corpus/ops_indexed/655fb927fa09a893877ce08a0d2f40720c86334c\n?? tests/fuzz/corpus/ops_indexed/6900fd67ddf312d074dd9954021caa8cd8096ac2\n?? tests/fuzz/corpus/ops_indexed/6929523a06c8cfe69ee13cdcef7a20bd626bf92e\n?? tests/fuzz/corpus/ops_indexed/6a37e3fd5fd14e7af9d07c94c5d3c79860a32d35\n?? tests/fuzz/corpus/ops_indexed/6c724b406890fbc7f66828eae1d02147cf2a2793\n?? tests/fuzz/corpus/ops_indexed/6e0e6c1800e11634a8997a739f08da2f05e481e4\n?? tests/fuzz/corpus/ops_indexed/6e6396c3895faf8c98cbc0bc77a472ac95dfb97e\n?? tests/fuzz/corpus/ops_indexed/6ea4a4d2d61f4a2d4d3d0b7cf32d48df245fbdd4\n?? tests/fuzz/corpus/ops_indexed/704c6df494529a2105c43cdef77cd4ea334b1264\n?? tests/fuzz/corpus/ops_indexed/7365049cceeceef560595d7f092e6d97fda2dcbc\n?? tests/fuzz/corpus/ops_indexed/785368370b0fec8bea930cea81c25c5031fdded6\n?? tests/fuzz/corpus/ops_indexed/789697516a0c8d2af08f9f326db81afec8b836cb\n?? tests/fuzz/corpus/ops_indexed/7d7339f4ccaa272c93adccacc6874c1fe0dc1f2d\n?? tests/fuzz/corpus/ops_indexed/7da554e3edca26ead26fdac3545949822ac7c98a\n?? tests/fuzz/corpus/ops_indexed/80e5f76aff0740dc96c5ae85202fff37025611d5\n?? tests/fuzz/corpus/ops_indexed/83f4417c3fce846619e0d1d50bc3927ef91a24df\n?? tests/fuzz/corpus/ops_indexed/856a0fddfaadabc77406e8ca40fe321ee07ac20f\n?? tests/fuzz/corpus/ops_indexed/863de7f7d3e3a732d16e88bc7a00d267f8a2fd06\n?? tests/fuzz/corpus/ops_indexed/881ed0a4b30196f770943a6c8144fac49753405f\n?? tests/fuzz/corpus/ops_indexed/8fb9b415c1a646cd840dd59d331ba3523b364b88\n?? tests/fuzz/corpus/ops_indexed/9182891b798bb2540cfdd7324b6faf7ab78ce378\n?? tests/fuzz/corpus/ops_indexed/930aa913365111097a4e7951abc3819c2f370cc8\n?? tests/fuzz/corpus/ops_indexed/93313daff756d9a59d8b8a8a4d67d324473abe87\n?? tests/fuzz/corpus/ops_indexed/93c054cd0affd921130846d433a1549e1c050db3\n?? tests/fuzz/corpus/ops_indexed/94877af5ee4c0b680c41a7b720344d97946293df\n?? tests/fuzz/corpus/ops_indexed/96d1616100aa9f1981856ba092883857905bdcdd\n?? tests/fuzz/corpus/ops_indexed/9742ee1f7190c4956c5f4d486fbdd286be94b889\n?? tests/fuzz/corpus/ops_indexed/979b065e4583678f45e3e82c24405e8ae3df5e24\n?? tests/fuzz/corpus/ops_indexed/97da10953bc265269f9bc2a52e02c6fe1be44d9f\n?? tests/fuzz/corpus/ops_indexed/9a784a1d513c739d3150d616cc8c293b7ee5bded\n?? tests/fuzz/corpus/ops_indexed/9a87237bf7a46d01ad899ca473e133c952818d2a\n?? tests/fuzz/corpus/ops_indexed/9bd3f30c6b8eaecc6b1254a4e02e28561b45d478\n?? tests/fuzz/corpus/ops_indexed/9d92eb1e69c7b5f4992909537aa2eeabc183f195\n?? tests/fuzz/corpus/ops_indexed/a11c34c8be4df843a1da453b315fc9316d2fdcef\n?? tests/fuzz/corpus/ops_indexed/a28909db825556223e48b17bac42a5396450364c\n?? tests/fuzz/corpus/ops_indexed/a835f56456cdfc0a7784286314a7b357a70396c5\n?? tests/fuzz/corpus/ops_indexed/a84e34b5c64f993c3675e2a0b8ad400c6fb556e6\n?? tests/fuzz/corpus/ops_indexed/a84e49c8f5c842a03e9e0b3dc8720036a50318c1\n?? tests/fuzz/corpus/ops_indexed/aaff7d7475f7076680fc7b6a0fb2e0a47fcbe144\n?? tests/fuzz/corpus/ops_indexed/ab8d7cfc149125c241871df5cfc52bc6511e2c13\n?? tests/fuzz/corpus/ops_indexed/ae3efd4143013710356b04e3efc60a3ff893e9d0\n?? tests/fuzz/corpus/ops_indexed/aeffca699787ac150a9f492c7131a9a7259582f3\n?? tests/fuzz/corpus/ops_indexed/b4d761346e00b7cb9101ea39f78017e2b6d298e6\n?? tests/fuzz/corpus/ops_indexed/b650f98accf7daabfd8e715fc8b2e02a2188f3ee\n?? tests/fuzz/corpus/ops_indexed/b85b66714541ff70c7b23918e5014bd0f1399311\n?? tests/fuzz/corpus/ops_indexed/bb6c68182aba058a538eb9e958a7a503aeb77a85\n?? tests/fuzz/corpus/ops_indexed/bc748f814a380a8edc63bb9af2324ff49c405844\n?? tests/fuzz/corpus/ops_indexed/c355fc9e62ba7beb8028f4764cb3bde5ca716e2f\n?? tests/fuzz/corpus/ops_indexed/c8156f9fe003ac88d55fc89ed2124fd1754ff9f9\n?? tests/fuzz/corpus/ops_indexed/c8bf418a680feb88adde6cd93e476da2319535a5\n?? tests/fuzz/corpus/ops_indexed/cb251f25f46780242d33e4b653248aea8b8c281c\n?? tests/fuzz/corpus/ops_indexed/cc4ffed3f684e2e5401f8861bbc2d243e4c16b0a\n?? tests/fuzz/corpus/ops_indexed/cf61bf9d077c9cd4256bad574e9ec571ecb4c2a7\n?? tests/fuzz/corpus/ops_indexed/d4e9b3a5ef159b8882a200466d2ecfd1b5c897fe\n?? tests/fuzz/corpus/ops_indexed/d61255c95e6a8ff7db7aad7a359f60d146f61754\n?? tests/fuzz/corpus/ops_indexed/d709ff8dd2c13fd3c55877af4308b6d63d6f4710\n?? tests/fuzz/corpus/ops_indexed/d753f47c231d16b5222fc8eedde47e3f1bf024df\n?? tests/fuzz/corpus/ops_indexed/d9475c939da392de9e0cf6ce162892c9167ec255\n?? tests/fuzz/corpus/ops_indexed/daf6147d2dbea81d8060af87229bf9bf45b20e32\n?? tests/fuzz/corpus/ops_indexed/db2e7a60e9cce0ff3c62bc3b4b7be1723ce59a94\n?? tests/fuzz/corpus/ops_indexed/db807211e06e3d2a9f10e1eb591d965cc147ae3c\n?? tests/fuzz/corpus/ops_indexed/df8f44101fb511e938dfcbcc7e7d43dc9c1dc983\n?? tests/fuzz/corpus/ops_indexed/e0b8d21be1d996bc80da04046511943f3d227cd3\n?? tests/fuzz/corpus/ops_indexed/e148399659644e8d35b7fcaaf195f1a449d92513\n?? tests/fuzz/corpus/ops_indexed/e45b01790f2f86255c4526e5619499230c6a54c1\n?? tests/fuzz/corpus/ops_indexed/e50fe747d4366a6c1a9d92a351a437e78ae455c3\n?? tests/fuzz/corpus/ops_indexed/e58667f52a754cfaa1fe7be7e24a3c1d020f2367\n?? tests/fuzz/corpus/ops_indexed/e5fb0f4dbad81f6fd7a772d31826d0000753a887\n?? tests/fuzz/corpus/ops_indexed/e6c0e902cab3061a4cde7aa2391798df53b38743\n?? tests/fuzz/corpus/ops_indexed/ef14624c6ea7730747ab61bf8f4d455957cc0140\n?? tests/fuzz/corpus/ops_indexed/ef8045db76246e28cd02b5acb3f37e8deb5ffa35\n?? tests/fuzz/corpus/ops_indexed/ef9063aff767ced05d2424633b22609766717701\n?? tests/fuzz/corpus/ops_indexed/f5f8c2f184fa6333c424780b25b1cd96740b866f\n?? tests/fuzz/corpus/ops_indexed/f6b3dd2619ae05072d522db52e42f389db970f1e\n?? tests/fuzz/corpus/ops_indexed/f6d0c355a64cc6cf2e7159ebe1bd3a7988330449\n?? tests/fuzz/corpus/ops_indexed/fa88e8ae857784665fd2e7ecab39d3401263214c\n?? tests/fuzz/corpus/ops_indexed/fc1c59145b9cdd3d2a713555c79774432d276016\n?? tests/fuzz/corpus/ops_indexed/fcf1d29653a47802d20a9d8128111a7226f6be04\n?? tests/fuzz/corpus/ops_indexed/fedb33efa702db74b2c05cedf1583fc498862e1d\n?? tests/fuzz/corpus/ops_integrated/\n?? tests/fuzz/corpus/ops_p6/\n?? tests/fuzz/corpus/ops_p6_prefix/\n?? tests/unit/bench_contract_test.cpp\n?? tools/tiplog_bench/\n"
+    },
+    "unborn_head_allowed_at_bootstrap": false
+  },
+  "kernel": {
+    "os_release": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo",
+    "uname": [
+      "Linux",
+      "abc-HP-Laptop-15s-fq5xxx",
+      "7.0.0-38-generic",
+      "#38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026",
+      "x86_64",
+      ""
+    ]
+  },
+  "limitations": [
+    "Point-in-time environment observation; P6 still requires AC power and a pilot.",
+    "No SMT offlining, frequency/governor/turbo/ASLR sysctl changes or privilege elevation.",
+    "Frequency samples bracket a short plumbing diagnostic, not a benchmark or stable-frequency proof."
+  ],
+  "machine_settings_changed": false,
+  "master_project_prompt_sha256": "89c0fe2ab7be8304d5cf9b9b8da07ee554efffc9c75596822fdd4f353f7d3067",
+  "phase": "P0.4",
+  "process_security_context": {
+    "CapAmb": "0000000000000000",
+    "CapBnd": "0000000000000000",
+    "CapEff": "0000000000000000",
+    "CapInh": "0000000000000000",
+    "CapPrm": "0000000000000000",
+    "NoNewPrivs": "1",
+    "Seccomp": "2"
+  },
+  "profiling": {
+    "availability_probes": {
+      "cpu_core/cycles/u": {
+        "argv": [
+          "perf",
+          "stat",
+          "--no-scale",
+          "-x",
+          ";",
+          "-e",
+          "cpu_core/cycles/u",
+          "--",
+          "taskset",
+          "-c",
+          "2",
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 1,
+        "stderr": "Error:\nNo supported events found.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+        "stdout": ""
+      },
+      "cpu_core/instructions/u": {
+        "argv": [
+          "perf",
+          "stat",
+          "--no-scale",
+          "-x",
+          ";",
+          "-e",
+          "cpu_core/instructions/u",
+          "--",
+          "taskset",
+          "-c",
+          "2",
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 1,
+        "stderr": "Error:\nNo supported events found.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+        "stdout": ""
+      },
+      "task-clock": {
+        "argv": [
+          "perf",
+          "stat",
+          "--no-scale",
+          "-x",
+          ";",
+          "-e",
+          "task-clock",
+          "--",
+          "taskset",
+          "-c",
+          "2",
+          "/usr/bin/true"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 1,
+        "stderr": "Error:\nNo supported events found.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\n",
+        "stdout": ""
+      }
+    },
+    "control_probe": {
+      "reason": "Fallback selected; no successful counter collection required for P0.",
+      "status": "not_run"
+    },
+    "counter_values": null,
+    "decision": "DEC-2=no: no privileged settings changes; time/getrusage fallback",
+    "fallback": {
+      "cachegrind": "planned reduced configurations in later experiments; instruction/cache counts must be labeled simulated; not run in P0",
+      "hardware_counter_claims": false,
+      "timing": [
+        "wall_clock",
+        "getrusage_user_seconds",
+        "getrusage_system_seconds"
+      ]
+    },
+    "hardware_counter_measurement_selected": false,
+    "limitation": "perf-list names or exit status alone do not demonstrate usable counters. Probes are diagnostics, not performance results.",
+    "perf_list": {
+      "cpu_core/L1-dcache-load-misses/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/L1-dcache-load-misses/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/LLC-load-misses/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/LLC-load-misses/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/branch-misses/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/branch-misses/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/cycles/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/cycles/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "cpu_core/instructions/u": {
+        "argv": [
+          "perf",
+          "list",
+          "--details",
+          "cpu_core/instructions/u"
+        ],
+        "cwd": "/home/abc/Desktop/Jane Street",
+        "error": null,
+        "executable": "/usr/bin/perf",
+        "resolved_executable": "/usr/bin/perf",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "scaling": null,
+    "time_enabled": null,
+    "time_running": null
+  },
+  "project_root": "/home/abc/Desktop/Jane Street",
+  "python": {
+    "base_prefix": "/usr",
+    "executable": "/home/abc/Desktop/Jane Street/.venv/bin/python",
+    "prefix": "/home/abc/Desktop/Jane Street/.venv",
+    "resolved_executable": "/usr/bin/python3.14",
+    "version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "read_errors": {
+    "/sys/devices/system/cpu/cpu0/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu0/topology/core_type'",
+    "/sys/devices/system/cpu/cpu1/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu1/topology/core_type'",
+    "/sys/devices/system/cpu/cpu10/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu10/topology/core_type'",
+    "/sys/devices/system/cpu/cpu11/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu11/topology/core_type'",
+    "/sys/devices/system/cpu/cpu2/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu2/topology/core_type'",
+    "/sys/devices/system/cpu/cpu3/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu3/topology/core_type'",
+    "/sys/devices/system/cpu/cpu4/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu4/topology/core_type'",
+    "/sys/devices/system/cpu/cpu5/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu5/topology/core_type'",
+    "/sys/devices/system/cpu/cpu6/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu6/topology/core_type'",
+    "/sys/devices/system/cpu/cpu7/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu7/topology/core_type'",
+    "/sys/devices/system/cpu/cpu8/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu8/topology/core_type'",
+    "/sys/devices/system/cpu/cpu9/topology/core_type": "[Errno 2] No such file or directory: '/sys/devices/system/cpu/cpu9/topology/core_type'"
+  },
+  "resources": {
+    "disk_free_bytes": 8992448512,
+    "disk_path": "/home/abc/Desktop/Jane Street",
+    "disk_total_bytes": 84583702528,
+    "disk_used_bytes": 71247581184,
+    "load_average": [
+      0.36083984375,
+      0.3115234375,
+      0.478515625
+    ],
+    "meminfo": {
+      "Active": "4819056 kB",
+      "Active(anon)": "2053356 kB",
+      "Active(file)": "2765700 kB",
+      "AnonHugePages": "0 kB",
+      "AnonPages": "3229596 kB",
+      "Balloon": "0 kB",
+      "Bounce": "0 kB",
+      "Buffers": "126576 kB",
+      "Cached": "9358904 kB",
+      "CmaFree": "0 kB",
+      "CmaTotal": "0 kB",
+      "CommitLimit": "11949608 kB",
+      "Committed_AS": "21900624 kB",
+      "DirectMap1G": "11534336 kB",
+      "DirectMap2M": "4659200 kB",
+      "DirectMap4k": "247544 kB",
+      "Dirty": "3784 kB",
+      "FileHugePages": "2048 kB",
+      "FilePmdMapped": "0 kB",
+      "GPUActive": "0 kB",
+      "GPUReclaim": "0 kB",
+      "HardwareCorrupted": "0 kB",
+      "HugePages_Free": "0",
+      "HugePages_Rsvd": "0",
+      "HugePages_Surp": "0",
+      "HugePages_Total": "0",
+      "Hugepagesize": "2048 kB",
+      "Hugetlb": "0 kB",
+      "Inactive": "7658408 kB",
+      "Inactive(anon)": "1503312 kB",
+      "Inactive(file)": "6155096 kB",
+      "KReclaimable": "355148 kB",
+      "KernelStack": "20396 kB",
+      "Mapped": "1150056 kB",
+      "MemAvailable": "10764656 kB",
+      "MemFree": "1850000 kB",
+      "MemTotal": "15510616 kB",
+      "Mlocked": "64 kB",
+      "NFS_Unstable": "0 kB",
+      "PageTables": "60724 kB",
+      "Percpu": "11904 kB",
+      "SReclaimable": "355148 kB",
+      "SUnreclaim": "250980 kB",
+      "SecPageTables": "4252 kB",
+      "Shmem": "565000 kB",
+      "ShmemHugePages": "305152 kB",
+      "ShmemPmdMapped": "0 kB",
+      "Slab": "606128 kB",
+      "SwapCached": "352 kB",
+      "SwapFree": "4193688 kB",
+      "SwapTotal": "4194300 kB",
+      "Unaccepted": "0 kB",
+      "Unevictable": "238480 kB",
+      "VmallocChunk": "0 kB",
+      "VmallocTotal": "34359738367 kB",
+      "VmallocUsed": "66256 kB",
+      "Writeback": "272 kB",
+      "WritebackTmp": "0 kB",
+      "Zswap": "0 kB",
+      "Zswapped": "0 kB"
+    }
+  },
+  "schema_version": 1,
+  "selected_preset": null,
+  "tools": {
+    "clang": {
+      "argv": [
+        "clang",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/clang",
+      "resolved_executable": "/usr/lib/llvm-21/bin/clang",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Ubuntu clang version 21.1.8 (6ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-21/bin\n"
+    },
+    "clang++": {
+      "argv": [
+        "clang++",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/clang++",
+      "resolved_executable": "/usr/lib/llvm-21/bin/clang",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Ubuntu clang version 21.1.8 (6ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-21/bin\n"
+    },
+    "cmake": {
+      "argv": [
+        "cmake",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/cmake",
+      "resolved_executable": "/usr/bin/cmake",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "cmake version 4.4.0\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+    },
+    "g++": {
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/g++",
+      "resolved_executable": "/usr/bin/x86_64-linux-gnu-g++-15",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "gcc": {
+      "argv": [
+        "gcc",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/gcc",
+      "resolved_executable": "/usr/bin/x86_64-linux-gnu-gcc-15",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "git": {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/git",
+      "resolved_executable": "/usr/bin/git",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "git version 2.53.0\n"
+    },
+    "make": {
+      "argv": [
+        "make",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/make",
+      "resolved_executable": "/usr/bin/make",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "GNU Make 4.4.1\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n"
+    },
+    "perf": {
+      "argv": [
+        "perf",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/perf",
+      "resolved_executable": "/usr/bin/perf",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "perf version 7.0.14\n"
+    },
+    "setarch": {
+      "argv": [
+        "setarch",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/setarch",
+      "resolved_executable": "/usr/bin/setarch",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "setarch from util-linux 2.41.3\n"
+    },
+    "taskset": {
+      "argv": [
+        "taskset",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/taskset",
+      "resolved_executable": "/usr/bin/taskset",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "taskset from util-linux 2.41.3\n"
+    },
+    "valgrind": {
+      "argv": [
+        "valgrind",
+        "--version"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/valgrind",
+      "resolved_executable": "/usr/bin/valgrind",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "valgrind-3.26.0\n"
+    }
+  }
+}

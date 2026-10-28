@@ -1,0 +1,314 @@
+[
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++   -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/smoke_test.cpp",
+  "output": "CMakeFiles/tiplog_smoke_test.dir/tests/unit/smoke_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/trace/reader.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/trace/reader.cpp",
+  "output": "CMakeFiles/tiplog_trace.dir/src/tiplog/trace/reader.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/trace/itch_walker.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/trace/itch_walker.cpp",
+  "output": "CMakeFiles/tiplog_trace.dir/src/tiplog/trace/itch_walker.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_walk/main.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tools/tiplog_walk/main.cpp",
+  "output": "CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_trace_check.dir/tools/tiplog_walk/trace_check.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_walk/trace_check.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tools/tiplog_walk/trace_check.cpp",
+  "output": "CMakeFiles/tiplog_trace_check.dir/tools/tiplog_walk/trace_check.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/trace_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/trace_test.cpp",
+  "output": "CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/topics/registry.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/topics/registry.cpp",
+  "output": "CMakeFiles/tiplog_topics_subs.dir/src/tiplog/topics/registry.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/subs/compiled.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/subs/compiled.cpp",
+  "output": "CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/topics_subs_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/topics_subs_test.cpp",
+  "output": "CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/driver/trace_driver.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/driver/trace_driver.cpp",
+  "output": "CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/ring/ring.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/ring/ring.cpp",
+  "output": "CMakeFiles/tiplog_ring.dir/src/tiplog/ring/ring.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/index/index.cpp",
+  "output": "CMakeFiles/tiplog_index.dir/src/tiplog/index/index.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/merge/kernels.cpp",
+  "output": "CMakeFiles/tiplog_merge.dir/src/tiplog/merge/kernels.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o -c \"/home/abc/Desktop/Jane Street/src/tiplog/engine/engine.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/src/tiplog/engine/engine.cpp",
+  "output": "CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_sim/main.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tools/tiplog_sim/main.cpp",
+  "output": "CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/ref/scan_oracle.cpp",
+  "output": "CMakeFiles/tiplog_ref.dir/tests/ref/scan_oracle.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/oracle_test.cpp",
+  "output": "CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests/ref\" -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_oracle_tail_test.dir/tests/unit/oracle_tail_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/oracle_tail_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/oracle_tail_test.cpp",
+  "output": "CMakeFiles/tiplog_oracle_tail_test.dir/tests/unit/oracle_tail_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/driver_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/driver_test.cpp",
+  "output": "CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/ring_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/ring_test.cpp",
+  "output": "CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/index_test.cpp",
+  "output": "CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_merge_test.dir/tests/unit/merge_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/merge_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/merge_test.cpp",
+  "output": "CMakeFiles/tiplog_merge_test.dir/tests/unit/merge_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++ -DBENCHMARK_STATIC_DEFINE -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o -c \"/home/abc/Desktop/Jane Street/bench/micro/merge_bench.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/bench/micro/merge_bench.cpp",
+  "output": "CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/engine_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/engine_test.cpp",
+  "output": "CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/engine_index_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/engine_index_test.cpp",
+  "output": "CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/engine_merge_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/engine_merge_test.cpp",
+  "output": "CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tools/tiplog_differential/main.cpp",
+  "output": "CMakeFiles/tiplog_differential.dir/tools/tiplog_differential/main.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tests\" -I\"/home/abc/Desktop/Jane Street/src\" -I\"/home/abc/Desktop/Jane Street/tests/ref\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/differential/campaign.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/differential/campaign.cpp",
+  "output": "CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++ -DBENCHMARK_STATIC_DEFINE -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o -c \"/home/abc/Desktop/Jane Street/bench/micro/publish_bench.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/bench/micro/publish_bench.cpp",
+  "output": "CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o -c \"/home/abc/Desktop/Jane Street/tools/tiplog_bench/main.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tools/tiplog_bench/main.cpp",
+  "output": "CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++ -DBENCHMARK_STATIC_DEFINE -I\"/home/abc/Desktop/Jane Street/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -o CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o -c \"/home/abc/Desktop/Jane Street/bench/micro/index_bench.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/bench/micro/index_bench.cpp",
+  "output": "CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan",
+  "command": "/usr/bin/clang++  -I\"/home/abc/Desktop/Jane Street/tools\" -I\"/home/abc/Desktop/Jane Street/src\" -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o -c \"/home/abc/Desktop/Jane Street/tests/unit/bench_contract_test.cpp\"",
+  "file": "/home/abc/Desktop/Jane Street/tests/unit/bench_contract_test.cpp",
+  "output": "CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DBENCHMARK_VERSION=\\\"v1.9.5\\\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/benchmark.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/benchmark_api_internal.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_api_internal.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_api_internal.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_api_internal.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/benchmark_name.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_name.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_name.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_name.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/benchmark_register.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_register.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_register.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_register.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/benchmark_runner.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_runner.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_runner.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark_runner.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/check.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/check.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/check.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/check.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/colorprint.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/colorprint.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/colorprint.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/colorprint.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/commandlineflags.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/commandlineflags.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/commandlineflags.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/commandlineflags.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/complexity.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/complexity.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/complexity.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/complexity.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/console_reporter.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/console_reporter.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/console_reporter.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/console_reporter.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/counter.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/counter.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/counter.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/counter.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/csv_reporter.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/csv_reporter.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/csv_reporter.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/csv_reporter.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/json_reporter.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/json_reporter.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/json_reporter.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/json_reporter.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/perf_counters.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/perf_counters.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/perf_counters.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/perf_counters.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/reporter.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/reporter.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/reporter.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/reporter.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/statistics.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/statistics.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/statistics.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/statistics.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/string_util.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/string_util.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/string_util.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/string_util.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/sysinfo.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/sysinfo.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/sysinfo.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/sysinfo.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_HAS_PTHREAD_AFFINITY -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\" -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark.dir/timers.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/timers.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/timers.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark.dir/timers.cc.o"
+},
+{
+  "directory": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-build/src",
+  "command": "/usr/bin/clang++ -DBENCHMARK_STATIC_DEFINE -DHAVE_PTHREAD_AFFINITY -DHAVE_STD_REGEX -DHAVE_STEADY_CLOCK -DHAVE_THREAD_SAFETY_ATTRIBUTES -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -I\"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src\" -isystem \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/include\"   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Wformat=2  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing  -Wthread-safety -O1 -g -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++17 -fvisibility=hidden -fvisibility-inlines-hidden -o CMakeFiles/benchmark_main.dir/benchmark_main.cc.o -c \"/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_main.cc\"",
+  "file": "/home/abc/Desktop/Jane Street/build/asan-ubsan/_deps/benchmark-src/src/benchmark_main.cc",
+  "output": "_deps/benchmark-build/src/CMakeFiles/benchmark_main.dir/benchmark_main.cc.o"
+}
+]

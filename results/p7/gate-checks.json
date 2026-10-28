@@ -1,0 +1,1674 @@
+{
+  "phase": "P7-verification",
+  "status": "passed",
+  "checks": [
+    {
+      "check": "Master prompt preserved",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Accepted P6 gate preserved",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:CMakePresets.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/deps.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p1.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p2.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p2_ref.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p3_engine.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p3_fuzz.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p3_ring.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p4_index.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p5_bench.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p5_merge.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/driver/trace_driver.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/driver/trace_driver.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/engine/engine.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/engine/engine.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/index/index.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/index/index.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/merge/kernels.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/merge/kernels.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/ring/ring.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/ring/ring.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/subs/compiled.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/subs/compiled.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/topics/registry.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/topics/registry.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/trace/itch_walker.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/trace/itch_walker.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/trace/reader.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/trace/reader.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:src/tiplog/types.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/fuzz/pressure_fixture.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/fuzz/targets/fuzz_engine_ops.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/fuzz/targets/fuzz_itch_walker.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/fuzz/targets/fuzz_trace_reader.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/ref/oracle_tail.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/ref/scan_oracle.cpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:tests/ref/scan_oracle.hpp",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core dependency unchanged:cmake/p6_bench.cmake",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/release/tiplog_sim",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/release/tiplog_differential",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/release/tiplog_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/release/merge_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/release/publish_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/release/index_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/asan-ubsan/tiplog_sim",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/asan-ubsan/tiplog_differential",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/asan-ubsan/tiplog_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/asan-ubsan/merge_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/asan-ubsan/publish_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/asan-ubsan/index_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/tiplog_sim",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/tiplog_differential",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/tiplog_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/merge_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/publish_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/index_bench",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Core binary unchanged:build/fuzz/fuzz_engine_ops",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command exists:full-release-tests-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:full-release-tests",
+      "status": "passed",
+      "detail": [
+        "ctest",
+        "--preset",
+        "release",
+        "--output-on-failure"
+      ]
+    },
+    {
+      "check": "command exists:full-asan-ubsan-tests-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:full-asan-ubsan-tests",
+      "status": "passed",
+      "detail": [
+        "ctest",
+        "--preset",
+        "asan-ubsan",
+        "--output-on-failure"
+      ]
+    },
+    {
+      "check": "command exists:final-build-release-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:final-build-release",
+      "status": "passed",
+      "detail": [
+        "cmake",
+        "--build",
+        "--preset",
+        "release",
+        "--parallel",
+        "4"
+      ]
+    },
+    {
+      "check": "command exists:final-build-asan-ubsan-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:final-build-asan-ubsan",
+      "status": "passed",
+      "detail": [
+        "cmake",
+        "--build",
+        "--preset",
+        "asan-ubsan",
+        "--parallel",
+        "4"
+      ]
+    },
+    {
+      "check": "command exists:final-release-tests-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:final-release-tests",
+      "status": "passed",
+      "detail": [
+        "ctest",
+        "--preset",
+        "release",
+        "--output-on-failure"
+      ]
+    },
+    {
+      "check": "command exists:final-asan-ubsan-tests-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:final-asan-ubsan-tests",
+      "status": "passed",
+      "detail": [
+        "ctest",
+        "--preset",
+        "asan-ubsan",
+        "--output-on-failure"
+      ]
+    },
+    {
+      "check": "command exists:final-python-p7-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:final-python-p7",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "py/tests"
+      ]
+    },
+    {
+      "check": "command exists:cc5-release-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:cc5-release",
+      "status": "passed",
+      "detail": [
+        "build/release/tiplog_layout_cc5",
+        "--instances",
+        "10000",
+        "--seed",
+        "20191230",
+        "--output",
+        "results/p7/cc5-release.json"
+      ]
+    },
+    {
+      "check": "command exists:cc5-asan-ubsan-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:cc5-asan-ubsan",
+      "status": "passed",
+      "detail": [
+        "build/asan-ubsan/tiplog_layout_cc5",
+        "--instances",
+        "10000",
+        "--seed",
+        "20191230",
+        "--output",
+        "results/p7/cc5-asan-ubsan.json"
+      ]
+    },
+    {
+      "check": "command exists:worked-example-release-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:worked-example-release",
+      "status": "passed",
+      "detail": [
+        "build/release/tiplog_layout_example",
+        "--output",
+        "results/p7/worked-example.json"
+      ]
+    },
+    {
+      "check": "command exists:worked-example-asan-ubsan-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:worked-example-asan-ubsan",
+      "status": "passed",
+      "detail": [
+        "build/asan-ubsan/tiplog_layout_example",
+        "--output",
+        "results/p7/worked-example-asan-ubsan.json"
+      ]
+    },
+    {
+      "check": "command exists:reporting-exact-ratio-regression-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:reporting-exact-ratio-regression",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "py/tests/test_layout_analysis.py"
+      ]
+    },
+    {
+      "check": "command exists:final-python-pre-runtime-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:final-python-pre-runtime",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "py/tests"
+      ]
+    },
+    {
+      "check": "command exists:cli-boundaries-leak-enabled-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:cli-boundaries-leak-enabled",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "results/p7/cli-boundary-check.py"
+      ]
+    },
+    {
+      "check": "command exists:runtime-smoke-controls-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:runtime-smoke-controls",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "-c",
+        "import json; from pathlib import Path; a=[json.loads(x) for x in Path(\"results/p7/runtime-smoke-release.jsonl\").read_text().splitlines()]; b=[json.loads(x) for x in Path(\"results/p7/runtime-smoke-asan-ubsan.jsonl\").read_text().splitlines()]; assert len(a)==len(b)==90; assert all(r[\"cpu_before\"]==r[\"cpu_after\"]==2 and r[\"ac_before\"] is True and r[\"ac_after\"] is True and r[\"freq_before_khz\"]>0 and r[\"freq_after_khz\"]>0 for r in a+b); fields=(\"id\",\"objective\",\"scale\",\"stores\",\"read_bytes\",\"useful_bytes\",\"waste_bytes\",\"stores_touched\",\"curve\",\"cuts\"); assert [[r.get(k) for k in fields] for r in a]==[[r.get(k) for k in fields] for r in b]; print(\"90 control-valid cases per build, identical exact costs/curves/layouts\")"
+      ]
+    },
+    {
+      "check": "command exists:analyze-full-matrix-no-ratio-mean-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:analyze-full-matrix-no-ratio-mean",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "scripts/analyze_p7.py"
+      ]
+    },
+    {
+      "check": "command exists:global-sweep-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:global-sweep",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "-m",
+        "tiplog_py.layout.global_study",
+        "--campaign",
+        "results/raw/P7/studies/campaign.json"
+      ]
+    },
+    {
+      "check": "command exists:controlled-dp-runtime-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:controlled-dp-runtime",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "scripts/run_p7_runtime.py"
+      ]
+    },
+    {
+      "check": "command exists:runtime-quiescence-2*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:runtime-quiescence",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "scripts/check_p7_runtime_quiescence.py"
+      ]
+    },
+    {
+      "check": "command exists:runtime-analysis-final-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:runtime-analysis-final",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "scripts/analyze_p7_runtime.py"
+      ]
+    },
+    {
+      "check": "command exists:figures-all-final-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:figures-all-final",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "-m",
+        "tiplog_py.figures.build",
+        "--all"
+      ]
+    },
+    {
+      "check": "command exists:figure-extension-check-final-*.json",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "command passed:figure-extension-check-final",
+      "status": "passed",
+      "detail": [
+        ".venv/bin/python",
+        "scripts/check_p7_figure_extension.py"
+      ]
+    },
+    {
+      "check": "CC5 release/ASan exact deterministic equality",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "CC5 >=10000 instances/every applicable count/zero mismatches",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Worked example cross-build identity",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "V32 exact waste and finite endpoints",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Full matrix attempted and completed",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W0-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W0-beta0-20261025T084032.552924Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W0-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W0-beta65536-20261025T084217.865795Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W0-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W0-beta1048576-20261025T140606.008845Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W1-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W1-beta0-20261025T140743.282193Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W1-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W1-beta65536-20261025T140800.651939Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W1-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W1-beta1048576-20261025T140817.704067Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W2-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W2-beta0-20261025T140835.114232Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W2-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W2-beta65536-20261025T140928.149552Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W2-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W2-beta1048576-20261025T141023.629534Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W3-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W3-beta0-20261025T141117.681908Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W3-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W3-beta65536-20261025T141134.718087Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-spec-W3-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-spec-W3-beta1048576-20261025T141151.897476Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W0-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W0-beta0-20261025T141208.804555Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W0-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W0-beta65536-20261025T141323.944858Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W0-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W0-beta1048576-20261025T141433.839720Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W1-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W1-beta0-20261025T141542.891424Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W1-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W1-beta65536-20261025T141613.235478Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W1-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W1-beta1048576-20261025T141643.577477Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W2-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W2-beta0-20261025T141715.187423Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W2-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W2-beta65536-20261025T141747.012406Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W2-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W2-beta1048576-20261025T141815.358139Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W3-beta0.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W3-beta0-20261025T141843.908679Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W3-beta65536.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W3-beta65536-20261025T141916.089469Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/real-H-flat-W3-beta1048576.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/real-H-flat-W3-beta1048576-20261025T141948.268695Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n5.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n5-20261025T142019.966162Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n10.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n10-20261025T142019.978215Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n20.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n20-20261025T142020.004829Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n50.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n50-20261025T142020.028538Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n100.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n100-20261025T142020.078694Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n250.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n250-20261025T142020.192438Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n500.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n500-20261025T142020.492988Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared caps/full batch:results/raw/P7/inputs/synthetic-n1000.tsv",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Raw batch identity:results/raw/P7/studies/synthetic-n1000-20261025T142021.285417Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Full generation population",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Independent full-row analysis",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "L2 metrics incl. stores touched, max waste and 4KiB-floor worst ratio",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Per-stratum count/byte/weight coverage",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "H-flat W0 baseline zero waste across beta",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Serialization correction changed no case metrics",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "All24 nonnegative multiplier strata independently audited",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W0-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W0-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W0-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W0-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W0-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W0-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W1-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W1-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W1-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W1-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W1-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W1-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W2-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W2-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W2-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W2-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W2-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W2-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W3-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W3-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W3-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W3-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-spec-W3-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-spec-W3-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W0-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W0-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W0-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W0-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W0-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W0-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W1-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W1-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W1-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W1-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W1-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W1-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W2-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W2-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W2-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W2-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W2-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W2-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W3-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W3-beta0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W3-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W3-beta65536",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Global certificate preconditions:real-H-flat-W3-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Unsupported budget scope:real-H-flat-W3-beta1048576",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Controlled warmup+10 fresh process rounds",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:0",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-00-20261025T153431.960942Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:1",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-01-20261025T153536.103174Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:2",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-02-20261025T153640.354580Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:3",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-03-20261025T153744.480088Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:4",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-04-20261025T153848.627190Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:5",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-05-20261025T153952.591652Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:6",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-06-20261025T154056.777659Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:7",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-07-20261025T154200.969908Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:8",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-08-20261025T154305.118797Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:9",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-09-20261025T154409.221621Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Validated runtime round:10",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Runtime raw identity:results/raw/P7/runtime/round-10-20261025T154513.302584Z.jsonl",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Quiescence rule declared before the accepted campaign",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Predeclared quiescence rule passed for all11 rounds of this campaign",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "All900 per-input uncertainty/censoring rows",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "F14-F18 actual PNG/PDF artifacts",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Accepted P1/P6 results preserved during extension",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Required report/traceability:docs/report/results_layout.md",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Required report/traceability:results/p7/p7-source-map.md",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Required report/traceability:results/p7/independent-design-review.md",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "Required report/traceability:results/p6/p7-study.md",
+      "status": "passed",
+      "detail": null
+    }
+  ],
+  "failures": [],
+  "evidence": {
+    "results/p7/baseline.json": {
+      "sha256": "86ef789c95a62d99d9aaa9bcf967affbc602e61427675986af14c773425f967d",
+      "bytes": 10168
+    },
+    "results/p7/full-release-tests-20261025T083859.164546Z.json": {
+      "sha256": "aadc8d098f480b01d20abf842cb8e82ac81132233140f0cc82fe01e0e69b7384",
+      "bytes": 659
+    },
+    "results/p7/full-release-tests-20261025T083859.164546Z.log": {
+      "sha256": "bd646640e31fcc4a15947906ac5b2809164c5c57a547ff040268d0736a5246f0",
+      "bytes": 41146
+    },
+    "results/p7/full-asan-ubsan-tests-20261025T083902.609957Z.json": {
+      "sha256": "85d8c10ebaac9e0f01912f9be120411b00ef2fa22e494bab8cda7d2a7f0fa774",
+      "bytes": 669
+    },
+    "results/p7/full-asan-ubsan-tests-20261025T083902.609957Z.log": {
+      "sha256": "c8e0781c3df9d16669db05cb74e2ea043ea8ba9632abffa78c9be4cd03a9c20d",
+      "bytes": 41149
+    },
+    "results/p7/final-build-release-20261025T155545.912055Z.json": {
+      "sha256": "f57db7b8ac6bc08bd7275ab91775550b477f470a1b548696959e47b6b00e849c",
+      "bytes": 678
+    },
+    "results/p7/final-build-release-20261025T155545.912055Z.log": {
+      "sha256": "2fdc5cf665970bcd755e46e8aec6045e16dddd68b0dbe6d2125c1ce616d3a7fa",
+      "bytes": 1411
+    },
+    "results/p7/final-build-asan-ubsan-20261025T155546.208487Z.json": {
+      "sha256": "54517137735992d6989f213ca800fa2c1d5ecaf304603a1e55e3e01d3a9a52c8",
+      "bytes": 687
+    },
+    "results/p7/final-build-asan-ubsan-20261025T155546.208487Z.log": {
+      "sha256": "fc0c1c13a4f78a71a7da5e68d5656af73fca552ee79a66262b4c810abc02a230",
+      "bytes": 1371
+    },
+    "results/p7/final-release-tests-20261025T155552.324180Z.json": {
+      "sha256": "79d7b3478f5bd8d3dbc2bb3bd8b8a23086cf4f58a7403e706a5e53e8535c7038",
+      "bytes": 662
+    },
+    "results/p7/final-release-tests-20261025T155552.324180Z.log": {
+      "sha256": "7c0e60dae1d96997e10a2f2ff773b9326e05ae4144363b4690d7ca0df9f80a01",
+      "bytes": 41146
+    },
+    "results/p7/final-asan-ubsan-tests-20261025T155555.617470Z.json": {
+      "sha256": "ca6c9903362d0a146aae1c3f2a0567c07b6b63b34c98633281f8ae9ab079f85d",
+      "bytes": 670
+    },
+    "results/p7/final-asan-ubsan-tests-20261025T155555.617470Z.log": {
+      "sha256": "725cab1c552f20cb70ed378534e1a208d43e6adae8725fa3856d49809f57c50f",
+      "bytes": 41149
+    },
+    "results/p7/final-python-p7-20261025T155605.212269Z.json": {
+      "sha256": "249eed2e471f09412c2e894c5713ae90d82108023f86f337bac89163fa69f5d9",
+      "bytes": 656
+    },
+    "results/p7/final-python-p7-20261025T155605.212269Z.log": {
+      "sha256": "039ddb1a0a34be30a9052ad35942f60b7888607f13e416157d67fd4c93bcb0e3",
+      "bytes": 260
+    },
+    "results/p7/cc5-release-20261025T083521.301372Z.json": {
+      "sha256": "27ff045711b43af63333ea67dbf89a623ae973d81f941e6b19a608f5034d537b",
+      "bytes": 726
+    },
+    "results/p7/cc5-release-20261025T083521.301372Z.log": {
+      "sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "bytes": 976
+    },
+    "results/p7/cc5-asan-ubsan-20261025T083524.188793Z.json": {
+      "sha256": "7e32366d68581f34f7350adc137f7eb1fac19db43c0641cad2f21714c67c4d0d",
+      "bytes": 738
+    },
+    "results/p7/cc5-asan-ubsan-20261025T083524.188793Z.log": {
+      "sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "bytes": 976
+    },
+    "results/p7/worked-example-release-20261025T084010.443196Z.json": {
+      "sha256": "91c3321dddc95f64f7e5f9f39ec55441521c98cf3177d500c8d184249db427b9",
+      "bytes": 697
+    },
+    "results/p7/worked-example-release-20261025T084010.443196Z.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "results/p7/worked-example-asan-ubsan-20261025T084012.156304Z.json": {
+      "sha256": "46bb35ccf37945d4b4fdb2662b26f9ff9b6c1c8915c7b2d93b242ed109022804",
+      "bytes": 716
+    },
+    "results/p7/worked-example-asan-ubsan-20261025T084012.156304Z.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "results/p7/reporting-exact-ratio-regression-20261025T142753.740410Z.json": {
+      "sha256": "1b7670ad52eb40e3fb77d034c3854f3497c8901f58e6402c1a3afa1780ca9bbc",
+      "bytes": 716
+    },
+    "results/p7/reporting-exact-ratio-regression-20261025T142753.740410Z.log": {
+      "sha256": "ef0e7ef49e71fa999842be0cb8d22ec1058d3a384ed5c0a2ec6efb8f434975ac",
+      "bytes": 98
+    },
+    "results/p7/final-python-pre-runtime-20261025T142912.576096Z.json": {
+      "sha256": "a3b94bee0b38f1a3856feeea708fd4d197bde73db12539048c4e4d8bf94c0ba5",
+      "bytes": 675
+    },
+    "results/p7/final-python-pre-runtime-20261025T142912.576096Z.log": {
+      "sha256": "4164e09b698577ced3cf9212117eadd0a7514950dda72a789c9262a5191b1b0e",
+      "bytes": 261
+    },
+    "results/p7/cli-boundaries-leak-enabled-20261025T142124.959498Z.json": {
+      "sha256": "7610805ea3556d6914c6153839ee4d6ab6c3c7990619172802a2bff3db151664",
+      "bytes": 672
+    },
+    "results/p7/cli-boundaries-leak-enabled-20261025T142124.959498Z.log": {
+      "sha256": "e84309091f415d9375503fb75472702e5c6e3c9cf5c9450996459882d617e867",
+      "bytes": 1172
+    },
+    "results/p7/runtime-smoke-controls-20261025T142247.384546Z.json": {
+      "sha256": "ad887801dd9a13eef6e1dc75434c8af58df2df94ae6f8863665f42caf496730f",
+      "bytes": 1401
+    },
+    "results/p7/runtime-smoke-controls-20261025T142247.384546Z.log": {
+      "sha256": "d4c01e7cd1869784212d70ab2406e2693451ddf2d597abedbd175f9384a61a84",
+      "bytes": 71
+    },
+    "results/p7/analyze-full-matrix-no-ratio-mean-20261025T142754.019962Z.json": {
+      "sha256": "f6545f11a3aa1fb1ce0386671f7bf304929033bad464a2c2742da9c9704b338d",
+      "bytes": 672
+    },
+    "results/p7/analyze-full-matrix-no-ratio-mean-20261025T142754.019962Z.log": {
+      "sha256": "cbaeaa2456c7f304b311869020eceb940f9e5f47d4e642a30ffe41dfb20fc70b",
+      "bytes": 123
+    },
+    "results/p7/global-sweep-20261025T142106.815885Z.json": {
+      "sha256": "e013a895f4e9827e9d830d69375095860e1c6e8df63e33e1d11fcfc551ce9380",
+      "bytes": 709
+    },
+    "results/p7/global-sweep-20261025T142106.815885Z.log": {
+      "sha256": "a626e0579b979d2b4d165373335de9902b647a2e89e04f975c3cd90a71b6d711",
+      "bytes": 1790
+    },
+    "results/p7/controlled-dp-runtime-20261025T153428.280380Z.json": {
+      "sha256": "cd5e15ad1c0e5768efb616c9b494d65ba250b1284d74b5956e884673ebd41dab",
+      "bytes": 651
+    },
+    "results/p7/controlled-dp-runtime-20261025T153428.280380Z.log": {
+      "sha256": "51a05a79227b290a10b6cd0058185391e6c8891c4c4f7bed079c06cf25eea964",
+      "bytes": 2348
+    },
+    "results/p7/runtime-quiescence-20261025T154935.385921Z.json": {
+      "sha256": "73672d597f91fdd1537b84d0013452b87a42178d40520577eb4b209a6668a884",
+      "bytes": 660
+    },
+    "results/p7/runtime-quiescence-20261025T154935.385921Z.log": {
+      "sha256": "6f2e967e04fe77e447f8fda98cda10187139c5e0a80a22df12e9ebacaa6c0003",
+      "bytes": 56
+    },
+    "results/p7/runtime-analysis-final-20261025T154943.283261Z.json": {
+      "sha256": "845f9efb9c379df1392540f9c9f5f7b7e57f041f543c06c380a0a1b23d1a0205",
+      "bytes": 657
+    },
+    "results/p7/runtime-analysis-final-20261025T154943.283261Z.log": {
+      "sha256": "a3eb0233a4c14def2c3a0629f5e74d44d33655e040659b4779a7df6ec5549679",
+      "bytes": 219
+    },
+    "results/p7/figures-all-final-20261025T154953.610882Z.json": {
+      "sha256": "eda7395498e08f7fa903b505bae01b9859e533e5b92c0bffc467a51730b80a44",
+      "bytes": 665
+    },
+    "results/p7/figures-all-final-20261025T154953.610882Z.log": {
+      "sha256": "978dcf8f5e000a8ab2d5f469c31b80a63db3c323ae5429dcf377c36f052daef2",
+      "bytes": 1188514
+    },
+    "results/p7/figure-extension-check-final-20261025T155253.447268Z.json": {
+      "sha256": "756fb1b453481734e06e0dc5eae3d55f489c1cb538991e74e5db4a487eb2fc57",
+      "bytes": 677
+    },
+    "results/p7/figure-extension-check-final-20261025T155253.447268Z.log": {
+      "sha256": "6888ae81a696f9899afed6c1d0eee6cf0d4d9c091b35e049038d535717997614",
+      "bytes": 51
+    },
+    "results/p7/cc5-release.json": {
+      "sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "bytes": 976
+    },
+    "results/p7/cc5-asan-ubsan.json": {
+      "sha256": "2759003c893f5852c7e8f4a3e84eb76a41360fea613e42e1f7becac6829a071d",
+      "bytes": 976
+    },
+    "results/p7/worked-example.json": {
+      "sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "bytes": 2449
+    },
+    "results/p7/worked-example-asan-ubsan.json": {
+      "sha256": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964",
+      "bytes": 2449
+    },
+    "results/p7/protocol.json": {
+      "sha256": "571c3ed6543fbcf4aaba83cbe7a5119b977d3425c9c6c4f9adfda96ca9332b25",
+      "bytes": 3476
+    },
+    "results/p7/input-manifest.json": {
+      "sha256": "e36b8f308da66a05df158470933638bc1b81c211476e76d7f28093e700304a35",
+      "bytes": 15791
+    },
+    "results/raw/P7/studies/campaign.json": {
+      "sha256": "cc73304b00341aad360d6ff9f70bd11b12c4bc2ec99a814dd7373804520a14ae",
+      "bytes": 95774
+    },
+    "results/derived/layout-summary.json": {
+      "sha256": "5dbbf66cbfda101acd85830683f4c6506d731c6e83b802f028c8aead2bc5c8c9",
+      "bytes": 5646331
+    },
+    "results/p7/analysis-mean-compatibility.json": {
+      "sha256": "05d9a27205df441ce6fbe91c3fd61fb3f3df857abd27a2449ca626238e1cc26d",
+      "bytes": 574
+    },
+    "results/derived/layout-global.json": {
+      "sha256": "85f3faacf9d7112c3e60a2f06f7a77b843ca8e3f9d54d2235a8d66786152d97a",
+      "bytes": 265214
+    },
+    "results/p7/runtime-campaign.json": {
+      "sha256": "906f090e63dc95a44c0b1f4a38caf09628f46c2613f5162452ba1a92deb22007",
+      "bytes": 55465
+    },
+    "results/p7/runtime-quiescence.json": {
+      "sha256": "dee943d621fdfb23e61be3799cc6cf946e1060e9599d933cb165b8d0766ba6df",
+      "bytes": 9008
+    },
+    "results/p7/runtime-quiescence-rule.json": {
+      "sha256": "7fe31f3f33d846e8605591c7a4f6241bfe35c65fde1c778ce7448ad7eca865c4",
+      "bytes": 2309
+    },
+    "results/derived/layout-runtime.json": {
+      "sha256": "a63922016cad60cc28f04ef568e8856488d511b199bf34eaa4fdb6b6e67b85c8",
+      "bytes": 727009
+    },
+    "results/figures/p7-figures.json": {
+      "sha256": "50263d50891534cb4e3bd1c45c0d769e061cd077ecfb3ff90c6119cd7f8485ee",
+      "bytes": 2221
+    },
+    "results/p7/figure-extension-compatibility.json": {
+      "sha256": "39a1a0069eb28b5eae0f75d591cd233976f4feb0da540901e8060234772421ea",
+      "bytes": 14148
+    },
+    "docs/report/results_layout.md": {
+      "sha256": "35c0f165a876e1c162e81fbda9d4660dad673cce4eff63469ba7a4fbfacbf5f0",
+      "bytes": 30976
+    },
+    "results/p7/p7-source-map.md": {
+      "sha256": "48ea0e1b93399fffd782c95919ebc39f50dc44951a02bdec13e39cbcc5035416",
+      "bytes": 6057
+    },
+    "results/p7/independent-design-review.md": {
+      "sha256": "de76391d44497a97032edc6e51d57c4224ad5e7f5cefb04334f4ef3b5ce21d41",
+      "bytes": 9579
+    },
+    "results/p6/p7-study.md": {
+      "sha256": "a2dcc4324b6c585c461046221ea92cc36ec0a027be112744e41b1786d177b176",
+      "bytes": 11226
+    }
+  },
+  "scope": "Executed-artifact and applicability verification. Root additionally reviews reports, figures, source limitations and claims before writing the P7 gate."
+}

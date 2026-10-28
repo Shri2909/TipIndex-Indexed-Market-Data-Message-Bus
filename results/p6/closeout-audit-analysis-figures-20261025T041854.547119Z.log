@@ -1,0 +1,3 @@
+{"stage": "evaluation-independent-audit", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/evaluation-independent-audit-attempt002.stdout.log"}
+{"stage": "figures", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/figures-attempt001.stdout.log"}
+{"status": "measurements-and-figures-passed-report-pending", "campaign": "results/raw/P6/campaign-20261024/campaign.json"}

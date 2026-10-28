@@ -1,0 +1,23 @@
+{
+  "pilot_and_training_excluded": true,
+  "rows_path": "results/raw/P6/campaign-20261024/evaluation-observations.jsonl",
+  "sha256": "f2b440dbc5a285152821fa886c7644741ea89ebc4f812407640b6d2de62d264f",
+  "sources": [
+    {
+      "path": "/home/abc/Desktop/Jane Street/results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/runs.jsonl",
+      "sha256": "b8d2065c2119efd0ca3b23d80ffd9565a7c030fa912ed683b67292e78c36eb7f"
+    },
+    {
+      "path": "/home/abc/Desktop/Jane Street/results/raw/P6/M2/20261024T104904.812764Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/runs.jsonl",
+      "sha256": "0b3549feabf7a05618f9aa5eb94bf5256d60861743f610523f2a63781d98b9ec"
+    },
+    {
+      "path": "/home/abc/Desktop/Jane Street/results/raw/P6/M3/20261024T121915.466248Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/runs.jsonl",
+      "sha256": "1065a568de340d21c403ecc403de2a5cc30f1687e620148747a75a8ab74998ea"
+    },
+    {
+      "path": "results/raw/P6/campaign-20261024/evaluation/runs.jsonl",
+      "sha256": "38883c87b892a5fbcd9d3246d84a9d03290862121ee55e2c892c0090c9b44e6c"
+    }
+  ]
+}

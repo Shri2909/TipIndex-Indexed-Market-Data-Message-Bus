@@ -1,0 +1,64 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 17 tests from 8 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from RingConfig
+[ RUN      ] RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord
+[       OK ] RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord (0 ms)
+[----------] 1 test from RingConfig (0 ms total)
+
+[----------] 4 tests from RingFraming
+[ RUN      ] RingFraming.V10V36HandComputedEightBytePadAndWrap
+[       OK ] RingFraming.V10V36HandComputedEightBytePadAndWrap (0 ms)
+[ RUN      ] RingFraming.V10ExactFitAndFullCapacityHaveNoPad
+[       OK ] RingFraming.V10ExactFitAndFullCapacityHaveNoPad (0 ms)
+[ RUN      ] RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen
+[       OK ] RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen (0 ms)
+[ RUN      ] RingFraming.V10ExplicitLittleEndianHeaderAndFill
+[       OK ] RingFraming.V10ExplicitLittleEndianHeaderAndFill (0 ms)
+[----------] 4 tests from RingFraming (0 ms total)
+
+[----------] 3 tests from RingRejection
+[ RUN      ] RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged
+[       OK ] RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged (0 ms)
+[ RUN      ] RingRejection.V36PositionLimitIsCheckedBeforeEviction
+[       OK ] RingRejection.V36PositionLimitIsCheckedBeforeEviction (0 ms)
+[ RUN      ] RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention
+[       OK ] RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention (0 ms)
+[----------] 3 tests from RingRejection (0 ms total)
+
+[----------] 3 tests from RingTransaction
+[ RUN      ] RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState
+[       OK ] RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState (0 ms)
+[ RUN      ] RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites
+[       OK ] RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites (0 ms)
+[ RUN      ] RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction
+[       OK ] RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction (0 ms)
+[----------] 3 tests from RingTransaction (0 ms total)
+
+[----------] 3 tests from RingSeek
+[ RUN      ] RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad
+[       OK ] RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad (0 ms)
+[ RUN      ] RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum
+[       OK ] RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum (8 ms)
+[ RUN      ] RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors
+[       OK ] RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors (0 ms)
+[----------] 3 tests from RingSeek (9 ms total)
+
+[----------] 1 test from RingRetention
+[ RUN      ] RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted
+[       OK ] RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted (0 ms)
+[----------] 1 test from RingRetention (0 ms total)
+
+[----------] 1 test from RingInvariants
+[ RUN      ] RingInvariants.V11RandomizedAppendChecksEveryOperation
+[       OK ] RingInvariants.V11RandomizedAppendChecksEveryOperation (17 ms)
+[----------] 1 test from RingInvariants (17 ms total)
+
+[----------] 1 test from RingAccess
+[ RUN      ] RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries
+[       OK ] RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries (0 ms)
+[----------] 1 test from RingAccess (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 8 test suites ran. (26 ms total)
+[  PASSED  ] 17 tests.

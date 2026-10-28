@@ -1,0 +1,20 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191231
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x64c8002f7ed8, 0x64c8002f9baf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x64c8002f9bb0,0x64c800316920), 
+INFO:     1392 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1392 min: 1b max: 64773b total: 3284749b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10502 corp: 654/188Kb exec/s: 128 rss: 430Mb
+#1393	INITED cov: 2250 ft: 11517 corp: 872/1949Kb exec/s: 13 rss: 631Mb
+#1496	REDUCE cov: 2250 ft: 11517 corp: 872/1949Kb lim: 65536 exec/s: 13 rss: 636Mb L: 16/64773 MS: 3 CopyPart-ChangeByte-EraseBytes-
+#1537	NEW    cov: 2250 ft: 11521 corp: 873/1984Kb lim: 65536 exec/s: 14 rss: 643Mb L: 35324/64773 MS: 1 CopyPart-
+#1643	REDUCE cov: 2250 ft: 11521 corp: 873/1984Kb lim: 65536 exec/s: 14 rss: 643Mb L: 162/64773 MS: 1 EraseBytes-
+#1654	REDUCE cov: 2250 ft: 11521 corp: 873/1984Kb lim: 65536 exec/s: 14 rss: 643Mb L: 1254/64773 MS: 1 EraseBytes-
+#1801	NEW    cov: 2250 ft: 11527 corp: 874/2021Kb lim: 65536 exec/s: 15 rss: 643Mb L: 38506/64773 MS: 2 ChangeBit-CopyPart-
+#1811	DONE   cov: 2250 ft: 11527 corp: 874/2021Kb lim: 65536 exec/s: 14 rss: 643Mb
+Done 1811 runs in 121 second(s)
+stat::number_of_executed_units: 1811
+stat::average_exec_per_sec:     14
+stat::new_units_added:          5
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              643

@@ -1,0 +1,1 @@
+{"status": "passed", "cases": 2046, "scope": "scalar append/evict comparison, capacities through 2^63, sizes through capacity, all sequences of length 0..4"}

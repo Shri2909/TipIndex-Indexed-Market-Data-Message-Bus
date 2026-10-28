@@ -1,0 +1,23 @@
+{
+  "label": "t5-high-water-report-analysis",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/summarize_p6_t5_highwater.py",
+    "results/raw/P6/campaign-20261024/evaluation",
+    "--output",
+    "results/derived/t5-high-water.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T043318.669440Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/t5-high-water-report-analysis-20261025T043318.669440Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.12709807099963655
+}

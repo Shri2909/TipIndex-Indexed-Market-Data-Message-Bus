@@ -1,0 +1,21 @@
+{
+  "at_utc": "2026-10-23T14:49:42.644561+00:00",
+  "reason": "Stop only own inefficient preparation before replay measurements; memoized timestamp search repair. Preserve old command/log and restart same authorized matrix.",
+  "signal": "SIGTERM",
+  "processes": [
+    {
+      "pid": 17085,
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "tiplog_py.exp.run",
+        "configs/P6/matrix.toml",
+        "--suite",
+        "evaluation",
+        "--prepare",
+        "--directory",
+        "results/raw/P6/prepared-evaluation"
+      ]
+    }
+  ]
+}

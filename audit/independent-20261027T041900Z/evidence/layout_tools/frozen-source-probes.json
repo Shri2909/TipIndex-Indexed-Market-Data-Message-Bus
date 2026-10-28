@@ -1,0 +1,158 @@
+[
+  {
+    "label": "tiplog_layout_hardlink",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/tiplog_layout",
+      "--input",
+      "/tmp/tiplog-independent-tools-k7gp38yi/tiplog_layout.tsv",
+      "--output",
+      "/tmp/tiplog-independent-tools-k7gp38yi/tiplog_layout.hardlink",
+      "--methods",
+      "base"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": false,
+    "binary_sha256": "b1bdd1aaac0d140ac556977effc8d154fec6ffd7633efc429a26e3781d4ec4d2"
+  },
+  {
+    "label": "tiplog_layout_runtime_hardlink",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/tiplog_layout_runtime",
+      "--input",
+      "/tmp/tiplog-independent-tools-k7gp38yi/tiplog_layout_runtime.tsv",
+      "--output",
+      "/tmp/tiplog-independent-tools-k7gp38yi/tiplog_layout_runtime.hardlink",
+      "--methods",
+      "base"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": false,
+    "binary_sha256": "ce2578945c161b526f3e333f8a224d5bfb1a18a45b9b8390101bc1d932381ede"
+  },
+  {
+    "label": "bench_requests_alias",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/tiplog_bench",
+      "--synthetic",
+      "--records",
+      "1",
+      "--partitions",
+      "2",
+      "--mix",
+      "/tmp/tiplog-independent-tools-k7gp38yi/mix.csv",
+      "--ring-bytes",
+      "8192",
+      "--requests",
+      "/tmp/tiplog-independent-tools-k7gp38yi/requests.tsv",
+      "--output",
+      "/tmp/tiplog-independent-tools-k7gp38yi/requests.tsv"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": false,
+    "binary_sha256": "00abec4bb52375d267e8a28291e35d272c981517f62e58ed9f0d9411b8150efe"
+  },
+  {
+    "label": "bench_requests_read_error",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/tiplog_bench",
+      "--synthetic",
+      "--records",
+      "1",
+      "--partitions",
+      "2",
+      "--mix",
+      "/tmp/tiplog-independent-tools-k7gp38yi/mix.csv",
+      "--ring-bytes",
+      "8192",
+      "--requests",
+      "/tmp/tiplog-independent-tools-k7gp38yi",
+      "--output",
+      "/tmp/tiplog-independent-tools-k7gp38yi/readerror.jsonl"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "00abec4bb52375d267e8a28291e35d272c981517f62e58ed9f0d9411b8150efe"
+  },
+  {
+    "label": "merge_numeric_suffix",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/merge_bench",
+      "--diagnostic",
+      "--profile=uniform64",
+      "--outputs=8garbage"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"StdPQ\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"BinHeap\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Quad-pad3\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Loser\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "63513974b322d12c88f42349629a7a569d8cd07f22cf2be9022e238d89fa5d4e"
+  },
+  {
+    "label": "merge_signed_seed",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/merge_bench",
+      "--diagnostic",
+      "--profile=uniform64",
+      "--outputs=8",
+      "--seed=-1"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"StdPQ\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"BinHeap\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Quad-pad3\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Loser\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "63513974b322d12c88f42349629a7a569d8cd07f22cf2be9022e238d89fa5d4e"
+  },
+  {
+    "label": "merge_bench_unknown_verify_argument",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/merge_bench",
+      "--diagnostic",
+      "--profile=uniform64",
+      "--outputs=8",
+      "--unknown-option"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"StdPQ\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"BinHeap\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Quad-pad3\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Loser\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "63513974b322d12c88f42349629a7a569d8cd07f22cf2be9022e238d89fa5d4e"
+  },
+  {
+    "label": "publish_bench_unknown_verify_argument",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/publish_bench",
+      "--verify-only",
+      "--mix-file",
+      "/tmp/tiplog-independent-tools-k7gp38yi/mix.csv",
+      "--unknown-option"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"profile\":\"M2/payload_64/P100/uniform/B1024\",\"seed\":20191230,\"functional_capacity\":65536,\"publishes\":65536,\"input_schedule_fnv_hex\":\"1b0af88d35531a6b\",\"output_digest_hex\":\"a99b8790d0aae4ec\",\"scope\":\"reduced functional verification, no benchmark result\"}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "d725b697920d0cb6285b46b24deaab2db27a8db0bf78e1eab4023f76386485a8"
+  },
+  {
+    "label": "index_bench_unknown_verify_argument",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/independent-layout-tools-baseline/index_bench",
+      "--verify-only",
+      "--trace",
+      "/tmp/tiplog-independent-tools-k7gp38yi/trace.mdt",
+      "--unknown-option"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "index_bench: M3 requires nonempty real trace\n",
+    "source_unchanged": true,
+    "binary_sha256": "e6b956dddd4adf0d4f134790ce5a989e43a5fd5db3feb831ee23c4f9fc706bd0"
+  }
+]

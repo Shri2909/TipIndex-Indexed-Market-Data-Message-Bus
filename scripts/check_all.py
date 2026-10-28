@@ -25,7 +25,7 @@ def main():
         ])
     steps.extend([
         ("python-dependencies", [sys.executable, "-m", "pip", "check"]),
-        ("python-pytest", [sys.executable, "-m", "pytest", "-c", "py/pytest.ini", "py/tests", "-v"]),
+        ("python-pytest", [sys.executable, "-m", "pytest", "-c", "py/pytest.ini", "py/tests", "tests/scripts", "-v"]),
     ])
     records = []
     for name, argv in steps:

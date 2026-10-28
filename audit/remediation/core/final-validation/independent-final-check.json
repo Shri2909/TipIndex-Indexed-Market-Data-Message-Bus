@@ -1,0 +1,25 @@
+{
+  "summary_passed": true,
+  "all_exit_zero": true,
+  "all_binary_hashes_unchanged": true,
+  "original_corpora": [
+    {
+      "target": "fuzz_engine_ops",
+      "source": "tests/fuzz/corpus/ops_integrated",
+      "source_corpus_unchanged": true,
+      "initial_seed_files": 1357
+    },
+    {
+      "target": "fuzz_itch_walker",
+      "source": "tests/fuzz/corpus/itch_walker",
+      "source_corpus_unchanged": true,
+      "initial_seed_files": 74
+    },
+    {
+      "target": "fuzz_trace_reader",
+      "source": "tests/fuzz/corpus/trace_reader",
+      "source_corpus_unchanged": true,
+      "initial_seed_files": 95
+    }
+  ]
+}

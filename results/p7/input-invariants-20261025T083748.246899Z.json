@@ -1,0 +1,21 @@
+{
+  "label": "input-invariants",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "from fractions import Fraction\nfrom pathlib import Path\nimport json\nfrom tiplog_py.layout.inputs import load_volumes, raw_classes, compress_classes, make_tree, synthetic_tree, synthetic_classes\ntables,mapping,ranked,top,basket,sources=load_volumes(Path(\"results/data\"),\"itch_20191230_full_day\")\nassert len(tables[\"H-spec\"])==8907 and len(ranked)==8906\nassert len(top)==len(basket)==100\nranks={p:i+1 for i,p in enumerate(ranked)}\nfor hierarchy in tables:\n    market=tables[hierarchy][\"itch/_market\"]\n    for workload,weight in ((\"W1\",Fraction(8906)),(\"W2\",Fraction(1900)),(\"W3\",Fraction(8906,10))):\n        raw=raw_classes(\"itch/_market\",hierarchy,workload,market,tables[\"H-spec\"][\"itch/_market\"],mapping,ranks,top,basket)\n        classes=compress_classes(raw)\n        assert Fraction(classes[\"active_class_weight\"])==weight\n        assert classes[\"effective_class_count\"]==1\n    for partition in (ranked[0],ranked[500],ranked[-1]):\n        for workload in (\"W0\",\"W1\",\"W2\",\"W3\"):\n            raw=raw_classes(partition,hierarchy,workload,tables[hierarchy][partition],tables[\"H-spec\"][partition],mapping,ranks,top,basket)\n            classes=compress_classes(raw)\n            for path,volume in tables[hierarchy][partition].items():\n                if volume:\n                    before=sum((r[\"weight\"] for r in raw if path in r[\"topics\"]),Fraction())\n                    after=sum((Fraction(r[\"weight\"]) for r in classes[\"effective_classes\"] if path in r[\"positive_topics\"]),Fraction())\n                    assert before==after\n            if workload==\"W3\":\n                names={r[\"name\"] for r in raw}\n                assert (\"REPLAY_TOP100\" in names)==(partition in top)\n                assert (\"REPLAY_RANDOM100\" in names)==(partition in basket)\ntree=make_tree(\"r\",{\"r\":5,\"r/a\":3,\"r/a/b\":0})\nassert tree.nodes==((None,5,\"r\"),(0,3,\"r/a\")) and tree.baseline_stores==2\nfor shape in (\"chain\",\"star\",\"random\"):\n    for count in (1,4):\n        for n in (5,1000):\n            tree=synthetic_tree(n,shape,2)\n            assert len(tree.nodes)==tree.positive_nodes==n\n            assert synthetic_classes(tree,count)[\"effective_class_count\"]==count\nmetadata=json.loads(Path(\"/tmp/tiplog-p7-input-functional/metadata.json\").read_text())\nassert metadata[\"case_count\"]==138\nassert all(c[\"budget_policy\"] in (\"baseline\",\"sweep\") for c in metadata[\"case_index\"].values())\nassert all(len(c[\"effective_classes\"])==c[\"effective_class_count\"] for c in metadata[\"partition_workloads\"].values())\nprint(json.dumps({\"status\":\"passed\",\"source_partitions\":8907,\"symbols\":8906,\"market_weights\":[\"8906\",\"1900\",\"8906/10\"],\"flat_type_projection\":\"source aggregates equal\",\"compression\":\"exact per-topic weight preserved\",\"synthetic_effective_classes\":[1,4],\"small_cases\":138},sort_keys=True))\n"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T083748.246899Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/input-invariants-20261025T083748.246899Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.9594788590002281
+}

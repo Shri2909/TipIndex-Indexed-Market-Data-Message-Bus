@@ -1,0 +1,300 @@
+{
+  "recorded_utc": "2026-10-28T01:15:50.682879+00:00",
+  "source_snapshot_sha256": "1817d584516c0ec345fab0144bf511adc05e6a71a885600ba3a3384f5bce2db9",
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+  "production_sources": [
+    {
+      "path": "src/tiplog/types.hpp",
+      "frozen_sha256": "e3a516da36e0e58cf81755da8009511dd56689b617d318e7faefeccf38125375",
+      "current_sha256": "e3a516da36e0e58cf81755da8009511dd56689b617d318e7faefeccf38125375",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/engine/engine.cpp",
+      "frozen_sha256": "26d24e8409617c63a489dddeab5968faec5f44564aee01908caf1f27cf750596",
+      "current_sha256": "9a398b520d2aceb456e3e7ed1cbf2bdd536a2f6150a3ee5e6490b76a07a03f4b",
+      "unchanged": false
+    },
+    {
+      "path": "src/tiplog/engine/engine.hpp",
+      "frozen_sha256": "a9d7b453b1576f780986dfa378a4f206dc54823bd9d9fff82de67fff43b2c6e6",
+      "current_sha256": "a9d7b453b1576f780986dfa378a4f206dc54823bd9d9fff82de67fff43b2c6e6",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/ring/ring.cpp",
+      "frozen_sha256": "59e019624d91db81d10a0f07e8278ba1000bbc0706557d14af1839ad1bcc72a8",
+      "current_sha256": "59e019624d91db81d10a0f07e8278ba1000bbc0706557d14af1839ad1bcc72a8",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/ring/ring.hpp",
+      "frozen_sha256": "ec3c4a87a192fcd52220061de28c199eb3a34d694699ff708814159bd4ba73c5",
+      "current_sha256": "ec3c4a87a192fcd52220061de28c199eb3a34d694699ff708814159bd4ba73c5",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/index/index.cpp",
+      "frozen_sha256": "06ea54460567e61a50445713cc471e7f80c30f54be8e73b4aa59df87bd0bdebf",
+      "current_sha256": "06ea54460567e61a50445713cc471e7f80c30f54be8e73b4aa59df87bd0bdebf",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/index/index.hpp",
+      "frozen_sha256": "b8d528a685b10e4177f5fe20a9c39b92d24650225146b2647ef44efa019402f6",
+      "current_sha256": "b8d528a685b10e4177f5fe20a9c39b92d24650225146b2647ef44efa019402f6",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/merge/kernels.cpp",
+      "frozen_sha256": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c",
+      "current_sha256": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/merge/kernels.hpp",
+      "frozen_sha256": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8",
+      "current_sha256": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/topics/registry.cpp",
+      "frozen_sha256": "a9b170f653fb2b85404df4f028fa10801b7a1a77318e01e0ec5e2f40fa983679",
+      "current_sha256": "a9b170f653fb2b85404df4f028fa10801b7a1a77318e01e0ec5e2f40fa983679",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/topics/registry.hpp",
+      "frozen_sha256": "322326e92311ff26567efafdd71333f33ca279e48d2ac343e97a981b545c2f13",
+      "current_sha256": "322326e92311ff26567efafdd71333f33ca279e48d2ac343e97a981b545c2f13",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/subs/compiled.cpp",
+      "frozen_sha256": "024548e8f69b13cba1ea2a2bab56a2503b8d52aafb440f354879d03941e74550",
+      "current_sha256": "024548e8f69b13cba1ea2a2bab56a2503b8d52aafb440f354879d03941e74550",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/subs/compiled.hpp",
+      "frozen_sha256": "5863990621090092c14e62136fcfb2227e47558b313d76b90d03df8f94a60fb3",
+      "current_sha256": "5863990621090092c14e62136fcfb2227e47558b313d76b90d03df8f94a60fb3",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/driver/trace_driver.cpp",
+      "frozen_sha256": "37a76cc9ad8b2aeb5a63216df83ea4a53167c295aca451557f77322964762206",
+      "current_sha256": "37a76cc9ad8b2aeb5a63216df83ea4a53167c295aca451557f77322964762206",
+      "unchanged": true
+    },
+    {
+      "path": "src/tiplog/driver/trace_driver.hpp",
+      "frozen_sha256": "7a6cb9d77427ea0710f15c4bbb8ee69a7046df85ae614582b1e0f440ed084509",
+      "current_sha256": "7a6cb9d77427ea0710f15c4bbb8ee69a7046df85ae614582b1e0f440ed084509",
+      "unchanged": true
+    },
+    {
+      "path": "tests/unit/poll_budget_test.cpp",
+      "frozen_sha256": "7c778461d5477efea9de36ef37428c05296ea914ca15f70b8daaf939149488d9",
+      "current_sha256": "8c51f145ab37128078075567a53e3fb6f39e694450fcfd391808fa46765be4cd",
+      "unchanged": false
+    }
+  ],
+  "executed_checks": [
+    {
+      "check": "new regression against frozen engine",
+      "binary": "poll-regression-before",
+      "expected_exit": 1,
+      "observed_exit": 1,
+      "test_count": 1,
+      "failing_field_assertions": 72,
+      "flags": "-std=c++20 -O2 -g -march=x86-64-v3 -DNDEBUG",
+      "log": "poll-regression-before.log"
+    },
+    {
+      "check": "full focused polling suite after fix, freshly compiled core",
+      "binary": "poll-regression-after",
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "test_count": 24,
+      "flags": "-std=c++20 -O2 -g -march=x86-64-v3 -DNDEBUG",
+      "log": "poll-regression-after.log"
+    },
+    {
+      "check": "independent exhaustive allocation failure points for bounded fixtures",
+      "binary": "allocation-probe",
+      "observed_exit": 0,
+      "flags": "-std=c++20 -O2 -g -march=x86-64-v3 (assertions enabled)",
+      "configurations": 74,
+      "log": "allocation-probe.log"
+    },
+    {
+      "check": "valid wrapped-variable one-record benchmark against first revised validator",
+      "observed_exit": 1,
+      "purpose": "independent review exposed excluded-leading-PAD model edge, reported to root and corrected",
+      "log": "f01-wrapped-one-validator.log"
+    },
+    {
+      "check": "independent Python retained-layout scalar boundary review after PY-05 correction",
+      "observed_exit": 0,
+      "case_count": 2046,
+      "log": "python-retention-review-after.log",
+      "source": "retention_review.py",
+      "oracle_source_sha256": "d127808b6176d8635789b3669ca74a968356698acbcbc3b233fd80d436719a44"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/allocation-probe",
+      "bytes": 3815352,
+      "sha256": "e8345e6b73562588b9f2fe1a50e875abb58ead2a8cdd67ee9946f36bf1706114"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/allocation-probe.log",
+      "bytes": 4597,
+      "sha256": "6d40ae8a2fa464303318903800b51770205e3aa810830560f12fefd726593304"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/allocation_probe.cpp",
+      "bytes": 7463,
+      "sha256": "f4bafe28e798046595d18ca699d566d856df25c7e81f221939eaeb2838441879"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/evid01-suppression-review-after.json",
+      "bytes": 2037,
+      "sha256": "b84c01523aeed956a308b59bfde2e0d84e22c6d61f71fbbadd16f55765c9417c"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/evid01-suppression-review-pytest.log",
+      "bytes": 179,
+      "sha256": "dd4eeb0d778586361ce471adb0c20933a45cdb09dbcacfc1837b1ca22c6e6000"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/f01-resource-review.json",
+      "bytes": 1062,
+      "sha256": "fd16901344df6df1bd8424eeff94ee07a08b548572f62b1a9c569d8228d7b5b2"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/f01-wrapped-one-tool.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/f01-wrapped-one-validator-after.log",
+      "bytes": 53,
+      "sha256": "66017af632dc5197ef20fe396a4ea5f20a1914e83c69300734e3152e9c5d33ff"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/f01-wrapped-one-validator.log",
+      "bytes": 134,
+      "sha256": "c624b086bcb982de5237574b50e5f8888c23318b66549dc0b13d188e6f7a802e"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/final-peer-review.md",
+      "bytes": 3462,
+      "sha256": "2330be970cccef300b7f6ceade842211724c8c48f2d7dc3a2cf4debd015f1115"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/poll-regression-after",
+      "bytes": 12613296,
+      "sha256": "857a1760af9bd01a5d44329cb5aa9eadaff34487083cec06e31e374e3140e192"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/poll-regression-after.log",
+      "bytes": 4455,
+      "sha256": "e78a2fbc7fc1f1f04fb7e8bb2cb56adc621b133ec5f57ef080ad92f90ff124d0"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/poll-regression-before",
+      "bytes": 12611360,
+      "sha256": "71b2b9b6154a5035cb96c93b4c3c29f372923f88417ea0f27a163033ea84a29c"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/poll-regression-before.log",
+      "bytes": 32281,
+      "sha256": "76173c7eb31c39b7ad73a4ff2b3b7c2ddfa1812e50202371926e02721ff59dd3"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/python-retention-review-after.log",
+      "bytes": 158,
+      "sha256": "c980f462d93168e826c863b16d2754dfa1ddccf2148192204facd058041fbd3b"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/python-retention-review-before.json",
+      "bytes": 813,
+      "sha256": "2174ed30467e6a27342c6095794814f3bef03d75f35f6a6df4da0e2069dfc3aa"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/python-retention-review.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/retention_review.py",
+      "bytes": 2036,
+      "sha256": "f8e040195bcf981db5b65dc771e874721527700ce092903265ad16180ae92cd4"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/sanitizer-disable.cpp",
+      "bytes": 65,
+      "sha256": "fcb665201baf8deb21b58b05b7b3fcc1daa8c44ffecda6183404eb88b8a09a27"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/sanitizer-disable.rsp",
+      "bytes": 18,
+      "sha256": "1f9d57003a9e677a8636c0f9b7bcc499e277ab02fd7055e222df1115875eca21"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/sanitizer-disabled.o",
+      "bytes": 2952,
+      "sha256": "163baff6adabb99e1591c1cc85c82e502101318db26190b2c4403385c08aee32"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/sanitizer-positive.o",
+      "bytes": 5248,
+      "sha256": "f8846ca851410cf59621920bae15a7a2e4d950b4e951bf0c88e11d22ea782567"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/sanitizer-response-review-before.json",
+      "bytes": 1110,
+      "sha256": "26e208c51d53a3c5e482a1c717411795010bc36cad432f8e3dc2ffb30da87d34"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/tail-partial-expiry-before.log",
+      "bytes": 204,
+      "sha256": "a69620cdca6750aff6121853bb3aaf1f701883d263ad94015ae59a5c7051f6f8"
+    },
+    {
+      "path": "audit/independent-20261027T041900Z/evidence/core/tail_partial_expiry.cpp",
+      "bytes": 1975,
+      "sha256": "51720161d52fef40a01565ddc762e21e677049ff36eb0d5b151ec98486c2ce2c"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "root",
+      "scope": "CORE-01 production fix and72 regression combinations",
+      "result": "no blocking issue; source review"
+    },
+    {
+      "reviewer": "python audit agent",
+      "scope": "CORE-01 both delegated overloads, private/public exception state and72 regression combinations",
+      "result": "no blocking issue; source review without duplicate tests"
+    },
+    {
+      "reviewer": "core audit agent",
+      "scope": "F01 validator leading-PAD edge; Python source-preserving bundle and high-u64 retention; CLI same-file preflights",
+      "result": "F01 leading-PAD edge corrected by root; Python high-u64 searchsorted defect assigned to PY-05 owner"
+    }
+  ],
+  "final_peer_review": {
+    "date": "2026-10-28",
+    "report": "audit/independent-20261027T041900Z/evidence/core/final-peer-review.md",
+    "guard_source_sha256": "d9de1ff2b2af47470aac74c6b43e24637f3d083beca4a2d8a18a2384d9d12b30",
+    "helper_tests": 89,
+    "core_sources_stable": true,
+    "F01_resource_model": "three positive K8192 rows pass, K12288/K65535 fake-reserve rows reject",
+    "acceptance_composition": "no remaining blocking issue found in reviewed paths"
+  }
+}

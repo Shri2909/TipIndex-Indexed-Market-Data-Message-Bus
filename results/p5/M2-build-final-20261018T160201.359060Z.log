@@ -1,0 +1,9 @@
+[  9%] Built target tiplog_topics_subs
+[ 69%] Built target benchmark
+[ 75%] Built target tiplog_ring
+[ 81%] Built target tiplog_index
+[ 87%] Built target tiplog_merge
+[ 93%] Built target tiplog_engine
+[ 96%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[100%] Linking CXX executable publish_bench
+[100%] Built target publish_bench

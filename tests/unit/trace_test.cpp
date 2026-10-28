@@ -1,5 +1,6 @@
 #include "tiplog/trace/itch_walker.hpp"
 #include "tiplog/trace/reader.hpp"
+#include "tiplog/types.hpp"
 
 #include <gtest/gtest.h>
 
@@ -155,6 +156,20 @@ TEST(TraceV05, CanonicalUtf8PathsRequired) {
   EXPECT_NO_THROW(Reader{valid});
 }
 
+TEST(TraceV05, TopicResourceBoundariesMatchRegistryContract) {
+  const auto allowed = trace({}, {{1, std::string(tiplog::max_topic_path_bytes, 'a')}});
+  EXPECT_NO_THROW(Reader{allowed});
+  const auto oversized = trace({}, {{1, std::string(tiplog::max_topic_path_bytes + 1, 'a')}});
+  EXPECT_THROW(Reader{oversized}, FormatError);
+  std::string path = "a";
+  for (std::size_t depth = 1; depth < tiplog::max_topic_depth; ++depth) path += "/a";
+  const auto deepest = trace({}, {{1, path}});
+  EXPECT_NO_THROW(Reader{deepest});
+  path += "/a";
+  const auto too_deep = trace({}, {{1, path}});
+  EXPECT_THROW(Reader{too_deep}, FormatError);
+}
+
 TEST(TraceV05, FlagsPaddingAndTrailingBytesRejected) {
   for (const std::size_t at : {70U, 71U, 81U, 87U}) {
     auto bytes = trace();
@@ -280,4 +295,33 @@ TEST(ItchWalkerV04, TimestampInversionsAndJson) {
   EXPECT_NE(output.str().find("\"incomplete\": true"), std::string::npos);
   EXPECT_NE(output.str().find("\"256\":{\"count\":1"), std::string::npos);
 }
+TEST(ItchWalkerV04, ErrorsIdentifyFrameByteOffsetIndependentOfChunking) {
+  const auto prefix = frame('S', 12);
+  const std::vector<Bytes> invalid{frame('?', 12), frame('S', 11), frame('A', 51),
+                                 Bytes{std::byte{0}},
+                                 Bytes{std::byte{0}, std::byte{12}, std::byte{'S'}}};
+  for (const auto& suffix : invalid) {
+    Bytes input(prefix);
+    input.insert(input.end(), suffix.begin(), suffix.end());
+    for (const std::size_t chunk : {1U, 2U, 7U, 1024U}) {
+      auto walker = std::make_unique<tiplog::trace::ItchWalker>();
+      try {
+        for (std::size_t at = 0; at < input.size(); at += chunk)
+          walker->feed(std::span<const std::byte>(input).subspan(at, std::min(chunk, input.size() - at)));
+        walker->finish();
+        FAIL() << "invalid frame accepted";
+      } catch (const FormatError& error) {
+        EXPECT_NE(std::string(error.what()).find("byte offset 14"), std::string::npos);
+      }
+    }
+  }
+  auto walker = std::make_unique<tiplog::trace::ItchWalker>();
+  walker->feed(prefix);
+  const Bytes trailing{std::byte{0}, std::byte{0}, std::byte{1}};
+  try { walker->feed(trailing); FAIL(); }
+  catch (const FormatError& error) {
+    EXPECT_NE(std::string(error.what()).find("byte offset 16"), std::string::npos);
+  }
+}
+
 }  // namespace

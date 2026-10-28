@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-25T04:33:50.375289+00:00",
+  "scope": "Presentation-only: separate eight F12 arms, factorized legends, wrapped titles/footer and nonnegative slot axis. No statistical method, ratio, raw input, timing or engine change.",
+  "source": "py/tiplog_py/figures/tip.py",
+  "before_sha256": "ac147a18650b79fdd33915bf66761e8a2106b7da090454314e0dc8fab43284f7",
+  "after_sha256": "f156ad50beb039315b48c95a9e10772a4e4d2c4377951f76562619489e8d758f",
+  "test_source_sha256": "5e1f0e84e70dfe84430fe6a92f9d49512de3c239cbc13a0440fd638bc04f49a8",
+  "focused_check": "results/p6/figure-layout-focused-tests-20261025T043234.286174Z.json",
+  "changes": [
+    {
+      "provenance": "results/raw/P6/campaign-20261024/campaign-provenance.json",
+      "before": {
+        "bytes": 18740,
+        "path": "py/tiplog_py/figures/tip.py",
+        "sha256": "ac147a18650b79fdd33915bf66761e8a2106b7da090454314e0dc8fab43284f7"
+      },
+      "after": {
+        "bytes": 26461,
+        "path": "py/tiplog_py/figures/tip.py",
+        "sha256": "f156ad50beb039315b48c95a9e10772a4e4d2c4377951f76562619489e8d758f"
+      },
+      "amendment": {
+        "at_utc": "2026-10-25T04:33:50.375289+00:00",
+        "source": "py/tiplog_py/figures/tip.py",
+        "original_figure_source_sha256": "ac147a18650b79fdd33915bf66761e8a2106b7da090454314e0dc8fab43284f7",
+        "figure_source_sha256": "f156ad50beb039315b48c95a9e10772a4e4d2c4377951f76562619489e8d758f",
+        "reason": "Presentation-only: separate eight F12 arms, factorized legends, wrapped titles/footer and nonnegative slot axis. No statistical method, ratio, raw input, timing or engine change.",
+        "original_provenance_snapshot": "results/p6/f12-layout-compatibility/2-campaign-provenance.json",
+        "original_provenance_sha256": "90bc76706a18138813ac361970083f75acb789fd013cadb7c63fc47d663ff4d0",
+        "compatibility_record": "results/p6/f12-layout-compatibility/compatibility.json",
+        "note": "Original timing identities remain the actual experiment identities; this compatibility view allows postprocessing regeneration only."
+      }
+    }
+  ],
+  "unchanged_provenances": [
+    {
+      "path": "results/raw/P6/campaign-20261024/evaluation/provenance.json",
+      "snapshot": "results/p6/f12-layout-compatibility/3-provenance.json",
+      "bytes": 36438,
+      "sha256": "a3951c796cba45d55d7805e7c9af1a082e0ae84a62a5218267d7dedee1c5d1a1"
+    }
+  ],
+  "numerical_artifacts_verified": [
+    {
+      "path": "results/derived/tip-summary.json",
+      "bytes": 84501291,
+      "sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb"
+    },
+    {
+      "path": "results/derived/tip-outcomes.csv",
+      "bytes": 16963433,
+      "sha256": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24"
+    },
+    {
+      "path": "results/derived/tip-paired-ratios.csv",
+      "bytes": 14080408,
+      "sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866"
+    },
+    {
+      "path": "results/p6/analysis-inputs.json",
+      "bytes": 1110,
+      "sha256": "3e48f0b0f1ab3315b92c973bdc208b4f23d1c7e8f70d4cdc911988ec92e64498"
+    }
+  ],
+  "unique_files_hashed": 161
+}

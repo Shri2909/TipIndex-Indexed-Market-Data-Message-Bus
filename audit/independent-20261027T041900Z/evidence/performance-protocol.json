@@ -1,0 +1,50 @@
+{
+  "schema": "tiplog-independent-static-replay-diagnostic-v1",
+  "declared_utc": "2026-10-27T12:59:42.845649+00:00",
+  "status": "predeclared-before-timing",
+  "purpose": "Actual initial/final implementation comparison and documented repeated-preparation tradeoff; no quiet-host or universal speedup claim. Static Replay is unchanged by Tail error diagnostic correction.",
+  "builds": {
+    "initial": {
+      "binary": "build/independent-layout-tools-baseline/tiplog_poll_bench",
+      "sha256": "61a2b49268a2e0953af711bb55c94b9b9a648b8466f278341502fe256ff1d1aa",
+      "identity_record": "audit/independent-20261027T041900Z/evidence/layout_tools/baseline-poll-bench-identity.json"
+    },
+    "final": {
+      "binary": "build/release/tiplog_poll_bench",
+      "sha256": "c7a0146615c91f2c98067740d6ba840f6ef22844fe2007c5563d3c7ed82c6015",
+      "build_record": "audit/independent-20261027T041900Z/evidence/final-build-release-20261027T124457.238391Z.json"
+    }
+  },
+  "compiler_flags": "-O2 -g -march=x86-64-v3 -DNDEBUG",
+  "argv": [
+    "--records",
+    "4096",
+    "--seed",
+    "20261027",
+    "--cases",
+    "no-match,dense",
+    "--shapes",
+    "small,wrapped-variable",
+    "--partitions",
+    "64,256",
+    "--candidate-every",
+    "1",
+    "--modes",
+    "indexed",
+    "--kernels",
+    "stdpq",
+    "--budgets",
+    "legacy,unlimited,1,32",
+    "--schedules",
+    "immediate-redrain",
+    "--max-outputs",
+    "128",
+    "--reps",
+    "1"
+  ],
+  "fresh_processes_per_source": 3,
+  "expected_rows_per_process": 32,
+  "expected_total_rows": 192,
+  "policy": "immediate-redrain for every arm, exactly one victim service and one separate-engine publisher service after drain; fixed input, output allowance, seed and arm order; public-poll, opening, full drain CPU/wall and process peak RSS reported separately.",
+  "host": "Shared host; start after other project-owned builds/tests/campaigns finish; no pinning or privileged host changes. Timers, warm caches, fixed arm order and only three repetitions limit interpretation."
+}

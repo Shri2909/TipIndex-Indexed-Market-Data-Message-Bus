@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.0.3, pluggy-1.7.0
+rootdir: /home/abc/Desktop/Jane Street/py
+configfile: pytest.ini
+collected 94 items
+
+py/tests/test_audit_remediation.py ..................................... [ 39%]
+........................                                                 [ 64%]
+py/tests/test_exp_protocol.py ...........                                [ 76%]
+py/tests/test_exp_oracle.py .....                                        [ 81%]
+py/tests/test_analysis_stats.py .................                        [100%]
+
+============================== 94 passed in 4.56s ==============================

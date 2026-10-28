@@ -1,0 +1,21 @@
+-- Failed to find LLVM FileCheck
+-- Google Benchmark version: v1.9.5, normalized to 1.9.5
+-- Enabling additional flags: -DINCLUDE_DIRECTORIES=/home/abc/Desktop/Jane Street/build/f01/test-asan/_deps/benchmark-src/include
+-- Performing Test THREAD_SAFETY_ATTRIBUTES -- success
+-- Performing Test STD_REGEX -- success
+-- Performing Test STEADY_CLOCK -- success
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test PTHREAD_AFFINITY -- success
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- tiplog GoogleTest provider: FetchContent v1.17.0
+-- Found Python3: /home/abc/.pyenv/shims/python3.11 (found version "3.11.15") found components: Interpreter
+-- Configuring done (3.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/abc/Desktop/Jane Street/build/f01/test-asan

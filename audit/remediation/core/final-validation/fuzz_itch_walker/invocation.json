@@ -1,0 +1,22 @@
+{
+  "binary_sha256_before": "5aa651d50e8d979bc69d38cacac6b504e3dcca0ac9b130f8025a943df5f812ca",
+  "command": [
+    "/home/abc/Desktop/Jane Street/build/fuzz/fuzz_itch_walker",
+    "/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_itch_walker-corpus",
+    "-runs=10000",
+    "-seed=1",
+    "-max_len=65536",
+    "-detect_leaks=1",
+    "-print_final_stats=1",
+    "-artifact_prefix=/home/abc/Desktop/Jane Street/audit/remediation/core/final-validation/fuzz_itch_walker-artifacts/"
+  ],
+  "environment": {},
+  "id": "fuzz_itch_walker",
+  "kind": "fuzz",
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+  },
+  "seed_corpus_source": "tests/fuzz/corpus/itch_walker",
+  "started_utc": "2026-10-26T08:48:49.223162+00:00"
+}

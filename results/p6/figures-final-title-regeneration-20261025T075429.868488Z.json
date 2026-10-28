@@ -1,0 +1,22 @@
+{
+  "label": "figures-final-title-regeneration",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "tiplog_py.figures.build",
+    "--all"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T075429.868488Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/figures-final-title-regeneration-20261025T075429.868488Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 188.46199065799738
+}

@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/check_f01.py"
+  ],
+  "observed_error": "TypeError: Object of type PosixPath is not JSON serializable when serializing evidence identity section details",
+  "scope": "Diagnostic note recorded after observing the initial command failure; no acceptance result was emitted. Engine and benchmark evidence unchanged. Accepted verification requires corrected checker plus new Python regression execution."
+}

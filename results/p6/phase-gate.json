@@ -1,0 +1,139 @@
+{
+  "phase": "P6",
+  "status": "passed",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "completed_utc": "2026-10-25T08:02:22.262829+00:00",
+  "authorization": "Latest explicit user instruction2026-10-25: finish entire Phase6 and stop; continued after interruption.",
+  "criteria": {
+    "P5 prerequisite and unchanged final timed-engine/tool identities": "met",
+    "P6.1 deterministic driver, TOML matrix, append-only results and independent V27/CC4 output/outcome validation": "met",
+    "P6.2 both30-repetition pilots, measured CV response, protocol freeze and held-out Auto calibration": "met",
+    "P6.3 all900 M1/M1-touch,120 M2,8 M3 configurations with15 accepted repetitions": "met",
+    "P6.3 all41 T1/T2/T3/T5 workloads with820 measured rounds and41 saved warm-ups": "met",
+    "Recorded CPU2/P-core/AC/ASLR/cache/noise controls and approved no-counter fallback": "met",
+    "T2 actual same-window index-on/off maintenance charged once per cohort with separate durations": "met",
+    "T5 full requested-memory/slack/recount, separate allocator arithmetic and historical high-water reporting": "met",
+    "P6.4 median/IQR/min/max/n and seeded10000-resample95%CIs; whole paired rounds for T ratios": "met",
+    "RC1 F06-F13 and P1 F01-F05 regenerate from saved raw results with one command": "met",
+    "Complete non-ok, invalid, interrupted, warm-up and noise accounting with failed-pair ratios withheld": "met",
+    "P6.5 results report and C01-C11 claims linked to actual raw evidence and scoped limitations": "met",
+    "Postprocessing-only fixes independently checked with original failed audits/source/provenance and5364 unchanged measurement files preserved": "met",
+    "Actual primary-source reading limits and source-to-task/code/check/evidence traceability retained": "met",
+    "Explicit finish-P6-and-stop boundary; no P7/P8/TierC/roadmap implementation started": "met"
+  },
+  "tasks_completed": [
+    "P6.1",
+    "P6.2",
+    "P6.3",
+    "P6.4",
+    "P6.5"
+  ],
+  "inapplicable": [
+    "P6.3b/V34 book validator: TierC",
+    "T4 latency storm/HdrHistogram: TierC",
+    "P7/CC5 and P8: not started",
+    "Roadmap durability/concurrency/networking: deferred"
+  ],
+  "evidence": {
+    "release_cpp_166": "results/p6/release-tests-prefix-final-20261023T143830.870052Z.json",
+    "asan_cpp_166": "results/p6/sanitizer-tests-prefix-final-20261023T143838.074028Z.json",
+    "final_python_143": "results/p6/python-final-title-check-20261025T075429.867981Z.json",
+    "CC2": "results/p6/CC2-all-configurations.json",
+    "RC3": "results/p6/rc3-final-verified.json",
+    "F3": "results/p6/fuzz-prefix-final-verified.json",
+    "core_integrity": "results/p6/final-core-integrity.json",
+    "auditor_selftest": "results/p6/auditor-t5-enrichment-self-test-20261025T041647.001633Z.json",
+    "auditor_compatibility": "results/p6/auditor-t5-compatibility/compatibility.json",
+    "measurement_files_unchanged": "results/p6/auditor-t5-compatibility/measurement-files-final.json",
+    "complete_audit_analysis_pipeline": "results/p6/closeout-audit-analysis-figures-20261025T041854.547119Z.json",
+    "figure_focus_tests": "results/p6/figure-layout-focused-tests-20261025T043234.286174Z.json",
+    "figure_compatibility": "results/p6/f12-layout-compatibility/compatibility.json",
+    "figure_title_compatibility": "results/p6/f12-title-position-compatibility/compatibility.json",
+    "RC1_final_regeneration": "results/p6/figures-final-title-regeneration-20261025T075429.868488Z.json",
+    "T2_adjusted_selftest": "results/p6/t2-adjusted-report-selftest-final-20261025T042015.276071Z.json",
+    "T2_adjusted_analysis": "results/p6/t2-adjusted-report-analysis-final-20261025T042021.275937Z.json",
+    "T5_highwater_analysis": "results/p6/t5-high-water-report-analysis-20261025T043318.669440Z.json",
+    "environment": "results/p6/closeout-environment-20261025T041647.365111Z.json",
+    "final_artifact_review": "results/p6/final-gate-review.json",
+    "regeneration_identity": "results/p6/figure-regeneration-verification.json",
+    "manifest": "results/p6/closeout-evidence.json",
+    "artifact_check": "results/p6/closeout-checks.json",
+    "artifact_check_command": "results/p6/final-closeout-checks-20261025T075939.219604Z.json",
+    "report": "docs/report/results_tip.md",
+    "source_map": "results/p6/p6-report-source-map.md",
+    "figure_manifest": "results/figures/p6-figures.json",
+    "summary": "results/derived/tip-summary.json",
+    "T2_adjusted": "results/derived/t2-adjusted-paired.json",
+    "T5_highwater": "results/derived/t5-high-water.json",
+    "actual_CC4_audit": "results/raw/P6/campaign-20261024/evaluation/independent-audit.json",
+    "final_recorded_boundary_check": "results/p6/final-recorded-boundary-check-20261025T080300.826207Z.json"
+  },
+  "measurements": {
+    "micro_configurations": 1028,
+    "accepted_micro_observations": 15420,
+    "evaluation_workloads": 41,
+    "measured_process_rounds": 820,
+    "saved_warmup_process_rounds": 41,
+    "consolidated_rows": 135751,
+    "configuration_entries_including_failure": 6759,
+    "measured_outcomes": {
+      "ok": 125700,
+      "invalid_config": 4320,
+      "crash": 1
+    },
+    "unresolved_oracle_mismatches_in_completed_measurements": 0,
+    "full_saved_output_audit_checks": 10295181
+  },
+  "verification": {
+    "final_Python_tests": 143,
+    "previous_accepted_Cpp_tests_each_release_and_ASan": 166,
+    "previous_accepted_differential_operations": {
+      "release": 90000000,
+      "asan_ubsan": 18000000
+    },
+    "previous_accepted_F3_seconds": 1802.6449414189983,
+    "previous_accepted_F3_executions": 39231,
+    "current_core_tool_child_integrity_checks": 266,
+    "final_coverage_statistics_checks": 176731,
+    "final_artifact_checks": 13710,
+    "note": "No C++ engine or timed tool changes during closeout; accepted long correctness gates reused only after current dependency/binary integrity verification."
+  },
+  "limitations": [
+    "One laptop, one historical Nasdaq source/morning window and assumed/synthetic workloads; no universal winner or production CPU claim.",
+    "Source lacks BinaryFILE terminator and remains incomplete=true.",
+    "Host is not exclusive; all conservative frequency flags are retained, and CIs do not remove host/setup bias.",
+    "Hardware counters unavailable; no hardware-counter or physical I/O claim.",
+    "T2 is sequential with publisher paused during recovery; no concurrent-reader scaling or latency percentiles.",
+    "4320 expected direct-index packed-limit rejections and one external interruption retained; unavailable comparisons have no invented speedup."
+  ],
+  "remaining_P6_requirements": [],
+  "continuation": "STOP. Phase6 is complete. P7/P8 have not started; await an explicit new user instruction.",
+  "final_artifact_identities": {
+    "docs/report/results_tip.md": {
+      "sha256": "45e489ea9b8ccf15a6ec2573a04c64767db52fdb7a4a54d4997ff0339ea13d81",
+      "bytes": 33935
+    },
+    "results/p6/p6-report-source-map.md": {
+      "sha256": "fa5c6790ff162634558c521d7ad594205e0bc8ddac7af1f812f5d438be0055fe",
+      "bytes": 5735
+    },
+    "py/tiplog_py/figures/tip.py": {
+      "sha256": "09ec02d27c7709c2e0a7a81268bfb3f8570a9ebf229126246e715f52e4de4000",
+      "bytes": 26771
+    },
+    "scripts/check_p6_experiments.py": {
+      "sha256": "2531f9e9c5f4a8272a207522edb92055b7fe20e44f46deac2efc0d290fb16f44",
+      "bytes": 48835
+    },
+    "scripts/summarize_p6_t2_adjusted.py": {
+      "sha256": "0799948cb70e8ccc11e7b4252b4c05b8b2138e7488adab0d9a4623eadac13848",
+      "bytes": 11808
+    },
+    "scripts/summarize_p6_t5_highwater.py": {
+      "sha256": "a03d799953ad5dec40de8b4a591e85b2064d23e421aa6fac5ea74b76dc88cad6",
+      "bytes": 5755
+    }
+  },
+  "final_verified_utc": "2026-10-25T08:03:41.107456+00:00"
+}

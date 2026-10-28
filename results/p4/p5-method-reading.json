@@ -15,12 +15,24 @@
     "Preserve per-repetition JSON, not aggregates only",
     "Merge output hash includes every output; DoNotOptimize protects the result, not all expressions",
     "Setup excluded from M1 timing; pinned supported warmup/repetition/random-interleaving flags",
-    "No transfer of library documentation variance percentages to this project"
+    "No transfer of library documentation variance percentages to this project",
+    "Pinned1.9.5 seeds internal repetition interleaving via random_device and exposes no interleaving seed flag; report this limit rather than inventing a reproducible shuffle seed",
+    "Preserve actual benchmark-function invocation order (including calibration/warm-up) if adding diagnostic logging outside timing; GBench JSON bulk report order is not its execution interleaving",
+    "Explicit Iterations overrides min_time; retain required adaptive0.5s rather than capping iterations to avoid setup work"
   ],
   "files": {
     "build/release/_deps/benchmark-src/docs/user_guide.md": "4a8854597b4a112d0444b8b2b7d12e80d7c72fc91ad3a33ebbec9fde3e980070",
-    "build/release/_deps/benchmark-src/docs/random_interleaving.md": "e68c0e88e2323b82c119b21417f925aab77d9017bbb615393d836da971f214ed"
+    "build/release/_deps/benchmark-src/docs/random_interleaving.md": "e68c0e88e2323b82c119b21417f925aab77d9017bbb615393d836da971f214ed",
+    "build/release/_deps/benchmark-src/src/benchmark.cc": "93dd058ff126b0e50f53f8d5d31d6fa5132b345b3132781c692b7d8538c72da3",
+    "build/release/_deps/benchmark-src/src/benchmark_runner.cc": "7908a0c53268a1ec59fc2ac4a762181fe85e4dc6d56169d13edd0748018bab86",
+    "build/release/_deps/benchmark-src/include/benchmark/benchmark.h": "2a7d09741c867e2262b75d21af80fd40118371b32a37e3dc94a484104135f623"
   },
   "new_dependency": false,
-  "code_reused": false
+  "code_reused": false,
+  "additional_sections_actually_inspected": [
+    "src/benchmark.cc lines446-500: random_device-seeded shuffle and bulk result reporting",
+    "src/benchmark_runner.cc lines398-455: min-time and warm-up calibration",
+    "src/benchmark_runner.cc lines485-535: warm-up/repetition invocations",
+    "include/benchmark/benchmark.h State timing-control API and name()/iterations() accessors"
+  ]
 }

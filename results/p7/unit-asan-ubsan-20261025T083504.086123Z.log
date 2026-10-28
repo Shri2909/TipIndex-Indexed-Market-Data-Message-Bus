@@ -1,0 +1,464 @@
+Test project /home/abc/Desktop/Jane Street/build/asan-ubsan
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_smoke_test_691be4dd_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_smoke_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==5==LeakSanitizer has encountered a fatal error.
+
+  ==5==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==5==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:7 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_trace_test_a20a5006_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_trace_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==8==LeakSanitizer has encountered a fatal error.
+
+  ==8==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==8==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:8 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_topics_subs_test_c02df4db_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_topics_subs_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==11==LeakSanitizer has encountered a fatal error.
+
+  ==11==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==11==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:9 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_oracle_test_a90736c9_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_oracle_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==14==LeakSanitizer has encountered a fatal error.
+
+  ==14==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==14==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:10 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_oracle_tail_test_8b0c413c_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_oracle_tail_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==17==LeakSanitizer has encountered a fatal error.
+
+  ==17==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==17==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:11 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_driver_test_2b323258_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_driver_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==20==LeakSanitizer has encountered a fatal error.
+
+  ==20==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==20==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:12 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_ring_test_09408451_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_ring_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==23==LeakSanitizer has encountered a fatal error.
+
+  ==23==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==23==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:13 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_index_test_8e120f00_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_index_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==26==LeakSanitizer has encountered a fatal error.
+
+  ==26==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==26==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:14 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_merge_test_57ef0262_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_merge_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==29==LeakSanitizer has encountered a fatal error.
+
+  ==29==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==29==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:15 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_engine_test_c5d7ed0c_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_engine_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==32==LeakSanitizer has encountered a fatal error.
+
+  ==32==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==32==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:16 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_engine_index_test_0dc4824b_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_engine_index_test" "-D" "TEST_EXECUTOR="
+  "-D" "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==35==LeakSanitizer has encountered a fatal error.
+
+  ==35==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==35==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:17 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_engine_merge_test_f2681864_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_engine_merge_test" "-D" "TEST_EXECUTOR="
+  "-D" "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==38==LeakSanitizer has encountered a fatal error.
+
+  ==38==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==38==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:18 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_bench_contract_test_0456a5de_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_bench_contract_test" "-D" "TEST_EXECUTOR="
+  "-D" "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==41==LeakSanitizer has encountered a fatal error.
+
+  ==41==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==41==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:19 (include)
+
+
+CMake Error at /home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_layout_test_392c7de8_include.cmake:2 (discover_tests):
+  discover_tests failed to run command: "/usr/bin/cmake" "-D"
+  "TEST_EXECUTABLE=/home/abc/Desktop/Jane
+  Street/build/asan-ubsan/tiplog_layout_test" "-D" "TEST_EXECUTOR=" "-D"
+  "TEST_FILTER=" "-D" "TEST_DISCOVERY_EXTRA_ARGS=" "-D"
+  "NO_PRETTY_TYPES=FALSE" "-D" "NO_PRETTY_VALUES=FALSE" "-P"
+  "/usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake"
+
+  ==44==LeakSanitizer has encountered a fatal error.
+
+  ==44==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==44==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+  CMake Error at
+  /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29:EVAL:1
+  (execute_process):
+
+    execute_process Abnormal exit: Subprocess aborted
+
+  Call Stack (most recent call first):
+
+    /usr/share/cmake-4.4/Modules/GoogleTest/DiscoverTests.cmake:29 (cmake_language)
+
+
+
+
+
+Call Stack (most recent call first):
+  CTestTestfile.cmake:20 (include)
+
+
+Errors while running CTest

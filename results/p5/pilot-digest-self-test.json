@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "cases": 747,
+  "random_seed": 20191230,
+  "checks": [
+    "literal recurrence on small/random/carry/rotation/uint64 boundaries",
+    "wide-count concatenation identity",
+    "invalid range rejection"
+  ],
+  "scope": "Digest algebra verification only; no benchmark execution.",
+  "at_utc": "2026-10-18T16:08:35.380234+00:00",
+  "argv": [
+    "scripts/check_p5_pilot.py",
+    "--self-test"
+  ],
+  "checker_sha256": "25528b1abb2dac87886e6cba897ff5e089063a9c027cfdea81e03af931ddbd39"
+}

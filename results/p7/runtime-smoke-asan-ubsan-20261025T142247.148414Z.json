@@ -1,0 +1,28 @@
+{
+  "label": "runtime-smoke-asan-ubsan",
+  "argv": [
+    "taskset",
+    "-c",
+    "2",
+    "build/asan-ubsan/tiplog_layout_runtime",
+    "--input",
+    "results/raw/P7/inputs/synthetic-n5.tsv",
+    "--output",
+    "results/p7/runtime-smoke-asan-ubsan.jsonl",
+    "--methods",
+    "dp"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T142247.148414Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/runtime-smoke-asan-ubsan-20261025T142247.148414Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.14829575199973988
+}

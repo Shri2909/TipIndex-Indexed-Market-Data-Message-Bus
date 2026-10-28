@@ -1,0 +1,335 @@
+{
+  "status": "passed",
+  "source_identities": {
+    "src/tiplog/engine/engine.cpp": "26d24e8409617c63a489dddeab5968faec5f44564aee01908caf1f27cf750596",
+    "src/tiplog/engine/engine.hpp": "a9d7b453b1576f780986dfa378a4f206dc54823bd9d9fff82de67fff43b2c6e6",
+    "tests/unit/poll_budget_test.cpp": "eab6b24b43834499b03119d7addea96614cfa6fb0a1e2f669455bb07570678b2",
+    "scripts/check_f01_contract_mutations.py": "c2fc6d7d030848a4aae487e8fd34be68403307a0df3778af5fb840a8dfd9c045"
+  },
+  "production_sources_unchanged": true,
+  "test_compile": {
+    "argv": [
+      "g++",
+      "-std=c++20",
+      "-O2",
+      "-g",
+      "-march=x86-64-v3",
+      "-DNDEBUG",
+      "-I/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/include",
+      "-I/home/abc/Desktop/Jane Street/src",
+      "-I/home/abc/Desktop/Jane Street/tests/ref",
+      "-isystem",
+      "/home/abc/Desktop/Jane Street/build/f01/core/_deps/googletest-src/googletest/include",
+      "-c",
+      "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp",
+      "-o",
+      "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.o"
+    ],
+    "exit_code": 0,
+    "log": "results/f01/contract-mutations/test-compile.0.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "test_object_sha256": "40f68ce3042cc184bc13437e1127122f2665f15e667d950f8909ff931ff766af",
+  "controls": [
+    {
+      "name": "positive-control",
+      "kind": "positive-control",
+      "status": "passed",
+      "source_sha256": "26d24e8409617c63a489dddeab5968faec5f44564aee01908caf1f27cf750596",
+      "phases": [
+        {
+          "argv": [
+            "g++",
+            "-std=c++20",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "-I/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/include",
+            "-I/home/abc/Desktop/Jane Street/src",
+            "-c",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/positive-control.cpp",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/positive-control.o"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/positive-control.0.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "g++",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/positive-control.o",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/positive-control",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ref.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest_main.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest.a"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/positive-control.1.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/positive-control",
+            "--gtest_color=no",
+            "--gtest_filter=PollBudget.*"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/positive-control.2.log",
+          "log_sha256": "65088569e922a3eafa96d5f833d1cbf618a4788c4adaa64ce6ebf504521dc80f"
+        }
+      ]
+    },
+    {
+      "name": "charge-matches-only",
+      "kind": "negative-control",
+      "status": "killed",
+      "source_sha256": "bebcf61388d43e8db0709925e58f5b869440c437203257078da9baeb408dfe52",
+      "phases": [
+        {
+          "argv": [
+            "g++",
+            "-std=c++20",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "-I/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/include",
+            "-I/home/abc/Desktop/Jane Street/src",
+            "-c",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/charge-matches-only.cpp",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/charge-matches-only.o"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/charge-matches-only.0.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "g++",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/charge-matches-only.o",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/charge-matches-only",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ref.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest_main.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest.a"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/charge-matches-only.1.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/charge-matches-only",
+            "--gtest_color=no",
+            "--gtest_filter=PollBudget.V01V02RejectingCandidatesHaveExactIndependentProgress"
+          ],
+          "exit_code": 1,
+          "log": "results/f01/contract-mutations/charge-matches-only.2.log",
+          "log_sha256": "ad3746488951ab46ec6a2afbb7670d2d73726adb578c9ec3135313f346d28a0f"
+        }
+      ]
+    },
+    {
+      "name": "pad-is-free",
+      "kind": "negative-control",
+      "status": "killed",
+      "source_sha256": "5d019e9e0dd047f0271bf6374c64fbbc86736231b2832c044638d7b93bdceb0d",
+      "phases": [
+        {
+          "argv": [
+            "g++",
+            "-std=c++20",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "-I/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/include",
+            "-I/home/abc/Desktop/Jane Street/src",
+            "-c",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/pad-is-free.cpp",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/pad-is-free.o"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/pad-is-free.0.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "g++",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/pad-is-free.o",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/pad-is-free",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ref.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest_main.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest.a"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/pad-is-free.1.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/pad-is-free",
+            "--gtest_color=no",
+            "--gtest_filter=PollBudget.V01ScanPadConsumesOneUnitWithoutInventingSequenceProgress"
+          ],
+          "exit_code": 1,
+          "log": "results/f01/contract-mutations/pad-is-free.2.log",
+          "log_sha256": "e88ef806c11bdf3441506419cb15d73385e1e1fa5c0e8188d76f45101e3f43c8"
+        }
+      ]
+    },
+    {
+      "name": "reset-tail-inspection-allowance",
+      "kind": "negative-control",
+      "status": "killed",
+      "source_sha256": "b9381ac3185fb414a4cbfa2468622c15d6e946c3787e333b6b64c5b81f340b68",
+      "phases": [
+        {
+          "argv": [
+            "g++",
+            "-std=c++20",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "-I/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/include",
+            "-I/home/abc/Desktop/Jane Street/src",
+            "-c",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/reset-tail-inspection-allowance.cpp",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/reset-tail-inspection-allowance.o"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/reset-tail-inspection-allowance.0.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "g++",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/reset-tail-inspection-allowance.o",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/reset-tail-inspection-allowance",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ref.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest_main.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest.a"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/reset-tail-inspection-allowance.1.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/reset-tail-inspection-allowance",
+            "--gtest_color=no",
+            "--gtest_filter=PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges"
+          ],
+          "exit_code": 1,
+          "log": "results/f01/contract-mutations/reset-tail-inspection-allowance.2.log",
+          "log_sha256": "a84709d81566d50a01a463346b51a3d5914da851852d9adb6371373946b545e3"
+        }
+      ]
+    },
+    {
+      "name": "forget-rejected-indexed-progress",
+      "kind": "negative-control",
+      "status": "killed",
+      "source_sha256": "6194b91b13323c392f92186c1a655d8a645ce453c38fca75597788cf272d7bd1",
+      "phases": [
+        {
+          "argv": [
+            "g++",
+            "-std=c++20",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "-I/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/include",
+            "-I/home/abc/Desktop/Jane Street/src",
+            "-c",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/forget-rejected-indexed-progress.cpp",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/forget-rejected-indexed-progress.o"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/forget-rejected-indexed-progress.0.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "g++",
+            "-O2",
+            "-g",
+            "-march=x86-64-v3",
+            "-DNDEBUG",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/forget-rejected-indexed-progress.o",
+            "-o",
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/forget-rejected-indexed-progress",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ref.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest_main.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_ring.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_index.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_merge.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/libtiplog_topics_subs.a",
+            "/home/abc/Desktop/Jane Street/build/f01/core/lib/libgtest.a"
+          ],
+          "exit_code": 0,
+          "log": "results/f01/contract-mutations/forget-rejected-indexed-progress.1.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "argv": [
+            "/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/forget-rejected-indexed-progress",
+            "--gtest_color=no",
+            "--gtest_filter=PollBudget.V02BudgetOneReachesMatchAtEndWithoutSkippingOrRepeating"
+          ],
+          "exit_code": 1,
+          "log": "results/f01/contract-mutations/forget-rejected-indexed-progress.2.log",
+          "log_sha256": "45050468b672c1f2bb015d91845727e2f71a2f655952ad929741251fa2266388"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+Linux abc-HP-Laptop-15s-fq5xxx 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026 x86_64 GNU/Linux
+10
+               total        used        free      shared  buff/cache   available
+Mem:              14           3           8           0           3          11
+Swap:              3           0           3
+g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+Ubuntu clang version 21.1.8 (6ubuntu1)
+cmake version 4.4.0
+Python 3.14.4
+Package         Version
+--------------- -----------
+contourpy       1.4.0
+cycler          0.12.1
+fonttools       4.67.0
+iniconfig       2.3.1
+kiwisolver      1.5.1
+matplotlib      3.11.0
+numpy           2.3.5
+packaging       26.3
+pillow          13.0.0
+pip             25.1.1
+pluggy          1.7.0
+Pygments        2.21.0
+pyparsing       3.3.3
+pytest          9.0.2
+python-dateutil 2.9.0.post0
+six             1.17.0
+No broken requirements found.
+git version 2.53.0

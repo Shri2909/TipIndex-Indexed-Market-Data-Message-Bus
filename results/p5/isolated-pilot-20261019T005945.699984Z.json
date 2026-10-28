@@ -1,0 +1,23 @@
+{
+  "label": "isolated-pilot",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/run_p5_pilot.py",
+    "--run",
+    "--quiescence-record",
+    "results/p5/pilot-quiescence.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261019T005945.699984Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p5/isolated-pilot-20261019T005945.699984Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 581.6382941950001
+}

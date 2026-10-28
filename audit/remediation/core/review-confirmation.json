@@ -1,0 +1,16 @@
+[
+  {
+    "case": "journal-valid-corrupted-identity",
+    "rejected": true,
+    "message": "/tmp/remediation-review-bkyajpke/runs.jsonl:2: row differs from authoritative pending journal sequence",
+    "bytes_unchanged": true,
+    "marker_pending": true
+  },
+  {
+    "case": "output-is-source-ancestor-symlink",
+    "rejected": true,
+    "message": "outputs must be distinct and preserve the source input",
+    "input_bytes_unchanged": true,
+    "ancestor_link_preserved": true
+  }
+]

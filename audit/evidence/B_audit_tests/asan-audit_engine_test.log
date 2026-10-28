@@ -1,0 +1,21 @@
+Running main() from ./googletest/src/gtest_main.cc
+Note: Google Test filter = -AuditRedTeam.PressurePublishCostIsProportionalToEviction
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from AuditEngine
+[ RUN      ] AuditEngine.ModeAndKernelEquivalenceWithRandomPayloads
+[audit] mode-equivalence batches=104064 delivered(per arm)=15169
+[       OK ] AuditEngine.ModeAndKernelEquivalenceWithRandomPayloads (1422 ms)
+[ RUN      ] AuditEngine.TailChainingMatchesReferenceAcrossModes
+[       OK ] AuditEngine.TailChainingMatchesReferenceAcrossModes (458 ms)
+[ RUN      ] AuditEngine.RepublishingAliasedPayloadThatIsOverwrittenKeepsBytes
+[       OK ] AuditEngine.RepublishingAliasedPayloadThatIsOverwrittenKeepsBytes (15 ms)
+[ RUN      ] AuditEngine.InvalidTopicPublishDoesNotMutate
+[       OK ] AuditEngine.InvalidTopicPublishDoesNotMutate (8 ms)
+[ RUN      ] AuditEngine.ForgedResumeCheckpointPositionsAreIgnored
+[       OK ] AuditEngine.ForgedResumeCheckpointPositionsAreIgnored (14 ms)
+[----------] 5 tests from AuditEngine (1919 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (1919 ms total)
+[  PASSED  ] 5 tests.

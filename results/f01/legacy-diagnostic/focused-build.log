@@ -1,0 +1,46 @@
+[ 11%] Built target tiplog_merge
+[ 22%] Built target tiplog_topics_subs
+[ 33%] Built target tiplog_ring
+[ 44%] Built target tiplog_index
+[ 55%] Built target tiplog_ref
+[ 66%] Built target gtest
+[ 72%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 83%] Built target gtest_main
+[ 88%] Linking CXX static library libtiplog_engine.a
+[ 88%] Built target tiplog_engine
+[ 94%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[100%] Linking CXX executable tiplog_engine_test
+[100%] Built target tiplog_engine_test
+[ 22%] Built target tiplog_merge
+[ 22%] Built target tiplog_topics_subs
+[ 33%] Built target tiplog_ring
+[ 44%] Built target tiplog_index
+[ 55%] Built target tiplog_ref
+[ 66%] Built target gtest
+[ 88%] Built target gtest_main
+[ 88%] Built target tiplog_engine
+[ 94%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[100%] Linking CXX executable tiplog_engine_index_test
+[100%] Built target tiplog_engine_index_test
+[ 11%] Built target tiplog_merge
+[ 23%] Built target tiplog_topics_subs
+[ 35%] Built target tiplog_ring
+[ 47%] Built target tiplog_index
+[ 58%] Built target tiplog_ref
+[ 70%] Built target gtest
+[ 82%] Built target tiplog_engine
+[ 94%] Built target gtest_main
+[ 94%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+[100%] Linking CXX executable tiplog_engine_merge_test
+[100%] Built target tiplog_engine_merge_test
+[ 11%] Built target tiplog_topics_subs
+[ 22%] Built target tiplog_merge
+[ 33%] Built target tiplog_ring
+[ 44%] Built target tiplog_index
+[ 55%] Built target tiplog_ref
+[ 66%] Built target gtest
+[ 77%] Built target tiplog_engine
+[ 88%] Built target gtest_main
+[ 94%] Building CXX object CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o
+[100%] Linking CXX executable tiplog_poll_budget_test
+[100%] Built target tiplog_poll_budget_test

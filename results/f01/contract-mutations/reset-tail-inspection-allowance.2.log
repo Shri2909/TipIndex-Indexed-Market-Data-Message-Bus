@@ -1,0 +1,65 @@
+Running main() from /home/abc/Desktop/Jane Street/build/f01/core/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PollBudget
+[ RUN      ] PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:318: Failure
+Expected equality of these values:
+  result.status
+    Which is: 1-byte object <01>
+  Status::More
+    Which is: 1-byte object <00>
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:319: Failure
+Expected equality of these values:
+  result.stop
+    Which is: 4-byte object <04-00 00-00>
+  PollStop::InspectionLimit
+    Which is: 4-byte object <02-00 00-00>
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:320: Failure
+Expected equality of these values:
+  result.inspections_used
+    Which is: 4
+  3U
+    Which is: 3
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:321: Failure
+Expected equality of these values:
+  result.work_delta.records_fetched
+    Which is: 4
+  3U
+    Which is: 3
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:322: Failure
+Expected equality of these values:
+  result.work_delta.bytes_inspected
+    Which is: 64
+  48U
+    Which is: 48
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:330: Failure
+Expected equality of these values:
+  tail.checkpoint()
+    Which is: (16-byte object <04-00 00-00 00-00 00-00 40-00 00-00 00-00 00-00>)
+  (ResumeCheckpoint{3, 48})
+    Which is: 16-byte object <03-00 00-00 00-00 00-00 30-00 00-00 00-00 00-00>
+
+/home/abc/Desktop/Jane Street/build/f01/contract-mutations-2ol1_8_h/poll_budget_test.cpp:332: Failure
+Expected equality of these values:
+  out.size()
+    Which is: 2
+  1U
+    Which is: 1
+
+[  FAILED  ] PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges (0 ms)
+[----------] 1 test from PollBudget (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PollBudget.V04TailSharesInspectionAndOutputBudgetsAcrossRanges
+
+ 1 FAILED TEST

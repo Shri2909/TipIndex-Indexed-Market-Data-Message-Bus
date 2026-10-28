@@ -1,0 +1,178 @@
+{
+  "schema": "tiplog-layout-inputs-v1",
+  "case_count": 213768,
+  "tsv_bytes": 199081686,
+  "estimate_only": false,
+  "batches": [
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W0-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 10491212,
+      "sha256": "acfc2982682e91ac140e08ff68cba28a7bf73640f709148eae0fba102e90cc9f"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W0-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 10562468,
+      "sha256": "f1bd41c8f8ec74b47b42d8de229f931cea6ad2b1644df00c2e29a3d73cd738a1"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W0-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 10598096,
+      "sha256": "559242c99298818d0df8d53d6c3f305ae4f3906874f927de4e8b876826ea7494"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W1-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 11331603,
+      "sha256": "1e47cbc7d96bb41334d188659d5518377d335efbce3fde3cc1c0debe7ee30bbe"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W1-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 11402859,
+      "sha256": "ad8a27bc3cee88e32495fa4c1a8fe75655ac4e4816d1841f41324c6121c97080"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W1-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 11438487,
+      "sha256": "f86f7430e9fcc31cbb5239b7859188b7540bdddaf547f01ee3c53eb826a53d70"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W2-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 7421649,
+      "sha256": "f3bf6ba761cdb92b8d3013bb9e089825960111dab3bb9f974ea3c25aa68ffb18"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W2-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 7492905,
+      "sha256": "48a1643aaa340a3d8ad450afa1be2c5dd2887def0b63fa4305aaf6070f85e1f0"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W2-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 7528533,
+      "sha256": "7271e0a3d6e8152b7855418f70f99ca6a05dcb915b5e461f9c7fb005a889be6b"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W3-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 11451787,
+      "sha256": "045862bb3c3181d9fc5ffa15c8fc8f54dfa61487be7a29822aa169fd989cea6b"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W3-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 11523043,
+      "sha256": "9eacf52609c6b042813444c9ace604da42a489efcc174958239a53102b4db578"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-spec-W3-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 11558671,
+      "sha256": "5b79f56187515c36e2b50d8a2d17da4c136dd8f35edb6962f194a5e569814bf4"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W0-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 6869833,
+      "sha256": "ad99a362597aee0c04f8002f1a5192d86d6ea9e63380d323fd374316e57ee17e"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W0-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 6941089,
+      "sha256": "3b1ea5ade55ba9eb5d6e85428e5b9ff614bcc638977677650ffce6bec18ed79c"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W0-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 6976717,
+      "sha256": "775b71de73cf0047c6487dfeec671402ccb1310452a5345045c3947f7a2a17f7"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W1-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 6906031,
+      "sha256": "bd71636268e0388790e7014ccb76bfafbc8a3ee956ce6966a994408a0bc04fea"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W1-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 6977287,
+      "sha256": "583756615810d61fd52a7e4d618cf4e48e045fbed14441835ac6fb363cef684c"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W1-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 7012915,
+      "sha256": "6ecf9bbadfea20bb4aacf6f6e9a5bdabc7d0d973b923c8999bd0cd0da6c884ef"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W2-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 4420065,
+      "sha256": "97dc28164d9e29a6d0f8b39ab89d8a1783743aa89ed38260ff1e29b9a3cd435e"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W2-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 4491321,
+      "sha256": "79dfd31656fe934702f04dcfd743e4b3796a3f0c443d56f83eb1363af4f5d9dd"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W2-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 4526949,
+      "sha256": "6a6035df52a4cf40dff98dc9c8432da362d9cdfed4b7ecd1e014243baeaad822"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W3-beta0.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 6993342,
+      "sha256": "feb3b0dc938942dc2746ddae238142cc3ac85144c94ff8187ef092f6f451e62b"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W3-beta65536.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 7064598,
+      "sha256": "2060861ff7c8da3b667f823d06755dfd568507d866ef9794fec608e80faa6486"
+    },
+    {
+      "path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/real-H-flat-W3-beta1048576.tsv",
+      "kind": "real",
+      "cases": 8907,
+      "bytes": 7100226,
+      "sha256": "4677467132c4b2e989ac01a5e137e17740809fd4c4959fc36e90407e54d0bded"
+    }
+  ],
+  "metadata_path": "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/p7in/metadata.json",
+  "metadata_bytes": 183172054
+}

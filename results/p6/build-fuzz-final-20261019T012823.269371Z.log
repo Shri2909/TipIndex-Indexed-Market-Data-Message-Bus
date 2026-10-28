@@ -1,0 +1,41 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[  2%] Built target tiplog_smoke_test
+[  5%] Built target tiplog_trace
+[  8%] Built target tiplog_topics_subs
+[ 11%] Built target tiplog_merge
+[ 13%] Built target tiplog_index
+[ 15%] Built target tiplog_ring
+[ 17%] Built target tiplog_ref
+[ 20%] Built target tiplog_index_test
+[ 22%] Built target tiplog_merge_test
+[ 44%] Built target benchmark
+[ 47%] Built target tiplog_walk
+[ 49%] Built target tiplog_trace_check
+[ 51%] Built target tiplog_trace_test
+[ 53%] Built target fuzz_trace_reader
+[ 56%] Built target fuzz_itch_walker
+[ 58%] Built target tiplog_driver
+[ 60%] Built target tiplog_topics_subs_test
+[ 62%] Built target tiplog_engine
+[ 65%] Built target tiplog_oracle_test
+[ 67%] Built target tiplog_oracle_tail_test
+[ 69%] Built target tiplog_driver_test
+[ 71%] Built target tiplog_ring_test
+[ 74%] Built target merge_bench
+[ 76%] Built target tiplog_engine_test
+[ 78%] Built target tiplog_engine_index_test
+[ 80%] Built target tiplog_engine_merge_test
+[ 84%] Built target tiplog_differential
+[ 86%] Built target fuzz_engine_ops
+[ 88%] Built target publish_bench
+[ 89%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[ 91%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[ 92%] Linking CXX executable index_bench
+[ 92%] Built target index_bench
+[ 93%] Building CXX object CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o
+[ 94%] Linking CXX executable tiplog_bench
+[ 94%] Built target tiplog_bench
+[ 96%] Built target benchmark_main
+[ 98%] Built target tiplog_sim
+[100%] Linking CXX executable tiplog_bench_contract_test
+[100%] Built target tiplog_bench_contract_test

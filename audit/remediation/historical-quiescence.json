@@ -1,0 +1,277 @@
+{
+  "schema": "tiplog-p7-runtime-quiescence-v1",
+  "status": "passed",
+  "rule": "results/p7/runtime-quiescence-rule.json",
+  "rule_sha256": "7fe31f3f33d846e8605591c7a4f6241bfe35c65fde1c778ce7448ad7eca865c4",
+  "campaign": "results/p7/runtime-campaign.json",
+  "campaign_sha256": "906f090e63dc95a44c0b1f4a38caf09628f46c2613f5162452ba1a92deb22007",
+  "sampler_output": "results/raw/P7/runtime-host/cpu-samples.jsonl",
+  "sampler_output_sha256": "6183a42a47c0cb69aa16539456033e0a5d5e78dfc24a5bc64721e2cabb3a4652",
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "warmup",
+      "cpu2_settle_idle": 0.9729223433242506,
+      "cpu2_settle_samples": 119,
+      "foreign_cpu23_seconds": 1.35,
+      "largest_foreign": {
+        "code": 1.2400000000000002,
+        "gnome-shell": 0.05,
+        "kworker/u49:2-rtw_tx_wq": 0.02,
+        "upowerd": 0.01,
+        "kworker/2:1-mm_percpu_wq": 0.01
+      },
+      "cpu3_idle_ratio": 1.0,
+      "process_audit": "results/raw/P7/runtime/round-00-20261025T153431.960942Z.process-audit.jsonl",
+      "process_audit_sha256": "c589c90ab8b5770cecd87b38ae4d27ccb4a842c3c936ced1ce70f072384f061f",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 1,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9765744355796978,
+      "cpu2_settle_samples": 119,
+      "foreign_cpu23_seconds": 0.8100000000000003,
+      "largest_foreign": {
+        "code": 0.5,
+        "gnome-shell": 0.18,
+        "upowerd": 0.04,
+        "systemd-oomd": 0.02,
+        "migration/2": 0.01
+      },
+      "cpu3_idle_ratio": 1.0,
+      "process_audit": "results/raw/P7/runtime/round-01-20261025T153536.103174Z.process-audit.jsonl",
+      "process_audit_sha256": "63e561c1dd98dae938f32b450b8afb4b946aadb29be10a9e89e5ba6d51df68cf",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 2,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9748170835460269,
+      "cpu2_settle_samples": 119,
+      "foreign_cpu23_seconds": 1.7700000000000007,
+      "largest_foreign": {
+        "code": 0.7200000000000002,
+        "claude": 0.67,
+        "gnome-shell": 0.18,
+        "python3": 0.13,
+        "kworker/2:1-events": 0.02
+      },
+      "cpu3_idle_ratio": 0.993421052631579,
+      "process_audit": "results/raw/P7/runtime/round-02-20261025T153640.354580Z.process-audit.jsonl",
+      "process_audit_sha256": "2c1feb992eb0654ff0908f3b283018442164d3e74a51b7401ff3dbd4a26ca38c",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 3,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9734141006225812,
+      "cpu2_settle_samples": 120,
+      "foreign_cpu23_seconds": 0.81,
+      "largest_foreign": {
+        "code": 0.47000000000000003,
+        "claude": 0.27,
+        "kworker/2:1-events": 0.02,
+        "kworker/3:0-events": 0.02,
+        "upowerd": 0.01
+      },
+      "cpu3_idle_ratio": 1.0,
+      "process_audit": "results/raw/P7/runtime/round-03-20261025T153744.480088Z.process-audit.jsonl",
+      "process_audit_sha256": "a075bb368c436d15d612e560177bd888ca1000d56686abad4a5ba922450720dc",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 4,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9782974427994616,
+      "cpu2_settle_samples": 120,
+      "foreign_cpu23_seconds": 1.2100000000000004,
+      "largest_foreign": {
+        "claude": 0.61,
+        "code": 0.51,
+        "kworker/u48:0-events_unbound": 0.03,
+        "kworker/2:1-events": 0.02,
+        "systemd-oomd": 0.02
+      },
+      "cpu3_idle_ratio": 0.9930555555555556,
+      "process_audit": "results/raw/P7/runtime/round-04-20261025T153848.627190Z.process-audit.jsonl",
+      "process_audit_sha256": "c437f00dc1b5dc5470e92ac00ec60037b47033507f5f3a43bc22a62574b3f64f",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 5,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9801358234295416,
+      "cpu2_settle_samples": 119,
+      "foreign_cpu23_seconds": 1.2000000000000004,
+      "largest_foreign": {
+        "code": 0.7500000000000002,
+        "claude": 0.38,
+        "kworker/u49:2-rtw_tx_wq": 0.03,
+        "kworker/2:1-events": 0.02,
+        "upowerd": 0.01
+      },
+      "cpu3_idle_ratio": 0.9967741935483871,
+      "process_audit": "results/raw/P7/runtime/round-05-20261025T153952.591652Z.process-audit.jsonl",
+      "process_audit_sha256": "8fba469cb3c0831d470ae6b316afa02aedab771c18134ebc48cf2bc4da1b7c6a",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 6,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9784765427946864,
+      "cpu2_settle_samples": 120,
+      "foreign_cpu23_seconds": 0.7700000000000002,
+      "largest_foreign": {
+        "code": 0.5900000000000001,
+        "claude": 0.12,
+        "upowerd": 0.02,
+        "kworker/2:1H-kblockd": 0.01,
+        "kworker/2:1-events": 0.01
+      },
+      "cpu3_idle_ratio": 1.0,
+      "process_audit": "results/raw/P7/runtime/round-06-20261025T154056.777659Z.process-audit.jsonl",
+      "process_audit_sha256": "2340e044e6b55955c566ca55e670bf2c8bdb40e39836a0a6d1442c2770692d7b",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 7,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9794681925277684,
+      "cpu2_settle_samples": 120,
+      "foreign_cpu23_seconds": 0.45000000000000007,
+      "largest_foreign": {
+        "code": 0.38,
+        "kworker/2:1-mm_percpu_wq": 0.02,
+        "systemd-oomd": 0.02,
+        "upowerd": 0.01,
+        "kworker/3:0-mm_percpu_wq": 0.01
+      },
+      "cpu3_idle_ratio": 0.9967637540453075,
+      "process_audit": "results/raw/P7/runtime/round-07-20261025T154200.969908Z.process-audit.jsonl",
+      "process_audit_sha256": "017cd1e5217e898dfabd4f9fac341c57906a27e0942d262ea8eeb6dd4df72525",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 8,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9761057447890188,
+      "cpu2_settle_samples": 119,
+      "foreign_cpu23_seconds": 0.32,
+      "largest_foreign": {
+        "code": 0.3,
+        "upowerd": 0.01,
+        "kworker/2:1-mm_percpu_wq": 0.01,
+        "systemd": 0.0,
+        "kthreadd": 0.0
+      },
+      "cpu3_idle_ratio": 1.0,
+      "process_audit": "results/raw/P7/runtime/round-08-20261025T154305.118797Z.process-audit.jsonl",
+      "process_audit_sha256": "98309686048fc10d8ecaf719d8c933c56eb47a21410acd2ab73e48441c53db29",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 9,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9556492411467117,
+      "cpu2_settle_samples": 120,
+      "foreign_cpu23_seconds": 0.89,
+      "largest_foreign": {
+        "code": 0.7900000000000001,
+        "python3": 0.06,
+        "upowerd": 0.01,
+        "kworker/2:1-mm_percpu_wq": 0.01,
+        "kworker/2:1-i915-unordered": 0.01
+      },
+      "cpu3_idle_ratio": 1.0,
+      "process_audit": "results/raw/P7/runtime/round-09-20261025T154409.221621Z.process-audit.jsonl",
+      "process_audit_sha256": "2da05105184958ecbef4aafea7db88d9b14b4613a6c7b4bc25ee3c8f45d59fa0",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    },
+    {
+      "round": 10,
+      "kind": "measured",
+      "cpu2_settle_idle": 0.9736976073307314,
+      "cpu2_settle_samples": 119,
+      "foreign_cpu23_seconds": 1.6700000000000004,
+      "largest_foreign": {
+        "code": 0.8200000000000001,
+        "gnome-shell": 0.3,
+        "claude": 0.27,
+        "python3": 0.19,
+        "kworker/u48:1-events_power_efficient": 0.03
+      },
+      "cpu3_idle_ratio": 0.9868421052631579,
+      "process_audit": "results/raw/P7/runtime/round-10-20261025T154513.302584Z.process-audit.jsonl",
+      "process_audit_sha256": "750a8d2310d42033c0fb99d0a7315f756d912569723372291ed61f475f577111",
+      "checks": {
+        "accepted_attempt_identity": true,
+        "cpu2_settle_idle": true,
+        "foreign_cpu23_seconds": true,
+        "cpu3_idle_ratio": true
+      },
+      "status": "passed"
+    }
+  ],
+  "failures": []
+}

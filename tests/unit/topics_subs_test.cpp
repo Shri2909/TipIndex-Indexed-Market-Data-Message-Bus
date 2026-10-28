@@ -4,7 +4,10 @@
 #include <gtest/gtest.h>
 
 #include <algorithm>
+#include <array>
+#include <functional>
 #include <limits>
+#include <set>
 #include <random>
 #include <sstream>
 #include <utility>
@@ -40,6 +43,31 @@ bool reference_match(const SubscriptionSpec& spec, const std::string& path) {
     }
   }
   return false;
+}
+SubscriptionSpec reference_normalize(SubscriptionSpec spec) {
+  // Deliberately retain the small all-pairs algorithm as an independent
+  // reference: split segments instead of using production prefix lookups.
+  std::sort(spec.terms.begin(), spec.terms.end(), [](const Term& a, const Term& b) {
+    return a.path != b.path ? a.path < b.path : a.kind < b.kind;
+  });
+  spec.terms.erase(std::unique(spec.terms.begin(), spec.terms.end()), spec.terms.end());
+  SubscriptionSpec result;
+  for (const auto& term : spec.terms) {
+    const auto path = segments(term.path);
+    bool covered = false;
+    for (const auto& candidate : spec.terms) {
+      if (candidate.kind != Term::Subtree) continue;
+      if (term.kind == Term::Subtree && candidate.path == term.path) continue;
+      const auto root = segments(candidate.path);
+      if (path.size() >= root.size() &&
+          std::equal(root.begin(), root.end(), path.begin())) {
+        covered = true;
+        break;
+      }
+    }
+    if (!covered) result.terms.push_back(term);
+  }
+  return result;
 }
 void check_reference(const Registry& registry, const SubscriptionSpec& spec,
                      const tiplog::subs::CompiledSubscription& compiled) {
@@ -162,6 +190,86 @@ TEST(V07Subscriptions, RandomPathsTermsAndLateTopicsAgainstSegmentMatcher) {
       }
     }
   }
+}
+
+TEST(V07Subscriptions, NormalizationHandlesLexicalInterleavingAndSamePathKinds) {
+  const SubscriptionSpec spec{{{Term::Subtree, "a"},
+                               {Term::Subtree, "a-foo"},
+                               {Term::Subtree, "a/b"},
+                               {Term::Exact, "a/b/child"},
+                               {Term::Exact, "a"},
+                               {Term::Exact, "a-foo/child"},
+                               {Term::Subtree, "a0/b"},
+                               {Term::Exact, "a0/b"},
+                               {Term::Exact, "a0/bc"}}};
+  const auto normalized = tiplog::subs::normalize(spec);
+  EXPECT_EQ(normalized, reference_normalize(spec));
+  EXPECT_EQ(normalized.terms, (std::vector<Term>{{Term::Subtree, "a"},
+                                                {Term::Subtree, "a-foo"},
+                                                {Term::Subtree, "a0/b"},
+                                                {Term::Exact, "a0/bc"}}));
+  Registry registry;
+  auto sub = compile(registry, spec);
+  for (const auto* path : {"a/b/new", "a-foo/new", "a-foobar/new", "a0/b/new",
+                           "a0/bc", "a0/bc/new", "a0/b-extra"})
+    (void)registry.intern(path);
+  check_reference(registry, spec, sub);
+  EXPECT_TRUE(sub.wide());
+}
+
+TEST(V07Subscriptions, NormalizationMatchesIndependentAllPairs) {
+  constexpr std::array<std::string_view, 7> roots{
+      "a", "a-foo", "a0", "b", "market", "market-data", "Δ"};
+  for (std::uint64_t seed = 0; seed < 512; ++seed) {
+    SCOPED_TRACE(seed);
+    std::mt19937_64 random(seed + 20191230);
+    SubscriptionSpec spec;
+    for (std::size_t i = 0; i < 64; ++i) {
+      std::string path(roots[static_cast<std::size_t>(random() % roots.size())]);
+      const auto depth = random() % 5;
+      for (std::uint64_t d = 0; d < depth; ++d)
+        path += "/" + std::string(roots[static_cast<std::size_t>(random() % roots.size())]);
+      spec.terms.push_back({random() % 2 ? Term::Exact : Term::Subtree, std::move(path)});
+      if (random() % 4 == 0) spec.terms.push_back(spec.terms.back());
+    }
+    std::shuffle(spec.terms.begin(), spec.terms.end(), random);
+    const auto normalized = tiplog::subs::normalize(spec);
+    EXPECT_EQ(normalized, reference_normalize(spec));
+    EXPECT_EQ(tiplog::subs::normalize(normalized), normalized);
+  }
+}
+
+TEST(V07Subscriptions, HundredThousandTermsCompileAndObserveWithoutTimingAssumptions) {
+  constexpr std::uint32_t count = 100000;
+  Registry registry;
+  SubscriptionSpec spec;
+  spec.terms.reserve(count);
+  std::vector<TopicId> first, second;
+  first.reserve(count);
+  second.reserve(count);
+  for (std::uint32_t i = 0; i < count; ++i) {
+    const auto root = "x/p" + std::to_string(i);
+    first.push_back(registry.intern(root + "/e0"));
+    second.push_back(registry.intern(root + "/e1"));
+    spec.terms.push_back(i % 2 ? Term{Term::Subtree, root}
+                             : Term{Term::Exact, root + "/e0"});
+  }
+  auto sub = compile(registry, spec);
+  ASSERT_EQ(sub.normalized_terms().size(), count);
+  ASSERT_EQ(sub.filters().size(), count);
+  EXPECT_FALSE(sub.wide());
+  EXPECT_EQ(registry.observer_count(), count / 2);
+  for (std::uint32_t i = 0; i < count; ++i) {
+    ASSERT_TRUE(sub.matches(first[i])) << i;
+    ASSERT_EQ(sub.matches(second[i]), i % 2 != 0) << i;
+    const auto* filter = sub.partition_filter(registry.get(first[i]).partition);
+    ASSERT_NE(filter, nullptr);
+    ASSERT_EQ(filter->all, i % 2 != 0) << i;
+  }
+  EXPECT_FALSE(sub.matches(registry.intern("x/p0/e2")));
+  EXPECT_TRUE(sub.matches(registry.intern("x/p1/e2/deep")));
+  EXPECT_FALSE(sub.matches(registry.intern("x/p100000/e0")));
+  EXPECT_EQ(registry.observer_count(), count / 2);
 }
 
 TEST(V07Subscriptions, InvalidSpecsDoNotRegisterEarlierValidTerms) {
@@ -357,5 +465,134 @@ TEST(V08Subscriptions, ObserverAllocationFailurePrecedesAllRegistrationCommit) {
   EXPECT_EQ(sub.filters()[0].bits, original_bits);
   handle.reset();
   EXPECT_TRUE(sub.matches(registry.intern("r/s/selected/new/deeper")));
+}
+
+TEST(V38Registry, TopicPathBoundsRejectBeforeMutationAndAcceptExactBounds) {
+  Registry registry;
+  const auto sub = compile(registry, {{{Term::Subtree, "r/s"}}});
+  const auto original = std::vector<tiplog::topics::Topic>(registry.all_topics().begin(), registry.all_topics().end());
+  std::string deep = "r";
+  for (std::size_t i = 1; i < tiplog::max_topic_depth; ++i) deep += "/s";
+  EXPECT_NO_THROW(Registry::validate_path(deep));
+  EXPECT_THROW(registry.intern(deep + "/extra"), RepresentationLimit);
+  EXPECT_THROW(registry.intern(std::string(tiplog::max_topic_path_bytes + 1, 'x')), RepresentationLimit);
+  // Every term is validated before compile interns even a valid earlier term.
+  EXPECT_THROW((void)compile(registry, {{{Term::Exact, "a/new"}, {Term::Exact, deep + "/extra"}}}), RepresentationLimit);
+  EXPECT_EQ(std::vector<tiplog::topics::Topic>(registry.all_topics().begin(), registry.all_topics().end()), original);
+  EXPECT_EQ(registry.partition_count(), 2U);
+  EXPECT_EQ(registry.observer_count(), 1U);
+  EXPECT_EQ(sub.filters().size(), 1U);
+  const auto deepest = registry.intern(deep);
+  EXPECT_EQ(registry.get(deepest).depth, tiplog::max_topic_depth);
+  EXPECT_EQ(registry.get(registry.intern(std::string(tiplog::max_topic_path_bytes, 'x'))).path.size(), tiplog::max_topic_path_bytes);
+  check_reference(registry, {{{Term::Subtree, "r/s"}}}, sub);
+}
+
+class RecordingObserver final : public tiplog::topics::TopicObserver {
+ public:
+  std::size_t preparations{}, commits{}, pending_count{};
+  std::function<void()> callback;
+  std::function<void()> commit_callback;
+  struct Prepared final : Update {
+    RecordingObserver& observer;
+    explicit Prepared(RecordingObserver& source) : observer(source) {}
+    void commit() noexcept override {
+      ++observer.commits;
+      if (observer.commit_callback) observer.commit_callback();
+    }
+  };
+  std::unique_ptr<Update> prepare(std::span<const tiplog::topics::Topic> pending) override {
+    ++preparations;
+    pending_count = pending.size();
+    if (callback) callback();
+    return std::make_unique<Prepared>(*this);
+  }
+};
+
+TEST(V08Subscriptions, FanoutNotifiesEachObserverOnceAcrossOverlappingRoots) {
+  Registry registry;
+  const auto root = registry.intern("r");
+  const auto child = registry.intern("r/s");
+  std::vector<std::shared_ptr<RecordingObserver>> observers;
+  std::vector<tiplog::topics::ObserverHandle> handles;
+  for (std::size_t i = 0; i < 8000; ++i) {
+    auto observer = std::make_shared<RecordingObserver>();
+    handles.push_back(registry.observe(root, observer));
+    handles.push_back(registry.observe(child, observer));
+    observers.push_back(std::move(observer));
+  }
+  (void)registry.intern("r/s/a/b/c");
+  for (const auto& observer : observers) {
+    EXPECT_EQ(observer->preparations, 1U);
+    EXPECT_EQ(observer->commits, 1U);
+    EXPECT_EQ(observer->pending_count, 3U);
+  }
+}
+
+TEST(V08Subscriptions, ObserverReentrantMutationRejectsWithConsistentCommitAndRollback) {
+  for (const bool propagate : {false, true}) {
+    Registry registry;
+    const auto root = registry.intern("r/s");
+    const auto sub = compile(registry, {{{Term::Subtree, "r/s"}}});
+    auto observer = std::make_shared<RecordingObserver>();
+    auto handle = registry.observe(root, observer);
+    const auto before_topics = registry.topic_count();
+    const auto before_partitions = registry.partition_count();
+    const auto before_local = registry.partition(1).topic_count;
+    observer->callback = [&] {
+      if (propagate) { (void)registry.intern("r/s/inner"); return; }
+      EXPECT_THROW(registry.intern("r/s/inner"), std::logic_error);
+      EXPECT_THROW(registry.intern("r"), std::logic_error);
+      EXPECT_THROW(registry.observe(root, observer), std::logic_error);
+    };
+    if (propagate) {
+      EXPECT_THROW(registry.intern("r/s/outer/deep"), std::logic_error);
+      EXPECT_EQ(registry.topic_count(), before_topics);
+      EXPECT_EQ(registry.partition_count(), before_partitions);
+      EXPECT_EQ(registry.partition(1).topic_count, before_local);
+      EXPECT_EQ(observer->commits, 0U);
+      EXPECT_FALSE(registry.find("r/s/outer"));
+    } else {
+      EXPECT_TRUE(sub.matches(registry.intern("r/s/outer/deep")));
+      EXPECT_EQ(observer->commits, 1U);
+    }
+    EXPECT_FALSE(registry.find("r/s/inner"));
+    observer->callback = {};
+    EXPECT_TRUE(sub.matches(registry.intern("r/s/after")));
+    std::set<TopicId> ids;
+    std::set<std::pair<PartitionId, std::uint16_t>> locals;
+    for (const auto& topic : registry.all_topics()) {
+      EXPECT_EQ(registry.find(topic.path), topic.id);
+      EXPECT_EQ(registry.get(topic.id), topic);
+      EXPECT_TRUE(ids.insert(topic.id).second);
+      EXPECT_TRUE(locals.emplace(topic.partition, topic.local_id).second);
+    }
+    for (const auto& partition : registry.all_partitions()) {
+      EXPECT_EQ(partition.topic_count, static_cast<std::uint32_t>(std::count_if(
+          registry.all_topics().begin(), registry.all_topics().end(),
+          [&](const auto& topic) { return topic.partition == partition.id; })));
+    }
+    check_reference(registry, {{{Term::Subtree, "r/s"}}}, sub);
+  }
+}
+
+TEST(V08Subscriptions, ObserverCommitMayReadAndUnregisterButCannotReenterMutation) {
+  Registry registry;
+  const auto root = registry.intern("r/s");
+  auto observer = std::make_shared<RecordingObserver>();
+  auto handle = registry.observe(root, observer);
+  observer->commit_callback = [&] {
+    const auto outer = registry.find("r/s/outer");
+    ASSERT_TRUE(outer);
+    EXPECT_EQ(registry.get(*outer).path, "r/s/outer");
+    EXPECT_THROW(registry.intern("r/s/inner"), std::logic_error);
+    EXPECT_THROW(registry.observe(root, observer), std::logic_error);
+    handle.reset();
+  };
+  EXPECT_EQ(registry.get(registry.intern("r/s/outer")).path, "r/s/outer");
+  EXPECT_FALSE(registry.find("r/s/inner"));
+  EXPECT_EQ(registry.observer_count(), 0U);
+  (void)registry.intern("r/s/after");
+  EXPECT_EQ(observer->commits, 1U);
 }
 }  // namespace

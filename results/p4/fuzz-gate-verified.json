@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-18T10:54:11.178026+00:00",
+  "gate": "results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json",
+  "monotonic_seconds": 1801.3472198700003,
+  "executed_units": 81399,
+  "segments": 15,
+  "source_files_unchanged": 49,
+  "checks": [
+    "terminal exit/statistics/log hashes",
+    "binary/runner hashes",
+    "corpus checkpoint",
+    "all frozen source hashes",
+    "duration >=1800",
+    "indexed configuration and sanitizers retained"
+  ]
+}

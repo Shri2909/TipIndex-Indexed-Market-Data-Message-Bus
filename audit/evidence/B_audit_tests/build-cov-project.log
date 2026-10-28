@@ -1,0 +1,77 @@
+make: Entering directory '/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/audit-cov/tiplog'
+[ 33%] Built target tiplog_ring
+[ 66%] Building CXX object tiplog/CMakeFiles/tiplog_ring_test.dir/tests/unit/ring_test.cpp.o
+[100%] Linking CXX executable tiplog_ring_test
+[100%] Built target tiplog_ring_test
+[ 50%] Built target tiplog_index
+[ 75%] Building CXX object tiplog/CMakeFiles/tiplog_index_test.dir/tests/unit/index_test.cpp.o
+[100%] Linking CXX executable tiplog_index_test
+[100%] Built target tiplog_index_test
+[ 16%] Built target tiplog_index
+[ 25%] Built target tiplog_ring
+[ 41%] Built target tiplog_ref
+[ 50%] Built target tiplog_merge
+[ 75%] Built target tiplog_topics_subs
+[ 91%] Built target tiplog_engine
+[100%] Building CXX object tiplog/CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[100%] Linking CXX executable tiplog_engine_test
+[100%] Built target tiplog_engine_test
+[ 15%] Built target tiplog_ref
+[ 38%] Built target tiplog_topics_subs
+[ 46%] Built target tiplog_merge
+[ 53%] Built target tiplog_ring
+[ 69%] Built target tiplog_index
+[ 84%] Built target tiplog_engine
+[ 92%] Building CXX object tiplog/CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[100%] Linking CXX executable tiplog_engine_index_test
+[100%] Built target tiplog_engine_index_test
+[  7%] Built target tiplog_merge
+[ 30%] Built target tiplog_topics_subs
+[ 38%] Built target tiplog_ring
+[ 69%] Built target tiplog_ref
+[ 69%] Built target tiplog_index
+[ 84%] Built target tiplog_engine
+[ 92%] Building CXX object tiplog/CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+[100%] Linking CXX executable tiplog_engine_merge_test
+[100%] Built target tiplog_engine_merge_test
+[ 33%] Built target tiplog_merge
+[ 66%] Building CXX object tiplog/CMakeFiles/tiplog_merge_test.dir/tests/unit/merge_test.cpp.o
+[100%] Linking CXX executable tiplog_merge_test
+[100%] Built target tiplog_merge_test
+[ 75%] Built target tiplog_topics_subs
+[ 75%] Building CXX object tiplog/CMakeFiles/tiplog_topics_subs_test.dir/tests/unit/topics_subs_test.cpp.o
+[100%] Linking CXX executable tiplog_topics_subs_test
+[100%] Built target tiplog_topics_subs_test
+[ 60%] Built target tiplog_trace
+[ 80%] Building CXX object tiplog/CMakeFiles/tiplog_trace_test.dir/tests/unit/trace_test.cpp.o
+[100%] Linking CXX executable tiplog_trace_test
+[100%] Built target tiplog_trace_test
+[ 25%] Built target tiplog_ref
+[ 62%] Built target tiplog_trace
+[ 75%] Building CXX object tiplog/CMakeFiles/tiplog_driver.dir/src/tiplog/driver/trace_driver.cpp.o
+[ 75%] Linking CXX static library libtiplog_driver.a
+[ 75%] Built target tiplog_driver
+[ 87%] Building CXX object tiplog/CMakeFiles/tiplog_driver_test.dir/tests/unit/driver_test.cpp.o
+[100%] Linking CXX executable tiplog_driver_test
+[100%] Built target tiplog_driver_test
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object tiplog/CMakeFiles/tiplog_layout_test.dir/tests/layout/layout_test.cpp.o
+[100%] Linking CXX executable tiplog_layout_test
+[100%] Built target tiplog_layout_test
+[ 50%] Built target tiplog_ref
+[ 75%] Building CXX object tiplog/CMakeFiles/tiplog_oracle_test.dir/tests/unit/oracle_test.cpp.o
+[100%] Linking CXX executable tiplog_oracle_test
+[100%] Built target tiplog_oracle_test
+[ 50%] Built target tiplog_ref
+[ 75%] Building CXX object tiplog/CMakeFiles/tiplog_oracle_tail_test.dir/tests/unit/oracle_tail_test.cpp.o
+[100%] Linking CXX executable tiplog_oracle_tail_test
+[100%] Built target tiplog_oracle_tail_test
+[  9%] Built target tiplog_merge
+[ 27%] Built target tiplog_index
+[ 36%] Built target tiplog_ring
+[ 63%] Built target tiplog_topics_subs
+[ 81%] Built target tiplog_engine
+[ 90%] Building CXX object tiplog/CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o
+[100%] Linking CXX executable tiplog_bench_contract_test
+[100%] Built target tiplog_bench_contract_test
+make: Leaving directory '/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/audit-cov/tiplog'

@@ -42,6 +42,8 @@ class ItchWalker {
   std::uint16_t length_{};
   bool terminated_{};
   std::uint64_t total_bytes_{};
+  std::uint64_t consumed_bytes_{};
+  std::uint64_t frame_offset_{};
   std::uint64_t total_count_{};
   std::uint64_t payload_bytes_{};
   std::uint64_t inversions_{};

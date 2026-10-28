@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/figures/build.py", line 143, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/figures/build.py", line 134, in main
+    manifests["P7"] = build_layout(layout_inputs["summary"], layout_inputs["global"],
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   layout_inputs["worked_example"], args.output,
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   runtime_path=layout_inputs.get("runtime"))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/figures/layout.py", line 167, in build
+    'source':{'path':str(Path(__file__).relative_to(Path.cwd())),'sha256':sha(Path(__file__))}}
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 489, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: '/tmp/claude-1000/-home-abc-Desktop-Jane-Street/7c15ede9-e5d5-4b89-b477-af3e9ea62c6e/scratchpad/work/py/tiplog_py/figures/layout.py' is not in the subpath of '/home/abc/Desktop/Jane Street'

@@ -5,8 +5,14 @@
 #include <algorithm>
 #include <limits>
 #include <ostream>
+#include <string_view>
 
 namespace tiplog::trace {
+namespace {
+[[noreturn]] void malformed(std::string_view reason, std::uint64_t offset) {
+  throw FormatError(std::string(reason) + " at byte offset " + std::to_string(offset));
+}
+} // namespace
 
 std::uint16_t itch_message_size(unsigned char type) noexcept {
   switch (type) {
@@ -39,23 +45,26 @@ std::uint16_t itch_message_size(unsigned char type) noexcept {
 
 void ItchWalker::feed(std::span<const std::byte> input) {
   if (input.size() > std::numeric_limits<std::uint64_t>::max() - total_bytes_)
-    throw FormatError("BinaryFILE byte counter overflow");
+    malformed("BinaryFILE byte counter overflow", consumed_bytes_);
   total_bytes_ += input.size();
   while (!input.empty()) {
-    if (terminated_) throw FormatError("bytes follow BinaryFILE terminator");
+    if (terminated_) malformed("bytes follow BinaryFILE terminator", consumed_bytes_);
     if (length_filled_ < 2) {
+      if (length_filled_ == 0) frame_offset_ = consumed_bytes_;
       length_bytes_[length_filled_++] = input.front();
+      ++consumed_bytes_;
       input = input.subspan(1);
       if (length_filled_ < 2) continue;
       length_ = static_cast<std::uint16_t>(
           (std::to_integer<unsigned>(length_bytes_[0]) << 8U) |
           std::to_integer<unsigned>(length_bytes_[1]));
       if (length_ == 0) { terminated_ = true; continue; }
-      if (length_ > payload_.size()) throw FormatError("unsupported ITCH frame length");
+      if (length_ > payload_.size()) malformed("unsupported ITCH frame length", frame_offset_);
     }
     const auto count = std::min(input.size(), static_cast<std::size_t>(length_) - payload_filled_);
     std::copy_n(input.begin(), count, payload_.begin() + static_cast<std::ptrdiff_t>(payload_filled_));
     payload_filled_ += count;
+    consumed_bytes_ += count;
     input = input.subspan(count);
     if (payload_filled_ == length_) {
       accept_message();
@@ -67,8 +76,8 @@ void ItchWalker::feed(std::span<const std::byte> input) {
 
 void ItchWalker::accept_message() {
   const auto type = std::to_integer<unsigned char>(payload_[0]);
-  if (itch_message_size(type) == 0) throw FormatError("unknown ITCH message type");
-  if (itch_message_size(type) != length_) throw FormatError("ITCH length disagrees with specification");
+  if (itch_message_size(type) == 0) malformed("unknown ITCH message type", frame_offset_);
+  if (itch_message_size(type) != length_) malformed("ITCH length disagrees with specification", frame_offset_);
   const auto locate = (std::to_integer<unsigned>(payload_[1]) << 8U) |
                       std::to_integer<unsigned>(payload_[2]);
   std::uint64_t ts = 0;
@@ -89,7 +98,7 @@ void ItchWalker::accept_message() {
 
 void ItchWalker::finish() const {
   if (!terminated_ && (length_filled_ != 0 || payload_filled_ != 0))
-    throw FormatError("truncated BinaryFILE length/payload");
+    malformed("truncated BinaryFILE length/payload", frame_offset_);
 }
 
 void ItchWalker::write_json(std::ostream& out) const {

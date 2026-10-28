@@ -1,0 +1,221 @@
+{
+  "status": "passed",
+  "scope": "Independent saved CC2 evidence audit; no differential campaign rerun",
+  "summary_sha256": "b517a9e4240fbfc3aab1a2d50fc570c117ff8a35e701165b222e2de997004ec2",
+  "preset_results": {
+    "release": {
+      "configurations": 9,
+      "operations": 90000000,
+      "same_observable_results": true,
+      "digest": 1217005992737911606
+    },
+    "asan-ubsan": {
+      "configurations": 9,
+      "operations": 18000000,
+      "same_observable_results": true,
+      "digest": 14647895778461039806
+    }
+  },
+  "effective_execution_and_multicursor_coverage_checked": true,
+  "current_release_binary_rc3_and_source_identity": true,
+  "rows": [
+    {
+      "preset": "release",
+      "mode": "auto",
+      "kernel": "binheap",
+      "record": "results/p5/CC2-release-auto-binheap-20261018T160344.426709Z.json",
+      "record_sha256": "c355d4f4a298821be53fbf9b425c5c8007477e9e0f7f5596d325ea975fd1657a",
+      "log_sha256": "cac90b20e3ff4adce45a2b244d82a6314402e169f39cc83f8bba2ebc9031d906",
+      "indexed_execution_batches": 44039,
+      "scan_execution_batches": 31633,
+      "multicursor_opens": 846403
+    },
+    {
+      "preset": "release",
+      "mode": "auto",
+      "kernel": "loser",
+      "record": "results/p5/CC2-release-auto-loser-20261018T160344.842671Z.json",
+      "record_sha256": "661dd3ee5dcd72f37d246465e6da3270a9a4f207065444084394367d12d91c86",
+      "log_sha256": "18ad50feb6c6844e29c473f7f55cb927c8c765b9375e3ec4adc30c7a47adb6fc",
+      "indexed_execution_batches": 44039,
+      "scan_execution_batches": 31633,
+      "multicursor_opens": 846403
+    },
+    {
+      "preset": "release",
+      "mode": "auto",
+      "kernel": "quad",
+      "record": "results/p5/CC2-release-auto-quad-20261018T160345.423109Z.json",
+      "record_sha256": "80d93aa1991bdb9a32a063c1e8ccc9d1f9c0c3ba18a939b73c9f874ebb2c63fe",
+      "log_sha256": "3f1d0bd7b28ca21857d9daa0c3b8002ef7402505d70b166305ea99dd91127248",
+      "indexed_execution_batches": 44039,
+      "scan_execution_batches": 31633,
+      "multicursor_opens": 846403
+    },
+    {
+      "preset": "release",
+      "mode": "auto",
+      "kernel": "stdpq",
+      "record": "results/p5/CC2-release-auto-stdpq-20261018T160229.155027Z.json",
+      "record_sha256": "d5380283198150831cbf0a4ca1f6d8dcac3a9947299e9a7ef2da56f94ea67211",
+      "log_sha256": "2235fe1b6f09bbe2b24f4f948a2794ba0e19f0f2a9a85c2930bc2181d314b25d",
+      "indexed_execution_batches": 44039,
+      "scan_execution_batches": 31633,
+      "multicursor_opens": 846403
+    },
+    {
+      "preset": "release",
+      "mode": "indexed",
+      "kernel": "binheap",
+      "record": "results/p5/CC2-release-indexed-binheap-20261018T160119.367385Z.json",
+      "record_sha256": "add5339098483a8c28350198fd5c928db4a8d184d5953be02630ff439890ac24",
+      "log_sha256": "95cc9e4217a31d911af42678b9a221f074c409ac6a6f323b1bb2c78e740b5f2f",
+      "indexed_execution_batches": 53438,
+      "scan_execution_batches": 22234,
+      "multicursor_opens": 892138
+    },
+    {
+      "preset": "release",
+      "mode": "indexed",
+      "kernel": "loser",
+      "record": "results/p5/CC2-release-indexed-loser-20261018T160229.576449Z.json",
+      "record_sha256": "39531d0d561e4c78d78198b6bb5c0282d06f6eaa2fb304845ac5242b84147784",
+      "log_sha256": "8db7b0cd35c08fce9b1418fc20eac10f46379c839fc0ae025c20da2f8908a1a8",
+      "indexed_execution_batches": 53438,
+      "scan_execution_batches": 22234,
+      "multicursor_opens": 892138
+    },
+    {
+      "preset": "release",
+      "mode": "indexed",
+      "kernel": "quad",
+      "record": "results/p5/CC2-release-indexed-quad-20261018T160228.894151Z.json",
+      "record_sha256": "9e3b1136df4eb19cf64949def14fd9950f364d057b8989de8830436962d297e5",
+      "log_sha256": "d10133169e5605e793f0c8b908407f1f0717f0e3d360afa29d646b56d10bb025",
+      "indexed_execution_batches": 53438,
+      "scan_execution_batches": 22234,
+      "multicursor_opens": 892138
+    },
+    {
+      "preset": "release",
+      "mode": "indexed",
+      "kernel": "stdpq",
+      "record": "results/p5/CC2-release-indexed-stdpq-20261018T160119.384254Z.json",
+      "record_sha256": "a48d583ee8a88204913d8791c713ef3f8070da18afcc98db43c7b9f0d573bb16",
+      "log_sha256": "72f3ed66879f2dbc951a295fafbd4f05d85d7f6b3d60ced5104e6d1ec8693436",
+      "indexed_execution_batches": 53438,
+      "scan_execution_batches": 22234,
+      "multicursor_opens": 892138
+    },
+    {
+      "preset": "release",
+      "mode": "scan",
+      "kernel": "stdpq",
+      "record": "results/p5/CC2-release-scan-stdpq-20261018T160119.382201Z.json",
+      "record_sha256": "84501bc1fb53f7f4e0f60f9b6c78fb0891457327c701e23992eced009409e926",
+      "log_sha256": "8b190809f252353186190ed397d8518fe035756416781babf10dbb57d399d6fa",
+      "indexed_execution_batches": 0,
+      "scan_execution_batches": 75672,
+      "multicursor_opens": 0
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "auto",
+      "kernel": "binheap",
+      "record": "results/p5/CC2-asan-ubsan-auto-binheap-20261018T160724.124256Z.json",
+      "record_sha256": "7235c198928983ff614f7f4358311c608cced443cad2fc341fa279b7abbc6049",
+      "log_sha256": "cb88a9985faa08f7c4b81243062b33c34538edb718f6f6da0637ef0f25b48077",
+      "indexed_execution_batches": 8778,
+      "scan_execution_batches": 6314,
+      "multicursor_opens": 168596
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "auto",
+      "kernel": "loser",
+      "record": "results/p5/CC2-asan-ubsan-auto-loser-20261018T160725.520570Z.json",
+      "record_sha256": "ead276d7de027e4addf10b8dc9a4a0ade3fd502f8c297d49cf048a556cdacf4f",
+      "log_sha256": "1f43bdba015423029afc69472bbd24acae96bf4ed87e95dbf164f7d66b8e5080",
+      "indexed_execution_batches": 8778,
+      "scan_execution_batches": 6314,
+      "multicursor_opens": 168596
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "auto",
+      "kernel": "quad",
+      "record": "results/p5/CC2-asan-ubsan-auto-quad-20261018T160727.018707Z.json",
+      "record_sha256": "10630f53305491546f3ad18ca74dd267cf141755110a427b92434920996c2ac3",
+      "log_sha256": "e81df61d33d1a07c95bac95fb642e3066a798a3de25f30d790c6fcfba78f94ea",
+      "indexed_execution_batches": 8778,
+      "scan_execution_batches": 6314,
+      "multicursor_opens": 168596
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "auto",
+      "kernel": "stdpq",
+      "record": "results/p5/CC2-asan-ubsan-auto-stdpq-20261018T160613.491350Z.json",
+      "record_sha256": "d11f9cb50716c40c01c2f3d2b7e420701526da1c8be0bac67995ee90b7f98458",
+      "log_sha256": "9088c142edf9d8cb3afe81f6f14c135510ab541eda09415ef7bc231d15514542",
+      "indexed_execution_batches": 8778,
+      "scan_execution_batches": 6314,
+      "multicursor_opens": 168596
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "indexed",
+      "kernel": "binheap",
+      "record": "results/p5/CC2-asan-ubsan-indexed-binheap-20261018T160500.418285Z.json",
+      "record_sha256": "dfc503c5a863c86d675bc3d6afc6911b60d80d7577ef374fa6437b59fca139f7",
+      "log_sha256": "66b73c12a17eb212bad3a2930e18725c7729c3baafea0aa75c5605256da3b670",
+      "indexed_execution_batches": 10633,
+      "scan_execution_batches": 4459,
+      "multicursor_opens": 177629
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "indexed",
+      "kernel": "loser",
+      "record": "results/p5/CC2-asan-ubsan-indexed-loser-20261018T160614.767919Z.json",
+      "record_sha256": "79bf092fdf32a3c53b7f87d167427f305465ab061c61ea2225241b17b3dc323c",
+      "log_sha256": "446d6dafd2b6435740bb7cffbef4247244adf7b7a143728b599ebf50467d44bb",
+      "indexed_execution_batches": 10633,
+      "scan_execution_batches": 4459,
+      "multicursor_opens": 177629
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "indexed",
+      "kernel": "quad",
+      "record": "results/p5/CC2-asan-ubsan-indexed-quad-20261018T160612.723157Z.json",
+      "record_sha256": "d76c3ab7aa3627be006c0974ff1d781355a8e7090b693339502aa37de966f4e5",
+      "log_sha256": "bbd9a97a4b4bef12a2ed9b3ed12f49729ea56308f0b1913637e6a5d5545e4df0",
+      "indexed_execution_batches": 10633,
+      "scan_execution_batches": 4459,
+      "multicursor_opens": 177629
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "indexed",
+      "kernel": "stdpq",
+      "record": "results/p5/CC2-asan-ubsan-indexed-stdpq-20261018T160501.333223Z.json",
+      "record_sha256": "caf69dcc6a1db7a040e40d7b1e0b0fd24386ad2a044de612c1d301f1e02481bd",
+      "log_sha256": "98a40d9d9db35d6b0b47a183c19c9ac886a7d97a283c8b197a93fe708ef4dc38",
+      "indexed_execution_batches": 10633,
+      "scan_execution_batches": 4459,
+      "multicursor_opens": 177629
+    },
+    {
+      "preset": "asan-ubsan",
+      "mode": "scan",
+      "kernel": "stdpq",
+      "record": "results/p5/CC2-asan-ubsan-scan-stdpq-20261018T160459.570989Z.json",
+      "record_sha256": "5362690590f18a6b9bfd89d9b647d2804c348a5127793fe6f28db4411bbf0f98",
+      "log_sha256": "e2d184abfb57733a4fb6d0904a6fdc3359a9efd6c0d6560f8a1f18f11488aadc",
+      "indexed_execution_batches": 0,
+      "scan_execution_batches": 15092,
+      "multicursor_opens": 0
+    }
+  ]
+}

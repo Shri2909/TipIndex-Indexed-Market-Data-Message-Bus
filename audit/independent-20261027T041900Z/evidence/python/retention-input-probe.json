@@ -1,0 +1,25 @@
+{
+  "negative_size": {
+    "calls": [
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64
+    ],
+    "exception": "bounded audit stopped repeated search"
+  },
+  "position_overflow": {
+    "head_pos": 0,
+    "tail_pos": 0,
+    "head_seq": 3,
+    "tail_seq": 1,
+    "retained_data": 2,
+    "pad_bytes": 0,
+    "pad_items": 0
+  }
+}

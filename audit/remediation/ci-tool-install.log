@@ -1,0 +1,36 @@
+Looking in links: build/remediation/ci-wheels
+Processing ./build/remediation/ci-wheels/boolean_py-5.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 3))
+Processing ./build/remediation/ci-wheels/cachecontrol-0.14.4-py3-none-any.whl (from -r configs/ci-requirements.txt (line 5))
+Processing ./build/remediation/ci-wheels/certifi-2026.10.23-py3-none-any.whl (from -r configs/ci-requirements.txt (line 7))
+Processing ./build/remediation/ci-wheels/charset_normalizer-3.5.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r configs/ci-requirements.txt (line 9))
+Processing ./build/remediation/ci-wheels/cmake-4.4.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r configs/ci-requirements.txt (line 11))
+Processing ./build/remediation/ci-wheels/cyclonedx_python_lib-9.1.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 13))
+Processing ./build/remediation/ci-wheels/defusedxml-0.7.1-py2.py3-none-any.whl (from -r configs/ci-requirements.txt (line 15))
+Processing ./build/remediation/ci-wheels/filelock-4.2.4-py3-none-any.whl (from -r configs/ci-requirements.txt (line 17))
+Processing ./build/remediation/ci-wheels/idna-3.20-py3-none-any.whl (from -r configs/ci-requirements.txt (line 19))
+Processing ./build/remediation/ci-wheels/license_expression-30.4.4-py3-none-any.whl (from -r configs/ci-requirements.txt (line 21))
+Processing ./build/remediation/ci-wheels/markdown_it_py-4.2.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 23))
+Processing ./build/remediation/ci-wheels/mdurl-0.1.2-py3-none-any.whl (from -r configs/ci-requirements.txt (line 25))
+Processing ./build/remediation/ci-wheels/msgpack-1.2.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r configs/ci-requirements.txt (line 27))
+Processing ./build/remediation/ci-wheels/packageurl_python-0.17.6-py3-none-any.whl (from -r configs/ci-requirements.txt (line 29))
+Processing ./build/remediation/ci-wheels/packaging-26.3-py3-none-any.whl (from -r configs/ci-requirements.txt (line 31))
+Processing ./build/remediation/ci-wheels/pip-26.2.2-py3-none-any.whl (from -r configs/ci-requirements.txt (line 33))
+Processing ./build/remediation/ci-wheels/pip_requirements_parser-32.0.1-py3-none-any.whl (from -r configs/ci-requirements.txt (line 35))
+Processing ./build/remediation/ci-wheels/pip_api-0.0.35-py3-none-any.whl (from -r configs/ci-requirements.txt (line 37))
+Processing ./build/remediation/ci-wheels/pip_audit-2.9.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 39))
+Processing ./build/remediation/ci-wheels/platformdirs-4.13.5-py3-none-any.whl (from -r configs/ci-requirements.txt (line 41))
+Processing ./build/remediation/ci-wheels/py_serializable-2.1.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 43))
+Processing ./build/remediation/ci-wheels/pygments-2.21.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 45))
+Processing ./build/remediation/ci-wheels/pyparsing-3.3.3-py3-none-any.whl (from -r configs/ci-requirements.txt (line 47))
+Processing ./build/remediation/ci-wheels/requests-2.34.2-py3-none-any.whl (from -r configs/ci-requirements.txt (line 49))
+Processing ./build/remediation/ci-wheels/rich-15.0.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 51))
+Processing ./build/remediation/ci-wheels/sortedcontainers-2.4.0-py2.py3-none-any.whl (from -r configs/ci-requirements.txt (line 53))
+Processing ./build/remediation/ci-wheels/toml-0.10.2-py2.py3-none-any.whl (from -r configs/ci-requirements.txt (line 55))
+Processing ./build/remediation/ci-wheels/urllib3-2.8.0-py3-none-any.whl (from -r configs/ci-requirements.txt (line 57))
+Installing collected packages: sortedcontainers, boolean.py, urllib3, toml, pyparsing, Pygments, platformdirs, pip, packaging, packageurl-python, msgpack, mdurl, license-expression, idna, filelock, defusedxml, cmake, charset-normalizer, certifi, requests, py-serializable, pip-requirements-parser, pip_api, markdown-it-py, rich, cyclonedx-python-lib, CacheControl, pip_audit
+  Attempting uninstall: pip
+    Found existing installation: pip 25.1.1
+    Uninstalling pip-25.1.1:
+      Successfully uninstalled pip-25.1.1
+
+Successfully installed CacheControl-0.14.4 Pygments-2.21.0 boolean.py-5.0 certifi-2026.10.23 charset-normalizer-3.5.2 cmake-4.4.0 cyclonedx-python-lib-9.1.0 defusedxml-0.7.1 filelock-4.2.4 idna-3.20 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.3 packageurl-python-0.17.6 packaging-26.3 pip-26.2.2 pip-requirements-parser-32.0.1 pip_api-0.0.35 pip_audit-2.9.0 platformdirs-4.13.5 py-serializable-2.1.0 pyparsing-3.3.3 requests-2.34.2 rich-15.0.0 sortedcontainers-2.4.0 toml-0.10.2 urllib3-2.8.0

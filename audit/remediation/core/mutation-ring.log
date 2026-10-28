@@ -1,0 +1,27 @@
+Running main() from /home/abc/Desktop/Jane Street/build/remediation-core/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = InvariantChecker.Ring*
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from InvariantChecker
+[ RUN      ] InvariantChecker.RingDetectsNonzeroFill
+/home/abc/Desktop/Jane Street/tests/unit/checker_test.cpp:41: Failure
+Expected: engine.ring().check_invariants() throws an exception of type std::logic_error.
+  Actual: it throws nothing.
+
+[  FAILED  ] InvariantChecker.RingDetectsNonzeroFill (0 ms)
+[ RUN      ] InvariantChecker.RingDetectsSequenceGap
+/home/abc/Desktop/Jane Street/tests/unit/checker_test.cpp:49: Failure
+Expected: engine.ring().check_invariants() throws an exception of type std::logic_error.
+  Actual: it throws nothing.
+
+[  FAILED  ] InvariantChecker.RingDetectsSequenceGap (0 ms)
+[----------] 2 tests from InvariantChecker (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] InvariantChecker.RingDetectsNonzeroFill
+[  FAILED  ] InvariantChecker.RingDetectsSequenceGap
+
+ 2 FAILED TESTS

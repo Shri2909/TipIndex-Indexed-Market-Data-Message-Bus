@@ -1,0 +1,27 @@
+{
+  "label": "build-initial-asan-ubsan",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "asan-ubsan",
+    "--target",
+    "tiplog_layout_test",
+    "tiplog_layout_cc5",
+    "-j",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T083420.837294Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/build-initial-asan-ubsan-20261025T083420.837294Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 11.345589537002525
+}

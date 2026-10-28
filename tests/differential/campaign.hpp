@@ -13,6 +13,7 @@ struct Result {
   std::uint64_t seeds{};
   std::uint64_t operations{};
   std::uint64_t publications{};
+  std::uint64_t nonuniform_publications{};
   std::uint64_t rejected_publications{};
   std::uint64_t opens{};
   std::uint64_t indexed_opens{};

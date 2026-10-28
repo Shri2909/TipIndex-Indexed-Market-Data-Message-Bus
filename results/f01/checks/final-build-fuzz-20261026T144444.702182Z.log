@@ -1,0 +1,173 @@
+[  2%] Built target tiplog_ring
+[  4%] Built target tiplog_topics_subs
+[  7%] Built target gtest
+[  8%] Built target tiplog_trace
+[ 10%] Built target tiplog_index
+[ 12%] Built target tiplog_ref
+[ 13%] Built target tiplog_merge
+[ 29%] Built target benchmark
+[ 33%] Built target tiplog_walk
+[ 35%] Built target tiplog_layout_lib
+[ 36%] Built target gtest_main
+[ 37%] Built target tiplog_trace_check
+[ 40%] Built target fuzz_itch_walker
+[ 40%] Built target fuzz_trace_reader
+[ 41%] Built target tiplog_topics_subs_test
+[ 43%] Built target tiplog_driver
+[ 45%] Built target tiplog_oracle_test
+[ 45%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 46%] Built target tiplog_oracle_tail_test
+[ 48%] Built target tiplog_ring_test
+[ 49%] Built target tiplog_index_test
+[ 51%] Built target tiplog_merge_test
+[ 52%] Built target merge_bench
+[ 56%] Built target index_bench
+[ 56%] Built target tiplog_layout
+[ 57%] Built target tiplog_layout_example
+[ 59%] Built target tiplog_layout_runtime
+[ 61%] Built target tiplog_layout_test
+[ 63%] Built target tiplog_layout_cc5
+[ 64%] Built target benchmark_main
+[ 65%] Built target tiplog_smoke_test
+[ 67%] Built target tiplog_trace_test
+[ 69%] Built target tiplog_driver_test
+[ 70%] Linking CXX static library libtiplog_engine.a
+[ 70%] Built target tiplog_engine
+[ 71%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 71%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 72%] Building CXX object CMakeFiles/tiplog_differential_test.dir/tests/differential/campaign.cpp.o
+[ 73%] Building CXX object CMakeFiles/tiplog_checker_test.dir/tests/unit/checker_test.cpp.o
+[ 74%] Linking CXX executable tiplog_checker_test
+[ 75%] Linking CXX executable tiplog_sim
+[ 75%] Built target tiplog_sim
+[ 76%] Building CXX object CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o
+[ 76%] Built target tiplog_checker_test
+[ 77%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 77%] Linking CXX executable tiplog_differential_test
+[ 78%] Built target tiplog_differential_test
+[ 79%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+<built-in>:42:3: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |   ^
+<built-in>:42:2: error: unknown type name 'P'
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |  ^
+<built-in>:42:5: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |     ^
+<built-in>:42:8: error: expected ';' after top level declarator
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |        ^
+<built-in>:42:9: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |         ^
+<built-in>:42:11: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |           ^
+<built-in>:42:13: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |             ^
+<built-in>:42:17: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                 ^
+<built-in>:42:19: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                   ^
+<built-in>:42:21: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                     ^
+<built-in>:42:27: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                           ^
+<built-in>:42:29: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                             ^
+<built-in>:42:35: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                                   ^
+<built-in>:42:37: error: source file is not valid UTF-8
+   42 | #define __GXX_EXPERIMENTAL_CXX0X__ 1
+      |                                     ^
+<built-in>:43:4: error: source file is not valid UTF-8
+   43 | #define __OBJC_BOOL_IS_BOOL 0
+      |    ^
+<built-in>:43:6: error: source file is not valid UTF-8
+   43 | #define __OBJC_BOOL_IS_BOOL 0
+      |      ^
+<built-in>:43:8: error: source file is not valid UTF-8
+   43 | #define __OBJC_BOOL_IS_BOOL 0
+      |        ^
+<built-in>:43:12: error: source file is not valid UTF-8
+   43 | #define __OBJC_BOOL_IS_BOOL 0
+      |            ^
+<built-in>:43:14: error: source file is not valid UTF-8
+   43 | #define __OBJC_BOOL_IS_BOOL 0
+      |              ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /usr/bin/clang++ "-I/home/abc/Desktop/Jane Street/src" "-I/home/abc/Desktop/Jane Street/tests/ref" -isystem "/home/abc/Desktop/Jane Street/build/fuzz/_deps/googletest-src/googletest/include" -isystem "/home/abc/Desktop/Jane Street/build/fuzz/_deps/googletest-src/googletest" -O1 -g -fsanitize=fuzzer-no-link,address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2 -MD -MT CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o -MF CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o.d -o CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o -c "/home/abc/Desktop/Jane Street/tests/unit/poll_budget_test.cpp"
+1.	<unknown> parser at unknown location
+Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
+0  libLLVM.so.21.1      0x000079a04e0d9baf llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) + 63
+1  libLLVM.so.21.1      0x000079a04e0d7457 llvm::sys::RunSignalHandlers() + 135
+2  libLLVM.so.21.1      0x000079a04e0114b7
+3  libc.so.6            0x000079a049445cb0
+4  libclang-cpp.so.21.1 0x000079a053605db0 clang::Lexer::LexCharConstant(clang::Token&, char const*, clang::tok::TokenKind) + 608
+5  libclang-cpp.so.21.1 0x000079a053609ef7 clang::Lexer::LexTokenInternal(clang::Token&, bool) + 3223
+6  libclang-cpp.so.21.1 0x000079a05367264d clang::Preprocessor::Lex(clang::Token&) + 61
+7  libclang-cpp.so.21.1 0x000079a053680d30
+8  libclang-cpp.so.21.1 0x000079a05373c092 clang::Parser::SkipUntil(llvm::ArrayRef<clang::tok::TokenKind>, clang::Parser::SkipUntilFlags) + 1026
+9  libclang-cpp.so.21.1 0x000079a05373c0c3 clang::Parser::SkipUntil(llvm::ArrayRef<clang::tok::TokenKind>, clang::Parser::SkipUntilFlags) + 1075
+10 libclang-cpp.so.21.1 0x000079a05373bf85 clang::Parser::SkipUntil(llvm::ArrayRef<clang::tok::TokenKind>, clang::Parser::SkipUntilFlags) + 757
+11 libclang-cpp.so.21.1 0x000079a05373bf85 clang::Parser::SkipUntil(llvm::ArrayRef<clang::tok::TokenKind>, clang::Parser::SkipUntilFlags) + 757
+12 libclang-cpp.so.21.1 0x000079a05373bf85 clang::Parser::SkipUntil(llvm::ArrayRef<clang::tok::TokenKind>, clang::Parser::SkipUntilFlags) + 757
+13 libclang-cpp.so.21.1 0x000079a0536cbeb9 clang::Parser::ParseExpressionList(llvm::SmallVectorImpl<clang::Expr*>&, llvm::function_ref<void ()>, bool) + 265
+14 libclang-cpp.so.21.1 0x000079a053691a82 clang::Parser::ParseDeclarationAfterDeclaratorAndAttributes(clang::Declarator&, clang::Parser::ParsedTemplateInfo const&, clang::Parser::ForRangeInit*) + 2514
+15 libclang-cpp.so.21.1 0x000079a05368f1ca clang::Parser::ParseDeclGroup(clang::ParsingDeclSpec&, clang::DeclaratorContext, clang::ParsedAttributes&, clang::Parser::ParsedTemplateInfo&, clang::SourceLocation*, clang::Parser::ForRangeInit*) + 1434
+16 libclang-cpp.so.21.1 0x000079a053740438 clang::Parser::ParseDeclOrFunctionDefInternal(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec&, clang::AccessSpecifier) + 1128
+17 libclang-cpp.so.21.1 0x000079a05373fdd6 clang::Parser::ParseDeclarationOrFunctionDefinition(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec*, clang::AccessSpecifier) + 598
+18 libclang-cpp.so.21.1 0x000079a05373f065 clang::Parser::ParseExternalDeclaration(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec*) + 2245
+19 libclang-cpp.so.21.1 0x000079a05373d808 clang::Parser::ParseTopLevelDecl(clang::OpaquePtr<clang::DeclGroupRef>&, clang::Sema::ModuleImportState&) + 1320
+20 libclang-cpp.so.21.1 0x000079a05367a97e clang::ParseAST(clang::Sema&, bool, bool) + 782
+21 libclang-cpp.so.21.1 0x000079a0552a71e2 clang::FrontendAction::Execute() + 50
+22 libclang-cpp.so.21.1 0x000079a05521ac74 clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) + 948
+23 libclang-cpp.so.21.1 0x000079a05532ec2c clang::ExecuteCompilerInvocation(clang::CompilerInstance*) + 700
+24 clang++              0x00005af9c96cb48a cc1_main(llvm::ArrayRef<char const*>, char const*, void*) + 6250
+25 clang++              0x00005af9c96c8024
+26 libclang-cpp.so.21.1 0x000079a054ed4942
+27 libLLVM.so.21.1      0x000079a04e011137 llvm::CrashRecoveryContext::RunSafely(llvm::function_ref<void ()>) + 151
+28 libclang-cpp.so.21.1 0x000079a054ed4386 clang::driver::CC1Command::Execute(llvm::ArrayRef<std::optional<llvm::StringRef>>, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>*, bool*) const + 406
+29 libclang-cpp.so.21.1 0x000079a054e959d2 clang::driver::Compilation::ExecuteCommand(clang::driver::Command const&, clang::driver::Command const*&, bool) const + 546
+30 libclang-cpp.so.21.1 0x000079a054e95bbf clang::driver::Compilation::ExecuteJobs(clang::driver::JobList const&, llvm::SmallVectorImpl<std::pair<int, clang::driver::Command const*>>&, bool) const + 159
+31 libclang-cpp.so.21.1 0x000079a054eb3d06 clang::driver::Driver::ExecuteCompilation(clang::driver::Compilation&, llvm::SmallVectorImpl<std::pair<int, clang::driver::Command const*>>&) + 406
+32 clang++              0x00005af9c96c7b02 clang_main(int, char**, llvm::ToolContext const&) + 6258
+33 clang++              0x00005af9c96d5f53 main + 131
+34 libc.so.6            0x000079a04942a601
+35 libc.so.6            0x000079a04942a718 __libc_start_main + 136
+36 clang++              0x00005af9c96c5d55 _start + 37
+clang++: error: clang frontend command failed with exit code 135 (use -v to see invocation)
+Ubuntu clang version 21.1.8 (6ubuntu1)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-21/bin
+clang++: note: diagnostic msg: 
+********************
+
+PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:
+Preprocessed source(s) and associated run script(s) are located at:
+clang++: note: diagnostic msg: /tmp/poll_budget_test-899035.cpp
+clang++: note: diagnostic msg: /tmp/poll_budget_test-899035.sh
+clang++: note: diagnostic msg: 
+
+********************
+gmake[2]: *** [CMakeFiles/tiplog_poll_budget_test.dir/build.make:79: CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:2123: CMakeFiles/tiplog_poll_budget_test.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 80%] Linking CXX executable tiplog_engine_test
+[ 80%] Built target tiplog_engine_test
+[ 81%] Linking CXX executable tiplog_engine_index_test
+[ 81%] Built target tiplog_engine_index_test
+[ 82%] Linking CXX executable tiplog_engine_merge_test
+[ 82%] Built target tiplog_engine_merge_test
+gmake: *** [Makefile:101: all] Error 2

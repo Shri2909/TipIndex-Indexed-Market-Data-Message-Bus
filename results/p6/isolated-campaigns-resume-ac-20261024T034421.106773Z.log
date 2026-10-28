@@ -1,0 +1,17 @@
+{"stage": "pilot-M1", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/pilot-M1-attempt002.stdout.log"}
+{"stage": "pilot", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/pilot-attempt001.stdout.log"}
+{"stage": "pilot-independent-audit", "status": "starting", "stdout": "results/raw/P6/campaign-20261024/pilot-independent-audit-attempt001.stdout.log"}
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 291, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 242, in main
+    pilot_tip = tip('pilot', 30)
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 217, in tip
+    stage(suite + '-independent-audit', [sys.executable, 'scripts/check_p6_experiments.py',
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          '--plan', str(prepared[suite]), '--directory', str(destination), '--repetitions', str(repetitions)])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/scripts/run_p6_campaigns.py", line 197, in stage
+    raise RuntimeError('campaign stage failed; evidence preserved: ' + name)
+RuntimeError: campaign stage failed; evidence preserved: pilot-independent-audit

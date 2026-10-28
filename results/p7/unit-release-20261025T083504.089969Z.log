@@ -1,0 +1,45 @@
+Test project /home/abc/Desktop/Jane Street/build/release
+      Start 167: layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries
+ 1/20 Test #167: layout.LayoutPaths.ExactSubtreeAboveRootAndSegmentBoundaries ..........................   Passed    0.01 sec
+      Start 168: layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes
+ 2/20 Test #168: layout.LayoutEvaluation.InternalMessagesBasketsAndMatchedZeroNodes ....................   Passed    0.01 sec
+      Start 169: layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores
+ 3/20 Test #169: layout.LayoutBaseline.RootOwnMessagesShortPathsAndNoPhantomStores .....................   Passed    0.01 sec
+      Start 170: layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity
+ 4/20 Test #170: layout.LayoutThreshold.ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity .......   Passed    0.01 sec
+      Start 171: layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau
+ 5/20 Test #171: layout.LayoutThreshold.DeterministicEqualChildTiesAndFinitePlateau ....................   Passed    0.01 sec
+      Start 172: layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale
+ 6/20 Test #172: layout.LayoutArithmetic.ExactRationalCoefficientsWeightsAndNormalizedScale ............   Passed    0.01 sec
+      Start 173: layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow
+ 7/20 Test #173: layout.LayoutArithmetic.RejectsSentinelScaleAndIndependentVolumeOverflow ..............   Passed    0.01 sec
+      Start 174: layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction
+ 8/20 Test #174: layout.LayoutExact.HandDerivedChainEveryCountAndReconstruction ........................   Passed    0.01 sec
+      Start 175: layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget
+ 9/20 Test #175: layout.LayoutExact.EmptyAllZeroNoConsumersAndZeroBudget ...............................   Passed    0.01 sec
+      Start 176: layout.LayoutExact.ForwardParentIdsAndMultipleChildStages
+10/20 Test #176: layout.LayoutExact.ForwardParentIdsAndMultipleChildStages .............................   Passed    0.01 sec
+      Start 177: layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit
+11/20 Test #177: layout.LayoutExact.RepresentationWorkStateAndTimeCapsAreExplicit ......................   Passed    0.01 sec
+      Start 178: layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected
+12/20 Test #178: layout.LayoutRepresentation.InvalidTreesAndLayoutsAreRejected .........................   Passed    0.01 sec
+      Start 179: layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses
+13/20 Test #179: layout.LayoutRepresentation.EnumerationAndEvaluatorsSupportMoreThanOneWordOfClasses ...   Passed    0.01 sec
+      Start 180: layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints
+14/20 Test #180: layout.LayoutWorkedExample.SeparatePartitionsJointBudgetAndThresholdEndpoints .........   Passed    0.01 sec
+      Start 181: layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget
+15/20 Test #181: layout.LayoutGlobal.SupportedSelectionsAreOptimalForTheirOwnAtMostBudget ..............   Passed    0.01 sec
+      Start 182: layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint
+16/20 Test #182: layout.LayoutGlobal.UnsupportedBudgetBoundDoesNotClaimMissingSupportedPoint ...........   Passed    0.01 sec
+      Start 183: layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale
+17/20 Test #183: layout.LayoutGlobal.RationalCurvesAndPenaltyShareOneExactScale ........................   Passed    0.01 sec
+      Start 184: layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates
+18/20 Test #184: layout.LayoutGlobal.IncompleteOrMissingPartitionTermsWithholdCertificates .............   Passed    0.01 sec
+      Start 185: layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds
+19/20 Test #185: layout.LayoutGlobal.EmptyForestZeroStorePartitionAndSignedBounds ......................   Passed    0.01 sec
+      Start 186: layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow
+20/20 Test #186: layout.LayoutGlobal.RejectsZeroDenominatorsAndExactArithmeticOverflow .................   Passed    0.01 sec
+
+100% tests passed out of 20
+
+Total Test time (real) =   0.42 sec

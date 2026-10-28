@@ -1,0 +1,21 @@
+{
+  "label": "review-assembly",
+  "argv": [
+    ".venv/bin/python",
+    "-c",
+    "from pathlib import Path\nimport datetime,hashlib,json,subprocess\nbinary=Path(\"build/release/merge_bench\")\ndestination=Path(\"results/p5/assembly\")\ndestination.mkdir(exist_ok=True)\ndef digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()\nbefore=digest(binary)\nrecords=[]\ndef capture(argv,path):\n r=subprocess.run(argv,capture_output=True,text=True,check=True)\n path.write_text(r.stdout)\n assert not r.stderr,r.stderr\n records.append({\"argv\":argv,\"exit_code\":r.returncode,\"output\":str(path),\"output_sha256\":digest(path)})\n return r.stdout\nsymbols=capture([\"nm\",\"-S\",\"-C\",str(binary)],destination/\"symbols.txt\")\nselected=[]\nfor line in symbols.splitlines():\n parts=line.split(maxsplit=3)\n if len(parts)!=4:continue\n address,size,kind,symbol=parts\n if \"clone .cold\" in symbol:continue\n if \"::merge_once<\" in symbol and any(\"tiplog::merge::\"+name+\">\" in symbol for name in (\"StdPQ\",\"BinHeap\",\"Quad\",\"Loser\")):\n  touch=\"true\" if \"merge_once<true\" in symbol else \"false\"\n  kernel=next(name for name in (\"StdPQ\",\"BinHeap\",\"Quad\",\"Loser\") if \"tiplog::merge::\"+name+\">\" in symbol)\n elif symbol==\"tiplog::merge::StdPQ::replace_top(unsigned long)\":touch=\"wrapper\";kernel=\"StdPQ\"\n else:continue\n start=int(address,16);end=start+int(size,16)\n path=destination/(kernel+\"-touch-\"+touch+\".txt\")\n capture([\"objdump\",\"-d\",\"-C\",\"--start-address=\"+hex(start),\"--stop-address=\"+hex(end),str(binary)],path)\n selected.append({\"kernel\":kernel,\"touch\":touch,\"symbol\":symbol,\"start\":hex(start),\"end_exclusive\":hex(end),\"assembly_file\":str(path)})\nversions={tool:subprocess.run([tool,\"--version\"],capture_output=True,text=True,check=True).stdout.splitlines()[0] for tool in (\"objdump\",\"nm\",\"g++\")}\ncommands=json.loads(Path(\"build/release/compile_commands.json\").read_text())\nassert before==digest(binary)\nout={\"status\":\"passed\",\"created_utc\":datetime.datetime.now(datetime.timezone.utc).isoformat(),\"scope\":\"Read-only release generated-code extraction; no benchmark execution or performance claims\",\"binary\":str(binary),\"binary_sha256\":before,\"versions\":versions,\"compile_commands\":[x for x in commands if x[\"file\"].endswith((\"bench/micro/merge_bench.cpp\",\"src/tiplog/merge/kernels.cpp\"))],\"source_sha256\":{str(p):digest(p) for p in (Path(\"bench/micro/merge_bench.cpp\"),Path(\"bench/micro/bench_log.hpp\"),Path(\"src/tiplog/merge/kernels.hpp\"),Path(\"src/tiplog/merge/kernels.cpp\"))},\"selected_symbols\":selected,\"commands\":records}\nPath(\"results/p5/assembly-review.json\").write_text(json.dumps(out,indent=2)+\"\\n\")\nprint(json.dumps({\"status\":out[\"status\"],\"symbols_saved\":len(selected),\"binary_sha256\":before,\"summary\":\"results/p5/assembly-review.json\"}))\n"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T160549.494817Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/review-assembly-20261018T160549.494817Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.11548204600012468
+}

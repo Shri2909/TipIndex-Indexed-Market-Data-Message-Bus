@@ -1,0 +1,15 @@
+tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutThreshold_ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity_Test::TestBody()’:
+tests/layout/layout_test.cpp:181:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  181 |         if (v != 0) EXPECT_TRUE(cuts[v]);
+      |            ^
+tests/layout/layout_test.cpp:183:14: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  183 |           if (raw.nodes[child].parent == v) EXPECT_TRUE(cuts[child]);
+      |              ^
+tests/layout/layout_cc5.cpp: In function ‘void {anonymous}::digest_text(uint64_t&, std::string_view)’:
+tests/layout/layout_cc5.cpp:43:32: warning: conversion to ‘unsigned char’ from ‘std::basic_string_view<char>::value_type’ {aka ‘char’} may change the sign of the result [-Wsign-conversion]
+   43 |   for (const unsigned char c : value) {
+      |                                ^~~~~
+tests/layout/layout_cc5.cpp: In function ‘std::string {anonymous}::escape_json(std::string_view)’:
+tests/layout/layout_cc5.cpp:301:32: warning: conversion to ‘unsigned char’ from ‘std::basic_string_view<char>::value_type’ {aka ‘char’} may change the sign of the result [-Wsign-conversion]
+  301 |   for (const unsigned char c : value) {
+      |                                ^~~~~

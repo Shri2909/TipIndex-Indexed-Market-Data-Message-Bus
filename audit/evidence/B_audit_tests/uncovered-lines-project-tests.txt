@@ -1,0 +1,72 @@
+ring/ring.cpp:61: [[noreturn]] void corrupt(const char* message) { throw std::logic_error(message); }
+ring/ring.cpp:81: corrupt("invalid ring item size or physical straddle");
+ring/ring.cpp:82: }
+ring/ring.cpp:86: corrupt("invalid PAD framing");
+ring/ring.cpp:87: }
+ring/ring.cpp:92: corrupt("invalid DATA framing");
+ring/ring.cpp:93: }
+ring/ring.cpp:201: std::terminate();
+ring/ring.cpp:202: }
+ring/ring.cpp:278: return head_pos_;
+ring/ring.cpp:284: corrupt("INV-R1: invalid logical span");
+ring/ring.cpp:285: }
+ring/ring.cpp:302: corrupt("INV-R2/R5: item sum or sequence bound mismatch");
+ring/ring.cpp:303: }
+ring/ring.cpp:307: corrupt("INV-R7: capacity-only retention is not maximal");
+ring/ring.cpp:308: }
+ring/ring.cpp:314: corrupt("invalid sparse checkpoint bounds");
+ring/ring.cpp:315: }
+ring/ring.cpp:319: corrupt("invalid sparse checkpoint record");
+ring/ring.cpp:320: }
+ring/ring.cpp:323: corrupt("ring DATA accounting does not match retention");
+ring/ring.cpp:324: }
+engine/engine.cpp:22: default:
+engine/engine.cpp:23: throw std::invalid_argument("invalid merge kernel");
+engine/engine.cpp:38: throw std::invalid_argument("invalid index pool policy");
+engine/engine.cpp:78: throw std::logic_error("index pressure victim must reference DATA");
+engine/engine.cpp:85: throw std::logic_error("pressure preparation did not free one block");
+engine/engine.cpp:128: throw std::logic_error("engine retained DATA count mismatch");
+engine/engine.cpp:139: throw std::logic_error("retained ring DATA/index postings mismatch");
+engine/engine.cpp:166: throw index::RepresentationLimit("too many packed indexed cursors");
+engine/engine.cpp:252: return *this;
+engine/engine.cpp:323: throw std::logic_error("retained unread checkpoint has expired cursor");
+engine/engine.cpp:329: throw std::logic_error("index cursor references PAD");
+engine/engine.cpp:419: const auto error = *replay_.error();
+engine/engine.cpp:420: error_ = ReplayError{ReplayError::FellBehind, requested_after_,
+engine/engine.cpp:421: last_delivered_, error.oldest_retained};
+engine/engine.cpp:422: return status_;
+engine/engine.cpp:423: }
+index/index.cpp:11: [[noreturn]] void broken(const char *text) { throw std::logic_error(text); }
+index/index.cpp:14: broken(text);
+index/index.cpp:84: throw std::length_error("partition list full");
+index/index.cpp:268: std::terminate();
+index/index.cpp:346: throw StaleCursor("invalid index cursor block");
+topics/registry.cpp:37: ObserverHandle& ObserverHandle::operator=(ObserverHandle&& other) noexcept {
+topics/registry.cpp:38: if (this != &other) {
+topics/registry.cpp:39: reset();
+topics/registry.cpp:40: hub_ = std::move(other.hub_);
+topics/registry.cpp:41: root_ = other.root_;
+topics/registry.cpp:42: serial_ = std::exchange(other.serial_, 0);
+topics/registry.cpp:43: }
+topics/registry.cpp:44: return *this;
+topics/registry.cpp:45: }
+topics/registry.cpp:109: throw RepresentationLimit("topic observer serial exhausted");
+topics/registry.cpp:110: }
+topics/registry.cpp:118: if (inserted) observers_->roots.erase(found);
+topics/registry.cpp:119: throw;
+topics/registry.cpp:120: }
+topics/registry.cpp:149: throw RepresentationLimit("topic depth exhausted");
+topics/registry.cpp:150: }
+trace/reader.cpp:23: throw FormatError("truncated integer");
+trace/reader.cpp:68: const int error = errno;
+trace/reader.cpp:69: ::close(fd);
+trace/reader.cpp:70: throw std::system_error(error, std::generic_category(), "stat trace");
+trace/reader.cpp:71: }
+trace/reader.cpp:74: ::close(fd);
+trace/reader.cpp:75: throw FormatError("empty or unaddressable trace");
+trace/reader.cpp:76: }
+trace/reader.cpp:82: mapping_ = nullptr;
+trace/reader.cpp:83: throw std::system_error(map_error, std::generic_category(), "mmap trace");
+trace/reader.cpp:84: }
+trace/reader.cpp:143: throw FormatError("truncated dictionary entry");
+trace/reader.cpp:171: throw FormatError("invalid trace cursor");

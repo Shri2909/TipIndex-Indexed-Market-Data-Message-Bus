@@ -1,0 +1,68 @@
+{
+  "phase": "P4",
+  "status": "passed",
+  "completed_utc": "2026-10-18T10:55:26.953830+00:00",
+  "plan_version": "v1.1",
+  "tier": "B",
+  "criteria": {
+    "P3 prerequisite passed": "met",
+    "P4.1 fixed32B metadata/u32 entries/free-list/generation and V15": "met",
+    "P4.2 ordered sealed expiry/open expiry/sweeps/pressure/wide deltas V17 V19 V37": "met",
+    "P4.3 binary-seek cursor/generation defense/k1 indexed replay V18 V20": "met",
+    "P4.4 exact slot/memory recount plus scoped allocator observations": "met",
+    "P4.5 V15-V20 release and sanitizer zero failures/reports": "met",
+    "CC2 indexed k1 release1000x10000 and sanitizer200x10000": "met",
+    "CC3 V26 fresh indexed F3 >=1800 monotonic sec clean": "met",
+    "Generic16 and enforced32 sizing synthetic worst cases": "met",
+    "Source-to-code-to-test evidence and independent final review": "met"
+  },
+  "checks": {
+    "release_build": "results/p4/release-build-acceptance-20261018T102040.526332Z.json",
+    "sanitizer_build": "results/p4/sanitizer-build-acceptance-20261018T102040.535818Z.json",
+    "fuzz_build": "results/p4/fuzz-build-final-20261018T102252.150215Z.json",
+    "release_tests": "results/p4/release-tests-acceptance-20261018T102114.926835Z.json",
+    "sanitizer_tests": "results/p4/sanitizer-tests-acceptance-20261018T102159.962687Z.json",
+    "release_CC2": "results/p4/differential-release-20261018T102114.926562Z.json",
+    "sanitizer_CC2": "results/p4/differential-sanitizer-20261018T102212.890026Z.json",
+    "named_seed_smoke": "results/p4/fuzz-named-seeds-final-20261018T102323.967306Z.json",
+    "previous_corpus_seed_smoke": "results/p4/fuzz-seed-smoke-20261018T102109.858395Z.json",
+    "allocator_B256": "results/p4/memory-allocator-B256-20261018T102300.009793Z.json",
+    "allocator_B1024": "results/p4/memory-allocator-B1024-20261018T102300.026336Z.json",
+    "driver_scan": "results/p4/real-driver-scan-20261018T102456.662533Z.json",
+    "driver_indexed": "results/p4/real-driver-indexed-20261018T102456.662533Z.json",
+    "F3_verified": "results/p4/fuzz-gate-verified.json",
+    "indexed_selector_seed_smoke": "results/p4/indexed-selector-seed-smoke-20261018T102831.576885Z.json",
+    "real_driver_mode_comparison": "results/p4/real-driver-mode-comparison.json",
+    "git_data_exclusion_audit": "results/p4/git-data-audit.json"
+  },
+  "test_counts": {
+    "all_each_preset": 121,
+    "new_index": 18,
+    "new_engine_index": 17
+  },
+  "differential_operations": {
+    "release": 10000000,
+    "sanitizer": 2000000
+  },
+  "effective_indexed_opens": {
+    "release": 1520290,
+    "sanitizer": 303957
+  },
+  "wide_scan_opens": {
+    "release": 335905,
+    "sanitizer": 68316
+  },
+  "fuzz": {
+    "monotonic_seconds": 1801.3472198700003,
+    "executions": 81399,
+    "segments": 15
+  },
+  "review": "results/p4/review.md",
+  "source_revision": "results/p4/source-revision.json",
+  "limitations": [
+    "Allocator contribution is a declared glibc process observation, not universally exact per-object headers or RSS",
+    "P4 supports k1 Indexed and wideScan; multicursor kernels/Auto/Tail belong to P5",
+    "Prior BinaryFILE terminator absence and counter fallback remain explicit"
+  ],
+  "continuation": "P5 starts automatically; stop after its gate. P6-P8/Tier C/roadmap remain unauthorized"
+}

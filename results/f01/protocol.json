@@ -1,0 +1,45 @@
+{
+  "schema": "tiplog.f01.poll-study-protocol.v1",
+  "status": "predeclared-before-feature-timing",
+  "purpose": "Measure the responsiveness/total-cost tradeoff of explicit replay inspection budgets; exact accounting and output equivalence are functional requirements, not timing claims.",
+  "executable": "tiplog_poll_bench",
+  "default_fixture_records": 10000,
+  "max_fixture_records": 2000000,
+  "max_fixture_reserved_bytes": 134217728,
+  "limits_scope": "ring storage and checkpoint slots, exact index reserved bytes and a conservative topic/subscription allowance must fit the fixture cap. Allocator overhead is not included. Per-arm exact-quantile telemetry is separately bounded by three uint64 arrays of at most records+3 entries; process peak RSS is reported.",
+  "input": {
+    "cases": ["no-match", "late-match", "sparse", "dense"],
+    "shapes": ["small", "fixed", "variable", "wrapped-variable"],
+    "selected_partitions": [1, 4, 64, 256],
+    "candidate_every": "CLI list of strides 1..1024, default 1. Stride 1 reproduces all-records-in-selected-partitions rejection. Larger strides publish other DATA into an unselected background partition, enabling Auto to choose Indexed. Ordinals divisible by the stride and the final record are selected; final selection guarantees a late match. Sparse matches are every 128th selected candidate; dense means every selected candidate matches.",
+    "stress_policy": "Larger explicit Indexed K values up to the packed-cursor representation limit 65535 are accepted only within the same resource cap. The conservative index sizing/topic allowance usually makes a lower K infeasible first; record the largest tested feasible K and its next rejected stress point instead of claiming the theoretical maximum was timed. Rejected/infeasible arms remain visible as non-ok JSONL outcomes. A static retained range crosses at most one ring wrap; this does not claim a high density of PAD records.",
+    "modes": ["scan", "indexed", "auto"],
+    "kernels": ["stdpq", "binheap", "quad", "loser"],
+    "budgets": ["legacy", "unlimited", 1, 8, 32, 128, 512, 2048],
+    "output_limits": "CLI-selectable positive max-outputs, default 1. Zero-limit API behavior belongs to contract tests, not an infinite-drain benchmark.",
+    "seed": 20261026,
+    "payload": "Deterministic nonuniform bytes derived from seed, record ordinal and byte offset. Independent publication-time seq/topic/payload digest is compared with every eventual replay digest.",
+    "repetitions": "CLI-selectable 1..100; default 3. Repetition order rotates the selected arm list deterministically using the seed; every order is emitted. First open and repeated calls are separately timed. No deliberate cache flush is performed."
+  },
+  "scheduling": {
+    "round-robin": "At each long-reader poll entry, one victim-reader request and one publisher request become eligible. After the public poll and output digest, a one-message victim replay is opened/served, then one message is published. Delay runs from eligibility to actual service start. Both use separate small engines, so these activities cannot alter the primary static captured range.",
+    "immediate-redrain": "One victim-reader and publisher request become eligible at drain start. The same long reader is immediately polled until completion, then both requests are served. This is the explicit control demonstrating that an inspection budget alone does not schedule other work.",
+    "interpretation": "Round-robin arms perform different numbers of victim/publisher operations when their poll counts differ. Total drain cost includes them; poll-only time is also reported. This is a fixed scheduling policy experiment, not equal offered-load service-level benchmarking. There is no claim about shared-engine eviction or concurrent publication."
+  },
+  "measurements": {
+    "public_poll_latency_ns": ["sample_count", "p50", "p95", "p99", "max", "sum"],
+    "service_delay_ns": ["victim sample_count/p50/p95/p99/max", "publisher sample_count/p50/p95/p99/max"],
+    "quantiles": "Nearest-rank order statistic, rank ceil(p*n), with exact bounded samples. No interpolation; sample counts accompany every percentile.",
+    "cost": ["fixture_build_ns", "open_elapsed_ns", "open_work", "drain_elapsed_ns", "drain_cpu_ns", "poll_elapsed_ns_sum", "outputs_per_second", "fixture_records_per_poll_second", "peak_rss_bytes"],
+    "accounting": ["all ReplayWork fields", "inspections_used", "calls", "inspection_limit_returns", "output_limit_returns", "zero_output_calls", "max_inspections_in_call", "maximum returned outputs", "selected_partition_count", "effective_mode", "ring PAD items", "exact index reserved bytes"],
+    "correctness": "Every finite call must respect both limits, reported inspections must equal physical-work deltas, eventual output digest/count must match the independent publication-time oracle, and completion must stay within a conservative finite-call bound.",
+    "setup_scope": "Public poll timing includes seeks, merge construction, output growth and internal setup. Open time/work are separate. Existing seek/index-seek counters do not fully count Auto metadata probes or merge initialization; this tool does not claim to isolate those costs or impose a whole-call latency bound.",
+    "reader_scope": "Static captured Replay timing. Tail rollover, retention interleavings and expiry are exercised by correctness tests separately; no live-tail timing claim is made."
+  },
+  "run_policy": {
+    "raw_evidence": "One JSON object per arm/repetition. Keep all non-ok outcomes. Output is refused if it already exists, uses a caller-selected new results/f01 or build/f01 destination, and stream flush/close errors fail the process.",
+    "source_freeze": "The coordinating agent freezes source/config identities before the recorded study. Compilation and correctness smokes before that point are not reported as final performance evidence.",
+    "host": "Record compiler/build identity, host uname, available hardware concurrency and process peak RSS. Record external host/frequency/noise observations with the study runner. No quiet-host, hardware-counter, universal best-budget or hard-latency claim follows from this protocol.",
+    "report": "Retain raw JSONL and per-arm sample counts. Compare legacy to the new unlimited path first, then show a responsiveness-versus-total-cost curve for finite budgets. No upstream budget constant is adopted as a default. No historical P1-P8 or remediation files are overwritten."
+  }
+}

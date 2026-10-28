@@ -1,0 +1,79 @@
+gmake: jobserver mkfifo: /tmp/GMfifo395: File exists
+[  2%] Built target tiplog_trace
+[  4%] Built target gtest
+[  7%] Built target tiplog_topics_subs
+[  8%] Built target tiplog_ring
+[ 10%] Built target tiplog_index
+[ 12%] Built target tiplog_merge
+[ 14%] Built target tiplog_ref
+[ 18%] Built target tiplog_layout_lib
+[ 20%] Built target gtest_main
+[ 22%] Built target tiplog_walk
+[ 39%] Built target benchmark
+[ 41%] Built target tiplog_trace_test
+[ 43%] Built target tiplog_trace_check
+[ 45%] Built target tiplog_topics_subs_test
+[ 46%] Building CXX object CMakeFiles/tiplog_engine.dir/src/tiplog/engine/engine.cpp.o
+[ 48%] Built target tiplog_driver
+[ 50%] Built target tiplog_oracle_test
+[ 51%] Built target tiplog_oracle_tail_test
+[ 53%] Built target tiplog_driver_test
+[ 55%] Built target tiplog_ring_test
+[ 56%] Built target tiplog_index_test
+[ 58%] Built target tiplog_merge_test
+[ 59%] Built target merge_bench
+[ 61%] Built target index_bench
+[ 63%] Built target tiplog_layout
+[ 64%] Built target tiplog_layout_example
+[ 66%] Built target tiplog_layout_runtime
+[ 67%] Built target tiplog_layout_test
+[ 69%] Built target tiplog_layout_cc5
+[ 70%] Built target benchmark_main
+[ 71%] Built target tiplog_smoke_test
+[ 72%] Linking CXX static library libtiplog_engine.a
+[ 72%] Built target tiplog_engine
+[ 72%] Building CXX object CMakeFiles/tiplog_checker_test.dir/tests/unit/checker_test.cpp.o
+[ 73%] Building CXX object CMakeFiles/tiplog_sim.dir/tools/tiplog_sim/main.cpp.o
+[ 74%] Building CXX object CMakeFiles/tiplog_differential_test.dir/tests/differential/campaign.cpp.o
+[ 75%] Linking CXX executable tiplog_sim
+[ 76%] Linking CXX executable tiplog_checker_test
+[ 76%] Built target tiplog_sim
+[ 77%] Building CXX object CMakeFiles/tiplog_engine_test.dir/tests/unit/engine_test.cpp.o
+[ 77%] Built target tiplog_checker_test
+[ 78%] Building CXX object CMakeFiles/tiplog_poll_budget_test.dir/tests/unit/poll_budget_test.cpp.o
+[ 78%] Linking CXX executable tiplog_differential_test
+[ 79%] Built target tiplog_differential_test
+[ 79%] Building CXX object CMakeFiles/tiplog_engine_index_test.dir/tests/unit/engine_index_test.cpp.o
+[ 80%] Linking CXX executable tiplog_engine_test
+[ 80%] Built target tiplog_engine_test
+[ 81%] Building CXX object CMakeFiles/tiplog_engine_merge_test.dir/tests/unit/engine_merge_test.cpp.o
+[ 82%] Linking CXX executable tiplog_engine_index_test
+[ 82%] Built target tiplog_engine_index_test
+[ 83%] Building CXX object CMakeFiles/tiplog_differential.dir/tests/differential/campaign.cpp.o
+[ 84%] Linking CXX executable tiplog_poll_budget_test
+[ 84%] Built target tiplog_poll_budget_test
+[ 85%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[ 86%] Linking CXX executable tiplog_engine_merge_test
+[ 87%] Linking CXX executable tiplog_differential
+[ 87%] Built target tiplog_engine_merge_test
+[ 88%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[ 89%] Built target tiplog_differential
+[ 90%] Building CXX object CMakeFiles/tiplog_poll_bench.dir/tools/tiplog_poll_bench.cpp.o
+[ 91%] Linking CXX executable publish_bench
+[ 92%] Linking CXX executable tiplog_poll_bench
+[ 92%] Built target tiplog_poll_bench
+[ 93%] Building CXX object CMakeFiles/tiplog_bench_contract_test.dir/tests/unit/bench_contract_test.cpp.o
+[ 93%] Built target publish_bench
+[ 94%] Building CXX object CMakeFiles/tiplog_poll_campaign.dir/tests/differential/poll_campaign.cpp.o
+[ 95%] Linking CXX executable tiplog_bench
+[ 95%] Built target tiplog_bench
+[ 96%] Linking CXX executable tiplog_bench_contract_test
+[ 96%] Built target tiplog_bench_contract_test
+[ 96%] Linking CXX static library libtiplog_poll_campaign.a
+[ 96%] Built target tiplog_poll_campaign
+[ 97%] Building CXX object CMakeFiles/tiplog_poll_differential.dir/tools/tiplog_poll_differential.cpp.o
+[ 98%] Building CXX object CMakeFiles/tiplog_poll_differential_test.dir/tests/unit/poll_differential_test.cpp.o
+[ 99%] Linking CXX executable tiplog_poll_differential
+[ 99%] Built target tiplog_poll_differential
+[100%] Linking CXX executable tiplog_poll_differential_test
+[100%] Built target tiplog_poll_differential_test

@@ -1,0 +1,1488 @@
+{
+  "accepted_measured_rounds": 10,
+  "accepted_rounds": 11,
+  "aslr": {
+    "mode": "per_process_disabled",
+    "privileged_settings_changed": false,
+    "probe": {
+      "argv": [
+        "setarch",
+        "x86_64",
+        "-R",
+        "/home/abc/Desktop/Jane Street/.venv/bin/python",
+        "-c",
+        "import json; from pathlib import Path; print(json.dumps({'child_started': True, 'personality_hex': Path('/proc/self/personality').read_text().strip()}))"
+      ],
+      "cwd": "/home/abc/Desktop/Jane Street",
+      "error": null,
+      "executable": "/usr/bin/setarch",
+      "resolved_executable": "/usr/bin/setarch",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"child_started\": true, \"personality_hex\": \"00040000\"}\n"
+    },
+    "system_randomize_va_space": "2"
+  },
+  "attempts": [
+    {
+      "record": "results/raw/P7/runtime/round-00-20261025T153431.960942Z.status.json",
+      "record_sha256": "1e269ebebbb80eca952170de01fc06bef8392988c344b4ee32b215ad6e134283",
+      "round": 0,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-01-20261025T153536.103174Z.status.json",
+      "record_sha256": "4993f9712cbd35e7d413a3275faeb72f33a4f68900941b03300b25dfb4ed4c5c",
+      "round": 1,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-02-20261025T153640.354580Z.status.json",
+      "record_sha256": "010114ddb75354877cd39f0ef73950423c53c90529298dadd5bb9d2afee30ac8",
+      "round": 2,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-03-20261025T153744.480088Z.status.json",
+      "record_sha256": "a562646628cf821319c3cca4f5b6e71aee81f2bb521a8387ab7fb4387c9376fc",
+      "round": 3,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-04-20261025T153848.627190Z.status.json",
+      "record_sha256": "cff5aeef776ff8b960acec1cc76f427c340c22cf2c9fa6e6c0a797d89ec1cb4e",
+      "round": 4,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-05-20261025T153952.591652Z.status.json",
+      "record_sha256": "40cf28383482a762c24a144e7e2980d18a75bedaadceb21ff0a6648c0bd0c127",
+      "round": 5,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-06-20261025T154056.777659Z.status.json",
+      "record_sha256": "5ac723a09b2bad7e40b63d7f7f6d01f95f0708ccbfd7945a11357013296d4755",
+      "round": 6,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-07-20261025T154200.969908Z.status.json",
+      "record_sha256": "4a15636e9fa6f83d8c0a3892f8555e30743c4d2dbf909655b6377383bd0d3131",
+      "round": 7,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-08-20261025T154305.118797Z.status.json",
+      "record_sha256": "ba66c0b026e36af04e04a79073aa9f69b1a5b0f7f518a4da64ff3d2ee5d4277d",
+      "round": 8,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-09-20261025T154409.221621Z.status.json",
+      "record_sha256": "03ad9cb3275d4affb73e9bd3edf719628daab646d81e16249ab9f2c25fc9901a",
+      "round": 9,
+      "status": "passed"
+    },
+    {
+      "record": "results/raw/P7/runtime/round-10-20261025T154513.302584Z.status.json",
+      "record_sha256": "051fdb4c5f72c2fa18422a2fe07484896c7dd02d63b239e160e1cd94a52ea595",
+      "round": 10,
+      "status": "passed"
+    }
+  ],
+  "completed_utc": "2026-10-25T15:46:17.128580+00:00",
+  "configuration_count": 900,
+  "environment_captures": [
+    {
+      "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+      "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+      "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+      "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+    }
+  ],
+  "frequency_noise": {
+    "computed_utc": "2026-10-25T15:46:17.067499+00:00",
+    "flagged_case_rows": 1626,
+    "measured_session_median_khz": 3796017.0,
+    "path": "results/raw/P7/runtime/frequency-flags.json",
+    "per_round_flagged_case_rows": {
+      "1": 196,
+      "2": 175,
+      "3": 174,
+      "4": 122,
+      "5": 207,
+      "6": 181,
+      "7": 188,
+      "8": 180,
+      "9": 158,
+      "10": 45
+    },
+    "policy": "Post-session descriptive >10% flag; every otherwise valid row/round retained, no noise filtering or replacement.",
+    "sample_count": 18000,
+    "sha256": "9c1f564818a51cf4d074d69d0687ea08787c7f9cb9bd3a0c5304e399b11cf71b",
+    "status": "reported"
+  },
+  "identities": {
+    "build/release/CMakeCache.txt": "a4793eedce080d0ab40bc36cefed66cb780ef69ec7ca8fe96a6fb58e2f9e5956",
+    "build/release/CMakeFiles/tiplog_layout.dir/build.make": "879009f3da07685f972490ed8ee411dd8d7bad437922827f74b727ca5bd95719",
+    "build/release/CMakeFiles/tiplog_layout.dir/compiler_depend.make": "498202e45ccc32888b545ea908096383523adbde5a61f656a001a96605cc334e",
+    "build/release/CMakeFiles/tiplog_layout.dir/depend.make": "135bc105f859bf67d74be8cb18a04b0451f7983dffd9440a5537e026886d3727",
+    "build/release/CMakeFiles/tiplog_layout.dir/flags.make": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f",
+    "build/release/CMakeFiles/tiplog_layout.dir/progress.make": "03048fd810f7fc3581c761f8a164262091027d1692f41f44a8ee58507211cb47",
+    "build/release/CMakeFiles/tiplog_layout_cc5.dir/build.make": "668854ac05be4b0378c9ea61350e9c2f066c4935200a8189c27cf944221d2ce7",
+    "build/release/CMakeFiles/tiplog_layout_cc5.dir/compiler_depend.make": "d22383db259862b7fdf0ff966c263bde539ae47bd08fd0a1e549ccee10394c78",
+    "build/release/CMakeFiles/tiplog_layout_cc5.dir/depend.make": "0411419583aa703ee390d618d7e434aa35d48cd71539416485eb8b014548cd99",
+    "build/release/CMakeFiles/tiplog_layout_cc5.dir/flags.make": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f",
+    "build/release/CMakeFiles/tiplog_layout_cc5.dir/progress.make": "dca9ea25cdda7b77c657cd71028f0cb92d3d42739f1f9dbaa14e1903e14cd6c7",
+    "build/release/CMakeFiles/tiplog_layout_example.dir/build.make": "a6b4d3875ba075d3692f7b93334b1266d52501b289654a71a686e8d4804e8d12",
+    "build/release/CMakeFiles/tiplog_layout_example.dir/compiler_depend.make": "b572f8e0065ae5e0dfb06940e81ddc6f0f5ea628e14e15b6b44d60e57138f009",
+    "build/release/CMakeFiles/tiplog_layout_example.dir/depend.make": "72c0d366aa174fb24b6c033453c80ecbcca0aa72755bb61e86e14cea957f2bee",
+    "build/release/CMakeFiles/tiplog_layout_example.dir/flags.make": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f",
+    "build/release/CMakeFiles/tiplog_layout_example.dir/progress.make": "f989f186f9abdced556f94dc4f678e1e53091467425a2bbd5a566641a573826b",
+    "build/release/CMakeFiles/tiplog_layout_lib.dir/build.make": "8a05e4592c573eae55236b3da180c255e9593e2c0f8e7011c21a1970d97217e7",
+    "build/release/CMakeFiles/tiplog_layout_lib.dir/compiler_depend.make": "d05ef3ed09caf1044cc45e6c4fc351e8ef0d13577d831005ba38a5a62e3878aa",
+    "build/release/CMakeFiles/tiplog_layout_lib.dir/depend.make": "b435a2743b744116d5f244bfc6aab1ebab4ed75a11824a64d9259ca9d08ab59f",
+    "build/release/CMakeFiles/tiplog_layout_lib.dir/flags.make": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f",
+    "build/release/CMakeFiles/tiplog_layout_lib.dir/progress.make": "a7dad31de7cfdacb7cbdd6f8eae608e8209e22a72579bedc5098551eb4373440",
+    "build/release/CMakeFiles/tiplog_layout_runtime.dir/build.make": "741305ec9e155e837d186aaf757dc8b91596ad3a7203b908cfe0b952ab6de4c4",
+    "build/release/CMakeFiles/tiplog_layout_runtime.dir/compiler_depend.make": "3eb1a353672dcc79361ad858817b290a72bce8152fb2290f6d0d5403167abdbf",
+    "build/release/CMakeFiles/tiplog_layout_runtime.dir/depend.make": "8c0e4c7451735901c2ace0ff9c28355643818585269a13dbfdf90bd8e9e1c860",
+    "build/release/CMakeFiles/tiplog_layout_runtime.dir/flags.make": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f",
+    "build/release/CMakeFiles/tiplog_layout_runtime.dir/progress.make": "3b76a6b5f06e2051ccb92103a8aff9e6902093edd45313f8eaa8afc472f35988",
+    "build/release/CMakeFiles/tiplog_layout_test.dir/build.make": "c8b14247b9c5011e132470270a2b9adbc4b5c98f75467a671b67a89629ecf629",
+    "build/release/CMakeFiles/tiplog_layout_test.dir/compiler_depend.make": "2c929bfa41ff97b0ddf6edde6a7f90e4e02b231ff8fad01357a0e0c8249ce81d",
+    "build/release/CMakeFiles/tiplog_layout_test.dir/depend.make": "e84a8d9ce494129ec3a9c51b4b11999e06e991e51987ce6b73586c3129d24ea9",
+    "build/release/CMakeFiles/tiplog_layout_test.dir/flags.make": "eb004bb6b3d334a35873a5f9be7c9b5aea606fa42c16fea9b2313a68da89d831",
+    "build/release/CMakeFiles/tiplog_layout_test.dir/progress.make": "224ac72b6826193c6ea07893df7069db80b67c04e198ded498a89edb169ae5f2",
+    "build/release/compile_commands.json": "738943c3d2ef142f6a63f60db10637b6e0085f707b117c65135ea90642074ede",
+    "build/release/tiplog_layout_runtime": "d536c5a72cf6e208ef2e0393e5976ba7c11e8af282cbc588d88075f87465dd66",
+    "cmake/p7_layout.cmake": "1f2e79ad38a97ea7b95f57cec964ccb2c5201f4b0fcac83fbc4cc660af1a2f25",
+    "data/manifest.json": "5b24dc677dbb26af76c84fbf06c69b32f5bd00c014cf6ff8455cf9bdb9738202",
+    "results/p1/data-gate.json": "0a516ce19d482f6e013932145409a99daab5d527e5389790861a580bb0ea36d1",
+    "results/p7/input-manifest.json": "e36b8f308da66a05df158470933638bc1b81c211476e76d7f28093e700304a35",
+    "results/p7/protocol.json": "571c3ed6543fbcf4aaba83cbe7a5119b977d3425c9c6c4f9adfda96ca9332b25",
+    "results/p7/runtime-method.md": "900134207c03fc09f2a15921414ba2e6e6bb29e4072d99ffe3b85d46a4447e11",
+    "results/p7/runtime-supplement.json": "9a8508664e83b993900ea835d96c60eb7df9843811b266505e02784908c72cb5",
+    "results/raw/P7/inputs/metadata.json": "0b2369f22d9069dfa3a085e87a49884e6294bfe50b77a9b6c66f40047ffcae75",
+    "results/raw/P7/inputs/synthetic-n10.tsv": "4df44481782ef19c1e510a89ebda228d86b5988a2f3be9faf25c332a49fd8a8a",
+    "results/raw/P7/inputs/synthetic-n100.tsv": "d8e19a0e34eefd46e44c7d8e4d4aa390bb80579c9d21226edffdced50e8ce7b4",
+    "results/raw/P7/inputs/synthetic-n1000.tsv": "24b09e182c07f9353fb88cbff2ca5ad9a93b6f44b36db2de8e90652ba4121318",
+    "results/raw/P7/inputs/synthetic-n20.tsv": "822f4fcb8f616ec4907b63de9d61c2fa804ed43d8f1d96a092fcdc2509f24271",
+    "results/raw/P7/inputs/synthetic-n250.tsv": "8a72fb71551fc2aa0a80c6f0c9c763942a650b94e505826b3e0c2b0982ba92db",
+    "results/raw/P7/inputs/synthetic-n5.tsv": "7ee165f8d8a296e1a4dd897a59fd0ab81f69945c1bb7176391f2c6319d908833",
+    "results/raw/P7/inputs/synthetic-n50.tsv": "5b8681fde64b1f1c84be42950f6e21919e5ea3c38dc1aec93a0d4844e740b3e7",
+    "results/raw/P7/inputs/synthetic-n500.tsv": "6e22b62c68b2464d648322f7e801ffcd0af85cc041460ab2719fa9ff9cdf6d4e",
+    "results/raw/P7/studies/campaign.json": "cc73304b00341aad360d6ff9f70bd11b12c4bc2ec99a814dd7373804520a14ae",
+    "results/raw/P7/studies/synthetic-n10-20261025T142019.978215Z.jsonl": "48e75024421eaec91a0a246a555bb079c5095482b3edfbac78ca46867c079f61",
+    "results/raw/P7/studies/synthetic-n100-20261025T142020.078694Z.jsonl": "bc6373abc3c120f36894708c504caa3bda645a506715a1a26c6419c38c880645",
+    "results/raw/P7/studies/synthetic-n1000-20261025T142021.285417Z.jsonl": "e886c0978c1e19f5f9a5b26e781b81c29a1ee0519cd9bb2a2045b1f014f57603",
+    "results/raw/P7/studies/synthetic-n20-20261025T142020.004829Z.jsonl": "d2b2e38f14a2a016e4398740932df8665bf5008afb6fde491b3a2f22c6519ac0",
+    "results/raw/P7/studies/synthetic-n250-20261025T142020.192438Z.jsonl": "b47220734279d27ca1f3e87f5c331dad768478f338819fffccf7b1ba5b314bce",
+    "results/raw/P7/studies/synthetic-n5-20261025T142019.966162Z.jsonl": "51916de9f3bde4ab4f0d8d16d0e1ff5ca6cd0bd2df421c87efa19f65cc720bd6",
+    "results/raw/P7/studies/synthetic-n50-20261025T142020.028538Z.jsonl": "30005736b006000dce608025ed9fc62f9eb9d7143d6f459aae2ac19d2c327983",
+    "results/raw/P7/studies/synthetic-n500-20261025T142020.492988Z.jsonl": "35af27a8c85ec8f2e19b3c1510a731c30c5750f45b87253de8ecc0692e6cdf6a",
+    "scripts/env_capture.py": "074987b5b4b81502a8a7b60228cff7c662915e70c82fc982dda6c57f4c7d9036",
+    "scripts/run_p7_runtime.py": "c43d7d5d89f3d905063b8c99858e1c7f17d193792d14cc95b92e55e5c66d76ef",
+    "src/tiplog/layout/exact.cpp": "9a099018607b8706de3de2ec1e189aadb17025a842fa378596a1a55b068c26ff",
+    "src/tiplog/layout/exact.hpp": "484fc99bea3a7d91b367803d6e4d2dd12412c8370cabbe0771dd0b767d51dea4",
+    "src/tiplog/layout/global.cpp": "00bc7c4cc1f964da64605de7a78b8d66d2b72df92d09132ddfb5d3bd31ae6fc0",
+    "src/tiplog/layout/global.hpp": "ee8a645ecafc8227dc41370bf1471d98e0de455d36a122a6f6254779bacfef65",
+    "src/tiplog/layout/model.cpp": "43f93d00faa010bffdce5f95895a9b91ce27dd66d032c32c315717c0d877cd2a",
+    "src/tiplog/layout/model.hpp": "42d0aa112087e20c8aeb3db8b505f3d92be25adc60f0e8b24a583fd2f5adc035",
+    "tools/tiplog_layout/main.cpp": "f4a8769795d5a341e5cb8122d99e88f17ccbc22e25e2d61791a19a2188b34517",
+    "tools/tiplog_layout/runtime_main.cpp": "55e5118c600b6bb81fe1712e12ac2ae42720d5f36534091c7588b231e7649e30",
+    "tools/tiplog_layout/worked_example.cpp": "36404ec610a5496e5683eeddf57e1684b01b13dd4163110f9ab75a7115a736df"
+  },
+  "identity_fingerprint": "e49f8730a5973a45fa6017c5096a9cb8eaaa12f10ba177efaa8a20c561f7faac",
+  "journal": "results/raw/P7/runtime/journal.jsonl",
+  "limitations": [
+    "Host not exclusive; CPU3 /proc/stat idle ratios are descriptive.",
+    "Frequency bracket samples do not prove stable frequency; every >10% flag retained.",
+    "Timeout/state/representation limits remain non-solved observations under unchanged caps.",
+    "Solver seconds exclude preparation and independent CLI evaluation; process wall time is separately recorded."
+  ],
+  "local_data_provenance": {
+    "gzip": {
+      "path": "data/raw/12302019.NASDAQ_ITCH50.gz",
+      "sha256": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689",
+      "size_bytes": 3524013057,
+      "source_url": "https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/12302019.NASDAQ_ITCH50.gz"
+    },
+    "scope": "Accepted local-data provenance retained; synthetic runtime rounds consume only the saved synthetic CASE chunks, without rereading the source gzip or real traces.",
+    "source_incomplete": true,
+    "traces": {
+      "H-flat": {
+        "bytes": 1616161552,
+        "path": "data/traces/itch_20191230_0930_1000_flat.mdt",
+        "repeat_path": "data/traces/repeat/itch_20191230_0930_1000_flat.mdt",
+        "repeat_sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2",
+        "sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2"
+      },
+      "H-spec": {
+        "bytes": 1616858987,
+        "path": "data/traces/itch_20191230_0930_1000_spec.mdt",
+        "repeat_path": "data/traces/repeat/itch_20191230_0930_1000_spec.mdt",
+        "repeat_sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70",
+        "sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70"
+      }
+    }
+  },
+  "measured_rounds": 10,
+  "measured_rows": 9000,
+  "observer": {
+    "actual_affinity": [
+      6
+    ],
+    "error": null,
+    "initial_affinity": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "off_cpu2_and_sibling3": true,
+    "requested_cpu": 6
+  },
+  "original_campaign": "results/raw/P7/studies/campaign.json",
+  "protocol": "results/p7/runtime-supplement.json",
+  "rounds": [
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:35:36.007621+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:35:32.958626+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 1.0,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-00-20261025T153431.960942Z.input.tsv.gz",
+      "input_gzip_sha256": "773ef1649b077e34aa2abcdb652b96732a06908b5f096b9aeb6dad8f1cd74536",
+      "input_plain_sha256": "f4f3d3d6f985f290963877fef98cd3c6d911d3870d713a69b7c19e1a875bd294",
+      "kind": "warmup",
+      "launcher_pid": 25599,
+      "observer_process_wall_seconds": 3.021279407000293,
+      "order": "results/raw/P7/runtime/round-00-20261025T153431.960942Z.order.json",
+      "order_sha256": "47500b6695c55c170842850a4a2ad16bb2b8808b95fff528a691bd6cec9eeb7b",
+      "output": "results/raw/P7/runtime/round-00-20261025T153431.960942Z.jsonl",
+      "output_sha256": "dc13b88c314b7049163cfe3d294ba9007f5043fe207b4bde6f1d56eebdabdd13",
+      "process_pid": 25600,
+      "record_sha256": "1e269ebebbb80eca952170de01fc06bef8392988c344b4ee32b215ad6e134283",
+      "round": 0,
+      "settle": {
+        "actual_seconds": 60.028967780999665,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 596847,
+          "ticks": [
+            44872,
+            175,
+            18561,
+            596511,
+            336,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 660480
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 591060,
+          "ticks": [
+            44843,
+            175,
+            18550,
+            590729,
+            331,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 654653
+        },
+        "cpu3_idle_ratio": 0.9931354041530804,
+        "finished_monotonic": 6654.83841822,
+        "finished_utc": "2026-10-25T15:35:32.919583+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6594.809450439,
+        "started_utc": "2026-10-25T15:34:32.890615+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-00-20261025T153431.960942Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "1d8e18ed25d20dd0af2b226cc34a1dcbe1c39cec8f5e3aa85d9fff253d22cbab",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:36:40.213515+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:36:37.063492+00:00",
+        "frequency_khz": 1067194
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 1.0,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-01-20261025T153536.103174Z.input.tsv.gz",
+      "input_gzip_sha256": "da5ca8802a74d38f89a762397d2edb5ab9400c9cf880825a72f3b2e1a8aa4ff4",
+      "input_plain_sha256": "76b14f07b4f8022970df696cda3abea973cfb7f892d4f34530c4a004d2af599f",
+      "kind": "measured",
+      "launcher_pid": 25629,
+      "observer_process_wall_seconds": 3.1280759379997107,
+      "order": "results/raw/P7/runtime/round-01-20261025T153536.103174Z.order.json",
+      "order_sha256": "c189e783ff62fc2794652c5241236b47b565e428a075ad9f5d1106478a57ce87",
+      "output": "results/raw/P7/runtime/round-01-20261025T153536.103174Z.jsonl",
+      "output_sha256": "cdb177fc19aa2956986531e43fdb2500a66f3e133172e167d9114cbf0684c396",
+      "process_pid": 25630,
+      "record_sha256": "4993f9712cbd35e7d413a3275faeb72f33a4f68900941b03300b25dfb4ed4c5c",
+      "round": 1,
+      "settle": {
+        "actual_seconds": 60.02538694499981,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 603243,
+          "ticks": [
+            44881,
+            175,
+            18566,
+            602907,
+            336,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 666890
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 597257,
+          "ticks": [
+            44872,
+            175,
+            18562,
+            596921,
+            336,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 660891
+        },
+        "cpu3_idle_ratio": 0.997832972162027,
+        "finished_monotonic": 6718.978872642,
+        "finished_utc": "2026-10-25T15:36:37.060038+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6658.953485697,
+        "started_utc": "2026-10-25T15:35:37.034650+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-01-20261025T153536.103174Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "256987d6a77a4dec69293dcb3c5b468f9600814562a4bfa81fd567c32f8e5156",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:37:44.381637+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:37:41.334102+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 0.993421052631579,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-02-20261025T153640.354580Z.input.tsv.gz",
+      "input_gzip_sha256": "b629d3d537cf8ef639da97d1b1b1320ffa75d92f0d309013d9e97964a07587ba",
+      "input_plain_sha256": "4886334178825fb672018ef35e0248083d8ebf1bb78b6dfbfda3b9ffa10d010f",
+      "kind": "measured",
+      "launcher_pid": 25661,
+      "observer_process_wall_seconds": 3.0254477050002606,
+      "order": "results/raw/P7/runtime/round-02-20261025T153640.354580Z.order.json",
+      "order_sha256": "21d18ce3d542269a0adfcbcd60e2f32ac5ec02c94cec509e177f8f45fb2437e4",
+      "output": "results/raw/P7/runtime/round-02-20261025T153640.354580Z.jsonl",
+      "output_sha256": "8539ac16b44c279741867e7a0c6458e752dd3368b3b2dbe05dd0c3593b87d111",
+      "process_pid": 25662,
+      "record_sha256": "010114ddb75354877cd39f0ef73950423c53c90529298dadd5bb9d2afee30ac8",
+      "round": 2,
+      "settle": {
+        "actual_seconds": 60.02500587200029,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 609629,
+          "ticks": [
+            44899,
+            175,
+            18573,
+            609293,
+            336,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 673301
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 603667,
+          "ticks": [
+            44881,
+            175,
+            18566,
+            603331,
+            336,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 667314
+        },
+        "cpu3_idle_ratio": 0.995824285952898,
+        "finished_monotonic": 6783.248313176,
+        "finished_utc": "2026-10-25T15:37:41.329478+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6723.223307304,
+        "started_utc": "2026-10-25T15:36:41.304472+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-02-20261025T153640.354580Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "5124dbfb96a207996a99c806bf996828d1f256728284c9a2f67295cee9ba732a",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:38:48.532897+00:00",
+        "frequency_khz": 649308
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:38:45.438740+00:00",
+        "frequency_khz": 3035210
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 1.0,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-03-20261025T153744.480088Z.input.tsv.gz",
+      "input_gzip_sha256": "b26dcba727d6f24c670efaa632d3652d0791090d1d97fb5127a5be7ae632ff21",
+      "input_plain_sha256": "3e4cf9191301ddf2e9cba6a3bbd7db21b5663feb151ad9d8aa6c100e5469b46a",
+      "kind": "measured",
+      "launcher_pid": 25691,
+      "observer_process_wall_seconds": 3.0719652880006834,
+      "order": "results/raw/P7/runtime/round-03-20261025T153744.480088Z.order.json",
+      "order_sha256": "0f2ac632dd3b4ade7e9d8f7ca3d5b34831f9592ae798a8cd7bd53f6986821717",
+      "output": "results/raw/P7/runtime/round-03-20261025T153744.480088Z.jsonl",
+      "output_sha256": "68e6e88e38a61aa43924258b0b94ccd89a367d4dc815f8583162728599bbd674",
+      "process_pid": 25692,
+      "record_sha256": "a562646628cf821319c3cca4f5b6e71aee81f2bb521a8387ab7fb4387c9376fc",
+      "round": 3,
+      "settle": {
+        "actual_seconds": 60.02498828999978,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 616003,
+          "ticks": [
+            44913,
+            175,
+            18580,
+            615663,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 679696
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 610033,
+          "ticks": [
+            44900,
+            175,
+            18574,
+            609697,
+            336,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 673707
+        },
+        "cpu3_idle_ratio": 0.9968275171147103,
+        "finished_monotonic": 6847.35258085,
+        "finished_utc": "2026-10-25T15:38:45.433746+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6787.32759256,
+        "started_utc": "2026-10-25T15:37:45.408757+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-03-20261025T153744.480088Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "137ce3b9934769a708d945a85b3a56b6755ea2cc1e3063604c6c2bd5d7be1eec",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:39:52.496126+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:39:49.605243+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 0.9930555555555556,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-04-20261025T153848.627190Z.input.tsv.gz",
+      "input_gzip_sha256": "5a6900bfc0b74747bd427488f8060838bbb9b6d23d5565e00d1601d4df460f3e",
+      "input_plain_sha256": "30f8df6a825d860684af1a643413e8f36605bd0501567f20478f6454c9a6bf31",
+      "kind": "measured",
+      "launcher_pid": 25723,
+      "observer_process_wall_seconds": 2.8689061179993587,
+      "order": "results/raw/P7/runtime/round-04-20261025T153848.627190Z.order.json",
+      "order_sha256": "42a87441da7804f6941e8a35243c92b5bfd50eb767a65265373fe9d02e939aa2",
+      "output": "results/raw/P7/runtime/round-04-20261025T153848.627190Z.jsonl",
+      "output_sha256": "fdf1d4a5319fc7d37c5106cfd6ba645ed1e0d6169539a566caa0a11a9bf96570",
+      "process_pid": 25724,
+      "record_sha256": "cff5aeef776ff8b960acec1cc76f427c340c22cf2c9fa6e6c0a797d89ec1cb4e",
+      "round": 4,
+      "settle": {
+        "actual_seconds": 60.025393848999556,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 622374,
+          "ticks": [
+            44936,
+            175,
+            18588,
+            622034,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 686098
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 616417,
+          "ticks": [
+            44913,
+            175,
+            18580,
+            616077,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 680110
+        },
+        "cpu3_idle_ratio": 0.9948229792919172,
+        "finished_monotonic": 6911.519648406,
+        "finished_utc": "2026-10-25T15:39:49.600813+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6851.494254557,
+        "started_utc": "2026-10-25T15:38:49.575419+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-04-20261025T153848.627190Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "9b3af6e65e631bdbb1e4b8f8d12609786d751f89c1bb6c526bffc3a11dc5ef9b",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:40:56.653239+00:00",
+        "frequency_khz": 488329
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:40:53.558966+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 0.9967741935483871,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-05-20261025T153952.591652Z.input.tsv.gz",
+      "input_gzip_sha256": "3f0a711c0caadf97f0409d63d40a625e105c656e1ccc0dce239c1b7eb431943a",
+      "input_plain_sha256": "0c7ef491c4a28acdf7e2383aa079669d0b29270373d60426f9cf76e724a38b43",
+      "kind": "measured",
+      "launcher_pid": 25758,
+      "observer_process_wall_seconds": 3.072298461000173,
+      "order": "results/raw/P7/runtime/round-05-20261025T153952.591652Z.order.json",
+      "order_sha256": "1a472d43ec307949892974c0a749be678a0478d66ad9046fcec702146c38eca1",
+      "output": "results/raw/P7/runtime/round-05-20261025T153952.591652Z.jsonl",
+      "output_sha256": "abdf5eae30c780749311784178d3cb2cafa39473bb792632abb4dc7edaec093a",
+      "process_pid": 25759,
+      "record_sha256": "40cf28383482a762c24a144e7e2980d18a75bedaadceb21ff0a6648c0bd0c127",
+      "round": 5,
+      "settle": {
+        "actual_seconds": 60.025489242999356,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 628708,
+          "ticks": [
+            44988,
+            175,
+            18595,
+            628368,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 692491
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 622764,
+          "ticks": [
+            44937,
+            175,
+            18589,
+            622424,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 686490
+        },
+        "cpu3_idle_ratio": 0.9905015830694884,
+        "finished_monotonic": 6975.474408517,
+        "finished_utc": "2026-10-25T15:40:53.555574+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6915.448919274,
+        "started_utc": "2026-10-25T15:39:53.530084+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-05-20261025T153952.591652Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "4b27ab18755412f59f343c062fde2f51e87c18c8a22c96462d306611b7374c4a",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:42:00.835946+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:41:57.738464+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 1.0,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-06-20261025T154056.777659Z.input.tsv.gz",
+      "input_gzip_sha256": "7418c5e814136b85c34cd675042a4962e86085836a4f68bc4607fd5e2e4c8d56",
+      "input_plain_sha256": "5259e3f915399739a99812ec54a2f72d70d323789c607d98cf0e1b37c502e82c",
+      "kind": "measured",
+      "launcher_pid": 25785,
+      "observer_process_wall_seconds": 3.0756271740001466,
+      "order": "results/raw/P7/runtime/round-06-20261025T154056.777659Z.order.json",
+      "order_sha256": "d3b4d5393bbf207ee67daf9d4682f4c2949aac1a8c66bdb061f77f63f1021dfe",
+      "output": "results/raw/P7/runtime/round-06-20261025T154056.777659Z.jsonl",
+      "output_sha256": "b8b1221831cb97dd6017c9ecc8ef7ef05e93561fd9a07556c31778c56b385cc9",
+      "process_pid": 25786,
+      "record_sha256": "5ac723a09b2bad7e40b63d7f7f6d01f95f0708ccbfd7945a11357013296d4755",
+      "round": 6,
+      "settle": {
+        "actual_seconds": 60.0260606210004,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 635076,
+          "ticks": [
+            45029,
+            175,
+            18598,
+            634736,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 698903
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 629122,
+          "ticks": [
+            44989,
+            175,
+            18595,
+            628782,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 692906
+        },
+        "cpu3_idle_ratio": 0.9928297482074371,
+        "finished_monotonic": 7039.652246515,
+        "finished_utc": "2026-10-25T15:41:57.733412+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 6979.626185894,
+        "started_utc": "2026-10-25T15:40:57.707350+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-06-20261025T154056.777659Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "ac794793b99801663de47eba697d70bb0429d78f2b479381a03f9a4848b21ac2",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:43:05.023653+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:43:01.924727+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 0.9967637540453075,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-07-20261025T154200.969908Z.input.tsv.gz",
+      "input_gzip_sha256": "37f4230c238f6859ffb4c6a85833ac43aab7d424ea87cd841cf747874937067c",
+      "input_plain_sha256": "c285cbd0dd825b2540d108d3e75ccd483479b5c7a36c1dcd234ff3a55d6d727a",
+      "kind": "measured",
+      "launcher_pid": 25822,
+      "observer_process_wall_seconds": 3.077052853999703,
+      "order": "results/raw/P7/runtime/round-07-20261025T154200.969908Z.order.json",
+      "order_sha256": "722343c7f3687e3d0a602773a0942f2fa1b43f7c944fbe4039c31a785c1d2cc3",
+      "output": "results/raw/P7/runtime/round-07-20261025T154200.969908Z.jsonl",
+      "output_sha256": "d5a7a141c80d12701e2c1470d09fe8bcb2ec27c15f910695281fdf6add1f7faa",
+      "process_pid": 25823,
+      "record_sha256": "4a15636e9fa6f83d8c0a3892f8555e30743c4d2dbf909655b6377383bd0d3131",
+      "round": 7,
+      "settle": {
+        "actual_seconds": 60.025601094000194,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 641461,
+          "ticks": [
+            45053,
+            175,
+            18603,
+            641121,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 705317
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 635491,
+          "ticks": [
+            45030,
+            175,
+            18598,
+            635151,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 699319
+        },
+        "cpu3_idle_ratio": 0.9953317772590864,
+        "finished_monotonic": 7103.840011926,
+        "finished_utc": "2026-10-25T15:43:01.921177+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 7043.814410832,
+        "started_utc": "2026-10-25T15:42:01.895575+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-07-20261025T154200.969908Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "11ee0cc8d829a46de7ad694c366ae157b6ae9f2c414200268afb84f9767ecaa1",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:44:09.125711+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:44:06.079660+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 1.0,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-08-20261025T154305.118797Z.input.tsv.gz",
+      "input_gzip_sha256": "67c230f39a1c520c915cc57d46cdacd578a032641f5d257733999c16722b1006",
+      "input_plain_sha256": "f82fcd7e37e7391dfedfda7a4edd82a7d1991b0ef94fb88e2ae93a6a4d308a62",
+      "kind": "measured",
+      "launcher_pid": 25850,
+      "observer_process_wall_seconds": 3.023807517000023,
+      "order": "results/raw/P7/runtime/round-08-20261025T154305.118797Z.order.json",
+      "order_sha256": "f9ff13046edcb7501bfebd50ba04149abd81b8c1b9e697d89c5f23af48161a7d",
+      "output": "results/raw/P7/runtime/round-08-20261025T154305.118797Z.jsonl",
+      "output_sha256": "59e8a318770229952738b7480f1c7d13325f30f8e67072499b9b06d0d1b8599b",
+      "process_pid": 25851,
+      "record_sha256": "ba66c0b026e36af04e04a79073aa9f69b1a5b0f7f518a4da64ff3d2ee5d4277d",
+      "round": 8,
+      "settle": {
+        "actual_seconds": 60.0246482499997,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 647872,
+          "ticks": [
+            45055,
+            175,
+            18604,
+            647532,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 711731
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 641872,
+          "ticks": [
+            45054,
+            175,
+            18603,
+            641532,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 705729
+        },
+        "cpu3_idle_ratio": 0.9996667777407531,
+        "finished_monotonic": 7167.995228012,
+        "finished_utc": "2026-10-25T15:44:06.076393+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 7107.970579762,
+        "started_utc": "2026-10-25T15:43:06.051744+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-08-20261025T154305.118797Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "8825f7020bc87d1c9d732c96a0dba5b47f7363008cbad4dbba74037bf8633d38",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:45:13.206728+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:45:10.159542+00:00",
+        "frequency_khz": 400000
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 1.0,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-09-20261025T154409.221621Z.input.tsv.gz",
+      "input_gzip_sha256": "343d9d3712d22550ad08fc09affd3ed15c4981d4df20699d3a57e4fe8029c71a",
+      "input_plain_sha256": "de1b956a4eb1eaf938b926565abf7e1ec8f9140b8f81d344f3f1489776a37e82",
+      "kind": "measured",
+      "launcher_pid": 25888,
+      "observer_process_wall_seconds": 3.0250231109994274,
+      "order": "results/raw/P7/runtime/round-09-20261025T154409.221621Z.order.json",
+      "order_sha256": "b02848c040694361286fc778c930a6dfab5d705acb14c5bb24d4e1aef40b293a",
+      "output": "results/raw/P7/runtime/round-09-20261025T154409.221621Z.jsonl",
+      "output_sha256": "d74b3622c3c5976ed953c43f0ce2d107de4d7d3257f4c579774a90d25b6433ec",
+      "process_pid": 25889,
+      "record_sha256": "03ad9cb3275d4affb73e9bd3edf719628daab646d81e16249ab9f2c25fc9901a",
+      "round": 9,
+      "settle": {
+        "actual_seconds": 60.02337543300018,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 654239,
+          "ticks": [
+            45086,
+            175,
+            18610,
+            653899,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 718135
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 648277,
+          "ticks": [
+            45055,
+            175,
+            18604,
+            647937,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 712136
+        },
+        "cpu3_idle_ratio": 0.9938323053842307,
+        "finished_monotonic": 7232.07495064,
+        "finished_utc": "2026-10-25T15:45:10.156116+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 7172.051575207,
+        "started_utc": "2026-10-25T15:44:10.132740+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-09-20261025T154409.221621Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "bb15081e39720023bcda66e6e26e20950e51b7fb3006d771e199bdad8fbfebad",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    },
+    {
+      "controls_after": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:46:16.618289+00:00",
+        "frequency_khz": 512907
+      },
+      "controls_before": {
+        "ac": {
+          "online": true,
+          "supplies": {
+            "ADP1": "1"
+          }
+        },
+        "at_utc": "2026-10-25T15:46:14.275082+00:00",
+        "frequency_khz": 3523080
+      },
+      "controls_validated": true,
+      "cpu3_idle_ratio": 0.9868421052631579,
+      "environment": {
+        "command_record": "results/raw/P7/runtime/environment-20261025T153430.946144Z.command.json",
+        "command_record_sha256": "ef3b0f89155b9dc94aa40623f847303aad50447ad42f0756806d9051503ce573",
+        "path": "results/raw/P7/runtime/environment-20261025T153430.946144Z.json",
+        "sha256": "b78b041e0ff316dc31705fc84062fa38ee1f60879e3908c4039a36403e15074c"
+      },
+      "input_gzip": "results/raw/P7/runtime/round-10-20261025T154513.302584Z.input.tsv.gz",
+      "input_gzip_sha256": "671b10cf0dec60152252c7230c023d4e2ef9c3187b1efc0a6e1e3b5e1370612b",
+      "input_plain_sha256": "151baa0cd7c236cfcb794d2ae0c6b3765e8f735774d87f85e38a1956e3db4d10",
+      "kind": "measured",
+      "launcher_pid": 25918,
+      "observer_process_wall_seconds": 2.320608361000268,
+      "order": "results/raw/P7/runtime/round-10-20261025T154513.302584Z.order.json",
+      "order_sha256": "211824c606c7bc3aacc9c101f1e36867af791da13d93891ab92e8dc0227c6c3f",
+      "output": "results/raw/P7/runtime/round-10-20261025T154513.302584Z.jsonl",
+      "output_sha256": "9bbeb9539a0735b92d451beff1f7d5d22c38776c2f1b7efd79efcc759365a62a",
+      "process_pid": 25919,
+      "record_sha256": "051fdb4c5f72c2fa18422a2fe07484896c7dd02d63b239e160e1cd94a52ea595",
+      "round": 10,
+      "settle": {
+        "actual_seconds": 60.02814130800016,
+        "complete": true,
+        "cpu3_after": {
+          "cpu": 3,
+          "idle": 660605,
+          "ticks": [
+            45118,
+            175,
+            18613,
+            660265,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 724536
+        },
+        "cpu3_before": {
+          "cpu": 3,
+          "idle": 654647,
+          "ticks": [
+            45086,
+            175,
+            18610,
+            654307,
+            340,
+            0,
+            25,
+            0,
+            0,
+            0
+          ],
+          "total": 718543
+        },
+        "cpu3_idle_ratio": 0.9941598531620224,
+        "finished_monotonic": 7296.190722405,
+        "finished_utc": "2026-10-25T15:46:14.271888+00:00",
+        "required_seconds": 60,
+        "started_monotonic": 7236.162581097,
+        "started_utc": "2026-10-25T15:45:14.243745+00:00"
+      },
+      "status": "passed",
+      "status_record": "results/raw/P7/runtime/round-10-20261025T154513.302584Z.status.json",
+      "validation": {
+        "bad_child_controls": [],
+        "both_solved_cost_comparisons": 885,
+        "cost_read_useful_curve_sha256": "3d17c14614db06503f849a3a1d01802950573056bbdf84de21528cc26d9d7dfc",
+        "errors": [],
+        "rows": 900,
+        "status_counts": [
+          {
+            "count": 885,
+            "solver_status": "solved",
+            "status": "feasible"
+          },
+          {
+            "count": 15,
+            "solver_status": "state_limit",
+            "status": "state_limit"
+          }
+        ],
+        "unique_cases": 900
+      }
+    }
+  ],
+  "schema": "tiplog-p7-runtime-campaign-v1",
+  "scope": "Controlled repeated DP solver timing; modeled objective costs, nonexclusive host; no physical I/O claim.",
+  "session": "results/raw/P7/runtime/session.json",
+  "solver_limits": {
+    "dp_max_classes": 16,
+    "enum_max_edges": 22,
+    "max_states": 2000000,
+    "max_work": 2000000,
+    "time_limit_ms": 500
+  },
+  "started_utc": "2026-10-25T15:34:28.318914+00:00",
+  "status": "passed",
+  "toolchain_identities": {
+    "compiler": {
+      "path": "/usr/bin/x86_64-linux-gnu-g++-15",
+      "sha256": "e6718f7e0c7d057c3ff77b550c603da9bc4030e3ede3c053705acce1293dbe4d"
+    },
+    "setarch": {
+      "path": "/usr/bin/setarch",
+      "sha256": "935e2e6abab730a0a2a2c273a6b9cb886ebb2f6cb05c5bf674195edba6b08a91"
+    },
+    "taskset": {
+      "path": "/usr/bin/taskset",
+      "sha256": "42acb8e233943873f3bf9eeb1e15bd3281498b5603a5b10d0f9bc37067a12d57"
+    },
+    "time": {
+      "path": "/usr/bin/time",
+      "sha256": "34ba90f8199989d88f2f02d40ddcee60be27a7f361db9fb7c100578cc8d7bf1e"
+    }
+  },
+  "warmup_rounds": 1,
+  "warmup_rows": 900
+}

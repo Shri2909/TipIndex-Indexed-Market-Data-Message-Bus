@@ -23,6 +23,26 @@ void validate_mode(ReplayMode mode, MergeKernel kernel) {
     throw std::invalid_argument("invalid merge kernel");
   }
 }
+ReplayWork work_since(const ReplayWork &now, const ReplayWork &before) {
+  return {now.bytes_inspected - before.bytes_inspected,
+          now.entries_visited - before.entries_visited,
+          now.records_fetched - before.records_fetched,
+          now.delivered - before.delivered,
+          now.pads_inspected - before.pads_inspected,
+          now.seek_data_examined - before.seek_data_examined,
+          now.seek_pads_examined - before.seek_pads_examined,
+          now.index_seeks - before.index_seeks};
+}
+void add_work(ReplayWork &total, const ReplayWork &delta) {
+  total.bytes_inspected += delta.bytes_inspected;
+  total.entries_visited += delta.entries_visited;
+  total.records_fetched += delta.records_fetched;
+  total.delivered += delta.delivered;
+  total.pads_inspected += delta.pads_inspected;
+  total.seek_data_examined += delta.seek_data_examined;
+  total.seek_pads_examined += delta.seek_pads_examined;
+  total.index_seeks += delta.index_seeks;
+}
 } // namespace
 Engine::Engine(const EngineConfig &config)
     : config_(config), registry_(config.registry_limits),
@@ -187,6 +207,9 @@ Replay::Replay(Engine &engine, const subs::CompiledSubscription &sub, Seq after,
     return;
   }
   const auto canonical = engine.ring_.seek_after(after);
+  const auto seek_work = engine.ring_.last_seek_metrics();
+  work_.seek_data_examined += seek_work.data_examined;
+  work_.seek_pads_examined += seek_work.pads_examined;
   checkpoint_ = ResumeCheckpoint{after, canonical};
   if (supplied) {
     // A completed snapshot may end before a subsequently inserted PAD. Only
@@ -242,7 +265,8 @@ Replay::Replay(Replay &&other) noexcept
       last_delivered_(other.last_delivered_), upper_seq_(other.upper_seq_),
       upper_pos_(other.upper_pos_), status_(other.status_),
       error_(other.error_), checkpoint_(other.checkpoint_), mode_(other.mode_),
-      kernel_(other.kernel_), partitions_(std::move(other.partitions_)) {}
+      kernel_(other.kernel_), partitions_(std::move(other.partitions_)),
+      work_(other.work_) {}
 Replay &Replay::operator=(Replay &&other) noexcept {
   if (this == &other)
     return *this;
@@ -260,31 +284,60 @@ Replay &Replay::operator=(Replay &&other) noexcept {
   mode_ = other.mode_;
   kernel_ = other.kernel_;
   partitions_ = std::move(other.partitions_);
+  work_ = other.work_;
   return *this;
 }
 
 Status Replay::next_batch(std::size_t max, std::vector<Delivered> &out) {
   out.clear();
-  return next_batch_into(max, out);
+  return next_batch_into<false>(max, out);
 }
-Status Replay::next_batch_into(std::size_t max, std::vector<Delivered> &out) {
+PollResult Replay::next_batch(PollLimits limits, std::vector<Delivered> &out) {
+  out.clear();
+  return next_batch_into<true>(limits, out);
+}
+template <bool Report>
+std::conditional_t<Report, PollResult, Status>
+Replay::next_batch_into(
+    std::conditional_t<Report, PollLimits, std::size_t> supplied_limits,
+    std::vector<Delivered> &out) {
+  // Keep the original size_t call ABI and compile telemetry out of the legacy
+  // specialization, while maintaining a single traversal implementation.
+  const auto limits = [&] {
+    if constexpr (Report)
+      return supplied_limits;
+    else
+      return PollLimits{supplied_limits};
+  }();
   const auto initial_output = out.size();
+  const auto initial_work = work_;
+  std::uint64_t inspections = 0;
+  const auto result = [&](PollStop stop) {
+    if constexpr (Report)
+      return PollResult{status_, stop, inspections,
+                        work_since(work_, initial_work)};
+    else
+      return status_;
+  };
   const auto anchor = lifetime_.lock();
   if (!anchor || !anchor->alive)
     throw std::logic_error("Replay outlived its Engine");
-  if (max == 0 || status_ != Status::More)
-    return status_;
+  if (limits.max_outputs == 0 || (Report && limits.max_inspections == 0))
+    return result(PollStop::NoWork);
+  if (status_ != Status::More)
+    return result(status_ == Status::Error ? PollStop::Error
+                                          : PollStop::SnapshotDone);
   auto &ring = engine_->ring_;
   if (checkpoint_->next_pos == upper_pos_) {
     status_ = Status::Done;
     checkpoint_ = ResumeCheckpoint{upper_seq_, upper_pos_};
-    return status_;
+    return result(PollStop::SnapshotDone);
   }
   if (checkpoint_->next_pos < ring.tail_pos()) {
     status_ = Status::Error;
     error_ = ReplayError{ReplayError::FellBehind, requested_after_,
                          last_delivered_, ring.tail_seq()};
-    return status_;
+    return result(PollStop::Error);
   }
   if (mode_ == ReplayMode::Indexed) {
     // Re-seek at each batch boundary. The consumed previous record's block may
@@ -301,6 +354,7 @@ Status Replay::next_batch_into(std::size_t max, std::vector<Delivered> &out) {
     const auto count = static_cast<std::uint32_t>(partitions_.size());
     for (std::uint32_t i = 0; i < count; ++i) {
       auto cursor = engine_->index_->seek(partitions_[i], checkpoint_->next_pos);
+      ++work_.index_seeks;
       heads.push_back(cursor.valid() && cursor.pos < upper_pos_
                           ? merge::pack(cursor.pos, i, count)
                           : merge::sentinel);
@@ -308,7 +362,7 @@ Status Replay::next_batch_into(std::size_t max, std::vector<Delivered> &out) {
       filters.push_back(sub_.partition_filter(partitions_[i]));
     }
     auto kernel = merge::make_kernel(kernel_, heads);
-    const auto full = std::visit([&](auto &queue) {
+    const auto stop = std::visit([&](auto &queue) {
       while (!queue.empty()) {
         const auto key = queue.top();
         const auto pos = merge::position(key);
@@ -316,49 +370,77 @@ Status Replay::next_batch_into(std::size_t max, std::vector<Delivered> &out) {
         if (pos < ring.tail_pos())
           throw std::logic_error("retained unread checkpoint has expired cursor");
         const auto item = ring.at(pos);
+        if constexpr (Report)
+          ++inspections;
+        ++work_.entries_visited;
+        ++work_.records_fetched;
+        work_.bytes_inspected += item.size;
         if (item.pad)
           throw std::logic_error("index cursor references PAD");
         const auto &topic = engine_->registry_.get(item.topic);
         const auto *filter = filters[id];
         if (filter != nullptr && filter->matches(topic.local_id)) {
           out.push_back({item.seq, item.pos, item.topic, item.payload});
+          ++work_.delivered;
           checkpoint_ = ResumeCheckpoint{item.seq, item.pos + item.size};
           last_delivered_ = item.seq;
-          if (out.size() - initial_output == max)
-            return true;
+          if (out.size() - initial_output == limits.max_outputs)
+            return PollStop::OutputLimit;
+        } else if constexpr (Report) {
+          // The minimum candidate and all earlier selected postings have been
+          // processed. Preserve rejection progress only for the finite path;
+          // legacy/nullopt callers retain their conservative checkpoints.
+          if (limits.max_inspections)
+            checkpoint_ = ResumeCheckpoint{item.seq, item.pos + item.size};
         }
         auto &cursor = cursors[id];
         engine_->index_->advance(cursor, ring.tail_pos());
         queue.replace_top(cursor.valid() && cursor.pos < upper_pos_
                               ? merge::pack(cursor.pos, id, count)
                               : merge::sentinel);
+        if (Report && limits.max_inspections &&
+            inspections == *limits.max_inspections &&
+            !queue.empty())
+          return PollStop::InspectionLimit;
       }
-      return false;
+      return PollStop::SnapshotDone;
     }, kernel);
-    if (full)
-      return Status::More;
+    if (stop != PollStop::SnapshotDone)
+      return result(stop);
     checkpoint_ = ResumeCheckpoint{upper_seq_, upper_pos_};
     status_ = Status::Done;
-    return status_;
+    return result(PollStop::SnapshotDone);
   }
   while (checkpoint_->next_pos < upper_pos_) {
     const auto item = ring.at(checkpoint_->next_pos);
+    if constexpr (Report)
+      ++inspections;
+    work_.bytes_inspected += item.size;
+    if (item.pad)
+      ++work_.pads_inspected;
+    else
+      ++work_.records_fetched;
     if (!item.pad && sub_.matches(item.topic)) {
       // Preserve the unread record if output allocation throws.
       out.push_back({item.seq, item.pos, item.topic, item.payload});
+      ++work_.delivered;
       checkpoint_ = ResumeCheckpoint{item.seq, item.pos + item.size};
       last_delivered_ = item.seq;
-      if (out.size() - initial_output == max)
-        return Status::More;
+      if (out.size() - initial_output == limits.max_outputs)
+        return result(PollStop::OutputLimit);
     } else {
       checkpoint_->next_pos += item.size;
       if (!item.pad)
         checkpoint_->after_seq = item.seq;
     }
+    if (Report && limits.max_inspections &&
+        inspections == *limits.max_inspections &&
+        checkpoint_->next_pos < upper_pos_)
+      return result(PollStop::InspectionLimit);
   }
   checkpoint_ = ResumeCheckpoint{upper_seq_, upper_pos_};
   status_ = Status::Done;
-  return status_;
+  return result(PollStop::SnapshotDone);
 }
 
 Tail::Tail(Engine &engine, const subs::CompiledSubscription &sub, Seq after,
@@ -370,31 +452,91 @@ Tail::Tail(Engine &engine, const subs::CompiledSubscription &sub, Seq after,
       checkpoint_(replay_.checkpoint()) {}
 
 Status Tail::poll(std::size_t max, std::vector<Delivered> &out) {
+  return poll_into<false>(max, out);
+}
+PollResult Tail::poll(PollLimits limits, std::vector<Delivered> &out) {
+  return poll_into<true>(limits, out);
+}
+template <bool Report>
+std::conditional_t<Report, PollResult, Status>
+Tail::poll_into(
+    std::conditional_t<Report, PollLimits, std::size_t> supplied_limits,
+    std::vector<Delivered> &out) {
+  const auto limits = [&] {
+    if constexpr (Report)
+      return supplied_limits;
+    else
+      return PollLimits{supplied_limits};
+  }();
   out.clear();
+  std::uint64_t inspections = 0;
+  ReplayWork work{};
+  const auto result = [&](PollStop stop) {
+    if constexpr (Report)
+      return PollResult{status_, stop, inspections, work};
+    else
+      return status_;
+  };
   const auto anchor = lifetime_.lock();
   if (!anchor || !anchor->alive)
     throw std::logic_error("Tail outlived its Engine");
-  if (max == 0 || status_ == Status::Error)
-    return status_;
+  if (limits.max_outputs == 0 || (Report && limits.max_inspections == 0))
+    return result(PollStop::NoWork);
+  if (status_ == Status::Error)
+    return result(PollStop::Error);
   for (;;) {
     if (replay_.status() == Status::Done) {
       // Sequence-floor validation on the new snapshot is authoritative. An old
       // completed PAD boundary can expire while every new DATA remains valid.
       if (checkpoint_->after_seq == engine_->ring_.head_seq() - 1) {
         status_ = Status::Done;
-        return status_;
+        return result(PollStop::CaughtUp);
+      }
+      if (Report && limits.max_inspections &&
+          inspections == *limits.max_inspections) {
+        // The old boundary is complete but newer DATA exists. Do not spend
+        // unbudgeted preparation on a range that cannot be traversed yet.
+        status_ = Status::More;
+        return result(PollStop::InspectionLimit);
       }
       replay_ = engine_->open_replay(sub_, *checkpoint_, mode_, kernel_);
+      if constexpr (Report)
+        add_work(work, replay_.work());
       if (replay_.status() == Status::Error) {
         const auto error = *replay_.error();
         error_ = ReplayError{ReplayError::FellBehind, requested_after_,
                              last_delivered_, error.oldest_retained};
         status_ = Status::Error;
-        return status_;
+        return result(PollStop::Error);
       }
     }
     const auto before = out.size();
-    status_ = replay_.next_batch_into(max - out.size(), out);
+    auto remaining = limits;
+    remaining.max_outputs -= out.size();
+    if (Report && remaining.max_inspections)
+      *remaining.max_inspections -= inspections;
+    const auto batch = [&] {
+      try {
+        if constexpr (Report)
+          return replay_.next_batch_into<true>(remaining, out);
+        else
+          return replay_.next_batch_into<false>(remaining.max_outputs, out);
+      } catch (...) {
+        // A throwing append can leave a successfully delivered prefix in out.
+        // Keep the public exception caches unchanged, but preserve that prefix
+        // in any later terminal error, including expiry before the next retry.
+        if (out.size() != before)
+          last_delivered_ = out.back().seq;
+        throw;
+      }
+    }();
+    if constexpr (Report) {
+      inspections += batch.inspections_used;
+      add_work(work, batch.work_delta);
+      status_ = batch.status;
+    } else {
+      status_ = batch;
+    }
     if (out.size() != before)
       last_delivered_ = out.back().seq;
     if (replay_.checkpoint())
@@ -403,10 +545,14 @@ Status Tail::poll(std::size_t max, std::vector<Delivered> &out) {
       const auto error = *replay_.error();
       error_ = ReplayError{ReplayError::FellBehind, requested_after_,
                            last_delivered_, error.oldest_retained};
-      return status_;
+      return result(PollStop::Error);
     }
-    if (status_ == Status::More)
-      return status_;
+    if (status_ == Status::More) {
+      if constexpr (Report)
+        return result(batch.stop);
+      else
+        return status_;
+    }
     // At most one fresh head range follows the old captured range: no engine
     // mutation interleaves, so the next loop observes its completed head.
   }

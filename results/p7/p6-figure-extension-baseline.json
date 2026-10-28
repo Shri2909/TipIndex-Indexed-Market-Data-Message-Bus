@@ -1,0 +1,42 @@
+{
+  "results/derived/tip-summary.json": {
+    "sha256": "ec27e7f3cb5050c61e54fad211708fd64f45fa297af215f8a2c39a4412d4bccb",
+    "bytes": 84501291
+  },
+  "results/p6/analysis-inputs.json": {
+    "sha256": "3e48f0b0f1ab3315b92c973bdc208b4f23d1c7e8f70d4cdc911988ec92e64498",
+    "bytes": 1110
+  },
+  "py/tiplog_py/figures/build.py": {
+    "sha256": "a3a923b936d55a03905c0df4f5d3355582328aae644285154fb2522027edf7e5",
+    "bytes": 7856
+  },
+  "py/tiplog_py/figures/tip.py": {
+    "sha256": "09ec02d27c7709c2e0a7a81268bfb3f8570a9ebf229126246e715f52e4de4000",
+    "bytes": 26771
+  },
+  "results/figures/p6-figures.json": {
+    "sha256": "4ab61ff8afcf4e2f785f96e036964e5d8a2cee49693c3a174c3b9aeeb9aa1a70",
+    "bytes": 1888943
+  },
+  "results/derived/tip-statistics.csv": {
+    "sha256": "7b728d08490344bef5eb1f0bda25a99450048c9a4a1b8e0ea6030e0880002549",
+    "bytes": 176491532
+  },
+  "results/derived/tip-outcomes.csv": {
+    "sha256": "ca13ebcd1a7457c8a865970a043a4b06ed35a56eb42cca0f218170f905ae3e24",
+    "bytes": 16963433
+  },
+  "results/derived/tip-paired-ratios.csv": {
+    "sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866",
+    "bytes": 14080408
+  },
+  "results/derived/t2-adjusted-paired.json": {
+    "sha256": "1b85f86f4d6e858021d8d2dcd0dbf1e4e67f72feb731a2b59ce580ba9d4bbf95",
+    "bytes": 638185
+  },
+  "results/derived/t5-high-water.json": {
+    "sha256": "0a78a65b9a37b38a054302b41aece9774ade15cc55d1b539db72bc673d6f7fd7",
+    "bytes": 233154
+  }
+}

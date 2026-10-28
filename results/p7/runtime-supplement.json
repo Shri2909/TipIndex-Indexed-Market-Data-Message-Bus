@@ -1,0 +1,50 @@
+{
+  "configuration_count": 900,
+  "configuration_population": "all900original synthetic caseIDs; no sampling",
+  "controls": {
+    "ac": "child before/after true and processboundary AC required",
+    "aslr": "attemptsetarch-R;recordpermittedfailureandexplicitASLRonfallback",
+    "child_cpu_before_after": "actual sched_getcpu at solver boundary; both mustequal2",
+    "frequency": "childCPU2scaling_cur_freqbefore/after;nonnullpositive;flag>10%deviation from allaccepted measuredsample median;retainflags",
+    "governor": "record; no privilegedchanges",
+    "observer_cpu": 6,
+    "quiescence": "nootherprojectbench/fuzz/build/test/conversion;recordnonexclusivehostbackground",
+    "sibling3": "measure /proc/stat idle fraction; no isolationclaim",
+    "solver_cpu": 2,
+    "timing": "solverinternalsteady_clock; includesreconstruction/internalformulachecks; excludesprepare andCLIindependentmaterialization/controls"
+  },
+  "cpu": 2,
+  "declared_utc": "2026-10-25T14:15:38.324605+00:00",
+  "measured_rounds": 10,
+  "methods": [
+    "dp"
+  ],
+  "observer_cpu": 6,
+  "reason": "Discharge L3 runtime-scaling controls of VALIDATION5.1/5.4. Original full-matrix walltimes remain diagnostics; model, budget, caps and cost acceptance unchanged.",
+  "rounds": {
+    "each_round": "all900configurations once;globally shuffled order",
+    "fresh_process_per_round": true,
+    "measured": 10,
+    "seed": 20191230,
+    "settle_seconds_before_every_round": 60,
+    "warmup": 1
+  },
+  "schema": "tiplog-p7-runtime-protocol-v1",
+  "settle_seconds": 60,
+  "shuffle_seed": 20191230,
+  "solver_limits": {
+    "dp_max_classes": 16,
+    "enum_max_edges": 22,
+    "max_states": 2000000,
+    "max_work": 2000000,
+    "time_limit_ms": 500
+  },
+  "source_impact": "Dedicated runtimefrontend copies original CLI parser/model execution and adds read-only observations; original costfrontend, optimizerlibrary andtimedengine unchanged. Validate reported exactcosts/metricsagainstoriginalcostmatrix forboth-solvedcases.",
+  "statistics": {
+    "per_case": "measuredn, solvedn, everyoutcome, median/IQR/min/max +95%percentilebootstrapmedianCI with10000seededresamples",
+    "scaling_plot": "median of per-case measured medians across5distincttree seeds; onlyall10solvedconfigurations; available/totalcoverageexplicit",
+    "unsolved": "allcapstatusesretained; no incomplete timings used as solvedruntime",
+    "warmup": "savedrawbutexcludedfromstatistics"
+  },
+  "warmup_rounds": 1
+}

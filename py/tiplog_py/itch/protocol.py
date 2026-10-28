@@ -89,6 +89,9 @@ def validate_message(payload: bytes, offset: int = 0) -> str:
         raise FramingError(f"unsupported ITCH type 0x{payload[0]:02x}", offset)
     if len(payload) != expected:
         raise FramingError(f"type {kind} length {len(payload)} != {expected}", offset)
+    symbol_offset = SYMBOL_OFFSETS.get(kind)
+    if symbol_offset is not None and not payload[symbol_offset:symbol_offset + 8].rstrip(b" "):
+        raise FramingError("empty stock symbol", offset)
     return kind
 
 
@@ -164,6 +167,9 @@ class BinaryFileReader:
                 position += 2
                 payload = data[position:position + length]
                 position += length
+                symbol_offset = SYMBOL_OFFSETS.get(chr(kind))
+                if symbol_offset is not None and not payload[symbol_offset:symbol_offset + 8].rstrip(b" "):
+                    raise FramingError("empty stock symbol", offset + 2)
                 self.total_uncompressed_bytes = base + position
                 self.message_count += 1
                 yield payload

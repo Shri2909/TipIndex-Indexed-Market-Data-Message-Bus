@@ -1,0 +1,1 @@
+{"status": "passed", "core_file_count": 38, "existing_binary_count": 19, "cmake": {"only_additive_layout_include": true, "layout_target_links": ["tiplog_layout_lib PUBLIC tiplog::build_options", "tiplog_layout PRIVATE tiplog::layout", "tiplog_layout_test PRIVATE tiplog::layout GTest::gtest_main", "tiplog_layout_cc5 PRIVATE tiplog::layout"], "no_engine_dependency": true}}

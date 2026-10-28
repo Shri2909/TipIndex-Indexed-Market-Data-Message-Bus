@@ -1,6 +1,7 @@
 include(FetchContent)
 
-option(TIPLOG_FORCE_FETCH_GTEST "Exercise pinned GoogleTest FetchContent fallback" OFF)
+option(TIPLOG_FORCE_FETCH_GTEST "Use the pinned GoogleTest archive (default)" ON)
+option(TIPLOG_ALLOW_SYSTEM_GTEST "Opt into an exact system GoogleTest without archive hash verification" OFF)
 option(TIPLOG_ENABLE_FUZZING "Instrument code for future libFuzzer targets" OFF)
 set(TIPLOG_DOWNLOAD_CACHE "${PROJECT_SOURCE_DIR}/build/downloads" CACHE PATH
   "Optional directory containing SHA-256-verified dependency archives")
@@ -27,12 +28,15 @@ set(BENCHMARK_ENABLE_WERROR OFF CACHE BOOL "" FORCE)
 set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "" FORCE)
 set(BENCHMARK_DOWNLOAD_DEPENDENCIES OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(benchmark)
+include("${PROJECT_SOURCE_DIR}/cmake/benchmark_output_patch.cmake")
 
 if(BUILD_TESTING)
-  if(NOT TIPLOG_FORCE_FETCH_GTEST)
+  # Existing build caches may retain FORCE_FETCH=OFF from the old default.
+  # A system package now requires its own explicit opt-in.
+  if(TIPLOG_ALLOW_SYSTEM_GTEST AND NOT TIPLOG_FORCE_FETCH_GTEST)
     find_package(GTest 1.17.0 EXACT QUIET CONFIG)
   endif()
-  if(TIPLOG_FORCE_FETCH_GTEST OR NOT GTest_FOUND)
+  if(NOT TIPLOG_ALLOW_SYSTEM_GTEST OR TIPLOG_FORCE_FETCH_GTEST OR NOT GTest_FOUND)
     set(_gtest_url
       "https://codeload.github.com/google/googletest/tar.gz/52eb8108c5bdec04579160ae17225d66034bd723")
     if(EXISTS "${TIPLOG_DOWNLOAD_CACHE}/googletest-1.17.0.tar.gz")

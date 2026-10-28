@@ -105,6 +105,13 @@ Item Ring::at(LogPos pos) const {
   return decode(pos);
 }
 
+Item Ring::at_checked(LogPos pos) const {
+  if (pos >= head_pos_ || !is_boundary(pos)) {
+    throw std::out_of_range("ring item position is not a retained item boundary");
+  }
+  return decode(pos);
+}
+
 bool Ring::is_boundary(LogPos pos) const {
   if (pos % 8 != 0 || pos < tail_pos_ || pos > head_pos_) return false;
   auto cursor = tail_pos_;

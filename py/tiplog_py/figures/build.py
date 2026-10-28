@@ -1,4 +1,4 @@
-"""Build P1 F01–F05 from the saved L1 CSV/JSON inputs with --all."""
+"""Regenerate available accepted figure families from their saved input manifests."""
 
 import argparse
 import csv
@@ -114,8 +114,34 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, default=Path("results/figures"))
     parser.add_argument("--prefix", default="itch_20191230")
     parser.add_argument("--counts", type=Path, default=Path("results/data/itch_20191230_counts.json"))
+    parser.add_argument("--tip-rows", type=Path,
+                        help="Actual consolidated P6 observations; excludes pilot/training")
+    parser.add_argument("--summary-output", type=Path,
+                        help="P6 summary destination; default is OUTPUT/../derived/tip-summary.json")
+    parser.add_argument("--evidence-root", type=Path,
+                        help="Declared workspace for relative frequency sidecar references")
+    parser.add_argument("--seed", type=int, default=20191230)
     args = parser.parse_args(argv)
-    print(json.dumps(build(args.data_dir, args.output, args.prefix, args.counts), sort_keys=True))
+    manifests = {"P1": build(args.data_dir, args.output, args.prefix, args.counts)}
+    tip_manifest = Path("results/p6/analysis-inputs.json")
+    if args.tip_rows is not None or tip_manifest.exists():
+        from .tip import build as build_tip
+        path = args.tip_rows or Path(json.loads(tip_manifest.read_text())["rows_path"])
+        manifests["P6"] = build_tip(path, args.output, seed=args.seed,
+                                    summary_path=args.summary_output or args.output.parent / "derived/tip-summary.json",
+                                    evidence_root=args.evidence_root)
+    elif Path("results/p6/phase-gate.json").exists():
+        raise ValueError("P6 gate exists without its required figure input manifest")
+    layout_manifest = Path("results/p7/analysis-inputs.json")
+    if layout_manifest.exists():
+        from .layout import build as build_layout
+        layout_inputs = json.loads(layout_manifest.read_text())
+        manifests["P7"] = build_layout(layout_inputs["summary"], layout_inputs["global"],
+                                       layout_inputs["worked_example"], args.output,
+                                       runtime_path=layout_inputs.get("runtime"))
+    elif Path("results/p7/phase-gate.json").exists():
+        raise ValueError("P7 gate exists without its required figure input manifest")
+    print(json.dumps(manifests, sort_keys=True))
 
 
 if __name__ == "__main__":

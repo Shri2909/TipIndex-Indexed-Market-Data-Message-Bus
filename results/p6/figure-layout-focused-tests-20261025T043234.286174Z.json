@@ -1,0 +1,23 @@
+{
+  "label": "figure-layout-focused-tests",
+  "argv": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "py/tests/test_analysis_figures.py",
+    "-q"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T043234.286174Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/figure-layout-focused-tests-20261025T043234.286174Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 5.18498630600061
+}

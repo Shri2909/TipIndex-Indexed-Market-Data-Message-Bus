@@ -1,0 +1,1325 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.0.3, pluggy-1.7.0
+rootdir: /dev
+configfile: null
+collected 56 items / 3 deselected / 53 selected
+
+../../../../dev FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF...........FFFFFF.F    [100%]
+
+=================================== FAILURES ===================================
+__ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[] __
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd37cc30>
+data = b''
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+            instance.__init__(path, tmp_path/'cache')
+>       assert instance.stream is instance.data is instance.rows is None
+                                  ^^^^^^^^^^^^^
+E       AttributeError: 'TraceIndex' object has no attribute 'data'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:37: AttributeError
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[short] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6ffc3ce90>
+data = b'short'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+>           instance.__init__(path, tmp_path/'cache')
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.exp.oracle.TraceIndex object at 0x7ad6fd30e210>
+path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject1/input.mdt')
+cache = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject1/cache')
+
+    def __init__(self, path: str | Path, cache: Path, *, rebuild=False):
+        self.path, self.cache = Path(path), Path(cache)
+        cache.mkdir(parents=True, exist_ok=True)
+        self.stream = self.path.open('rb')
+        self.data = mmap.mmap(self.stream.fileno(), 0, access=mmap.ACCESS_COPY)
+>       magic, version, flags, count, offset, length, prefix, reserved = HEADER.unpack_from(self.data)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       struct.error: unpack_from requires a buffer of at least 64 bytes for unpacking 64 bytes at offset 0 (actual buffer size is 5)
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:72: error
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x10'\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd7f7410>
+data = b"TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x10'\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00...00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+>           instance.__init__(path, tmp_path/'cache')
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:90: in __init__
+    rows = np.lib.format.open_memmap(temporary, mode='w+', dtype=INDEX_DTYPE,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject2/cache/9b1c2ec55ea9b7da253cc53daf8ddf800e28d48f2e952487e8f41c8fc6cc725a.partial.npy'),)
+kwargs = {'dtype': dtype([('offset', '<u8'), ('ts', '<u8'), ('topic', '<u4'), ('length', '<u2'), ('size', '<u4')]), 'mode': 'w+', 'shape': (10000,)}
+
+    def forbidden(*args, **kwargs):
+>       pytest.fail('invalid metadata must reject before index allocation')
+E       Failed: invalid metadata must reject before index allocation
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:32: Failed
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd79df20>
+data = b'TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff@\x00\x00\x00\x00\x00\x00\x00\x04\x00\...00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+>           instance.__init__(path, tmp_path/'cache')
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:90: in __init__
+    rows = np.lib.format.open_memmap(temporary, mode='w+', dtype=INDEX_DTYPE,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject3/cache/fb855b00bf15c82a00c1180d991266b027d57c81b9e2de8757809eaf9dac0ba9.partial.npy'),)
+kwargs = {'dtype': dtype([('offset', '<u8'), ('ts', '<u8'), ('topic', '<u4'), ('length', '<u2'), ('size', '<u4')]), 'mode': 'w+', 'shape': (18446744073709551615,)}
+
+    def forbidden(*args, **kwargs):
+>       pytest.fail('invalid metadata must reject before index allocation')
+E       Failed: invalid metadata must reject before index allocation
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:32: Failed
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00?\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd79e580>
+data = b'TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00?\x00\x00\x00\x00\x00\x00\x00\x04\x00\...00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+            instance.__init__(path, tmp_path/'cache')
+>       assert instance.stream is instance.data is instance.rows is None
+                                                   ^^^^^^^^^^^^^
+E       AttributeError: 'TraceIndex' object has no attribute 'rows'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:37: AttributeError
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject5')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd3b8750>
+data = b'TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+>           instance.__init__(path, tmp_path/'cache')
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:77: in __init__
+    self.topics = dictionary(self.data, offset)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data = <mmap.mmap closed=False, access=ACCESS_COPY, length=64, pos=0, offset=0>
+offset = 64
+
+    def dictionary(data, offset: int) -> dict[int, str]:
+>       count, = struct.unpack_from('<I', data, offset)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       struct.error: unpack_from requires a buffer of at least 68 bytes for unpacking 4 bytes at offset 64 (actual buffer size is 64)
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:48: error
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject6')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd3b9250>
+data = b'TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x04\x00\...0\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+>           instance.__init__(path, tmp_path/'cache')
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:77: in __init__
+    self.topics = dictionary(self.data, offset)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data = <mmap.mmap closed=False, access=ACCESS_COPY, length=68, pos=0, offset=0>
+offset = 64
+
+    def dictionary(data, offset: int) -> dict[int, str]:
+        count, = struct.unpack_from('<I', data, offset)
+        cursor = offset + 4
+        topics = {}
+        for _ in range(count):
+>           topic, length = struct.unpack_from('<IH', data, cursor)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           struct.error: unpack_from requires a buffer of at least 74 bytes for unpacking 6 bytes at offset 68 (actual buffer size is 68)
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:52: error
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x0b\x10\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x01\x10aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject7')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd3c6120>
+data = b'TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x0b\x10\...aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+            instance.__init__(path, tmp_path/'cache')
+>       assert instance.stream is instance.data is instance.rows is None
+                                                   ^^^^^^^^^^^^^
+E       AttributeError: 'TraceIndex' object has no attribute 'rows'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:37: AttributeError
+_ test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x01\x00a\x02\x00\x00\x00\x01\x00a] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject8')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd3c6a80>
+data = b'TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x12\x00\...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x01\x00a\x02\x00\x00\x00\x01\x00a'
+
+    @pytest.mark.parametrize('data', [
+        b'', b'short',
+        trace_bytes(count=10_000),
+        trace_bytes(count=(1 << 64)-1),
+        trace_bytes(offset=63),
+        trace_bytes(dictionary=b''),
+        trace_bytes(dictionary=struct.pack('<I', 100)),
+        trace_bytes(dictionary=struct.pack('<IIH', 1, 1, 4097) + b'a'*4097),
+        trace_bytes(dictionary=struct.pack('<I', 2) + struct.pack('<IH', 1, 1) + b'a'
+                    + struct.pack('<IH', 2, 1) + b'a'),
+    ])
+    def test_independent_parser_rejects_invalid_metadata_before_cache_allocation(tmp_path, monkeypatch, data):
+        path = tmp_path/'input.mdt'
+        path.write_bytes(data)
+        def forbidden(*args, **kwargs):
+            pytest.fail('invalid metadata must reject before index allocation')
+        monkeypatch.setattr(np.lib.format, 'open_memmap', forbidden)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError):
+>           instance.__init__(path, tmp_path/'cache')
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:90: in __init__
+    rows = np.lib.format.open_memmap(temporary, mode='w+', dtype=INDEX_DTYPE,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_reject8/cache/1a2363982fe0bd0beed5497f5263cb9eebaf1555b35e3e1c32e3360468d803d7.partial.npy'),)
+kwargs = {'dtype': dtype([('offset', '<u8'), ('ts', '<u8'), ('topic', '<u4'), ('length', '<u2'), ('size', '<u4')]), 'mode': 'w+', 'shape': (0,)}
+
+    def forbidden(*args, **kwargs):
+>       pytest.fail('invalid metadata must reject before index allocation')
+E       Failed: invalid metadata must reject before index allocation
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:32: Failed
+______ test_independent_parser_failed_record_cleans_owned_cache_and_input ______
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_failed0')
+
+    def test_independent_parser_failed_record_cleans_owned_cache_and_input(tmp_path):
+        path = tmp_path/'input.mdt'
+        dictionary = struct.pack('<IIH', 1, 1, 3) + b'a/b'
+        path.write_bytes(trace_bytes(count=1, records=struct.pack('<IHHQ', 1, 65535, 0, 1),
+                                    dictionary=dictionary))
+        cache = tmp_path/'cache'; cache.mkdir()
+        unrelated = cache/'unrelated.partial.npy'; unrelated.write_bytes(b'preserve')
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(ValueError, match='record'):
+            instance.__init__(path, cache)
+>       assert instance.stream is instance.data is instance.rows is None
+                                                   ^^^^^^^^^^^^^
+E       AttributeError: 'TraceIndex' object has no attribute 'rows'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:51: AttributeError
+_____ test_independent_parser_cache_publication_failure_cleans_owned_files _____
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_independent_parser_cache_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd349010>
+
+    def test_independent_parser_cache_publication_failure_cleans_owned_files(tmp_path, monkeypatch):
+        path = tmp_path/'input.mdt'
+        with TraceWriter(path, '00'*32) as writer:
+            writer.append('a/b', b'x', 1)
+        from pathlib import Path
+        original = Path.replace
+        def fail_publication(self, target):
+            if self.name.endswith('.partial.npy'):
+                raise OSError('injected cache publication failure')
+            return original(self, target)
+        monkeypatch.setattr(Path, 'replace', fail_publication)
+        instance = TraceIndex.__new__(TraceIndex)
+        with pytest.raises(OSError, match='injected'):
+            instance.__init__(path, tmp_path/'cache')
+>       assert instance.stream is instance.data is instance.rows is None
+                                                   ^^^^^^^^^^^^^
+E       AttributeError: 'TraceIndex' object has no attribute 'rows'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:70: AttributeError
+_________ test_trace_writer_finish_failure_aborts_owned_staging[write] _________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_trace_writer_finish_failu0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd34a890>
+stage = 'write'
+
+    @pytest.mark.parametrize('stage', ['write', 'close', 'replace'])
+    def test_trace_writer_finish_failure_aborts_owned_staging(tmp_path, monkeypatch, stage):
+        path = tmp_path/'output.mdt'; path.write_bytes(b'old destination')
+        writer = TraceWriter(path, '00'*32)
+        writer.append('a/b', b'x', 1)
+        underlying = writer.stream
+        class FailedStream:
+            failed = False
+            def __getattr__(self, name):
+                return getattr(underlying, name)
+            def write(self, data):
+                if stage == 'write':
+                    raise OSError('injected write failure')
+                return underlying.write(data)
+            def close(self):
+                underlying.close()
+                if stage == 'close' and not self.failed:
+                    self.failed = True
+                    raise OSError('injected close failure')
+        writer.stream = FailedStream()
+        if stage == 'replace':
+            from pathlib import Path
+            monkeypatch.setattr(Path, 'replace', lambda *args: (_ for _ in ()).throw(OSError('injected rename failure')))
+        with pytest.raises(OSError, match='injected'):
+            writer.__exit__(None, None, None)
+>       assert writer.closed and underlying.closed
+E       assert (False)
+E        +  where False = <tiplog_py.trace.format.TraceWriter object at 0x7ad6fcd742d0>.closed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:99: AssertionError
+_________ test_trace_writer_finish_failure_aborts_owned_staging[close] _________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_trace_writer_finish_failu1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fd36e270>
+stage = 'close'
+
+    @pytest.mark.parametrize('stage', ['write', 'close', 'replace'])
+    def test_trace_writer_finish_failure_aborts_owned_staging(tmp_path, monkeypatch, stage):
+        path = tmp_path/'output.mdt'; path.write_bytes(b'old destination')
+        writer = TraceWriter(path, '00'*32)
+        writer.append('a/b', b'x', 1)
+        underlying = writer.stream
+        class FailedStream:
+            failed = False
+            def __getattr__(self, name):
+                return getattr(underlying, name)
+            def write(self, data):
+                if stage == 'write':
+                    raise OSError('injected write failure')
+                return underlying.write(data)
+            def close(self):
+                underlying.close()
+                if stage == 'close' and not self.failed:
+                    self.failed = True
+                    raise OSError('injected close failure')
+        writer.stream = FailedStream()
+        if stage == 'replace':
+            from pathlib import Path
+            monkeypatch.setattr(Path, 'replace', lambda *args: (_ for _ in ()).throw(OSError('injected rename failure')))
+        with pytest.raises(OSError, match='injected'):
+            writer.__exit__(None, None, None)
+>       assert writer.closed and underlying.closed
+E       assert (False)
+E        +  where False = <tiplog_py.trace.format.TraceWriter object at 0x7ad6fcd74550>.closed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:99: AssertionError
+________ test_trace_writer_finish_failure_aborts_owned_staging[replace] ________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_trace_writer_finish_failu2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fcdfcc50>
+stage = 'replace'
+
+    @pytest.mark.parametrize('stage', ['write', 'close', 'replace'])
+    def test_trace_writer_finish_failure_aborts_owned_staging(tmp_path, monkeypatch, stage):
+        path = tmp_path/'output.mdt'; path.write_bytes(b'old destination')
+        writer = TraceWriter(path, '00'*32)
+        writer.append('a/b', b'x', 1)
+        underlying = writer.stream
+        class FailedStream:
+            failed = False
+            def __getattr__(self, name):
+                return getattr(underlying, name)
+            def write(self, data):
+                if stage == 'write':
+                    raise OSError('injected write failure')
+                return underlying.write(data)
+            def close(self):
+                underlying.close()
+                if stage == 'close' and not self.failed:
+                    self.failed = True
+                    raise OSError('injected close failure')
+        writer.stream = FailedStream()
+        if stage == 'replace':
+            from pathlib import Path
+            monkeypatch.setattr(Path, 'replace', lambda *args: (_ for _ in ()).throw(OSError('injected rename failure')))
+        with pytest.raises(OSError, match='injected'):
+            writer.__exit__(None, None, None)
+>       assert writer.closed and underlying.closed
+E       assert (False)
+E        +  where False = <tiplog_py.trace.format.TraceWriter object at 0x7ad6fd37e9e0>.closed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:99: AssertionError
+_______ test_trace_writer_and_independent_cache_success_remain_identical _______
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_trace_writer_and_independ0')
+
+    def test_trace_writer_and_independent_cache_success_remain_identical(tmp_path):
+        path = tmp_path/'input.mdt'
+        with TraceWriter(path, '00'*32) as writer:
+            writer.append('a/b', b'x', 1)
+        with TraceReader(path) as reader:
+            assert [record.payload for record in reader] == [b'x']
+        with TraceIndex(path, tmp_path/'cache') as first:
+            expected = first.rows.copy()
+            sha = first.trace_sha256
+        with TraceIndex(path, tmp_path/'cache') as second:
+            assert second.trace_sha256 == sha
+            np.testing.assert_array_equal(second.rows, expected)
+>       second.close()  # Resource cleanup is safe after an earlier explicit close.
+        ^^^^^^^^^^^^^^
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.exp.oracle.TraceIndex object at 0x7ad6fcd74a50>
+
+    def close(self):
+>       del self.rows
+            ^^^^^^^^^
+E       AttributeError: 'TraceIndex' object has no attribute 'rows'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:117: AttributeError
+____ test_analysis_rejects_entire_write_set_aliases_before_writing[direct] _____
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_rejects_entire_w0')
+alias = 'direct'
+
+    @pytest.mark.parametrize('alias', ['direct', 'symlink', 'hardlink', 'table', 'summary_table'])
+    def test_analysis_rejects_entire_write_set_aliases_before_writing(tmp_path, alias):
+        import os
+        from tiplog_py.analysis.summarize import build
+        source = tmp_path/'raw.jsonl'
+        original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+        if alias == 'direct': output = source
+        elif alias == 'symlink': output.symlink_to(source)
+        elif alias == 'hardlink': os.link(source, output)
+        elif alias == 'table':
+            source.rename(tmp_path/'tip-outcomes.csv')
+            source = tmp_path/'tip-outcomes.csv'
+        else: output = tmp_path/'tip-statistics.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:138: Failed
+____ test_analysis_rejects_entire_write_set_aliases_before_writing[symlink] ____
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_rejects_entire_w1')
+alias = 'symlink'
+
+    @pytest.mark.parametrize('alias', ['direct', 'symlink', 'hardlink', 'table', 'summary_table'])
+    def test_analysis_rejects_entire_write_set_aliases_before_writing(tmp_path, alias):
+        import os
+        from tiplog_py.analysis.summarize import build
+        source = tmp_path/'raw.jsonl'
+        original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+        if alias == 'direct': output = source
+        elif alias == 'symlink': output.symlink_to(source)
+        elif alias == 'hardlink': os.link(source, output)
+        elif alias == 'table':
+            source.rename(tmp_path/'tip-outcomes.csv')
+            source = tmp_path/'tip-outcomes.csv'
+        else: output = tmp_path/'tip-statistics.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:138: Failed
+___ test_analysis_rejects_entire_write_set_aliases_before_writing[hardlink] ____
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_rejects_entire_w2')
+alias = 'hardlink'
+
+    @pytest.mark.parametrize('alias', ['direct', 'symlink', 'hardlink', 'table', 'summary_table'])
+    def test_analysis_rejects_entire_write_set_aliases_before_writing(tmp_path, alias):
+        import os
+        from tiplog_py.analysis.summarize import build
+        source = tmp_path/'raw.jsonl'
+        original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+        if alias == 'direct': output = source
+        elif alias == 'symlink': output.symlink_to(source)
+        elif alias == 'hardlink': os.link(source, output)
+        elif alias == 'table':
+            source.rename(tmp_path/'tip-outcomes.csv')
+            source = tmp_path/'tip-outcomes.csv'
+        else: output = tmp_path/'tip-statistics.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:138: Failed
+_____ test_analysis_rejects_entire_write_set_aliases_before_writing[table] _____
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_rejects_entire_w3')
+alias = 'table'
+
+    @pytest.mark.parametrize('alias', ['direct', 'symlink', 'hardlink', 'table', 'summary_table'])
+    def test_analysis_rejects_entire_write_set_aliases_before_writing(tmp_path, alias):
+        import os
+        from tiplog_py.analysis.summarize import build
+        source = tmp_path/'raw.jsonl'
+        original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+        if alias == 'direct': output = source
+        elif alias == 'symlink': output.symlink_to(source)
+        elif alias == 'hardlink': os.link(source, output)
+        elif alias == 'table':
+            source.rename(tmp_path/'tip-outcomes.csv')
+            source = tmp_path/'tip-outcomes.csv'
+        else: output = tmp_path/'tip-statistics.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:138: Failed
+_ test_analysis_rejects_entire_write_set_aliases_before_writing[summary_table] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_rejects_entire_w4')
+alias = 'summary_table'
+
+    @pytest.mark.parametrize('alias', ['direct', 'symlink', 'hardlink', 'table', 'summary_table'])
+    def test_analysis_rejects_entire_write_set_aliases_before_writing(tmp_path, alias):
+        import os
+        from tiplog_py.analysis.summarize import build
+        source = tmp_path/'raw.jsonl'
+        original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+        if alias == 'direct': output = source
+        elif alias == 'symlink': output.symlink_to(source)
+        elif alias == 'hardlink': os.link(source, output)
+        elif alias == 'table':
+            source.rename(tmp_path/'tip-outcomes.csv')
+            source = tmp_path/'tip-outcomes.csv'
+        else: output = tmp_path/'tip-statistics.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:138: Failed
+________________ test_analysis_protects_used_frequency_sidecar _________________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_protects_used_fr0')
+
+    def test_analysis_protects_used_frequency_sidecar(tmp_path):
+        from tiplog_py.analysis.summarize import build
+        sidecar = tmp_path/'frequency.json'
+        sidecar.write_text(json.dumps(dict(samples=[])))
+        source = tmp_path/'raw.jsonl'
+        source.write_text(json.dumps(dict(exp='T1', config_id='failed', status='crash',
+                                         frequency_flags_reference='frequency.json'))+'\n')
+        original = sidecar.read_bytes()
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:152: Failed
+___________ test_analysis_failed_bundle_preserves_old_outputs[table] ___________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_failed_bundle_pr0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fcdfe750>
+stage = 'table'
+
+    @pytest.mark.parametrize('stage', ['table', 'publish'])
+    def test_analysis_failed_bundle_preserves_old_outputs(tmp_path, monkeypatch, stage):
+        from tiplog_py.analysis import summarize
+        import os
+        source = tmp_path/'raw.jsonl'; original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+>       paths = [output, *(tmp_path/name for name in summarize.TABLE_NAMES)]
+                                                     ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'tiplog_py.analysis.summarize' has no attribute 'TABLE_NAMES'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:163: AttributeError
+__________ test_analysis_failed_bundle_preserves_old_outputs[publish] __________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_analysis_failed_bundle_pr1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fcdc6990>
+stage = 'publish'
+
+    @pytest.mark.parametrize('stage', ['table', 'publish'])
+    def test_analysis_failed_bundle_preserves_old_outputs(tmp_path, monkeypatch, stage):
+        from tiplog_py.analysis import summarize
+        import os
+        source = tmp_path/'raw.jsonl'; original = normalized_rows(source)
+        output = tmp_path/'summary.json'
+>       paths = [output, *(tmp_path/name for name in summarize.TABLE_NAMES)]
+                                                     ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'tiplog_py.analysis.summarize' has no attribute 'TABLE_NAMES'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:163: AttributeError
+_____________ test_layout_analysis_protects_all_read_inputs[input] _____________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_analysis_protects_0')
+target = 'input'
+
+    @pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
+    def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
+        from tiplog_py.layout.analyze import build
+        paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
+        for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
+        before = {name: path.read_bytes() for name, path in paths.items()}
+        with pytest.raises(ValueError, match='distinct'):
+>           build([paths['input']], paths['metadata'], csv_path=paths[target], global_paths=[paths['global']])
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:586: in build
+    analyzer = Analyzer(metadata, methods=methods, kinds=kinds)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.layout.analyze.Analyzer object at 0x7ad6ffaef770>
+metadata = {'name': 'metadata'}
+
+    def __init__(self, metadata: dict, *, methods=METHODS, kinds=()):
+        self.metadata = metadata
+        self.cases = metadata.get("case_index", {})
+        if not isinstance(self.cases, dict) or not self.cases:
+>           raise ValueError("metadata requires a nonempty case_index map")
+E           ValueError: metadata requires a nonempty case_index map
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:139: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_analysis_protects_0')
+target = 'input'
+
+    @pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
+    def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
+        from tiplog_py.layout.analyze import build
+        paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
+        for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
+        before = {name: path.read_bytes() for name, path in paths.items()}
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'distinct'
+E         Actual message: 'metadata requires a nonempty case_index map'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:192: AssertionError
+___________ test_layout_analysis_protects_all_read_inputs[metadata] ____________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_analysis_protects_1')
+target = 'metadata'
+
+    @pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
+    def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
+        from tiplog_py.layout.analyze import build
+        paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
+        for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
+        before = {name: path.read_bytes() for name, path in paths.items()}
+        with pytest.raises(ValueError, match='distinct'):
+>           build([paths['input']], paths['metadata'], csv_path=paths[target], global_paths=[paths['global']])
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:586: in build
+    analyzer = Analyzer(metadata, methods=methods, kinds=kinds)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.layout.analyze.Analyzer object at 0x7ad6fd30f610>
+metadata = {'name': 'metadata'}
+
+    def __init__(self, metadata: dict, *, methods=METHODS, kinds=()):
+        self.metadata = metadata
+        self.cases = metadata.get("case_index", {})
+        if not isinstance(self.cases, dict) or not self.cases:
+>           raise ValueError("metadata requires a nonempty case_index map")
+E           ValueError: metadata requires a nonempty case_index map
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:139: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_analysis_protects_1')
+target = 'metadata'
+
+    @pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
+    def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
+        from tiplog_py.layout.analyze import build
+        paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
+        for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
+        before = {name: path.read_bytes() for name, path in paths.items()}
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'distinct'
+E         Actual message: 'metadata requires a nonempty case_index map'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:192: AssertionError
+____________ test_layout_analysis_protects_all_read_inputs[global] _____________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_analysis_protects_2')
+target = 'global'
+
+    @pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
+    def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
+        from tiplog_py.layout.analyze import build
+        paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
+        for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
+        before = {name: path.read_bytes() for name, path in paths.items()}
+        with pytest.raises(ValueError, match='distinct'):
+>           build([paths['input']], paths['metadata'], csv_path=paths[target], global_paths=[paths['global']])
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:586: in build
+    analyzer = Analyzer(metadata, methods=methods, kinds=kinds)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.layout.analyze.Analyzer object at 0x7ad6fd30f390>
+metadata = {'name': 'metadata'}
+
+    def __init__(self, metadata: dict, *, methods=METHODS, kinds=()):
+        self.metadata = metadata
+        self.cases = metadata.get("case_index", {})
+        if not isinstance(self.cases, dict) or not self.cases:
+>           raise ValueError("metadata requires a nonempty case_index map")
+E           ValueError: metadata requires a nonempty case_index map
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:139: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_analysis_protects_2')
+target = 'global'
+
+    @pytest.mark.parametrize('target', ['input', 'metadata', 'global'])
+    def test_layout_analysis_protects_all_read_inputs(tmp_path, target):
+        from tiplog_py.layout.analyze import build
+        paths = {name: tmp_path/f'{name}.json' for name in ('input', 'metadata', 'global')}
+        for name, path in paths.items(): path.write_text(json.dumps(dict(name=name)))
+        before = {name: path.read_bytes() for name, path in paths.items()}
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'distinct'
+E         Actual message: 'metadata requires a nonempty case_index map'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:192: AssertionError
+______ test_layout_cli_rejects_summary_and_csv_collisions[summary_input] _______
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_cli_rejects_summar0')
+target = 'summary_input'
+
+    @pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
+    def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
+        from tiplog_py.layout.analyze import main
+        source = tmp_path/'input.jsonl'; source.write_text('original')
+        metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
+        output = source if target == 'summary_input' else tmp_path/'summary.json'
+        csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
+        with pytest.raises(ValueError, match='distinct'):
+>           main(['--input', str(source), '--metadata', str(metadata), '--output', str(output), '--csv', str(csv)])
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:629: in main
+    summary = build(args.input, args.metadata, csv_path=args.csv, kinds=args.kind,
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:586: in build
+    analyzer = Analyzer(metadata, methods=methods, kinds=kinds)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.layout.analyze.Analyzer object at 0x7ad6fd37ed70>
+metadata = {}
+
+    def __init__(self, metadata: dict, *, methods=METHODS, kinds=()):
+        self.metadata = metadata
+        self.cases = metadata.get("case_index", {})
+        if not isinstance(self.cases, dict) or not self.cases:
+>           raise ValueError("metadata requires a nonempty case_index map")
+E           ValueError: metadata requires a nonempty case_index map
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:139: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_cli_rejects_summar0')
+target = 'summary_input'
+
+    @pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
+    def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
+        from tiplog_py.layout.analyze import main
+        source = tmp_path/'input.jsonl'; source.write_text('original')
+        metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
+        output = source if target == 'summary_input' else tmp_path/'summary.json'
+        csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'distinct'
+E         Actual message: 'metadata requires a nonempty case_index map'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:204: AssertionError
+________ test_layout_cli_rejects_summary_and_csv_collisions[csv_input] _________
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_cli_rejects_summar1')
+target = 'csv_input'
+
+    @pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
+    def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
+        from tiplog_py.layout.analyze import main
+        source = tmp_path/'input.jsonl'; source.write_text('original')
+        metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
+        output = source if target == 'summary_input' else tmp_path/'summary.json'
+        csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
+        with pytest.raises(ValueError, match='distinct'):
+>           main(['--input', str(source), '--metadata', str(metadata), '--output', str(output), '--csv', str(csv)])
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:629: in main
+    summary = build(args.input, args.metadata, csv_path=args.csv, kinds=args.kind,
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:586: in build
+    analyzer = Analyzer(metadata, methods=methods, kinds=kinds)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.layout.analyze.Analyzer object at 0x7ad6fd37e2c0>
+metadata = {}
+
+    def __init__(self, metadata: dict, *, methods=METHODS, kinds=()):
+        self.metadata = metadata
+        self.cases = metadata.get("case_index", {})
+        if not isinstance(self.cases, dict) or not self.cases:
+>           raise ValueError("metadata requires a nonempty case_index map")
+E           ValueError: metadata requires a nonempty case_index map
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:139: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_cli_rejects_summar1')
+target = 'csv_input'
+
+    @pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
+    def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
+        from tiplog_py.layout.analyze import main
+        source = tmp_path/'input.jsonl'; source.write_text('original')
+        metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
+        output = source if target == 'summary_input' else tmp_path/'summary.json'
+        csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'distinct'
+E         Actual message: 'metadata requires a nonempty case_index map'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:204: AssertionError
+_______ test_layout_cli_rejects_summary_and_csv_collisions[same_outputs] _______
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_cli_rejects_summar2')
+target = 'same_outputs'
+
+    @pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
+    def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
+        from tiplog_py.layout.analyze import main
+        source = tmp_path/'input.jsonl'; source.write_text('original')
+        metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
+        output = source if target == 'summary_input' else tmp_path/'summary.json'
+        csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
+        with pytest.raises(ValueError, match='distinct'):
+>           main(['--input', str(source), '--metadata', str(metadata), '--output', str(output), '--csv', str(csv)])
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:629: in main
+    summary = build(args.input, args.metadata, csv_path=args.csv, kinds=args.kind,
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:586: in build
+    analyzer = Analyzer(metadata, methods=methods, kinds=kinds)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tiplog_py.layout.analyze.Analyzer object at 0x7ad6fcd955b0>
+metadata = {}
+
+    def __init__(self, metadata: dict, *, methods=METHODS, kinds=()):
+        self.metadata = metadata
+        self.cases = metadata.get("case_index", {})
+        if not isinstance(self.cases, dict) or not self.cases:
+>           raise ValueError("metadata requires a nonempty case_index map")
+E           ValueError: metadata requires a nonempty case_index map
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/layout/analyze.py:139: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_layout_cli_rejects_summar2')
+target = 'same_outputs'
+
+    @pytest.mark.parametrize('target', ['summary_input', 'csv_input', 'same_outputs'])
+    def test_layout_cli_rejects_summary_and_csv_collisions(tmp_path, target):
+        from tiplog_py.layout.analyze import main
+        source = tmp_path/'input.jsonl'; source.write_text('original')
+        metadata = tmp_path/'metadata.json'; metadata.write_text('{}')
+        output = source if target == 'summary_input' else tmp_path/'summary.json'
+        csv = source if target == 'csv_input' else output if target == 'same_outputs' else tmp_path/'rows.csv'
+>       with pytest.raises(ValueError, match='distinct'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'distinct'
+E         Actual message: 'metadata requires a nonempty case_index map'
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:204: AssertionError
+__________ test_retention_rejects_invalid_sizes_before_search[sizes0] __________
+
+sizes = array([-1])
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6ffc53d80>
+
+    @pytest.mark.parametrize('sizes', [np.array([-1]), np.array([0]), np.array([1.5]),
+                                      np.array([[24]]), np.array([True])])
+    def test_retention_rejects_invalid_sizes_before_search(sizes, monkeypatch):
+        from tiplog_py.exp.oracle import retained_layout
+        def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+        monkeypatch.setattr(np, 'searchsorted', forbidden)
+>       with pytest.raises(ValueError): retained_layout(sizes, 64)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:138: in retained_layout
+    crossing = int(np.searchsorted(ends, boundary - accumulated_pad, side='right'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([18446744073709551615], dtype=uint64), 64)
+kwargs = {'side': 'right'}
+
+>   def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: invalid size reached PAD search
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:214: Failed
+__________ test_retention_rejects_invalid_sizes_before_search[sizes1] __________
+
+sizes = array([0])
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6ffc4d450>
+
+    @pytest.mark.parametrize('sizes', [np.array([-1]), np.array([0]), np.array([1.5]),
+                                      np.array([[24]]), np.array([True])])
+    def test_retention_rejects_invalid_sizes_before_search(sizes, monkeypatch):
+        from tiplog_py.exp.oracle import retained_layout
+        def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+        monkeypatch.setattr(np, 'searchsorted', forbidden)
+>       with pytest.raises(ValueError): retained_layout(sizes, 64)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:138: in retained_layout
+    crossing = int(np.searchsorted(ends, boundary - accumulated_pad, side='right'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([0], dtype=uint64), 64), kwargs = {'side': 'right'}
+
+>   def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: invalid size reached PAD search
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:214: Failed
+__________ test_retention_rejects_invalid_sizes_before_search[sizes2] __________
+
+sizes = array([1.5])
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6e41a4370>
+
+    @pytest.mark.parametrize('sizes', [np.array([-1]), np.array([0]), np.array([1.5]),
+                                      np.array([[24]]), np.array([True])])
+    def test_retention_rejects_invalid_sizes_before_search(sizes, monkeypatch):
+        from tiplog_py.exp.oracle import retained_layout
+        def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+        monkeypatch.setattr(np, 'searchsorted', forbidden)
+>       with pytest.raises(ValueError): retained_layout(sizes, 64)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:138: in retained_layout
+    crossing = int(np.searchsorted(ends, boundary - accumulated_pad, side='right'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([1], dtype=uint64), 64), kwargs = {'side': 'right'}
+
+>   def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: invalid size reached PAD search
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:214: Failed
+__________ test_retention_rejects_invalid_sizes_before_search[sizes3] __________
+
+sizes = array([[24]])
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6fcdb9ac0>
+
+    @pytest.mark.parametrize('sizes', [np.array([-1]), np.array([0]), np.array([1.5]),
+                                      np.array([[24]]), np.array([True])])
+    def test_retention_rejects_invalid_sizes_before_search(sizes, monkeypatch):
+        from tiplog_py.exp.oracle import retained_layout
+        def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+        monkeypatch.setattr(np, 'searchsorted', forbidden)
+>       with pytest.raises(ValueError): retained_layout(sizes, 64)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:138: in retained_layout
+    crossing = int(np.searchsorted(ends, boundary - accumulated_pad, side='right'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([24], dtype=uint64), 64), kwargs = {'side': 'right'}
+
+>   def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: invalid size reached PAD search
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:214: Failed
+__________ test_retention_rejects_invalid_sizes_before_search[sizes4] __________
+
+sizes = array([ True])
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7ad6ffdc7650>
+
+    @pytest.mark.parametrize('sizes', [np.array([-1]), np.array([0]), np.array([1.5]),
+                                      np.array([[24]]), np.array([True])])
+    def test_retention_rejects_invalid_sizes_before_search(sizes, monkeypatch):
+        from tiplog_py.exp.oracle import retained_layout
+        def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+        monkeypatch.setattr(np, 'searchsorted', forbidden)
+>       with pytest.raises(ValueError): retained_layout(sizes, 64)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tiplog_py/exp/oracle.py:138: in retained_layout
+    crossing = int(np.searchsorted(ends, boundary - accumulated_pad, side='right'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([1], dtype=uint64), 64), kwargs = {'side': 'right'}
+
+>   def forbidden(*args, **kwargs): pytest.fail('invalid size reached PAD search')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: invalid size reached PAD search
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/py/tests/test_independent_audit.py:214: Failed
+__ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[empty] __
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv0')
+damage = 'empty'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+_ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[singleton] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv1')
+damage = 'singleton'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+_ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[empty_processes] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv2')
+damage = 'empty_processes'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+_ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[decreased_ticks] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv3')
+damage = 'decreased_ticks'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+_ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[duplicate_pid] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv4')
+damage = 'duplicate_pid'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+_ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[reversed_time] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv5')
+damage = 'reversed_time'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+_ test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[impossible_idle] _
+
+tmp_path = PosixPath('/tmp/tiplog-independent-python-baseline/test_hash_bound_missing_or_inv7')
+damage = 'impossible_idle'
+
+    @pytest.mark.parametrize('damage', ['empty', 'singleton', 'empty_processes', 'decreased_ticks',
+                                       'duplicate_pid', 'reversed_time', 'noisy', 'impossible_idle'])
+    def test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign(tmp_path, damage):
+        result = quiescence.audit_campaign(campaign(tmp_path, damage))
+>       assert result['status'] == 'failed'
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+audit/independent-20261027T041900Z/evidence/python/baseline-regression/tests/scripts/test_quiescence.py:135: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[short]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x10'\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00?\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x0b\x10\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x01\x10aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+FAILED ../../../../dev::test_independent_parser_rejects_invalid_metadata_before_cache_allocation[TPLTRC\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x01\x00a\x02\x00\x00\x00\x01\x00a]
+FAILED ../../../../dev::test_independent_parser_failed_record_cleans_owned_cache_and_input
+FAILED ../../../../dev::test_independent_parser_cache_publication_failure_cleans_owned_files
+FAILED ../../../../dev::test_trace_writer_finish_failure_aborts_owned_staging[write]
+FAILED ../../../../dev::test_trace_writer_finish_failure_aborts_owned_staging[close]
+FAILED ../../../../dev::test_trace_writer_finish_failure_aborts_owned_staging[replace]
+FAILED ../../../../dev::test_trace_writer_and_independent_cache_success_remain_identical
+FAILED ../../../../dev::test_analysis_rejects_entire_write_set_aliases_before_writing[direct]
+FAILED ../../../../dev::test_analysis_rejects_entire_write_set_aliases_before_writing[symlink]
+FAILED ../../../../dev::test_analysis_rejects_entire_write_set_aliases_before_writing[hardlink]
+FAILED ../../../../dev::test_analysis_rejects_entire_write_set_aliases_before_writing[table]
+FAILED ../../../../dev::test_analysis_rejects_entire_write_set_aliases_before_writing[summary_table]
+FAILED ../../../../dev::test_analysis_protects_used_frequency_sidecar - Faile...
+FAILED ../../../../dev::test_analysis_failed_bundle_preserves_old_outputs[table]
+FAILED ../../../../dev::test_analysis_failed_bundle_preserves_old_outputs[publish]
+FAILED ../../../../dev::test_layout_analysis_protects_all_read_inputs[input]
+FAILED ../../../../dev::test_layout_analysis_protects_all_read_inputs[metadata]
+FAILED ../../../../dev::test_layout_analysis_protects_all_read_inputs[global]
+FAILED ../../../../dev::test_layout_cli_rejects_summary_and_csv_collisions[summary_input]
+FAILED ../../../../dev::test_layout_cli_rejects_summary_and_csv_collisions[csv_input]
+FAILED ../../../../dev::test_layout_cli_rejects_summary_and_csv_collisions[same_outputs]
+FAILED ../../../../dev::test_retention_rejects_invalid_sizes_before_search[sizes0]
+FAILED ../../../../dev::test_retention_rejects_invalid_sizes_before_search[sizes1]
+FAILED ../../../../dev::test_retention_rejects_invalid_sizes_before_search[sizes2]
+FAILED ../../../../dev::test_retention_rejects_invalid_sizes_before_search[sizes3]
+FAILED ../../../../dev::test_retention_rejects_invalid_sizes_before_search[sizes4]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[empty]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[singleton]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[empty_processes]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[decreased_ticks]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[duplicate_pid]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[reversed_time]
+FAILED ../../../../dev::test_hash_bound_missing_or_invalid_sampling_rejects_entire_campaign[impossible_idle]
+================= 41 failed, 12 passed, 3 deselected in 3.01s ==================

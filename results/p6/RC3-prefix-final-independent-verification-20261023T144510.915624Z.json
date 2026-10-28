@@ -1,0 +1,20 @@
+{
+  "label": "RC3-prefix-final-independent-verification",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/verify_p6_rc3.py"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261023T144510.915624Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/RC3-prefix-final-independent-verification-20261023T144510.915624Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 2.1354306600005657
+}

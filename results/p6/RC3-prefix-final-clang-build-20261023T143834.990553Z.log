@@ -1,0 +1,19 @@
+[  5%] Building CXX object CMakeFiles/tiplog_topics_subs.dir/src/tiplog/subs/compiled.cpp.o
+[ 16%] Built target tiplog_merge
+[ 27%] Built target tiplog_index
+[ 38%] Built target tiplog_ring
+[ 55%] Built target tiplog_trace
+[ 66%] Built target tiplog_driver
+[ 72%] Linking CXX static library libtiplog_topics_subs.a
+[ 77%] Built target tiplog_topics_subs
+[ 88%] Built target tiplog_engine
+[ 94%] Linking CXX executable tiplog_sim
+[100%] Built target tiplog_sim
+[ 12%] Built target tiplog_ring
+[ 25%] Built target tiplog_index
+[ 37%] Built target tiplog_merge
+[ 56%] Built target tiplog_topics_subs
+[ 68%] Built target tiplog_ref
+[ 81%] Built target tiplog_engine
+[ 87%] Linking CXX executable tiplog_differential
+[100%] Built target tiplog_differential

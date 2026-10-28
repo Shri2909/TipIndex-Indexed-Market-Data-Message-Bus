@@ -1,0 +1,158 @@
+[
+  {
+    "label": "tiplog_layout_hardlink",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_layout",
+      "--input",
+      "/tmp/tiplog-independent-tools-uct04gf0/tiplog_layout.tsv",
+      "--output",
+      "/tmp/tiplog-independent-tools-uct04gf0/tiplog_layout.hardlink",
+      "--methods",
+      "base"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": false,
+    "binary_sha256": "40e79fbf9373da736f552a5e2afc16eacae8def40189d29b3728e7069daef61b"
+  },
+  {
+    "label": "tiplog_layout_runtime_hardlink",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_layout_runtime",
+      "--input",
+      "/tmp/tiplog-independent-tools-uct04gf0/tiplog_layout_runtime.tsv",
+      "--output",
+      "/tmp/tiplog-independent-tools-uct04gf0/tiplog_layout_runtime.hardlink",
+      "--methods",
+      "base"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": false,
+    "binary_sha256": "32dab134a97d31eb43f16908327f82e6d391fda44cb71fac0fa2114734d1112d"
+  },
+  {
+    "label": "bench_requests_alias",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_bench",
+      "--synthetic",
+      "--records",
+      "1",
+      "--partitions",
+      "2",
+      "--mix",
+      "/tmp/tiplog-independent-tools-uct04gf0/mix.csv",
+      "--ring-bytes",
+      "8192",
+      "--requests",
+      "/tmp/tiplog-independent-tools-uct04gf0/requests.tsv",
+      "--output",
+      "/tmp/tiplog-independent-tools-uct04gf0/requests.tsv"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": false,
+    "binary_sha256": "c6b6e4468527d9365dfeb700aab2e59331ef72719bad2114edb8584ad172bf9c"
+  },
+  {
+    "label": "bench_requests_read_error",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/tiplog_bench",
+      "--synthetic",
+      "--records",
+      "1",
+      "--partitions",
+      "2",
+      "--mix",
+      "/tmp/tiplog-independent-tools-uct04gf0/mix.csv",
+      "--ring-bytes",
+      "8192",
+      "--requests",
+      "/tmp/tiplog-independent-tools-uct04gf0",
+      "--output",
+      "/tmp/tiplog-independent-tools-uct04gf0/readerror.jsonl"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "c6b6e4468527d9365dfeb700aab2e59331ef72719bad2114edb8584ad172bf9c"
+  },
+  {
+    "label": "merge_numeric_suffix",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/merge_bench",
+      "--diagnostic",
+      "--profile=uniform64",
+      "--outputs=8garbage"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"StdPQ\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"BinHeap\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Quad-pad3\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Loser\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "87f4f18ceffdc31b7229a002773196dc02c808981fecabaed08950bc1a6bff55"
+  },
+  {
+    "label": "merge_signed_seed",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/merge_bench",
+      "--diagnostic",
+      "--profile=uniform64",
+      "--outputs=8",
+      "--seed=-1"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"StdPQ\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"BinHeap\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Quad-pad3\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"c78f8e1bc548de9\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Loser\",\"seed\":18446744073709551615,\"requested_k\":64,\"active_k\":7,\"outputs\":8,\"input_hash_hex\":\"a8b4ef076d548821\",\"expected_hash_hex\":\"c78f8e1bc548de9\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "87f4f18ceffdc31b7229a002773196dc02c808981fecabaed08950bc1a6bff55"
+  },
+  {
+    "label": "merge_bench_unknown_verify_argument",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/merge_bench",
+      "--diagnostic",
+      "--profile=uniform64",
+      "--outputs=8",
+      "--unknown-option"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"StdPQ\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"BinHeap\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Quad-pad3\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n{\"status\":\"passed\",\"actual_hash_hex\":\"e262ca1a581e6cb2\",\"input\":{\"profile\":\"M1/k64/uniform/N8/diagnostic\",\"kernel\":\"Loser\",\"seed\":20191230,\"requested_k\":64,\"active_k\":8,\"outputs\":8,\"input_hash_hex\":\"f842618abf12e678\",\"expected_hash_hex\":\"e262ca1a581e6cb2\",\"hash_algorithm\":\"word-xor-multiply64-v1\",\"observed_owner_runs\":8,\"observed_run_mean\":1,\"nominal_geometric_mean\":0,\"k1_degenerate\":false,\"touch_initialized_bytes\":0,\"touch_initialization\":\"splitmix64-index-v1\",\"touch_initialization_hash_hex\":\"cbf29ce484222325\",\"touch_address_span_bytes\":0,\"touch_distinct_64B_line_bytes\":0,\"touch_loaded_bytes\":0,\"quad_padding_words\":3,\"diagnostic\":true}}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "87f4f18ceffdc31b7229a002773196dc02c808981fecabaed08950bc1a6bff55"
+  },
+  {
+    "label": "publish_bench_unknown_verify_argument",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/publish_bench",
+      "--verify-only",
+      "--mix-file",
+      "/tmp/tiplog-independent-tools-uct04gf0/mix.csv",
+      "--unknown-option"
+    ],
+    "returncode": 0,
+    "stdout": "{\"status\":\"passed\",\"profile\":\"M2/payload_64/P100/uniform/B1024\",\"seed\":20191230,\"functional_capacity\":65536,\"publishes\":65536,\"input_schedule_fnv_hex\":\"1b0af88d35531a6b\",\"output_digest_hex\":\"a99b8790d0aae4ec\",\"scope\":\"reduced functional verification, no benchmark result\"}\n",
+    "stderr": "",
+    "source_unchanged": true,
+    "binary_sha256": "c06816fdbc5fd7e2a0ce3bad4841d7b4c6ea61d6597998a64fe010a47b2ff218"
+  },
+  {
+    "label": "index_bench_unknown_verify_argument",
+    "argv": [
+      "/home/abc/Desktop/Jane Street/build/release/index_bench",
+      "--verify-only",
+      "--trace",
+      "/tmp/tiplog-independent-tools-uct04gf0/trace.mdt",
+      "--unknown-option"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "index_bench: M3 requires nonempty real trace\n",
+    "source_unchanged": true,
+    "binary_sha256": "13a73c01a80c9817d976ffccd83cb89d604cb513e5754a294ffae84d0a5167f0"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "head": "aa13c1824ba5a7a3593a0f63c6f455cac851e822",
+  "head_exit": 0,
+  "status": [
+    " M CMakeLists.txt",
+    " M README.md",
+    " M docs/plan/IMPLEMENTATION_PLAN.md",
+    " M docs/plan/INDEX.md",
+    " M docs/plan/PROGRESS.md",
+    " M docs/plan/RESEARCH.md",
+    " M py/tiplog_py/figures/build.py",
+    " M results/figures/F01_itch_type_mix.pdf",
+    " M results/figures/F02_symbol_volume_skew.pdf",
+    " M results/figures/F03_family_composition.pdf",
+    " M results/figures/F04_runs_and_bursts.pdf",
+    " M results/figures/F05_tree_and_class_sizes.pdf",
+    " M results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment005.log",
+    " M results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json",
+    " M results/p4/commands.jsonl",
+    " M results/p4/git-data-exclusion-audit-20261018T103046.562921Z.json",
+    " M results/p4/git-data-exclusion-audit-20261018T103046.562921Z.log",
+    " M results/p4/live-state.json",
+    " M results/p4/p5-method-reading.json",
+    " M results/p4/review.md",
+    " M src/tiplog/engine/engine.cpp",
+    " M src/tiplog/engine/engine.hpp",
+    " M src/tiplog/subs/compiled.cpp",
+    " M tests/unit/topics_subs_test.cpp"
+  ],
+  "status_exit": 0,
+  "note": "Managed .git remains read-only; writable metadata accessed by wrapper. No commit/push performed."
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "records": 4000,
+    "ring_capacity": 64,
+    "pad_items": 1999,
+    "suffix_elements_incremented": 3998000,
+    "median_seconds": 0.007092656000168063,
+    "samples_seconds": [
+      0.015365385001132381,
+      0.007092656000168063,
+      0.006825349000791903
+    ]
+  },
+  {
+    "records": 8000,
+    "ring_capacity": 64,
+    "pad_items": 3999,
+    "suffix_elements_incremented": 15996000,
+    "median_seconds": 0.0198058759997366,
+    "samples_seconds": [
+      0.01975094400040689,
+      0.0280073750000156,
+      0.0198058759997366
+    ]
+  },
+  {
+    "records": 16000,
+    "ring_capacity": 64,
+    "pad_items": 7999,
+    "suffix_elements_incremented": 63992000,
+    "median_seconds": 0.07073509800102329,
+    "samples_seconds": [
+      0.06383444200037047,
+      0.07322145900070609,
+      0.07073509800102329
+    ]
+  },
+  {
+    "records": 32000,
+    "ring_capacity": 64,
+    "pad_items": 15999,
+    "suffix_elements_incremented": 255984000,
+    "median_seconds": 0.23466548599935777,
+    "samples_seconds": [
+      0.24944068900003913,
+      0.23466548599935777,
+      0.2248359419991175
+    ]
+  },
+  {
+    "records": 64000,
+    "ring_capacity": 64,
+    "pad_items": 31999,
+    "suffix_elements_incremented": 1023968000,
+    "median_seconds": 0.8695124120004039,
+    "samples_seconds": [
+      0.8367193120011507,
+      0.9278237450016604,
+      0.8695124120004039
+    ]
+  }
+]

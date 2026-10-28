@@ -1,0 +1,24 @@
+{
+  "label": "release-final-build",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "release",
+    "--parallel",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T08:34:32.192162+00:00",
+  "status": "passed",
+  "log": "audit/remediation/checks/release-final-build-20261026T083432.191955Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 4.174229255,
+  "log_sha256": "35c39fef12ec47a9eb1212550818f78a2f606a9cf779bd263e3289b4fe816a50"
+}

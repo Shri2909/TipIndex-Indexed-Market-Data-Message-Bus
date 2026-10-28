@@ -1,0 +1,1845 @@
+{
+  "schema": "tiplog-p7-report-facts-v1",
+  "scope": "P7 cost/coverage report; controlled runtime and P7 gate pending",
+  "sources": {
+    "layout_summary": "results/derived/layout-summary.json",
+    "global_summary": "results/derived/layout-global.json",
+    "case_csv": "results/raw/P7/layout-claim-metrics.csv",
+    "analysis_inputs": "results/p7/analysis-inputs.json",
+    "cost_campaign": "results/raw/P7/studies/campaign.json",
+    "worked_example": "results/p7/worked-example.json",
+    "compatibility": "results/p7/analysis-mean-compatibility.json",
+    "input_manifest": "results/p7/input-manifest.json",
+    "source_manifest": "data/manifest.json",
+    "protocol": "results/p7/protocol.json",
+    "runtime_protocol": "results/p7/runtime-supplement.json"
+  },
+  "summary_sha256": "5dbbf66cbfda101acd85830683f4c6506d731c6e83b802f028c8aead2bc5c8c9",
+  "global_sha256": "85f3faacf9d7112c3e60a2f06f7a77b843ca8e3f9d54d2235a8d66786152d97a",
+  "analysis": {
+    "status": "analyzed",
+    "failure_counts": {},
+    "expected_cases": 214668,
+    "observed_cases": 214668,
+    "rows": 1073340
+  },
+  "volume_basis": {
+    "observed_source_messages": 268744780,
+    "observed_decompressed_bytes": 8251407909,
+    "modeled_record_bytes": 13201746784,
+    "incomplete": true,
+    "partitions": 8907,
+    "real_cases": 213768,
+    "synthetic_cases": 900
+  },
+  "coverage_grouped_identical_betas": [
+    {
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        25,
+        27,
+        29
+      ],
+      "solved_cases": 3873,
+      "expected_cases": 8907,
+      "case_fraction": "1291/2969",
+      "byte_fraction": "109584929/1650218348",
+      "active_class_weight_fraction": "43094/111997",
+      "solver_status_counts": {
+        "solved": 3873,
+        "state_limit": 5034
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        24,
+        26,
+        28
+      ],
+      "solved_cases": 2034,
+      "expected_cases": 8907,
+      "case_fraction": "678/2969",
+      "byte_fraction": "46995097/1650218348",
+      "active_class_weight_fraction": "21026/111997",
+      "solver_status_counts": {
+        "solved": 2034,
+        "state_limit": 6873
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        31,
+        33,
+        35
+      ],
+      "solved_cases": 2034,
+      "expected_cases": 8907,
+      "case_fraction": "678/2969",
+      "byte_fraction": "46995097/1650218348",
+      "active_class_weight_fraction": "8519/22265",
+      "solver_status_counts": {
+        "solved": 2034,
+        "state_limit": 6873
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        30,
+        32,
+        34
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        37,
+        39,
+        41
+      ],
+      "solved_cases": 3859,
+      "expected_cases": 8907,
+      "case_fraction": "3859/8907",
+      "byte_fraction": "97220069/1650218348",
+      "active_class_weight_fraction": "5767/15606",
+      "solver_status_counts": {
+        "solved": 3859,
+        "state_limit": 5048
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        36,
+        38,
+        40
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        43,
+        45,
+        47
+      ],
+      "solved_cases": 2034,
+      "expected_cases": 8907,
+      "case_fraction": "678/2969",
+      "byte_fraction": "46995097/1650218348",
+      "active_class_weight_fraction": "2873/7755",
+      "solver_status_counts": {
+        "solved": 2034,
+        "state_limit": 6873
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        42,
+        44,
+        46
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W0",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        1,
+        3,
+        5
+      ],
+      "solved_cases": 8906,
+      "expected_cases": 8907,
+      "case_fraction": "8906/8907",
+      "byte_fraction": "412493088/412554587",
+      "active_class_weight_fraction": "111981/111997",
+      "solver_status_counts": {
+        "solved": 8906,
+        "state_limit": 1
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W0",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        0,
+        2,
+        4
+      ],
+      "solved_cases": 3873,
+      "expected_cases": 8907,
+      "case_fraction": "1291/2969",
+      "byte_fraction": "109584929/1650218348",
+      "active_class_weight_fraction": "43094/111997",
+      "solver_status_counts": {
+        "solved": 3873,
+        "state_limit": 5034
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W1",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        7,
+        9,
+        11
+      ],
+      "solved_cases": 8906,
+      "expected_cases": 8907,
+      "case_fraction": "8906/8907",
+      "byte_fraction": "412493088/412554587",
+      "active_class_weight_fraction": "22263/22265",
+      "solver_status_counts": {
+        "solved": 8906,
+        "state_limit": 1
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W1",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        6,
+        8,
+        10
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W2",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        13,
+        15,
+        17
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W2",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        12,
+        14,
+        16
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W3",
+      "method": "enum",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        19,
+        21,
+        23
+      ],
+      "solved_cases": 8906,
+      "expected_cases": 8907,
+      "case_fraction": "8906/8907",
+      "byte_fraction": "412493088/412554587",
+      "active_class_weight_fraction": "23263/23265",
+      "solver_status_counts": {
+        "solved": 8906,
+        "state_limit": 1
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W3",
+      "method": "dp",
+      "betas": [
+        "0",
+        "65536",
+        "1048576"
+      ],
+      "source_indices": [
+        18,
+        20,
+        22
+      ],
+      "solved_cases": 8907,
+      "expected_cases": 8907,
+      "case_fraction": "1",
+      "byte_fraction": "1",
+      "active_class_weight_fraction": "1",
+      "solver_status_counts": {
+        "solved": 8907
+      }
+    }
+  ],
+  "exact_cohort_costs": [
+    {
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "beta": "0",
+      "cases": 3873,
+      "methods": {
+        "base": {
+          "source_index": 48,
+          "objective": "1951897840",
+          "stores": 19334
+        },
+        "km-min": {
+          "source_index": 51,
+          "objective": "1019492408",
+          "stores": 19325
+        },
+        "km-max": {
+          "source_index": 50,
+          "objective": "1020693952",
+          "stores": 19325
+        },
+        "best-exact": {
+          "source_index": 49,
+          "objective": "994767992",
+          "stores": 19334
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "beta": "65536",
+      "cases": 3873,
+      "methods": {
+        "base": {
+          "source_index": 56,
+          "objective": "4776106224",
+          "stores": 19334
+        },
+        "km-min": {
+          "source_index": 59,
+          "objective": "3843700792",
+          "stores": 19325
+        },
+        "km-max": {
+          "source_index": 58,
+          "objective": "3844902336",
+          "stores": 19325
+        },
+        "best-exact": {
+          "source_index": 57,
+          "objective": "3818976376",
+          "stores": 19334
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "beta": "1048576",
+      "cases": 3873,
+      "methods": {
+        "base": {
+          "source_index": 52,
+          "objective": "47139231984",
+          "stores": 19334
+        },
+        "km-min": {
+          "source_index": 55,
+          "objective": "46206826552",
+          "stores": 19325
+        },
+        "km-max": {
+          "source_index": 54,
+          "objective": "46208028096",
+          "stores": 19325
+        },
+        "best-exact": {
+          "source_index": 53,
+          "objective": "46182102136",
+          "stores": 19334
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "beta": "0",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 60,
+          "objective": "19367265136",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 63,
+          "objective": "14312697608",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 62,
+          "objective": "14312486728",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 61,
+          "objective": "13964962856",
+          "stores": 43302
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "beta": "65536",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 68,
+          "objective": "25104089968",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 71,
+          "objective": "20364226312",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 70,
+          "objective": "20463433544",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 69,
+          "objective": "18797797288",
+          "stores": 35435
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "beta": "1048576",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 64,
+          "objective": "111156462448",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 67,
+          "objective": "111137156872",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 66,
+          "objective": "112727635784",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 65,
+          "objective": "72959763536",
+          "stores": 15583
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "beta": "0",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 72,
+          "objective": "53063664304",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 75,
+          "objective": "37453911320",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 74,
+          "objective": "37583405920",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 73,
+          "objective": "37046713312",
+          "stores": 20812
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "beta": "65536",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 80,
+          "objective": "54649766576",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 83,
+          "objective": "39195006232",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 82,
+          "objective": "39350518624",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 81,
+          "objective": "38641731200",
+          "stores": 20805
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "beta": "1048576",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 76,
+          "objective": "78441300656",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 79,
+          "objective": "65311429912",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 78,
+          "objective": "65857209184",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 77,
+          "objective": "59925497376",
+          "stores": 19492
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "beta": "0",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 84,
+          "objective": "25368009808/5",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 87,
+          "objective": "22840726044/5",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 86,
+          "objective": "22840620604/5",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 85,
+          "objective": "22666858668/5",
+          "stores": 43302
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "beta": "65536",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 92,
+          "objective": "28564102224/5",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 95,
+          "objective": "26194170396/5",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 94,
+          "objective": "26243774012/5",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 93,
+          "objective": "25318390688/5",
+          "stores": 35192
+        }
+      }
+    },
+    {
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "beta": "1048576",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 88,
+          "objective": "76505488464/5",
+          "stores": 44504
+        },
+        "km-min": {
+          "source_index": 91,
+          "objective": "76495835676/5",
+          "stores": 44495
+        },
+        "km-max": {
+          "source_index": 90,
+          "objective": "77291075132/5",
+          "stores": 44495
+        },
+        "best-exact": {
+          "source_index": 89,
+          "objective": "54601596952/5",
+          "stores": 15407
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W0",
+      "beta": "0",
+      "cases": 8906,
+      "methods": {
+        "base": {
+          "source_index": 0,
+          "objective": "13199778816",
+          "stores": 111981
+        },
+        "km-min": {
+          "source_index": 3,
+          "objective": "13199778816",
+          "stores": 111981
+        },
+        "km-max": {
+          "source_index": 2,
+          "objective": "13199778816",
+          "stores": 111981
+        },
+        "best-exact": {
+          "source_index": 1,
+          "objective": "13199778816",
+          "stores": 111981
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W0",
+      "beta": "65536",
+      "cases": 8906,
+      "methods": {
+        "base": {
+          "source_index": 8,
+          "objective": "20538565632",
+          "stores": 111981
+        },
+        "km-min": {
+          "source_index": 11,
+          "objective": "20538565632",
+          "stores": 111981
+        },
+        "km-max": {
+          "source_index": 10,
+          "objective": "20538565632",
+          "stores": 111981
+        },
+        "best-exact": {
+          "source_index": 9,
+          "objective": "20538565632",
+          "stores": 111981
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W0",
+      "beta": "1048576",
+      "cases": 8906,
+      "methods": {
+        "base": {
+          "source_index": 4,
+          "objective": "130620367872",
+          "stores": 111981
+        },
+        "km-min": {
+          "source_index": 7,
+          "objective": "130620367872",
+          "stores": 111981
+        },
+        "km-max": {
+          "source_index": 6,
+          "objective": "130620367872",
+          "stores": 111981
+        },
+        "best-exact": {
+          "source_index": 5,
+          "objective": "130620367872",
+          "stores": 111981
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W1",
+      "beta": "0",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 12,
+          "objective": "13496864344",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 15,
+          "objective": "13496864344",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 14,
+          "objective": "13496864344",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 13,
+          "objective": "13496864344",
+          "stores": 80624
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W1",
+      "beta": "65536",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 20,
+          "objective": "25672273496",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 23,
+          "objective": "25672273496",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 22,
+          "objective": "25672273496",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 21,
+          "objective": "18942349696",
+          "stores": 38414
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W1",
+      "beta": "1048576",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 16,
+          "objective": "208303410776",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 19,
+          "objective": "208303410776",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 18,
+          "objective": "208303410776",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 17,
+          "objective": "73094409600",
+          "stores": 15504
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W2",
+      "beta": "0",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 24,
+          "objective": "36705017872",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 27,
+          "objective": "36705017872",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 26,
+          "objective": "36705017872",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 25,
+          "objective": "36705017872",
+          "stores": 49461
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W2",
+      "beta": "65536",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 32,
+          "objective": "41276809232",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 35,
+          "objective": "41276809232",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 34,
+          "objective": "41276809232",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 33,
+          "objective": "38570257784",
+          "stores": 81086
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W2",
+      "beta": "1048576",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 28,
+          "objective": "109853679632",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 31,
+          "objective": "109853679632",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 30,
+          "objective": "109853679632",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 29,
+          "objective": "60025989584",
+          "stores": 78036
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W3",
+      "beta": "0",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 36,
+          "objective": "22432809412/5",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 39,
+          "objective": "22432809412/5",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 38,
+          "objective": "22432809412/5",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 37,
+          "objective": "22432809412/5",
+          "stores": 80624
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W3",
+      "beta": "65536",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 44,
+          "objective": "29393453508/5",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 47,
+          "objective": "29393453508/5",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 46,
+          "objective": "29393453508/5",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 45,
+          "objective": "25413040524/5",
+          "stores": 37873
+        }
+      }
+    },
+    {
+      "hierarchy": "H-flat",
+      "workload": "W3",
+      "beta": "1048576",
+      "cases": 8907,
+      "methods": {
+        "base": {
+          "source_index": 40,
+          "objective": "133803114948/5",
+          "stores": 111997
+        },
+        "km-min": {
+          "source_index": 43,
+          "objective": "133803114948/5",
+          "stores": 111997
+        },
+        "km-max": {
+          "source_index": 42,
+          "objective": "133803114948/5",
+          "stores": 111997
+        },
+        "best-exact": {
+          "source_index": 41,
+          "objective": "54677875904/5",
+          "stores": 15325
+        }
+      }
+    }
+  ],
+  "w0_full_population_heuristics": [
+    {
+      "source_index": 60,
+      "method": "base",
+      "objective": "43409459048",
+      "weighted_read_bytes": "43409459048",
+      "weighted_waste_bytes": "30207712264",
+      "stores": 44504,
+      "rows": 8907
+    },
+    {
+      "source_index": 64,
+      "method": "km-min",
+      "objective": "15671123776",
+      "weighted_read_bytes": "15671123776",
+      "weighted_waste_bytes": "2469376992",
+      "stores": 44495,
+      "rows": 8907
+    },
+    {
+      "source_index": 63,
+      "method": "km-max",
+      "objective": "15657312880",
+      "weighted_read_bytes": "15657312880",
+      "weighted_waste_bytes": "2455566096",
+      "stores": 44495,
+      "rows": 8907
+    }
+  ],
+  "hflat_w0_baselines": [
+    {
+      "source_index": 0,
+      "beta": "0",
+      "objective": "13201746784",
+      "weighted_waste_bytes": "0",
+      "stores": 111997,
+      "partitions": 8907
+    },
+    {
+      "source_index": 10,
+      "beta": "65536",
+      "objective": "20541582176",
+      "weighted_waste_bytes": "0",
+      "stores": 111997,
+      "partitions": 8907
+    },
+    {
+      "source_index": 5,
+      "beta": "1048576",
+      "objective": "130639113056",
+      "weighted_waste_bytes": "0",
+      "stores": 111997,
+      "partitions": 8907
+    }
+  ],
+  "selected_consumer_metrics": [
+    {
+      "source_index": 192,
+      "beta": "0",
+      "method": "base",
+      "role": "AUCT",
+      "weighted_read_bytes": "368740024",
+      "weighted_useful_bytes": "290749496",
+      "weighted_waste_bytes": "77990528",
+      "weighted_stores_touched": "17812",
+      "weighted_read_amplification": "46092503/36343687",
+      "max_waste_bytes": 1108608,
+      "worst_amplification": "8915/254",
+      "worst_amplification_floor4096": "8915/254"
+    },
+    {
+      "source_index": 193,
+      "beta": "0",
+      "method": "base",
+      "role": "BOOK",
+      "weighted_read_bytes": "12835215200",
+      "weighted_useful_bytes": "12835215200",
+      "weighted_waste_bytes": "0",
+      "weighted_stores_touched": "44502",
+      "weighted_read_amplification": "1",
+      "max_waste_bytes": 0,
+      "worst_amplification": "1",
+      "worst_amplification_floor4096": "1"
+    },
+    {
+      "source_index": 194,
+      "beta": "0",
+      "method": "base",
+      "role": "STAT",
+      "weighted_read_bytes": "11619400",
+      "weighted_useful_bytes": "11619400",
+      "weighted_waste_bytes": "0",
+      "weighted_stores_touched": "8906",
+      "weighted_read_amplification": "1",
+      "max_waste_bytes": 0,
+      "worst_amplification": "1",
+      "worst_amplification_floor4096": null
+    },
+    {
+      "source_index": 195,
+      "beta": "0",
+      "method": "base",
+      "role": "TAPE",
+      "weighted_read_bytes": "6151690512",
+      "weighted_useful_bytes": "359280248",
+      "weighted_waste_bytes": "5792410264",
+      "weighted_stores_touched": "16317",
+      "weighted_read_amplification": "768961314/44910031",
+      "max_waste_bytes": 51349544,
+      "worst_amplification": "1047545/38",
+      "worst_amplification_floor4096": "4865651/582"
+    },
+    {
+      "source_index": 196,
+      "beta": "0",
+      "method": "best-exact",
+      "role": "AUCT",
+      "weighted_read_bytes": "398737088",
+      "weighted_useful_bytes": "290749496",
+      "weighted_waste_bytes": "107987592",
+      "weighted_stores_touched": "15946",
+      "weighted_read_amplification": "49842136/36343687",
+      "max_waste_bytes": 854256,
+      "worst_amplification": "55423/2032",
+      "worst_amplification_floor4096": "55423/2032"
+    },
+    {
+      "source_index": 197,
+      "beta": "0",
+      "method": "best-exact",
+      "role": "BOOK",
+      "weighted_read_bytes": "12948776744",
+      "weighted_useful_bytes": "12835215200",
+      "weighted_waste_bytes": "113561544",
+      "weighted_stores_touched": "39696",
+      "weighted_read_amplification": "1618597093/1604401900",
+      "max_waste_bytes": 885184,
+      "worst_amplification": "306939/282448",
+      "worst_amplification_floor4096": "306939/282448"
+    },
+    {
+      "source_index": 198,
+      "beta": "0",
+      "method": "best-exact",
+      "role": "STAT",
+      "weighted_read_bytes": "148657848",
+      "weighted_useful_bytes": "11619400",
+      "weighted_waste_bytes": "137038448",
+      "weighted_stores_touched": "8906",
+      "weighted_read_amplification": "18582231/1452425",
+      "max_waste_bytes": 885184,
+      "worst_amplification": "55423/99",
+      "worst_amplification_floor4096": null
+    },
+    {
+      "source_index": 199,
+      "beta": "0",
+      "method": "best-exact",
+      "role": "TAPE",
+      "weighted_read_bytes": "468791176",
+      "weighted_useful_bytes": "359280248",
+      "weighted_waste_bytes": "109510928",
+      "weighted_stores_touched": "16654",
+      "weighted_read_amplification": "58598897/44910031",
+      "max_waste_bytes": 3313528,
+      "worst_amplification": "7380/227",
+      "worst_amplification_floor4096": "11420/613"
+    },
+    {
+      "source_index": 204,
+      "beta": "0",
+      "method": "km-min",
+      "role": "AUCT",
+      "weighted_read_bytes": "500869576",
+      "weighted_useful_bytes": "290749496",
+      "weighted_waste_bytes": "210120080",
+      "weighted_stores_touched": "15509",
+      "weighted_read_amplification": "62608697/36343687",
+      "max_waste_bytes": 2246640,
+      "worst_amplification": "142447/2032",
+      "worst_amplification_floor4096": "142447/2032"
+    },
+    {
+      "source_index": 205,
+      "beta": "0",
+      "method": "km-min",
+      "role": "BOOK",
+      "weighted_read_bytes": "12987031976",
+      "weighted_useful_bytes": "12835215200",
+      "weighted_waste_bytes": "151816776",
+      "weighted_stores_touched": "55673",
+      "weighted_read_amplification": "1623378997/1604401900",
+      "max_waste_bytes": 1141120,
+      "worst_amplification": "39/25",
+      "worst_amplification_floor4096": "215/181"
+    },
+    {
+      "source_index": 206,
+      "beta": "0",
+      "method": "km-min",
+      "role": "STAT",
+      "weighted_read_bytes": "285023200",
+      "weighted_useful_bytes": "11619400",
+      "weighted_waste_bytes": "273403800",
+      "weighted_stores_touched": "8940",
+      "weighted_read_amplification": "1425116/58097",
+      "max_waste_bytes": 2276560,
+      "worst_amplification": "178831/198",
+      "worst_amplification_floor4096": null
+    },
+    {
+      "source_index": 207,
+      "beta": "0",
+      "method": "km-min",
+      "role": "TAPE",
+      "weighted_read_bytes": "539772856",
+      "weighted_useful_bytes": "359280248",
+      "weighted_waste_bytes": "180492608",
+      "weighted_stores_touched": "12217",
+      "weighted_read_amplification": "67471607/44910031",
+      "max_waste_bytes": 840392,
+      "worst_amplification": "2110/7",
+      "worst_amplification_floor4096": "4091/356"
+    },
+    {
+      "source_index": 212,
+      "beta": "1048576",
+      "method": "best-exact",
+      "role": "AUCT",
+      "weighted_read_bytes": "2041360392",
+      "weighted_useful_bytes": "290749496",
+      "weighted_waste_bytes": "1750610896",
+      "weighted_stores_touched": "9037",
+      "weighted_read_amplification": "255170049/36343687",
+      "max_waste_bytes": 1830288,
+      "worst_amplification": "116425/2032",
+      "worst_amplification_floor4096": "116425/2032"
+    },
+    {
+      "source_index": 213,
+      "beta": "1048576",
+      "method": "best-exact",
+      "role": "BOOK",
+      "weighted_read_bytes": "13195653872",
+      "weighted_useful_bytes": "12835215200",
+      "weighted_waste_bytes": "360438672",
+      "weighted_stores_touched": "24207",
+      "weighted_read_amplification": "824728367/802200950",
+      "max_waste_bytes": 885184,
+      "worst_amplification": "2065/24",
+      "worst_amplification_floor4096": "2295/263"
+    },
+    {
+      "source_index": 214,
+      "beta": "1048576",
+      "method": "best-exact",
+      "role": "STAT",
+      "weighted_read_bytes": "2110890728",
+      "weighted_useful_bytes": "11619400",
+      "weighted_waste_bytes": "2099271328",
+      "weighted_stores_touched": "8906",
+      "weighted_read_amplification": "263861341/1452425",
+      "max_waste_bytes": 1860448,
+      "worst_amplification": "58801/48",
+      "worst_amplification_floor4096": null
+    },
+    {
+      "source_index": 215,
+      "beta": "1048576",
+      "method": "best-exact",
+      "role": "TAPE",
+      "weighted_read_bytes": "2058985072",
+      "weighted_useful_bytes": "359280248",
+      "weighted_waste_bytes": "1699704824",
+      "weighted_stores_touched": "8922",
+      "weighted_read_amplification": "257373134/44910031",
+      "max_waste_bytes": 1736360,
+      "worst_amplification": "46453/10",
+      "worst_amplification_floor4096": "13299/94"
+    }
+  ],
+  "selected_gap_distributions": [
+    {
+      "source_index": 63,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "beta": "0",
+      "method": "km-max",
+      "same_budget_exact_comparisons": 3873,
+      "relative_gaps": {
+        "count": 3873,
+        "maximum": "5255/9761",
+        "median": "141/6082",
+        "minimum": "0",
+        "p25": "0",
+        "p75": "508/6641",
+        "p95": "1044/4595",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 3873,
+        "no_agreed_certified_same_budget_optimum": 5034
+      }
+    },
+    {
+      "source_index": 64,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W0",
+      "beta": "0",
+      "method": "km-min",
+      "same_budget_exact_comparisons": 3873,
+      "relative_gaps": {
+        "count": 3873,
+        "maximum": "1635/3041",
+        "median": "61/2960",
+        "minimum": "0",
+        "p25": "0",
+        "p75": "59/751",
+        "p95": "5700/23729",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 3873,
+        "no_agreed_certified_same_budget_optimum": 5034
+      }
+    },
+    {
+      "source_index": 78,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "beta": "0",
+      "method": "km-max",
+      "same_budget_exact_comparisons": 8907,
+      "relative_gaps": {
+        "count": 8907,
+        "maximum": "4784/7019",
+        "median": "1176/16637",
+        "minimum": "0",
+        "p25": "11987/527688",
+        "p75": "3053/20952",
+        "p95": "10769/32198",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 8907
+      }
+    },
+    {
+      "source_index": 79,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W1",
+      "beta": "0",
+      "method": "km-min",
+      "same_budget_exact_comparisons": 8907,
+      "relative_gaps": {
+        "count": 8907,
+        "maximum": "764/1191",
+        "median": "188/2715",
+        "minimum": "0",
+        "p25": "1617/71336",
+        "p75": "419/3022",
+        "p95": "4711/16188",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 8907
+      }
+    },
+    {
+      "source_index": 93,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "beta": "0",
+      "method": "km-max",
+      "same_budget_exact_comparisons": 8907,
+      "relative_gaps": {
+        "count": 8907,
+        "maximum": "27399/139",
+        "median": "217/45",
+        "minimum": "0",
+        "p25": "28/17",
+        "p75": "1277/74",
+        "p95": "8273/234",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 8907
+      }
+    },
+    {
+      "source_index": 94,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W2",
+      "beta": "0",
+      "method": "km-min",
+      "same_budget_exact_comparisons": 8907,
+      "relative_gaps": {
+        "count": 8907,
+        "maximum": "27399/139",
+        "median": "333/64",
+        "minimum": "0",
+        "p25": "119/72",
+        "p75": "4289/222",
+        "p95": "1137/31",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 8907
+      }
+    },
+    {
+      "source_index": 108,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "beta": "0",
+      "method": "km-max",
+      "same_budget_exact_comparisons": 8907,
+      "relative_gaps": {
+        "count": 8907,
+        "maximum": "4784/7019",
+        "median": "179/2578",
+        "minimum": "0",
+        "p25": "1984/92563",
+        "p75": "11411/79154",
+        "p95": "2432/7303",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 8907
+      }
+    },
+    {
+      "source_index": 109,
+      "kind": "real",
+      "hierarchy": "H-spec",
+      "workload": "W3",
+      "beta": "0",
+      "method": "km-min",
+      "same_budget_exact_comparisons": 8907,
+      "relative_gaps": {
+        "count": 8907,
+        "maximum": "764/1191",
+        "median": "4778/70523",
+        "minimum": "0",
+        "p25": "646/29907",
+        "p75": "907/6597",
+        "p95": "4873/16792",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 8907
+      }
+    },
+    {
+      "source_index": 123,
+      "kind": "synthetic",
+      "hierarchy": "synthetic",
+      "workload": "b1",
+      "beta": "65536",
+      "method": "km-max",
+      "same_budget_exact_comparisons": 450,
+      "relative_gaps": {
+        "count": 450,
+        "maximum": "4128768/3603098633",
+        "median": "12288/154236181",
+        "minimum": "0",
+        "p25": "0",
+        "p75": "245760/827419363",
+        "p95": "4128768/3935083207",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 450
+      }
+    },
+    {
+      "source_index": 124,
+      "kind": "synthetic",
+      "hierarchy": "synthetic",
+      "workload": "b1",
+      "beta": "65536",
+      "method": "km-min",
+      "same_budget_exact_comparisons": 450,
+      "relative_gaps": {
+        "count": 450,
+        "maximum": "4128768/3603098633",
+        "median": "12288/154236181",
+        "minimum": "0",
+        "p25": "0",
+        "p75": "245760/827419363",
+        "p95": "4128768/3935083207",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 450
+      }
+    },
+    {
+      "source_index": 128,
+      "kind": "synthetic",
+      "hierarchy": "synthetic",
+      "workload": "b4",
+      "beta": "65536",
+      "method": "km-max",
+      "same_budget_exact_comparisons": 435,
+      "relative_gaps": {
+        "count": 435,
+        "maximum": "2181276835/2885664666",
+        "median": "983040/35466449797",
+        "minimum": "0",
+        "p25": "0",
+        "p75": "33026672505/202659420946",
+        "p95": "142445489647/413309400028",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 435,
+        "no_agreed_certified_same_budget_optimum": 15
+      }
+    },
+    {
+      "source_index": 129,
+      "kind": "synthetic",
+      "hierarchy": "synthetic",
+      "workload": "b4",
+      "beta": "65536",
+      "method": "km-min",
+      "same_budget_exact_comparisons": 435,
+      "relative_gaps": {
+        "count": 435,
+        "maximum": "2181276835/2885664666",
+        "median": "327680/13866326023",
+        "minimum": "0",
+        "p25": "0",
+        "p75": "33375912629/236946404482",
+        "p95": "33566652369/112239483689",
+        "quantile_rule": "nearest rank; median uses the lower middle for even counts"
+      },
+      "gap_status_counts": {
+        "compared": 435,
+        "no_agreed_certified_same_budget_optimum": 15
+      }
+    }
+  ],
+  "synthetic_coverage_by_n": [
+    {
+      "nodes": 5,
+      "cases": 90,
+      "enum_statuses": {
+        "solved": 90
+      },
+      "dp_statuses": {
+        "solved": 90
+      }
+    },
+    {
+      "nodes": 10,
+      "cases": 90,
+      "enum_statuses": {
+        "solved": 90
+      },
+      "dp_statuses": {
+        "solved": 90
+      }
+    },
+    {
+      "nodes": 20,
+      "cases": 120,
+      "enum_statuses": {
+        "state_limit": 120
+      },
+      "dp_statuses": {
+        "solved": 120
+      }
+    },
+    {
+      "nodes": 50,
+      "cases": 120,
+      "enum_statuses": {
+        "representation_limit": 120
+      },
+      "dp_statuses": {
+        "solved": 120
+      }
+    },
+    {
+      "nodes": 100,
+      "cases": 120,
+      "enum_statuses": {
+        "representation_limit": 120
+      },
+      "dp_statuses": {
+        "solved": 120
+      }
+    },
+    {
+      "nodes": 250,
+      "cases": 120,
+      "enum_statuses": {
+        "representation_limit": 120
+      },
+      "dp_statuses": {
+        "solved": 120
+      }
+    },
+    {
+      "nodes": 500,
+      "cases": 120,
+      "enum_statuses": {
+        "representation_limit": 120
+      },
+      "dp_statuses": {
+        "solved": 120
+      }
+    },
+    {
+      "nodes": 1000,
+      "cases": 120,
+      "enum_statuses": {
+        "representation_limit": 120
+      },
+      "dp_statuses": {
+        "solved": 105,
+        "state_limit": 15
+      }
+    }
+  ],
+  "global": {
+    "status": "passed",
+    "checks": 3652966,
+    "strata": 24,
+    "certified_strata": 18,
+    "points": 168,
+    "certified_points": 126,
+    "uncertified_points": 42,
+    "budget_status_counts": {
+      "no_evaluated_feasible_point": 9,
+      "feasible_without_global_bound": 45,
+      "exact_by_matching_bounds": 139,
+      "feasible_with_bound": 12
+    },
+    "examples": [
+      {
+        "label": "real-H-spec-W1-beta0",
+        "summary_budget": {
+          "budget": 44504,
+          "best_evaluated_feasible": {
+            "lambda": "65536",
+            "stores": 37088,
+            "objective": "13804628800",
+            "penalized": "16235227968",
+            "certified": true,
+            "status": "feasible",
+            "point_interpretation": "own-at-most-budget optimum"
+          },
+          "lower_bound": "13496873893",
+          "exact": false,
+          "status": "feasible_with_bound"
+        },
+        "source_output": "results/raw/P7/global/real-H-spec-W1-beta0.jsonl"
+      },
+      {
+        "label": "real-H-spec-W3-beta0",
+        "summary_budget": {
+          "budget": 44504,
+          "best_evaluated_feasible": {
+            "lambda": "65536",
+            "stores": 17575,
+            "objective": "24430777968/5",
+            "penalized": "30189753968/5",
+            "certified": true,
+            "status": "feasible",
+            "point_interpretation": "own-at-most-budget optimum"
+          },
+          "lower_bound": "22432857157/5",
+          "exact": false,
+          "status": "feasible_with_bound"
+        },
+        "source_output": "results/raw/P7/global/real-H-spec-W3-beta0.jsonl"
+      }
+    ]
+  },
+  "worked_example": {
+    "status": "passed",
+    "threshold_min": 28648000,
+    "threshold_max": 38647999,
+    "rows": [
+      {
+        "method": "base",
+        "waste": 5517460497,
+        "totalread": 8276568994,
+        "stores": 4,
+        "counts": [
+          2,
+          2
+        ]
+      },
+      {
+        "method": "figure",
+        "waste": 39881491,
+        "totalread": 2798989988,
+        "stores": 4,
+        "counts": [
+          3,
+          1
+        ]
+      },
+      {
+        "method": "km-min",
+        "waste": 30029491,
+        "totalread": 2789137988,
+        "stores": 4,
+        "counts": [
+          3,
+          1
+        ]
+      },
+      {
+        "method": "km-max",
+        "waste": 39881491,
+        "totalread": 2798989988,
+        "stores": 4,
+        "counts": [
+          3,
+          1
+        ]
+      },
+      {
+        "method": "enum",
+        "waste": 30029491,
+        "totalread": 2789137988,
+        "stores": 4,
+        "counts": [
+          3,
+          1
+        ]
+      },
+      {
+        "method": "dp",
+        "waste": 30029491,
+        "totalread": 2789137988,
+        "stores": 4,
+        "counts": [
+          3,
+          1
+        ]
+      }
+    ]
+  },
+  "hflat_w0_baseline_checks": 26721
+}

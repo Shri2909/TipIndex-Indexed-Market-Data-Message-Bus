@@ -1,0 +1,20 @@
+{
+ "new": {
+  "status": "passed",
+  "seed": 20191230,
+  "requested_instances": 10000,
+  "completed_instances": 10000,
+  "maximum_nodes": 12,
+  "maximum_classes": 4,
+  "exact_count_comparisons": 57461,
+  "at_most_comparisons": 57461,
+  "reconstructed_layouts_checked": 96322,
+  "random_layouts_checked": 20000,
+  "nodes": 62727,
+  "zero_volume_nodes": 15266,
+  "empty_trees": 345,
+  "consumer_classes": 19803
+ },
+ "differing_from_recorded": [],
+ "verdict": "PASS"
+}

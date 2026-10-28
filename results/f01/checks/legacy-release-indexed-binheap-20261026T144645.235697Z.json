@@ -1,0 +1,35 @@
+{
+  "label": "legacy-release-indexed-binheap",
+  "argv": [
+    "build/release/tiplog_differential",
+    "--seeds",
+    "1000",
+    "--operations",
+    "10000",
+    "--mode",
+    "indexed",
+    "--kernel",
+    "binheap"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "2026-10-26T14:46:45.235913+00:00",
+  "status": "passed",
+  "input_sets_before": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "3d3c765b71b53f9d753767dda6cbacd00af4ad32ba7a2ebfe561d3d24c44ea2f"
+  },
+  "log": "results/f01/checks/legacy-release-indexed-binheap-20261026T144645.235697Z.log",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 77.02552844499951,
+  "log_sha256": "0dffdc14ed06c8e5353b3b62cf705c1bf4dea8e48067a9a5de84f0d414387e20",
+  "input_sets_after": {
+    "cpp": "c2a0e33a89dd8ab9dbfeb14d11eb46c019af83545448925f33c2f7db52eadb8e",
+    "python": "3d3c765b71b53f9d753767dda6cbacd00af4ad32ba7a2ebfe561d3d24c44ea2f"
+  }
+}

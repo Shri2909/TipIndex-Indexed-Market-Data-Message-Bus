@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/abc/Desktop/Jane Street/scripts/check_p7_gate.py", line 110, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/abc/Desktop/Jane Street/scripts/check_p7_gate.py", line 52, in main
+    command(pattern)
+    ~~~~~~~^^^^^^^^^
+  File "/home/abc/Desktop/Jane Street/scripts/check_p7_gate.py", line 34, in command
+    check('command passed:'+record['label'],record['status']=='passed' and record['exit_code']==0,record['argv'])
+                            ~~~~~~^^^^^^^^^
+KeyError: 'label'

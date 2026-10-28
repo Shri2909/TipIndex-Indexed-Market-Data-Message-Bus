@@ -1,0 +1,69 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 18 tests from 9 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from IndexConfig
+[ RUN      ] IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic
+[       OK ] IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic (0 ms)
+[----------] 1 test from IndexConfig (0 ms total)
+
+[----------] 4 tests from IndexPool
+[ RUN      ] IndexPool.V15InitialFreeListAndExactReservedMemory
+[       OK ] IndexPool.V15InitialFreeListAndExactReservedMemory (0 ms)
+[ RUN      ] IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement
+[       OK ] IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement (0 ms)
+[ RUN      ] IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges
+[       OK ] IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges (0 ms)
+[ RUN      ] IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree
+[       OK ] IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree (0 ms)
+[----------] 4 tests from IndexPool (0 ms total)
+
+[----------] 3 tests from IndexPreparation
+[ RUN      ] IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim
+[       OK ] IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim (0 ms)
+[ RUN      ] IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership
+[       OK ] IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership (0 ms)
+[ RUN      ] IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation
+[       OK ] IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation (0 ms)
+[----------] 3 tests from IndexPreparation (0 ms total)
+
+[----------] 4 tests from IndexExpiry
+[ RUN      ] IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims
+[       OK ] IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims (0 ms)
+[ RUN      ] IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt
+[       OK ] IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt (0 ms)
+[ RUN      ] IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed
+[       OK ] IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed (0 ms)
+[ RUN      ] IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal
+[       OK ] IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal (0 ms)
+[----------] 4 tests from IndexExpiry (0 ms total)
+
+[----------] 1 test from IndexDelta
+[ RUN      ] IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary
+[       OK ] IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary (0 ms)
+[----------] 1 test from IndexDelta (0 ms total)
+
+[----------] 1 test from IndexAccounting
+[ RUN      ] IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact
+[       OK ] IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact (0 ms)
+[----------] 1 test from IndexAccounting (0 ms total)
+
+[----------] 2 tests from IndexCursor
+[ RUN      ] IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks
+[       OK ] IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks (0 ms)
+[ RUN      ] IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth
+[       OK ] IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth (0 ms)
+[----------] 2 tests from IndexCursor (0 ms total)
+
+[----------] 1 test from IndexRandom
+[ RUN      ] IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory
+[       OK ] IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory (120 ms)
+[----------] 1 test from IndexRandom (120 ms total)
+
+[----------] 1 test from IndexSizing
+[ RUN      ] IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure
+[       OK ] IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure (103 ms)
+[----------] 1 test from IndexSizing (103 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 9 test suites ran. (224 ms total)
+[  PASSED  ] 18 tests.

@@ -1,0 +1,26 @@
+{
+  "source": "results/f01/studies/final-20261027/pareto-100k-process-00.jsonl",
+  "sha256": "f8005fd6b527e8b7ed1ee64efca85d4a29f495eda54185e6dcfab8b2c66f3846",
+  "results": [
+    {
+      "case": "positive",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "case": "both_digests_forged",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "case": "checkpoint_position_forged",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "case": "forced_effective_mode_forged",
+      "accepted": true,
+      "error": null
+    }
+  ]
+}

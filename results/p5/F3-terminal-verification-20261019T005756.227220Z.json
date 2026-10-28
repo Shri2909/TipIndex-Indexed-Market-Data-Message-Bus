@@ -1,0 +1,20 @@
+{
+  "label": "F3-terminal-verification",
+  "argv": [
+    ".venv/bin/python",
+    "results/p5/verify_fuzz_gate.py"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261019T005756.227220Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/F3-terminal-verification-20261019T005756.227220Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 0.253876156000004
+}

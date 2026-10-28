@@ -1,0 +1,43 @@
+{
+  "schema": "tiplog-f01-phase-gate-v1",
+  "feature": "F-01",
+  "status": "passed",
+  "completed_utc": "2026-10-27T01:50:16.186303+00:00",
+  "authorization": "User approved researched feature implementation: approved... build the feature",
+  "acceptance": {
+    "path": "results/f01/acceptance.json",
+    "sha256": "5ded35003f5b5e388c4495a17234ff461709d4f0d0995f9587d2f63fe4c6553b",
+    "bytes": 1027901
+  },
+  "verifier": {
+    "path": "results/f01/checks.json",
+    "sha256": "a344d51b8a23d9484dbeb7136b8624ebb48bfe38ac39ce268b9d17c237cf83fd",
+    "bytes": 47301
+  },
+  "compiled_sources": "results/f01/source-freeze-final.json",
+  "validation": {
+    "cpp_tests_per_preset": 229,
+    "presets": [
+      "debug",
+      "release",
+      "asan-ubsan",
+      "fuzz"
+    ],
+    "python_tests": 302,
+    "legacy_differential_operations": 108000000,
+    "budget_differential_operations": 12000000,
+    "supplementary_release_parity_operations": 2000000,
+    "fuzzer_executions_per_target": 10000,
+    "fuzz_targets": 4,
+    "contract_tests": 23,
+    "contract_mutations_killed": 4,
+    "checker_selftests": 43,
+    "benchmark_arms": 758,
+    "benchmark_rows": 2274,
+    "fresh_process_repetitions_per_arm": 3,
+    "separate_resource_controls": 6,
+    "historical_identities_unchanged": 13
+  },
+  "scope": "Opt-in traversal inspection budgets. Setup is excluded. Existing calls remain unlimited. Timing is synthetic observational evidence, not a whole-call deadline or deployment default.",
+  "publication": "Local implementation and evidence only; no commit, push, deployment or data download."
+}

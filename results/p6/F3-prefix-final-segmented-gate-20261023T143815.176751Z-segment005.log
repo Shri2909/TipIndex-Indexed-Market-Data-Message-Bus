@@ -1,0 +1,24 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191234
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x5db59ff63ed8, 0x5db59ff65baf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x5db59ff65bb0,0x5db59ff82920), 
+INFO:     1409 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1409 min: 1b max: 64773b total: 3445285b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10504 corp: 650/185Kb exec/s: 146 rss: 424Mb
+#1410	INITED cov: 2250 ft: 11532 corp: 873/2105Kb exec/s: 16 rss: 662Mb
+#1479	REDUCE cov: 2250 ft: 11532 corp: 873/2105Kb lim: 65536 exec/s: 16 rss: 662Mb L: 1969/64773 MS: 4 ChangeBit-ShuffleBytes-ChangeBinInt-EraseBytes-
+#1586	NEW    cov: 2250 ft: 11534 corp: 874/2114Kb lim: 65536 exec/s: 16 rss: 669Mb L: 9308/64773 MS: 2 ShuffleBytes-CopyPart-
+#1755	NEW    cov: 2250 ft: 11535 corp: 875/2117Kb lim: 65536 exec/s: 16 rss: 669Mb L: 2685/64773 MS: 4 CMP-InsertRepeatedBytes-ChangeByte-ChangeByte- DE: "\004\000"-
+#1789	REDUCE cov: 2250 ft: 11535 corp: 875/2117Kb lim: 65536 exec/s: 16 rss: 669Mb L: 61/64773 MS: 4 ChangeBit-CMP-ChangeBinInt-EraseBytes- DE: "\011\000\000\000\000\000\000\000"-
+#2048	pulse  cov: 2250 ft: 11535 corp: 875/2117Kb lim: 65536 exec/s: 17 rss: 669Mb
+#2069	DONE   cov: 2250 ft: 11535 corp: 875/2117Kb lim: 65536 exec/s: 17 rss: 669Mb
+###### Recommended dictionary. ######
+"\004\000" # Uses: 21
+"\011\000\000\000\000\000\000\000" # Uses: 11
+###### End of recommended dictionary. ######
+Done 2069 runs in 121 second(s)
+stat::number_of_executed_units: 2069
+stat::average_exec_per_sec:     17
+stat::new_units_added:          4
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              669

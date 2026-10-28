@@ -1,0 +1,26 @@
+{
+  "label": "build-cli-timing-asan-ubsan",
+  "argv": [
+    "cmake",
+    "--build",
+    "--preset",
+    "asan-ubsan",
+    "--target",
+    "tiplog_layout",
+    "-j",
+    "2"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T083647.240531Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p7/build-cli-timing-asan-ubsan-20261025T083647.240531Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 3.399768323000899
+}

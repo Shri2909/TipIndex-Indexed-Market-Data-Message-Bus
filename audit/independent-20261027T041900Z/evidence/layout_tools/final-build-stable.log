@@ -1,0 +1,89 @@
+-- Failed to find LLVM FileCheck
+-- Google Benchmark version: v1.9.5, normalized to 1.9.5
+-- tiplog GoogleTest provider: FetchContent v1.17.0
+-- Configuring done (1.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/abc/Desktop/Jane Street/build/independent-layout-tools-final
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object CMakeFiles/tiplog_layout.dir/tools/tiplog_layout/main.cpp.o
+[100%] Linking CXX executable tiplog_layout
+[100%] Built target tiplog_layout
+[ 80%] Built target tiplog_layout_lib
+[ 80%] Building CXX object CMakeFiles/tiplog_layout_runtime.dir/tools/tiplog_layout/runtime_main.cpp.o
+[100%] Linking CXX executable tiplog_layout_runtime
+[100%] Built target tiplog_layout_runtime
+[ 66%] Built target tiplog_layout_lib
+[100%] Built target tiplog_layout_example
+[ 80%] Built target tiplog_layout_lib
+[100%] Built target tiplog_layout_cc5
+[ 15%] Built target tiplog_ring
+[ 30%] Built target tiplog_topics_subs
+[ 46%] Built target tiplog_index
+[ 61%] Built target tiplog_merge
+[ 76%] Built target tiplog_trace
+[ 92%] Built target tiplog_engine
+[ 92%] Building CXX object CMakeFiles/tiplog_bench.dir/tools/tiplog_bench/main.cpp.o
+[100%] Linking CXX executable tiplog_bench
+[100%] Built target tiplog_bench
+[ 50%] Built target tiplog_trace
+[ 75%] Building CXX object CMakeFiles/tiplog_walk.dir/tools/tiplog_walk/main.cpp.o
+[100%] Linking CXX executable tiplog_walk
+[100%] Built target tiplog_walk
+[ 50%] Built target tiplog_trace
+[100%] Built target tiplog_trace_check
+[ 13%] Built target tiplog_ring
+[ 26%] Built target tiplog_topics_subs
+[ 40%] Built target tiplog_merge
+[ 53%] Built target tiplog_index
+[ 66%] Built target tiplog_trace
+[ 80%] Built target tiplog_engine
+[ 86%] Built target tiplog_driver
+[100%] Built target tiplog_sim
+[ 10%] Built target tiplog_merge
+[ 10%] Building CXX object _deps/benchmark-build/src/CMakeFiles/benchmark.dir/benchmark.cc.o
+[ 10%] Linking CXX static library libbenchmark.a
+[ 90%] Built target benchmark
+[ 95%] Building CXX object CMakeFiles/merge_bench.dir/bench/micro/merge_bench.cpp.o
+/home/abc/Desktop/Jane Street/bench/micro/merge_bench.cpp:337:13: warning: ‘std::size_t {anonymous}::size(std::string_view)’ defined but not used [-Wunused-function]
+  337 | std::size_t size(std::string_view text) {
+      |             ^~~~
+[100%] Linking CXX executable merge_bench
+[100%] Built target merge_bench
+[  7%] Built target tiplog_ring
+[ 14%] Built target tiplog_topics_subs
+[ 21%] Built target tiplog_index
+[ 28%] Built target tiplog_merge
+[ 35%] Built target tiplog_engine
+[ 92%] Built target benchmark
+[ 96%] Building CXX object CMakeFiles/publish_bench.dir/bench/micro/publish_bench.cpp.o
+[100%] Linking CXX executable publish_bench
+[100%] Built target publish_bench
+[  8%] Built target tiplog_index
+[ 78%] Built target benchmark
+[ 86%] Built target tiplog_trace
+[ 95%] Built target tiplog_topics_subs
+[ 95%] Building CXX object CMakeFiles/index_bench.dir/bench/micro/index_bench.cpp.o
+[100%] Linking CXX executable index_bench
+[100%] Built target index_bench
+[ 25%] Built target tiplog_trace
+[ 50%] Built target gtest
+[ 75%] Built target gtest_main
+[100%] Built target tiplog_trace_test
+[ 18%] Built target gtest
+[ 36%] Built target tiplog_trace
+[ 72%] Built target tiplog_ref
+[ 72%] Built target gtest_main
+[ 81%] Built target tiplog_driver
+[100%] Built target tiplog_driver_test
+[ 40%] Built target tiplog_layout_lib
+[ 60%] Built target gtest
+[ 80%] Built target gtest_main
+[100%] Built target tiplog_layout_test
+[ 12%] Built target tiplog_ring
+[ 25%] Built target tiplog_topics_subs
+[ 37%] Built target tiplog_merge
+[ 50%] Built target tiplog_index
+[ 75%] Built target gtest
+[ 75%] Built target tiplog_engine
+[ 87%] Built target gtest_main
+[100%] Built target tiplog_bench_contract_test

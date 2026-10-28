@@ -1,0 +1,7 @@
+{
+  "check": "existing git diff whitespace",
+  "path": "docs/plan/PROGRESS.md",
+  "unchanged_from_audit_start": true,
+  "detail": "git diff --check reports a pre-existing blank line at EOF; no whitespace issue is introduced in the audit changes.patch.",
+  "introduced_trailing_whitespace_lines": 0
+}

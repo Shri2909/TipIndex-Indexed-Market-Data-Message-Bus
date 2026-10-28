@@ -1,0 +1,7 @@
+Test project /home/abc/Desktop/Jane Street/build/release
+    Start 1: tools.cli_contracts
+1/1 Test #1: tools.cli_contracts ..............   Passed    0.97 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   1.29 sec

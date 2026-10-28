@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-19T01:32:38.924500+00:00",
+  "compiler": "GCC 15.2",
+  "check": "strict syntax-only, no timing campaign",
+  "argv": [
+    "g++",
+    "-std=c++20",
+    "-I",
+    "src",
+    "-I",
+    "tools",
+    "-I",
+    "build/release/_deps/benchmark-src/include",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wconversion",
+    "-Wshadow",
+    "-fsyntax-only",
+    "tools/tiplog_bench/main.cpp",
+    "bench/micro/index_bench.cpp",
+    "tests/unit/bench_contract_test.cpp"
+  ],
+  "exit_code": 0,
+  "warnings": 0,
+  "source_sha256": {
+    "/usr/include/malloc.h": "69214d4b692453c30bbb46dfa477acf9e109f630c51251abc8542a1933048f2b",
+    "build/release/_deps/benchmark-src/include/benchmark/benchmark.h": "2a7d09741c867e2262b75d21af80fd40118371b32a37e3dc94a484104135f623",
+    "tools/tiplog_bench/contracts.hpp": "df4e015277f1857ed4620892acd7a5a47c24af0823e1b261fe4cef2db93ddc92",
+    "tools/tiplog_bench/main.cpp": "dff116f713a5c7bcf8da5beb1049a035f5d75d8f56e0416b9f5452b3bbb68dfb",
+    "bench/micro/index_bench.cpp": "187a762a9541a32f2b389e9e29366b29d3227bf2966a9b4252a0ae7c6f920c4c",
+    "tests/unit/bench_contract_test.cpp": "770d549b7a4a8d3d9fc32d01e95fe7aeb74d0d352111c40f1e80cb458a4725e3",
+    "cmake/p6_bench.cmake": "6b5dcaed6e18c5fb2fa73b67825c548321de39458bac526275cc322bac1c56be",
+    "src/tiplog/engine/engine.hpp": "cfe7a9cb9944fbbe247856d43a94dbf761ca25782b1ea1d7dd07b92093ab176e",
+    "src/tiplog/engine/engine.cpp": "8d1dd35bf1178756fd8cd991cd28f0ab75e7c61af07f36829f2a89baf0c382ec"
+  },
+  "benchmark_revision": "192ef10025eb2c4cdd392bc502f0c852196baa48",
+  "full_build_tests_campaigns": "pending root integration",
+  "notes": "Final tool-only metadata/coupling polish; strict syntax0warnings; root163/163 release and sanitizer suites passed observer/hash tests separately."
+}

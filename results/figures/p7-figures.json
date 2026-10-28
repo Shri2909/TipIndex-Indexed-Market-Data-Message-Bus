@@ -1,0 +1,34 @@
+{
+  "exact_cohort": "All compared methods restricted to the same solved partitions in F14 and gap panels; full-population heuristics in F15/F18.",
+  "figures": [
+    "F14_layout_class_amplification",
+    "F15_layout_tradeoff",
+    "F16_layout_gaps_scaling",
+    "F17_layout_worked_example",
+    "F18_layout_hierarchy"
+  ],
+  "inputs": {
+    "results/derived/layout-global.json": "85f3faacf9d7112c3e60a2f06f7a77b843ca8e3f9d54d2235a8d66786152d97a",
+    "results/derived/layout-runtime.json": "a63922016cad60cc28f04ef568e8856488d511b199bf34eaa4fdb6b6e67b85c8",
+    "results/derived/layout-summary.json": "5dbbf66cbfda101acd85830683f4c6506d731c6e83b802f028c8aead2bc5c8c9",
+    "results/p7/worked-example.json": "1a7285138512abe020804aed6f7c3cfd5668c75cbe6cfcf2dcb02a5104a1f964"
+  },
+  "outputs": {
+    "results/figures/F14_layout_class_amplification.pdf": "16efe2e3ba3277573778205ecef4fe8f9ba19ff399f6b62affccee5d48a2886c",
+    "results/figures/F14_layout_class_amplification.png": "0c6634d79a7e6626a2df463e81ceb105e68c5c451464ce003be5d847e805e758",
+    "results/figures/F15_layout_tradeoff.pdf": "850260e2c1ba0598af1944d93bc83cdbcaf175cc87a9f953c27b9f6f59d2ea43",
+    "results/figures/F15_layout_tradeoff.png": "fd2573708567b7c3090d4b1a45f31f503be690e4a6355bbe018ada7635efc90b",
+    "results/figures/F16_layout_gaps_scaling.pdf": "6802c3ef825a106b92a11f68a852e7867f18a1fa70f66e435251bfe3cddff32a",
+    "results/figures/F16_layout_gaps_scaling.png": "2785cc44cfc82b6184b9e5153b1d7df8911aa3cf23e036d40e1382b191272383",
+    "results/figures/F17_layout_worked_example.pdf": "2e4a9b47640210fa4fa12f864247545e080fe98a8e7246ea2b1a19adc5b73164",
+    "results/figures/F17_layout_worked_example.png": "5d4e137f1ba915a5a2c41770dbf928a88e76472f515ec555a242743df7fb5797",
+    "results/figures/F18_layout_hierarchy.pdf": "c6f5e159c57e48fbbb4bead8ab311da63225424dc3bfef39844bbb5bbf9ea7d1",
+    "results/figures/F18_layout_hierarchy.png": "1dd64daf7acf600bc92804ce4974d812077b052354f92f94269fa2c6a2cb43ba"
+  },
+  "schema": "tiplog-p7-figures-v1",
+  "scope": "L2/L3/L4/L5; modeled bytes only",
+  "source": {
+    "path": "py/tiplog_py/figures/layout.py",
+    "sha256": "67447b0d01357b71ac1fae4a3990aede82479e0a1120df1c7926444beaffbb2c"
+  }
+}

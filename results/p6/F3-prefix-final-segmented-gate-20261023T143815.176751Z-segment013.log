@@ -1,0 +1,33 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191242
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x56fb2f88eed8, 0x56fb2f890baf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x56fb2f890bb0,0x56fb2f8ad920), 
+INFO:     1483 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1483 min: 1b max: 64773b total: 4036470b rss: 35Mb
+#1024	pulse  cov: 2248 ft: 10380 corp: 626/159Kb exec/s: 341 rss: 380Mb
+#1484	INITED cov: 2250 ft: 11607 corp: 880/2356Kb exec/s: 22 rss: 634Mb
+#1551	REDUCE cov: 2250 ft: 11607 corp: 880/2356Kb lim: 65536 exec/s: 23 rss: 634Mb L: 116/64773 MS: 2 ChangeBinInt-EraseBytes-
+#1611	REDUCE cov: 2250 ft: 11607 corp: 880/2356Kb lim: 65536 exec/s: 24 rss: 634Mb L: 1110/64773 MS: 4 ChangeByte-EraseBytes-InsertByte-CopyPart-
+#1673	REDUCE cov: 2250 ft: 11607 corp: 880/2356Kb lim: 65536 exec/s: 24 rss: 634Mb L: 579/64773 MS: 2 CopyPart-EraseBytes-
+#1916	NEW    cov: 2250 ft: 11608 corp: 881/2365Kb lim: 65536 exec/s: 26 rss: 634Mb L: 9018/64773 MS: 3 ChangeBit-EraseBytes-CopyPart-
+#1982	NEW    cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 27 rss: 634Mb L: 5430/64773 MS: 1 CopyPart-
+#2048	pulse  cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 27 rss: 634Mb
+#2240	REDUCE cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 28 rss: 642Mb L: 482/64773 MS: 3 CMP-ShuffleBytes-EraseBytes- DE: "\000\000\000\000\000\000\000\017"-
+#2546	REDUCE cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 28 rss: 677Mb L: 2218/64773 MS: 1 EraseBytes-
+#2589	REDUCE cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 29 rss: 677Mb L: 68/64773 MS: 3 ChangeBit-InsertByte-EraseBytes-
+#2698	REDUCE cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 29 rss: 704Mb L: 2453/64773 MS: 4 ChangeBinInt-ChangeASCIIInt-CopyPart-EraseBytes-
+#2860	REDUCE cov: 2250 ft: 11610 corp: 882/2370Kb lim: 65536 exec/s: 30 rss: 706Mb L: 206/64773 MS: 2 ChangeBit-EraseBytes-
+#2953	REDUCE cov: 2250 ft: 11610 corp: 882/2367Kb lim: 65536 exec/s: 30 rss: 706Mb L: 32544/64773 MS: 3 InsertByte-ChangeASCIIInt-EraseBytes-
+#3261	REDUCE cov: 2250 ft: 11610 corp: 882/2367Kb lim: 65536 exec/s: 27 rss: 706Mb L: 5029/64773 MS: 3 InsertRepeatedBytes-ChangeByte-EraseBytes-
+#3382	REDUCE cov: 2250 ft: 11610 corp: 882/2367Kb lim: 65536 exec/s: 28 rss: 706Mb L: 106/64773 MS: 1 EraseBytes-
+#3384	NEW    cov: 2250 ft: 11611 corp: 883/2387Kb lim: 65536 exec/s: 28 rss: 706Mb L: 20993/64773 MS: 2 CopyPart-CopyPart-
+#3404	DONE   cov: 2250 ft: 11611 corp: 883/2387Kb lim: 65536 exec/s: 28 rss: 706Mb
+###### Recommended dictionary. ######
+"\000\000\000\000\000\000\000\017" # Uses: 99
+###### End of recommended dictionary. ######
+Done 3404 runs in 121 second(s)
+stat::number_of_executed_units: 3404
+stat::average_exec_per_sec:     28
+stat::new_units_added:          14
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              706

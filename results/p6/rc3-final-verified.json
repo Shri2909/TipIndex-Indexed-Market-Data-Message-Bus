@@ -1,0 +1,6204 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "verified_utc": "2026-10-23T14:45:13.032398+00:00",
+  "summary": "results/p6/rc3-summary.json",
+  "summary_sha256": "87b906957826c15674ae84e79e673bd34604ec83f5e81e801d2b9413b489a77f",
+  "verifier_sha256": "25647984188e809e07f303aadf41e91cc9e689939b1b206793946436dc7808ce",
+  "child_count": 180,
+  "checker_equality_count": 170,
+  "independently_verified_groups": 45,
+  "child_file_sha256": {
+    "results/p6/rc3-runs-20261023T143849.079765Z/001-basket-success-gcc-scan-stdpq-r1.json": "f40ec37b8f6d236edfc2d621af8576ea92c0027e1be5e48b74b51b20fe3a17d3",
+    "results/p6/rc3-runs-20261023T143849.079765Z/002-basket-success-gcc-scan-stdpq-r2.json": "c1d1016dc4fae00b65e6d7e15f7fd7ce97183a9eb776c32a38035ea1f1caf1da",
+    "results/p6/rc3-runs-20261023T143849.079765Z/003-basket-success-clang-scan-stdpq-r1.json": "814c52a41174bcae736e8858db5c0a9b31776b6e44208dcabc8fac0b05da3524",
+    "results/p6/rc3-runs-20261023T143849.079765Z/004-basket-success-clang-scan-stdpq-r2.json": "8722e96ced07e7c0918eecc870c558f574bd25ff622d0152f64d5d325c1d147e",
+    "results/p6/rc3-runs-20261023T143849.079765Z/005-basket-success-gcc-indexed-stdpq-r1.json": "1a95fa4faa0cdaa1becc6b7e417d61687485a84d1ed917f0a90f9d179c760ac4",
+    "results/p6/rc3-runs-20261023T143849.079765Z/006-basket-success-gcc-indexed-stdpq-r2.json": "300f4961105b8bf896a5be4b2b32474ef2c3820bece1445a65ac24ec56aec0af",
+    "results/p6/rc3-runs-20261023T143849.079765Z/007-basket-success-clang-indexed-stdpq-r1.json": "bb943cd24473fff1a40ef2a74af4c373cdf6e927740b35ea17edffa2e1de51bc",
+    "results/p6/rc3-runs-20261023T143849.079765Z/008-basket-success-clang-indexed-stdpq-r2.json": "ca3d55a76e04de731b8ea4e208aaed30818bde097d629efce535e778a40bd3ba",
+    "results/p6/rc3-runs-20261023T143849.079765Z/009-basket-success-gcc-indexed-binheap-r1.json": "372df11584b9a7a2fe65f6e552545bc817689c1c50ed9c7942c55b876c94bd3e",
+    "results/p6/rc3-runs-20261023T143849.079765Z/010-basket-success-gcc-indexed-binheap-r2.json": "d29b559973b981503cae399bd545520ec72822830d1bfb588cf47784a15bf821",
+    "results/p6/rc3-runs-20261023T143849.079765Z/011-basket-success-clang-indexed-binheap-r1.json": "9cd8f869d1d13b3db8c8a582a18260c984d46a2ff1b37f8a5dff36c8f8101197",
+    "results/p6/rc3-runs-20261023T143849.079765Z/012-basket-success-clang-indexed-binheap-r2.json": "26d6ff7429415d8fcfa02a3ca7c4ff6f03cfff9cedf0f6dffa77d0a9c531677d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/013-basket-success-gcc-indexed-quad-r1.json": "9c2e8ba4662faf794588b203136e1d28cb3abca34045ac3f877917e0e76db50c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/014-basket-success-gcc-indexed-quad-r2.json": "be512f5a014e975ca50e4513e0189b07bff1bd641060b8d1b99c2a00552f9fdb",
+    "results/p6/rc3-runs-20261023T143849.079765Z/015-basket-success-clang-indexed-quad-r1.json": "f6bcf720fe4bc3b3f5bee44d1af873ddfe966ab8a53126220b429661bb24b2e6",
+    "results/p6/rc3-runs-20261023T143849.079765Z/016-basket-success-clang-indexed-quad-r2.json": "190d5227f97448a636d39cf5f06e8e56dd8cc995b0d5a2b5a1b45c09416969ab",
+    "results/p6/rc3-runs-20261023T143849.079765Z/017-basket-success-gcc-indexed-loser-r1.json": "3cb656392c4e4df2191c441a4c762ce24f2221e06027c077be9ecc08e4bbc9ba",
+    "results/p6/rc3-runs-20261023T143849.079765Z/018-basket-success-gcc-indexed-loser-r2.json": "ce5c96124995e2f4be300fceb3ba5a604524698715467564bcb8e29ca1e04145",
+    "results/p6/rc3-runs-20261023T143849.079765Z/019-basket-success-clang-indexed-loser-r1.json": "66a8953e253d67a7d0c7f2a1a652fbf7b523950a83ff4cab028cc3414694374b",
+    "results/p6/rc3-runs-20261023T143849.079765Z/020-basket-success-clang-indexed-loser-r2.json": "82579f3a25ad20509218f0cb20a98b1c96712d9926bddbf12e6c609b84243a04",
+    "results/p6/rc3-runs-20261023T143849.079765Z/021-basket-success-gcc-auto-stdpq-r1.json": "a291ee6f6dd801f7aa75696898358d905af1a6bd92e638e053d19f1a1477dfa4",
+    "results/p6/rc3-runs-20261023T143849.079765Z/022-basket-success-gcc-auto-stdpq-r2.json": "77e0071ed9279f6fca803705ddb22de3035caa95f6e86a47d784192b9ec0da06",
+    "results/p6/rc3-runs-20261023T143849.079765Z/023-basket-success-clang-auto-stdpq-r1.json": "68635f8839b4f9149bb0e6f331f47121cdc25c1fcb0fba385f7d573a197c749b",
+    "results/p6/rc3-runs-20261023T143849.079765Z/024-basket-success-clang-auto-stdpq-r2.json": "24b88c81447a6f82c29c62b78e2fed77d3b91aa6897c033dcbcd9ec263932d4d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/025-basket-success-gcc-auto-binheap-r1.json": "c25a7fc59174df9195c2f7a19068543a92bea5e86475b06d510d4cd14934f015",
+    "results/p6/rc3-runs-20261023T143849.079765Z/026-basket-success-gcc-auto-binheap-r2.json": "f61ff1b1d2d9e8146ac0b121048c5317fd09c9ce31b144a2fbc933223390493b",
+    "results/p6/rc3-runs-20261023T143849.079765Z/027-basket-success-clang-auto-binheap-r1.json": "bee749e4a960a0a1463819d6b3a4bd681a889b1be7bd7a8d0d508144f4bb1f48",
+    "results/p6/rc3-runs-20261023T143849.079765Z/028-basket-success-clang-auto-binheap-r2.json": "3ec2a6c06ea6124ab3d792833f7562bfb0961bdd74e64582d42f604179563435",
+    "results/p6/rc3-runs-20261023T143849.079765Z/029-basket-success-gcc-auto-quad-r1.json": "74d57f7c16c20d2e1288fedf694b55e22c942545595b35487ee829f7576e3a1f",
+    "results/p6/rc3-runs-20261023T143849.079765Z/030-basket-success-gcc-auto-quad-r2.json": "71c82ac3d84e9ce238aa58c9ba5f32b97ed8903b12f39f17cac51fd955b41455",
+    "results/p6/rc3-runs-20261023T143849.079765Z/031-basket-success-clang-auto-quad-r1.json": "296bc0913133ee033a6aeb9e9e1ca93471ee2606f9e2a9942d06d17cc9cd76d7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/032-basket-success-clang-auto-quad-r2.json": "fc2cd4cd545bf0761472bc56b1d2bd1fa04420563e585b60046426d24694da88",
+    "results/p6/rc3-runs-20261023T143849.079765Z/033-basket-success-gcc-auto-loser-r1.json": "94f551dd0c584faa899b0dc2dede8192f4bdf55921a88f6b93f2e6b2c713950f",
+    "results/p6/rc3-runs-20261023T143849.079765Z/034-basket-success-gcc-auto-loser-r2.json": "5935f5cfee4a220896d06bb95c3bff54030b808da847c68646dec61a679e46e3",
+    "results/p6/rc3-runs-20261023T143849.079765Z/035-basket-success-clang-auto-loser-r1.json": "838dfbc8244b2e1bc9a3f9b2a1d9267bfa3b19ebe55f3a9c710073551edd9659",
+    "results/p6/rc3-runs-20261023T143849.079765Z/036-basket-success-clang-auto-loser-r2.json": "a24c24d595af52962883c4900a635f97ee5700b9dac74d220b08d6c29d293650",
+    "results/p6/rc3-runs-20261023T143849.079765Z/037-basket-expiry-gcc-scan-stdpq-r1.json": "7cfc4eb8a15ece0090fda2304ad4210baf8a3d59ca8b8523f49cc91515f96f61",
+    "results/p6/rc3-runs-20261023T143849.079765Z/038-basket-expiry-gcc-scan-stdpq-r2.json": "bd6055133551c704a721dcf85d3708a0e9fd9ed3935195eb5e044136c9891534",
+    "results/p6/rc3-runs-20261023T143849.079765Z/039-basket-expiry-clang-scan-stdpq-r1.json": "ca03706667b8dcc6ccc1ef7a8731b8e7a30fc7baaf8d4cfc8e4aeca332648853",
+    "results/p6/rc3-runs-20261023T143849.079765Z/040-basket-expiry-clang-scan-stdpq-r2.json": "54d15a57242028be58ced4a4982a0317eecc0a287c3cc4181fb5ac71d0d18656",
+    "results/p6/rc3-runs-20261023T143849.079765Z/041-basket-expiry-gcc-indexed-stdpq-r1.json": "3ff7e20464ea30e4fc44fc5341dda1653c0d8d965f7df4d0a44621048e9527c9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/042-basket-expiry-gcc-indexed-stdpq-r2.json": "41f05b7da032629320ec643abe208ef25092114b99647444d173b3690fa5dbac",
+    "results/p6/rc3-runs-20261023T143849.079765Z/043-basket-expiry-clang-indexed-stdpq-r1.json": "597f44aae1f47472cd16933ccb4c6b1cb5c339e340887b3816e892ce186e1e36",
+    "results/p6/rc3-runs-20261023T143849.079765Z/044-basket-expiry-clang-indexed-stdpq-r2.json": "af771f96ccab7856ac4415ac5a05a2451f2b5453ee99c213c6356584b280b645",
+    "results/p6/rc3-runs-20261023T143849.079765Z/045-basket-expiry-gcc-indexed-binheap-r1.json": "d0e5635f00b8170b461f0f85128970e945c906cd9115294cf4a207f717fe8561",
+    "results/p6/rc3-runs-20261023T143849.079765Z/046-basket-expiry-gcc-indexed-binheap-r2.json": "c2cd76b1e8fff195839791f8bca4070c9ccce1099237959633ba86b3f1f07bd8",
+    "results/p6/rc3-runs-20261023T143849.079765Z/047-basket-expiry-clang-indexed-binheap-r1.json": "1aedbfe2ea899711b73e7bc16218a09444567766f530b1f84c3b02442697fff3",
+    "results/p6/rc3-runs-20261023T143849.079765Z/048-basket-expiry-clang-indexed-binheap-r2.json": "14872acd7b0caf93599415a49bbf2286677b584d56e3f7841d09ecd1fea0b593",
+    "results/p6/rc3-runs-20261023T143849.079765Z/049-basket-expiry-gcc-indexed-quad-r1.json": "4353d1328afea4741043cabc45ca7af639c5258b06a3be59ca3c60521ad29272",
+    "results/p6/rc3-runs-20261023T143849.079765Z/050-basket-expiry-gcc-indexed-quad-r2.json": "f8bfd0d7ed7ffdc0fd7ecf6614908071f2ca2be558e6d5e1326807bb44da3ee8",
+    "results/p6/rc3-runs-20261023T143849.079765Z/051-basket-expiry-clang-indexed-quad-r1.json": "f44b100319c6287b98678e60cdb3ed3ba95e3796de3ed6e4b7964fbc01775545",
+    "results/p6/rc3-runs-20261023T143849.079765Z/052-basket-expiry-clang-indexed-quad-r2.json": "ef3043c1f470ea3693116e15c1b3d9c65512962c50b08ae60dad874e31c43770",
+    "results/p6/rc3-runs-20261023T143849.079765Z/053-basket-expiry-gcc-indexed-loser-r1.json": "1f55b2e02c119edc94f958d60d062365d801fc25572379f2a2b0162871500f8c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/054-basket-expiry-gcc-indexed-loser-r2.json": "efdfdb84b402df37394526037a3512b9ee8f8f5e3a9e4e517b2a4e3dcb827495",
+    "results/p6/rc3-runs-20261023T143849.079765Z/055-basket-expiry-clang-indexed-loser-r1.json": "eb6478be1c37a77325127eebe3b90feca798432f298bd7c42dee093ac59a39cb",
+    "results/p6/rc3-runs-20261023T143849.079765Z/056-basket-expiry-clang-indexed-loser-r2.json": "c76bcfcf2008e9f5aa58b843c3d21816767a961e02432f54ae360deb490cde88",
+    "results/p6/rc3-runs-20261023T143849.079765Z/057-basket-expiry-gcc-auto-stdpq-r1.json": "5d7b8011af031a39faa3300283a5f6008a106e293dd9ad8c6cebd0309bb889b7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/058-basket-expiry-gcc-auto-stdpq-r2.json": "f844d227e6881172d9ec891c29bd44134ed943f43c8d6d3a078f0854836cbc72",
+    "results/p6/rc3-runs-20261023T143849.079765Z/059-basket-expiry-clang-auto-stdpq-r1.json": "0b5ca2f770412f96be31e350b99806a88e349486308cfd921d64b1769ad1aea1",
+    "results/p6/rc3-runs-20261023T143849.079765Z/060-basket-expiry-clang-auto-stdpq-r2.json": "f00eb62f680f8e5d3f8919e8ed5886026ce08e1dbe8713219fb0500d3566ee45",
+    "results/p6/rc3-runs-20261023T143849.079765Z/061-basket-expiry-gcc-auto-binheap-r1.json": "6b022867e51c3781cb4b8f22c0a871e987e161ca8b9c2c0147cb8c2e56bcb6e5",
+    "results/p6/rc3-runs-20261023T143849.079765Z/062-basket-expiry-gcc-auto-binheap-r2.json": "7ad370caaab07d584f6339785d5acb7700c7b0a8ce8214e1d138a9e56e622f9a",
+    "results/p6/rc3-runs-20261023T143849.079765Z/063-basket-expiry-clang-auto-binheap-r1.json": "57061543df7c13ef34eb2eda707cbdcfab7f13493dc790a0e7c603c6dcaf0c3c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/064-basket-expiry-clang-auto-binheap-r2.json": "127bfdfe9ad0fdd1fc86c9a4e7f52e9f3f38ac8c5c4f60225fcad76d8eb2056c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/065-basket-expiry-gcc-auto-quad-r1.json": "039f3b341c842b534d74e862687645d1204e85a204e82bfc9effe21d2ca0cd7c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/066-basket-expiry-gcc-auto-quad-r2.json": "db50e72f1bc929388f29a57848088f0faf0473dcb6b8ed331a6a073338d41d43",
+    "results/p6/rc3-runs-20261023T143849.079765Z/067-basket-expiry-clang-auto-quad-r1.json": "199b54ed20533bb72b9175aaa67fde9ceae7058086fe0670184afc0cba852ff1",
+    "results/p6/rc3-runs-20261023T143849.079765Z/068-basket-expiry-clang-auto-quad-r2.json": "a8b832f9f33c2c8121c74ad0eb484bb6ea95a65dd3583c1c1bf8c4dcc85c9d33",
+    "results/p6/rc3-runs-20261023T143849.079765Z/069-basket-expiry-gcc-auto-loser-r1.json": "d3d26509788da8ee4a0e97b34c424e55111d5c5c54c5a57cc12afd0994e1b3f1",
+    "results/p6/rc3-runs-20261023T143849.079765Z/070-basket-expiry-gcc-auto-loser-r2.json": "aa1138304a4979bcd88f32b325daa16dba5fc15d07db6bfd3c26c643241f1c09",
+    "results/p6/rc3-runs-20261023T143849.079765Z/071-basket-expiry-clang-auto-loser-r1.json": "cef56ce3fc140df2e3b36c67846ecca9aa72d2041d217aa4b73ee630c3e77e62",
+    "results/p6/rc3-runs-20261023T143849.079765Z/072-basket-expiry-clang-auto-loser-r2.json": "1152db16afbea8e056fcd713641d089d95ebd61ca6bbf1956856d636603d58b0",
+    "results/p6/rc3-runs-20261023T143849.079765Z/073-wide-success-gcc-scan-stdpq-r1.json": "58d47a9af884076a91e1b3fee6ed00bcfaa7bda45f1601a37b9a24cf1cf605c7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/074-wide-success-gcc-scan-stdpq-r2.json": "da25e18e2efde31a0f5c07af07bfa6867af85da952a4031045476d772d8d5539",
+    "results/p6/rc3-runs-20261023T143849.079765Z/075-wide-success-clang-scan-stdpq-r1.json": "917f49287aebeb2b584283e161a6fcb40b3952f75a8d8eaa5b1678f9a64d3146",
+    "results/p6/rc3-runs-20261023T143849.079765Z/076-wide-success-clang-scan-stdpq-r2.json": "99fadffb0f0756ec36a22ab8fd1727ea83ee74c26e72d2c7b89c2fe34308a294",
+    "results/p6/rc3-runs-20261023T143849.079765Z/077-wide-success-gcc-indexed-stdpq-r1.json": "c4cd7e26c700957fbde4590ae933364d37479bc4a840c6a804b40ed519164986",
+    "results/p6/rc3-runs-20261023T143849.079765Z/078-wide-success-gcc-indexed-stdpq-r2.json": "c872093481278d1f339a99ac4c86f35d0a337e4a1bf8602cf77a14a5a0904340",
+    "results/p6/rc3-runs-20261023T143849.079765Z/079-wide-success-clang-indexed-stdpq-r1.json": "00b254197cd24e10d73b855247f4efa6a22760ebccc645463126512e75cef21d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/080-wide-success-clang-indexed-stdpq-r2.json": "04b962db24e053d281abc61106214c0ac4e5d8eb000ec7b6eb0dca223f844878",
+    "results/p6/rc3-runs-20261023T143849.079765Z/081-wide-success-gcc-indexed-binheap-r1.json": "ae925248ed1db2372a6f2b63c7dd002ecc10862c75f3d4dafde6ec62b0457b14",
+    "results/p6/rc3-runs-20261023T143849.079765Z/082-wide-success-gcc-indexed-binheap-r2.json": "e111344627b7d0e82eb7263362849839e717f046848146e545ea95849b3ceea4",
+    "results/p6/rc3-runs-20261023T143849.079765Z/083-wide-success-clang-indexed-binheap-r1.json": "48ee7b7e86d95254cea2fe11239d50d8f0a0440de6ee03d0db3b96f3ec4111c8",
+    "results/p6/rc3-runs-20261023T143849.079765Z/084-wide-success-clang-indexed-binheap-r2.json": "2107d35a13a42c5a46a44850748962ba22c3f820cbfc2fdf4c9c61983fd09746",
+    "results/p6/rc3-runs-20261023T143849.079765Z/085-wide-success-gcc-indexed-quad-r1.json": "09bb8b7d396336a5ee7e9a239f770f46ee090771b0eaa7016fc91624aac9bc64",
+    "results/p6/rc3-runs-20261023T143849.079765Z/086-wide-success-gcc-indexed-quad-r2.json": "5320cf7ba22f648224de87fa5c57be83903486b87977eeae2ca90ee4645a6657",
+    "results/p6/rc3-runs-20261023T143849.079765Z/087-wide-success-clang-indexed-quad-r1.json": "af4ffb664c74246e0489e3c578269816be319cd40bf88e0d6f39242b830d3159",
+    "results/p6/rc3-runs-20261023T143849.079765Z/088-wide-success-clang-indexed-quad-r2.json": "29252ac0ac880d43eeb27f3f007b58e4ea1046f6e70dbeee615afde62ac80de9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/089-wide-success-gcc-indexed-loser-r1.json": "23611ae2230c88805855af150e48f9b8b2491a60d7784b454aa8647d1de1d5c8",
+    "results/p6/rc3-runs-20261023T143849.079765Z/090-wide-success-gcc-indexed-loser-r2.json": "5097898b2151e2f197a7c2b6dfa02f1a12d1ccedfec9b8a88e77e221e1ab9233",
+    "results/p6/rc3-runs-20261023T143849.079765Z/091-wide-success-clang-indexed-loser-r1.json": "3e7e6f337b4901d7bdf553f97b315ffac990eb2da9f9743ae4e99853781e8458",
+    "results/p6/rc3-runs-20261023T143849.079765Z/092-wide-success-clang-indexed-loser-r2.json": "39d6f68de2b7bbb8a6f0f3333cc316b1c82a5a41cc81132103828b21aeef6899",
+    "results/p6/rc3-runs-20261023T143849.079765Z/093-wide-success-gcc-auto-stdpq-r1.json": "4f2a26b2c688314794110377723f1ae7757fe8db12d33dbcbf4fed66139b3e09",
+    "results/p6/rc3-runs-20261023T143849.079765Z/094-wide-success-gcc-auto-stdpq-r2.json": "2ed6395c640c466800442f92b17ccb731629a9aff332ac032e4da47b5d9e9300",
+    "results/p6/rc3-runs-20261023T143849.079765Z/095-wide-success-clang-auto-stdpq-r1.json": "ef08ab36677da6a96f2879c99496060f6bbac399a71dfe0315bf04cd8a6ad808",
+    "results/p6/rc3-runs-20261023T143849.079765Z/096-wide-success-clang-auto-stdpq-r2.json": "1b3fb5b1fe4e3a63e571f1674c45540016a74062b0b40b36b0a989c4ab1275f7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/097-wide-success-gcc-auto-binheap-r1.json": "48d863b90bbc050b2c5e0fbc3170825844ee3714364ea0368f0b7a27fdf1d5ec",
+    "results/p6/rc3-runs-20261023T143849.079765Z/098-wide-success-gcc-auto-binheap-r2.json": "91d3dcf22841e188540e878faf4db3c3c77bc3cb805374cf58cc0332fb07564f",
+    "results/p6/rc3-runs-20261023T143849.079765Z/099-wide-success-clang-auto-binheap-r1.json": "16d240b53046da1a3062a0518065860d042cb847fe7ee156aa52680b66eba989",
+    "results/p6/rc3-runs-20261023T143849.079765Z/100-wide-success-clang-auto-binheap-r2.json": "1375488d4ba1f11e05a0278ce678afdff3e027b36eddb6e91cf15a6ddf3f1864",
+    "results/p6/rc3-runs-20261023T143849.079765Z/101-wide-success-gcc-auto-quad-r1.json": "a73ffd0960861287eecdcc8f0d73f41efcbf3ea19e8089f160518bfac687065d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/102-wide-success-gcc-auto-quad-r2.json": "9c09046d95a27349195785fb79adb532401cb9b11bdc187db43b7c458435d0c5",
+    "results/p6/rc3-runs-20261023T143849.079765Z/103-wide-success-clang-auto-quad-r1.json": "4b374d31b87e1e20edeea2984c2214e973c863fe6255715db2267d7bc4164f8d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/104-wide-success-clang-auto-quad-r2.json": "59c0f222caf2a900409723f2b568ac8f19933ba064948b135816785d24fd17b9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/105-wide-success-gcc-auto-loser-r1.json": "75093ad01e0894c77ae051fcc4a0ff9e486caa572cc56e5f7966411cc7025fe9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/106-wide-success-gcc-auto-loser-r2.json": "4f0a5b2b95237218b7112d4f1d3d38006e3c5c76d988513a66d69ad4b5be386c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/107-wide-success-clang-auto-loser-r1.json": "1022ebc519fb44a69b878951a81654bd099a29e82d31987233c2fef871dcba56",
+    "results/p6/rc3-runs-20261023T143849.079765Z/108-wide-success-clang-auto-loser-r2.json": "bb4e93634620cfce32c33344ca65ee2816ec7fcfb97d02aba8a1e95a865e9e48",
+    "results/p6/rc3-runs-20261023T143849.079765Z/109-wide-expiry-gcc-scan-stdpq-r1.json": "fdc35ecaae247c3982ae266b368402afa3cec42e277ad902559ce38ec35e899c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/110-wide-expiry-gcc-scan-stdpq-r2.json": "58be90f0902c907e8655f8cf81197c6465d5aede098d7427e4975fd505c838c1",
+    "results/p6/rc3-runs-20261023T143849.079765Z/111-wide-expiry-clang-scan-stdpq-r1.json": "91476e509a4faa8e139e7764d169c96c65263a14e226ca27c7327a0e15710269",
+    "results/p6/rc3-runs-20261023T143849.079765Z/112-wide-expiry-clang-scan-stdpq-r2.json": "3e23b5c4c58f0456034c7a9558a9370a1873adf02a7943e1dda59f552c0c6146",
+    "results/p6/rc3-runs-20261023T143849.079765Z/113-wide-expiry-gcc-indexed-stdpq-r1.json": "1fd84880ac4ce5a06e6343f635d6cf20f706c4574833e98792d12abb2e03f887",
+    "results/p6/rc3-runs-20261023T143849.079765Z/114-wide-expiry-gcc-indexed-stdpq-r2.json": "8d248bf89676b52c5d860d0ae179653b9b10c0646d9b944152ce7e6ddff9a831",
+    "results/p6/rc3-runs-20261023T143849.079765Z/115-wide-expiry-clang-indexed-stdpq-r1.json": "a4c5582b3a6c45cbd0186417a348fd6a3f1002689032f20d8946a032635c6cd2",
+    "results/p6/rc3-runs-20261023T143849.079765Z/116-wide-expiry-clang-indexed-stdpq-r2.json": "407843bd9432e9758771278e3749b8f56ad3d1ece01708d0d267a83620d6a52f",
+    "results/p6/rc3-runs-20261023T143849.079765Z/117-wide-expiry-gcc-indexed-binheap-r1.json": "0ba13f436d329e1f3fbc07bfe2ebcaac755b37a0994391e2962543f07805777c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/118-wide-expiry-gcc-indexed-binheap-r2.json": "3bdb7f66c4821332838c79f5a2637ec191c9b88776f1a3ba026d0ddba2fc6e11",
+    "results/p6/rc3-runs-20261023T143849.079765Z/119-wide-expiry-clang-indexed-binheap-r1.json": "cc7a1b423c85e88dcef96a0ae6c51bb55632566dfbeefdfbf801b595dfba8a2a",
+    "results/p6/rc3-runs-20261023T143849.079765Z/120-wide-expiry-clang-indexed-binheap-r2.json": "32473e5a4b344553ecf89506708676f93f43c3fe7e7f5e9fe7d483e1f4605451",
+    "results/p6/rc3-runs-20261023T143849.079765Z/121-wide-expiry-gcc-indexed-quad-r1.json": "96f00ba775641d316a9df770ef28fdb3077b6c2c1fd2645801f59ffba9918b65",
+    "results/p6/rc3-runs-20261023T143849.079765Z/122-wide-expiry-gcc-indexed-quad-r2.json": "d9ec13820ffd96e6a7bbbf42204628265e33cf757f7bba0288d2df97f1c44cf0",
+    "results/p6/rc3-runs-20261023T143849.079765Z/123-wide-expiry-clang-indexed-quad-r1.json": "d24f1468aa43e1271c8233dff13333038469b0329cd5cdc716b9cf580c79f09d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/124-wide-expiry-clang-indexed-quad-r2.json": "89b474d892df094e7a88de8f714906f28a91b1f14286ff096d1fa05bb4e730c9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/125-wide-expiry-gcc-indexed-loser-r1.json": "b80aacddd4cb965e738d37d1d296c9097bf9c01132e113227b95f5633a7ca486",
+    "results/p6/rc3-runs-20261023T143849.079765Z/126-wide-expiry-gcc-indexed-loser-r2.json": "6b093016b106b34490eb6775b5540e4e44e2c42ed2a893dd87d54278a424142b",
+    "results/p6/rc3-runs-20261023T143849.079765Z/127-wide-expiry-clang-indexed-loser-r1.json": "c762736d820d3f7195ec8ecd758ad58a124a6fa4c6bbed9d5faa12705cb61db7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/128-wide-expiry-clang-indexed-loser-r2.json": "5f4dfd82261f678f711fe4fd822e88ad0e419cf92fab75ccdd4b7bb5b16f3864",
+    "results/p6/rc3-runs-20261023T143849.079765Z/129-wide-expiry-gcc-auto-stdpq-r1.json": "bc92dca9916a82d747bcda9a96266d7abb963c992f0795abe900f5540e27513f",
+    "results/p6/rc3-runs-20261023T143849.079765Z/130-wide-expiry-gcc-auto-stdpq-r2.json": "31c4e332b2bd818c6fb67a93c3846dd4ea42560fafad0a52fb015b1b90ba9f27",
+    "results/p6/rc3-runs-20261023T143849.079765Z/131-wide-expiry-clang-auto-stdpq-r1.json": "c5bd9db2defff88a22a244ac51bbd2dc911a6cca0dea9838f2c32ed5108f8286",
+    "results/p6/rc3-runs-20261023T143849.079765Z/132-wide-expiry-clang-auto-stdpq-r2.json": "f82da617e2224c170576f272660b0a85b2ab48f45dfe14c4a75524ddbf5e16a9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/133-wide-expiry-gcc-auto-binheap-r1.json": "adfa1c5352621577828a72daf5311646d1142e06cc854955a28387c436438b1d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/134-wide-expiry-gcc-auto-binheap-r2.json": "c3a94c370f3707af47f552074c2d5b628045a73ca00ab4cdd95160c95050ecad",
+    "results/p6/rc3-runs-20261023T143849.079765Z/135-wide-expiry-clang-auto-binheap-r1.json": "b56dc3097b275d60d46dd89d53a579eb3d29f65a31b2dd840019f6c8d0d30c65",
+    "results/p6/rc3-runs-20261023T143849.079765Z/136-wide-expiry-clang-auto-binheap-r2.json": "ac0da7c7cfa30ec465252f6433eda91834ca03cc41292d5be723c3eb382ff860",
+    "results/p6/rc3-runs-20261023T143849.079765Z/137-wide-expiry-gcc-auto-quad-r1.json": "409d2717e453b65da7b192763db07285b7d479a45dcfad683e182b3793832db7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/138-wide-expiry-gcc-auto-quad-r2.json": "0195ce3ea601be9915b9c99c741a51c6be3ace52176626db22b20945d6948671",
+    "results/p6/rc3-runs-20261023T143849.079765Z/139-wide-expiry-clang-auto-quad-r1.json": "e145047505e873e43bef1d00d1bc1c721112e7fc7ce113be0e958eedf119bf40",
+    "results/p6/rc3-runs-20261023T143849.079765Z/140-wide-expiry-clang-auto-quad-r2.json": "342d18464cba5c90998d09f43613859c35d3a04e55ed7b54d71ffdc3506cd59d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/141-wide-expiry-gcc-auto-loser-r1.json": "067ab44d1cc6a95e7a9a4c0b118eb47ee0d054d60123409b6efb748261043c5a",
+    "results/p6/rc3-runs-20261023T143849.079765Z/142-wide-expiry-gcc-auto-loser-r2.json": "bee2509b4c078499070f4e5871cf8a28f703d609b2bb045196de305fc840da13",
+    "results/p6/rc3-runs-20261023T143849.079765Z/143-wide-expiry-clang-auto-loser-r1.json": "2cb2320d0cbf1bbf2ce6ca641243d29df71ca9f74ab795eb93f66e5119acd805",
+    "results/p6/rc3-runs-20261023T143849.079765Z/144-wide-expiry-clang-auto-loser-r2.json": "eb6d5b91a8f8169d0dda497a9a826f2103354d106f1c9f8b1c40e591291a5f69",
+    "results/p6/rc3-runs-20261023T143849.079765Z/145-synthetic-gcc-scan-stdpq-r1.json": "a5fb9b0f4ba8b8dcbe127ef5b4e05bcbff2b0dd30c8f5ee730c53e11b49ec777",
+    "results/p6/rc3-runs-20261023T143849.079765Z/146-synthetic-gcc-scan-stdpq-r2.json": "45f2a952266f48575f15ee7caf6dcd4b4d0565d89e32d0038ccb78775995cf60",
+    "results/p6/rc3-runs-20261023T143849.079765Z/147-synthetic-clang-scan-stdpq-r1.json": "e717d8f6ae5f3b13dd5f8dde1c44f054b5c04956179671cb7178aeb8a1259fb8",
+    "results/p6/rc3-runs-20261023T143849.079765Z/148-synthetic-clang-scan-stdpq-r2.json": "a3c7b6508f589e941e5b950e49559accafba6ba925f0f35e06f855aa3f394ec7",
+    "results/p6/rc3-runs-20261023T143849.079765Z/149-synthetic-gcc-indexed-stdpq-r1.json": "bd31142e88de2a4589bcabb76523939bfdadba02775aa7e9b94c4666f0b161dd",
+    "results/p6/rc3-runs-20261023T143849.079765Z/150-synthetic-gcc-indexed-stdpq-r2.json": "3f00b655b1fda52b64c1137eaaff42f199a0ecf153dbcb62cd5129e3fcc1d19d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/151-synthetic-clang-indexed-stdpq-r1.json": "7f78d06186ed09d1fe11f8f31445e9a80952110ea8fc7e55e8b748783da85c3a",
+    "results/p6/rc3-runs-20261023T143849.079765Z/152-synthetic-clang-indexed-stdpq-r2.json": "b168c06496e545a2d915fea0487071d2fb4e810338fe43dfc9e8ea2c3a9575ed",
+    "results/p6/rc3-runs-20261023T143849.079765Z/153-synthetic-gcc-indexed-binheap-r1.json": "70e9c6d715205804bb6b96016114a55f2aae9aa80df75cf7a27c80571dd0b450",
+    "results/p6/rc3-runs-20261023T143849.079765Z/154-synthetic-gcc-indexed-binheap-r2.json": "e627efb81add1f8b08db647c6b20d3e2bb2892b074e93bb9376a79d4fef13596",
+    "results/p6/rc3-runs-20261023T143849.079765Z/155-synthetic-clang-indexed-binheap-r1.json": "393e26d6a2b420596c26c16c134331311c6ac31fd0cad01b2dde927899f63fa4",
+    "results/p6/rc3-runs-20261023T143849.079765Z/156-synthetic-clang-indexed-binheap-r2.json": "4278d326ac527de4eaf9c7a48f7aa9946cfee768b1b13ff3abbe9986dedcc9a3",
+    "results/p6/rc3-runs-20261023T143849.079765Z/157-synthetic-gcc-indexed-quad-r1.json": "48092c4050af076f68eebbffdfed54697dc3faa18ecb807aad94ac4776695f70",
+    "results/p6/rc3-runs-20261023T143849.079765Z/158-synthetic-gcc-indexed-quad-r2.json": "ec4cfcfcb176dbbcbb3d67bd9f92e978e354be479be60ca7948b08a545f54d2c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/159-synthetic-clang-indexed-quad-r1.json": "ff23fe290ecfaef119f46038e601f42a270c4d082740898b1c3e4385760b8e49",
+    "results/p6/rc3-runs-20261023T143849.079765Z/160-synthetic-clang-indexed-quad-r2.json": "3be1f738bd08e80997d43fd42bf5243e3b156c2e40b4edc7df2487343a22b009",
+    "results/p6/rc3-runs-20261023T143849.079765Z/161-synthetic-gcc-indexed-loser-r1.json": "e77e7a22f33a81c1f3158ede5052ac63fafc4d98cc655749a89ff97175a0dea3",
+    "results/p6/rc3-runs-20261023T143849.079765Z/162-synthetic-gcc-indexed-loser-r2.json": "25255b2333792a937b83a654a62de899e72951c5ff8ccda53eeb86b21af1da40",
+    "results/p6/rc3-runs-20261023T143849.079765Z/163-synthetic-clang-indexed-loser-r1.json": "5eb7558d5a53299b3e7d32d8e209a7e8941a058e4afd17798a098ef2005f2696",
+    "results/p6/rc3-runs-20261023T143849.079765Z/164-synthetic-clang-indexed-loser-r2.json": "dc85182b9f6ea44518f6c117b957b502d62614c504eb1a04a7d8faa5258c4aea",
+    "results/p6/rc3-runs-20261023T143849.079765Z/165-synthetic-gcc-auto-stdpq-r1.json": "e38de1df48af1cb3de958c409bc1a044b750a626a74202d39c03bd68f7373869",
+    "results/p6/rc3-runs-20261023T143849.079765Z/166-synthetic-gcc-auto-stdpq-r2.json": "b312e94d826502bd1dba1add5e761c398b68e3c487c30ea454b40508034af035",
+    "results/p6/rc3-runs-20261023T143849.079765Z/167-synthetic-clang-auto-stdpq-r1.json": "a299943d55cd172aaec9d0a1f236ec55b03d6130e01843f50fdf64205103d949",
+    "results/p6/rc3-runs-20261023T143849.079765Z/168-synthetic-clang-auto-stdpq-r2.json": "09ccda54372b627d985904901f1632feb7c628ab032bd63f25c918f759f57f3e",
+    "results/p6/rc3-runs-20261023T143849.079765Z/169-synthetic-gcc-auto-binheap-r1.json": "b06cabfc6c48a5eeec68f937a4ca7161dbcd5685f34c5ef905d644abce0dacee",
+    "results/p6/rc3-runs-20261023T143849.079765Z/170-synthetic-gcc-auto-binheap-r2.json": "12bd92c742056887ba4d25f643714e1f6a978398e35039b20a6c40ced46f7784",
+    "results/p6/rc3-runs-20261023T143849.079765Z/171-synthetic-clang-auto-binheap-r1.json": "410e259cf622a7d83e583ce4a251336402d7b12bd656431de3d097aab5c7d3c5",
+    "results/p6/rc3-runs-20261023T143849.079765Z/172-synthetic-clang-auto-binheap-r2.json": "1ff58abc3bc85a2a98bdb1f7b18c4f4bab3d6bf9a60c1c731f98aa4b33e2d450",
+    "results/p6/rc3-runs-20261023T143849.079765Z/173-synthetic-gcc-auto-quad-r1.json": "0d1d61bc7e8200bdcb4353a5e28529246e021ad8302b88b9ddb8023e3b26698c",
+    "results/p6/rc3-runs-20261023T143849.079765Z/174-synthetic-gcc-auto-quad-r2.json": "98905da876d01489e5f9f15207be7bed0febb44cff34ea22a6abdfc8268e17f4",
+    "results/p6/rc3-runs-20261023T143849.079765Z/175-synthetic-clang-auto-quad-r1.json": "d92653eb100758aa475b9d8fb85433cde92cb331500070d32780c5ccf9244735",
+    "results/p6/rc3-runs-20261023T143849.079765Z/176-synthetic-clang-auto-quad-r2.json": "fb423b484140621609bb3dc64c68e4d9b556564b92737a96695085a82439ffbe",
+    "results/p6/rc3-runs-20261023T143849.079765Z/177-synthetic-gcc-auto-loser-r1.json": "e153ce07a8148ae8a1b32ef8b1ea201656c347475c73e3cd5b8da3a9313c1cdb",
+    "results/p6/rc3-runs-20261023T143849.079765Z/178-synthetic-gcc-auto-loser-r2.json": "f7c3ab9d011bff49782c12037b51e28b8800ee5c663d62a2db10b9b5018a497d",
+    "results/p6/rc3-runs-20261023T143849.079765Z/179-synthetic-clang-auto-loser-r1.json": "31bf340b32a47177457251ce5ac52a8a279fde6825a141c3def846dbd286b9d9",
+    "results/p6/rc3-runs-20261023T143849.079765Z/180-synthetic-clang-auto-loser-r2.json": "490ecebbf84ad821fdf84319d05d9c13eeecb34c4617c891b9ed89a0e454602b"
+  },
+  "checks": [
+    {
+      "check": "checker terminal status passed",
+      "status": "passed"
+    },
+    {
+      "check": "at least two repeats per compiler",
+      "status": "passed"
+    },
+    {
+      "check": "exact functional child coverage",
+      "status": "passed"
+    },
+    {
+      "check": "all checker equality records passed",
+      "status": "passed"
+    },
+    {
+      "check": "actual trace identity",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:CMakeLists.txt",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:CMakePresets.json",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/deps.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p1.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p2.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p2_ref.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p3_engine.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p3_fuzz.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p3_ring.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p4_index.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p5_bench.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:cmake/p5_merge.cmake",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:scripts/check_p6_rc3.py",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/driver/trace_driver.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/driver/trace_driver.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/engine/engine.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/engine/engine.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/index/index.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/index/index.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/merge/kernels.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/merge/kernels.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/ring/ring.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/ring/ring.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/subs/compiled.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/subs/compiled.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/topics/registry.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/topics/registry.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/trace/itch_walker.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/trace/itch_walker.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/trace/reader.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/trace/reader.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:src/tiplog/types.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tests/differential/campaign.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tests/differential/campaign.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tests/ref/oracle_tail.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tests/ref/scan_oracle.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tests/ref/scan_oracle.hpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tools/tiplog_differential/main.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current frozen source:tools/tiplog_sim/main.cpp",
+      "status": "passed"
+    },
+    {
+      "check": "current binary:build/clang-release/tiplog_differential",
+      "status": "passed"
+    },
+    {
+      "check": "current binary:build/clang-release/tiplog_sim",
+      "status": "passed"
+    },
+    {
+      "check": "current binary:build/release/tiplog_differential",
+      "status": "passed"
+    },
+    {
+      "check": "current binary:build/release/tiplog_sim",
+      "status": "passed"
+    },
+    {
+      "check": "child001:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child001:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child001:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child001:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child001:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child001:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child001:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child001:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child002:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child002:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child002:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child002:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child002:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child002:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child002:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child002:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child003:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child003:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child003:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child003:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child003:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child003:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child003:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child003:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child004:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child004:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child004:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child004:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child004:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child004:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child004:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child004:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child005:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child005:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child005:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child005:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child005:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child005:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child005:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child005:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child006:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child006:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child006:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child006:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child006:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child006:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child006:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child006:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child007:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child007:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child007:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child007:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child007:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child007:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child007:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child007:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child008:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child008:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child008:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child008:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child008:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child008:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child008:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child008:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child009:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child009:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child009:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child009:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child009:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child009:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child009:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child009:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child010:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child010:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child010:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child010:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child010:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child010:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child010:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child010:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child011:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child011:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child011:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child011:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child011:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child011:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child011:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child011:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child012:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child012:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child012:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child012:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child012:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child012:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child012:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child012:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child013:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child013:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child013:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child013:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child013:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child013:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child013:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child013:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child014:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child014:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child014:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child014:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child014:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child014:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child014:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child014:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child015:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child015:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child015:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child015:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child015:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child015:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child015:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child015:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child016:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child016:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child016:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child016:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child016:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child016:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child016:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child016:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child017:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child017:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child017:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child017:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child017:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child017:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child017:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child017:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child018:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child018:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child018:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child018:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child018:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child018:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child018:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child018:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child019:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child019:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child019:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child019:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child019:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child019:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child019:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child019:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child020:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child020:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child020:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child020:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child020:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child020:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child020:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child020:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child021:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child021:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child021:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child021:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child021:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child021:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child021:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child021:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child022:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child022:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child022:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child022:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child022:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child022:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child022:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child022:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child023:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child023:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child023:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child023:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child023:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child023:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child023:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child023:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child024:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child024:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child024:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child024:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child024:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child024:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child024:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child024:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child025:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child025:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child025:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child025:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child025:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child025:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child025:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child025:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child026:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child026:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child026:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child026:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child026:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child026:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child026:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child026:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child027:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child027:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child027:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child027:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child027:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child027:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child027:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child027:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child028:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child028:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child028:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child028:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child028:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child028:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child028:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child028:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child029:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child029:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child029:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child029:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child029:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child029:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child029:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child029:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child030:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child030:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child030:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child030:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child030:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child030:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child030:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child030:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child031:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child031:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child031:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child031:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child031:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child031:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child031:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child031:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child032:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child032:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child032:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child032:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child032:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child032:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child032:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child032:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child033:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child033:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child033:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child033:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child033:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child033:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child033:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child033:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child034:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child034:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child034:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child034:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child034:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child034:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child034:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child034:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child035:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child035:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child035:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child035:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child035:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child035:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child035:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child035:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child036:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child036:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child036:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child036:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child036:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child036:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child036:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child036:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child037:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child037:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child037:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child037:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child037:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child037:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child037:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child037:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child038:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child038:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child038:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child038:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child038:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child038:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child038:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child038:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child039:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child039:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child039:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child039:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child039:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child039:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child039:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child039:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child040:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child040:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child040:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child040:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child040:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child040:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child040:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child040:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child041:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child041:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child041:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child041:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child041:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child041:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child041:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child041:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child042:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child042:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child042:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child042:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child042:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child042:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child042:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child042:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child043:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child043:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child043:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child043:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child043:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child043:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child043:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child043:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child044:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child044:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child044:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child044:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child044:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child044:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child044:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child044:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child045:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child045:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child045:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child045:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child045:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child045:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child045:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child045:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child046:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child046:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child046:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child046:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child046:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child046:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child046:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child046:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child047:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child047:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child047:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child047:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child047:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child047:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child047:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child047:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child048:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child048:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child048:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child048:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child048:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child048:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child048:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child048:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child049:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child049:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child049:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child049:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child049:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child049:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child049:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child049:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child050:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child050:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child050:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child050:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child050:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child050:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child050:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child050:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child051:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child051:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child051:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child051:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child051:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child051:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child051:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child051:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child052:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child052:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child052:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child052:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child052:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child052:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child052:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child052:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child053:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child053:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child053:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child053:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child053:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child053:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child053:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child053:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child054:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child054:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child054:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child054:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child054:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child054:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child054:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child054:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child055:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child055:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child055:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child055:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child055:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child055:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child055:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child055:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child056:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child056:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child056:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child056:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child056:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child056:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child056:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child056:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child057:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child057:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child057:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child057:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child057:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child057:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child057:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child057:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child058:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child058:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child058:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child058:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child058:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child058:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child058:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child058:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child059:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child059:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child059:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child059:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child059:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child059:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child059:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child059:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child060:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child060:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child060:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child060:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child060:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child060:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child060:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child060:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child061:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child061:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child061:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child061:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child061:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child061:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child061:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child061:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child062:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child062:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child062:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child062:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child062:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child062:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child062:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child062:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child063:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child063:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child063:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child063:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child063:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child063:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child063:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child063:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child064:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child064:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child064:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child064:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child064:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child064:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child064:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child064:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child065:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child065:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child065:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child065:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child065:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child065:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child065:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child065:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child066:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child066:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child066:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child066:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child066:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child066:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child066:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child066:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child067:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child067:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child067:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child067:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child067:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child067:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child067:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child067:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child068:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child068:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child068:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child068:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child068:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child068:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child068:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child068:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child069:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child069:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child069:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child069:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child069:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child069:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child069:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child069:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child070:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child070:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child070:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child070:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child070:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child070:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child070:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child070:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child071:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child071:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child071:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child071:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child071:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child071:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child071:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child071:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child072:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child072:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child072:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child072:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child072:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child072:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child072:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child072:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child073:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child073:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child073:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child073:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child073:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child073:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child073:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child073:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child074:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child074:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child074:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child074:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child074:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child074:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child074:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child074:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child075:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child075:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child075:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child075:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child075:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child075:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child075:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child075:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child076:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child076:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child076:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child076:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child076:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child076:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child076:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child076:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child077:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child077:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child077:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child077:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child077:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child077:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child077:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child077:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child078:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child078:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child078:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child078:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child078:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child078:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child078:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child078:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child079:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child079:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child079:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child079:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child079:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child079:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child079:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child079:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child080:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child080:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child080:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child080:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child080:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child080:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child080:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child080:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child081:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child081:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child081:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child081:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child081:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child081:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child081:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child081:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child082:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child082:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child082:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child082:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child082:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child082:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child082:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child082:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child083:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child083:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child083:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child083:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child083:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child083:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child083:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child083:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child084:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child084:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child084:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child084:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child084:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child084:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child084:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child084:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child085:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child085:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child085:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child085:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child085:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child085:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child085:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child085:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child086:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child086:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child086:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child086:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child086:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child086:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child086:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child086:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child087:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child087:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child087:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child087:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child087:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child087:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child087:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child087:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child088:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child088:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child088:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child088:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child088:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child088:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child088:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child088:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child089:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child089:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child089:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child089:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child089:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child089:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child089:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child089:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child090:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child090:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child090:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child090:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child090:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child090:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child090:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child090:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child091:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child091:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child091:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child091:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child091:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child091:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child091:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child091:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child092:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child092:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child092:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child092:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child092:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child092:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child092:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child092:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child093:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child093:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child093:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child093:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child093:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child093:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child093:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child093:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child094:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child094:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child094:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child094:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child094:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child094:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child094:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child094:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child095:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child095:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child095:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child095:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child095:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child095:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child095:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child095:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child096:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child096:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child096:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child096:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child096:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child096:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child096:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child096:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child097:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child097:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child097:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child097:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child097:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child097:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child097:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child097:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child098:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child098:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child098:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child098:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child098:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child098:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child098:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child098:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child099:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child099:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child099:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child099:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child099:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child099:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child099:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child099:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child100:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child100:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child100:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child100:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child100:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child100:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child100:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child100:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child101:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child101:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child101:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child101:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child101:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child101:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child101:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child101:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child102:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child102:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child102:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child102:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child102:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child102:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child102:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child102:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child103:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child103:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child103:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child103:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child103:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child103:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child103:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child103:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child104:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child104:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child104:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child104:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child104:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child104:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child104:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child104:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child105:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child105:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child105:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child105:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child105:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child105:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child105:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child105:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child106:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child106:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child106:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child106:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child106:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child106:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child106:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child106:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child107:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child107:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child107:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child107:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child107:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child107:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child107:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child107:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child108:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child108:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child108:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child108:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child108:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child108:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child108:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child108:success checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "child109:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child109:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child109:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child109:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child109:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child109:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child109:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child109:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child110:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child110:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child110:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child110:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child110:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child110:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child110:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child110:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child111:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child111:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child111:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child111:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child111:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child111:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child111:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child111:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child112:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child112:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child112:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child112:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child112:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child112:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child112:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child112:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child113:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child113:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child113:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child113:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child113:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child113:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child113:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child113:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child114:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child114:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child114:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child114:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child114:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child114:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child114:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child114:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child115:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child115:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child115:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child115:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child115:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child115:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child115:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child115:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child116:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child116:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child116:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child116:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child116:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child116:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child116:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child116:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child117:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child117:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child117:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child117:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child117:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child117:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child117:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child117:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child118:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child118:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child118:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child118:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child118:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child118:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child118:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child118:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child119:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child119:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child119:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child119:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child119:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child119:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child119:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child119:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child120:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child120:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child120:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child120:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child120:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child120:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child120:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child120:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child121:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child121:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child121:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child121:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child121:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child121:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child121:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child121:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child122:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child122:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child122:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child122:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child122:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child122:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child122:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child122:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child123:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child123:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child123:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child123:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child123:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child123:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child123:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child123:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child124:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child124:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child124:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child124:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child124:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child124:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child124:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child124:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child125:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child125:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child125:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child125:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child125:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child125:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child125:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child125:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child126:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child126:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child126:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child126:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child126:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child126:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child126:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child126:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child127:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child127:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child127:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child127:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child127:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child127:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child127:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child127:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child128:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child128:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child128:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child128:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child128:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child128:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child128:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child128:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child129:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child129:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child129:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child129:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child129:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child129:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child129:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child129:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child130:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child130:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child130:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child130:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child130:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child130:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child130:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child130:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child131:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child131:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child131:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child131:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child131:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child131:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child131:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child131:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child132:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child132:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child132:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child132:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child132:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child132:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child132:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child132:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child133:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child133:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child133:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child133:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child133:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child133:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child133:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child133:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child134:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child134:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child134:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child134:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child134:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child134:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child134:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child134:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child135:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child135:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child135:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child135:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child135:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child135:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child135:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child135:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child136:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child136:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child136:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child136:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child136:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child136:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child136:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child136:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child137:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child137:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child137:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child137:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child137:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child137:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child137:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child137:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child138:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child138:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child138:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child138:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child138:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child138:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child138:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child138:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child139:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child139:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child139:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child139:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child139:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child139:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child139:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child139:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child140:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child140:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child140:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child140:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child140:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child140:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child140:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child140:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child141:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child141:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child141:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child141:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child141:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child141:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child141:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child141:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child142:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child142:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child142:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child142:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child142:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child142:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child142:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child142:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child143:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child143:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child143:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child143:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child143:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child143:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child143:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child143:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child144:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child144:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child144:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child144:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child144:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child144:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child144:real trace count/prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child144:explicit expiry and delivered prefix",
+      "status": "passed"
+    },
+    {
+      "check": "child145:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child145:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child145:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child145:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child145:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child145:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child145:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child146:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child146:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child146:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child146:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child146:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child146:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child146:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child147:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child147:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child147:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child147:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child147:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child147:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child147:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child148:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child148:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child148:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child148:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child148:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child148:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child148:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child149:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child149:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child149:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child149:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child149:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child149:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child149:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child150:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child150:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child150:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child150:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child150:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child150:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child150:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child151:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child151:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child151:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child151:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child151:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child151:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child151:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child152:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child152:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child152:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child152:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child152:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child152:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child152:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child153:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child153:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child153:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child153:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child153:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child153:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child153:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child154:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child154:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child154:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child154:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child154:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child154:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child154:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child155:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child155:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child155:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child155:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child155:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child155:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child155:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child156:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child156:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child156:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child156:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child156:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child156:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child156:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child157:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child157:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child157:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child157:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child157:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child157:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child157:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child158:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child158:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child158:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child158:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child158:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child158:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child158:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child159:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child159:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child159:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child159:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child159:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child159:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child159:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child160:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child160:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child160:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child160:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child160:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child160:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child160:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child161:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child161:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child161:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child161:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child161:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child161:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child161:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child162:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child162:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child162:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child162:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child162:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child162:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child162:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child163:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child163:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child163:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child163:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child163:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child163:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child163:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child164:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child164:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child164:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child164:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child164:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child164:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child164:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child165:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child165:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child165:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child165:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child165:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child165:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child165:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child166:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child166:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child166:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child166:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child166:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child166:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child166:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child167:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child167:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child167:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child167:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child167:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child167:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child167:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child168:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child168:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child168:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child168:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child168:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child168:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child168:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child169:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child169:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child169:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child169:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child169:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child169:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child169:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child170:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child170:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child170:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child170:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child170:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child170:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child170:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child171:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child171:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child171:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child171:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child171:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child171:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child171:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child172:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child172:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child172:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child172:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child172:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child172:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child172:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child173:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child173:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child173:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child173:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child173:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child173:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child173:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child174:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child174:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child174:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child174:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child174:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child174:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child174:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child175:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child175:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child175:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child175:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child175:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child175:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child175:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child176:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child176:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child176:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child176:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child176:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child176:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child176:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child177:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child177:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child177:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child177:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child177:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child177:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child177:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child178:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child178:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child178:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child178:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child178:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child178:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child178:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child179:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child179:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child179:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child179:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child179:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child179:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child179:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "child180:successful child without diagnostics",
+      "status": "passed"
+    },
+    {
+      "check": "child180:raw stdout matches saved parsed value",
+      "status": "passed"
+    },
+    {
+      "check": "child180:unique case/compiler/repeat",
+      "status": "passed"
+    },
+    {
+      "check": "child180:declared case/configuration/compiler",
+      "status": "passed"
+    },
+    {
+      "check": "child180:declared repetition",
+      "status": "passed"
+    },
+    {
+      "check": "child180:recorded affinity command",
+      "status": "passed"
+    },
+    {
+      "check": "child180:synthetic operation coverage",
+      "status": "passed"
+    },
+    {
+      "check": "all case/configuration groups present",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/scan/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-success/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/scan/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:basket-expiry/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/scan/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-success/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/scan/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:wide-expiry/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/scan/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/indexed/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/indexed/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/indexed/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/indexed/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/auto/stdpq",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/auto/binheap",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/auto/quad",
+      "status": "passed"
+    },
+    {
+      "check": "independent repeated GCC/Clang equality:synthetic/auto/loser",
+      "status": "passed"
+    },
+    {
+      "check": "independent across-configuration observable equality:basket-success",
+      "status": "passed"
+    },
+    {
+      "check": "independent across-configuration observable equality:basket-expiry",
+      "status": "passed"
+    },
+    {
+      "check": "independent across-configuration observable equality:wide-success",
+      "status": "passed"
+    },
+    {
+      "check": "independent across-configuration observable equality:wide-expiry",
+      "status": "passed"
+    }
+  ],
+  "failures": []
+}

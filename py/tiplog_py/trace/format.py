@@ -3,6 +3,8 @@
 from dataclasses import dataclass
 import hashlib
 import mmap
+import os
+import tempfile
 from pathlib import Path
 import struct
 from typing import Iterator
@@ -31,8 +33,8 @@ def path_bytes(path: str) -> bytes:
     if not path or any(not segment for segment in path.split("/")) or "\0" in path:
         raise TraceError("topic paths require nonempty segments and no NUL")
     encoded = path.encode("utf-8")
-    if len(encoded) > 65535:
-        raise TraceError("topic path exceeds u16 length")
+    if len(encoded) > 4096 or path.count("/") + 1 > 128:
+        raise TraceError("topic path exceeds resource limit (4096 UTF-8 bytes / 128 segments)")
     return encoded
 
 
@@ -56,9 +58,15 @@ class TraceWriter:
             raise ValueError("source SHA-256 must decode to exactly 32 bytes")
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.partial = self.path.with_name(self.path.name + ".partial")
-        self.stream = self.partial.open("w+b")
-        self.stream.write(bytes(HEADER.size))
+        fd, partial = tempfile.mkstemp(prefix=f".{self.path.name}.", suffix=".partial", dir=self.path.parent)
+        self.partial = Path(partial)
+        self.stream = os.fdopen(fd, "w+b")
+        try:
+            self.stream.write(bytes(HEADER.size))
+        except BaseException:
+            self.stream.close()
+            self.partial.unlink(missing_ok=True)
+            raise
         self.source_prefix = int.from_bytes(source_bytes[:8], "little")
         self.topics: dict[str, int] = {}
         self.count = 0
@@ -84,25 +92,31 @@ class TraceWriter:
     def finish(self) -> None:
         if self.closed:
             return
-        dict_offset = self.stream.tell()
-        self.stream.write(U32.pack(len(self.topics)))
-        for path, topic_id in self.topics.items():
-            encoded = path_bytes(path)
-            self.stream.write(DICT_ENTRY.pack(topic_id, len(encoded)))
-            self.stream.write(encoded)
-        dict_length = self.stream.tell() - dict_offset
-        self.stream.seek(0)
-        self.stream.write(HEADER.pack(MAGIC, 1, 0, self.count, dict_offset,
-                                      dict_length, self.source_prefix, bytes(16)))
-        self.stream.close()
-        self.partial.replace(self.path)
+        try:
+            dict_offset = self.stream.tell()
+            self.stream.write(U32.pack(len(self.topics)))
+            for path, topic_id in self.topics.items():
+                encoded = path_bytes(path)
+                self.stream.write(DICT_ENTRY.pack(topic_id, len(encoded)))
+                self.stream.write(encoded)
+            dict_length = self.stream.tell() - dict_offset
+            self.stream.seek(0)
+            self.stream.write(HEADER.pack(MAGIC, 1, 0, self.count, dict_offset,
+                                          dict_length, self.source_prefix, bytes(16)))
+            self.stream.close()
+            self.partial.replace(self.path)
+        except BaseException:
+            self.abort()
+            raise
         self.closed = True
 
     def abort(self) -> None:
         if not self.closed:
-            self.stream.close()
-            self.partial.unlink(missing_ok=True)
-            self.closed = True
+            try:
+                self.stream.close()
+            finally:
+                self.partial.unlink(missing_ok=True)
+                self.closed = True
 
     def __enter__(self):
         return self

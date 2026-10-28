@@ -1,0 +1,22 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from AuditEngine
+[ RUN      ] AuditEngine.ModeAndKernelEquivalenceWithRandomPayloads
+[audit] mode-equivalence batches=104064 delivered(per arm)=15169
+[       OK ] AuditEngine.ModeAndKernelEquivalenceWithRandomPayloads (354 ms)
+[ RUN      ] AuditEngine.TailChainingMatchesReferenceAcrossModes
+[       OK ] AuditEngine.TailChainingMatchesReferenceAcrossModes (100 ms)
+[ RUN      ] AuditEngine.RepublishingAliasedPayloadThatIsOverwrittenKeepsBytes
+[       OK ] AuditEngine.RepublishingAliasedPayloadThatIsOverwrittenKeepsBytes (8 ms)
+[ RUN      ] AuditEngine.ReplayAndTailOutlivingEngineThrowInsteadOfUseAfterFree
+[       OK ] AuditEngine.ReplayAndTailOutlivingEngineThrowInsteadOfUseAfterFree (6 ms)
+[ RUN      ] AuditEngine.InvalidTopicPublishDoesNotMutate
+[       OK ] AuditEngine.InvalidTopicPublishDoesNotMutate (0 ms)
+[ RUN      ] AuditEngine.ForgedResumeCheckpointPositionsAreIgnored
+[       OK ] AuditEngine.ForgedResumeCheckpointPositionsAreIgnored (0 ms)
+[----------] 6 tests from AuditEngine (470 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (471 ms total)
+[  PASSED  ] 6 tests.

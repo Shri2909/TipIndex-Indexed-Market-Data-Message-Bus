@@ -1,0 +1,9 @@
+{
+  "maximum_tested_children": 2,
+  "path": "audit/remediation/core/run_final_validation.py",
+  "performance_claim": false,
+  "pid": 34689,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "sha256": "2845be5688ff850b3ad6773f656eb288f07f5725b0676b593c7b817ea119c7f9",
+  "started_utc": "2026-10-26T08:36:38.563938+00:00"
+}

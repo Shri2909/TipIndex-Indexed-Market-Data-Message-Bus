@@ -1,0 +1,22 @@
+Looking in links: build/remediation/wheels
+Requirement already satisfied: contourpy==1.4.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 3)) (1.4.0)
+Requirement already satisfied: cycler==0.12.1 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 5)) (0.12.1)
+Requirement already satisfied: fonttools==4.67.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 7)) (4.67.0)
+Requirement already satisfied: iniconfig==2.3.1 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 9)) (2.3.1)
+Requirement already satisfied: kiwisolver==1.5.1 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 11)) (1.5.1)
+Requirement already satisfied: matplotlib==3.11.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 13)) (3.11.0)
+Requirement already satisfied: numpy==2.3.5 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 15)) (2.3.5)
+Requirement already satisfied: packaging==26.3 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 17)) (26.3)
+Requirement already satisfied: pillow==13.0.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 19)) (13.0.0)
+Requirement already satisfied: pluggy==1.7.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 21)) (1.7.0)
+Requirement already satisfied: Pygments==2.21.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 23)) (2.21.0)
+Requirement already satisfied: pyparsing==3.3.3 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 25)) (3.3.3)
+Processing ./build/remediation/wheels/pytest-9.0.3-py3-none-any.whl (from -r py/requirements.txt (line 27))
+Requirement already satisfied: python-dateutil==2.9.0.post0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 29)) (2.9.0.post0)
+Requirement already satisfied: six==1.17.0 in ./.venv/lib/python3.14/site-packages (from -r py/requirements.txt (line 31)) (1.17.0)
+Installing collected packages: pytest
+  Attempting uninstall: pytest
+    Found existing installation: pytest 9.0.2
+    Uninstalling pytest-9.0.2:
+      Successfully uninstalled pytest-9.0.2
+Successfully installed pytest-9.0.3

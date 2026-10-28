@@ -1,0 +1,628 @@
+{
+  "benchmark_dependency": {
+    "revision": "192ef10025eb2c4cdd392bc502f0c852196baa48",
+    "version": "1.9.5"
+  },
+  "binaries": [
+    {
+      "bytes": 9567968,
+      "path": "build/release/merge_bench",
+      "sha256": "7ae9d903b4b19f036416556db5d33934ff0e242a9659a697c6b06e1d3fb2533d"
+    },
+    {
+      "bytes": 12229008,
+      "path": "build/release/publish_bench",
+      "sha256": "421f0f5b875de0f6569beeaa57962df44356d8591cef27ae46e522745e025674"
+    },
+    {
+      "bytes": 5426952,
+      "path": "build/release/tiplog_bench",
+      "sha256": "8626525fb5c93e98cb84866a3e987e9954ca203ce8215bc0e3b6a26fb1306b50"
+    }
+  ],
+  "cpu": 2,
+  "git": {
+    "dirty": true,
+    "managed_git_preserved": true,
+    "metadata": ".tiplog-git",
+    "sha": "aa13c1824ba5a7a3593a0f63c6f455cac851e822",
+    "status_porcelain": "M CMakeLists.txt\n M docs/plan/IMPLEMENTATION_PLAN.md\n M docs/plan/INDEX.md\n M docs/plan/PROGRESS.md\n M docs/plan/RESEARCH.md\n M py/tiplog_py/figures/build.py\n M results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment005.log\n M results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z.json\n M results/p4/commands.jsonl\n M results/p4/git-data-exclusion-audit-20261018T103046.562921Z.json\n M results/p4/git-data-exclusion-audit-20261018T103046.562921Z.log\n M results/p4/live-state.json\n M results/p4/p5-method-reading.json\n M results/p4/review.md\n M src/tiplog/engine/engine.cpp\n M src/tiplog/engine/engine.hpp\n M src/tiplog/subs/compiled.cpp\n M tests/unit/topics_subs_test.cpp\n?? PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md\n?? PHASE_2_INTERVIEW_PREP_PROMPT.md\n?? bench/micro/index_bench.cpp\n?? cmake/p6_bench.cmake\n?? configs/P6/\n?? docs/interview/\n?? py/tests/test_analysis_figures.py\n?? py/tests/test_analysis_stats.py\n?? py/tests/test_exp_cpp.py\n?? py/tests/test_exp_oracle.py\n?? py/tests/test_exp_protocol.py\n?? py/tiplog_py/analysis/\n?? py/tiplog_py/exp/\n?? py/tiplog_py/figures/tip.py\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment006.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment007.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment008.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment009.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment010.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment011.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment012.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment013.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment014.log\n?? results/p4/F3-indexed-segmented-gate-20261018T102347.429747Z-segment015.log\n?? results/p4/fuzz-gate-verified.json\n?? results/p4/git-data-audit.json\n?? results/p4/implementation-manifest.json\n?? results/p4/p5-benchmark-handoff.md\n?? results/p4/p5-benchmark-review.md\n?? results/p4/phase-gate.json\n?? results/p4/source-revision.json\n?? results/p5/\n?? results/p6/\n?? scripts/check_p6_experiments.py\n?? scripts/check_p6_rc3.py\n?? scripts/run_p6_campaigns.py\n?? scripts/run_p6_differential.py\n?? scripts/run_p6_micro.py\n?? scripts/verify_p6_fuzz.py\n?? scripts/verify_p6_rc3.py\n?? tests/fuzz/corpus/ops_indexed/006fc6333cf072cbb052c0803217888d4d10c148\n?? tests/fuzz/corpus/ops_indexed/00b95decff06997d4277d91733dd89cfaee30050\n?? tests/fuzz/corpus/ops_indexed/0131287cf2c5c87a72ec787c96221f2ecb79d5df\n?? tests/fuzz/corpus/ops_indexed/04a77ab9458cda2bec8a8f33ceaff5e8f785e3ad\n?? tests/fuzz/corpus/ops_indexed/05b428aa3a94ed4993c92836f978b84a95d0c038\n?? tests/fuzz/corpus/ops_indexed/0702e3e2c230e91bdc72678bfb508e95b98fa7f8\n?? tests/fuzz/corpus/ops_indexed/09e2f085ce0fff36554972a93ad2402cdb155d5e\n?? tests/fuzz/corpus/ops_indexed/0c24a4d0c8e5e19b5650a9c2fbe013b6c76cfffb\n?? tests/fuzz/corpus/ops_indexed/0d81d086d42f38427f73ed9918aaf150f4328ddf\n?? tests/fuzz/corpus/ops_indexed/0f3ddbed287018e744f972d908f95d785f8415bb\n?? tests/fuzz/corpus/ops_indexed/116f5e9ff57b841f3e2c382426e269332d3cf300\n?? tests/fuzz/corpus/ops_indexed/11c414c5ac238f56dd3eb3ec197a3a4e48184b50\n?? tests/fuzz/corpus/ops_indexed/11d360845063ccfe3736c9546617fd2f9768acc3\n?? tests/fuzz/corpus/ops_indexed/12c18c92995ea0f3c858aeeae5da317b4f890510\n?? tests/fuzz/corpus/ops_indexed/141e83a0714dd647a57f9d7812ccff800407107f\n?? tests/fuzz/corpus/ops_indexed/17eae2e4c0e6277b2f2bb04e9c266ace1b3d6db0\n?? tests/fuzz/corpus/ops_indexed/1b505e55d9d3313fcefc089a1658ff2469462258\n?? tests/fuzz/corpus/ops_indexed/1ebb3a97b285229d352ee489eafe2e22a56f8198\n?? tests/fuzz/corpus/ops_indexed/1fd0be5412290ba241855446b86a81dbce6ef495\n?? tests/fuzz/corpus/ops_indexed/237e1c4f866918c40ce65b1a327c5f061710aca1\n?? tests/fuzz/corpus/ops_indexed/2542e8fced3b9e12788fe4c2425d972efa7b4403\n?? tests/fuzz/corpus/ops_indexed/2552b45aae08d1f79a5585d0db76a2ae460237e5\n?? tests/fuzz/corpus/ops_indexed/26186cb3e5ed49482022c7e078d8254bda34d6db\n?? tests/fuzz/corpus/ops_indexed/2692bdfa1a0dbdb7daadea5c74a7ba8e78f230bd\n?? tests/fuzz/corpus/ops_indexed/2807a3fd0c6f315e0948f14dacd87a543b02b510\n?? tests/fuzz/corpus/ops_indexed/286d22f57194416719649e324e43b618e73dbf56\n?? tests/fuzz/corpus/ops_indexed/2876ccde039c317b95568a11b084a8e46cbc782f\n?? tests/fuzz/corpus/ops_indexed/2a66811a0cdc3827f1350fa39a0bde06d3ebce3d\n?? tests/fuzz/corpus/ops_indexed/2e14509840ac0cdbb0fecafb04176353398541eb\n?? tests/fuzz/corpus/ops_indexed/2ff0404f551ae5e212d4743059eab8c5c1e02b10\n?? tests/fuzz/corpus/ops_indexed/3177e9a1bf03da92df0a2802b1bd27db877a79db\n?? tests/fuzz/corpus/ops_indexed/31a046ff80fcdf42b44b1264d4b724b404953896\n?? tests/fuzz/corpus/ops_indexed/325a6b8766adb765a6da9dfd0cdf7e0f74758da3\n?? tests/fuzz/corpus/ops_indexed/32a883be1a639a6129ee67bd759e005b938357f7\n?? tests/fuzz/corpus/ops_indexed/32c3799bca6631519490511d1d9c31110546ce36\n?? tests/fuzz/corpus/ops_indexed/3310bd7e6bd97d21135ec4588df30978c358bc84\n?? tests/fuzz/corpus/ops_indexed/33a3067ad9758baea0e65b5cb6c3ee0d071bc4f2\n?? tests/fuzz/corpus/ops_indexed/35869dc97938ad273bf04bed3be1607c10c239c7\n?? tests/fuzz/corpus/ops_indexed/3655591ba55102f8472c72905992e591b1b683aa\n?? tests/fuzz/corpus/ops_indexed/37a2a0accd80f786fb1350204d9a3ab9f9a0af11\n?? tests/fuzz/corpus/ops_indexed/38f3b75a076f48ad4a4ce1c8501377b0206d7ac9\n?? tests/fuzz/corpus/ops_indexed/3a7470c60a3b35bf104eef5d77f762828476a264\n?? tests/fuzz/corpus/ops_indexed/3c86d4b2be7fb8823b89e6caa70e2f2e94f93b7f\n?? tests/fuzz/corpus/ops_indexed/3d66d8e75154399b6067434d4b05938e954b2a86\n?? tests/fuzz/corpus/ops_indexed/3e15e51c2b5db97741c9906e5abe2c61e8c5db3f\n?? tests/fuzz/corpus/ops_indexed/3e8c5a55304a178c7814048413e817570ac14417\n?? tests/fuzz/corpus/ops_indexed/406b8557074bc0190287935c88aab49e8a711922\n?? tests/fuzz/corpus/ops_indexed/415cb0524124f112a90e30d597df13747c6d01bd\n?? tests/fuzz/corpus/ops_indexed/44dbacf6c4499ca559ec5cbc6f604f5be00770db\n?? tests/fuzz/corpus/ops_indexed/44e09abe144096750450c201f21995c722750de9\n?? tests/fuzz/corpus/ops_indexed/45bc452fd0e31c04262e4004d52d05f62a2a7ba7\n?? tests/fuzz/corpus/ops_indexed/471edb50b73f59a5d7319c93ef7253189c194411\n?? tests/fuzz/corpus/ops_indexed/476e788c6d55a585d5c8ab167ed6ae97b452f843\n?? tests/fuzz/corpus/ops_indexed/486e76350815239623f74831e1c3a7f62a493ecb\n?? tests/fuzz/corpus/ops_indexed/4889c56bee869e9c8e3d75c270157910d4f4030d\n?? tests/fuzz/corpus/ops_indexed/4a4668d173ef687d459772d05f9abf38e9932f2d\n?? tests/fuzz/corpus/ops_indexed/4b9090f770365e99314205a3d085bf6487dab71f\n?? tests/fuzz/corpus/ops_indexed/4b9cf766d7a3cd68e9fec21518dd3b01d54881aa\n?? tests/fuzz/corpus/ops_indexed/4cd8d4fd3e29ab25a63eba30e9b4ac3f7e11e8c9\n?? tests/fuzz/corpus/ops_indexed/4e44e917798aaa8dde49153919d9573ebd7e483c\n?? tests/fuzz/corpus/ops_indexed/4ed4ed2a4dabf7da52dc5e706f3f2409057a2667\n?? tests/fuzz/corpus/ops_indexed/4f4358ec876931d01e671b7a2febb2889cff5782\n?? tests/fuzz/corpus/ops_indexed/5147192bd6335e27c43e69c8ad19824f8b400513\n?? tests/fuzz/corpus/ops_indexed/519203ec7d0b9f442f0fba1d96b34d7939b6b2e3\n?? tests/fuzz/corpus/ops_indexed/51f0b92ab9d95b4dba85db9a5ae7f1f8a6bee626\n?? tests/fuzz/corpus/ops_indexed/51f4c901b60762d7bc7fda5f130dbad03b542f33\n?? tests/fuzz/corpus/ops_indexed/57377d72ae0536a8454b85c4380f0bf507208858\n?? tests/fuzz/corpus/ops_indexed/58206e18ca7664a6fbf7bab5418f8b9b60f09e83\n?? tests/fuzz/corpus/ops_indexed/582998bcafe4a9272e4dda245f92ab1e2a621822\n?? tests/fuzz/corpus/ops_indexed/58b19a34d5038753199d751ea07f88ecd63da56a\n?? tests/fuzz/corpus/ops_indexed/5a3b3a147a04eb11ec8236fe5f509965a1532508\n?? tests/fuzz/corpus/ops_indexed/5b2672d31cd622da9fc9dfb60d2c0d72dfb134d8\n?? tests/fuzz/corpus/ops_indexed/5c1d9d2a912c57a0dda789ca993d5b40758e72e0\n?? tests/fuzz/corpus/ops_indexed/5cfa5d7b8b76b70913600aaf44ef47cc67975d1d\n?? tests/fuzz/corpus/ops_indexed/5d519dd81ccd1de1eb10da49b0e1f06158eca064\n?? tests/fuzz/corpus/ops_indexed/5e0d5aa670a487a62a53e497e17fef3b308ea085\n?? tests/fuzz/corpus/ops_indexed/5e36bb9b7df96ef4f93615a894acdf6227b49c6b\n?? tests/fuzz/corpus/ops_indexed/60a5350422f999950d09ecdd4502ef7792eee307\n?? tests/fuzz/corpus/ops_indexed/62e30c9234afa15fc2c2df8a283ceb050e5bb23d\n?? tests/fuzz/corpus/ops_indexed/655fb927fa09a893877ce08a0d2f40720c86334c\n?? tests/fuzz/corpus/ops_indexed/6900fd67ddf312d074dd9954021caa8cd8096ac2\n?? tests/fuzz/corpus/ops_indexed/6929523a06c8cfe69ee13cdcef7a20bd626bf92e\n?? tests/fuzz/corpus/ops_indexed/6a37e3fd5fd14e7af9d07c94c5d3c79860a32d35\n?? tests/fuzz/corpus/ops_indexed/6c724b406890fbc7f66828eae1d02147cf2a2793\n?? tests/fuzz/corpus/ops_indexed/6e0e6c1800e11634a8997a739f08da2f05e481e4\n?? tests/fuzz/corpus/ops_indexed/6e6396c3895faf8c98cbc0bc77a472ac95dfb97e\n?? tests/fuzz/corpus/ops_indexed/6ea4a4d2d61f4a2d4d3d0b7cf32d48df245fbdd4\n?? tests/fuzz/corpus/ops_indexed/704c6df494529a2105c43cdef77cd4ea334b1264\n?? tests/fuzz/corpus/ops_indexed/7365049cceeceef560595d7f092e6d97fda2dcbc\n?? tests/fuzz/corpus/ops_indexed/785368370b0fec8bea930cea81c25c5031fdded6\n?? tests/fuzz/corpus/ops_indexed/789697516a0c8d2af08f9f326db81afec8b836cb\n?? tests/fuzz/corpus/ops_indexed/7d7339f4ccaa272c93adccacc6874c1fe0dc1f2d\n?? tests/fuzz/corpus/ops_indexed/7da554e3edca26ead26fdac3545949822ac7c98a\n?? tests/fuzz/corpus/ops_indexed/80e5f76aff0740dc96c5ae85202fff37025611d5\n?? tests/fuzz/corpus/ops_indexed/83f4417c3fce846619e0d1d50bc3927ef91a24df\n?? tests/fuzz/corpus/ops_indexed/856a0fddfaadabc77406e8ca40fe321ee07ac20f\n?? tests/fuzz/corpus/ops_indexed/863de7f7d3e3a732d16e88bc7a00d267f8a2fd06\n?? tests/fuzz/corpus/ops_indexed/881ed0a4b30196f770943a6c8144fac49753405f\n?? tests/fuzz/corpus/ops_indexed/8fb9b415c1a646cd840dd59d331ba3523b364b88\n?? tests/fuzz/corpus/ops_indexed/9182891b798bb2540cfdd7324b6faf7ab78ce378\n?? tests/fuzz/corpus/ops_indexed/930aa913365111097a4e7951abc3819c2f370cc8\n?? tests/fuzz/corpus/ops_indexed/93313daff756d9a59d8b8a8a4d67d324473abe87\n?? tests/fuzz/corpus/ops_indexed/93c054cd0affd921130846d433a1549e1c050db3\n?? tests/fuzz/corpus/ops_indexed/94877af5ee4c0b680c41a7b720344d97946293df\n?? tests/fuzz/corpus/ops_indexed/96d1616100aa9f1981856ba092883857905bdcdd\n?? tests/fuzz/corpus/ops_indexed/9742ee1f7190c4956c5f4d486fbdd286be94b889\n?? tests/fuzz/corpus/ops_indexed/979b065e4583678f45e3e82c24405e8ae3df5e24\n?? tests/fuzz/corpus/ops_indexed/97da10953bc265269f9bc2a52e02c6fe1be44d9f\n?? tests/fuzz/corpus/ops_indexed/9a784a1d513c739d3150d616cc8c293b7ee5bded\n?? tests/fuzz/corpus/ops_indexed/9a87237bf7a46d01ad899ca473e133c952818d2a\n?? tests/fuzz/corpus/ops_indexed/9bd3f30c6b8eaecc6b1254a4e02e28561b45d478\n?? tests/fuzz/corpus/ops_indexed/9d92eb1e69c7b5f4992909537aa2eeabc183f195\n?? tests/fuzz/corpus/ops_indexed/a11c34c8be4df843a1da453b315fc9316d2fdcef\n?? tests/fuzz/corpus/ops_indexed/a28909db825556223e48b17bac42a5396450364c\n?? tests/fuzz/corpus/ops_indexed/a835f56456cdfc0a7784286314a7b357a70396c5\n?? tests/fuzz/corpus/ops_indexed/a84e34b5c64f993c3675e2a0b8ad400c6fb556e6\n?? tests/fuzz/corpus/ops_indexed/a84e49c8f5c842a03e9e0b3dc8720036a50318c1\n?? tests/fuzz/corpus/ops_indexed/aaff7d7475f7076680fc7b6a0fb2e0a47fcbe144\n?? tests/fuzz/corpus/ops_indexed/ab8d7cfc149125c241871df5cfc52bc6511e2c13\n?? tests/fuzz/corpus/ops_indexed/ae3efd4143013710356b04e3efc60a3ff893e9d0\n?? tests/fuzz/corpus/ops_indexed/aeffca699787ac150a9f492c7131a9a7259582f3\n?? tests/fuzz/corpus/ops_indexed/b4d761346e00b7cb9101ea39f78017e2b6d298e6\n?? tests/fuzz/corpus/ops_indexed/b650f98accf7daabfd8e715fc8b2e02a2188f3ee\n?? tests/fuzz/corpus/ops_indexed/b85b66714541ff70c7b23918e5014bd0f1399311\n?? tests/fuzz/corpus/ops_indexed/bb6c68182aba058a538eb9e958a7a503aeb77a85\n?? tests/fuzz/corpus/ops_indexed/bc748f814a380a8edc63bb9af2324ff49c405844\n?? tests/fuzz/corpus/ops_indexed/c355fc9e62ba7beb8028f4764cb3bde5ca716e2f\n?? tests/fuzz/corpus/ops_indexed/c8156f9fe003ac88d55fc89ed2124fd1754ff9f9\n?? tests/fuzz/corpus/ops_indexed/c8bf418a680feb88adde6cd93e476da2319535a5\n?? tests/fuzz/corpus/ops_indexed/cb251f25f46780242d33e4b653248aea8b8c281c\n?? tests/fuzz/corpus/ops_indexed/cc4ffed3f684e2e5401f8861bbc2d243e4c16b0a\n?? tests/fuzz/corpus/ops_indexed/cf61bf9d077c9cd4256bad574e9ec571ecb4c2a7\n?? tests/fuzz/corpus/ops_indexed/d4e9b3a5ef159b8882a200466d2ecfd1b5c897fe\n?? tests/fuzz/corpus/ops_indexed/d61255c95e6a8ff7db7aad7a359f60d146f61754\n?? tests/fuzz/corpus/ops_indexed/d709ff8dd2c13fd3c55877af4308b6d63d6f4710\n?? tests/fuzz/corpus/ops_indexed/d753f47c231d16b5222fc8eedde47e3f1bf024df\n?? tests/fuzz/corpus/ops_indexed/d9475c939da392de9e0cf6ce162892c9167ec255\n?? tests/fuzz/corpus/ops_indexed/daf6147d2dbea81d8060af87229bf9bf45b20e32\n?? tests/fuzz/corpus/ops_indexed/db2e7a60e9cce0ff3c62bc3b4b7be1723ce59a94\n?? tests/fuzz/corpus/ops_indexed/db807211e06e3d2a9f10e1eb591d965cc147ae3c\n?? tests/fuzz/corpus/ops_indexed/df8f44101fb511e938dfcbcc7e7d43dc9c1dc983\n?? tests/fuzz/corpus/ops_indexed/e0b8d21be1d996bc80da04046511943f3d227cd3\n?? tests/fuzz/corpus/ops_indexed/e148399659644e8d35b7fcaaf195f1a449d92513\n?? tests/fuzz/corpus/ops_indexed/e45b01790f2f86255c4526e5619499230c6a54c1\n?? tests/fuzz/corpus/ops_indexed/e50fe747d4366a6c1a9d92a351a437e78ae455c3\n?? tests/fuzz/corpus/ops_indexed/e58667f52a754cfaa1fe7be7e24a3c1d020f2367\n?? tests/fuzz/corpus/ops_indexed/e5fb0f4dbad81f6fd7a772d31826d0000753a887\n?? tests/fuzz/corpus/ops_indexed/e6c0e902cab3061a4cde7aa2391798df53b38743\n?? tests/fuzz/corpus/ops_indexed/ef14624c6ea7730747ab61bf8f4d455957cc0140\n?? tests/fuzz/corpus/ops_indexed/ef8045db76246e28cd02b5acb3f37e8deb5ffa35\n?? tests/fuzz/corpus/ops_indexed/ef9063aff767ced05d2424633b22609766717701\n?? tests/fuzz/corpus/ops_indexed/f5f8c2f184fa6333c424780b25b1cd96740b866f\n?? tests/fuzz/corpus/ops_indexed/f6b3dd2619ae05072d522db52e42f389db970f1e\n?? tests/fuzz/corpus/ops_indexed/f6d0c355a64cc6cf2e7159ebe1bd3a7988330449\n?? tests/fuzz/corpus/ops_indexed/fa88e8ae857784665fd2e7ecab39d3401263214c\n?? tests/fuzz/corpus/ops_indexed/fc1c59145b9cdd3d2a713555c79774432d276016\n?? tests/fuzz/corpus/ops_indexed/fcf1d29653a47802d20a9d8128111a7226f6be04\n?? tests/fuzz/corpus/ops_indexed/fedb33efa702db74b2c05cedf1583fc498862e1d\n?? tests/fuzz/corpus/ops_integrated/\n?? tests/fuzz/corpus/ops_p6/\n?? tests/fuzz/corpus/ops_p6_prefix/\n?? tests/unit/bench_contract_test.cpp\n?? tools/tiplog_bench/"
+  },
+  "input_scope": "Accepted real trace window or independently specified synthetic schedule; input identities retained",
+  "inputs": [
+    {
+      "bytes": 3524013057,
+      "path": "data/raw/12302019.NASDAQ_ITCH50.gz",
+      "sha256": "ef03df46a27e6bda4dead017f84c2e3979df7211f02c7868b51d53fceb99c689"
+    },
+    {
+      "bytes": 1109,
+      "path": "data/manifest.json",
+      "sha256": "5b24dc677dbb26af76c84fbf06c69b32f5bd00c014cf6ff8455cf9bdb9738202"
+    },
+    {
+      "bytes": 1616858987,
+      "path": "data/traces/itch_20191230_0930_1000_spec.mdt",
+      "sha256": "6062bdb96ec8354ecf650cdfb979574530b2120aa06047fa48d14a78e5936f70"
+    },
+    {
+      "bytes": 1864,
+      "path": "data/traces/itch_20191230_0930_1000_spec.mdt.meta.json",
+      "sha256": "e2fbcc134bb81c4028ef9292ff5f3b8ea538956fbfb021d568f8228ff0e0153a"
+    },
+    {
+      "bytes": 1616161552,
+      "path": "data/traces/itch_20191230_0930_1000_flat.mdt",
+      "sha256": "89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2"
+    },
+    {
+      "bytes": 1864,
+      "path": "data/traces/itch_20191230_0930_1000_flat.mdt.meta.json",
+      "sha256": "080eb641892369d62b9387975f0c61363093459bc250f991faf2595aadea6d6e"
+    },
+    {
+      "bytes": 246,
+      "path": "configs/m2_payload_mix.csv",
+      "sha256": "b61c4c1821837e258f1947133ce6988db0141a066557dde742dc8542a9abb817"
+    },
+    {
+      "bytes": 710,
+      "path": "configs/m2_payload_mix.meta.json",
+      "sha256": "b1660287a307d459403df3ee1daa50bb35b25377a2406d409663975c7c27b1f1"
+    },
+    {
+      "bytes": 2431604,
+      "path": "results/data/itch_20191230_counts.json",
+      "sha256": "01911be1842f95dc13952999a5fa801d8ebefef2f6e387daf115ee31d4091303"
+    }
+  ],
+  "preset": "release",
+  "seed": 20191230,
+  "source_files": [
+    {
+      "bytes": 2191,
+      "path": "CMakeLists.txt",
+      "sha256": "644d30b919063e0f8bbbf92af9cd0bead4fdc0efa2e1adfca3c5c5eb402d665c"
+    },
+    {
+      "bytes": 3090,
+      "path": "CMakePresets.json",
+      "sha256": "74c8e0a98feea5734d3582d286a416d2eb122f632f28798bd3f97fd2540a7e0a"
+    },
+    {
+      "bytes": 3975,
+      "path": "bench/micro/bench_log.hpp",
+      "sha256": "ec6b23fb822986d2bdd0e07ce015068c66ec6c91ff25e9f37135e9dd1cafdbd1"
+    },
+    {
+      "bytes": 11511,
+      "path": "bench/micro/index_bench.cpp",
+      "sha256": "a4bcf8ff628ac75047860f41795c7bff799836d281730a55ab5b03bcaf56f04c"
+    },
+    {
+      "bytes": 16715,
+      "path": "bench/micro/merge_bench.cpp",
+      "sha256": "d99cdf2bdce2720320beb6d5c80572918b654a936d697e996f4539b6e33474ad"
+    },
+    {
+      "bytes": 17104,
+      "path": "bench/micro/publish_bench.cpp",
+      "sha256": "8240ad420a15cb9e69f3ca28d26a9363740fe54548f8a02b40f5c09ee2693ed9"
+    },
+    {
+      "bytes": 24725,
+      "path": "build/release/CMakeCache.txt",
+      "sha256": "a4793eedce080d0ab40bc36cefed66cb780ef69ec7ca8fe96a6fb58e2f9e5956"
+    },
+    {
+      "bytes": 442,
+      "path": "build/release/CMakeFiles/index_bench.dir/flags.make",
+      "sha256": "808d033504d747bdcaae0bd1757f193e6ea3b4d8625530dc132c7a1586443523"
+    },
+    {
+      "bytes": 442,
+      "path": "build/release/CMakeFiles/merge_bench.dir/flags.make",
+      "sha256": "808d033504d747bdcaae0bd1757f193e6ea3b4d8625530dc132c7a1586443523"
+    },
+    {
+      "bytes": 442,
+      "path": "build/release/CMakeFiles/publish_bench.dir/flags.make",
+      "sha256": "808d033504d747bdcaae0bd1757f193e6ea3b4d8625530dc132c7a1586443523"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_bench.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 396,
+      "path": "build/release/CMakeFiles/tiplog_bench_contract_test.dir/flags.make",
+      "sha256": "0044fbd2c46f8e54a5a4ec225eb0a182e49c11e036ebbcd6cd00fbd0443afbd8"
+    },
+    {
+      "bytes": 418,
+      "path": "build/release/CMakeFiles/tiplog_differential.dir/flags.make",
+      "sha256": "ab48fa7acc6c8dbdc87c7463a30000ee7db4feb727cd7c74beae71c5c37a17db"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_driver.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 400,
+      "path": "build/release/CMakeFiles/tiplog_driver_test.dir/flags.make",
+      "sha256": "aeb2714b433dd9386e9de4535a584b8a4ca20de71adad55903755e7dff955d99"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_engine.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 400,
+      "path": "build/release/CMakeFiles/tiplog_engine_index_test.dir/flags.make",
+      "sha256": "aeb2714b433dd9386e9de4535a584b8a4ca20de71adad55903755e7dff955d99"
+    },
+    {
+      "bytes": 400,
+      "path": "build/release/CMakeFiles/tiplog_engine_merge_test.dir/flags.make",
+      "sha256": "aeb2714b433dd9386e9de4535a584b8a4ca20de71adad55903755e7dff955d99"
+    },
+    {
+      "bytes": 400,
+      "path": "build/release/CMakeFiles/tiplog_engine_test.dir/flags.make",
+      "sha256": "aeb2714b433dd9386e9de4535a584b8a4ca20de71adad55903755e7dff955d99"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_index.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_index_memory.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 356,
+      "path": "build/release/CMakeFiles/tiplog_index_test.dir/flags.make",
+      "sha256": "eb004bb6b3d334a35873a5f9be7c9b5aea606fa42c16fea9b2313a68da89d831"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_merge.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 356,
+      "path": "build/release/CMakeFiles/tiplog_merge_test.dir/flags.make",
+      "sha256": "eb004bb6b3d334a35873a5f9be7c9b5aea606fa42c16fea9b2313a68da89d831"
+    },
+    {
+      "bytes": 400,
+      "path": "build/release/CMakeFiles/tiplog_oracle_tail_test.dir/flags.make",
+      "sha256": "33b271af0eb03fbb5af2812af01a96317cbdd67848b47e42cac7e5cf57ba590b"
+    },
+    {
+      "bytes": 400,
+      "path": "build/release/CMakeFiles/tiplog_oracle_test.dir/flags.make",
+      "sha256": "33b271af0eb03fbb5af2812af01a96317cbdd67848b47e42cac7e5cf57ba590b"
+    },
+    {
+      "bytes": 378,
+      "path": "build/release/CMakeFiles/tiplog_ref.dir/flags.make",
+      "sha256": "9a21ea6c150681692a190ecf3831f711825eaa2207d205f3ba42f2aa697f874d"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_ring.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 356,
+      "path": "build/release/CMakeFiles/tiplog_ring_test.dir/flags.make",
+      "sha256": "eb004bb6b3d334a35873a5f9be7c9b5aea606fa42c16fea9b2313a68da89d831"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_sim.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 319,
+      "path": "build/release/CMakeFiles/tiplog_smoke_test.dir/flags.make",
+      "sha256": "4307eea0676b2ef6534b2b01e48fad5df3f361ae8bbcfce4633610a83070bac5"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_topics_subs.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 356,
+      "path": "build/release/CMakeFiles/tiplog_topics_subs_test.dir/flags.make",
+      "sha256": "eb004bb6b3d334a35873a5f9be7c9b5aea606fa42c16fea9b2313a68da89d831"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_trace.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_trace_check.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 356,
+      "path": "build/release/CMakeFiles/tiplog_trace_test.dir/flags.make",
+      "sha256": "eb004bb6b3d334a35873a5f9be7c9b5aea606fa42c16fea9b2313a68da89d831"
+    },
+    {
+      "bytes": 334,
+      "path": "build/release/CMakeFiles/tiplog_walk.dir/flags.make",
+      "sha256": "e1ce0acb7192668e5db74542e0b21677fffb47aeffdc81e48c36e72ca49aa40f"
+    },
+    {
+      "bytes": 925,
+      "path": "build/release/_deps/benchmark-build/src/CMakeFiles/benchmark.dir/flags.make",
+      "sha256": "15f9f4d602a8ad2c8dd773f907e406ab5ab176dbef10e73d7a10cb95f724434d"
+    },
+    {
+      "bytes": 777,
+      "path": "build/release/_deps/benchmark-build/src/CMakeFiles/benchmark_main.dir/flags.make",
+      "sha256": "058b5b95f464fe25c58654d4dfd1dd964a70538c88081a749e22afed88ce1a75"
+    },
+    {
+      "bytes": 40340,
+      "path": "build/release/compile_commands.json",
+      "sha256": "654b305ab5de3910bde3e59ad7f30d28dd733fc3151a42d3db7d906efd83e888"
+    },
+    {
+      "bytes": 2558,
+      "path": "cmake/deps.cmake",
+      "sha256": "5eb0d70e37d6bd4514a9b16c96751b9db7370304d6ccfa1118b324e75e10f759"
+    },
+    {
+      "bytes": 1146,
+      "path": "cmake/p1.cmake",
+      "sha256": "9a864a548048d4fdf076e22917d6741d6637203cf58ab72a1e9cc83e7ce08d7e"
+    },
+    {
+      "bytes": 603,
+      "path": "cmake/p2.cmake",
+      "sha256": "2b94277c86b1213a2add1458e47c372ab578e5bc2477aa4302ba9255ae3d6960"
+    },
+    {
+      "bytes": 1421,
+      "path": "cmake/p2_ref.cmake",
+      "sha256": "b681f76d103f78dc5e8526e8f476c17ca54612245788d021abba3b3a36a8f9a2"
+    },
+    {
+      "bytes": 1474,
+      "path": "cmake/p3_engine.cmake",
+      "sha256": "607a0dc4f997ce9877bbed3d0f208f25cc65ee1447e2512aa7a15358977016b1"
+    },
+    {
+      "bytes": 329,
+      "path": "cmake/p3_fuzz.cmake",
+      "sha256": "14bb78326964e1f09f8568caad975831a3aa5524c3c0a4990fd263c61da499bf"
+    },
+    {
+      "bytes": 486,
+      "path": "cmake/p3_ring.cmake",
+      "sha256": "fcfd1c6cc09d82889714336b77a7064132af7bfea1f47747634f5a6fcf0de431"
+    },
+    {
+      "bytes": 498,
+      "path": "cmake/p4_index.cmake",
+      "sha256": "f0e67a7e471e85f5b9236b430cb8aa7097e1082542f5ac86ae7951b855dfde9f"
+    },
+    {
+      "bytes": 141,
+      "path": "cmake/p5_bench.cmake",
+      "sha256": "acf676df894f4d06f9d329984a05faa0ea4e2dd9ea2a21ee58b328b0ed82f78e"
+    },
+    {
+      "bytes": 634,
+      "path": "cmake/p5_merge.cmake",
+      "sha256": "e51aec3af9186c2bcddfbd0ea3330aaa3467bff4c4e584fc1e7287607a1d6b17"
+    },
+    {
+      "bytes": 699,
+      "path": "cmake/p6_bench.cmake",
+      "sha256": "6b5dcaed6e18c5fb2fa73b67825c548321de39458bac526275cc322bac1c56be"
+    },
+    {
+      "bytes": 251,
+      "path": "py/requirements.txt",
+      "sha256": "48221c98c8d187dd387568e49cb2eb231e0a950ee655bfc97d044845321d4208"
+    },
+    {
+      "bytes": 3003,
+      "path": "scripts/check_all.py",
+      "sha256": "2b2f358dbb0fc9e35d82b9b8d1448f5c5fba1cf5b2b493a56ce66002b1aac2e7"
+    },
+    {
+      "bytes": 439,
+      "path": "scripts/check_all.sh",
+      "sha256": "a8abbaf23d3f91730fbdacc5a75ee953ba7615c8a395def747d2d3d912c35513"
+    },
+    {
+      "bytes": 4819,
+      "path": "scripts/check_p1_data.py",
+      "sha256": "4d6bceae5a5b04a2513e9ecfa0ce15033dbe56387d8d9356933e3b468f57a7d2"
+    },
+    {
+      "bytes": 16832,
+      "path": "scripts/check_p5_pilot.py",
+      "sha256": "25528b1abb2dac87886e6cba897ff5e089063a9c027cfdea81e03af931ddbd39"
+    },
+    {
+      "bytes": 45344,
+      "path": "scripts/check_p6_experiments.py",
+      "sha256": "8a6943f3bf21343e5901bf1a60bbd2dcaa8f5c69343c3082b77146b265e5c2ab"
+    },
+    {
+      "bytes": 13082,
+      "path": "scripts/check_p6_rc3.py",
+      "sha256": "5bb7beb978a2101ab24a40a91e3c315d41bd402b146364624caa433efa97449e"
+    },
+    {
+      "bytes": 12240,
+      "path": "scripts/check_rc3.py",
+      "sha256": "4a5b52ae2d48a495c0ea648b3901485390bcc2cb2d16c5b8784b394c13161595"
+    },
+    {
+      "bytes": 14253,
+      "path": "scripts/env_capture.py",
+      "sha256": "074987b5b4b81502a8a7b60228cff7c662915e70c82fc982dda6c57f4c7d9036"
+    },
+    {
+      "bytes": 470,
+      "path": "scripts/env_capture.sh",
+      "sha256": "12be6453f761e28fff4b84fbd191e354bb57da3dffc521c6fd2439313a4af98d"
+    },
+    {
+      "bytes": 239,
+      "path": "scripts/git.sh",
+      "sha256": "20ec58667286e2ef4e70a79c84393b27881d94936b3274f4cfe23520d9207231"
+    },
+    {
+      "bytes": 2474,
+      "path": "scripts/reconcile_itch.py",
+      "sha256": "381f9a9a86e607c8b7bc82d66aa4d053ee847b76f65299af03b79bcf65c45c92"
+    },
+    {
+      "bytes": 2712,
+      "path": "scripts/run_check.py",
+      "sha256": "c06b5d2d1de601c982aae6dd48eeb160eaa80952af7108219c5268dd7bdd8df6"
+    },
+    {
+      "bytes": 11554,
+      "path": "scripts/run_fuzz_gate.py",
+      "sha256": "4ac054b12770d91726813ef79fd53788536a5adce61314aa6eed421ac43e12cc"
+    },
+    {
+      "bytes": 3097,
+      "path": "scripts/run_p5_differential.py",
+      "sha256": "5dd687ad5a4481a183bfcef3c68c587e5270b11ccc6f088f5d82fb17404c6cd0"
+    },
+    {
+      "bytes": 27266,
+      "path": "scripts/run_p5_pilot.py",
+      "sha256": "4556d459d6940e2678c0ea3e4822fcc589baf1e551bdeff69db4d5a594599656"
+    },
+    {
+      "bytes": 15759,
+      "path": "scripts/run_p6_campaigns.py",
+      "sha256": "f0719e46ee46c0d64f8046ca643cb20fce5ba073b36075f3b29161843e89c40d"
+    },
+    {
+      "bytes": 3115,
+      "path": "scripts/run_p6_differential.py",
+      "sha256": "00889459e3b4ab217f4c51bf50d28bb3f9ac2932321ee3a65fba382072a19199"
+    },
+    {
+      "bytes": 25329,
+      "path": "scripts/run_p6_micro.py",
+      "sha256": "be8826a549ed6bd04eac369c7b07d4f3ac661c8e70b7c71dc57560c03fefccfc"
+    },
+    {
+      "bytes": 6748,
+      "path": "scripts/verify_p6_fuzz.py",
+      "sha256": "6b6bd7656f9c6a0882f504aef154b178b7c2d66eb3e8195ed3568d0362d300bc"
+    },
+    {
+      "bytes": 5933,
+      "path": "scripts/verify_p6_rc3.py",
+      "sha256": "25647984188e809e07f303aadf41e91cc9e689939b1b206793946436dc7808ce"
+    },
+    {
+      "bytes": 3234,
+      "path": "src/tiplog/driver/trace_driver.cpp",
+      "sha256": "37a76cc9ad8b2aeb5a63216df83ea4a53167c295aca451557f77322964762206"
+    },
+    {
+      "bytes": 1929,
+      "path": "src/tiplog/driver/trace_driver.hpp",
+      "sha256": "7a6cb9d77427ea0710f15c4bbb8ee69a7046df85ae614582b1e0f440ed084509"
+    },
+    {
+      "bytes": 17911,
+      "path": "src/tiplog/engine/engine.cpp",
+      "sha256": "8d1dd35bf1178756fd8cd991cd28f0ab75e7c61af07f36829f2a89baf0c382ec"
+    },
+    {
+      "bytes": 7262,
+      "path": "src/tiplog/engine/engine.hpp",
+      "sha256": "cfe7a9cb9944fbbe247856d43a94dbf761ca25782b1ea1d7dd07b92093ab176e"
+    },
+    {
+      "bytes": 23217,
+      "path": "src/tiplog/index/index.cpp",
+      "sha256": "a5556666ff938b390915fe2f6bda2c69bd6128a7cb6681998442b93ca3d4afb9"
+    },
+    {
+      "bytes": 7230,
+      "path": "src/tiplog/index/index.hpp",
+      "sha256": "8882326090680eabb47cd390013170e20b92896d2e3024220b8382878884ca97"
+    },
+    {
+      "bytes": 2758,
+      "path": "src/tiplog/merge/kernels.cpp",
+      "sha256": "f9da2a07c06bb4ba5114241a17464a7a5e32ff19fb92edb2fcaa2594ae427e8c"
+    },
+    {
+      "bytes": 7252,
+      "path": "src/tiplog/merge/kernels.hpp",
+      "sha256": "b69a7505b6c33c0e6d5259a88f1a74e3e0e522c468668ca6b524f011c81542c8"
+    },
+    {
+      "bytes": 12620,
+      "path": "src/tiplog/ring/ring.cpp",
+      "sha256": "d23835c56745866c64a392d5045daf1498e84e6d5b4c633f97848076da6bcc46"
+    },
+    {
+      "bytes": 5228,
+      "path": "src/tiplog/ring/ring.hpp",
+      "sha256": "3376898c9c4fbb18e7f33e3e13d773c8179dae9eac81ed08a7d950f2bdc3850b"
+    },
+    {
+      "bytes": 9771,
+      "path": "src/tiplog/subs/compiled.cpp",
+      "sha256": "a0d9c9cbc3d0b164fcc9c6db3e1c21f77111448e56de0ed65069aea47079c794"
+    },
+    {
+      "bytes": 1570,
+      "path": "src/tiplog/subs/compiled.hpp",
+      "sha256": "5863990621090092c14e62136fcfb2227e47558b313d76b90d03df8f94a60fb3"
+    },
+    {
+      "bytes": 10095,
+      "path": "src/tiplog/topics/registry.cpp",
+      "sha256": "acfeeecab24e28cfbac12dd70dd906771b4b60d3542da624c7f3caeb0d468bf2"
+    },
+    {
+      "bytes": 3927,
+      "path": "src/tiplog/topics/registry.hpp",
+      "sha256": "c9e3e032072d91b01d9508b98ddf1a608ff413eda601aad9885dd69ada402c72"
+    },
+    {
+      "bytes": 4375,
+      "path": "src/tiplog/trace/itch_walker.cpp",
+      "sha256": "a5ab131673f6bd75c79f5249f5a304805caef0c57b2f8af6db2d5e4f984f4c6d"
+    },
+    {
+      "bytes": 1731,
+      "path": "src/tiplog/trace/itch_walker.hpp",
+      "sha256": "29a96924c408b0b097cb1a3a04bb0e571bd5b71e9b7c42c83b8008356903eb9e"
+    },
+    {
+      "bytes": 8023,
+      "path": "src/tiplog/trace/reader.cpp",
+      "sha256": "568bbe73d7a62374c87a3ef708108c8990b3259ffd2c4d77b473ccc187c880f2"
+    },
+    {
+      "bytes": 2031,
+      "path": "src/tiplog/trace/reader.hpp",
+      "sha256": "8212dc84f0d0a11cd1bd1c9b726e9e2ce649abd11be98ed677e95cc7a102a3c0"
+    },
+    {
+      "bytes": 1259,
+      "path": "src/tiplog/types.hpp",
+      "sha256": "dc8aa1f3a9dd6fd5279c55ff32b3723e5aac2e69d3eddcf7f9c70dc0f2a64465"
+    },
+    {
+      "bytes": 7063,
+      "path": "tools/tiplog_bench/contracts.hpp",
+      "sha256": "df4e015277f1857ed4620892acd7a5a47c24af0823e1b261fe4cef2db93ddc92"
+    },
+    {
+      "bytes": 38141,
+      "path": "tools/tiplog_bench/main.cpp",
+      "sha256": "5f0b341591556751e4a183184bbc18f3709ab438d053c81d65056c8b4c0ce385"
+    },
+    {
+      "bytes": 3763,
+      "path": "tools/tiplog_differential/main.cpp",
+      "sha256": "2b96d0ab89d0cb81dc49cf6e854d23b307a7a665f14e7858d6fd5f6288190e58"
+    },
+    {
+      "bytes": 6730,
+      "path": "tools/tiplog_index_memory.cpp",
+      "sha256": "0bbebfb5a2971cb72de18066aac00e02514a7e8cd47ff2d575d3f3fc926e49bf"
+    },
+    {
+      "bytes": 12398,
+      "path": "tools/tiplog_sim/main.cpp",
+      "sha256": "a0c12bd6f2a56e2a96bf3ea20bb7bedb2c01f07c2eaa8c8580632b37fd3dd0f5"
+    },
+    {
+      "bytes": 1892,
+      "path": "tools/tiplog_walk/main.cpp",
+      "sha256": "d1590bf684f554a27526c9eaf877e972702a073af58224fc812e95842cbb84fb"
+    },
+    {
+      "bytes": 1042,
+      "path": "tools/tiplog_walk/trace_check.cpp",
+      "sha256": "4aca16c25e99ebf12eff4d12bccbbb7b882bf33b93b7ffaba0d9281d55ac552c"
+    },
+    {
+      "bytes": 77,
+      "path": "py/tiplog_py/exp/__init__.py",
+      "sha256": "396da6b3edabd867c50a10aa1de57b0dd1a8b5e431db3febf2ff6dce54f6470a"
+    },
+    {
+      "bytes": 4616,
+      "path": "py/tiplog_py/exp/audit.py",
+      "sha256": "85defa57f14b422305da784b9c4ac55e8a12e452245773c910858880626e2c4a"
+    },
+    {
+      "bytes": 3326,
+      "path": "py/tiplog_py/exp/auto.py",
+      "sha256": "72ad580a9c080baeaa5c9ae247205d5e6191fb5d2caedb13f7e3b48a41f13f79"
+    },
+    {
+      "bytes": 1105,
+      "path": "py/tiplog_py/exp/hash_bytes.c",
+      "sha256": "7910f385aaac9f4365b150276ed4578e2fb6b08b35e5f78bc973da7b1f611612"
+    },
+    {
+      "bytes": 3837,
+      "path": "py/tiplog_py/exp/hashes.py",
+      "sha256": "c62e58fc9d28acbba1827ba88380e85dd9084ed58edc66f7534ab69ad8637ec6"
+    },
+    {
+      "bytes": 11082,
+      "path": "py/tiplog_py/exp/matrix.py",
+      "sha256": "baa48162425718db2620a0ba79089b67f0a70f921dc21b9ffd5aaba6f1b066d3"
+    },
+    {
+      "bytes": 4825,
+      "path": "py/tiplog_py/exp/normalize.py",
+      "sha256": "d6c2f49428e28b18155ec0ef60afd59ffca520ecb16d32a402a6cbf921cb01dc"
+    },
+    {
+      "bytes": 12601,
+      "path": "py/tiplog_py/exp/oracle.py",
+      "sha256": "477c8f57dad712357500bc94c469533c4c8fdae9d5efc799861427020fd40048"
+    },
+    {
+      "bytes": 36659,
+      "path": "py/tiplog_py/exp/run.py",
+      "sha256": "947a28b3114f23946ebbf2d7e927063facd6800123882959df0afc819c837a41"
+    },
+    {
+      "bytes": 5374,
+      "path": "py/tiplog_py/exp/synthetic.py",
+      "sha256": "5d0e3c359cf971204c518870262b6d2884c0bcac9343b6b8e1b1b8e2921618ca"
+    },
+    {
+      "bytes": 2066,
+      "path": "configs/P6/matrix.toml",
+      "sha256": "5595d13b437fa44b02473483883b1ec836aa0344950819e13cd1375caa06c905"
+    }
+  ]
+}

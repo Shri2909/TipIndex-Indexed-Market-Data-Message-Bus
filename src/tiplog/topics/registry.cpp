@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <utility>
 #include <type_traits>
+#include <unordered_set>
 
 namespace tiplog::topics {
 namespace {
@@ -72,9 +73,15 @@ std::size_t Registry::StringHash::operator()(std::string_view value) const noexc
   return std::hash<std::string_view>{}(value);
 }
 void Registry::validate_path(std::string_view path) {
+  if (path.size() > max_topic_path_bytes) {
+    throw RepresentationLimit("topic path exceeds byte limit");
+  }
   if (path.empty() || path.front() == '/' || path.back() == '/' ||
       path.find("//") != std::string_view::npos || path.find('\0') != std::string_view::npos) {
     throw std::invalid_argument("topic path requires nonempty slash-separated segments");
+  }
+  if (static_cast<std::size_t>(std::count(path.begin(), path.end(), '/')) + 1 > max_topic_depth) {
+    throw RepresentationLimit("topic path exceeds depth limit");
   }
 }
 std::optional<TopicId> Registry::find(std::string_view path) const {
@@ -103,6 +110,7 @@ std::size_t Registry::observer_count() const noexcept {
   return count;
 }
 ObserverHandle Registry::observe(TopicId root, const std::shared_ptr<TopicObserver>& observer) {
+  if (mutating_) throw std::logic_error("topic registration cannot reenter registry mutation");
   (void)get(root);
   if (!observer) throw std::invalid_argument("null topic observer");
   if (observers_->next_serial == std::numeric_limits<std::uint64_t>::max()) {
@@ -123,6 +131,12 @@ ObserverHandle Registry::observe(TopicId root, const std::shared_ptr<TopicObserv
 }
 
 TopicId Registry::intern(std::string_view path) {
+  if (mutating_) throw std::logic_error("topic registration cannot reenter registry mutation");
+  struct MutationGuard {
+    bool& active;
+    ~MutationGuard() { active = false; }
+  } guard{mutating_};
+  mutating_ = true;
   validate_path(path);
   if (const auto existing = find(path)) return *existing;
 
@@ -201,16 +215,20 @@ TopicId Registry::intern(std::string_view path) {
   }
 
   std::vector<std::shared_ptr<TopicObserver>> affected;
+  std::unordered_set<TopicObserver*> seen_observers;
+  std::unordered_set<TopicId> seen_ancestors;
   for (const auto& topic : pending) {
     TopicId ancestor = topic.id;
     while (ancestor != 0) {
+      // All pending topics share one ancestor chain. Visit each root's slots
+      // once, and notify an observer registered on several roots only once.
+      if (!seen_ancestors.insert(ancestor).second) break;
       const auto hook = observers_->roots.find(ancestor);
       if (hook != observers_->roots.end()) {
         for (const auto& slot : hook->second) {
           if (auto observer = slot.observer.lock()) {
-            const auto already = std::find_if(affected.begin(), affected.end(),
-                [&observer](const auto& item) { return item.get() == observer.get(); });
-            if (already == affected.end()) affected.push_back(std::move(observer));
+            if (seen_observers.insert(observer.get()).second)
+              affected.push_back(std::move(observer));
           }
         }
       }

@@ -1,6 +1,7 @@
 # P4 independent review — 2026-10-18
 
-Status: **in progress; no P4 acceptance claim**. This review owns documentation
+Status: **required P4 evidence independently verified; no unresolved gate defect**.
+This review owns documentation
 only and does not run duplicate builds, campaigns or benchmarks. The joint
 P1–P5 authorization permits P4 after the passed P3 gate; P5 still waits for P4.
 
@@ -33,15 +34,15 @@ independent design choices governed by the approved contracts.
 | Accounting | Exact live/stale/open/sealed/free slot identity, metadata/heap/list reserved bytes and high-water; independent entry/ring recount | Source, preset and allocator-observation evidence inspected; passed |
 | V15–V20/V37 | Release and ASan/UBSan required unit/regression cases, zero failures/reports | 121/121 passed in each preset |
 | CC2 | k1 indexed 1,000×10,000 release and 200×10,000 sanitizer operations | Full required campaigns passed |
-| V26/F3 | Fresh indexed ≥1,800 monotonic seconds, final stats; actual pressure/recycling seed and independent expected states | Named-seed smoke passed; timed gate running/unpassed |
+| V26/F3 | Fresh indexed ≥1,800 monotonic seconds, final stats; actual pressure/recycling seed and independent expected states | Named-seed smoke and final timed gate passed; independent terminal audit below |
 
 The hand-computed N1/B1/C64 fixture was independently checked before code:
 payloads10,4,8,0,8 yield DATA starts0,32,64,88,104 and tails0,32,56,88,104.
 Capacity loss is zero; cumulative pressure bytes0,32,56,88,104 include PAD8 at
 step4. A stale unread/empty-candidate replay must FellBehind; an exact-final
 checkpoint{1,32} must become Done even after tail56 exceeds its upper32. These
-are now implemented and exercised by unit/smoke checks; they do not substitute
-for the required ongoing timed gate.
+are now implemented and exercised by unit/smoke checks; the separate timed gate
+also passed as audited below.
 
 ## Findings
 
@@ -141,7 +142,34 @@ B256 Δuordblks29,216 + Δhblkhd471,040 =500,256; B1024
 19,808+1,089,536 =1,109,344. No RSS/per-object/generalized-overhead conclusion is
 drawn. The ordinary portable subtotal remains explicitly separate.
 
-Independently matched **49/49** hashes in `implementation-freeze.json` before
-the timed F3 run. Its required final audit remains pending in
-`F3-indexed-segmented-gate-20261018T102347.429747Z.json`; no P4 completion is
-claimed from the already passed source/unit/campaign/diagnostic checks.
+## Final indexed F3 audit
+
+At 2026-10-18 10:54 UTC, independently audited
+`F3-indexed-segmented-gate-20261018T102347.429747Z.json` after its terminal
+`passed` checkpoint. Actual accepted time was **1,801.3472198700003 monotonic
+seconds**, across **15** clean segments and **81,399** executed units. There
+were no interrupted/failed segments, active attempt or failure artifacts.
+
+Executed a read-only Python audit importing `scripts/run_fuzz_gate.py` and
+calling `verify_completed(summary)` and `verify_corpus(corpus, checkpoint)`.
+Additional explicit assertions checked terminal status/time, every segment's
+exit0/positive final statistics, required final-stats flag, phase/CPU6,
+`TIPLOG_FUZZ_MODE=indexed`, ASan `detect_leaks=1:abort_on_error=1`, UBSan
+`print_stacktrace=1:halt_on_error=1`, runner/binary identities and all frozen
+source hashes. The audit exited0:
+
+- All15 completed log SHA-256 hashes and final-stat dictionaries matched.
+- All964 checkpointed corpus files survived with their recorded hashes,
+  including the corrected indexed future/equal seeds added during the run.
+- The immutable fuzz binary matched
+  `8daeabbdae26f69ddcd97d8b4e0001c6c85158d96252d332686b2bdfdf37f241`.
+- The runner matched
+  `4ac054b12770d91726813ef79fd53788536a5adce61314aa6eed421ac43e12cc`.
+- All **49/49** files in `implementation-freeze.json` still matched, before
+  any P5 source edits. Peak recorded RSS was717MiB; the largest absolute
+  wall/monotonic discrepancy was0.000004532s, with no material clock jump.
+
+The timed gate supplements the already audited release/sanitizer units, full
+CC2 campaigns, exact recount and bounded allocator observations. No required
+P4 check remains unrun in this review. Root records the authoritative phase
+gate before automatically starting the authorized P5 scope.

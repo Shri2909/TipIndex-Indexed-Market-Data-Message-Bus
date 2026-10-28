@@ -1,0 +1,28 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191232
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x652e19d4fed8, 0x652e19d51baf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x652e19d51bb0,0x652e19d6e920), 
+INFO:     1397 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1397 min: 1b max: 64773b total: 3360011b rss: 34Mb
+#1024	pulse  cov: 2248 ft: 10497 corp: 652/187Kb exec/s: 146 rss: 431Mb
+#1398	INITED cov: 2250 ft: 11527 corp: 873/2015Kb exec/s: 15 rss: 651Mb
+#1430	REDUCE cov: 2250 ft: 11527 corp: 873/2015Kb lim: 65536 exec/s: 16 rss: 652Mb L: 43/64773 MS: 2 InsertByte-EraseBytes-
+#1518	NEW    cov: 2250 ft: 11528 corp: 874/2020Kb lim: 65536 exec/s: 16 rss: 652Mb L: 5506/64773 MS: 3 InsertByte-CopyPart-InsertByte-
+#1529	NEW    cov: 2250 ft: 11529 corp: 875/2025Kb lim: 65536 exec/s: 16 rss: 652Mb L: 5082/64773 MS: 1 ChangeByte-
+#1609	NEW    cov: 2250 ft: 11530 corp: 876/2030Kb lim: 65536 exec/s: 16 rss: 652Mb L: 5546/64773 MS: 5 ChangeByte-ChangeBinInt-InsertRepeatedBytes-ChangeBinInt-CrossOver-
+#1688	NEW    cov: 2250 ft: 11532 corp: 877/2033Kb lim: 65536 exec/s: 17 rss: 652Mb L: 2653/64773 MS: 4 CMP-CrossOver-ChangeASCIIInt-CopyPart- DE: "\364\017\334\200>{\000\000"-
+#1804	REDUCE cov: 2250 ft: 11532 corp: 877/2033Kb lim: 65536 exec/s: 17 rss: 652Mb L: 1169/64773 MS: 1 EraseBytes-
+#1829	REDUCE cov: 2250 ft: 11532 corp: 877/2033Kb lim: 65536 exec/s: 17 rss: 652Mb L: 1180/64773 MS: 5 InsertByte-PersAutoDict-ChangeByte-ChangeASCIIInt-EraseBytes- DE: "\364\017\334\200>{\000\000"-
+#1942	REDUCE cov: 2250 ft: 11532 corp: 877/2033Kb lim: 65536 exec/s: 18 rss: 652Mb L: 156/64773 MS: 3 ChangeBinInt-ShuffleBytes-EraseBytes-
+#2048	pulse  cov: 2250 ft: 11532 corp: 877/2033Kb lim: 65536 exec/s: 18 rss: 652Mb
+#2273	NEW    cov: 2250 ft: 11533 corp: 878/2092Kb lim: 65536 exec/s: 18 rss: 652Mb L: 60496/64773 MS: 1 CopyPart-
+#2303	DONE   cov: 2250 ft: 11533 corp: 878/2092Kb lim: 65536 exec/s: 19 rss: 652Mb
+###### Recommended dictionary. ######
+"\364\017\334\200>{\000\000" # Uses: 48
+###### End of recommended dictionary. ######
+Done 2303 runs in 121 second(s)
+stat::number_of_executed_units: 2303
+stat::average_exec_per_sec:     19
+stat::new_units_added:          9
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              652

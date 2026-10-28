@@ -1,0 +1,25 @@
+{
+  "label": "M1-full-pilot-functional",
+  "argv": [
+    "taskset",
+    "-c",
+    "7",
+    "build/release/merge_bench",
+    "--profile=pilot",
+    "--verify-only",
+    "--quad-padding-both"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261018T160201.375404Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p5/M1-full-pilot-functional-20261018T160201.375404Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 12.20801378799979
+}

@@ -1,0 +1,188 @@
+{
+  "schema": "tiplog.f01.repetition-normalization.v1",
+  "rule": "Only repetition changes: tool repetition0 becomes fresh process repetition0/1/2. All other row values are identical to the preserved original.",
+  "mapping_plan": "results/f01/studies/final-20261027/normalization-plan.json",
+  "mapping_plan_sha256": "0b2fbcbad18e349d1fd857e877c7be5594e3fa0e938429c4a55ae79a448ff1e3",
+  "files": [
+    {
+      "input": "results/f01/studies/final-20261027/demo-1m-process-00.jsonl",
+      "input_sha256": "dfe4f8a55f479f07e0886e22ae839855d71c4373cc7836731a9fce4c8fb42e53",
+      "output": "results/f01/studies/final-20261027/demo-1m-process-00.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/demo-1m-process-00.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 0,
+      "output_sha256": "e823ac1d7d0416b8a5ec0d33c53d6845d811118337270807fe3adfe816463d13",
+      "rows": 24
+    },
+    {
+      "input": "results/f01/studies/final-20261027/demo-1m-process-01.jsonl",
+      "input_sha256": "c399e15291fab2f45843476c97456db8cfb8db4ce826e173534a40cf34d5e371",
+      "output": "results/f01/studies/final-20261027/demo-1m-process-01.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/demo-1m-process-01.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 1,
+      "output_sha256": "b9c73557029139452a4f37fc3645f315be2ac0b41a3dd3c252ecb9ef3875655f",
+      "rows": 24
+    },
+    {
+      "input": "results/f01/studies/final-20261027/demo-1m-process-02.jsonl",
+      "input_sha256": "1ceb566088af6ac38e7d3bbdec13d1c9d1e1b3ff937a8b64325ebb3468491a7f",
+      "output": "results/f01/studies/final-20261027/demo-1m-process-02.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/demo-1m-process-02.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 2,
+      "output_sha256": "a85fcd676cc84f0f24e382f42f2d4a968d7b3a95165722ef0e2cef7dc2c462f4",
+      "rows": 24
+    },
+    {
+      "input": "results/f01/studies/final-20261027/pareto-100k-process-00.jsonl",
+      "input_sha256": "f8005fd6b527e8b7ed1ee64efca85d4a29f495eda54185e6dcfab8b2c66f3846",
+      "output": "results/f01/studies/final-20261027/pareto-100k-process-00.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/pareto-100k-process-00.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 0,
+      "output_sha256": "f1c5c1cf74d03f6cfc1c4df8dd11bb2fc64c30914b2b435927040e867738c7e3",
+      "rows": 96
+    },
+    {
+      "input": "results/f01/studies/final-20261027/pareto-100k-process-01.jsonl",
+      "input_sha256": "0f3ec5d1fbe04a4e7c52190072ca48c29cc12834e0ea736c394a8bff936d41bf",
+      "output": "results/f01/studies/final-20261027/pareto-100k-process-01.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/pareto-100k-process-01.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 1,
+      "output_sha256": "6134a121961d564149980542a900930ec993fa0c3c8d822d1cd22e19e925d418",
+      "rows": 96
+    },
+    {
+      "input": "results/f01/studies/final-20261027/pareto-100k-process-02.jsonl",
+      "input_sha256": "74c349f901df7e66e5109c6d23c31484d137bab5246b323d34c298868ee0a335",
+      "output": "results/f01/studies/final-20261027/pareto-100k-process-02.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/pareto-100k-process-02.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 2,
+      "output_sha256": "0b2d3c318cb5abdd56541a3f4cb0cef026c6659fc37fd0fb86ae7caf4c08f723",
+      "rows": 96
+    },
+    {
+      "input": "results/f01/studies/final-20261027/dense-throughput-process-00.jsonl",
+      "input_sha256": "fe73b1f7fc70c15404f1eb15895487c42dab5dd9698d5d208ecdfd40b25a0815",
+      "output": "results/f01/studies/final-20261027/dense-throughput-process-00.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/dense-throughput-process-00.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 0,
+      "output_sha256": "d3c8e92272f325303b9d48d42c744d85bb749c20dcb6d84c43d50eccd840fff1",
+      "rows": 48
+    },
+    {
+      "input": "results/f01/studies/final-20261027/dense-throughput-process-01.jsonl",
+      "input_sha256": "3e5e28e9c96e009eb70a1b04ade6e4ddac0781675ef4ca9877bb4beae79c013f",
+      "output": "results/f01/studies/final-20261027/dense-throughput-process-01.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/dense-throughput-process-01.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 1,
+      "output_sha256": "3ace4b0ae87b4abadaaf697b51f19b8127d0cc2ea18873bc8a06d94feb924f58",
+      "rows": 48
+    },
+    {
+      "input": "results/f01/studies/final-20261027/dense-throughput-process-02.jsonl",
+      "input_sha256": "dd0a283113ff0a8db9654ad2229758aa04d74b8515fe979d4b1c530349c14316",
+      "output": "results/f01/studies/final-20261027/dense-throughput-process-02.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/dense-throughput-process-02.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 2,
+      "output_sha256": "b2667f5916d7a71e727a32bbf665e6e5c18f56fe44a9013c44795fafdf9d57ed",
+      "rows": 48
+    },
+    {
+      "input": "results/f01/studies/final-20261027/setup-stress-process-00.jsonl",
+      "input_sha256": "3fd615a6e3e8d09f67f4a4089a028a1ebec1982e7431bba441755b2ca8caf51d",
+      "output": "results/f01/studies/final-20261027/setup-stress-process-00.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/setup-stress-process-00.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 0,
+      "output_sha256": "5d3b93b45217407ee47306d828d27c1a218194128bbdbc406364cd0cd757eb0e",
+      "rows": 90
+    },
+    {
+      "input": "results/f01/studies/final-20261027/setup-stress-process-01.jsonl",
+      "input_sha256": "c45fa6e19056e786d885352f623c6a6810d2c3bbdb01dd273d96c1338be5e42a",
+      "output": "results/f01/studies/final-20261027/setup-stress-process-01.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/setup-stress-process-01.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 1,
+      "output_sha256": "e70492e908e003938f1840bf41a2c6cf6346cec9ea550d0497f87c24c34aa47d",
+      "rows": 90
+    },
+    {
+      "input": "results/f01/studies/final-20261027/setup-stress-process-02.jsonl",
+      "input_sha256": "e05937c4535280e47e9fc20bc3f238613738bb66faded1448d78d95e534710a2",
+      "output": "results/f01/studies/final-20261027/setup-stress-process-02.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/setup-stress-process-02.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 2,
+      "output_sha256": "639212e4a409ff49a2e87cf610fb5e74cfb34d4cad6dcbad04ada839c0a984fb",
+      "rows": 90
+    },
+    {
+      "input": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.jsonl",
+      "input_sha256": "e6b8fe4ef3afae94b24eb4f7f9b680f47144c36dc4cb7e8a00515e6fbeab5f14",
+      "output": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/record-shapes-kernels-process-00.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 0,
+      "output_sha256": "2aad21f39e5249eb2231881aca9383d6e3b4d4055b63a78459cf1afb13a6c066",
+      "rows": 480
+    },
+    {
+      "input": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.jsonl",
+      "input_sha256": "d44fe761633ab68a64ba867fbda66fd3b33d37cd251c8d1598506b2e507ec8c1",
+      "output": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/record-shapes-kernels-process-01.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 1,
+      "output_sha256": "5e0ec58137f2a56a673219ea5d28ae4275f540b4bfbbc4a9e9422472bb7be898",
+      "rows": 480
+    },
+    {
+      "input": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.jsonl",
+      "input_sha256": "e8e061e694ac49435790aa13d1ee162b1499432dd42343d14d361800adfd480f",
+      "output": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/record-shapes-kernels-process-02.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 2,
+      "output_sha256": "c3c935091bb7850b08a01792f9bbd6867d6bd5f6cbed2af0a4848baca4250c7e",
+      "rows": 480
+    },
+    {
+      "input": "results/f01/studies/final-20261027/scheduling-control-process-00.jsonl",
+      "input_sha256": "7b5b73d748f2817fb1297b50e66d77d7a9e939fa7ff23819d70778e1c5b614db",
+      "output": "results/f01/studies/final-20261027/scheduling-control-process-00.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/scheduling-control-process-00.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 0,
+      "output_sha256": "c9540425441b0f22a75b9b1f448e5d380204f51f72f46062b1de316e39e52133",
+      "rows": 20
+    },
+    {
+      "input": "results/f01/studies/final-20261027/scheduling-control-process-01.jsonl",
+      "input_sha256": "653ac7dc405350543165a6c8d5607ff092d63d36839a747b6d6a20877c68e299",
+      "output": "results/f01/studies/final-20261027/scheduling-control-process-01.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/scheduling-control-process-01.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 1,
+      "output_sha256": "1f21cfc3fcf8bec2f0c9a4165cbdaddca27bdd7008bb3795ff8d74e6ab7ffaf6",
+      "rows": 20
+    },
+    {
+      "input": "results/f01/studies/final-20261027/scheduling-control-process-02.jsonl",
+      "input_sha256": "72704d1bcf06f48a92d1b2b9aa57c5c2fdbc8fb5d0952785aa7ae4008228e4a6",
+      "output": "results/f01/studies/final-20261027/scheduling-control-process-02.normalized.jsonl",
+      "record": "results/f01/studies/final-20261027/scheduling-control-process-02.record.json",
+      "tool_repetition": 0,
+      "process_repetition": 2,
+      "output_sha256": "bc11fdab9f8bf52d1115b894a9c0c533869e38ff157b532d237c61bbef63a6e0",
+      "rows": 20
+    }
+  ]
+}

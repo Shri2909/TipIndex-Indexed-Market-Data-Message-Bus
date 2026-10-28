@@ -1,0 +1,12 @@
+{
+  "status": "accepted-by-before-checker",
+  "ctest_section": {
+    "tests": 229,
+    "poll_budget": 23,
+    "poll_differential": 1
+  },
+  "omitted_required_test": "PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix",
+  "filter": "*-PollBudget.TailExpiryAfterFailedAppendReportsActuallyDeliveredPrefix",
+  "record": "audit/independent-20261027T041900Z/evidence/negative-filtered-ctest-20261028T011846.556745Z.json",
+  "before_checker_sha256": "289925d4478f23935c532981242e13c3e0a4b8fe3530ef89ea3d722079fafe53"
+}

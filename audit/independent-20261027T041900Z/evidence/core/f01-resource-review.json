@@ -1,0 +1,40 @@
+{
+  "validator_source_sha256": "29a2874f16e59477c26f0b52c42ac685cf7987c26844756444470ca6e2c089ad",
+  "historical_source_sha256": "12a603c94257e68ca41af17e7ee708911b4dfc4dada215d0685cd24a42db292f",
+  "positive_and_negative_results": [
+    {
+      "K": 8192,
+      "status": "positive accepted",
+      "reported_reserved_bytes": 101851965
+    },
+    {
+      "K": 8192,
+      "status": "positive accepted",
+      "reported_reserved_bytes": 101851965
+    },
+    {
+      "K": 8192,
+      "status": "positive accepted",
+      "reported_reserved_bytes": 101851965
+    },
+    {
+      "K": 12288,
+      "status": "forgery rejected",
+      "reason": "independent fixture preparation exceeds resource cap"
+    },
+    {
+      "K": 65535,
+      "status": "forgery rejected",
+      "reason": "independent fixture preparation exceeds resource cap"
+    }
+  ],
+  "K8192_model": {
+    "data_bytes": 16000,
+    "pad_bytes": 0,
+    "selected_bytes": 16000,
+    "ring_bytes": 32768,
+    "checkpoint_bytes": 80,
+    "topics_bytes": 33574912,
+    "minimum_index_bytes": 67965565
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "label": "pilot-independent-audit-canonical-paths",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/check_p6_experiments.py",
+    "--plan",
+    "results/raw/P6/prepared-pilot/plan.json",
+    "--directory",
+    "results/raw/P6/campaign-20261024/pilot",
+    "--repetitions",
+    "30"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261024T035513.992517Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": null
+  },
+  "log": "results/p6/pilot-independent-audit-canonical-paths-20261024T035513.992517Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 3.8522248259998833
+}

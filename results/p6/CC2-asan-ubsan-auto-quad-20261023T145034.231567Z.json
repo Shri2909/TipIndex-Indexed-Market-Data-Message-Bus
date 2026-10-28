@@ -1,0 +1,32 @@
+{
+  "label": "CC2-asan-ubsan-auto-quad",
+  "argv": [
+    "taskset",
+    "-c",
+    "9",
+    "build/asan-ubsan/tiplog_differential",
+    "--seeds",
+    "200",
+    "--operations",
+    "10000",
+    "--seed-base",
+    "20191230",
+    "--mode",
+    "auto",
+    "--kernel",
+    "quad"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261023T145034.231567Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "/home/abc/Desktop/Jane Street/py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p6/CC2-asan-ubsan-auto-quad-20261023T145034.231567Z.log",
+  "status": "passed",
+  "exit_code": 0,
+  "duration_seconds": 87.13140304300032
+}

@@ -1,0 +1,182 @@
+{
+  "status": "passed",
+  "saved_utc": "2026-10-19T01:10:34.922764+00:00",
+  "session": "results/raw/P5/20261019T005945.758576Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/session.json",
+  "session_sha256": "238e9eeb992f7571df75013903f62a1e6e20bce7fe87b17ec2d6224931c116bb",
+  "audit": "results/p5/pilot-audit.json",
+  "audit_checks": 3821,
+  "individual_repetitions": 285,
+  "function_invocations": 369,
+  "profiles": 19,
+  "repetitions_per_profile": 15,
+  "non_ok_repetitions": 0,
+  "frequency_flagged_endpoints": 128,
+  "frequency_total_endpoints": 744,
+  "frequency_session_median_khz": 4162566.0,
+  "frequency_policy": "All flagged endpoints/invocations/repetitions retained; endpoints do not prove constant frequency",
+  "aslr_regime": "per-process disabled",
+  "source_binary_changes": [],
+  "normalized_repetitions": "results/p5/pilot-repetitions.jsonl",
+  "normalized_repetitions_sha256": "2c01b74e0d36142e08c9c2789d7618bc6aa76b3c29c18c37663e15ecb923adc8",
+  "groups": [
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 20.237730741500673,
+      "median_wall_ns_per_item": 20.237959214619075,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1-touch/k64/uniform/N4194304/BinHeap"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 14.604044357934903,
+      "median_wall_ns_per_item": 14.603567322095031,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1-touch/k64/uniform/N4194304/Loser"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 29.1540276209487,
+      "median_wall_ns_per_item": 29.153778036443075,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1-touch/k64/uniform/N4194304/Quad-pad0"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 28.22425548235576,
+      "median_wall_ns_per_item": 28.224150260285892,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1-touch/k64/uniform/N4194304/Quad-pad3"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 34.65524249076572,
+      "median_wall_ns_per_item": 34.74980330466491,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1-touch/k64/uniform/N4194304/StdPQ"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 5.254476000280787,
+      "median_wall_ns_per_item": 5.254380226134899,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/geometric64/N4194304/BinHeap"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 9.154893711993195,
+      "median_wall_ns_per_item": 9.271695024088954,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/geometric64/N4194304/Loser"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 5.5000221448783035,
+      "median_wall_ns_per_item": 5.5819403634336915,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/geometric64/N4194304/Quad-pad0"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 4.999202048077251,
+      "median_wall_ns_per_item": 4.998992415034218,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/geometric64/N4194304/Quad-pad3"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 19.52352702617625,
+      "median_wall_ns_per_item": 19.52338156700528,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/geometric64/N4194304/StdPQ"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 17.458940553665762,
+      "median_wall_ns_per_item": 17.45878655910472,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/uniform/N4194304/BinHeap"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 10.910839970906034,
+      "median_wall_ns_per_item": 10.921706279115305,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/uniform/N4194304/Loser"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 28.386367917058934,
+      "median_wall_ns_per_item": 28.386276125908832,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/uniform/N4194304/Quad-pad0"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 26.766284187634866,
+      "median_wall_ns_per_item": 27.214268445965686,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/uniform/N4194304/Quad-pad3"
+    },
+    {
+      "block": "M1",
+      "median_cpu_ns_per_item": 31.407396237058368,
+      "median_wall_ns_per_item": 31.4070692062399,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M1/k64/uniform/N4194304/StdPQ"
+    },
+    {
+      "block": "M2-B1024",
+      "median_cpu_ns_per_item": 47.44482032355736,
+      "median_wall_ns_per_item": 47.44231829052065,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M2/payload_64/P100/uniform/B1024/index_off"
+    },
+    {
+      "block": "M2-B1024",
+      "median_cpu_ns_per_item": 58.70743069636611,
+      "median_wall_ns_per_item": 58.70470220745776,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M2/payload_64/P100/uniform/B1024/index_on"
+    },
+    {
+      "block": "M2-B256",
+      "median_cpu_ns_per_item": 46.65655036466414,
+      "median_wall_ns_per_item": 46.654998291898686,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M2/payload_64/P100/uniform/B256/index_off"
+    },
+    {
+      "block": "M2-B256",
+      "median_cpu_ns_per_item": 59.67933993193926,
+      "median_wall_ns_per_item": 59.67745602874669,
+      "n": 15,
+      "non_ok_count": 0,
+      "profile": "M2/payload_64/P100/uniform/B256/index_on"
+    }
+  ],
+  "limits": [
+    "Selected k64 profiles and fixed64/P100 M2 only",
+    "Descriptive pilot medians, no confidence-interval/kernel-winner/generalized speedup claim",
+    "Whole-child/invocation diagnostics include setup; primary measurements are GBench hot-loop rows",
+    "P6 full matrix, noise study, real-trace timing and held-out Auto calibration unrun",
+    "No hardware-counter or constant-clock/exclusive-host claim"
+  ]
+}

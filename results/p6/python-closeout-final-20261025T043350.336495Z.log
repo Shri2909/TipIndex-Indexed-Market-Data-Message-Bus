@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.0.2, pluggy-1.7.0
+rootdir: /home/abc/Desktop/Jane Street/py
+configfile: pytest.ini
+collected 143 items
+
+py/tests/test_analysis_figures.py ...                                    [  2%]
+py/tests/test_analysis_stats.py .................                        [ 13%]
+py/tests/test_exp_cpp.py ......................................          [ 40%]
+py/tests/test_exp_oracle.py .....                                        [ 44%]
+py/tests/test_exp_protocol.py ...........                                [ 51%]
+py/tests/test_itch_cli.py ......                                         [ 55%]
+py/tests/test_itch_protocol.py ......................................    [ 82%]
+py/tests/test_itch_routing.py .......                                    [ 87%]
+py/tests/test_smoke.py .                                                 [ 88%]
+py/tests/test_trace_format.py .................                          [100%]
+
+============================= 143 passed in 8.47s ==============================

@@ -1,0 +1,21 @@
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 20191241
+INFO: Loaded 1 modules   (7383 inline 8-bit counters): 7383 [0x58313bb4aed8, 0x58313bb4cbaf), 
+INFO: Loaded 1 PC tables (7383 PCs): 7383 [0x58313bb4cbb0,0x58313bb69920), 
+INFO:     1478 files found in tests/fuzz/corpus/ops_p6_prefix
+INFO: seed corpus: files: 1478 min: 1b max: 64773b total: 3999064b rss: 35Mb
+#1024	pulse  cov: 2248 ft: 10381 corp: 634/163Kb exec/s: 341 rss: 385Mb
+#1479	INITED cov: 2250 ft: 11607 corp: 887/2361Kb exec/s: 23 rss: 638Mb
+#1502	REDUCE cov: 2250 ft: 11607 corp: 887/2361Kb lim: 65536 exec/s: 24 rss: 638Mb L: 330/64773 MS: 3 EraseBytes-InsertByte-InsertRepeatedBytes-
+#1548	REDUCE cov: 2250 ft: 11607 corp: 887/2361Kb lim: 65536 exec/s: 24 rss: 638Mb L: 451/64773 MS: 1 EraseBytes-
+#1783	REDUCE cov: 2250 ft: 11607 corp: 887/2360Kb lim: 65536 exec/s: 23 rss: 638Mb L: 29796/64773 MS: 5 ChangeBit-InsertByte-InsertByte-ChangeASCIIInt-EraseBytes-
+#2037	NEW    cov: 2250 ft: 11608 corp: 888/2366Kb lim: 65536 exec/s: 25 rss: 675Mb L: 6255/64773 MS: 4 ChangeBinInt-ChangeBit-ShuffleBytes-CrossOver-
+#2048	pulse  cov: 2250 ft: 11608 corp: 888/2366Kb lim: 65536 exec/s: 25 rss: 675Mb
+#2118	REDUCE cov: 2250 ft: 11608 corp: 888/2366Kb lim: 65536 exec/s: 26 rss: 675Mb L: 574/64773 MS: 1 EraseBytes-
+#3033	DONE   cov: 2250 ft: 11608 corp: 888/2366Kb lim: 65536 exec/s: 25 rss: 801Mb
+Done 3033 runs in 121 second(s)
+stat::number_of_executed_units: 3033
+stat::average_exec_per_sec:     25
+stat::new_units_added:          5
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              801

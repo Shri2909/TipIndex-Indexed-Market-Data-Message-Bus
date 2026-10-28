@@ -1,0 +1,27 @@
+{
+  "binary_sha256_before": "83b5f0209c4288f6e1ac86e4debb080605639cc21668da7ef921ffe710674979",
+  "command": [
+    "/home/abc/Desktop/Jane Street/build/asan-ubsan/tiplog_differential",
+    "--seed-base",
+    "1",
+    "--seeds",
+    "200",
+    "--operations",
+    "10000",
+    "--mode",
+    "auto",
+    "--kernel",
+    "binheap"
+  ],
+  "id": "asan-ubsan-auto-binheap",
+  "kernel": "binheap",
+  "kind": "differential",
+  "mode": "auto",
+  "preset": "asan-ubsan",
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1"
+  },
+  "seeds": 200,
+  "started_utc": "2026-10-26T08:46:54.089157+00:00"
+}

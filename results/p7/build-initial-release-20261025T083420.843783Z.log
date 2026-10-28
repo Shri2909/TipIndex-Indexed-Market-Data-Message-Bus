@@ -1,0 +1,24 @@
+gmake: jobserver mkfifo: /tmp/GMfifo4: File exists
+[ 33%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/exact.cpp.o
+[ 33%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/model.cpp.o
+[ 50%] Building CXX object CMakeFiles/tiplog_layout_lib.dir/src/tiplog/layout/global.cpp.o
+[ 66%] Linking CXX static library libtiplog_layout_lib.a
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object CMakeFiles/tiplog_layout_test.dir/tests/layout/layout_test.cpp.o
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutThreshold_ExhaustiveOwnProblemHotSingletonsEqualityAndMonotonicity_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:191:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  191 |         if (v != 0) EXPECT_TRUE(cuts[v]);
+      |            ^
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:193:14: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  193 |           if (raw.nodes[child].parent == v) EXPECT_TRUE(cuts[child]);
+      |              ^
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp: In member function ‘virtual void {anonymous}::LayoutExact_ForwardParentIdsAndMultipleChildStages_Test::TestBody()’:
+/home/abc/Desktop/Jane Street/tests/layout/layout_test.cpp:324:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+  324 |     if (expected.curve[k].feasible)
+      |        ^
+[100%] Linking CXX executable tiplog_layout_test
+[100%] Built target tiplog_layout_test
+[ 66%] Built target tiplog_layout_lib
+[ 83%] Building CXX object CMakeFiles/tiplog_layout_cc5.dir/tests/layout/layout_cc5.cpp.o
+[100%] Linking CXX executable tiplog_layout_cc5
+[100%] Built target tiplog_layout_cc5

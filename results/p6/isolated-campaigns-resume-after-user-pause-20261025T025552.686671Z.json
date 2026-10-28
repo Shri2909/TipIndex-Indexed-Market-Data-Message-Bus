@@ -1,0 +1,26 @@
+{
+  "label": "isolated-campaigns-resume-after-user-pause",
+  "argv": [
+    ".venv/bin/python",
+    "scripts/run_p6_campaigns.py",
+    "--run",
+    "--directory",
+    "results/raw/P6/campaign-20261024",
+    "--resume",
+    "--quiescence-record",
+    "results/p6/measurement-quiescence-resume.json"
+  ],
+  "cwd": "/home/abc/Desktop/Jane Street",
+  "started_utc": "20261025T025552.686671Z",
+  "environment": {
+    "ASAN_OPTIONS": "detect_leaks=1:abort_on_error=1",
+    "UBSAN_OPTIONS": "print_stacktrace=1:halt_on_error=1",
+    "MPLCONFIGDIR": "/home/abc/Desktop/Jane Street/build/matplotlib",
+    "PYTHONPATH": "py",
+    "TIPLOG_EXECUTION_CONTEXT": "outside-sandbox"
+  },
+  "log": "results/p6/isolated-campaigns-resume-after-user-pause-20261025T025552.686671Z.log",
+  "status": "failed",
+  "exit_code": 1,
+  "duration_seconds": 3649.3842932300004
+}

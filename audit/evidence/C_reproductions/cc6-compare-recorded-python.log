@@ -1,0 +1,10 @@
+{
+ "messages": [
+  268744780,
+  268744780
+ ],
+ "types_equal": true,
+ "locates_equal": true,
+ "locates": 8907,
+ "verdict": "PASS"
+}

@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "preset": "asan-ubsan",
+  "seeds_per_campaign": 200,
+  "operations_per_seed": 10000,
+  "legacy_pairs": [
+    [
+      "scan",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "stdpq"
+    ],
+    [
+      "indexed",
+      "binheap"
+    ],
+    [
+      "indexed",
+      "quad"
+    ],
+    [
+      "indexed",
+      "loser"
+    ],
+    [
+      "auto",
+      "stdpq"
+    ],
+    [
+      "auto",
+      "binheap"
+    ],
+    [
+      "auto",
+      "quad"
+    ],
+    [
+      "auto",
+      "loser"
+    ]
+  ],
+  "records": [
+    "results/f01/checks/legacy-asan-ubsan-scan-stdpq-20261026T144254.921089Z.json",
+    "results/f01/checks/legacy-asan-ubsan-indexed-stdpq-20261027T012622.268274Z.json",
+    "results/f01/checks/legacy-asan-ubsan-indexed-binheap-20261027T012724.944379Z.json",
+    "results/f01/checks/legacy-asan-ubsan-indexed-quad-20261027T012837.792275Z.json",
+    "results/f01/checks/legacy-asan-ubsan-indexed-loser-20261027T012937.245489Z.json",
+    "results/f01/checks/legacy-asan-ubsan-auto-stdpq-20261027T013036.983664Z.json",
+    "results/f01/checks/legacy-asan-ubsan-auto-binheap-20261027T013136.488689Z.json",
+    "results/f01/checks/legacy-asan-ubsan-auto-quad-20261027T013234.264240Z.json",
+    "results/f01/checks/legacy-asan-ubsan-auto-loser-20261027T013332.888966Z.json",
+    "results/f01/checks/budget-asan-ubsan-20261027T013430.911368Z.json"
+  ],
+  "reused_compatible": [
+    "results/f01/checks/legacy-asan-ubsan-scan-stdpq-20261026T144254.921089Z.json"
+  ]
+}

@@ -1,0 +1,171 @@
+Test project /home/abc/Desktop/Jane Street/build/remediation-core
+      Start  6: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher
+      Start  9: topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions
+      Start 71: differential.DifferentialCoverage.RetainedExecutionAndVariedPayloadsAcrossModesAndKernels
+      Start  8: topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs
+ 1/83 Test  #8: topics.subs.V07Subscriptions.NormalizationMatchesIndependentAllPairs ...........................   Passed    0.16 sec
+      Start 64: index.IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory
+ 2/83 Test #64: index.IndexRandom.V15V16V17B1B2AndPartialBlocksMatchIndependentHistory .........................   Passed    0.14 sec
+      Start 65: index.IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure
+ 3/83 Test #71: differential.DifferentialCoverage.RetainedExecutionAndVariedPayloadsAcrossModesAndKernels ......   Passed    0.45 sec
+      Start 17: topics.subs.V08Subscriptions.FanoutNotifiesEachObserverOnceAcrossOverlappingRoots
+ 4/83 Test #65: index.IndexSizing.V19Generic16AndEnforced32AmpleBoundNeverNeedsPressure ........................   Passed    0.16 sec
+      Start 23: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth
+ 5/83 Test #23: topics.subs.V38Registry.FullUint16BoundaryAndLateBitsetGrowth ..................................   Passed    0.07 sec
+      Start 45: ring.RingInvariants.V11RandomizedAppendChecksEveryOperation
+ 6/83 Test  #9: topics.subs.V07Subscriptions.HundredThousandTermsCompileAndObserveWithoutTimingAssumptions .....   Passed    0.54 sec
+      Start 42: ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum
+ 7/83 Test #17: topics.subs.V08Subscriptions.FanoutNotifiesEachObserverOnceAcrossOverlappingRoots ..............   Passed    0.09 sec
+      Start 79: engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum
+ 8/83 Test #42: ring.RingSeek.V36CheckpointStorageUsesGenericSixteenByteMinimum ................................   Passed    0.01 sec
+      Start 90: engine_index.EngineIndex.AutoUsesRecentSparsePostingInPartiallyOverlappingBlock
+ 9/83 Test #79: engine_index.EngineIndex.V19SizingBoundGenericAndEnforcedItchMinimum ...........................   Passed    0.01 sec
+      Start 77: engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction
+10/83 Test #45: ring.RingInvariants.V11RandomizedAppendChecksEveryOperation ....................................   Passed    0.02 sec
+      Start 44: ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted
+11/83 Test #90: engine_index.EngineIndex.AutoUsesRecentSparsePostingInPartiallyOverlappingBlock ................   Passed    0.01 sec
+      Start 24: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation
+12/83 Test #77: engine_index.EngineIndex.V19GenerationExhaustionRejectsBeforeEviction ..........................   Passed    0.01 sec
+      Start 37: ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention
+13/83 Test #24: topics.subs.V38Registry.ZeroCapacityRejectsWithoutMutation .....................................   Passed    0.01 sec
+      Start 81: engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry
+14/83 Test #44: ring.RingRetention.V36DeclaredPressureDiffersFromCapacityOnlyAndIsCounted ......................   Passed    0.01 sec
+      Start 62: index.IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth
+15/83 Test #81: engine_index.EngineIndex.V20EmptyIndexedCursorStillChecksConservativeExpiry ....................   Passed    0.01 sec
+      Start 20: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain
+16/83 Test #37: ring.RingRejection.V36SequenceLimitRejectsWithoutChangingBytesOrRetention ......................   Passed    0.01 sec
+      Start 43: ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors
+17/83 Test #62: index.IndexCursor.V16BinarySeekAcrossChainsAndNoIteratorDependenceOnGrowth .....................   Passed    0.01 sec
+      Start 34: ring.RingFraming.CheckedAccessRejectsForgedInteriorHeadersAndAcceptsWrappedBoundaries
+18/83 Test #20: topics.subs.V38Registry.TopicLimitPreflightsEntireAncestorChain ................................   Passed    0.01 sec
+      Start 69: checker.InvariantChecker.IndexDetectsCorruptedBlockCount
+19/83 Test #34: ring.RingFraming.CheckedAccessRejectsForgedInteriorHeadersAndAcceptsWrappedBoundaries ..........   Passed    0.01 sec
+      Start 56: index.IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt
+20/83 Test #43: ring.RingSeek.V36SparseFloorSurvivesCheckpointRingReuseAndExpiredFloors ........................   Passed    0.01 sec
+      Start 73: engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor
+21/83 Test #69: checker.InvariantChecker.IndexDetectsCorruptedBlockCount .......................................   Passed    0.01 sec
+      Start 54: index.IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation
+22/83 Test #56: index.IndexExpiry.V17ColdExpiredOpenIsSoleThenPeriodicSweepReclaimsIt ..........................   Passed    0.01 sec
+      Start 50: index.IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges
+23/83 Test #73: engine_index.EngineIndex.V18RecycledBlockCannotServeUnreadCursor ...............................   Passed    0.01 sec
+      Start 58: index.IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal
+24/83 Test #54: index.IndexPreparation.V15RejectsInvalidInputsWithoutLogicalMutation ...........................   Passed    0.01 sec
+      Start 49: index.IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement
+25/83 Test #50: index.IndexPool.V15NearGenerationLimitRejectsBeforeMembershipChanges ...........................   Passed    0.01 sec
+      Start 78: engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo
+26/83 Test #58: index.IndexExpiry.V37LatePartialSealExpiresBeforeEarlierNewerFullSeal ..........................   Passed    0.01 sec
+      Start 15: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor
+27/83 Test #49: index.IndexPool.V15B1RepeatedFreeReuseHasExactlyOneGenerationIncrement .........................   Passed    0.01 sec
+      Start 52: index.IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim
+28/83 Test #78: engine_index.EngineIndex.V19OversizeAndRepresentationalLimitsPreserveIndexToo ..................   Passed    0.01 sec
+      Start 21: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel
+29/83 Test #15: topics.subs.V08Subscriptions.RegistryLifetimeSafeEvenWithExternallyRetainedAnchor ..............   Passed    0.01 sec
+      Start 88: engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation
+30/83 Test #21: topics.subs.V38Registry.PartitionLimitAndReservedOwnerSentinel .................................   Passed    0.01 sec
+      Start 70: checker.InvariantChecker.EngineDetectsRetainedRecordOnWrongTopicPartition
+31/83 Test #52: index.IndexPreparation.V19AbandonedPreparationDoesNotPublishOrReclaim ..........................   Passed    0.01 sec
+      Start 30: ring.RingFraming.V10V36HandComputedEightBytePadAndWrap
+32/83 Test #88: engine_index.EngineIndex.V19AliasedInputCopiesBeforeEvictionAndIndexMutation ...................   Passed    0.01 sec
+      Start 76: engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction
+33/83 Test #70: checker.InvariantChecker.EngineDetectsRetainedRecordOnWrongTopicPartition ......................   Passed    0.01 sec
+      Start 61: index.IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks
+34/83 Test #30: ring.RingFraming.V10V36HandComputedEightBytePadAndWrap .........................................   Passed    0.01 sec
+      Start 59: index.IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary
+35/83 Test #76: engine_index.EngineIndex.V19RejectBeforeHypotheticalCapacityOrPressureEviction .................   Passed    0.01 sec
+      Start 22: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged
+36/83 Test #61: index.IndexCursor.V18B1B2CachedPositionAndGenerationDefendRecycledBlocks .......................   Passed    0.01 sec
+37/83 Test #59: index.IndexDelta.V37WideBeforeNarrowProductionSpanAndExactOverflowBoundary .....................   Passed    0.01 sec
+      Start 47: index.IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic
+      Start  5: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion
+38/83 Test #22: topics.subs.V38Registry.LocalLimitRejectsMissingAncestorsAndLeavesCompiledBitsUnchanged ........   Passed    0.01 sec
+      Start 29: ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord
+39/83 Test  #5: topics.subs.V07Subscriptions.DeterministicNormalizationPreservesUnion ..........................   Passed    0.01 sec
+      Start 13: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded
+40/83 Test #47: index.IndexConfig.V15V37ValidatesPowerOfTwoLimitsAndSizingArithmetic ...........................   Passed    0.01 sec
+      Start 63: index.IndexCursor.EstimateCountsExactRangesAcrossPartialExpiredAndDeltaSealedBlocks
+41/83 Test #29: ring.RingConfig.V10V36RejectsInvalidCapacityAndMaxRecord .......................................   Passed    0.01 sec
+      Start 51: index.IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree
+42/83 Test #13: topics.subs.V08Subscriptions.ExactPreinternedAndNoHookNeeded ...................................   Passed    0.01 sec
+      Start 40: ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction
+43/83 Test #63: index.IndexCursor.EstimateCountsExactRangesAcrossPartialExpiredAndDeltaSealedBlocks ............   Passed    0.01 sec
+      Start 19: topics.subs.V08Subscriptions.ObserverCommitMayReadAndUnregisterButCannotReenterMutation
+44/83 Test #40: ring.RingTransaction.BorrowedPayloadMayBeRepublishedAcrossWrapAndEviction ......................   Passed    0.01 sec
+      Start 55: index.IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims
+45/83 Test #51: index.IndexPool.V15GenerationZeroLimitAllowsInitialAllocationButNoFree .........................   Passed    0.01 sec
+      Start 80: engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress
+46/83 Test #19: topics.subs.V08Subscriptions.ObserverCommitMayReadAndUnregisterButCannotReenterMutation ........   Passed    0.01 sec
+      Start 46: ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries
+47/83 Test #55: index.IndexExpiry.V17TailEqualityRemainsRetainedAndStrictGreaterReclaims .......................   Passed    0.01 sec
+      Start 86: engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed
+48/83 Test #80: engine_index.EngineIndex.V20IndexedEmptyAndFutureFollowCommonProgress ..........................   Passed    0.01 sec
+      Start 89: engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse
+49/83 Test #46: ring.RingAccess.RejectsUnalignedAndExpiredPositionsAndRecognizesBoundaries .....................   Passed    0.01 sec
+      Start 60: index.IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact
+50/83 Test #86: engine_index.EngineIndex.V20DisabledIndexPreservesScanAndRejectsIndexed ........................   Passed    0.01 sec
+      Start 33: ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill
+51/83 Test #89: engine_index.EngineIndex.V19MinimumConfigurationValidatedBeforeUse .............................   Passed    0.01 sec
+      Start 67: checker.InvariantChecker.RingDetectsNonzeroFill
+52/83 Test #60: index.IndexAccounting.V17OpenSealedExpiredFreeSlotsAreSeparateAndExact .........................   Passed    0.01 sec
+      Start 32: ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen
+53/83 Test #33: ring.RingFraming.V10ExplicitLittleEndianHeaderAndFill ..........................................   Passed    0.01 sec
+      Start 68: checker.InvariantChecker.RingDetectsSequenceGap
+54/83 Test #67: checker.InvariantChecker.RingDetectsNonzeroFill ................................................   Passed    0.01 sec
+55/83 Test #32: ring.RingFraming.V10V36GenericZeroPayloadMinimumIsSixteen ......................................   Passed    0.01 sec
+      Start 36: ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction
+      Start 48: index.IndexPool.V15InitialFreeListAndExactReservedMemory
+56/83 Test #68: checker.InvariantChecker.RingDetectsSequenceGap ................................................   Passed    0.01 sec
+      Start 18: topics.subs.V08Subscriptions.ObserverReentrantMutationRejectsWithConsistentCommitAndRollback
+57/83 Test #36: ring.RingRejection.V36PositionLimitIsCheckedBeforeEviction .....................................   Passed    0.01 sec
+      Start 75: engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad
+58/83 Test #48: index.IndexPool.V15InitialFreeListAndExactReservedMemory .......................................   Passed    0.01 sec
+      Start 31: ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad
+59/83 Test #18: topics.subs.V08Subscriptions.ObserverReentrantMutationRejectsWithConsistentCommitAndRollback ...   Passed    0.01 sec
+      Start 25: topics.subs.V38Registry.TopicPathBoundsRejectBeforeMutationAndAcceptExactBounds
+60/83 Test #75: engine_index.EngineIndex.V19PressureMatchesIndependentHandScheduleIncludingPad .................   Passed    0.01 sec
+      Start 74: engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint
+61/83 Test #31: ring.RingFraming.V10ExactFitAndFullCapacityHaveNoPad ...........................................   Passed    0.01 sec
+      Start 39: ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites
+62/83 Test #74: engine_index.EngineIndex.V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint ................   Passed    0.01 sec
+      Start 12: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow
+63/83 Test #25: topics.subs.V38Registry.TopicPathBoundsRejectBeforeMutationAndAcceptExactBounds ................   Passed    0.01 sec
+      Start 16: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit
+64/83 Test #39: ring.RingTransaction.RingAliasedSourceIsCopiedBeforeHeaderWrites ...............................   Passed    0.01 sec
+      Start 84: engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers
+65/83 Test #12: topics.subs.V08Subscriptions.WideTermsIncludeFuturePartitionsAndShallowExactStaysNarrow ........   Passed    0.01 sec
+      Start 87: engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative
+66/83 Test #16: topics.subs.V08Subscriptions.ObserverAllocationFailurePrecedesAllRegistrationCommit ............   Passed    0.01 sec
+      Start  3: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds
+67/83 Test #84: engine_index.EngineIndex.V20DynamicFilterGrowthDoesNotLeaveDanglingPointers ....................   Passed    0.01 sec
+68/83 Test  #3: topics.subs.V06Registry.AncestorsPartitionsAndDenseLocalIds ....................................   Passed    0.01 sec
+      Start 53: index.IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership
+      Start 83: engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap
+69/83 Test #87: engine_index.EngineIndex.V20RetainedPadCheckpointRemainsConservative ...........................   Passed    0.01 sec
+      Start 11: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries
+70/83 Test #83: engine_index.EngineIndex.V20FullBudgetDoesNotLookPastFilteredGap ...............................   Passed    0.01 sec
+      Start 57: index.IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed
+71/83 Test #53: index.IndexPreparation.V19PressureCandidateDoesNotMutatePoolMembership .........................   Passed    0.01 sec
+72/83 Test #11: topics.subs.V08Subscriptions.FutureSubtreesRespectSegmentBoundaries ............................   Passed    0.01 sec
+      Start 41: ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad
+      Start  4: topics.subs.V06Registry.PathValidationAndLookup
+73/83 Test #57: index.IndexExpiry.V17ExpiredTargetOpenIsReplacedAndBaseRecomputed ..............................   Passed    0.01 sec
+      Start 14: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks
+74/83 Test #41: ring.RingSeek.V36PadAwareLookupReturnsDataNotInterveningPad ....................................   Passed    0.01 sec
+      Start 38: ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState
+75/83 Test  #4: topics.subs.V06Registry.PathValidationAndLookup ................................................   Passed    0.01 sec
+      Start 10: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms
+76/83 Test #14: topics.subs.V08Subscriptions.CopyMoveAndDestructionReleaseHooks ................................   Passed    0.01 sec
+      Start 35: ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged
+77/83 Test #38: ring.RingTransaction.PreparedAndAbandonedAppendDoesNotMutateState ..............................   Passed    0.01 sec
+      Start 85: engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge
+78/83 Test #10: topics.subs.V07Subscriptions.InvalidSpecsDoNotRegisterEarlierValidTerms ........................   Passed    0.01 sec
+      Start 82: engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess
+79/83 Test #35: ring.RingRejection.V36OversizedAndSizeMaxLeaveAllObservableStateUnchanged ......................   Passed    0.01 sec
+      Start  7: topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds
+80/83 Test #85: engine_index.EngineIndex.V20WideFallsBackAndMultiplePartitionsMerge ............................   Passed    0.01 sec
+81/83 Test #82: engine_index.EngineIndex.V20ExactFinalBudgetCompletesBeforeExpiredCursorAccess .................   Passed    0.01 sec
+82/83 Test  #7: topics.subs.V07Subscriptions.NormalizationHandlesLexicalInterleavingAndSamePathKinds ...........   Passed    0.01 sec
+83/83 Test  #6: topics.subs.V07Subscriptions.RandomPathsTermsAndLateTopicsAgainstSegmentMatcher ................   Passed    0.83 sec
+
+100% tests passed out of 83
+
+Total Test time (real) =   0.93 sec

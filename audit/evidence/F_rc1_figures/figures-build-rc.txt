@@ -1,0 +1,2 @@
+rc=1 secs=302
+NOTE: exit 1 is from layout.py manifest provenance (Path(__file__).relative_to(repo root)) because the audit ran the code from the scratch copy; all 18 PNGs were written before it.
