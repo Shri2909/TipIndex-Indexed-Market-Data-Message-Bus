@@ -43,9 +43,9 @@ The ring is a fixed-size circular byte buffer that overwrites the oldest data. A
 
 Worked example: Scan walks 184,550 retained records; Indexed fetches 1,573 candidates. An independent before/after check of source builds saw paired ratios from 0.939 to 1.775 on small fixtures; no regression or improvement is claimed (independent audit, in git history).
 
-![Replay CPU milliseconds versus requested subscription breadth: Indexed leads for narrow subscriptions and loses for broad ones.](docs/readme/replay-breadth.png)<br>*Replay CPU versus breadth: Indexed wins narrow, loses broad.*
+![Line chart of catch-up CPU time against symbols subscribed: Indexed is 40.6 times faster than Scan for one symbol and 0.585 times as fast for 1,000.](docs/readme/replay-breadth.png)<br>*Catch-up cost by number of symbols subscribed. Data: [chart-data.csv](docs/readme/chart-data.csv).*
 
-![Publishing CPU nanoseconds versus partition count with and without the index.](docs/readme/publish-index-cost.png)<br>*Publish CPU versus partitions, index on (`True`) or off: the gap opens at 10,000.*
+![Bar chart of publish CPU time per message with and without the index at 1, 100 and 10,000 partitions: the index doubles the cost at 10,000.](docs/readme/publish-index-cost.png)<br>*Publishing cost per message, with and without the index.*
 
 Polling chart: [poll-budget-responsiveness.svg](docs/readme/poll-budget-responsiveness.svg). Full reports and per-run data are not in this snapshot; they are preserved in git history at commit `5425335`.
 

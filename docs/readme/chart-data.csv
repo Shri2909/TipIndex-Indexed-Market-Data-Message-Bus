@@ -1,0 +1,15 @@
+chart,series,x,value,unit,ci95_low,ci95_high,n
+catch-up cpu,scan,1,3.9158,ms,3.8116,4.0085,20
+catch-up cpu,indexed,1,0.0964,ms,0.096,0.0975,20
+catch-up cpu,scan,10,5.298,ms,5.178,5.3869,20
+catch-up cpu,indexed,10,0.6746,ms,0.6616,0.6843,20
+catch-up cpu,scan,100,8.7949,ms,8.7464,8.9299,20
+catch-up cpu,indexed,100,3.2396,ms,3.2126,3.2786,20
+catch-up cpu,scan,1000,14.2389,ms,14.1348,14.4708,20
+catch-up cpu,indexed,1000,24.3421,ms,24.271,24.4489,20
+publish cpu,no index,1,57.19,ns/message,57.12,57.22,15
+publish cpu,with index,1,70.72,ns/message,70.17,70.93,15
+publish cpu,no index,100,57.2,ns/message,57.13,57.27,15
+publish cpu,with index,100,71.19,ns/message,71.15,71.24,15
+publish cpu,no index,10000,62.32,ns/message,59.02,63.31,15
+publish cpu,with index,10000,124.43,ns/message,123.38,129.41,15
