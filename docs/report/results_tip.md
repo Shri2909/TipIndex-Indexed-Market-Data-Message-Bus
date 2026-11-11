@@ -27,7 +27,7 @@ published observations, private Aria implementation and server-level CPU
 results are not reproduced or transferred to this project. The C++ kernels,
 Auto policy, replay contracts and experimental outcomes are independent project
 work. Original-material reading depth and limitations are retained in the
-[research ledger](../plan/RESEARCH.md), [merge-source ledger](../../results/p5/merge-sources.md)
+research ledger (git history), [merge-source ledger](../../results/p5/merge-sources.md)
 and [P6 method review](../../results/p6/method-review.md). Abstract-only sources
 are not represented as full-paper studies or implemented algorithms.
 

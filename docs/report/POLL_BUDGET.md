@@ -148,7 +148,7 @@ production/campaign inputs are identical. All other required campaigns completed
 against the final freeze. No old P1–P8 or remediation gate was regenerated.
 
 The approved design and primary-source review are in
-[RESEARCH §9](../plan/RESEARCH.md#9-f-01-research-work-budgeted-replay-and-tail-polling--2026-10-26).
+RESEARCH §9 (git history).
 The predeclared [benchmark protocol](../../results/f01/protocol.json) covers
 rejection-heavy, late-match, sparse, dense, variable-size/PAD and partition-width
 cases; [the feature baseline](../../results/f01/baseline.json) preserves previous

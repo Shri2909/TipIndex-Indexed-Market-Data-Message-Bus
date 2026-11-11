@@ -1,5 +1,8 @@
 # tiplog — technical report
 
+> References marked *(git history)* point to `docs/plan/` and `docs/interview/`, which were removed from the working tree; they remain in the repository history (last present at commit `cbf865e`).
+
+
 Public-checkout note: paths marked **local-only** identify ignored raw inputs or large derived files. The checked-in report tables, figure manifests and protocol records remain available. See [public packaging](PUBLIC_PACKAGING.md) for the boundary and [reproduction instructions](REPRODUCE.md) for restoring local inputs.
 
 The measurements and gates below describe the accepted P0–P8 source. Subsequent
@@ -63,7 +66,7 @@ and every framed message parses, but completeness of the exchange session is not
 
 Jane Street's article "Scaling and benchmarking a critical message bus using a new indexing strategy"
 (S01) describes Aria, their internal message bus. The research ledger labels its statements A1–A21
-([RESEARCH §1](../plan/RESEARCH.md)). In summary, the article **states** that: the recent stream lives
+(RESEARCH §1 (git history)). In summary, the article **states** that: the recent stream lives
 in an in-memory ring buffer and lagging clients recover from it (A3); a linear filtering pass made some
 servers hit 100% CPU (A5); they index per *topic partition* (shared two-segment prefix) and rebuild order
 with an n-way min-heap merge (A6–A7); index entries live in a shared pool of 1,024-entry blocks (A12);
@@ -78,7 +81,7 @@ labeled independent designs, and the exact methods (ENUM, MASK-DP) are this proj
 
 ## 3. Problem and semantics
 
-Full contracts are in [ARCHITECTURE §3](../plan/ARCHITECTURE.md). The essentials:
+Full contracts are in ARCHITECTURE §3 (git history). The essentials:
 
 - **Topics.** ITCH messages are routed to a spec-derived hierarchy `itch/<SYM>/{stock,add,modify,trade}/<type>`
   plus `noii`, `rpii`, `dlcr` leaves and `itch/_market` (*H-spec*). A *partition* is a two-segment prefix
@@ -96,7 +99,7 @@ Full contracts are in [ARCHITECTURE §3](../plan/ARCHITECTURE.md). The essential
   checkpoint and expiry contract**, so they produce identical outputs and identical outcomes. Live tailing
   is a chain of such snapshots, and chaining is exact.
 - **Not guaranteed in the core:** durability, crash recovery, cross-process access, networking and
-  concurrent readers ([ARCHITECTURE §3.9](../plan/ARCHITECTURE.md)).
+  concurrent readers (ARCHITECTURE §3.9 (git history)).
 
 ## 4. Tip store design
 
@@ -123,7 +126,7 @@ Public entry points are in [engine.hpp](../../src/tiplog/engine/engine.hpp).
 ## 5. Correctness evidence
 
 The plan fixed the correctness and reproducibility criteria before implementation
-([VALIDATION §1.1](../plan/VALIDATION_PLAN.md)). Every one is met by executed evidence:
+(VALIDATION §1.1 (git history)). Every one is met by executed evidence:
 
 | ID | Criterion | Executed evidence |
 |---|---|---|
@@ -210,7 +213,7 @@ and figures F06–F13.
 
 ## 8. Storage-layout optimization (P7)
 
-Full results: [results_layout.md](results_layout.md). Model: [ARCHITECTURE §6](../plan/ARCHITECTURE.md).
+Full results: [results_layout.md](results_layout.md). Model: ARCHITECTURE §6 (git history).
 
 ### 8.1 Model M-store
 
@@ -324,7 +327,7 @@ The full study attempted **214,668 cases** (2 hierarchies × 4 workloads × 3 β
 ## 10. Related work
 
 Read depth matters, so each source below is listed with what was actually read
-([RESEARCH ledger](../plan/RESEARCH.md)).
+(RESEARCH ledger (git history)).
 
 - **The reference article** (S01, full text and figures) motivates the tip ring, partition indexes, the
   shared block pool and subtree stores; this report separates its statements (§2.2).
@@ -354,7 +357,7 @@ coverage is complete for W1–W3 but not for exact-topic-everything W0.
 
 The full system remains a roadmap that is **not authorized**: a WAL with crash recovery, compaction into
 store packs with a disk→tip handoff and measured α/β, a concurrent bus, and Tier C items such as open-loop
-latency tests and drift studies ([IMPLEMENTATION_PLAN §7](../plan/IMPLEMENTATION_PLAN.md)).
+latency tests and drift studies (IMPLEMENTATION_PLAN §7 (git history)).
 
 ## Resume bullets (measured numbers only)
 
@@ -406,7 +409,7 @@ GoogleTest 1.17.0. Captured environments: [P0](../../results/env/p0-environment.
 
 ## Appendix E — Failures, deviations and repairs
 
-Recorded so that nothing is silently dropped; details are in [PROGRESS](../plan/PROGRESS.md).
+Recorded so that nothing is silently dropped; details are in PROGRESS (git history).
 
 - **P6.** One M1-k256 attempt was externally terminated (replaced); one memory attempt was interrupted by a
   user-requested pause (accepted rounds resumed); the saved-output auditor needed path and T5 comparison
