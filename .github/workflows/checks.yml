@@ -27,7 +27,8 @@ jobs:
         with:
           python-version: "3.14"
       - name: Install hash-locked packages and tooling
-        run: python -m pip install --require-hashes --only-binary=:all: -r py/requirements.txt -r configs/ci-requirements.txt
+        run: |
+          python -m pip install --require-hashes --only-binary=:all: -r py/requirements.txt -r configs/ci-requirements.txt
       - name: Configure and build
         run: |
           cmake --preset "${{ matrix.preset }}"
