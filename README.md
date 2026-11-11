@@ -97,7 +97,7 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: [R
 | [src/tiplog/](src/tiplog/) | Engine, ring, index, merge kernels, [layout library](src/tiplog/layout/) |
 | [tools/](tools/), [bench/](bench/), [tests/](tests/) | Trace driver, benchmarks, tests and oracles |
 | [py/](py/), [scripts/](scripts/), [configs/](configs/) | Conversion, analysis, runners, experiment matrices |
-| [docs/plan/](docs/plan/), [docs/report/](docs/report/) | Specification, plan; report, results |
+| [docs/report/](docs/report/) | Technical report, results, reproduction guide |
 | [results/](results/), [audit/](audit/) | Saved evidence and figures; audits |
 
 ## Scope and limitations
@@ -107,4 +107,4 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: [R
 
 ## Further reading
 
-[ARCHITECTURE](docs/ARCHITECTURE.md) | [METHODOLOGY](docs/METHODOLOGY.md) | [REPORT](docs/report/REPORT.md) | [spec](docs/plan/ARCHITECTURE.md) | [validation plan](docs/plan/VALIDATION_PLAN.md) | [REPRODUCE](docs/report/REPRODUCE.md) | [REMEDIATION](docs/report/REMEDIATION.md) | [PUBLIC_PACKAGING](docs/report/PUBLIC_PACKAGING.md)
+[ARCHITECTURE](docs/ARCHITECTURE.md) | [METHODOLOGY](docs/METHODOLOGY.md) | [REPORT](docs/report/REPORT.md) | [REPRODUCE](docs/report/REPRODUCE.md) | [REMEDIATION](docs/report/REMEDIATION.md) | [PUBLIC_PACKAGING](docs/report/PUBLIC_PACKAGING.md)

@@ -1,6 +1,6 @@
 # Methodology: how the benchmarks were run and what they show
 
-Detail: [validation plan](plan/VALIDATION_PLAN.md), [technical report](report/REPORT.md), [results_tip.md](report/results_tip.md). See also the [README](../README.md) and [ARCHITECTURE](ARCHITECTURE.md).
+Detail: [technical report](report/REPORT.md), [results_tip.md](report/results_tip.md). See also the [README](../README.md) and [ARCHITECTURE](ARCHITECTURE.md).
 
 ## Summary
 
@@ -21,7 +21,7 @@ We measured the CPU time to replay a retained backlog (a consumer catching up fr
 | Polling study | Per-call time of an optional inspection budget (F-01) |
 | Layout model | Modeled read bytes of storage layouts; no disk I/O |
 
-No minimum speedup was required; a loss is a valid result ([plan](plan/PROBLEM_STATEMENT_AND_BENCHMARKS.md)).
+No minimum speedup was required; a loss is a valid result.
 
 ## Data and workload
 
