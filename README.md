@@ -41,13 +41,13 @@ The ring is a fixed-size circular byte buffer that overwrites the oldest data. A
 | Can a long search yield? | 1,000,000 records: 1 poll, 17.348 ms vs budget 1,000: p99 29.957 us per poll, 18.366 ms total | Traversal bound, not a deadline |
 | Can layout cut reads? | 27.9% fewer **modeled** weighted read bytes (19,367,265,136 to 13,964,962,856) | Modeled, not measured I/O |
 
-Worked example: Scan walks 184,550 retained records; Indexed fetches 1,573 candidates. An independent before/after check of source builds saw paired ratios from 0.939 to 1.775 on small fixtures; no regression or improvement is claimed ([audit](audit/independent-20261027T041900Z/PERFORMANCE.md)).
+Worked example: Scan walks 184,550 retained records; Indexed fetches 1,573 candidates. An independent before/after check of source builds saw paired ratios from 0.939 to 1.775 on small fixtures; no regression or improvement is claimed (independent audit, in git history).
 
 ![Replay CPU milliseconds versus requested subscription breadth: Indexed leads for narrow subscriptions and loses for broad ones.](docs/readme/replay-breadth.png)<br>*Replay CPU versus breadth: Indexed wins narrow, loses broad.*
 
 ![Publishing CPU nanoseconds versus partition count with and without the index.](docs/readme/publish-index-cost.png)<br>*Publish CPU versus partitions, index on (`True`) or off: the gap opens at 10,000.*
 
-Details: [engine](docs/report/results_tip.md), [polling](docs/report/POLL_BUDGET_RESULTS.md) ([figure](results/f01/figures/final-20261027-v2/poll-budget-responsiveness.svg)), [layout](docs/report/results_layout.md).
+Polling chart: [poll-budget-responsiveness.svg](docs/readme/poll-budget-responsiveness.svg). Full reports and per-run data are not in this snapshot; they are preserved in git history at commit `5425335`.
 
 ## What was built
 
@@ -58,7 +58,7 @@ Details: [engine](docs/report/results_tip.md), [polling](docs/report/POLL_BUDGET
 
 ## How it was measured and checked
 
-Paired fresh-process rounds (Scan and Indexed back-to-back), one pinned core, 95% bootstrap intervals, every timed output checked against an independent oracle. The [independent audit](audit/independent-20261027T041900Z/REPORT.md) records 230 CTests per preset in 4 builds, 499 Python tests, 108 M differential operations, and 14 findings, all fixed (bounded, not proof of no defects). Method: [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+Paired fresh-process rounds (Scan and Indexed back-to-back), one pinned core, 95% bootstrap intervals, every timed output checked against an independent oracle. This snapshot passes 230 CTests (Release and ASan/UBSan builds) and 279 Python tests. The independent audit (in git history) also records 108 M differential operations and 14 findings, all fixed (bounded, not proof of no defects). Method: [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
 **Honest limits.** One laptop (Intel Core i5-1235U), one trading day (2019-12-30), one 09:30-10:00 window of 32,817,244 records. Timings come from the 24-25 October 2026 study and describe the pre-remediation source; no fresh campaign is claimed. CPU frequency was not fixed. Intervals describe run-to-run variation on this machine, not variation across trading days. Consumer workloads and the layout cost model are assumptions.
 
@@ -81,14 +81,14 @@ build/release/tiplog_poll_bench --records 10000 --cases no-match \
 python3 -m json.tool --json-lines < "$demo_dir/poll.jsonl"
 ```
 
-Optimizer example: `build/release/tiplog_layout_example`. Python environment: [REPRODUCE.md section 2](docs/report/REPRODUCE.md#2-setup).
+Optimizer example: `build/release/tiplog_layout_example`. Python environment: `python3 -m venv .venv && .venv/bin/python -m pip install --only-binary=:all: -r py/requirements.txt`.
 
 ## Benchmarks and CPU tuning
 
 - Timed work is pinned to CPU 2 (a P-core), SMT sibling idle, AC power, saved quiescence record.
 - Runners [run_p5_pilot.py](scripts/run_p5_pilot.py) and [run_p6_campaigns.py](scripts/run_p6_campaigns.py) are hash-locked and refuse to run after source edits.
 - The full campaign took about 25 hours and 7 GB+; raw ITCH data is local-only.
-- Optional CPU tuning (sudo): [docs/METHODOLOGY.md](docs/METHODOLOGY.md), [REPRODUCE.md section 12](docs/report/REPRODUCE.md).
+- Optional CPU tuning (sudo): [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
 ## Repository map
 
@@ -97,8 +97,7 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: [R
 | [src/tiplog/](src/tiplog/) | Engine, ring, index, merge kernels, [layout library](src/tiplog/layout/) |
 | [tools/](tools/), [bench/](bench/), [tests/](tests/) | Trace driver, benchmarks, tests and oracles |
 | [py/](py/), [scripts/](scripts/), [configs/](configs/) | Conversion, analysis, runners, experiment matrices |
-| [docs/report/](docs/report/) | Technical report, results, reproduction guide |
-| [results/](results/), [audit/](audit/) | Saved evidence and figures; audits |
+| [docs/](docs/) | Architecture, methodology and result charts |
 
 ## Scope and limitations
 
@@ -107,4 +106,4 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: [R
 
 ## Further reading
 
-[ARCHITECTURE](docs/ARCHITECTURE.md) | [METHODOLOGY](docs/METHODOLOGY.md) | [REPORT](docs/report/REPORT.md) | [REPRODUCE](docs/report/REPRODUCE.md) | [REMEDIATION](docs/report/REMEDIATION.md) | [PUBLIC_PACKAGING](docs/report/PUBLIC_PACKAGING.md)
+[ARCHITECTURE](docs/ARCHITECTURE.md) | [METHODOLOGY](docs/METHODOLOGY.md)

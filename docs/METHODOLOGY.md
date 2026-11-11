@@ -1,6 +1,6 @@
 # Methodology: how the benchmarks were run and what they show
 
-Detail: [technical report](report/REPORT.md), [results_tip.md](report/results_tip.md). See also the [README](../README.md) and [ARCHITECTURE](ARCHITECTURE.md).
+Full reports (REPORT, results_*.md, REPRODUCE) and raw evidence are not in this snapshot; they are preserved in git history at commit `5425335`. See also the [README](../README.md) and [ARCHITECTURE](ARCHITECTURE.md).
 
 ## Summary
 
@@ -28,7 +28,7 @@ No minimum speedup was required; a loss is a valid result.
 - **Real data:** Nasdaq TotalView-ITCH 5.0, 2019-12-30. Timing window: 32,817,244 records, 947,677,397 payload bytes, 62,964 topic ids. The sample lacks its session terminator (`incomplete=true`).
 - **Headline setup:** 10:00 anchor, 10 s backlog, 1 GiB ring, 1,024-entry index blocks, repeat-warm cache (second identical replay).
 - **Synthetic data:** seeded; Auto thresholds trained on seed 20191230, frozen, tested on seed 20191231.
-- Raw ITCH and traces are not in Git ([packaging](report/PUBLIC_PACKAGING.md)).
+- Raw ITCH and traces are not in Git.
 
 ## Environment and controls
 
@@ -48,11 +48,11 @@ No minimum speedup was required; a loss is a valid result.
 
 ## Correctness gate
 
-An invalid fast run is not a result. Every timed output was checked against an independent oracle (tests-only `ScanOracle`; Python oracle from the trace): 10,295,181 checks, 0 failures. The [independent audit](../audit/independent-20261027T041900Z/REPORT.md) (accepted 28 October 2026) reports 230 CTests per preset in 4 builds, 499 Python tests, 108,000,000 differential operations and 14 findings fixed; it is bounded, not proof of no defects.
+An invalid fast run is not a result. Every timed output was checked against an independent oracle (tests-only `ScanOracle`; Python oracle from the trace): 10,295,181 checks, 0 failures. The independent audit (in git history; accepted 28 October 2026) reports 108,000,000 differential operations and 14 findings fixed; it is bounded, not proof of no defects. This snapshot passes 230 CTests (Release and ASan/UBSan builds) and 279 Python tests.
 
 ## The polling study differs
 
-It ran on 27 October 2026 on a shared, unpinned host, 3 fresh processes per arm (758 arms, 2,274 rows), with no confidence intervals ([results](report/POLL_BUDGET_RESULTS.md)). The 1.775 ratio is not from it: it is the worst paired ratio (range 0.939-1.775) in the audit's initial-vs-final source comparison on small fixtures; no regression or improvement is claimed ([PERFORMANCE.md](../audit/independent-20261027T041900Z/PERFORMANCE.md)).
+It ran on 27 October 2026 on a shared, unpinned host, 3 fresh processes per arm (758 arms, 2,274 rows), with no confidence intervals (POLL_BUDGET_RESULTS.md, in git history). The 1.775 ratio is not from it: it is the worst paired ratio (range 0.939-1.775) in the audit's initial-vs-final source comparison on small fixtures; no regression or improvement is claimed (audit PERFORMANCE.md, in git history).
 
 ## Threats to validity
 
@@ -68,17 +68,17 @@ It ran on 27 October 2026 on a shared, unpinned host, 3 fresh processes per arm 
 
 | Claim | Status | Evidence and limit | Detail |
 |---|---|---|---|
-| One symbol: Scan 3.92 ms vs Indexed 0.096 ms, 40.6x | Measured | 20 paired rounds | [results](report/results_tip.md) |
-| Broad (top 1,000): 14.2 vs 24.3 ms, 0.585x; Auto picks Scan | Measured | Same setup; index loses | [results](report/results_tip.md) |
-| Publisher: 124.4 vs 62.3 ns/message, 10,000 partitions | Measured | 15 repetitions | [REPORT](report/REPORT.md) |
-| Polling: one 17.348 ms poll vs 1,000 polls, p99 29.957 us | Measured, shared host | Unpinned, 3 processes; total work grows | [polling](report/POLL_BUDGET_RESULTS.md) |
-| Layout: 27.9% fewer weighted read bytes | Modeled | Uniform consumers; no disk I/O | [layout](report/results_layout.md) |
-| Output correctness | Checked | 10,295,181 oracle checks; bounded audit | [audit](../audit/independent-20261027T041900Z/REPORT.md) |
-| Parity with Jane Street's Aria or production; latency; other days or hardware; durability | Not claimed | No Aria code; different data and workload | [REPORT](report/REPORT.md) |
+| One symbol: Scan 3.92 ms vs Indexed 0.096 ms, 40.6x | Measured | 20 paired rounds | results_tip.md (history) |
+| Broad (top 1,000): 14.2 vs 24.3 ms, 0.585x; Auto picks Scan | Measured | Same setup; index loses | results_tip.md (history) |
+| Publisher: 124.4 vs 62.3 ns/message, 10,000 partitions | Measured | 15 repetitions | REPORT.md (history) |
+| Polling: one 17.348 ms poll vs 1,000 polls, p99 29.957 us | Measured, shared host | Unpinned, 3 processes; total work grows | POLL_BUDGET_RESULTS.md (history) |
+| Layout: 27.9% fewer weighted read bytes | Modeled | Uniform consumers; no disk I/O | results_layout.md (history) |
+| Output correctness | Checked | 10,295,181 oracle checks; bounded audit | audit REPORT.md (history) |
+| Parity with Jane Street's Aria or production; latency; other days or hardware; durability | Not claimed | No Aria code; different data and workload | REPORT.md (history) |
 
 ## Reproducing and tuning
 
-Saved results are historical. The official runners (`scripts/run_p5_pilot.py`, `scripts/run_p6_campaigns.py`) are hash-locked to a frozen source tree and refuse to run after source edits (failure text: `empirical payload mix identity mismatch: spec_table_source_sha256`); a fresh run needs a recorded re-freeze decision. The full campaign takes about 25 h and 7 GB+ of disk. For the current source use `scripts/check_all.sh`. Commands: [REPRODUCE.md](report/REPRODUCE.md); setup: [REMEDIATION.md](report/REMEDIATION.md).
+Saved results are historical. The official runners (`scripts/run_p5_pilot.py`, `scripts/run_p6_campaigns.py`) are hash-locked to a frozen source tree and refuse to run after source edits (failure text: `empirical payload mix identity mismatch: spec_table_source_sha256`); a fresh run needs a recorded re-freeze decision. The full campaign takes about 25 h and 7 GB+ of disk. For the current source run `ctest --preset release` and `python -m pytest -c py/pytest.ini py/tests tests/scripts`.
 
 **Optional CPU tuning** (needs sudo; the study used none of it). `no_turbo=1` caps P-cores near the 1.3 GHz base clock, so results are **not comparable** to the published study.
 
@@ -96,4 +96,4 @@ echo balance_power | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_perfor
 echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
 ```
 
-Thermal-throttle check: [REPRODUCE.md section 12](report/REPRODUCE.md#12-benchmark-environment-and-cpu-tuning).
+Thermal-throttle check: `grep . /sys/devices/system/cpu/cpu*/thermal_throttle/*_count`.

@@ -1,45 +1,55 @@
-# Managed session metadata and the explicit writable Git directory.
+# Local tooling and git metadata
 /.agents/
 /.aws/
 /.codex/
 /.tiplog-git/
 
+# Build outputs and caches
 /build/
 /.venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Local-only data, evidence and reports (kept on disk, not published)
 /data/raw/
 /data/traces/
-/results/raw/
-# F2 logs can contain dictionary fragments derived from its local Nasdaq seed.
-# Preserve complete logs/artifacts locally; track statistics and hashes only.
-/results/p1/F2*.log
-/results/p1/fuzz-artifacts/
-/results/p1/fuzz-crashes/
+/results/
+/audit/
+/docs/report/
+/tests/fuzz/corpus/
+/tests/fuzz/*.dict
 
-# P6 derived aggregates over 10 MiB, regenerated from local raw results (docs/report/REPRODUCE.md)
-results/derived/tip-outcomes.csv
-results/derived/tip-paired-ratios.csv
-results/derived/tip-statistics.csv
-results/derived/tip-summary.json
-# Synthetic binary trace fixtures produced by P6 functional checks
-results/p6/**/*.mdt
+# Local-only evidence and acceptance scripts
+/tests/scripts/*
+!/tests/scripts/test_git_portability.py
+/scripts/check_all.py
+/scripts/check_all.sh
+/scripts/check_core_closeout.py
+/scripts/check_f01.py
+/scripts/check_f01_contract_mutations.py
+/scripts/check_p1_data.py
+/scripts/check_p6_rc3.py
+/scripts/check_p7_figure_extension.py
+/scripts/check_p7_gate.py
+/scripts/check_p7_runtime_quiescence.py
+/scripts/check_rc3.py
+/scripts/check_remediation.py
+/scripts/assemble_f01_acceptance.py
+/scripts/build_provenance.py
+/scripts/reconcile_itch.py
+/scripts/run_check.py
+/scripts/run_f01_*.py
+/scripts/run_fuzz_gate.py
+/scripts/run_p5_differential.py
+/scripts/run_p6_differential.py
+/scripts/run_remediation_check.py
+/scripts/verify_p6_*.py
+/scripts/f01_summary.py
+/scripts/plot_f01_study.py
 
-# Remediation fuzzing uses private local copies of the original seed corpora.
-# Logs can contain byte dictionaries derived from those inputs; keep only
-# command/statistics/hash summaries in reviewable packaging.
-/audit/remediation/core/final-validation/*-corpus/
-/audit/remediation/core/final-validation/*-artifacts/
-/audit/remediation/core/final-validation/fuzz_*/stderr.log
-
-# Local project prompts
+# Local project prompts and profile
 /*[Pp][Rr][Oo][Mm][Pp][Tt]*.[Mm][Dd]
-
-# Historical source archives embed local-only project prompts. Keep the original
-# bytes locally for audit reproduction; see docs/report/PUBLIC_PACKAGING.md.
-/audit/independent-20261027T041900Z/final-source.tar
-/audit/independent-20261027T041900Z/initial/source-snapshot.tar
-
-# Local forensic career profile.
 /PROJECT_PROFILE.md
+/docs/readme/README.md
+/docs/readme/replay-comparison-provenance.json

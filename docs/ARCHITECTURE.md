@@ -1,6 +1,6 @@
 # TipIndex architecture overview
 
-A one-minute map of the design. Results and the full study are under [report/](report/REPORT.md). Code uses the name `tiplog` (namespace `tiplog`).
+A one-minute map of the design. Results and method: [../README.md](../README.md), [METHODOLOGY.md](METHODOLOGY.md). Code uses the name `tiplog` (namespace `tiplog`).
 
 ## Overview
 
@@ -83,7 +83,7 @@ Python (`py/tiplog_py/`) holds the ITCH converter, trace writer, analysis and fi
 
 ## Storage-layout optimizer
 
-Offline. It models cutting each symbol's topic tree into connected stores under a store budget. `mask_dp` (class-mask dynamic programming) is checked against exhaustive `enumerate` on 10,000 random trees with 0 mismatches; `km_min`/`km_max` are independent greedy threshold heuristics. It reports modeled read bytes only; no disk I/O is measured. See [report/results_layout.md](report/results_layout.md).
+Offline. It models cutting each symbol's topic tree into connected stores under a store budget. `mask_dp` (class-mask dynamic programming) is checked against exhaustive `enumerate` on 10,000 random trees with 0 mismatches; `km_min`/`km_max` are independent greedy threshold heuristics. It reports modeled read bytes only; no disk I/O is measured.
 
 ## Correctness architecture
 
@@ -98,4 +98,4 @@ Offline. It models cutting each symbol's topic tree into connected stores under 
 
 ## Where to go deeper
 
-[report/REPORT.md](report/REPORT.md), and the headers [engine.hpp](../src/tiplog/engine/engine.hpp), [ring.hpp](../src/tiplog/ring/ring.hpp), [index.hpp](../src/tiplog/index/index.hpp), [kernels.hpp](../src/tiplog/merge/kernels.hpp).
+The headers [engine.hpp](../src/tiplog/engine/engine.hpp), [ring.hpp](../src/tiplog/ring/ring.hpp), [index.hpp](../src/tiplog/index/index.hpp), [kernels.hpp](../src/tiplog/merge/kernels.hpp).
