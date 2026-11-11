@@ -10,9 +10,7 @@
 
 namespace tiplog::fuzz {
 
-// Independently calculated before P4 implementation. See
-// results/p3/p4-pressure-fixture-plan.md: these expected tails are not copied
-// from the engine or supplied to the capacity-only ScanOracle.
+// Expected tails were calculated independently of the engine and the capacity-only ScanOracle.
 inline void pressure_fixture(MergeKernel kernel = MergeKernel::StdPQ) {
   auto check = [](bool value) { if (!value) std::abort(); };
   EngineConfig config;

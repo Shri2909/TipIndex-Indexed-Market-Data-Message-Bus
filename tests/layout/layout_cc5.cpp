@@ -5,7 +5,6 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
-#include <numeric>
 #include <random>
 #include <sstream>
 #include <stdexcept>
@@ -55,9 +54,8 @@ std::vector<std::string> segments(const std::string& path) {
   return result;
 }
 
-// This oracle splits raw paths into segment vectors and explicitly constructs
-// undirected component adjacency. It uses no production matcher, node incidence,
-// traversal, owner map, or objective evaluator.
+// Oracle: raw paths split into segment vectors with explicit undirected component adjacency;
+// no production matcher, incidence, traversal, owner map or evaluator.
 bool raw_match(const std::string& path, const Consumer& consumer) {
   const auto actual = segments(path);
   for (const auto& term : consumer.terms) {

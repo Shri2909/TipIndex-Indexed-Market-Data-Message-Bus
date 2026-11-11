@@ -1,7 +1,4 @@
-// Negative controls for the invariant checkers adopted from AUD-003.
-// Each checker must reject corrupted state: a no-op checker must fail this suite.
-// Each test corrupts one field of otherwise valid state through the public
-// read-only views (the underlying storage is non-const) and requires a throw.
+// Negative controls: each test corrupts one field of valid state and requires the checker to throw.
 #include "tiplog/engine/engine.hpp"
 
 #include <gtest/gtest.h>

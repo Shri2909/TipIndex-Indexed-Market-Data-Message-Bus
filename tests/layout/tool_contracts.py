@@ -218,6 +218,22 @@ class ToolContracts(unittest.TestCase):
                          "--output", alias(self.trace), success=False)
             self.assertEqual(self.trace.read_bytes(), before)
 
+    def test_layout_missing_inputs_preserve_existing_outputs(self):
+        missing = self.root / "missing.tsv"
+        for name in ("tiplog_layout", "tiplog_layout_runtime"):
+            if not (BIN / name).exists():
+                continue
+            for option in ("--input", "--global-curves"):
+                with self.subTest(tool=name, option=option):
+                    output = self.root / "previous.jsonl"
+                    before = b'{"saved_result":true}\n'
+                    output.write_bytes(before)
+                    failed = self.command(name, option, missing, "--output", output,
+                                          success=False)
+                    self.assertEqual(output.read_bytes(), before)
+                    self.assertIn("cannot open input:", failed.stderr)
+                    self.assertEqual(json.loads(failed.stdout)["status"], "error")
+
     def test_microbenchmark_outputs_preserve_inputs_and_remain_distinct(self):
         for name, source, args in (
                 ("publish_bench", self.mix, ["--mix-file", self.mix]),

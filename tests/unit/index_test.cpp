@@ -3,9 +3,6 @@
 #include <gtest/gtest.h>
 
 #include <algorithm>
-#include <array>
-#include <limits>
-#include <map>
 #include <random>
 #include <utility>
 #include <vector>

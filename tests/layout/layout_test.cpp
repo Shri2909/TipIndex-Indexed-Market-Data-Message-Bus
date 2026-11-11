@@ -43,9 +43,8 @@ Layout numbered_layout(std::size_t nodes, std::uint64_t mask) {
   return result;
 }
 
-// Independent breadth-first connected components, rather than production's
-// evaluators or the threshold residual recurrence. Zero-only components do not
-// count; the hot-node exception requires an actual singleton component.
+// Independent BFS components (not production evaluators). Zero-only components do not count;
+// the hot-node exception needs an actual singleton component.
 struct ThresholdCheck { bool valid{true}; std::uint32_t stores{0}; };
 ThresholdCheck check_threshold_components(const Problem& p, const Layout& cuts,
                                           std::uint64_t threshold_bytes) {

@@ -5,7 +5,6 @@
 #include <array>
 #include <cstdlib>
 #include <gtest/gtest.h>
-#include <limits>
 #include <memory>
 #include <new>
 #include <optional>
@@ -13,9 +12,7 @@
 #include <string_view>
 #include <utility>
 
-// Isolated to this executable. Preparation uses allocations of other sizes in
-// the single-partition fixture below, so this fails the first output append,
-// after its rejecting prefix has actually been traversed.
+// Fails the first output append (identified by allocation size), after the rejecting prefix has been traversed.
 namespace {
 thread_local bool fail_output_append = false;
 thread_local std::size_t failed_allocation_size = sizeof(tiplog::Delivered);
@@ -29,10 +26,8 @@ thread_local std::size_t failed_allocation_size = sizeof(tiplog::Delivered);
     return memory;
   throw std::bad_alloc();
 }
-// std::stable_sort (including GoogleTest's own ordering) may obtain temporary
-// storage through nothrow new and release it through ordinary delete. Keep both
-// scalar allocation forms in this executable's malloc/free family so ASAN can
-// retain its normal allocation/deallocation mismatch checks.
+// stable_sort may take temporary storage via nothrow new and free it via delete; keep both in the
+// malloc/free family so ASAN keeps its allocation/deallocation mismatch checks.
 [[gnu::noinline]] void *operator new(std::size_t bytes,
                                    const std::nothrow_t &) noexcept {
   try {
@@ -41,9 +36,7 @@ thread_local std::size_t failed_allocation_size = sizeof(tiplog::Delivered);
     return nullptr;
   }
 }
-// Keep replacement allocation/deallocation boundaries visible to the compiler;
-// inlining free into STL callers otherwise triggers mismatched-new-delete
-// diagnostics even though this executable pairs its malloc/free replacements.
+// Keep these boundaries visible: inlining free into STL callers triggers mismatched-new-delete.
 [[gnu::noinline]] void operator delete(void *memory) noexcept {
   std::free(memory);
 }
@@ -953,18 +946,16 @@ TEST(PollBudget, V07TailPartialAppendKeepsLegacyCacheAndRetriesUnreadMatch) {
       ASSERT_EQ(out.size(), 1U);
       EXPECT_EQ(out[0].seq, 1U);
       EXPECT_TRUE(std::ranges::equal(out[0].payload, payload(1, 1)));
-      // Tail inherits the pre-existing cache behavior on exceptions: the
-      // public cache describes its last completed poll, while internal Replay
-      // retains its successfully processed prefix. No PollResult was returned.
+      // Tail keeps the existing exception behavior: the public cache describes the last completed poll,
+      // while internal Replay retains its processed prefix. No PollResult was returned.
       EXPECT_EQ(tail.status(), Status::More);
       EXPECT_EQ(tail.checkpoint(), before);
       EXPECT_FALSE(tail.error());
       no_work(tail.poll(PollLimits{8, 0}, out), Status::More);
       EXPECT_EQ(tail.checkpoint(), before);
       EXPECT_TRUE(out.empty());
-      // Retry returns only the previously unread matching record. Legacy and
-      // nullopt Indexed retry the intervening rejection; finite calls committed
-      // it. This checks actual fetches as well as final ordered output.
+      // Retry returns only the unread matching record; legacy/nullopt Indexed retries the intervening
+      // rejection, finite calls already committed it.
       const auto result = tail.poll(PollLimits{8, 3}, out);
       EXPECT_EQ(result.status, Status::Done);
       EXPECT_EQ(result.stop, PollStop::CaughtUp);

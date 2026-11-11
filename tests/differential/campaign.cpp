@@ -90,12 +90,9 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
   engine_config.ring_bytes = capacity;
   engine_config.max_record_bytes = capacity / 2;
   engine_config.index.entries_per_block = 16;
-  // The path grammar has exactly three roots and twelve symbols per root:
-  // 39 path partitions including unused depth-one ancestors. Compiling the
-  // deliberately nonexistent exact term also interns absent and absent/symbol,
-  // giving an independently bounded total of 41 registered partitions.
-  // The approved generic-minimum bound prevents pressure independently of
-  // observed engine retention. V19/F3 cover intentional pressure separately.
+  // Three roots x twelve symbols = 39 path partitions (including unused depth-one ancestors), plus
+  // absent and absent/symbol from the nonexistent exact term: 41 registered partitions. The generic-minimum
+  // bound prevents pressure independent of engine retention; V19/F3 cover pressure separately.
   engine_config.index.blocks = index::Index::sizing_blocks(capacity, 16, 16, 41);
   Engine engine(engine_config);
   ref::ScanOracle oracle({capacity, capacity / 2});
@@ -206,9 +203,7 @@ void one_seed(const Config &config, std::uint64_t seed, Result &result) {
             after = random() % (upper + 1);
             break;
           default:
-            // Most opens should have retained work. Keep the expired/future/
-            // empty cases above, but sample valid checkpoints independently
-            // from the oracle's retained interval as well.
+            // Most opens should have retained work; sample valid checkpoints independently of the oracle interval.
             after = oracle.tail_seq() - 1 +
                     random() % (oracle.head_seq() - oracle.tail_seq() + 1);
             break;

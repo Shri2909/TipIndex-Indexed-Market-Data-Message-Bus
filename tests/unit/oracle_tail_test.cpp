@@ -1,6 +1,5 @@
 #include "oracle_tail.hpp"
 #include <gtest/gtest.h>
-#include <limits>
 namespace tiplog::ref {
 namespace {
 SubscriptionSpec exact() { return {{{Term::Exact, "m/A/event"}}}; }

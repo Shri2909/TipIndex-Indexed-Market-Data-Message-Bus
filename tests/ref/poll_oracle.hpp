@@ -112,9 +112,8 @@ class PollOracleTail {
         replay(oracle, spec_, after, indexed, registered) {
     status = replay.status; checkpoint = replay.checkpoint; error = replay.error;
   }
-  // On each new range Auto may choose a different execution mode. The harness
-  // uses explicit Scan/Indexed for interleaved tails; Auto is covered by Replay
-  // campaigns and deterministic Tail tests independently of this model.
+  // Auto may choose a different mode per range, so interleaved tails use explicit Scan/Indexed;
+  // Auto is covered by Replay campaigns and Tail tests.
   PollExpected poll(std::size_t outputs, std::optional<std::uint64_t> cap,
                     bool indexed, const std::set<std::string>& registered) {
     PollExpected answer{status, PollReason::NoWork, 0, {}};

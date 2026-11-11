@@ -121,9 +121,7 @@ extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t* data, std::size_t size
   config.ring_bytes = capacity;
   config.max_record_bytes = std::min(capacity / 2, std::size_t{256});
   config.ckpt_log2 = 2;
-  // Independently sufficient for these registered partitions, including B=1.
-  // The separate fixture exercises true pressure; this random branch keeps the
-  // oracle's independent capacity-retention model unchanged.
+  // Sufficient for these partitions, including B=1; true pressure is covered by the separate fixture.
   config.index.entries_per_block = 1U << ((configuration >> 3U) % 3U);
   config.index.blocks = static_cast<std::uint32_t>(capacity / 16 + 64);
   config.index.sweep_evictions = 7;

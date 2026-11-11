@@ -2,7 +2,6 @@
 
 #include <gtest/gtest.h>
 
-#include <array>
 #include <limits>
 #include <random>
 #include <stdexcept>

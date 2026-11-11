@@ -4,8 +4,6 @@
 #include <algorithm>
 #include <array>
 #include <gtest/gtest.h>
-#include <limits>
-#include <optional>
 
 namespace tiplog {
 namespace {
@@ -78,8 +76,8 @@ TEST(EngineIndex, V18RecycledBlockCannotServeUnreadCursor) {
   }
 }
 TEST(EngineIndex, V18ConsumedRecycledBlockReseeksStillRetainedCheckpoint) {
-  // B=1: seq1's block is freed by capacity eviction, but the unread seq2
-  // checkpoint remains retained. A stale consumed block must not be advanced.
+  // B=1: seq1's block is freed by capacity eviction but the unread seq2 checkpoint stays retained;
+  // a stale consumed block must not be advanced.
   Engine e(config(64, 8, 1));
   const auto a = e.intern("itch/A/add");
   const auto sub = e.compile(subtree("itch/A"));

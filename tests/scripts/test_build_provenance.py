@@ -40,7 +40,7 @@ def build_tree(root, preset='release'):
 
 
 def test_snapshot_exact_identity_and_sanitized_configuration(tmp_path):
-    directory, binary = build_tree(tmp_path)
+    _, binary = build_tree(tmp_path)
     snapshot = provenance.capture_build(tmp_path, 'release', CPP)
     assert snapshot['schema'] == provenance.SCHEMA
     assert snapshot['compiler']['id'] == 'GNU' and snapshot['compiler']['version'] == '15.2.0'
