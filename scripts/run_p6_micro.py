@@ -104,10 +104,8 @@ def lines(path: Path) -> list[dict]:
 
 def verify_block(directory: Path, block: dict, repetitions: int) -> dict:
     """Check each invocation; bulk GBench rows do not identify calibration."""
-    errors, checks = [], 0
+    errors = []
     def check(condition, label):
-        nonlocal checks
-        checks += 1
         if not condition:
             errors.append(label)
     raw = json.loads((directory / 'gbench.json').read_text())

@@ -112,14 +112,18 @@ def build_info() -> dict[str, object]:
 
 
 def git_info() -> dict[str, object]:
-    # The .git directory belongs to the host and must never be initialized or changed.
     metadata = ROOT / ".tiplog-git"
+    managed = metadata.is_dir()
+    if not managed:
+        metadata = ROOT / ".git"
+    # Explicit metadata accepts .git pointer files and prevents parent discovery
+    # when project metadata is missing or invalid. Managed .git stays untouched.
     base = ["git", "--no-optional-locks", f"--git-dir={metadata}", f"--work-tree={ROOT}"]
     sha = run(base + ["rev-parse", "--verify", "HEAD"])
     status = run(base + ["status", "--porcelain=v1", "--untracked-files=normal"])
     return {
         "metadata": str(metadata),
-        "managed_metadata_preserved": str(ROOT / ".git"),
+        "managed_metadata_preserved": str(ROOT / ".git") if managed else None,
         "head": sha,
         "status": status,
         "sha": str(sha["stdout"]).strip() if sha["returncode"] == 0 else None,

@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import numpy as np
 
-from tiplog_py.analysis.summarize import build as analyze, field
+from tiplog_py.analysis.summarize import build as analyze
 
 
 def _config(item, *names, default=None):
@@ -65,13 +65,11 @@ def _axes(count, *, columns=3, width=4.7, height=3.5):
 def _save(figure, output, name, *, status_note=""):
     bottom = .025
     if figure._suptitle is not None:
-        # A percentage offset puts the title inside the first panel on tall
-        # multi-panel figures. Keep a fixed six-point top inset instead.
+        # A percentage offset overlaps the first panel on tall figures; use a fixed 6pt inset.
         figure._suptitle.set_y(1 - 6 / (figure.get_figheight() * 72))
         figure._suptitle.set_verticalalignment("top")
     if status_note:
-        # Reserve space for the complete footer, including on short figures.
-        # Existing line breaks remain intentional; wrapping changes no text.
+        # Reserve space for the complete footer; existing line breaks are intentional.
         width = max(30, int(figure.get_figwidth() * 72 * .98 / (7 * .6)))
         footer = "\n".join(textwrap.fill(line, width=width, break_long_words=False,
                                       break_on_hyphens=False) for line in status_note.splitlines())
@@ -355,12 +353,9 @@ def build(rows_path: Path, output: Path, *, seed=20191230, summary_path=None, ev
     artifacts += _save(figure, output, "F11_many_readers_cpu", status_note=_status_note(t2) + " Publisher paused during recovery.")
     coverage["F11"] = sorted(set(used))
 
-    # F12: retain every generator/cache stratum and separate all eight arms
-    # inside each categorical breadth/selectivity cell. Offsets are display
-    # positions only; neither true coordinates nor paired ratios are modified.
+    # F12: offsets only separate arms within a cell; true coordinates and ratios are unchanged.
     t3 = experiments["T3"]
-    # Config summaries keep comparison identities below even when no ratio is
-    # eligible; callers can inspect the explicit incomplete_pairs records.
+    # Config summaries keep comparison identities even when no ratio is eligible.
     facets = _facet(t3, lambda item: f"P={_config(item, 'P', 'partitions')}; Zipf={_config(item, 'Z', 'zipf', 'zipf_s')}; L={_config(item, 'L', 'run_length')}; {_cache(item)}")
     figure, axes = _axes(len(facets))
     used = []
@@ -371,8 +366,7 @@ def build(rows_path: Path, output: Path, *, seed=20191230, summary_path=None, ev
         finite_ratios.extend(point["ratio"] for point in panel["points"] if point["ratio"] is not None)
         panel_points.append(dict(panel, label=label))
     if not finite_ratios:
-        # All-failure experiments remain a real result; explicitly display their
-        # unavailable paired ratios rather than fabricating a numeric heatmap.
+        # All-failure experiments stay a real result: show unavailable ratios, no fake heatmap.
         limit = 1.0
     else:
         limit = max(1.0, max(abs(math.log2(value)) for value in finite_ratios))
@@ -437,9 +431,7 @@ def build(rows_path: Path, output: Path, *, seed=20191230, summary_path=None, ev
                 base += values
             for aliases in slots:
                 right.plot(xs, [_required_metric(item, *aliases)["median"] for item in selected], marker="o", label=aliases[0].removesuffix("_entries"))
-            # The separately measured allocator boundary is not a portable
-            # component of Engine::memory. Show it only when an actual linked
-            # process measurement is present, preserving signed observations.
+            # The allocator boundary is not part of Engine::memory; show only a linked measurement.
             if all(_metric(item, "observed_allocator_overhead_bytes") is not None for item in selected):
                 left.plot(labels, [_memory(item, "observed_allocator_overhead_bytes") / 2 ** 20 for item in selected],
                           color="black", marker="x", linestyle="--", label="allocator delta (separate process boundary)")

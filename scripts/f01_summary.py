@@ -55,9 +55,8 @@ def fixture(n, seed, case, shape, k, stride):
     require(ring_bytes <= 128 << 20, 'independent fixture ring exceeds resource cap')
     checkpoint_bytes = (ring_bytes//4096+2)*8
     topics_bytes = (k+5)*4096
-    # The declared pool policy reserves packed blocks plus two per possible
-    # partition and one spare. The preflight counts 32-byte metadata, 1024 u32
-    # entries, one sealed byte and a 16-byte heap node per block.
+    # Pool policy: packed blocks plus two per possible partition and one spare; per block
+    # 32B metadata, 1024 u32 entries, one sealed byte and a 16B heap node.
     blocks = (ring_bytes+16383)//16384+2*(k+5)+1
     pool_bytes = blocks*(32+4*1024+1+16)
     require(ring_bytes+checkpoint_bytes+pool_bytes+(k+5)*128+topics_bytes <= 128 << 20,

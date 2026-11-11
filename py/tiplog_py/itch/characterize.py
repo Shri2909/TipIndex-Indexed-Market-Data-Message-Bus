@@ -135,12 +135,7 @@ def table_paths(directory, prefix):
 
 
 def write_tables(stats: Statistics, directory: str | Path, prefix: str, *, destinations=None):
-    """Save L1 inputs; record_bytes = align8(16+payload), excluding ring PAD.
-
-    raw b counts active consumers; effective b combines identical nonempty match
-    masks for complexity reporting only. It does not silently authorize a P7
-    solver optimization. W3's random-100 basket uses a recorded deterministic seed.
-    """
+    """Save L1 inputs; record_bytes = align8(16+payload), excluding ring PAD."""
     import random
 
     directory = Path(directory)

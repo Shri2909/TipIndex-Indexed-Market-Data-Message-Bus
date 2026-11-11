@@ -36,13 +36,7 @@ def empirical_mix(path: Path) -> list[tuple[int, int]]:
 
 def schedule(*, records: int, partitions: int, zipf: float, run_length: int,
              seed: int, mix: list[tuple[int, int]]):
-    """Returns compact arrays and synthetic bytes; each call is a fresh schedule.
-
-    RNG order: first/switch→owner, event, payload type; the first row has no
-    switch draw. Switches force a different owner; a stationary circle coupling
-    preserves the Zipf marginal while giving actual owner runs geometric mean L.
-    Events have probabilities .01/.09/.90. Bounded draws use rejection.
-    """
+    """Compact arrays and synthetic bytes. RNG order: owner (switch), event, payload type; first row has no switch draw."""
     if records < 0 or partitions < 1 or run_length < 1 or not math.isfinite(zipf) or zipf < 0:
         raise ValueError('invalid synthetic schedule')
     rng = SplitMix64(seed)

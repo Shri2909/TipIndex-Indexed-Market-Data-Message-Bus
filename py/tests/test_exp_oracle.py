@@ -1,6 +1,5 @@
 """Meaningful independent oracle vectors, retention and experiment provenance."""
 import hashlib
-import json
 from pathlib import Path
 import random
 import struct

@@ -161,11 +161,7 @@ def make_plan(config: dict, *, training=False, pilot=False) -> list[dict]:
 
 
 def write_term_dictionary(path: Path, rows: list[dict]) -> dict[str,str]:
-    """Store each exact subscription string once; request aliases reduce disk use.
-
-    This changes only the request transport. The independent oracle and config
-    identities continue to use the full original subscription terms.
-    """
+    """Store each subscription string once and alias it by digest in requests."""
     aliases = {row['terms']:hashlib.sha256(row['terms'].encode()).hexdigest() for row in rows}
     reverse = {identity:terms for terms,identity in aliases.items()}
     if len(reverse) != len(aliases): raise ValueError('subscription alias hash collision')

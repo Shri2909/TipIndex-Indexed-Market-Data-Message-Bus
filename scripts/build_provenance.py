@@ -190,11 +190,7 @@ def _required_flags(actual, required, *, sanitizer):
 
 
 def validate_configuration(snapshot, root, preset):
-    """Require actual preset configuration, including compiler instrumentation.
-
-    Recording a directory named ``asan-ubsan`` and setting ASAN_OPTIONS alone
-    cannot establish that the compiled project code contains sanitizer checks.
-    """
+    """Require the real preset configuration; a directory name or ASAN_OPTIONS alone proves nothing."""
     root = Path(root).resolve()
     if preset not in PRESETS or snapshot.get('schema') != SCHEMA or snapshot.get('preset') != preset:
         raise ValueError('unknown or mismatched build configuration preset')

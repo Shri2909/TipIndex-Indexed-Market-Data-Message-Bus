@@ -20,7 +20,7 @@ def time_ns(value):
     else:
         try:
             hours, minutes, seconds = value.split(":")
-            whole_seconds, dot, fraction = seconds.partition(".")
+            whole_seconds, _, fraction = seconds.partition(".")
             if len(fraction) > 9 or (fraction and not fraction.isdecimal()):
                 raise ValueError
             hour, minute, second = int(hours), int(minutes), int(whole_seconds)

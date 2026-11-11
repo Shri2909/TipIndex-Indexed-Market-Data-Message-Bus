@@ -27,12 +27,7 @@ def frequency_sidecar(reference, *, source_path, evidence_root=None):
 
 
 def hydrate_noise(row: dict, *, source_path: Path, cache: dict, evidence_root=None) -> None:
-    """Read final frequency sidecars without rewriting append-only raw rows.
-
-    Micro observations cannot map every GBench repetition to a unique adaptive
-    invocation. A matched block/attempt is therefore flagged conservatively if
-    any of its observed endpoints is flagged. Missing evidence remains unknown.
-    """
+    """Read frequency sidecars without rewriting raw rows; a block/attempt is flagged if any endpoint is."""
     recorded = isinstance(row.get("noise_flagged"), bool)
     if recorded and (evidence_root is None or not row.get("frequency_flags_reference")):
         row.setdefault("noise_observation_status", "recorded-in-row")
@@ -246,12 +241,7 @@ def summarize_rows(rows: list[dict], *, seed=DEFAULT_SEED) -> dict:
 
 
 def paired_comparisons(rows: list[dict], *, seed=DEFAULT_SEED, metric="cpu_ns") -> list[dict]:
-    """Compare Scan to each other arm only when every pairing is complete/ok.
-
-    A failure makes the ratio unavailable, while ordinary successful-arm timing
-    summaries remain in summarize_rows. This prevents fast expiry errors from
-    appearing as a speedup and prevents an implicit selection of convenient pairs.
-    """
+    """Compare Scan to each other arm only when every pairing is complete and ok."""
     groups = defaultdict(lambda: defaultdict(list))
     for row in rows:
         if not row.get("warmup", False) and row.get("comparison_id") is not None:
@@ -306,13 +296,7 @@ def paired_comparisons(rows: list[dict], *, seed=DEFAULT_SEED, metric="cpu_ns") 
 def t2_amortized(replay_cpu_ns: float, publish_on_cpu_ns: float,
                  publish_off_cpu_ns: float, market_seconds: float, *,
                  publish_market_seconds: float | None = None) -> dict:
-    """Add actual writer CPU per market second once to the whole reader cohort.
-
-    The signed observed delta is retained; negative/noisy deltas are not clamped.
-    The publisher arms must use the same actual window and the reader backlog
-    must belong to that trace. Their durations can differ: divide each measured
-    CPU contribution by its own market duration before adding the rates.
-    """
+    """Add writer CPU per market second once to the reader cohort; negative deltas are not clamped."""
     values = (replay_cpu_ns, publish_on_cpu_ns, publish_off_cpu_ns, market_seconds)
     if not all(math.isfinite(value) for value in values) or any(value < 0 for value in values[:3]) or market_seconds <= 0:
         raise ValueError("T2 requires nonnegative finite CPU times and positive market duration")

@@ -5,7 +5,6 @@ import the C++ engine or its reference oracle. A compact disk-backed NumPy index
 bounds RAM for the 32.8M-record trace; no message-level cache is a deliverable.
 """
 from __future__ import annotations
-from dataclasses import dataclass
 from bisect import bisect_left
 import hashlib
 import json
@@ -14,7 +13,6 @@ import os
 from pathlib import Path
 import struct
 import tempfile
-from typing import Iterable
 import numpy as np
 from .hashes import ByteAccelerator, FNV_OFFSET, sha_file
 
@@ -92,7 +90,7 @@ class TraceIndex:
             raise ValueError('truncated independent trace header')
         self.stream.seek(0)
         self.data = mmap.mmap(self.stream.fileno(), 0, access=mmap.ACCESS_COPY)
-        magic, version, flags, count, offset, length, prefix, reserved = HEADER.unpack_from(self.data)
+        magic, version, flags, count, offset, length, _, reserved = HEADER.unpack_from(self.data)
         if magic != b'TPLTRC\0\1' or version != 1 or flags or any(reserved):
             raise ValueError('invalid independent trace header')
         if offset + length != len(self.data) or offset < 64 or offset % 8:
@@ -269,9 +267,7 @@ class OutcomeOracle:
         self.time_checkpoints = {}
 
     def after_timestamp(self, timestamp: int) -> int:
-        # The complete matrix repeats each backlog across many subscriptions,
-        # arms and caches. Resolve each threshold once, rather than repeatedly
-        # searching a large strided mmap view for identical input.
+        # The matrix repeats each backlog across many arms; resolve each threshold once.
         if timestamp not in self.time_checkpoints:
             self.time_checkpoints[timestamp] = bisect_left(self.rows['ts'], timestamp)
         return self.time_checkpoints[timestamp]
@@ -313,9 +309,7 @@ class OutcomeOracle:
                         out_count=0, seq_sha256=empty_hash(), payload_sha256=empty_hash(),
                         sink64=FNV_OFFSET)
         if readers != 1:
-            # Combined hashes intentionally repeat the output stream for every reader.
-            # This uncommon shortcut is only used for identical-reader diagnostics;
-            # actual T2 contains individual W2 reader requests and readers=1.
+            # Identical-reader diagnostics only: the combined hash repeats the stream per reader.
             raise ValueError('oracle requires one explicit request per reader')
         return base
 

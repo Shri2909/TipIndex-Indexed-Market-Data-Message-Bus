@@ -236,7 +236,7 @@ class Analyzer:
         if row.get("seconds") is not None:
             if isinstance(row["seconds"], bool) or not isinstance(row["seconds"], (int, float)) or not math.isfinite(row["seconds"]) or row["seconds"] < 0:
                 raise ValueError("invalid solver seconds")
-        document, weights, active_weight = self.classes(meta)
+        _, weights, active_weight = self.classes(meta)
         row["active_class_weight_fraction"] = active_weight
         if row.get("active_class_weight") is not None:
             weight_scale = integer(row.get("class_weight_scale"), "class weight scale")

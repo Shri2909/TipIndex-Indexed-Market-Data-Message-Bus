@@ -174,8 +174,9 @@ def git_info() -> dict[str, object]:
     if len(head) != 40:
         raise RuntimeError("an actual Git commit is required before the pilot")
     status = run("status", "--porcelain=v1", "--untracked-files=normal")
+    managed = (ROOT / ".tiplog-git").is_dir()
     return {"sha": head, "dirty": bool(status), "status_porcelain": status,
-            "metadata": ".tiplog-git", "managed_git_preserved": True}
+            "metadata": ".tiplog-git" if managed else ".git", "managed_git_preserved": managed}
 
 
 def provenance() -> dict[str, object]:

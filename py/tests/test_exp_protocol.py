@@ -1,4 +1,3 @@
-import copy
 import json
 from pathlib import Path
 import pytest
@@ -6,7 +5,7 @@ from tiplog_py.exp.audit import acceptance, frequency_flags, pilot_cv
 from tiplog_py.exp.auto import calibrate
 from tiplog_py.exp.matrix import load, arms_for, consumer, w2_readers, write_requests, write_term_dictionary
 from tiplog_py.exp.normalize import normalize_gbench
-from tiplog_py.exp.run import (aggregate_t2, normalize_actual, digest_requests, publish_commit,
+from tiplog_py.exp.run import (aggregate_t2, digest_requests, publish_commit,
                               read_json, measurement_command_ok)
 
 

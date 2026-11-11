@@ -382,7 +382,7 @@ def test_declared_evidence_workspace_controls_relative_sidecar_resolution(tmp_pa
 
 
 def test_journal_rejects_loss_before_its_saved_collection_boundary(tmp_path):
-    rows,payload,marker=journal_fixture(tmp_path)
+    _,payload,marker=journal_fixture(tmp_path)
     payload['collection_offsets']['runs.jsonl']=50
     with pytest.raises(ValueError,match='committed prefix is shorter'):
         publish_commit(tmp_path,marker,payload,{'completed_processes':[]},{})

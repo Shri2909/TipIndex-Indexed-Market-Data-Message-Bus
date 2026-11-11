@@ -18,7 +18,7 @@ def calibrate(rows: list[dict], config: dict, output: Path) -> dict:
     for maximum in config['max_partitions_candidates']:
         for fraction in config['max_fraction_candidates']:
             total = 0.0
-            for comparison, group in sorted(groups.items()):
+            for _, group in sorted(groups.items()):
                 if any(row['status'] != 'ok' for row in group):
                     raise ValueError('training cohort has an incomplete or failed arm')
                 scan = [row for row in group if row['config']['mode'] == 'scan']

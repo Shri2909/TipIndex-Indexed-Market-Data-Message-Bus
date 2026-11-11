@@ -208,11 +208,7 @@ def transport(audit, record, requested, term_hashes, dictionary_path, label):
 
 
 def t2_comparison(request, case, version):
-    """Reconstruct cohort identity independently from the authoritative plan.
-
-    Version 1 is the immutable P6 evidence format. New prepared plans explicitly
-    declare version 2, whose identities also distinguish duration and workload.
-    """
+    """Rebuild cohort identity from the plan; v1 is the frozen P6 format, v2 adds duration and workload."""
     if type(version) is not int or version not in (1, 2):
         raise ValueError('unsupported T2 group identity version')
     base = {"exp": "T2", "R": request["reader_count"], "cache": request["cache_treatment"], "C": request["ring_bytes"], "B": request["block_entries"]}

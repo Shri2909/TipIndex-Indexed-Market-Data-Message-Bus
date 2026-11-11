@@ -14,10 +14,7 @@ import os
 from pathlib import Path
 import platform
 import random
-import resource
-import statistics
 import subprocess
-import sys
 import tempfile
 import time
 from types import SimpleNamespace
@@ -76,9 +73,7 @@ def _collection_identities(path, rows, *, marker, payload, filename):
         raise ValueError(f'{path}: committed prefix is shorter than the pending journal boundary')
     if not path.exists():
         return observed
-    # Legacy markers have no byte boundary: recognize only a contiguous exact
-    # journal prefix, and require all subsequent rows to continue that sequence.
-    # Earlier complete rows remain untouched; an ambiguous tail is never dropped.
+    # Legacy markers have no byte boundary: accept only an exact contiguous journal prefix.
     pending_index = 0
     publication_started = False
     with path.open('r+b') as stream:
@@ -136,11 +131,7 @@ def _collection_identities(path, rows, *, marker, payload, filename):
 
 
 def publish_commit(directory: Path, marker: Path, payload: dict, state: dict, identities: dict):
-    """Finish a saved process journal once; preserve and repair its torn tail.
-
-    Existing committed interior corruption is rejected. A malformed final record
-    is recoverable only if its bytes match the next authoritative pending row.
-    """
+    """Finish a saved journal once; a torn final record is repaired only if it matches the pending row."""
     if payload.get('status') == 'committed': return
     for filename, rows in payload['collections'].items():
         path = directory/filename

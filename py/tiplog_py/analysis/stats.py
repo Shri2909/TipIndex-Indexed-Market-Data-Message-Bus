@@ -28,11 +28,7 @@ def _values(values: Sequence[float], *, positive=False) -> np.ndarray:
 
 
 def median_summary(values: Sequence[float], *, seed: int, resamples=RESAMPLES) -> dict:
-    """Median, IQR, range, n and a seeded 95% percentile-bootstrap interval.
-
-    Quantiles use NumPy's linear interpolation. Missing observations are not
-    accepted; the caller accounts for failures before selecting a metric.
-    """
+    """Median, IQR, range, n and a seeded 95% percentile-bootstrap interval."""
     data = _values(values)
     if not isinstance(resamples, int) or resamples <= 0:
         raise ValueError("resamples must be a positive integer")
@@ -67,14 +63,7 @@ def median_summary(values: Sequence[float], *, seed: int, resamples=RESAMPLES) -
 def paired_ratio(numerator: Mapping[str, Sequence[float]],
                  denominator: Mapping[str, Sequence[float]], *, seed: int,
                  resamples=RESAMPLES) -> dict:
-    """Ratio of medians with entire paired blocks resampled together.
-
-    Each key identifies one independently repeated paired round. A block can
-    contain multiple observations (e.g. a fixed reader cohort); all survive each
-    resampling occurrence. Missing rounds, empty blocks and invalid times are
-    errors, never an implicit unpaired fallback. Failed outcome handling belongs
-    to :func:`summarize.paired_comparisons`, which withholds incomplete ratios.
-    """
+    """Ratio of medians, resampling whole paired rounds; unpaired or empty rounds are errors."""
     if not numerator or set(numerator) != set(denominator):
         raise ValueError("paired arms require identical nonempty round identities")
     if not isinstance(resamples, int) or resamples <= 0:

@@ -40,12 +40,7 @@ def frequency_flags(rows: list[dict]) -> dict:
 
 
 def acceptance(rows: list[dict], *, measured_repetitions=10, expected_manifest=None) -> dict:
-    """Audit controls and exact repetitions for supplied rows.
-
-    expected_manifest maps every expected config_id to its measured repetition
-    labels (e.g. {'arm-a': list(range(10))}). Without it, campaign coverage is
-    explicitly unknown; the independent final campaign audit remains required.
-    """
+    """Audit controls and repetitions; expected_manifest maps config_id to repetition labels."""
     if type(measured_repetitions) is not int or measured_repetitions < 1:
         raise ValueError('measured repetitions must be positive')
     if expected_manifest is not None:

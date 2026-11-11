@@ -36,13 +36,7 @@ def xor_zero_through(value: int) -> int:
 
 
 def sequence_digest(start: int, count: int, initial: int = INITIAL) -> int:
-    """Closed form of h <- rotl(h,7) XOR seq for consecutive uint64 seqs.
-
-After n steps, seq j has rotation 7*(n-1-j). Group j by residue mod64:
-rotations agree inside each group. The sequence's low6 bits are constant in
-that group, while its high58 bits form a consecutive range with O(1) XOR.
-No sequence wrap is permitted, matching the engine's checked sequence contract.
-"""
+    """Closed form of h <- rotl(h,7) XOR seq over consecutive uint64 seqs (O(1) per residue mod 64)."""
     if start < 0 or count < 0 or initial < 0 or initial > MASK or start > MASK:
         raise ValueError("unsigned sequence/count/initial required")
     if count and start + count - 1 > MASK:

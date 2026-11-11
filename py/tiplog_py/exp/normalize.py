@@ -8,12 +8,7 @@ _UNITS = {'ns': 1, 'us': 1000, 'ms': 1000000, 's': 1000000000}
 
 
 def normalize_gbench(raw_json: str | Path | dict, common_metadata: dict) -> list[dict]:
-    """Keep individual repetitions/errors; aggregates cannot replace observations.
-
-    Random interleaving does not make GBench repetition indices paired process
-    rounds. Micro ratios use the explicitly independent-interleaved design.
-    ``common_metadata`` carries actual source/environment/input/audit references.
-    """
+    """Keep individual repetitions and errors; aggregates never replace observations."""
     if isinstance(raw_json, (str, Path)):
         path = Path(raw_json)
         document = json.loads(path.read_text())

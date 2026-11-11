@@ -366,9 +366,7 @@ class Audit:
         for name, expected in summary.get("source_sha256", {}).items():
             if name != "CMakeLists.txt":
                 self.identity(name, expected, f"RC-3 final dependency:{name}")
-        # broad_sources_at_start is a start-of-run snapshot. Its source_scope
-        # excludes the bench tool, which P6 later changed before its campaigns;
-        # bind that tool to the accepted P6 campaign provenance instead.
+        # broad_sources_at_start excludes the bench tool (changed later by P6); it is bound via campaign provenance.
         broad_only = {k: v for k, v in summary.get("broad_sources_at_start", {}).items()
                       if k not in summary.get("source_sha256", {}) and k != "CMakeLists.txt"}
         self.check("RC-3:declared scope excludes the bench tool", "bench tool excluded" in summary.get("source_scope", ""))

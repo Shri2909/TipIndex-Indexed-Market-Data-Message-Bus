@@ -4,11 +4,6 @@ import os
 import tempfile
 
 
-def validate_outputs(source, outputs):
-    """Check both resolved paths and existing inode aliases before any writes."""
-    validate_output_bundle([source], outputs)
-
-
 def validate_output_bundle(sources, outputs):
     """Allow shared read inputs while keeping the entire write set distinct."""
     sources = list(sources)
@@ -34,12 +29,7 @@ def validate_output_bundle(sources, outputs):
 
 
 class OutputTransaction:
-    """Prepare everything first; roll back handled publication failures.
-
-    Each rename is atomic. A whole bundle is not crash-atomic across several
-    renames, so callers must not treat interrupted publication as accepted data.
-    No predictable temporary filename is opened or removed.
-    """
+    """Stage all outputs first; roll back handled failures. A bundle is not crash-atomic."""
     def __init__(self, source, outputs, *, additional_sources=()):
         self.outputs = [Path(path) for path in outputs]
         validate_output_bundle([source, *additional_sources], self.outputs)
