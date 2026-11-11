@@ -24,11 +24,7 @@ Your weekly hours are unknown (DEC-1), so the four-week core is shown at three b
 
 ## 2. Dependency graph (core)
 
-```
-P0 ─► P1 ─► P2 ─► P3 ─► P4 ─► P5 ─► P6 ─► P8
-             │                      ▲
-             └────────► P7 ─────────┘     (P7 needs P1 volumes + P2 registry; independent of P3–P6)
-```
+Order: P0 → P1 → P2 → P3 → P4 → P5 → P6 → P8. P7 needs only the P1 volumes and the P2 registry (independent of P3–P6) and feeds P8 alongside P6.
 
 ---
 
@@ -245,21 +241,14 @@ Passing a gate does **not** authorize the next phase. I report at each phase bou
 
 ## 6. Repository structure and tooling (planned)
 
-```
-/ (this folder)
-├── MASTER_PROJECT_PROMPT.md          (existing; preserved)
-├── docs/plan/                        (this package)       docs/report/ (P6–P8)
-├── CMakeLists.txt  CMakePresets.json  cmake/deps.cmake
-├── src/tiplog/{topics,subs,ring,index,merge,engine,trace,layout}/   storage/ (R1+)
-├── tools/{tiplog_sim,tiplog_walk,tiplog_layout,tiplog_bench}/
-├── tests/{unit,differential,ref,layout,fuzz/{targets,corpus}}/
-├── bench/{micro,e2e}/
-├── py/tiplog_py/{data,itch,binance,trace,exp,analysis,figures}/   py/tests/
-├── configs/ (TOML experiment configs; W0–W3 workloads)
-├── scripts/{env_capture.sh,check_all.sh}
-├── data/{manifest.json, raw/ (ignored), traces/ (ignored)}
-└── results/{env,raw (large ignored),derived,figures}/
-```
+Planned layout (repository root):
+
+- `docs/plan/` (this package), `docs/report/` (P6-P8); `CMakeLists.txt`, `CMakePresets.json`, `cmake/deps.cmake`
+- `src/tiplog/{topics,subs,ring,index,merge,engine,trace,layout}/` (`storage/` in R1+)
+- `tools/{tiplog_sim,tiplog_walk,tiplog_layout,tiplog_bench}/`; `bench/{micro,e2e}/`
+- `tests/{unit,differential,ref,layout,fuzz/{targets,corpus}}/`; `py/tiplog_py/{data,itch,binance,trace,exp,analysis,figures}/` and `py/tests/`
+- `configs/` (TOML experiment configs; W0-W3 workloads); `scripts/{env_capture.sh,check_all.sh}`
+- `data/` (`manifest.json` tracked; `raw/`, `traces/` ignored); `results/{env,raw (large, ignored),derived,figures}/`
 
 **Tooling:**
 - Compilers: GCC 15.2 (primary), Clang 21.1.8 (sanitizers, fuzzing, cross-compiler check).

@@ -1,5 +1,7 @@
 # P7 storage-layout results — tiplog v1.1 / Tier B
 
+Public-checkout note: paths marked **local-only** identify ignored raw inputs or large derived files. The checked-in report tables, figure manifests and protocol records remain available. See [public packaging](PUBLIC_PACKAGING.md) for the boundary and [reproduction instructions](REPRODUCE.md) for restoring local inputs.
+
 Cost, exact-coverage, global-budget and controlled-runtime observations are
 complete and audited. The full analysis reports **214,668 cases, 1,073,340
 method rows and no audit failures**; the controlled DP runtime campaign passed
@@ -45,7 +47,7 @@ feasible. `best-exact` selects solved DP, then solved ENUM. Counts and objective
 values are exact; W3's fractions retain the rational weight scale. Partial
 solver populations are never compared with whole-population totals as if they
 had the same denominator. [Audited summary](../../results/derived/layout-summary.json),
-[case metrics CSV](../../results/raw/P7/layout-claim-metrics.csv),
+case metrics CSV (local-only: `results/raw/P7/layout-claim-metrics.csv`),
 [raw input/output mapping](../../results/p7/analysis-inputs.json),
 [compact report facts](../../results/p7/report-facts.json).
 
@@ -328,7 +330,7 @@ baseline forest budget B=44,504, the best evaluated upper bound is
 307,754,907, so that requested-budget result is not declared exact. H-spec
 W3 at the same beta/budget has bounds 24,430,777,968/5 and 22,432,857,157/5.
 [Audited global summary](../../results/derived/layout-global.json),
-[global raw rows and curves](../../results/raw/P7/global/),
+global raw rows and curves (local-only: `results/raw/P7/global/`),
 [certificate implementation](../../src/tiplog/layout/global.cpp).
 
 ## Validation, provenance and failed-attempt accounting
@@ -440,7 +442,7 @@ more than 10% from it; they are flagged and retained, not filtered. CPU
 frequency was not fixed (no privileged settings), and the laptop was not
 exclusive, so the CIs describe repeat variation on this host, not a
 host-independent runtime. [Per-input summary](../../results/derived/layout-runtime.json),
-[frequency flags](../../results/raw/P7/runtime/frequency-flags.json).
+frequency flags (local-only: `results/raw/P7/runtime/frequency-flags.json`).
 
 ## Figures F14–F18
 
@@ -462,10 +464,10 @@ P1/P6 figures were checked unchanged except for PDF creation timestamps.
 
 | ID | Scoped result | Evidence |
 |---|---|---|
-| L01 | The modeled volume population and all 1,073,340 method rows are accounted for; exact claims exclude capped results. | [Summary](../../results/derived/layout-summary.json), [inputs/raw mapping](../../results/p7/analysis-inputs.json), [case CSV](../../results/raw/P7/layout-claim-metrics.csv) |
-| L02 | Matched-budget modeled costs and consumer trade-offs use identical feasible exact cohorts; neither KM endpoint is universally best. | `exact_cohort_quality` / `exact_cohort_consumer_quality` in [summary](../../results/derived/layout-summary.json), [report facts](../../results/p7/report-facts.json), [case CSV](../../results/raw/P7/layout-claim-metrics.csv) |
-| L03 | Per-method exact coverage and gap distributions retain state/work/representation caps; DP solves 885/900 original synthetic cases. | `exact_coverage`, `comparisons`, `scaling` in [summary](../../results/derived/layout-summary.json), [raw campaign](../../results/raw/P7/studies/campaign.json) |
+| L01 | The modeled volume population and all 1,073,340 method rows are accounted for; exact claims exclude capped results. | [Summary](../../results/derived/layout-summary.json), [inputs/raw mapping](../../results/p7/analysis-inputs.json), case CSV (local-only: `results/raw/P7/layout-claim-metrics.csv`) |
+| L02 | Matched-budget modeled costs and consumer trade-offs use identical feasible exact cohorts; neither KM endpoint is universally best. | `exact_cohort_quality` / `exact_cohort_consumer_quality` in [summary](../../results/derived/layout-summary.json), [report facts](../../results/p7/report-facts.json), case CSV (local-only: `results/raw/P7/layout-claim-metrics.csv`) |
+| L03 | Per-method exact coverage and gap distributions retain state/work/representation caps; DP solves 885/900 original synthetic cases. | `exact_coverage`, `comparisons`, `scaling` in [summary](../../results/derived/layout-summary.json), raw campaign (local-only: `results/raw/P7/studies/campaign.json`) |
 | L04 | The separate-partition worked example reproduces all three required waste values and finite threshold endpoints. | [Computed example](../../results/p7/worked-example.json), [test/source map](../../results/p7/p7-source-map.md) |
-| L05 | H-flat W0 baseline waste is zero at all three beta values; cross-hierarchy results are sensitivity comparisons. | `quality` / `hierarchy_sensitivity` in [summary](../../results/derived/layout-summary.json), [case CSV](../../results/raw/P7/layout-claim-metrics.csv) |
-| L06 | Global certification requires complete terms for every partition; the sweep has 126 certified points and preserves requested-budget bound gaps. | [Global summary](../../results/derived/layout-global.json), [raw global rows](../../results/raw/P7/global/), [global implementation](../../src/tiplog/layout/global.cpp) |
+| L05 | H-flat W0 baseline waste is zero at all three beta values; cross-hierarchy results are sensitivity comparisons. | `quality` / `hierarchy_sensitivity` in [summary](../../results/derived/layout-summary.json), case CSV (local-only: `results/raw/P7/layout-claim-metrics.csv`) |
+| L06 | Global certification requires complete terms for every partition; the sweep has 126 certified points and preserves requested-budget bound gaps. | [Global summary](../../results/derived/layout-global.json), raw global rows (local-only: `results/raw/P7/global/`), [global implementation](../../src/tiplog/layout/global.cpp) |
 | L07 | Under the quiescence-checked controlled protocol, MASK-DP solved 885/900 synthetic inputs in all ten processes, with b=4/K=4 medians from 12.2 µs (n=5) to 1.63 ms (n=1,000); 15 inputs remain capped. | [Runtime campaign](../../results/p7/runtime-campaign.json), [quiescence](../../results/p7/runtime-quiescence.json), [per-input summary](../../results/derived/layout-runtime.json), [F16](../../results/figures/F16_layout_gaps_scaling.png) |

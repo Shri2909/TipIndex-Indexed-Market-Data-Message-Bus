@@ -15,26 +15,7 @@
 
 **The problem.** The engine stores a stream of messages. Each message belongs to one topic, and topics form a tree:
 
-```
-itch
-├── AAPL                      ← partition (one per stock)
-│   ├── add
-│   │   ├── anon              ← "A" messages: new anonymous order
-│   │   └── attributed        ← "F" messages: new order with firm ID
-│   ├── modify
-│   │   ├── executed          ← "E": order filled
-│   │   ├── executed_px       ← "C": filled at a different price
-│   │   ├── cancel            ← "X"
-│   │   ├── delete            ← "D"
-│   │   └── replace           ← "U"
-│   ├── trade
-│   │   ├── noncross          ← "P"
-│   │   └── cross             ← "Q": auction print
-│   └── stock/...             ← directory, halts, Reg SHO, LULD …
-├── MSFT …
-└── _market                   ← market-wide events (open/close, circuit breakers)
-    └── system_event
-```
+Topic paths look like `itch/<SYMBOL>/<family>/<type>`: one partition per stock (`itch/AAPL`), with families `add` (`anon` "A", `attributed` "F"), `modify` (`executed` "E", `executed_px` "C", `cancel` "X", `delete` "D", `replace` "U"), `trade` (`noncross` "P", `cross` "Q"), and `stock/...` (directory, halts, Reg SHO, LULD). Market-wide events live under `itch/_market` (e.g. `system_event`).
 
 [Doc] ARCHITECTURE §2.1 derives this tree from the ITCH 5.0 specification's own sections, so an ordinary user would choose it without knowing anything about storage internals.
 
@@ -65,27 +46,11 @@ itch
 
 ## Where P2 sits
 
-```
-         PUBLISH SIDE                                  READ SIDE
- trace file (P1)                              reader: "AAPL book since seq 1000"
-     │                                                   │
-     ▼                                                   ▼
- driver::drive_trace ──publish(path,payload)──►  subs::compile(registry, spec)
-     │                         │                   │  normalize terms
-     │                         ▼                   │  intern roots
-     │              Engine::intern(path)           │  build PartitionFilters
-     │              → topics::Registry ◄──observe──┘  register hooks on Subtree roots
-     │                 (IDs, partitions,
-     │                  local IDs, hooks fire
-     │                  on new topics)
-     ▼                         │
- Tick{budget,paused} ──────────┼──────────►  Engine replay (P3–P5)
-                               ▼               • Scan: sub.matches(topic) per record
-                        ring + index (P3/P4)   • Indexed: one cursor per filter
-                                                 partition, then filter->matches(local_id)
+**Publish side:** the driver reads the trace (P1) and publishes each `(path, payload)` through `Engine::intern(path)` into the `topics::Registry` (IDs, partitions, local IDs; hooks fire on new topics), then hands the consumer a `Tick{budget, paused}`.
 
- Test-only, beside everything:  ref::ScanOracle  (own matcher, own retention model)
-```
+**Read side:** `subs::compile(registry, spec)` normalizes terms, interns roots, builds the `PartitionFilter`s and registers observer hooks on Subtree roots. Engine replay (P3–P5) then uses it two ways: Scan calls `sub.matches(topic)` per record; Indexed opens one cursor per filter partition and tests `filter->matches(local_id)`.
+
+**Test-only, beside everything:** `ref::ScanOracle` (own matcher, own retention model).
 
 ## What later phases need from P2 [Code]
 

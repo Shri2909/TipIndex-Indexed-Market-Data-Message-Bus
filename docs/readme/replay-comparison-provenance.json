@@ -1,0 +1,66 @@
+{
+  "scope": "Two unchanged historical P6 Scan/Indexed BinHeap CPU comparison rows, selected for README review; not a new measurement or acceptance record.",
+  "source": "results/derived/tip-paired-ratios.csv",
+  "source_sha256": "678ca1b40b1308c7d73372cbba3fa0ddb700563b36a23fb5e74fe10cf865c866",
+  "selection": {
+    "comparison_ids": [
+      "5179c7e3e8879aa3bdaf",
+      "d321fa550ff05fbb5b04"
+    ],
+    "denominator": "indexed/binheap",
+    "metric": "cpu_ns"
+  },
+  "raw_evidence": {
+    "5179c7e3e8879aa3bdaf": [
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep00-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep01-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep02-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep03-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep04-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep05-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep06-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep07-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep08-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep09-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep10-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep11-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep12-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep13-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep14-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep15-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep16-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep17-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep18-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep19-attempt00.jsonl"
+    ],
+    "d321fa550ff05fbb5b04": [
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep00-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep01-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep02-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep03-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep04-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep05-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep06-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep07-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep08-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep09-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep10-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep11-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep12-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep13-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep14-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep15-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep16-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep17-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep18-attempt00.jsonl",
+      "results/raw/P6/campaign-20261024/evaluation/real-C1073741824-B1024/real-C1073741824-B1024-rep19-attempt00.jsonl"
+    ]
+  },
+  "recorded_binary_sha256": "8626525fb5c93e98cb84866a3e987e9954ca203ce8215bc0e3b6a26fb1306b50",
+  "measurement_dates_utc": [
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "source_identity_record": "results/raw/P6/campaign-20261024/evaluation/provenance.json",
+  "local_only_sources": true
+}

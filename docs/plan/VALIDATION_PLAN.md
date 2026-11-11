@@ -1,6 +1,6 @@
 # VALIDATION PLAN — correctness checks, benchmark protocol, figures, reproducibility
 
-Plan version **v1.1** · 2026-10-17 · **P0 plumbing checks passed; P1–P5 jointly authorized and executing in dependency order.** The original refresh performed document/source review and read-only metadata checks only. Actual checks and gate outcomes are recorded in [PROGRESS](PROGRESS.md); commands below remain planned except where that execution record provides results. P6–P8, Tier C and roadmap validation remain outside this authorization. §13 adds the review's later regression cases.
+Plan version **v1.1** · 2026-10-17. Status: the P0–P8 validation was executed and accepted; outcomes are in [PROGRESS](PROGRESS.md), [REPORT](../report/REPORT.md) and [REPRODUCE](../report/REPRODUCE.md). Tier C and roadmap validation were not authorized. §13 holds the later regression cases.
 
 ## 1. Principles
 
@@ -139,9 +139,9 @@ The `release` preset is also built with Clang to check RC-3.
 
 **Recorded in every run:** CPU model, kernel, governor, `no_turbo`, SMT state, `perf_event_paranoid`, ASLR mode, power source, compiler versions, preset, flags, git SHA (+ dirty flag), RAM, free disk, load average.
 
-1. **Pinning.** Run on **CPU 2** (P-core, max 4.4 GHz) with `taskset -c 2`. Keep its SMT sibling (CPU 3) idle (offline it only if DEC-2 allows). Verify `sched_getcpu()` at the start and end of each run. Never let benchmarks run on E-cores (4–11), which are a different microarchitecture.
+1. **Pinning.** Run on **CPU 2** (P-core, max 4.4 GHz) with `taskset -c 2`. Keep its SMT sibling (CPU 3) idle (the scripts leave it idle rather than offlining it). Verify `sched_getcpu()` at the start and end of each run. Never let benchmarks run on E-cores (4–11), which are a different microarchitecture.
 2. **ASLR.** Attempt per-process `setarch x86_64 -R` only if allowed. Sandboxes may reject personality changes; record failure and retain a documented ASLR-on regime rather than requiring a system setting change.
-3. **Frequency.** If DEC-2 allows, set the `performance` governor on CPUs 2–3 and optionally `no_turbo=1` for the session. Otherwise record `powersave` and accept the extra variance, which is then reported.
+3. **Frequency.** Scripts only record governor/turbo/SMT and never change them (the accepted study ran at the default `powersave` governor with turbo). If DEC-2 allows, `performance` plus optionally `no_turbo=1` lowers variance but caps clocks and breaks comparability with the study; steps, trade-offs and revert are in [REPRODUCE.md section 12](../report/REPRODUCE.md#12-benchmark-environment-and-cpu-tuning). Otherwise record `powersave` and report the extra variance.
 4. **Noise detection.** Sample `scaling_cur_freq` of CPU 2 before and after every run. Flag runs deviating >10% from the session median; **flagged runs are kept and reported**, not deleted. Require AC power. Idle 60 s between blocks.
 5. **Pilot (P6.2).** Run 30 repetitions of one M1 and one T1 configuration and compute the coefficient of variation. If CV > 3% (M1) or > 5% (T1), raise repetitions or fix the environment, and record the decision.
 
@@ -338,42 +338,40 @@ work{…}, counters{…} | null, out_count, out_digest, oracle_digest
 
 Raw files are append-only. Large raw files stay untracked; summaries and figures are tracked.
 
-## 11. Reproduction commands (P0 executed; later phases PLANNED)
+## 11. Reproduction commands
 
-P0's four preset pipelines, Python tests, environment capture and supplementary fallback/Clang plumbing checks passed; see [actual commands and evidence](PROGRESS.md#phase-0-execution--2026-10-17-asiakolkata). LeakSanitizer in this workspace requires running outside sandbox tracing; its checks remain enabled. No V/M/T/L experiment is represented as passed by these plumbing checks.
+The executed, current commands with their saved records are in [REPRODUCE.md](../report/REPRODUCE.md); this section is the condensed protocol view. Binaries are built directly under `build/<preset>/`. LeakSanitizer needs a runtime without `ptrace` tracing; its checks stay enabled. Plumbing checks do not represent any V/M/T/L experiment as passed.
 
 ```bash
-# P0 — environment and build
+# P0: environment capture, build, tests (all four presets, then pip check and pytest)
 scripts/env_capture.sh > results/env/$(date -u +%Y%m%dT%H%M%SZ).json
-cmake --preset release && cmake --build --preset release -j8 && ctest --preset release
-cmake --preset asan-ubsan && cmake --build --preset asan-ubsan -j8 && ctest --preset asan-ubsan
-scripts/check_all.sh                                   # every preset + tests
+scripts/check_all.sh
+cmake --preset release && cmake --build --preset release --parallel 4 && ctest --preset release
 
-# P1 — data (requires network; about 3.5 GB download)
-.venv/bin/python -m tiplog_py.data.fetch --source nasdaq --file 12302019.NASDAQ_ITCH50.gz --dest data/raw/
+# P1: data (about 3.5 GB download) and trace conversion
+PYTHONPATH=py .venv/bin/python -m tiplog_py.data.fetch --source nasdaq --file 12302019.NASDAQ_ITCH50.gz --dest data/raw/
 gzip -t data/raw/12302019.NASDAQ_ITCH50.gz && sha256sum data/raw/12302019.NASDAQ_ITCH50.gz
-set -o pipefail  # bash: propagate decompressor failures
-gzip -dc data/raw/12302019.NASDAQ_ITCH50.gz | wc -c    # exact full-stream bytes only if pipeline succeeds
-.venv/bin/python -m tiplog_py.itch.measure data/raw/12302019.NASDAQ_ITCH50.gz --out results/data/itch_20191230_counts.json
-./build/release/tools/tiplog_walk data/raw/12302019.NASDAQ_ITCH50.gz --out results/data/itch_20191230_counts_cpp.json
-.venv/bin/python -m tiplog_py.itch.convert data/raw/12302019.NASDAQ_ITCH50.gz --hierarchy spec \
-       --window 09:30:00-10:00:00 --out data/traces/itch_20191230_0930_1000_spec.mdt
+bash -o pipefail -c 'gzip -dc data/raw/12302019.NASDAQ_ITCH50.gz | build/release/tiplog_walk - --out results/data/itch_20191230_counts_cpp.json'
+PYTHONPATH=py .venv/bin/python -m tiplog_py.itch convert data/raw/12302019.NASDAQ_ITCH50.gz \
+  --output data/traces/itch_20191230_0930_1000_spec.mdt --also-flat data/traces/itch_20191230_0930_1000_flat.mdt \
+  --counts-output results/data/itch_20191230_counts.json --volumes-dir results/data --start 09:30:00 --end 10:00:00
 
-# P3–P5 — fuzzing on E-cores
-taskset -c 4-11 ./build/fuzz/fuzz_engine_ops -max_total_time=1800 -print_final_stats=1 tests/fuzz/corpus/ops
+# P3-P5: fuzzing on an E-core (gate: >=1800 s, resumable segments)
+.venv/bin/python scripts/run_fuzz_gate.py --phase p6 --label F3 --binary build/fuzz/fuzz_engine_ops \
+  --corpus tests/fuzz/corpus/ops_p6_prefix --cpu 6 --seconds 1800 --segment-seconds 120
 
-# P5–P6 — benchmarks on one P-core
-taskset -c 2 setarch x86_64 -R ./build/release/bench/merge_bench \
-  --benchmark_repetitions=15 --benchmark_enable_random_interleaving=true \
-  --benchmark_min_warmup_time=0.2 --benchmark_out=results/raw/M1/<run_id>/gbench.json
-.venv/bin/python -m tiplog_py.exp.run configs/T1.toml --reps 10 --cpu 2
-.venv/bin/python -m tiplog_py.exp.run configs/T2.toml --reps 10 --cpu 2
+# P5-P6: benchmarks on one P-core (hash-locked runners; see REPRODUCE.md Status and section 12)
+taskset -c 2 setarch x86_64 -R build/release/merge_bench \
+  --benchmark_repetitions=15 --benchmark_enable_random_interleaving=true --benchmark_min_warmup_time=0.2
+.venv/bin/python -m tiplog_py.exp.run configs/P6/matrix.toml --suite pilot --prepare --directory results/raw/P6/prepared-pilot
+.venv/bin/python scripts/run_p6_campaigns.py --run --directory results/raw/P6/campaign-20261024 --quiescence-record <record.json>
 
-# P7 — optimizer
-./build/release/tools/tiplog_layout --volumes results/data/itch_20191230_volumes.csv \
-  --workload configs/W2.toml --methods base,km-min,km-max,dp --budget baseline --out results/raw/L2/<run_id>/
-# P6–P8 — figures
-.venv/bin/python -m tiplog_py.figures.build --all
+# P7: optimizer (JSONL case input; see build/release/tiplog_layout --help)
+.venv/bin/python -m tiplog_py.layout.inputs --output-dir results/raw/P7/inputs --metadata results/raw/P7/inputs/metadata.json
+.venv/bin/python scripts/run_p7_studies.py --manifest results/p7/input-manifest.json --output results/raw/P7/studies --cpu 2
+
+# P6-P8: figures
+PYTHONPATH=py .venv/bin/python -m tiplog_py.figures.build --all
 ```
 
 ## 12. Claims discipline

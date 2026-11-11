@@ -1,5 +1,7 @@
 # tiplog — technical report
 
+Public-checkout note: paths marked **local-only** identify ignored raw inputs or large derived files. The checked-in report tables, figure manifests and protocol records remain available. See [public packaging](PUBLIC_PACKAGING.md) for the boundary and [reproduction instructions](REPRODUCE.md) for restoring local inputs.
+
 The measurements and gates below describe the accepted P0–P8 source. Subsequent
 audit fixes are recorded in [REMEDIATION.md](REMEDIATION.md); current implementation
 changes do not constitute new controlled performance measurements.
@@ -168,7 +170,7 @@ Full protocol: [results_tip.md, "Measurement and statistics"](results_tip.md).
 ## 7. Results (P6)
 
 All numbers are conditional on the stated configuration; complete tables, every configuration's IQR and
-raw links are in [results_tip.md](results_tip.md), [tip-summary.json](../../results/derived/tip-summary.json)
+raw links are in [results_tip.md](results_tip.md), tip-summary.json (local-only: `results/derived/tip-summary.json`)
 and figures F06–F13.
 
 - **M1 — merge kernels depend on input shape.** At k=64 streams, the loser tree was cheapest for
@@ -178,6 +180,9 @@ and figures F06–F13.
 - **M2 — the index costs the publisher.** With 10,000 uniformly chosen partitions and B=256,
   publishing cost 124.4 ns/message with the index versus 62.3 without; with 1 or 100 partitions the index
   added about 13–14 ns ([F08](../../results/figures/F08_publish_index_cost.png)).
+
+  ![F08: publish CPU ns per message with and without the index, by partition count](../../results/figures/F08_publish_index_cost.png)
+
 - **M3 — block size trades seek against scan.** On all 32.8 M real-window postings, scanning cost fell from
   5.60 ns/entry at B=64 to 3.64 at B=4,096, while seeking was cheapest around B=256–1,024.
 - **T1 — selective recovery wins, broad recovery loses.** At 10:00, 1 GiB ring, B=1,024, 10 s backlog,
@@ -186,6 +191,9 @@ and figures F06–F13.
   BOOK-top1000 reversed it: **0.585 [0.581, 0.593]**. Auto chose Scan there (Scan/Auto 0.983 [0.976, 0.999]).
   Full-stream Indexed falls back to Scan by contract ([F09](../../results/figures/F09_catchup_breadth.png),
   [F10](../../results/figures/F10_replay_work.png)).
+
+  ![F09: recovery CPU by requested subscription breadth for Scan, Indexed and Auto](../../results/figures/F09_catchup_breadth.png)
+
 - **T2 — many readers.** Charging the publisher's index-maintenance delta once to the whole cohort, a single
   reader whose subscription matched nothing lost (Scan/Indexed 0.616), while cohorts of 10, 100 and 1,000
   sequential readers gained 6.3×, 59.7× and 369× (repeat-warm). This is for the assumed sparse W2 reader
@@ -249,6 +257,8 @@ The article's figure (two partitions L and R, joint budget of four stores) repro
 
 So the article's published layout is the largest-threshold end of the plateau, not the minimum for this
 objective; the article's exact procedure cannot be identified from the figure.
+
+![F17: base, largest-threshold and optimal layouts of the article's example](../../results/figures/F17_layout_worked_example.png)
 
 ### 8.4 Results (L2, L3, L5)
 

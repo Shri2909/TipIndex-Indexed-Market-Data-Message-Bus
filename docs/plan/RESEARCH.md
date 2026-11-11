@@ -68,17 +68,7 @@ Source: N. Yang, "Scaling and benchmarking a critical message bus using a new in
 
 The node labels were read from the native-resolution figure images. Units are taken as decimal (MB = 10⁶ B). Binary units would change the ratios slightly but none of the conclusions.
 
-```
-root(0)
-├── L(0)                         ← partition root (two-segment prefix)
-│   ├── A(28.5 MB)               ← internal topic with its own messages
-│   │   ├── a1(10 MB)
-│   │   └── a2(2.72 GB)
-│   └── b(148 KB)
-└── R(0)                         ← partition root
-    ├── R1(0) ── c1(197 B), c2(29.3 KB)
-    └── R2(0) ── d1(10 KB), d2(421 KB)
-```
+Tree (node: own message bytes): `root(0)` has two partition roots. `L(0)` contains `A(28.5 MB)` (children `a1(10 MB)`, `a2(2.72 GB)`) and `b(148 KB)`. `R(0)` contains `R1(0)` (children `c1(197 B)`, `c2(29.3 KB)`) and `R2(0)` (children `d1(10 KB)`, `d2(421 KB)`).
 
 - **Before (three-segment rule):** {A,a1,a2}, {L,b}, {R1,c1,c2}, {R2,d1,d2}.
 - **After (figure):** {a2}, {A,a1}, {L,b}, {R,R1,R2,c1,c2,d1,d2}.

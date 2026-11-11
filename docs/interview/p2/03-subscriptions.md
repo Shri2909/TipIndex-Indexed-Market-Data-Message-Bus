@@ -362,18 +362,7 @@ return CompiledSubscription{std::move(state)};
 
 ## Ownership graph
 
-```
-CompiledSubscription ──shared_ptr──► CompiledState  (is-a TopicObserver)
-CompiledSubscription (copy) ─────────┘     │
-Engine Replay::sub_ (copy) ──────────┘     ├── terms, matching, filters
-                                           └── hooks: vector<ObserverHandle>
-                                                       │ weak_ptr
-                                                       ▼
-Registry ──shared_ptr──► ObserverHub { roots: TopicId → [Slot{serial, weak_ptr<TopicObserver>}] }
-                                                       │ weak_ptr (back to CompiledState)
-Registry ──shared_ptr──► Lifetime{alive}  ◄──weak_ptr── CompiledState::identity
-CompiledState ──raw Registry*──► Registry   (dereferenced only if identity alive)
-```
+`CompiledSubscription` copies (user-side, including the engine's `Replay::sub_`) share one `CompiledState` (a `TopicObserver`) through `shared_ptr`. `CompiledState` holds the terms, matching, filters and a vector of `ObserverHandle` hooks; the handles reach the Registry's `ObserverHub` only through `weak_ptr`. `CompiledState` reaches the Registry through a raw pointer, dereferenced only if the Registry's `Lifetime{alive}` token is still alive.
 
 - **There are no `shared_ptr` cycles.** The only strong owners of `CompiledState` are user-side copies of the subscription, including the engine's `Replay`/`Tail` objects (`engine.hpp:104`, `engine.hpp:142`).
 - **When the last copy dies**, `CompiledState` is destroyed, its `hooks` are destroyed, and each handle erases its slot. Tested: `observer_count()` returns to 0.

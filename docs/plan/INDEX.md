@@ -10,7 +10,7 @@ The user subsequently approved the independent audit corrections. That remediati
 | Selected scope/defaults | **Tier B**; 2019-12-30 Nasdaq data only; no privileged benchmark-setting changes; proposed writable repository setup |
 | Planning-stage completion means | The approved Tier B core is implemented and verified. Results: [technical report](../report/REPORT.md); reproduction: [REPRODUCE.md](../report/REPRODUCE.md); evidence per phase in PROGRESS. |
 
-**Workspace inspected before the research refresh.** The master prompt and all seven original planning documents were reviewed; no root PROJECT_PLAN.md was present. The managed `.git` directory could not be used as a repository. The refresh edited planning files only. P0 now uses a separate writable `.tiplog-git` with the original workspace as its worktree; managed metadata is preserved. See [PROGRESS](PROGRESS.md) and [the dated historical review](REVIEW_2026-10-17.md).
+The planning history (workspace review, why `.tiplog-git` is used instead of the managed `.git`) is in [PROGRESS](PROGRESS.md) and [the dated review](REVIEW_2026-10-17.md).
 
 ## Approved core scope
 
@@ -46,18 +46,18 @@ See IMPLEMENTATION_PLAN §1.
 | — | 2026-10-17 changes, evidence, and implementation implications | [REVIEW_2026-10-17.md](REVIEW_2026-10-17.md); appendices in each respective document |
 | — | Full findings/concepts → implementation inventory, including optional and deferred scope | [FINDINGS_TO_IMPLEMENTATION.md](FINDINGS_TO_IMPLEMENTATION.md) |
 | — | Final problem statement, benchmark settings, expected outputs and numerical acceptance criteria | [PROBLEM_STATEMENT_AND_BENCHMARKS.md](PROBLEM_STATEMENT_AND_BENCHMARKS.md) |
-| — | Reusable approval, Phase 0 start and later-phase execution messages; storing the template authorizes nothing | [IMPLEMENTATION_EXECUTION_PROMPT.md](../../IMPLEMENTATION_EXECUTION_PROMPT.md) |
-| — | Single P1–P5 execution message, explicitly including full P1 and automatic continuation after passed gates; template only | [PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md](../../PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md) |
-| — | Single P6–P8 execution message through final core packaging, including any remaining P5 acceptance prerequisite; template only | [PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md](../../PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md) |
+| — | Reusable approval, Phase 0 start and later-phase execution messages; storing the template authorizes nothing | `IMPLEMENTATION_EXECUTION_PROMPT.md` (local-only) |
+| — | Single P1–P5 execution message, explicitly including full P1 and automatic continuation after passed gates; template only | `PHASES_1_TO_5_IMPLEMENTATION_PROMPT.md` (local-only) |
+| — | Single P6–P8 execution message through final core packaging, including any remaining P5 acceptance prerequisite; template only | `PHASES_6_TO_8_IMPLEMENTATION_PROMPT.md` (local-only) |
 
 **Labels used throughout:**
-- [A]: the article states this.
-- [V]: verified from a primary source or probe.
-- [I]: inference.
-- [D]: design choice.
-- [S]: assumption.
-- [H]: hypothesis to test.
-- [Q]: open question.
+- `[A]`: the article states this.
+- `[V]`: verified from a primary source or probe.
+- `[I]`: inference.
+- `[D]`: design choice.
+- `[S]`: assumption.
+- `[H]`: hypothesis to test.
+- `[Q]`: open question.
 
 ## Key findings and design decisions
 

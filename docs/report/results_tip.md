@@ -1,5 +1,7 @@
 # P6 retained-log experiments — tiplog v1.1 / Tier B
 
+Public-checkout note: paths marked **local-only** identify ignored raw inputs or large derived files. The checked-in report tables, figure manifests and protocol records remain available. See [public packaging](PUBLIC_PACKAGING.md) for the boundary and [reproduction instructions](REPRODUCE.md) for restoring local inputs.
+
 Completed artifacts, 2026-10-25 (Asia/Kolkata). All timing campaigns, the final
 saved-output audit, statistical analysis and one-command figure regeneration
 have passed. Numerical summaries are byte-identical across the presentation
@@ -67,7 +69,7 @@ isolation parameters concerned CPUs4–5, not benchmark CPU2. Project builds,
 tests, fuzzing, conversion and optimizer campaigns were not run alongside the
 timing campaign. Desktop/system activity and laptop thermal/frequency effects
 remain threats to validity. Full environment and resume observations are kept
-in [evaluation state](../../results/raw/P6/campaign-20261024/evaluation/state.json)
+in evaluation state (local-only: `results/raw/P6/campaign-20261024/evaluation/state.json`)
 and [resume quiescence](../../results/p6/measurement-quiescence-resume.json).
 
 ## Measurement and statistics
@@ -139,7 +141,7 @@ saved warm-ups**. The pre-consolidation saved-output audit records538,776 raw
 request outcomes including warm-ups; T2 reader outputs are additionally retained
 individually while normalized cohort rows aggregate costs and link those readers.
 The campaign and exact commands are in
-[campaign.json](../../results/raw/P6/campaign-20261024/campaign.json).
+campaign.json (local-only: `results/raw/P6/campaign-20261024/campaign.json`).
 
 ## Numerical results
 
@@ -147,8 +149,8 @@ All tables below use accepted actual observations. Median95% bootstrap intervals
 are in brackets; micro tables have15 measured repetitions per configuration,
 and recovery/memory tables have20 fresh-process rounds. Complete IQR, min/max,
 sample count, noise labels and raw references accompany every configuration in
-[tip-summary.json](../../results/derived/tip-summary.json) and
-[tip-statistics.csv](../../results/derived/tip-statistics.csv).
+tip-summary.json (local-only: `results/derived/tip-summary.json`) and
+tip-statistics.csv (local-only: `results/derived/tip-statistics.csv`).
 The consolidated source SHA-256 is
 `f2b440dbc5a285152821fa886c7644741ea89ebc4f812407640b6d2de62d264f`.
 
@@ -175,8 +177,8 @@ Adding the record touch changes the corresponding cost: Loser/`zipf0` becomes
 recovery. No branch/cache causal attribution is made without hardware counters.
 [F06](../../results/figures/F06_merge_cost_vs_k.png) and
 [F07](../../results/figures/F07_merge_run_length.png) retain all declared strata.
-Raw examples: [M1 k64](../../results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-k64-attempt001/gbench.json),
-[M1-touch k64](../../results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-touch-k64-attempt001/gbench.json).
+Raw examples: M1 k64 (local-only: `results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-k64-attempt001/gbench.json`),
+M1-touch k64 (local-only: `results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-touch-k64-attempt001/gbench.json`).
 
 ### M2: publisher index-maintenance cost
 
@@ -194,7 +196,7 @@ the high-partition uniform case. All120 configurations, including fixed payloads
 skew, B=1024, evictions and allocation/reclamation counters are in the complete
 summary and [F08](../../results/figures/F08_publish_index_cost.png). These
 microbenchmarks do not replace T2's actual same-window index-on/off publisher
-measurements. [Raw M2 campaign](../../results/raw/P6/M2/20261024T104904.812764Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/session.json).
+measurements. Raw M2 campaign (local-only: `results/raw/P6/M2/20261024T104904.812764Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/session.json`).
 
 ### M3: block-size seek and scan costs
 
@@ -209,7 +211,7 @@ This fixture uses all32,817,244 real-window postings, not a bounded T5 snapshot.
 
 Larger blocks reduce the measured sequential scan cost here, while seeking is
 not monotone in B. This does not make4096 a universal choice; its reserved-memory
-cost is exposed below. [Raw M3](../../results/raw/P6/M3/20261024T121915.466248Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M3-real-partition-sizes-attempt001/gbench.json).
+cost is exposed below. Raw M3 (local-only: `results/raw/P6/M3/20261024T121915.466248Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M3-real-partition-sizes-attempt001/gbench.json`).
 
 ### T1: real-data selective and broad recovery
 
@@ -238,8 +240,8 @@ The complete14-subscription,1/10/60/300-second matrix and2 GiB longest-backlog
 group are retained in [F09](../../results/figures/F09_catchup_breadth.png),
 [F10](../../results/figures/F10_replay_work.png) and the complete tables. These
 examples establish neither a universal speedup nor a latency distribution.
-[Raw recovery observations](../../results/raw/P6/campaign-20261024/evaluation/runs.jsonl)
-and [paired ratios](../../results/derived/tip-paired-ratios.csv) retain exact IDs
+Raw recovery observations (local-only: `results/raw/P6/campaign-20261024/evaluation/runs.jsonl`)
+and paired ratios (local-only: `results/derived/tip-paired-ratios.csv`) retain exact IDs
 and process references.
 
 ### T2: sequential reader cohorts with the actual publisher delta
@@ -291,7 +293,7 @@ The table is a descriptive count over an equally enumerated synthetic grid,
 not production-weighted success probability or a multiple-testing-adjusted
 significance claim. StdPQ/Quad and every cell's ratio/CI are retained in
 [F12](../../results/figures/F12_scan_index_crossover.png) and the complete paired
-table. [Prepared cases](../../results/raw/P6/prepared-evaluation/plan.json)
+table. Prepared cases (local-only: `results/raw/P6/prepared-evaluation/plan.json`)
 bind each synthetic workload to its independent expected output.
 
 ### T5: requested index storage, slack and allocator boundary
@@ -415,7 +417,7 @@ frequency. T2 combines constituent-reader/publisher frequency endpoints. The
 rejected T3 configurations and interrupted M1 row have unknown frequency
 observations and are not silently labelled clean. All source sidecars and exact
 join identities remain available in
-[tip-outcomes.csv](../../results/derived/tip-outcomes.csv).
+tip-outcomes.csv (local-only: `results/derived/tip-outcomes.csv`).
 
 One M1-k256 attempt was externally terminated and its Google Benchmark JSON was
 truncated; its replacement attempt passed. The user-requested overnight pause
@@ -434,7 +436,7 @@ counters must still match. The
 [T5 compatibility record](../../results/p6/auditor-t5-compatibility/compatibility.json)
 preserves original source/audit/provenance and verifies unchanged measurement
 artifacts. Only postprocessing was corrected; no timed source or input was
-relabeled. [Accepted saved-output audit](../../results/raw/P6/campaign-20261024/evaluation/independent-audit.json).
+relabeled. Accepted saved-output audit (local-only: `results/raw/P6/campaign-20261024/evaluation/independent-audit.json`).
 
 ## Claims and raw evidence
 
@@ -444,17 +446,17 @@ retains sample counts, intervals, outcome/noise accounting and exact config.
 
 | ID | Supported statement | Exact selection / validation | Raw evidence |
 |---|---|---|---|
-| C01 | Merge-kernel performance ranking depends on input shape | `M1/k64/{zipf0,geometric256}/N4194304/{StdPQ,BinHeap,Quad-pad3,Loser}`,15 repeats each; independent sorted-union output/hash checks | [M1 raw block](../../results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-k64-attempt001/gbench.json) |
-| C02 | Record-touch costs differ from key-only costs | `M1-touch/k64/zipf0/N4194304/Loser` and `M1-touch/k64/geometric256/N4194304/BinHeap`; initialized1GiB footprint and exact output/hash checked | [M1-touch raw block](../../results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-touch-k64-attempt001/gbench.json) |
-| C03 | Index maintenance costs publisher CPU | `M2/payload_empirical/P{1,100,10000}/uniform/B256/index_{off,on}`,15 repeats each; independent sequence/count checks | [M2 actual sessions](../../results/raw/P6/M2/20261024T104904.812764Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/session.json) |
-| C04 | Block size affects seek and scan differently | `M3-{seek,scan}/B{64,256,1024,4096}`,15 repeats each; independent position vectors and lower-bound queries | [M3 raw output](../../results/raw/P6/M3/20261024T121915.466248Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M3-real-partition-sizes-attempt001/gbench.json) |
-| C05 | Selective BOOK-top1 recovery avoids unrelated traffic | Scan `4cb05427907b9c338fdd`, Indexed-BinHeap `ab66e9b109c2a33524bf`, comparison `5179c7e3e8879aa3bdaf`;20 complete matched rounds | [Raw T observations](../../results/raw/P6/campaign-20261024/evaluation/runs.jsonl), [paired ratios](../../results/derived/tip-paired-ratios.csv) |
-| C06 | Broad BOOK-top1000 indexed BinHeap loses to Scan here | Scan `f6bd6947519e9b1b1cf3`, Indexed `e12ced352f93a7d526fd`, Auto `f1314c568dcc75099368`, comparison `d321fa550ff05fbb5b04`;20 matched rounds | [Raw T observations](../../results/raw/P6/campaign-20261024/evaluation/runs.jsonl) |
-| C07 | Full-stream requested Indexed uses Scan fallback | Scan `e208ce1e19195cb93579`, requested Indexed `1b83c59cdcc830207895`; raw `effective_mode=scan`, common engine contract/unit checks | [Raw T observations](../../results/raw/P6/campaign-20261024/evaluation/runs.jsonl), [engine contract](../../src/tiplog/engine/engine.cpp) |
-| C08 | Maintenance changes T2's tradeoff, with sparse-cohort scope | Every `cache/R/indexed-binheap` row in the T2 table; actual window1800s/backlog10s,20 paired rounds; one-cohort formula checks and final independent review | [Per-reader outcomes](../../results/raw/P6/campaign-20261024/evaluation/reader-runs.jsonl), [adjusted paired analysis](../../results/derived/t2-adjusted-paired.json) |
-| C09 | Frozen Auto is conditional, with residual losses | `exp=T3`, denominators `auto/binheap` and `auto/loser`,486 complete paired cells each; declared seed20191231 separate from training | [Prepared matrix](../../results/raw/P6/prepared-evaluation/plan.json), [raw T observations](../../results/raw/P6/campaign-20261024/evaluation/runs.jsonl), [paired ratios](../../results/derived/tip-paired-ratios.csv) |
-| C10 | Total reserve is larger than four bytes/live posting |10:00 repeat-warm T5 IDs `3451e729afa1173bc301`, `7d0e93775cbbe5e8407b`, `7a9440b090ec31717404`, `df4ea90d10b64fdbcbd3`;20 rounds each; independent recount/allocator arithmetic | [Raw T observations](../../results/raw/P6/campaign-20261024/evaluation/runs.jsonl), [audit](../../results/raw/P6/campaign-20261024/evaluation/independent-audit.json) |
-| C11 | Invalids, crash, warm-ups and noise are retained | Global status/noise tables above; all135751 consolidated rows and exact source concatenation | [Analysis inputs](../../results/p6/analysis-inputs.json), [complete outcomes](../../results/derived/tip-outcomes.csv), [consolidated raw rows](../../results/raw/P6/campaign-20261024/evaluation-observations.jsonl) |
+| C01 | Merge-kernel performance ranking depends on input shape | `M1/k64/{zipf0,geometric256}/N4194304/{StdPQ,BinHeap,Quad-pad3,Loser}`,15 repeats each; independent sorted-union output/hash checks | M1 raw block (local-only: `results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-k64-attempt001/gbench.json`) |
+| C02 | Record-touch costs differ from key-only costs | `M1-touch/k64/zipf0/N4194304/Loser` and `M1-touch/k64/geometric256/N4194304/BinHeap`; initialized1GiB footprint and exact output/hash checked | M1-touch raw block (local-only: `results/raw/P6/M1/20261024T044043.895991Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M1-touch-k64-attempt001/gbench.json`) |
+| C03 | Index maintenance costs publisher CPU | `M2/payload_empirical/P{1,100,10000}/uniform/B256/index_{off,on}`,15 repeats each; independent sequence/count checks | M2 actual sessions (local-only: `results/raw/P6/M2/20261024T104904.812764Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/session.json`) |
+| C04 | Block size affects seek and scan differently | `M3-{seek,scan}/B{64,256,1024,4096}`,15 repeats each; independent position vectors and lower-bound queries | M3 raw output (local-only: `results/raw/P6/M3/20261024T121915.466248Z_aa13c1824ba5-dirty_abc-HP-Laptop-15s-fq5xxx/M3-real-partition-sizes-attempt001/gbench.json`) |
+| C05 | Selective BOOK-top1 recovery avoids unrelated traffic | Scan `4cb05427907b9c338fdd`, Indexed-BinHeap `ab66e9b109c2a33524bf`, comparison `5179c7e3e8879aa3bdaf`;20 complete matched rounds | Raw T observations (local-only: `results/raw/P6/campaign-20261024/evaluation/runs.jsonl`), paired ratios (local-only: `results/derived/tip-paired-ratios.csv`) |
+| C06 | Broad BOOK-top1000 indexed BinHeap loses to Scan here | Scan `f6bd6947519e9b1b1cf3`, Indexed `e12ced352f93a7d526fd`, Auto `f1314c568dcc75099368`, comparison `d321fa550ff05fbb5b04`;20 matched rounds | Raw T observations (local-only: `results/raw/P6/campaign-20261024/evaluation/runs.jsonl`) |
+| C07 | Full-stream requested Indexed uses Scan fallback | Scan `e208ce1e19195cb93579`, requested Indexed `1b83c59cdcc830207895`; raw `effective_mode=scan`, common engine contract/unit checks | Raw T observations (local-only: `results/raw/P6/campaign-20261024/evaluation/runs.jsonl`), [engine contract](../../src/tiplog/engine/engine.cpp) |
+| C08 | Maintenance changes T2's tradeoff, with sparse-cohort scope | Every `cache/R/indexed-binheap` row in the T2 table; actual window1800s/backlog10s,20 paired rounds; one-cohort formula checks and final independent review | Per-reader outcomes (local-only: `results/raw/P6/campaign-20261024/evaluation/reader-runs.jsonl`), [adjusted paired analysis](../../results/derived/t2-adjusted-paired.json) |
+| C09 | Frozen Auto is conditional, with residual losses | `exp=T3`, denominators `auto/binheap` and `auto/loser`,486 complete paired cells each; declared seed20191231 separate from training | Prepared matrix (local-only: `results/raw/P6/prepared-evaluation/plan.json`), raw T observations (local-only: `results/raw/P6/campaign-20261024/evaluation/runs.jsonl`), paired ratios (local-only: `results/derived/tip-paired-ratios.csv`) |
+| C10 | Total reserve is larger than four bytes/live posting |10:00 repeat-warm T5 IDs `3451e729afa1173bc301`, `7d0e93775cbbe5e8407b`, `7a9440b090ec31717404`, `df4ea90d10b64fdbcbd3`;20 rounds each; independent recount/allocator arithmetic | Raw T observations (local-only: `results/raw/P6/campaign-20261024/evaluation/runs.jsonl`), audit (local-only: `results/raw/P6/campaign-20261024/evaluation/independent-audit.json`) |
+| C11 | Invalids, crash, warm-ups and noise are retained | Global status/noise tables above; all135751 consolidated rows and exact source concatenation | [Analysis inputs](../../results/p6/analysis-inputs.json), complete outcomes (local-only: `results/derived/tip-outcomes.csv`), consolidated raw rows (local-only: `results/raw/P6/campaign-20261024/evaluation-observations.jsonl`) |
 
 ## Implementation verification and reproducibility
 

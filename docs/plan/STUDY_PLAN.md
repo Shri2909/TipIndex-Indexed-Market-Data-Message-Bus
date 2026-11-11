@@ -14,24 +14,12 @@ Plan version **v1.1** · 2026-10-17 · study plan approved for the selected Tier
 
 ## 1. Prerequisite map
 
-```
-            ST-01 ITCH ──► ST-02 BinaryFILE ──► (P1 converter)
-                │
-                ▼
-ARCH §3 semantics ──► ST-03 Aeron ring/positions ──► ST-04 Kafka log ──► (P3 ring)
-                                    │
-                                    ▼
-                       ARCH §5.5 block pool ──(ST-05 reclamation, optional)──► (P4)
-                                    │
-             ST-11 Google Benchmark │
-                     │              ▼
-                     └──► ST-06 loser tree / heaps ──► ST-08 field reports ──(ST-07 galloping, C)──► (P5)
-                                                                │
-ST-13 sanitizers + libFuzzer ──► (P3–P5 tests)                  ▼
-ST-12 benchmarking method ──(ST-14 coordinated omission, C)──► (P6 experiments)
-ST-09 tree partitioning + our model ──(ST-10 Everett, optional)──► (P7 optimizer)
-Roadmap JIT: ST-15 crash consistency (R1–R2) · ST-16 I/O measurement (R3) · ST-17 memory model (R4)
-```
+- ST-01 ITCH → ST-02 BinaryFILE → P1 converter.
+- ARCH §3 semantics → ST-03 Aeron ring/positions → ST-04 Kafka log → P3 ring; ARCH §5.5 block pool (ST-05 reclamation, optional) → P4.
+- ST-11 Google Benchmark and ST-06 loser tree/heaps → ST-08 field reports (ST-07 galloping, Tier C) → P5.
+- ST-13 sanitizers + libFuzzer → P3–P5 tests; ST-12 benchmarking method (ST-14 coordinated omission, Tier C) → P6 experiments.
+- ST-09 tree partitioning + our model (ST-10 Everett, optional) → P7 optimizer.
+- Roadmap JIT: ST-15 crash consistency (R1–R2), ST-16 I/O measurement (R3), ST-17 memory model (R4).
 
 ## 2. Sequence
 

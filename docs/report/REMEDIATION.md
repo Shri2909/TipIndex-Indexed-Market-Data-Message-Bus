@@ -2,7 +2,7 @@
 
 This phase completes the approved corrections for **AUD-001–AUD-026 and observations OBS-01–OBS-05** from the [independent audit](../../audit/AUDIT_REPORT.md). The original audit findings and their reproductions remain historical evidence. Final integrated validation and the separate current-source acceptance passed; the implementation decisions and executed evidence are recorded below.
 
-**F-01, work-budgeted replay/tail polling, remains deferred at the user's request.** Replay and tail calls still have their existing output budgets and completion semantics. That feature requires a separate subsequent phase.
+**F-01 (work-budgeted replay/tail polling) was out of scope for this phase.** It was approved and implemented afterwards as a separate extension with its own evidence: see [POLL_BUDGET.md](POLL_BUDGET.md) and [POLL_BUDGET_RESULTS.md](POLL_BUDGET_RESULTS.md). The statements below about replay/tail behavior describe the remediation-time source.
 
 ## Evidence and acceptance boundaries
 
@@ -124,7 +124,7 @@ Short local fanout, planner and fuzzer-harness comparisons are diagnostics only.
 
 ## Reproducing current checks
 
-Use a compatible CPython 3.14 interpreter on Linux x86_64 for the locked wheel set. Follow the [current setup](../../README.md#python-setup), then run from the repository root:
+Use a compatible CPython 3.14 interpreter on Linux x86_64 for the locked wheel set. Follow the setup in [REPRODUCE.md section 2](REPRODUCE.md#2-setup), then run from the repository root:
 
 ```sh
 .venv/bin/python -m pip install --require-hashes --only-binary=:all: -r py/requirements.txt
@@ -140,8 +140,8 @@ Use the separate [current remediation checker](../../scripts/check_remediation.p
 .venv/bin/python scripts/check_remediation.py
 ```
 
-This verifies the reviewed snapshot; later source edits require fresh affected evidence and a separately reviewed inventory. The one-time [phase inventory assembler](../../audit/remediation/build_acceptance.py) records this remediation phase and does not replace verification. Use [REPRODUCE.md](REPRODUCE.md) for the preserved historical experiment ledger and its local-data requirements.
+This verifies the reviewed snapshot; later source edits require fresh affected evidence and a separately reviewed inventory. The one-time [phase inventory assembler](../../audit/remediation/build_acceptance.py) records this remediation phase and does not replace verification. Use [REPRODUCE.md](REPRODUCE.md) for the preserved historical experiment ledger, its local-data requirements and the benchmark environment notes.
 
-Implementation stopped after these corrections. F-01 remains unimplemented; the engine replay/tail source files are byte-identical to the remediation-start baseline, as recorded in [scope confirmation](../../audit/remediation/core/scope-confirmation.json).
+Implementation stopped after these corrections (F-01 came later, see above); at that point the engine replay/tail source files were byte-identical to the remediation-start baseline, as recorded in [scope confirmation](../../audit/remediation/core/scope-confirmation.json).
 
 Copied/mutated fuzz corpora, crash-artifact directories and fuzzer byte-dictionary logs remain ignored local evidence. Command/statistics/hash summaries are reviewable; the saved-data verifier still requires the original local raw measurements and retained evidence described above.

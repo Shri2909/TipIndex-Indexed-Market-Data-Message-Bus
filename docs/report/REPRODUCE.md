@@ -1,18 +1,30 @@
 # Reproducing tiplog (core, plan v1.1 Tier B)
 
-This is the historical P0–P8 command ledger. For the current audit corrections,
-hash-locked setup and validation, use [REMEDIATION.md](REMEDIATION.md). Existing raw
-measurements and acceptance records are preserved; their timings describe the
-pre-remediation source.
+This is the P0–P8 command ledger: the commands that produced each accepted result, with dependencies,
+seeds, configurations and local-data requirements. Each was executed for the accepted gates; the link after
+it is the saved execution record (argv, environment, exit code, log). Run commands from the repository root.
+Results and interpretation are in [REPORT.md](REPORT.md). Audit corrections, current-source validation and
+the hash-locked setup are in [REMEDIATION.md](REMEDIATION.md); the optional F-01 polling feature is in
+[POLL_BUDGET.md](POLL_BUDGET.md) (see section 11).
 
-This guide lists the commands that produced every accepted result, with their dependencies, seeds,
-configurations and local-data requirements. Each command below was **actually executed** for the accepted
-gates; the link after it is the saved execution record (exact argv, environment, exit code and log).
-Commands are run from the repository root. Results and their interpretation are in [REPORT.md](REPORT.md).
+## Status
 
-> **Preserve, don't redo.** Valid local inputs and raw results are reused. Re-downloading, reconverting or
-> re-running long campaigns is only needed on a fresh machine, and new timings will differ from the
-> accepted ones (different host state). Correctness outputs and modeled costs are deterministic.
+- The saved results are the **historical 24–25 Oct 2026 study on the pre-remediation source**. Raw
+  measurements and acceptance records are preserved; their timings describe that source.
+- **No fresh campaign is claimed.** Correctness outputs and modeled costs are deterministic; new timings
+  will differ (different host state).
+- **Re-running the timed runners needs a deliberate re-freeze decision.** The P5 pilot runner
+  (`scripts/run_p5_pilot.py`) and the P6 campaign runners are hash-locked to a frozen source tree and refuse
+  to run if source files differ (for example after cleanup edits). A typical failure is
+  `empirical payload mix identity mismatch: spec_table_source_sha256`. A fresh run therefore requires
+  re-freezing and re-baselining the inputs, as a recorded decision, not a workaround.
+- The full P6 campaign takes about 25 h and 7 GB+ of disk. Preserve valid local inputs and raw results
+  rather than redoing them.
+- For the current source, use `scripts/check_all.sh` and `scripts/check_remediation.py` (section 4 and
+  [REMEDIATION.md](REMEDIATION.md)); `scripts/check_core_closeout.py` verifies the historical frozen
+  identities and is not evidence for the current source.
+
+Benchmark host setup and optional CPU tuning are in [section 12](#12-benchmark-environment-and-cpu-tuning).
 
 ## 1. Requirements
 
@@ -23,7 +35,7 @@ Commands are run from the repository root. Results and their interpretation are 
 | Build | CMake 4.4.0 (presets need ≥3.30), GNU Make | Presets in `CMakePresets.json`: `debug`, `release`, `asan-ubsan`, `fuzz` |
 | Python | CPython 3.14.4 in `.venv` | Packages pinned in [py/requirements.txt](../../py/requirements.txt) |
 | C++ deps | Google Benchmark 1.9.5; GoogleTest 1.17.0 | Fetched as SHA-256-verified archives, or exact system GoogleTest |
-| Tools | `taskset`, `setarch`, GNU `time`, `mpstat` (optional) | No root or privileged setting is needed |
+| Tools | `taskset`, `setarch`, GNU `time`, `mpstat` (optional) | No root or privileged setting is needed (see section 12 for optional tuning) |
 | Disk | ≈ 20 GB for source (4.0 GB incl. fuzz seeds), traces incl. repeat copies (9.1 GB) and raw results (7.0 GB) | Measured with `du` at closeout |
 
 Environment captures: [P0](../../results/env/p0-environment.json), [P7](../../results/env/p7.json).
@@ -32,10 +44,12 @@ Environment captures: [P0](../../results/env/p0-environment.json), [P7](../../re
 
 ```bash
 /usr/bin/python3 -m venv .venv
-PIP_CACHE_DIR="$PWD/build/pip-cache" .venv/bin/python -m pip install --only-binary=:all: -r py/requirements.txt
+PIP_CACHE_DIR="$PWD/build/pip-cache" .venv/bin/python -m pip install --require-hashes --only-binary=:all: -r py/requirements.txt
 .venv/bin/python -m pip check
-scripts/git.sh status --short        # the managed .git/ is empty and read-only; history is in .tiplog-git/
+scripts/git.sh status --short        # uses .tiplog-git/ when present, otherwise .git
 ```
+
+Run `-m tiplog_py...` commands with `PYTHONPATH=py` (shown explicitly where it matters; `run_check.py` sets it).
 
 `scripts/run_check.py <phase> <label> -- <command…>` is the wrapper used for every recorded check: it sets
 `PYTHONPATH=py`, `MPLCONFIGDIR=build/matplotlib` and sanitizer options, and saves
@@ -50,8 +64,9 @@ scripts/git.sh status --short        # the managed .git/ is empty and read-only;
 | `data/traces/itch_20191230_0930_1000_flat.mdt` | 1,616,161,552 | `89cc31ac0c8907cf9552e85a60f04a221f4f2f9bc012769d0ab4de96376cbba2` |
 
 Source URL: `https://emi.nasdaq.com/ITCH/Nasdaq%20ITCH/12302019.NASDAQ_ITCH50.gz` (downloaded
-2026-10-17; [manifest](../../data/manifest.json)). Download it with any HTTP client and check
-`sha256sum` against the table; the download itself was not repeated during closeout. Nasdaq publishes no
+2026-10-17; [manifest](../../data/manifest.json)). Download it with
+`PYTHONPATH=py .venv/bin/python -m tiplog_py.data.fetch --source nasdaq --file 12302019.NASDAQ_ITCH50.gz --dest data/raw/`
+(or any HTTP client) and check `sha256sum` against the table; the download was not repeated during closeout. Nasdaq publishes no
 license text for these samples, so no message-level data is redistributed. The file lacks the BinaryFILE
 terminator and stays `incomplete=true`.
 
@@ -81,11 +96,15 @@ cmake --preset asan-ubsan && cmake --build --preset asan-ubsan --parallel 4
 .venv/bin/python scripts/run_check.py p7 final-python-p7 -- .venv/bin/python -m pytest -q py/tests
 ```
 
-Expected: 186/186 in each C++ build, no sanitizer report; 151 Python tests.
-[release](../../results/p7/final-release-tests-20261025T155552.324180Z.json),
+Historical expectation (pre-remediation source): 186/186 in each C++ build, no sanitizer report; 151 Python
+tests. [release](../../results/p7/final-release-tests-20261025T155552.324180Z.json),
 [ASan/UBSan](../../results/p7/final-asan-ubsan-tests-20261025T155555.617470Z.json),
 [pytest](../../results/p7/final-python-p7-20261025T155605.212269Z.json).
-`scripts/check_all.sh` builds and tests all four presets in one go (P0).
+
+Current source: `scripts/check_all.sh` configures, builds and tests all four presets (`debug`, `release`,
+`asan-ubsan`, `fuzz`), then runs `pip check` and `pytest -c py/pytest.ini py/tests tests/scripts`, saving
+records under `results/p0/<UTC>/`. The remediation acceptance records 205/205 C++ tests per preset and
+259 Python/script tests ([REMEDIATION.md](REMEDIATION.md#validation-status)).
 
 ## 5. Correctness campaigns
 
@@ -153,7 +172,7 @@ The campaign runner refuses to start without a quiescence record declaring that 
 fuzz or benchmark runs; add `--resume` to continue an interrupted campaign without repeating accepted
 rounds. The accepted campaign spanned about 25 hours of wall time (2026-10-24 03:35 to 2026-10-25 04:23 UTC,
 including a user-requested pause), needs AC power, and runs consolidation, analysis and the figure build
-at the end. The accepted records are [measurement-quiescence-resume.json](../../results/p6/measurement-quiescence-resume.json)
+at the end. The runners are hash-locked to the frozen source (see Status). The accepted records are [measurement-quiescence-resume.json](../../results/p6/measurement-quiescence-resume.json)
 and the [closeout evidence](../../results/p6/closeout-evidence.json).
 
 ## 7. P7 optimizer studies
@@ -221,15 +240,15 @@ runtime campaign, document links, packaging and the final acceptance review
 | P6 bootstrap | 10,000 resamples, seeded per configuration |
 | P7 synthetic trees, round shuffles, bootstrap | 20191230 (per-input bootstrap seeds derived from the case ID) |
 | P7 solver caps | ENUM ≤22 edges; DP ≤16 classes; 2,000,000 states and work units; 500 ms |
-| Timing CPU | CPU 2 (solver/benchmark), observers on other CPUs; no privileged settings |
+| Timing CPU | CPU 2 (solver/benchmark), observers on other CPUs; no privileged settings (section 12) |
 
 ## 11. Optional F-01 feature
 
-The P0–P8 commands above describe historical acceptance. The subsequently approved
-inspection-budget extension has its own [contract, caller example and reproduction
-instructions](POLL_BUDGET.md), [pre-change baseline](../../results/f01/baseline.json),
-and [final compiled-source freeze](../../results/f01/source-freeze-final.json).
-New evidence stays under `results/f01/`; earlier acceptance files are preserved.
+The P0–P8 commands above are historical acceptance. The later approved inspection-budget extension has its
+own [contract, caller example and reproduction instructions](POLL_BUDGET.md),
+[pre-change baseline](../../results/f01/baseline.json) and
+[final compiled-source freeze](../../results/f01/source-freeze-final.json); results are in
+[POLL_BUDGET_RESULTS.md](POLL_BUDGET_RESULTS.md). New evidence stays under `results/f01/`.
 
 ```bash
 cmake --preset release
@@ -240,10 +259,57 @@ ctest --preset release --output-on-failure
   --output-dir results/f01/my-contract-mutations
 ```
 
-The recorded differential runner refuses to overwrite a completed campaign index;
-reuse verifies exact commands, frozen input identities and output-log hashes.
-The initial source freeze differs from the final freeze only in the test allocator
-hook and Tail exception test; the engine and differential implementations match.
-Interrupted and failed attempts remain visible and do not count as accepted runs.
-Sanitizer campaigns and fuzz checks require the same leak-detection environment
-as the core tests; in this workspace they run outside tracing.
+The recorded differential runner refuses to overwrite a completed campaign index; reuse verifies exact
+commands, frozen input identities and output-log hashes. The initial source freeze differs from the final
+freeze only in the test allocator hook and Tail exception test. Interrupted and failed attempts remain
+visible and do not count as accepted runs. Sanitizer and fuzz checks need the same leak-detection
+environment as the core tests (`ASAN_OPTIONS=detect_leaks=1:abort_on_error=1`,
+`UBSAN_OPTIONS=print_stacktrace=1:halt_on_error=1`) and must not run under `ptrace`.
+
+## 12. Benchmark environment and CPU tuning
+
+**What the scripts do.**
+
+- Scripts are single-threaded and pin timed work to **CPU 2**, a P-core, with `taskset -c 2`. Its SMT
+  sibling **CPU 3 is kept idle**. E-cores 4–11 are never used for timing; fuzzing and observer or sampler
+  processes run on E-cores (for example `--cpu 6`/`7` for fuzz gates, `taskset -c 11` for the CPU sampler).
+- ASLR is disabled per process with `setarch -R`; no system-wide ASLR setting is changed.
+- Scripts only **record** governor, turbo and SMT state (`scripts/env_capture.sh`) and never change them.
+- A **quiescence record** is required before a timed campaign (`--quiescence-record`): no concurrent build,
+  test, fuzz or benchmark, including other projects. **AC power** is required.
+
+**Host-specific facts (the accepted study host).** 12th Gen Intel Core i5-1235U, 2 P-cores + 8 E-cores
+(12 logical CPUs; P-cores are CPUs 0–3, E-cores 4–11). The kernel command line has
+`isolcpus=4,5 nohz_full=4,5`, which covers E-cores 4 and 5 only, **not CPU 2**. Timed CPU 2 therefore
+shares scheduler ticks and interrupts with the rest of the system; the quiescence record and noise flags
+(frequency samples, thermal state) are how that is controlled and disclosed.
+
+**Optional tuning for lower variance** (needs `sudo`; none of it is used or required by the accepted study):
+
+```bash
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference
+echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo     # see trade-off below
+sudo sysctl -w kernel.perf_event_paranoid=1                          # only if using perf counters
+```
+
+- `no_turbo=1` caps the chip to base clocks (about 1.3 GHz on these P-cores). Variance drops, but results are
+  **not comparable** to the published study, which ran at about 4.1–4.36 GHz.
+- Pinning and `performance` do not isolate shared caches, package power or thermals.
+- Without `perf_event_paranoid` access (default 4 here) there are no hardware-counter claims; the study uses
+  time-only measurement.
+
+**Revert** after measuring:
+
+```bash
+echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+echo balance_power | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference
+echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
+sudo sysctl -w kernel.perf_event_paranoid=4
+```
+
+**Check for thermal throttling** before and after a run (counts should not increase):
+
+```bash
+grep . /sys/devices/system/cpu/cpu*/thermal_throttle/*_count
+```

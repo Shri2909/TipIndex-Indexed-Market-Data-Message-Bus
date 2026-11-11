@@ -82,8 +82,6 @@ All wrapped-variable arms contained one internal PAD. Scan charged it; Indexed's
 
 A separate resource control accepted K8192 at a reported fixture subtotal of 101,851,965 bytes and rejected K12288 before timing because its estimate exceeded 128 MiB. Both outcomes and the expected nonzero process exit are preserved in the [resource control output](../../results/f01/studies/final-20261027/resource-boundary.jsonl). This brackets tested points; the exact highest feasible K was not searched. Accepted timed fixtures stayed below 50,987,837 reported bytes. The cap covers ring/checkpoint storage, exact reserved index bytes and a conservative topic allowance; allocator overhead, per-call temporary readers and telemetry arrays are outside that subtotal. Process peak RSS is reported separately; the largest observed value in the accepted timed processes was 52,727,808 bytes.
 
-![Dense throughput cost and large-K preparation](../../results/f01/figures/final-20261027-v2/poll-budget-cost.svg)
-
 ## The caller must give other work a turn
 
 The round-robin experiment makes one short victim-reader request and one publisher request eligible immediately before each long-reader poll. It serves them after that call. Separate service engines keep the primary captured history immutable. In the immediate-redrain control, one pending request of each kind waits until the long replay finishes.
@@ -91,8 +89,6 @@ The round-robin experiment makes one short victim-reader request and one publish
 For 200,000 Scan nonmatches and budget 128, the round-robin victim's median per-process p99 delay was **2.674 µs** across 1,563 requests per process. Immediately redraining the same reader delayed its single pending request for median **3.817 ms**. The latter “p99” is the one observation in each process. This demonstrates the scheduling opportunity and the need to use it.
 
 Round-robin arms perform different numbers of service operations as their poll counts differ. This is a fixed-policy scheduling example, not equal offered-load service-level benchmarking. Publication on a separate engine does not measure shared-engine retention pressure or concurrent operation.
-
-![Round-robin versus immediate redrain](../../results/f01/figures/final-20261027-v2/poll-budget-scheduling.svg)
 
 ## Reproduce and interpret
 

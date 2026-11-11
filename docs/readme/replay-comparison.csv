@@ -1,0 +1,3 @@
+exp,comparison_id,numerator,denominator,metric,status,ratio,ci95_low,ci95_high,paired_rounds
+T1,5179c7e3e8879aa3bdaf,scan,indexed/binheap,cpu_ns,ok,40.619287681463845,39.45167070151981,41.693285002548286,20
+T1,d321fa550ff05fbb5b04,scan,indexed/binheap,cpu_ns,ok,0.5849478746324197,0.5814441310562857,0.5932127955744417,20
