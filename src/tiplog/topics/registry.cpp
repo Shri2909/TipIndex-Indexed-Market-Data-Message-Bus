@@ -1,9 +1,9 @@
 #include "tiplog/topics/registry.hpp"
 
 #include <algorithm>
-#include <utility>
 #include <type_traits>
 #include <unordered_set>
+#include <utility>
 
 namespace tiplog::topics {
 namespace {
@@ -103,10 +103,7 @@ const Partition& Registry::partition(PartitionId id) const {
 std::weak_ptr<const Registry::Lifetime> Registry::identity() const noexcept { return lifetime_; }
 std::size_t Registry::observer_count() const noexcept {
   std::size_t count = 0;
-  for (const auto& [root, slots] : observers_->roots) {
-    (void)root;
-    count += slots.size();
-  }
+  for (const auto& entry : observers_->roots) count += entry.second.size();
   return count;
 }
 ObserverHandle Registry::observe(TopicId root, const std::shared_ptr<TopicObserver>& observer) {
@@ -117,8 +114,7 @@ ObserverHandle Registry::observe(TopicId root, const std::shared_ptr<TopicObserv
     throw RepresentationLimit("topic observer serial exhausted");
   }
   const auto serial = observers_->next_serial;
-  // Make both the root node and its vector before consuming a serial. Empty root
-  // nodes from an allocation failure are harmless, and are never topic state.
+  // Serial is consumed only after the root node and slot are in place.
   auto [found, inserted] = observers_->roots.try_emplace(root);
   try {
     found->second.push_back({serial, observer});
@@ -142,7 +138,7 @@ TopicId Registry::intern(std::string_view path) {
 
   std::vector<Topic> pending;
   std::vector<Partition> new_partitions;
-  // Counts are tentative until every limit and observer update is prepared.
+  // Tentative until every limit and observer update has been prepared.
   std::vector<std::pair<PartitionId, std::uint32_t>> additions;
   auto added_count = [&additions](PartitionId id) -> std::uint32_t& {
     const auto found = std::find_if(additions.begin(), additions.end(),
@@ -200,15 +196,13 @@ TopicId Registry::intern(std::string_view path) {
     ++end;
   }
 
-  // Stage nodes and storage before commit. node insertion below does not allocate
-  // after reserve; this map's string hash and equality do not throw.
+  // Everything that can allocate happens before the commit below.
   PathMap staged_paths;
   staged_paths.reserve(pending.size());
   for (const auto& topic : pending) staged_paths.emplace(topic.path, topic.id);
   reserve_growth(topics_, topics_.size() + pending.size());
   reserve_growth(partitions_, partitions_.size() + new_partitions.size());
-  // max_load_factor remains its default 1.0 in this private map. Reserve a
-  // geometric number of nodes before the commit, including the first bucket.
+  // Geometric growth; the map keeps its default max_load_factor of 1.0.
   const auto required_paths = paths_.size() + pending.size();
   if (paths_.empty() || required_paths > paths_.bucket_count()) {
     paths_.reserve(std::max(required_paths, paths_.size() + paths_.size() / 2 + 1));
@@ -220,8 +214,8 @@ TopicId Registry::intern(std::string_view path) {
   for (const auto& topic : pending) {
     TopicId ancestor = topic.id;
     while (ancestor != 0) {
-      // All pending topics share one ancestor chain. Visit each root's slots
-      // once, and notify an observer registered on several roots only once.
+      // Pending topics share one ancestor chain: visit each node once and
+      // notify each observer once.
       if (!seen_ancestors.insert(ancestor).second) break;
       const auto hook = observers_->roots.find(ancestor);
       if (hook != observers_->roots.end()) {

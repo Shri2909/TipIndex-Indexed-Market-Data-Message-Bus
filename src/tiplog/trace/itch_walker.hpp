@@ -14,8 +14,7 @@ struct MessageCounter {
   std::uint64_t framed_bytes{};
 };
 
-// Independently transcribed from Nasdaq's ITCH field-offset tables. This module
-// shares no lengths, framing decoder, or topic-routing helpers with Python.
+// Message length per Nasdaq's ITCH tables; 0 for an unknown type.
 [[nodiscard]] std::uint16_t itch_message_size(unsigned char type) noexcept;
 
 class ItchWalker {

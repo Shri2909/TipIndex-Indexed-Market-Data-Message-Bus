@@ -2,9 +2,9 @@
 
 #include <algorithm>
 #include <functional>
+#include <type_traits>
 #include <unordered_set>
 #include <utility>
-#include <type_traits>
 
 namespace tiplog::subs {
 namespace {
@@ -29,10 +29,8 @@ bool has_subtree_prefix(const Paths& roots, std::string_view path,
   return false;
 }
 
-// Own the strings rather than views into terms, so the lookup lifetime is
-// independent of vector moves. Transparent lookup allocates no path prefixes.
-// Matching uses one exact lookup plus one lookup per segment boundary, never
-// a scan through the subscription's terms. No iteration order affects output.
+// Owns its strings (independent of term vector moves); a match costs one lookup
+// per segment boundary, never a scan over terms.
 struct Matching {
   Paths exact, subtree, whole_partition;
   explicit Matching(std::span<const Term> terms) {
@@ -136,8 +134,7 @@ struct CompiledState final : topics::TopicObserver {
     std::vector<PartitionFilter> added;
     explicit Prepared(CompiledState& source) : state(source) {}
     void commit() noexcept override {
-      // Prepare has reserved the destination vector. Replacements swap vectors;
-      // inserting a filter moves only noexcept vector/scalar members.
+      // prepare() reserved capacity, so nothing here allocates or throws.
       for (auto& filter : changed) {
         const auto destination = find_filter(state.filters, filter.partition);
         destination->all = filter.all;
@@ -204,8 +201,7 @@ const PartitionFilter* CompiledSubscription::partition_filter(PartitionId partit
 
 CompiledSubscription compile(topics::Registry& registry, const SubscriptionSpec& spec) {
   auto normalized = normalize(spec);
-  // Intern all roots, including exact topics that have never been published.
-  // Validation precedes interning, so malformed terms have no registry effects.
+  // normalize() validated every term, so malformed specs never touch the registry.
   std::vector<TopicId> roots;
   roots.reserve(normalized.terms.size());
   for (const auto& term : normalized.terms) roots.push_back(registry.intern(term.path));

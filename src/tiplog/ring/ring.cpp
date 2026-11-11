@@ -120,7 +120,7 @@ bool Ring::is_boundary(LogPos pos) const {
 }
 
 Ring::Layout Ring::dry_run(std::size_t payload_bytes, LogPos minimum_tail) const {
-  // Comparing before adding also catches SIZE_MAX inputs without overflow.
+  // Compare before adding so SIZE_MAX cannot overflow.
   if (payload_bytes > config_.max_record_bytes - header_size) {
     throw std::length_error("payload exceeds configured maximum record size");
   }
@@ -185,7 +185,7 @@ Ring::Plan Ring::plan_append(std::span<const std::byte> payload, LogPos minimum_
     const auto source = reinterpret_cast<std::uintptr_t>(payload.data());
     const auto buffer = reinterpret_cast<std::uintptr_t>(bytes_.data());
     const auto buffer_end = buffer + bytes_.size();
-    // Subtractions avoid overflowing a fabricated source+length expression.
+    // Subtract rather than add so a bogus pointer + length cannot overflow.
     const bool overlap = source < buffer_end &&
                          (source >= buffer || payload.size() > buffer - source);
     if (overlap) result.alias_copy_.assign(payload.begin(), payload.end());

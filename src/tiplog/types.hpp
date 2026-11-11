@@ -13,9 +13,8 @@ using LogPos = std::uint64_t;
 using TopicId = std::uint32_t;
 using PartitionId = std::uint32_t;
 
-// Shared topic policy for runtime APIs and trace readers/writers. Paths count
-// bytes (UTF-8 in trace files), and depth counts nonempty slash-separated
-// segments. Bounds keep ancestor storage and subscription matching bounded.
+// Topic path limits shared by the registry and trace reader: bytes, and nonempty
+// slash-separated segments.
 inline constexpr std::size_t max_topic_path_bytes = 4096;
 inline constexpr std::size_t max_topic_depth = 128;
 

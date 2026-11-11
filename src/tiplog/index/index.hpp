@@ -16,8 +16,7 @@ struct Config {
   std::uint32_t blocks{4096};
   std::uint32_t entries_per_block{1024};
   std::uint64_t sweep_evictions{1024};
-  // Narrow widths/limits are explicit test hooks; production is 32 bits/u32
-  // max.
+  // Narrower values are test hooks; production uses the defaults.
   std::uint32_t delta_bits{32};
   std::uint32_t generation_limit{std::numeric_limits<std::uint32_t>::max()};
 };
@@ -55,8 +54,7 @@ struct Memory {
   std::uint64_t partition_list_reserved_bytes{};
   std::uint64_t control_bytes{};
   std::uint64_t reserved_bytes{};
-  // Allocator headers/arenas are outside this exact requested/reserved
-  // subtotal.
+  // Allocator headers/arenas are excluded from these subtotals.
   bool allocator_overhead_measured{false};
   bool operator==(const Memory &) const = default;
 };
@@ -138,8 +136,8 @@ public:
   Index &operator=(const Index &) = delete;
   Index(Index &&) = delete;
   Index &operator=(Index &&) = delete;
-  // No published membership mutation. The caller commits immediately, with no
-  // other mutation, after every ring/resource rejection has been preflighted.
+  // Does not publish anything; the caller must commit() next, with no other
+  // mutation in between, after all other rejections are ruled out.
   [[nodiscard]] Preparation prepare_append(PartitionId partition, LogPos pos,
                                            LogPos prospective_tail,
                                            std::size_t partition_count,
@@ -148,8 +146,8 @@ public:
               std::uint64_t retained_data_count) noexcept;
   [[nodiscard]] Cursor seek(PartitionId partition, LogPos lower_pos) const;
   bool advance(Cursor &cursor, LogPos current_tail) const;
-  // Count postings in [max(lower_pos, retained tail), upper_pos). Whole blocks
-  // use metadata; only overlapping boundaries binary-search encoded deltas.
+  // Postings in [max(lower_pos, tail), upper_pos); binary-searches only the
+  // boundary blocks.
   [[nodiscard]] std::uint64_t estimate_count(PartitionId partition,
                                              LogPos lower_pos,
                                              LogPos upper_pos) const noexcept;

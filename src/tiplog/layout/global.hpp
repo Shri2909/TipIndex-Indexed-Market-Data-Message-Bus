@@ -4,8 +4,8 @@
 
 namespace tiplog::layout {
 
-// Actual materialized-store count indexes the curve. At infinity a value is
-// either proven infeasible (complete curve) or unknown (incomplete curve).
+// Indexed by actual store count. An infinite value means infeasible if the curve
+// is certified complete, otherwise unknown.
 struct CostCurve {
   std::vector<Cost> values;
   Cost scale{1};
@@ -23,7 +23,7 @@ struct GlobalPoint {
 
 GlobalPoint penalized(const std::vector<CostCurve>& curves, Rational lambda);
 
-// A signed rational represented without relying on the signed __int128 range.
+// Signed rational as sign + magnitude over scale.
 struct BudgetBound {
   bool available{false}, negative{false};
   Cost magnitude{0}, scale{1};

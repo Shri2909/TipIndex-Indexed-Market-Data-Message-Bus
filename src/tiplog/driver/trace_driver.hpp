@@ -23,9 +23,8 @@ struct Config {
   std::uint64_t max_records{std::numeric_limits<std::uint64_t>::max()};
   std::uint64_t consume_every{1};
   std::size_t batch_budget{64};
-  // Uses raw mt19937_64 output modulo batch_budget, avoiding implementation-
-  // dependent uniform_int_distribution mapping. This is a schedule, not a
-  // claim of statistically uniform workload sampling.
+  // Budget is 1 + mt19937_64 % batch_budget (not uniform_int_distribution, whose
+  // mapping is implementation-defined).
   bool jitter_budget{};
   std::vector<Pause> pauses;
 };
@@ -44,8 +43,7 @@ struct Result {
   Seq first_seq{};
   Seq last_seq{};
   std::uint64_t payload_bytes{};
-  // FNV-1a diagnostic digests over canonical little-endian fields; these are
-  // reproducibility checks, not cryptographic identity/checksum substitutes.
+  // FNV-1a digests over little-endian fields; reproducibility checks only.
   std::uint64_t publication_digest{14695981039346656037ULL};
   std::uint64_t schedule_digest{14695981039346656037ULL};
   bool operator==(const Result&) const = default;
@@ -54,9 +52,8 @@ struct Result {
 using Publish = std::function<Seq(std::string_view, std::span<const std::byte>)>;
 using Consume = std::function<void(const Tick&)>;
 
-// Engine neutral: owns no engine and links no test reference implementation.
-// Each record is published in trace order, then exactly one tick is reported.
-// Payload spans borrow the immutable Reader, under the Reader's lifetime rules.
+// Engine-neutral. Publishes each record in trace order, then reports one tick.
+// Payload spans borrow the Reader.
 Result drive_trace(const trace::Reader& reader, const Config& config,
                    const Publish& publish, const Consume& consume = {});
 

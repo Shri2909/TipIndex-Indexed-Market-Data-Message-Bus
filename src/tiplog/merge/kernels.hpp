@@ -36,8 +36,6 @@ inline constexpr LogPos position_limit = LogPos{1} << 51U;
     throw std::invalid_argument("invalid key has no cursor");
   return static_cast<std::uint32_t>(key & 0xffffU);
 }
-[[nodiscard]] inline LogPos unpack_pos(Key key) { return position(key); }
-[[nodiscard]] inline std::uint32_t unpack_id(Key key) { return cursor_id(key); }
 
 namespace detail {
 void validate_heads(std::span<const Key> heads);
@@ -214,8 +212,8 @@ public:
     if (replacement == sentinel)
       --active_;
     auto value = replacement;
-    // The path belongs to the old winning leaf. Swaps change candidate
-    // identity, never the path currently being replayed.
+    // Replay the old winner's leaf-to-root path; swaps change the carried
+    // candidate, not the path.
     for (auto node = (nodes_.size() + id) / 2; node != 0; node /= 2) {
       const auto opponent = nodes_[node];
       const bool opponent_wins = opponent < value;

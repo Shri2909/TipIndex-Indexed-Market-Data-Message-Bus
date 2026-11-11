@@ -202,7 +202,7 @@ Prepared prepare(const Problem& input, const PreparationLimits& limits) {
   if (preparation_work_bound(input) > limits.max_work)
     throw std::length_error("layout preparation exceeds work budget");
   Prepared result;
-  result.input = input; // Retain raw terms and rationals for the independent simulator.
+  result.input = input;  // Kept for the independent materialized evaluator.
   result.children.resize(input.nodes.size());
   result.node_classes.resize(input.nodes.size());
   std::unordered_set<std::string_view> paths;
@@ -354,8 +354,7 @@ Evaluation evaluate_materialized(const Prepared& problem, const Layout& cuts) {
   validate_layout(problem, cuts);
   const auto& raw = problem.input;
   Evaluation result = empty_evaluation(raw.consumers.size());
-  // Deliberately independent: walk raw parent links for each record instead of
-  // using the formula evaluator's traversal, incidence lists or component IDs.
+  // Independent of evaluate_formula: walks raw parent links per record.
   std::vector<std::vector<std::uint32_t>> stores(raw.nodes.size());
   for (std::size_t index = 0; index < raw.nodes.size(); ++index) {
     if (raw.nodes[index].bytes == 0) {
@@ -389,7 +388,7 @@ Evaluation evaluate_materialized(const Prepared& problem, const Layout& cuts) {
             wanted = path.size() == term.path.size() &&
                      std::equal(path.begin(), path.end(), term.path.begin());
           } else {
-            // Compare whole segments, independently of matches()'s prefix test.
+            // Segment-wise comparison, independent of matches().
             std::size_t actual_begin = 0;
             std::size_t expected_begin = 0;
             wanted = true;
@@ -415,7 +414,7 @@ Evaluation evaluate_materialized(const Prepared& problem, const Layout& cuts) {
             }
           }
           if (wanted) {
-            break; // Union semantics: charge each stored record at most once.
+            break;  // Union: count each record once.
           }
         }
         if (wanted) {

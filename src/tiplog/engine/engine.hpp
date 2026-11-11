@@ -29,13 +29,11 @@ struct EngineConfig {
   LogPos position_limit{LogPos{1} << 51};
   Seq sequence_limit{std::numeric_limits<Seq>::max()};
   topics::Limits registry_limits{};
-  // Generic records can occupy 16 bytes. A minimum of 32 is an explicitly
-  // enforced workload configuration, never inferred from an input filename.
   bool index_enabled{true};
   index::Config index{};
   PoolPolicy pool_policy{PoolPolicy::ForceEvict};
-  std::size_t minimum_record_bytes{16};
-  // Explicit initial policy values, not measured or calibrated thresholds.
+  std::size_t minimum_record_bytes{16};  // 16 or 32
+  // Uncalibrated Auto-mode thresholds.
   std::uint32_t auto_max_partitions{64};
   double auto_max_index_fraction{0.25};
 };
@@ -45,9 +43,8 @@ struct EngineStats {
   Seq head_seq{};
   Seq tail_seq{};
 };
-// Exact traversal work, not hardware events. Bytes include complete DATA/PAD
-// spans decoded by the replay loop. Seek metadata/header work is separately
-// reported; entries_visited counts postings selected from the merge kernel.
+// Exact traversal counts. bytes_inspected covers whole DATA/PAD spans;
+// entries_visited counts postings popped from the merge kernel.
 struct ReplayWork {
   std::uint64_t bytes_inspected{};
   std::uint64_t entries_visited{};
@@ -60,9 +57,8 @@ struct ReplayWork {
   bool operator==(const ReplayWork &) const = default;
 };
 
-// The inspection cap applies to traversal, not seek/planning/merge setup. One
-// Scan DATA/PAD or Indexed posting plus DATA fetch consumes one inspection.
-// An absent cap preserves the legacy unlimited traversal/checkpoint behavior.
+// The inspection cap covers traversal only, not seek/merge setup: one Scan item
+// or one Indexed posting + fetch costs one. No cap means unlimited.
 struct PollLimits {
   std::size_t max_outputs;
   std::optional<std::uint64_t> max_inspections{std::nullopt};
@@ -97,11 +93,10 @@ public:
   ~Replay();
   Replay(Replay &&) noexcept;
   Replay &operator=(Replay &&) noexcept;
-  // Outputs borrow ring storage until the next engine mutation. No engine
-  // mutation may interleave inside this single-threaded batch operation.
+  // Outputs borrow ring storage until the next engine mutation.
   Status next_batch(std::size_t max, std::vector<Delivered> &out);
-  // Either zero limit performs no work and reports cached status + NoWork.
-  // More + InspectionLimit can return no outputs; resume this same Replay.
+  // A zero limit does no work (NoWork). More + InspectionLimit may return no
+  // outputs; resume the same Replay.
   PollResult next_batch(PollLimits limits, std::vector<Delivered> &out);
   [[nodiscard]] std::optional<ReplayError> error() const noexcept {
     return error_;
@@ -144,8 +139,8 @@ private:
   ReplayWork work_{};
 };
 
-// A live reader is a chain of completed captured ranges. Done means caught up
-// at this call; a subsequent positive poll may capture newly published DATA.
+// A live reader: a chain of captured ranges. Done means caught up as of this
+// call; a later poll may capture newer DATA.
 class Tail {
 public:
   Tail(const Tail &) = delete;
@@ -153,8 +148,7 @@ public:
   Tail(Tail &&) noexcept = default;
   Tail &operator=(Tail &&) noexcept = default;
   Status poll(std::size_t max, std::vector<Delivered> &out);
-  // A single allowance is shared across every captured range in this call.
-  // CaughtUp observes the current head only for a positive-limit poll.
+  // The limits are shared across all captured ranges in one call.
   PollResult poll(PollLimits limits, std::vector<Delivered> &out);
   [[nodiscard]] Status status() const noexcept { return status_; }
   [[nodiscard]] std::optional<ReplayError> error() const noexcept { return error_; }

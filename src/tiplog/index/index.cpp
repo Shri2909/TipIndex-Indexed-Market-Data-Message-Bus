@@ -77,8 +77,7 @@ bool Index::needs_new_block(PartitionId p, LogPos pos,
 void Index::reserve_partition_append(PartitionId p) {
   auto &state = partitions_[p];
   if (state.ids.size() == state.ids.capacity()) {
-    // A dead prefix is compacted without allocation during commit. Reserving
-    // now is deliberately conservative; no logical chain is modified here.
+    // Reserve conservatively now so commit() never allocates.
     const auto maximum = state.ids.max_size();
     if (state.ids.size() == maximum)
       throw std::length_error("partition list full");
@@ -113,8 +112,7 @@ Preparation Index::prepare_append(PartitionId partition, LogPos pos,
       prospective_tail > pos || (has_appended_ && pos <= last_appended_)) {
     throw std::invalid_argument("invalid index append range/partition");
   }
-  // New empty control states are preparatory backing storage, not block
-  // membership. A later exception may leave honest extra reserved capacity.
+  // Empty partition states are backing storage only, not membership.
   if (partition_count > partitions_.size())
     partitions_.resize(partition_count);
   const bool needs_block = needs_new_block(partition, pos, prospective_tail);
@@ -125,8 +123,7 @@ Preparation Index::prepare_append(PartitionId partition, LogPos pos,
                    (!heap_.empty() && heap_.front().last < prospective_tail) ||
                    has_expired_open(partition, prospective_tail);
   if (needs_block && !available) {
-    // Pressure includes a complete expired-open sweep before any retention
-    // shortening. Only the pressure/cadence path scans partition controls.
+    // Under pressure, sweep all expired open blocks before shortening retention.
     sweep = true;
     LogPos minimum_last =
         heap_.empty() ? std::numeric_limits<LogPos>::max() : heap_.front().last;
@@ -244,8 +241,7 @@ std::uint32_t Index::allocate(PartitionId p, LogPos pos) noexcept {
   auto &state = partitions_[p];
   if (!state.ids.empty())
     meta_[state.ids.back()].next = b;
-  // Drop a dead prefix only when useful; ids/generations in cursors remain
-  // stable because no cursor stores vector offsets or iterators.
+  // Compact the dead prefix; cursors hold block ids, not offsets.
   if (state.first != 0 && state.first >= state.ids.size() / 2) {
     std::move(state.ids.begin() + static_cast<std::ptrdiff_t>(state.first),
               state.ids.end(), state.ids.begin());
@@ -339,7 +335,7 @@ Cursor Index::seek(PartitionId p, LogPos lower_pos) const {
   return {b, meta_[b].gen, lo, decode(b, lo)};
 }
 void Index::validate_cursor(const Cursor &c, LogPos tail) const {
-  // The cached-position guard deliberately precedes every metadata access.
+  // The position check must precede any metadata access.
   if (!c.valid() || c.pos < tail)
     throw StaleCursor("expired index cursor position");
   if (c.block >= meta_.size())
@@ -384,13 +380,15 @@ std::uint64_t Index::estimate_count(PartitionId p, LogPos lower,
   std::uint64_t result = 0;
   for (auto it = first; it != end; ++it) {
     const auto block = *it;
-    const auto& meta = meta_[block];
+    const auto &meta = meta_[block];
     auto lower_entry = [this, block, &meta](LogPos position) {
       std::uint32_t left = 0, right = meta.count;
       while (left < right) {
         const auto middle = left + (right - left) / 2;
-        if (decode(block, middle) < position) left = middle + 1;
-        else right = middle;
+        if (decode(block, middle) < position)
+          left = middle + 1;
+        else
+          right = middle;
       }
       return left;
     };
@@ -545,9 +543,7 @@ Recount Index::recount(LogPos tail) const {
                   g.sealed_partial_slack + g.free_block_slots ==
               deltas_.size(),
           "slot conservation");
-  // Deliberately recompute backing capacities here rather than calling the
-  // incremental memory() helper used by stats(). Used list bytes exclude dead
-  // prefixes; their full allocation remains in reserved bytes.
+  // Recomputed independently of memory() so check_invariants() cross-checks it.
   auto &memory = result.memory;
   memory.metadata_reserved_bytes = meta_.capacity() * 32;
   memory.entries_reserved_bytes = deltas_.capacity() * 4;

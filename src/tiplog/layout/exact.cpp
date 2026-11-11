@@ -17,8 +17,7 @@ using Clock = std::chrono::steady_clock;
 
 struct Stop { const char* status; };
 
-// Work is deterministic; the clock is an additional wall-time guard. ENUM work
-// counts node/incidence visits, while DP work counts scanned states/transitions.
+// Deterministic work counter plus a wall-clock guard.
 struct Run {
   const Limits& limits;
   ExactResult& result;
@@ -63,8 +62,7 @@ void allocation_check(std::uint64_t entries) {
 
 bool trivial(const Prepared& problem, std::uint32_t maximum_stores, const Limits& limits,
              ExactResult& result) {
-  // Count indexes beyond the number of positive nodes are provably infeasible;
-  // do not allocate a user-supplied, potentially UINT32_MAX-sized budget array.
+  // Counts above positive_nodes are infeasible; don't allocate for them.
   const auto cap = std::min(maximum_stores, problem.positive_nodes);
   if (problem.positive_nodes != 0 && maximum_stores != 0 &&
       static_cast<std::uint64_t>(cap) + 1 > limits.max_states) throw Stop{"state_limit"};
@@ -171,14 +169,12 @@ ExactResult enumerate(const Prepared& problem, std::uint32_t maximum_stores, con
     run.poll();
     const auto n = problem.input.nodes.size();
     const auto edges = n - 1;
-    // Gray-code representation is separate from the arbitrary-size class list.
     if (edges > limits.enum_max_edges || edges >= 64 || n >= no_parent)
       throw Stop{"representation_limit"};
     const auto candidates = std::uint64_t{1} << edges;
     if (candidates > limits.max_states) throw Stop{"state_limit"};
 
-    // An incidence list, sorted by class, supports more than 64 classes without
-    // sharing masks, component construction, or read-cost helpers with the DP.
+    // Sorted (class, node) incidences: no class-count limit, and no code shared with the DP.
     std::uint64_t incidence_count = 0;
     for (std::size_t v = 0; v < n; ++v) {
       if (problem.input.nodes[v].bytes != 0)
@@ -271,7 +267,7 @@ ExactResult mask_dp(const Prepared& problem, std::uint32_t maximum_stores, const
     const auto n = problem.input.nodes.size();
     const auto b = problem.weights.size();
     const auto budget = std::min(maximum_stores, problem.positive_nodes);
-    // Backpointers use uint32 masks; check before any shift or exponential array.
+    // Backpointers hold uint32 masks; check before shifting or allocating.
     if (b > limits.dp_max_classes || b >= 32 || b >= std::numeric_limits<std::size_t>::digits ||
         n >= no_parent || budget == std::numeric_limits<std::uint32_t>::max())
       throw Stop{"representation_limit"};
@@ -279,9 +275,8 @@ ExactResult mask_dp(const Prepared& problem, std::uint32_t maximum_stores, const
     if (masks > limits.max_states || n > limits.max_states) throw Stop{"state_limit"};
     allocation_check<Cost>(masks);
 
-    // Each child merge is capped by the positive cardinality processed so far,
-    // rather than a full K-by-K convolution at every merge. Count all retained
-    // child stages (values and backpointers) before allocating their tables.
+    // Each merge is capped by the positive nodes processed so far. Size all
+    // stage tables up front, before allocating any.
     std::vector<std::uint32_t> cardinality(n, 0);
     std::uint64_t entries = 0;
     for (const auto v : problem.postorder) {
@@ -385,7 +380,7 @@ ExactResult mask_dp(const Prepared& problem, std::uint32_t maximum_stores, const
       }
     }
 
-    // Finalize the root's open component before indexing by actual store count.
+    // Close the root's open component, then index by actual store count.
     std::vector<Closed> roots(static_cast<std::size_t>(budget) + 1);
     const auto& root_stage = stages[0].back();
     for (std::uint32_t mask = 0; mask < masks; ++mask) {
@@ -403,10 +398,7 @@ ExactResult mask_dp(const Prepared& problem, std::uint32_t maximum_stores, const
     for (std::uint32_t count = 0; count <= budget; ++count) {
       if (roots[count].value == infinity) continue;
       auto cuts = reconstruct(problem, stages, roots[count], run);
-      // Independent component reconstruction/pricing validates the relaxed
-      // multipliers and empty components. Raw materialization is additionally
-      // exercised by external exact/evaluator tests, without its O(n*height)
-      // parent walks inside the solver's capped recurrence.
+      // Cross-check against the independent formula evaluator.
       const auto evaluated = evaluate_formula(problem, cuts);
       if (evaluated.objective != roots[count].value || evaluated.stores != count)
         throw std::logic_error("DP reconstruction disagrees with component cost");
@@ -435,8 +427,7 @@ ExactCount at_most(const ExactResult& result, std::uint32_t budget) {
       std::min<std::uint64_t>(result.curve.size(), static_cast<std::uint64_t>(budget) + 1));
   for (std::size_t count = 0; count < end; ++count) {
     const auto& candidate = result.curve[count];
-    // Ascending counts and strict improvement choose the fewest actual stores
-    // when objectives tie; the solver's first cut-set tie stays unchanged.
+    // Ascending counts + strict improvement break ties toward fewer stores.
     if (candidate.feasible && candidate.objective < best.objective) best = candidate;
   }
   return best;

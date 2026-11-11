@@ -7,7 +7,7 @@
 #include <vector>
 
 namespace tiplog::layout {
-// Approved GCC/Clang extension; all public exact costs retain their scale.
+// GCC/Clang extension.
 __extension__ typedef unsigned __int128 Cost;
 inline constexpr Cost infinity = ~Cost{0};
 inline constexpr std::uint32_t no_parent = std::numeric_limits<std::uint32_t>::max();
@@ -48,8 +48,7 @@ Cost checked_mul(Cost a, Cost b);
 std::string cost_string(Cost value);
 Cost parse_cost(std::string_view value);
 bool matches(std::string_view path, const Term& term);
-// Preparation is outside the exact solver's measured interval and state/work
-// limits. Bound its own cross-product traversal and materialized memberships.
+// Bounds prepare()'s own node-by-term work and materialized memberships.
 struct PreparationLimits {
   std::uint64_t max_work{100000000};
   std::uint64_t max_memberships{2000000};

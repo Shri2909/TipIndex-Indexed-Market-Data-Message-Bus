@@ -14,9 +14,9 @@ struct RingConfig {
   std::size_t ring_bytes{};
   std::size_t max_record_bytes{};
   std::uint32_t ckpt_log2{8};
-  // Exclusive logical-head bound. The production representation requires <2^51.
+  // Exclusive logical-head bound; at most 2^51.
   LogPos position_limit{LogPos{1} << 51U};
-  // Exclusive published-sequence bound; the next sequence remains representable.
+  // Exclusive published-sequence bound.
   Seq sequence_limit{std::numeric_limits<Seq>::max()};
 };
 
@@ -53,8 +53,7 @@ struct SeekMetrics {
   std::uint64_t pads_examined{};
 };
 
-// Single-threaded retained byte log. DATA/PAD framing is an independent project
-// design; see ARCHITECTURE §§5.3–5.4 and results/p3/ring-sources.md.
+// Single-threaded retained byte log of DATA and PAD items.
 class Ring {
  public:
   struct Layout {
@@ -102,7 +101,6 @@ class Ring {
   Ring(Ring&&) = delete;
   Ring& operator=(Ring&&) = delete;
 
-  [[nodiscard]] const RingConfig& config() const noexcept { return config_; }
   [[nodiscard]] LogPos head_pos() const noexcept { return head_pos_; }
   [[nodiscard]] LogPos tail_pos() const noexcept { return tail_pos_; }
   [[nodiscard]] Seq head_seq() const noexcept { return head_seq_; }
@@ -112,30 +110,26 @@ class Ring {
   [[nodiscard]] SeekMetrics last_seek_metrics() const noexcept { return last_seek_; }
   [[nodiscard]] std::span<const std::byte> storage_bytes() const noexcept { return bytes_; }
 
-  // minimum_tail is an optional, already declared pressure target at an existing
-  // boundary; zero requests maximal capacity-only retention. No state changes.
+  // minimum_tail: optional pressure target at an existing boundary; 0 means
+  // capacity-only eviction. Does not mutate.
   [[nodiscard]] Layout dry_run(std::size_t payload_bytes, LogPos minimum_tail = 0) const;
-  // Copies a source span only if it aliases ring storage, before any eviction.
+  // Copies the payload only if it aliases ring storage.
   [[nodiscard]] Plan plan_append(std::span<const std::byte> payload,
                                  LogPos minimum_tail = 0) const;
-  // Consume exactly once with no intervening ring mutation. Commit allocates
-  // nothing and cannot reject; violated prepare/commit preconditions terminate.
+  // Consume a Plan exactly once, with no ring mutation in between; a stale or
+  // foreign plan terminates. Never allocates or rejects.
   [[nodiscard]] Published commit(Plan&& plan, TopicId topic) noexcept;
   Seq append(TopicId topic, std::span<const std::byte> payload);
 
-  // O(1) access: the caller must prove pos is a retained DATA/PAD boundary,
-  // for example from tail_pos(), seek_after(), an index posting, or traversal
-  // by prior item.size. Alignment/range checks alone do not prove a boundary;
-  // an aligned interior position violates this precondition in every build.
-  // Borrowed payload is valid only until the next mutation. Range/alignment and
-  // malformed framing throw. Use at_checked() for untrusted positions.
+  // O(1). pos must be a retained item boundary (tail_pos(), seek_after(), an
+  // index posting, or prior pos + size); an aligned interior position is a
+  // precondition violation. Payload is valid until the next mutation. Use
+  // at_checked() for untrusted positions.
   [[nodiscard]] Item at(LogPos pos) const;
-  // Validates membership by walking from the retained tail, O(retained items).
-  // Interior positions, head_pos(), and unretained positions throw out_of_range.
+  // Walks from the tail, O(retained items); non-boundaries throw out_of_range.
   [[nodiscard]] Item at_checked(LogPos pos) const;
   [[nodiscard]] bool is_boundary(LogPos pos) const;
-  // First retained DATA with seq>after, or head_pos. Expired history throws;
-  // after>=head_seq-1 is empty and never computes an overflowing after+1.
+  // First retained DATA with seq > after, or head_pos. Expired history throws.
   [[nodiscard]] LogPos seek_after(Seq after) const;
   void check_invariants() const;
 
@@ -145,7 +139,7 @@ class Ring {
   void note_checkpoint(Seq seq, LogPos pos) noexcept;
   RingConfig config_;
   std::vector<std::byte> bytes_;
-  // Eight bytes per checkpoint; sequence identity is validated in retained DATA.
+  // Sparse seek positions; validated against the retained DATA header on use.
   std::vector<LogPos> checkpoints_;
   LogPos head_pos_{};
   LogPos tail_pos_{};

@@ -1,7 +1,7 @@
 #include "tiplog/engine/engine.hpp"
 
-#include <cassert>
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 #include <stdexcept>
 #include <utility>
@@ -72,7 +72,7 @@ Engine::~Engine() {
 }
 
 Seq Engine::publish(TopicId topic, std::span<const std::byte> payload) {
-  // Registry validation precedes ring eviction or any visible state mutation.
+  // Validate before any state is mutated.
   const auto partition = registry_.get(topic).partition;
   auto layout = ring_.dry_run(payload.size());
   if (layout.record_bytes < config_.minimum_record_bytes)
@@ -83,9 +83,7 @@ Seq Engine::publish(TopicId topic, std::span<const std::byte> payload) {
     retained_data_count_ = retained_data_count_ - layout.data_evicted + 1;
     return published.seq;
   }
-  // Preparation may reserve unused control capacity, but cannot evict, free,
-  // append an entry or advance sequence. Every rejecting operation precedes
-  // both nonallocating commits. Index reclamation reads metadata only.
+  // All rejecting steps happen in prepare; the two commits below cannot fail.
   auto prepared = index_->prepare_append(
       partition, layout.data_pos, layout.tail_pos,
       registry_.partition_count(), layout.data_evicted);
@@ -148,8 +146,7 @@ void Engine::check_invariants() const {
     throw std::logic_error("engine retained DATA count mismatch");
   if (index_) {
     index_->check_invariants(ring_.tail_pos());
-    // This scan starts from the retained log rather than the index's gauge or
-    // chain traversal; sorting decoded postings proves exact one-to-one cover.
+    // Cross-check postings against the ring itself, not the index's own gauges.
     std::vector<std::pair<LogPos, PartitionId>> postings;
     for (const auto &entry : index_->entries())
       if (entry.pos >= ring_.tail_pos())
@@ -191,7 +188,7 @@ Replay::Replay(Engine &engine, const subs::CompiledSubscription &sub, Seq after,
       }
     }
   }
-  // Empty/future ranges are recognized before +1 to avoid overflow.
+  // Checked before after + 1 can overflow.
   if (after >= upper_seq_) {
     status_ = Status::Done;
     if (after == upper_seq_)
@@ -212,12 +209,10 @@ Replay::Replay(Engine &engine, const subs::CompiledSubscription &sub, Seq after,
   work_.seek_pads_examined += seek_work.pads_examined;
   checkpoint_ = ResumeCheckpoint{after, canonical};
   if (supplied) {
-    // A completed snapshot may end before a subsequently inserted PAD. Only
-    // accept the canonical next DATA, or the proven end of the preceding DATA;
-    // arbitrary aligned offsets are never interpreted as ring headers.
+    // Accept only the canonical next DATA or the proven end of the preceding
+    // DATA; arbitrary aligned offsets are never decoded as ring headers.
     const auto candidate = supplied->next_pos;
-    // A tail PAD remains a proven boundary even after the preceding DATA was
-    // evicted. Keep that conservative progress point when its next DATA agrees.
+    // A tail PAD stays a proven boundary after its preceding DATA is evicted.
     if (candidate < canonical && candidate == engine.ring_.tail_pos() &&
         after + 1 == engine.ring_.tail_seq()) {
       const auto tail = engine.ring_.at(candidate);
@@ -301,8 +296,7 @@ std::conditional_t<Report, PollResult, Status>
 Replay::next_batch_into(
     std::conditional_t<Report, PollLimits, std::size_t> supplied_limits,
     std::vector<Delivered> &out) {
-  // Keep the original size_t call ABI and compile telemetry out of the legacy
-  // specialization, while maintaining a single traversal implementation.
+  // One traversal serves both overloads; Report=false compiles out telemetry.
   const auto limits = [&] {
     if constexpr (Report)
       return supplied_limits;
@@ -340,11 +334,9 @@ Replay::next_batch_into(
     return result(PollStop::Error);
   }
   if (mode_ == ReplayMode::Indexed) {
-    // Re-seek at each batch boundary. The consumed previous record's block may
-    // have been recycled while the conservative unread checkpoint remains
-    // retained. No cached metadata is touched before the common checks above.
-    // Within a batch there is no engine mutation; cursor generation is checked
-    // by index advance. Filters are reacquired because intern() may grow them.
+    // Re-seek every batch: the previous record's block may have been recycled
+    // while the unread checkpoint is still retained. Filters are refetched
+    // because intern() may have grown them.
     std::vector<index::Cursor> cursors;
     std::vector<merge::Key> heads;
     std::vector<const subs::PartitionFilter *> filters;
@@ -387,9 +379,7 @@ Replay::next_batch_into(
           if (out.size() - initial_output == limits.max_outputs)
             return PollStop::OutputLimit;
         } else if constexpr (Report) {
-          // The minimum candidate and all earlier selected postings have been
-          // processed. Preserve rejection progress only for the finite path;
-          // legacy/nullopt callers retain their conservative checkpoints.
+          // Record rejection progress only when an inspection cap is set.
           if (limits.max_inspections)
             checkpoint_ = ResumeCheckpoint{item.seq, item.pos + item.size};
         }
@@ -421,7 +411,7 @@ Replay::next_batch_into(
     else
       ++work_.records_fetched;
     if (!item.pad && sub_.matches(item.topic)) {
-      // Preserve the unread record if output allocation throws.
+      // Push before advancing so a throwing push leaves the record unread.
       out.push_back({item.seq, item.pos, item.topic, item.payload});
       ++work_.delivered;
       checkpoint_ = ResumeCheckpoint{item.seq, item.pos + item.size};
@@ -486,16 +476,15 @@ Tail::poll_into(
     return result(PollStop::Error);
   for (;;) {
     if (replay_.status() == Status::Done) {
-      // Sequence-floor validation on the new snapshot is authoritative. An old
-      // completed PAD boundary can expire while every new DATA remains valid.
+      // The new snapshot's sequence-floor check is authoritative; an old PAD
+      // boundary may expire while all DATA stays valid.
       if (checkpoint_->after_seq == engine_->ring_.head_seq() - 1) {
         status_ = Status::Done;
         return result(PollStop::CaughtUp);
       }
       if (Report && limits.max_inspections &&
           inspections == *limits.max_inspections) {
-        // The old boundary is complete but newer DATA exists. Do not spend
-        // unbudgeted preparation on a range that cannot be traversed yet.
+        // Don't open a new range we have no budget left to traverse.
         status_ = Status::More;
         return result(PollStop::InspectionLimit);
       }
@@ -522,9 +511,7 @@ Tail::poll_into(
         else
           return replay_.next_batch_into<false>(remaining.max_outputs, out);
       } catch (...) {
-        // A throwing append can leave a successfully delivered prefix in out.
-        // Keep the public exception caches unchanged, but preserve that prefix
-        // in any later terminal error, including expiry before the next retry.
+        // Keep the delivered prefix reflected in last_delivered_ for any later error.
         if (out.size() != before)
           last_delivered_ = out.back().seq;
         throw;
@@ -553,8 +540,7 @@ Tail::poll_into(
       else
         return status_;
     }
-    // At most one fresh head range follows the old captured range: no engine
-    // mutation interleaves, so the next loop observes its completed head.
+    // At most one fresh range follows: nothing mutates the engine meanwhile.
   }
 }
 } // namespace tiplog

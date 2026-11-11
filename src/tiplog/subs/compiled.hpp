@@ -25,8 +25,7 @@ class CompiledSubscription {
   [[nodiscard]] bool matches(TopicId) const;
   [[nodiscard]] bool belongs_to(const topics::Registry&) const noexcept;
   [[nodiscard]] std::span<const Term> normalized_terms() const noexcept;
-  // Ordered by partition ID, with one filter per selected partition. Views may
-  // invalidate on registry.intern(); the single-threaded core never interleaves it.
+  // Ordered by partition ID; invalidated by registry.intern().
   [[nodiscard]] std::span<const PartitionFilter> filters() const noexcept;
   [[nodiscard]] const PartitionFilter* partition_filter(PartitionId) const noexcept;
 
@@ -37,8 +36,7 @@ class CompiledSubscription {
   std::shared_ptr<detail::CompiledState> state_;
 };
 
-// Empty specs are rejected: the product defines a nonempty union of terms.
-// Duplicate terms and covered exact/subtree terms are removed deterministically.
+// Rejects empty specs; drops duplicate and covered terms.
 [[nodiscard]] SubscriptionSpec normalize(const SubscriptionSpec&);
 [[nodiscard]] CompiledSubscription compile(topics::Registry&, const SubscriptionSpec&);
 

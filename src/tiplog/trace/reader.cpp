@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <array>
 #include <cerrno>
-#include <cstring>
 #include <limits>
 #include <string_view>
 #include <system_error>
@@ -139,8 +138,6 @@ void Reader::validate() {
   if (count > (header_.dict_length - 4) / 7)
     throw FormatError("dictionary count cannot fit");
   std::size_t offset = dict_start + 4;
-  // Duplicate detection only lives during validation. Views borrow the same
-  // immutable mapped/span bytes as records, avoiding a second owned path copy.
   std::unordered_set<std::string_view> paths;
   for (std::uint64_t i = 0; i < count; ++i) {
     if (offset > bytes_.size() || bytes_.size() - offset < 6)
@@ -149,8 +146,7 @@ void Reader::validate() {
     const auto size = static_cast<std::size_t>(little(bytes_, offset + 4, 2));
     offset += 6;
     if (size > bytes_.size() - offset) throw FormatError("truncated dictionary path");
-    // Enforce the same bounded topic contract as Registry, before allocating
-    // a path or allowing the driver to construct its ancestor prefixes.
+    // Same bounds as Registry, checked before allocating the path.
     const std::string_view raw_path(reinterpret_cast<const char*>(bytes_.data() + offset), size);
     if (size > max_topic_path_bytes ||
         static_cast<std::size_t>(std::count(raw_path.begin(), raw_path.end(), '/')) >= max_topic_depth)

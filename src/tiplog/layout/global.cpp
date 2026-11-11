@@ -67,8 +67,7 @@ GlobalPoint penalized(const std::vector<CostCurve>& curves, Rational lambda) {
       }
       const Cost objective = checked_mul(value, multiplier);
       const Cost candidate = checked_add(objective, checked_mul(scaled_lambda, count));
-      // Ascending actual counts and strict improvement choose fewer stores on
-      // every tie. Nominal budget indexes never enter the penalty calculation.
+      // Ascending counts + strict improvement break ties toward fewer stores.
       if (candidate < best_penalized) {
         best_penalized = candidate;
         best_objective = objective;

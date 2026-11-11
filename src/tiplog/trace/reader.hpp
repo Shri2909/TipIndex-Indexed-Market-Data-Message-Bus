@@ -35,9 +35,8 @@ struct Record {
   std::span<const std::byte> payload;
 };
 
-// Validates the complete immutable file on construction. The filesystem overload
-// owns a read-only mapping; the span overload borrows bytes for unit/fuzz tests.
-// Records borrow that storage and remain valid until Reader destruction.
+// Validates the whole file on construction. The path overload owns a read-only
+// mapping; the span overload borrows its bytes. Records borrow that storage.
 class Reader {
  public:
   struct Cursor {
