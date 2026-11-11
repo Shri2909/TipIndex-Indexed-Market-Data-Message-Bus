@@ -1,6 +1,6 @@
 # Methodology: how the benchmarks were run and what they show
 
-Full reports (REPORT, results_*.md, REPRODUCE) and raw evidence are not in this snapshot; they are preserved in git history at commit `5425335`. See also the [README](../README.md) and [ARCHITECTURE](ARCHITECTURE.md).
+Full reports (REPORT, results_*.md, REPRODUCE) and raw evidence are not in this snapshot; they are preserved in git history at commit `5425335`. See also the [README](README.md) and [ARCHITECTURE](ARCHITECTURE.md).
 
 ## Summary
 

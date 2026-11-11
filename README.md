@@ -29,7 +29,7 @@ flowchart LR
   M --> O
 ```
 
-The ring is a fixed-size circular byte buffer that overwrites the oldest data. A replay captures a range `(after_seq, upper_seq]` and returns matches in order. Evicted data gives an explicit `HistoryExpired` or `FellBehind`. Design: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+The ring is a fixed-size circular byte buffer that overwrites the oldest data. A replay captures a range `(after_seq, upper_seq]` and returns matches in order. Evicted data gives an explicit `HistoryExpired` or `FellBehind`. Design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Results
 
@@ -58,7 +58,7 @@ Polling chart: [poll-budget-responsiveness.svg](docs/readme/poll-budget-responsi
 
 ## How it was measured and checked
 
-Paired fresh-process rounds (Scan and Indexed back-to-back), one pinned core, 95% bootstrap intervals, every timed output checked against an independent oracle. This snapshot passes 230 CTests (Release and ASan/UBSan builds) and 279 Python tests. The independent audit (in git history) also records 108 M differential operations and 14 findings, all fixed (bounded, not proof of no defects). Method: [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+Paired fresh-process rounds (Scan and Indexed back-to-back), one pinned core, 95% bootstrap intervals, every timed output checked against an independent oracle. This snapshot passes 230 CTests (Release and ASan/UBSan builds) and 279 Python tests. The independent audit (in git history) also records 108 M differential operations and 14 findings, all fixed (bounded, not proof of no defects). Method: [METHODOLOGY.md](METHODOLOGY.md).
 
 **Honest limits.** One laptop (Intel Core i5-1235U), one trading day (2019-12-30), one 09:30-10:00 window of 32,817,244 records. Timings come from the 24-25 October 2026 study and describe the pre-remediation source; no fresh campaign is claimed. CPU frequency was not fixed. Intervals describe run-to-run variation on this machine, not variation across trading days. Consumer workloads and the layout cost model are assumptions.
 
@@ -88,7 +88,7 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: `p
 - Timed work is pinned to CPU 2 (a P-core), SMT sibling idle, AC power, saved quiescence record.
 - Runners [run_p5_pilot.py](scripts/run_p5_pilot.py) and [run_p6_campaigns.py](scripts/run_p6_campaigns.py) are hash-locked and refuse to run after source edits.
 - The full campaign took about 25 hours and 7 GB+; raw ITCH data is local-only.
-- Optional CPU tuning (sudo): [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+- Optional CPU tuning (sudo): [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Repository map
 
@@ -97,7 +97,8 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: `p
 | [src/tiplog/](src/tiplog/) | Engine, ring, index, merge kernels, [layout library](src/tiplog/layout/) |
 | [tools/](tools/), [bench/](bench/), [tests/](tests/) | Trace driver, benchmarks, tests and oracles |
 | [py/](py/), [scripts/](scripts/), [configs/](configs/) | Conversion, analysis, runners, experiment matrices |
-| [docs/](docs/) | Architecture, methodology and result charts |
+| [ARCHITECTURE.md](ARCHITECTURE.md), [METHODOLOGY.md](METHODOLOGY.md) | Design overview; how the benchmarks were run |
+| [docs/readme/](docs/readme/) | Result charts and their data |
 
 ## Scope and limitations
 
@@ -106,4 +107,4 @@ Optimizer example: `build/release/tiplog_layout_example`. Python environment: `p
 
 ## Further reading
 
-[ARCHITECTURE](docs/ARCHITECTURE.md) | [METHODOLOGY](docs/METHODOLOGY.md)
+[ARCHITECTURE](ARCHITECTURE.md) | [METHODOLOGY](METHODOLOGY.md)

@@ -1,6 +1,6 @@
 # TipIndex architecture overview
 
-A one-minute map of the design. Results and method: [../README.md](../README.md), [METHODOLOGY.md](METHODOLOGY.md). Code uses the name `tiplog` (namespace `tiplog`).
+A one-minute map of the design. Results and method: [../README.md](README.md), [METHODOLOGY.md](METHODOLOGY.md). Code uses the name `tiplog` (namespace `tiplog`).
 
 ## Overview
 
@@ -8,7 +8,7 @@ A market-data bus keeps a recent window of messages in memory. A consumer that f
 
 The one idea: keep, per partition (messages sharing the first two topic segments, in practice one stock symbol), an index of record positions. Replay then reads only the selected partitions and merges them back into publication order. A Scan fallback (filter the whole range) is kept for broad subscriptions, where indexing loses.
 
-In scope: a single-threaded, in-process C++20 engine and an offline storage-layout optimizer. Not built: networking, concurrency, durability, disk recovery (roadmap only). Measured results and limits: [../README.md](../README.md) and [METHODOLOGY.md](METHODOLOGY.md).
+In scope: a single-threaded, in-process C++20 engine and an offline storage-layout optimizer. Not built: networking, concurrency, durability, disk recovery (roadmap only). Measured results and limits: [../README.md](README.md) and [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Component diagram
 
@@ -98,4 +98,4 @@ Offline. It models cutting each symbol's topic tree into connected stores under 
 
 ## Where to go deeper
 
-The headers [engine.hpp](../src/tiplog/engine/engine.hpp), [ring.hpp](../src/tiplog/ring/ring.hpp), [index.hpp](../src/tiplog/index/index.hpp), [kernels.hpp](../src/tiplog/merge/kernels.hpp).
+The headers [engine.hpp](src/tiplog/engine/engine.hpp), [ring.hpp](src/tiplog/ring/ring.hpp), [index.hpp](src/tiplog/index/index.hpp), [kernels.hpp](src/tiplog/merge/kernels.hpp).
