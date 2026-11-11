@@ -35,3 +35,11 @@ results/p6/**/*.mdt
 
 # Local project prompts
 /*[Pp][Rr][Oo][Mm][Pp][Tt]*.[Mm][Dd]
+
+# Historical source archives embed local-only project prompts. Keep the original
+# bytes locally for audit reproduction; see docs/report/PUBLIC_PACKAGING.md.
+/audit/independent-20261027T041900Z/final-source.tar
+/audit/independent-20261027T041900Z/initial/source-snapshot.tar
+
+# Local forensic career profile.
+/PROJECT_PROFILE.md
