@@ -18,7 +18,7 @@ target_compile_options(tiplog_build_options INTERFACE
   -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wformat=2
 )
 
-# Future real fuzz targets link this interface to obtain libFuzzer's main().
+# Fuzz targets link this interface to obtain libFuzzer's main().
 # The fuzz preset instruments all compiled code without replacing test main().
 add_library(tiplog_fuzzer_options INTERFACE)
 add_library(tiplog::fuzzer_options ALIAS tiplog_fuzzer_options)

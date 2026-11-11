@@ -1,11 +1,9 @@
-// Original diagnostic; mallinfo2 field meanings: glibc manual §3.2.3.10.
-// This measures a declared single-thread process allocation boundary, not RSS
-// or universally exact per-object allocator headers. See results/p4/memory-sources.md.
+// Measures a declared single-thread process allocation boundary (mallinfo2), not RSS.
+#include "cli_number.hpp"
 #include "tiplog/index/index.hpp"
 
 #include <algorithm>
 #include <bit>
-#include <charconv>
 #include <cinttypes>
 #include <cstdio>
 #include <cstdlib>
@@ -25,13 +23,6 @@
 #include <malloc.h>
 
 namespace {
-std::uint64_t parse(std::string_view text) {
-  std::uint64_t value{};
-  const auto parsed = std::from_chars(text.data(), text.data() + text.size(), value);
-  if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size())
-    throw std::invalid_argument("unsigned integer required");
-  return value;
-}
 void print_info(const char* name, const struct mallinfo2& info) {
   std::printf("\"%s\":{\"arena\":%zu,\"ordblks\":%zu,\"smblks\":%zu,"
       "\"hblks\":%zu,\"hblkhd\":%zu,\"usmblks\":%zu,\"fsmblks\":%zu,"
@@ -57,7 +48,7 @@ int main(int argc, char** argv) {
     for (int i = 1; i < argc; i += 2) {
       if (i + 1 == argc) throw std::invalid_argument("option requires value");
       const std::string_view option(argv[i]);
-      const auto value = parse(argv[i + 1]);
+      const auto value = tiplog::cli::parse_u64(argv[i + 1]);
       if (option == "--ring-bytes") capacity = value;
       else if (option == "--publications") publications = value;
       else if (option == "--partitions") partitions = value;
@@ -76,8 +67,7 @@ int main(int argc, char** argv) {
         config.entries_per_block, partitions);
     config.sweep_evictions = 256;
     const auto retained_limit = capacity / 16;
-    // All parsing, schedule parameters and output setup precede the baseline.
-    // No output or non-index dynamic container is used inside the boundary.
+    // Parsing, schedule setup and output precede the baseline; nothing else allocates inside the boundary.
     std::setvbuf(stdout, nullptr, _IONBF, 0);
     const auto before = ::mallinfo2();
     auto index = std::make_unique<tiplog::index::Index>(config);
@@ -100,7 +90,7 @@ int main(int argc, char** argv) {
     const auto system = difference(sum(after.arena, after.hblkhd), sum(before.arena, before.hblkhd));
     const auto overhead = difference(charged_after,
         sum(charged_before, stats.memory.reserved_bytes));
-    // Independent structural verification is after the allocator snapshot.
+    // Structural verification runs after the allocator snapshot.
     index->check_invariants(stats.tail_pos);
     std::printf("{\"status\":\"ok\",\"method\":\"fresh-single-thread-glibc-mallinfo2-delta\","
         "\"glibc\":\"%s\",\"ring_bytes\":%" PRIu64 ",\"publications\":%" PRIu64

@@ -1,18 +1,16 @@
 #include "bench_log.hpp"
 #include "tiplog/merge/kernels.hpp"
+#include "../../tools/cli_number.hpp"
 #include "../../tools/file_safety.hpp"
 
 #include <benchmark/benchmark.h>
 
 #include <array>
-#include <charconv>
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
-#include <iomanip>
 #include <iostream>
 #include <limits>
-#include <numeric>
 #include <optional>
 #include <random>
 #include <sstream>
@@ -171,8 +169,8 @@ std::string metadata(const Profile &p, const Input &input,
                      std::string_view kernel) {
   const auto span = p.touch ? (p.outputs - 1) * 256 + 8 : 0;
   std::ostringstream out;
-  out << "{\"profile\":" << tiplog::benchlog::quoted(profile_name(p))
-      << ",\"kernel\":" << tiplog::benchlog::quoted(kernel)
+  out << "{\"profile\":" << tiplog::bench::json(profile_name(p))
+      << ",\"kernel\":" << tiplog::bench::json(kernel)
       << ",\"seed\":" << p.seed << ",\"requested_k\":" << p.k
       << ",\"active_k\":" << input.active << ",\"outputs\":" << p.outputs
       << ",\"input_hash_hex\":\"" << hex(input.input_hash)
@@ -327,15 +325,9 @@ void add_profile(const Profile &profile, bool verification, bool quad_plain) {
 std::string value(std::string_view arg, std::string_view prefix) {
   return std::string(arg.substr(prefix.size()));
 }
-std::uint64_t number(std::string_view text) {
-  std::uint64_t result{};
-  const auto parsed = std::from_chars(text.data(), text.data() + text.size(), result);
-  if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size())
-    throw std::invalid_argument("expected unsigned decimal integer");
-  return result;
-}
+using tiplog::cli::parse_u64;
 std::size_t parse_size(std::string_view text) {
-  const auto result = number(text);
+  const auto result = parse_u64(text);
   if (result > std::numeric_limits<std::size_t>::max())
     throw std::invalid_argument("size exceeds size_t representation");
   return static_cast<std::size_t>(result);
@@ -364,7 +356,7 @@ int main(int argc, char **argv) {
       else if (arg.starts_with("--touch-bytes="))
         base.touch_bytes = parse_size(value(arg, "--touch-bytes="));
       else if (arg.starts_with("--seed="))
-        base.seed = number(value(arg, "--seed="));
+        base.seed = parse_u64(value(arg, "--seed="));
       else if (arg == "--tiplog-help") {
         std::cout
             << "merge_bench --profile=pilot|full|uniform64|geometric64|touch64 "

@@ -1,6 +1,5 @@
 #include "tiplog/layout/exact.hpp"
 
-#include <algorithm>
 #include <cstdint>
 #include <fstream>
 #include <iostream>

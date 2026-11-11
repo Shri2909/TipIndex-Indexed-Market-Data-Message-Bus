@@ -1,11 +1,11 @@
 #pragma once
 
+#include "../cli_number.hpp"
 #include "tiplog/types.hpp"
 
 #include <algorithm>
 #include <array>
 #include <bit>
-#include <charconv>
 #include <cstddef>
 #include <cstdint>
 #include <limits>
@@ -18,14 +18,7 @@
 
 namespace tiplog::bench {
 
-inline std::uint64_t number(std::string_view value) {
-  std::uint64_t result{};
-  const auto parsed =
-      std::from_chars(value.data(), value.data() + value.size(), result);
-  if (parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size())
-    throw std::invalid_argument("expected unsigned decimal integer");
-  return result;
-}
+inline std::uint64_t number(std::string_view value) { return cli::parse_u64(value); }
 inline std::vector<std::string> split(std::string_view value, char delimiter) {
   std::vector<std::string> result;
   for (;;) {
@@ -37,9 +30,6 @@ inline std::vector<std::string> split(std::string_view value, char delimiter) {
   }
 }
 
-// Both workload generators validate the entire distribution before publishing.
-// The harness supplies its supported payload bound; the checked-in empirical
-// mix and its deterministic cumulative-count sampling are unchanged.
 using PayloadMix = std::vector<std::pair<std::uint16_t, std::uint64_t>>;
 inline PayloadMix read_payload_mix(std::istream &input,
                                    std::uint64_t maximum_payload = 256) {
@@ -108,9 +98,7 @@ inline std::string json(std::string_view value) {
   return result + '"';
 }
 
-// Independent project implementation of FIPS 180-4 (2015), §§4.1.2,
-// 4.2.2, 5.1.1, 5.2.1, 5.3.3 and 6.2. No reference code copied.
-// Used only outside measured replay intervals. Not a cryptographic product.
+// FIPS 180-4 SHA-256; used only outside measured replay intervals.
 class Sha256 {
 public:
   void update(std::span<const std::byte> input) {
@@ -236,7 +224,7 @@ inline void sink_delivery(std::uint64_t &state, const Delivered &record) {
     sink_byte(state, byte);
 }
 
-// The two implementations use this written integer contract, not shared code.
+// Written integer contract; deliberately not shared with the other implementation.
 struct Random {
   std::uint64_t state;
   std::uint64_t next() {

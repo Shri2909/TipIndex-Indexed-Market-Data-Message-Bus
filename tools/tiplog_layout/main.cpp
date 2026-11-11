@@ -8,7 +8,6 @@
 #include <charconv>
 #include <chrono>
 #include <cstdint>
-#include <filesystem>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -16,7 +15,6 @@
 #include <numeric>
 #include <optional>
 #include <set>
-#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <string_view>
@@ -412,8 +410,7 @@ GlobalInput read_curves(std::istream& in, const Options& config, Context& contex
       const auto count = number32(row[1]);
       if (count > current->maximum_count || !points.insert(count).second)
         throw std::invalid_argument("POINT count outside domain or duplicated");
-      // A missing/null point in a certified full domain denotes proven
-      // infeasibility; in an incomplete curve it denotes an unknown value.
+      // A null point means proven infeasible in a certified full domain, unknown in an incomplete curve.
       if (row[2] != "null") current->values[count] = layout::parse_cost(row[2]);
     } else if (row[0] == "END") {
       fields(row, 1);
@@ -507,11 +504,6 @@ int main(int argc, char** argv) {
                    "Use - for standard input/output. All costs are exact nonnegative integers or num/den rationals.\n";
       return 0;
     }
-    if (config.output != "-") {
-      output_file.open(config.output, std::ios::out | std::ios::trunc);
-      if (!output_file) throw std::runtime_error("cannot open output: " + config.output);
-      output = &output_file;
-    }
     const auto& source = config.input.empty() ? config.global_curves : config.input;
     std::ifstream input_file;
     std::istream* input = &std::cin;
@@ -519,6 +511,12 @@ int main(int argc, char** argv) {
       input_file.open(source);
       if (!input_file) throw std::runtime_error("cannot open input: " + source);
       input = &input_file;
+    }
+    // Preserve an existing result when the source cannot be opened.
+    if (config.output != "-") {
+      output_file.open(config.output, std::ios::out | std::ios::trunc);
+      if (!output_file) throw std::runtime_error("cannot open output: " + config.output);
+      output = &output_file;
     }
     if (config.global_curves.empty()) cases(*input, *output, config, context);
     else global(*input, *output, config, context);

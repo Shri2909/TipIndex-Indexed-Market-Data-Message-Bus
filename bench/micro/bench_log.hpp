@@ -1,35 +1,20 @@
 #pragma once
 
-// Original single-thread diagnostic logging. All calls occur outside the
-// Google Benchmark timed range. Invocation order includes warm-up/calibration;
-// the pinned library does not expose its random-interleaving entropy seed.
+#include "../../tools/tiplog_bench/contracts.hpp"
+
 #include <chrono>
 #include <cstdint>
 #include <cstdlib>
 #include <fstream>
-#include <iomanip>
 #include <optional>
-#include <sstream>
 #include <string>
 #include <string_view>
 #include <stdexcept>
 #include <sys/resource.h>
 #include <sched.h>
 
+// Diagnostic logging, called only outside the Google Benchmark timed range.
 namespace tiplog::benchlog {
-inline std::string quoted(std::string_view text) {
-  std::ostringstream out;
-  out << '"';
-  for (const auto c : text) {
-    if (c == '"' || c == '\\') out << '\\' << c;
-    else if (static_cast<unsigned char>(c) < 32)
-      out << "\\u" << std::hex << std::setw(4) << std::setfill('0')
-          << static_cast<unsigned>(static_cast<unsigned char>(c)) << std::dec;
-    else out << c;
-  }
-  out << '"';
-  return out.str();
-}
 inline std::optional<std::uint64_t> frequency() {
   std::ifstream stream("/sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq");
   std::uint64_t value{};
@@ -60,7 +45,7 @@ class Invocation {
     const auto* path = std::getenv("TIPLOG_BENCH_INVOCATIONS");
     if (!path || !*path) return;
     std::ofstream out(path, std::ios::app);
-    out << "{\"invocation\":" << ordinal_ << ",\"profile\":" << quoted(profile_)
+    out << "{\"invocation\":" << ordinal_ << ",\"profile\":" << tiplog::bench::json(profile_)
         << ",\"seed\":" << seed_ << ",\"iterations\":" << iterations
         << ",\"outputs_per_iteration\":" << outputs_per_iteration
         << ",\"digest_hex\":\"" << std::hex << digest << std::dec << '"'

@@ -1,8 +1,5 @@
-// Isolated Linux runtime-study frontend derived from this project's
-// tools/tiplog_layout/main.cpp, SHA-256
-// f4a8769795d5a341e5cb8122d99e88f17ccbc22e25e2d61791a19a2188b34517.
-// The original frontend and the optimizer implementation remain unchanged.
-// Source: approved VALIDATION_PLAN section 5 and P7 runtime-protocol-review.md.
+// Linux runtime-study frontend derived from tools/tiplog_layout/main.cpp
+// (SHA-256 f4a8769795d5a341e5cb8122d99e88f17ccbc22e25e2d61791a19a2188b34517); the original is unchanged.
 #if !defined(__linux__)
 #error "tiplog_layout_runtime requires Linux sched_getcpu and sysfs observations"
 #endif
@@ -25,7 +22,6 @@
 #include <numeric>
 #include <optional>
 #include <set>
-#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <string_view>
@@ -56,8 +52,7 @@ std::uint32_t number32(std::string_view text) {
   return static_cast<std::uint32_t>(value);
 }
 
-// These are observations of the actual solver process, not its supervisor.
-// Unreadable/malformed sysfs values and failed sched_getcpu calls remain null.
+// Observations of the solver process itself; unreadable or failed readings stay null.
 struct RuntimeObservation {
   std::optional<int> cpu;
   std::optional<std::uint64_t> frequency_khz;
@@ -84,16 +79,14 @@ std::optional<std::uint64_t> cpu2_frequency_khz() {
     const auto frequency = number(*line);
     if (frequency != 0) return frequency;
   } catch (const std::invalid_argument&) {
-    // A missing/malformed frequency observation is not a measured zero.
+    // A missing or malformed frequency is not a measured zero.
   }
   return std::nullopt;
 }
 
 std::optional<bool> ac_online() {
-  // Linux exposes external power supplies under /sys/class/power_supply.
-  // An online Mains/USB supply establishes AC/external power. All recognized
-  // supplies must be known offline before false is reported; no supplies or
-  // any unreadable recognized value leaves the observation unknown.
+  // Online Mains/USB means AC; false requires every recognized supply known offline,
+  // otherwise unknown.
   std::error_code error;
   std::filesystem::directory_iterator entry("/sys/class/power_supply", error);
   const std::filesystem::directory_iterator end;
@@ -387,8 +380,7 @@ void run_case(std::ostream& out, const std::string& id, std::uint32_t budget,
     }
     const auto solver_elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - start).count();
     const auto runtime_after = observe_after_solver();
-    // Exclude sysfs/CPU observations from both solver seconds and the existing
-    // method-plus-independent-verification total.
+    // Sysfs/CPU observations are excluded from solver and verification timing.
     const auto verification_start = std::chrono::steady_clock::now();
     std::optional<layout::Evaluation> evaluation;
     if (chosen) {
@@ -524,8 +516,7 @@ GlobalInput read_curves(std::istream& in, const Options& config, Context& contex
       const auto count = number32(row[1]);
       if (count > current->maximum_count || !points.insert(count).second)
         throw std::invalid_argument("POINT count outside domain or duplicated");
-      // A missing/null point in a certified full domain denotes proven
-      // infeasibility; in an incomplete curve it denotes an unknown value.
+      // A null point means proven infeasible in a certified full domain, unknown in an incomplete curve.
       if (row[2] != "null") current->values[count] = layout::parse_cost(row[2]);
     } else if (row[0] == "END") {
       fields(row, 1);
@@ -620,11 +611,6 @@ int main(int argc, char** argv) {
                    "Linux case rows include actual process CPU, CPU2 sysfs frequency, and external-power observations; unknown values are null.\n";
       return 0;
     }
-    if (config.output != "-") {
-      output_file.open(config.output, std::ios::out | std::ios::trunc);
-      if (!output_file) throw std::runtime_error("cannot open output: " + config.output);
-      output = &output_file;
-    }
     const auto& source = config.input.empty() ? config.global_curves : config.input;
     std::ifstream input_file;
     std::istream* input = &std::cin;
@@ -632,6 +618,12 @@ int main(int argc, char** argv) {
       input_file.open(source);
       if (!input_file) throw std::runtime_error("cannot open input: " + source);
       input = &input_file;
+    }
+    // Preserve an existing result when the source cannot be opened.
+    if (config.output != "-") {
+      output_file.open(config.output, std::ios::out | std::ios::trunc);
+      if (!output_file) throw std::runtime_error("cannot open output: " + config.output);
+      output = &output_file;
     }
     if (config.global_curves.empty()) cases(*input, *output, config, context);
     else global(*input, *output, config, context);

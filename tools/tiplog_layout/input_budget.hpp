@@ -14,8 +14,7 @@ struct InputLimits {
   PreparationLimits preparation{200000000, 2000000};
 };
 
-// These are whole-run frontend budgets, separate from exact-method limits.
-// Check every charge before growing input/curve storage or starting preparation.
+// Whole-run frontend budgets; every charge is checked before storage grows or preparation starts.
 class InputBudget {
 public:
   explicit InputBudget(const InputLimits& limits) : limits_(limits) {}

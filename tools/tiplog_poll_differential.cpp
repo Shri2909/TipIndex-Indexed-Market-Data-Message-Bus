@@ -1,5 +1,5 @@
+#include "cli_number.hpp"
 #include "differential/poll_campaign.hpp"
-#include <charconv>
 #include <iostream>
 #include <limits>
 #include <stdexcept>
@@ -16,10 +16,7 @@ int main(int argc, char** argv) {
       }
       if (i + 1 == argc) throw std::invalid_argument("missing option value");
       const std::string_view value(argv[++i]);
-      std::uint64_t number{};
-      const auto parsed = std::from_chars(value.data(), value.data() + value.size(), number);
-      if (parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size())
-        throw std::invalid_argument("invalid unsigned integer");
+      const auto number = tiplog::cli::parse_u64(value);
       if (option == "--seed-base") seed_base = number;
       else if (option == "--seeds") seeds = number;
       else if (option == "--operations") operations = number;

@@ -10,9 +10,7 @@
 #include <vector>
 
 namespace tiplog::cli {
-// Protect the inputs of a single local invocation, including hard-link aliases.
-// Paths must remain stable during the invocation; this is not a concurrent
-// hostile-pathname protocol. Call before any output is opened for writing.
+// Rejects an output aliasing an input (including hard links); call before opening any output.
 inline void require_distinct_files(const std::filesystem::path& input,
                                    const std::filesystem::path& output) {
   if (input.empty() || output.empty()) return;
@@ -23,8 +21,7 @@ inline void require_distinct_files(const std::filesystem::path& input,
     throw std::invalid_argument("input and output paths must differ: " + input.string());
 }
 
-// Google Benchmark and our diagnostics each own an output. Check these before
-// library initialization can open a requested result file.
+// Check every output path before library initialization can open a result file.
 inline void check_benchmark_outputs(
     int argc, char** argv,
     std::initializer_list<std::filesystem::path> inputs = {},
@@ -40,8 +37,7 @@ inline void check_benchmark_outputs(
     const std::string_view arg(argv[index]);
     if (arg.starts_with(prefix)) benchmark_output = arg.substr(prefix.size());
   }
-  // Pinned Google Benchmark reads BENCHMARK_OUT, then lets the last command-line
-  // --benchmark_out= value override it (including an explicitly empty value).
+  // Pinned Google Benchmark: --benchmark_out= overrides BENCHMARK_OUT, even when empty.
   if (!benchmark_output.empty()) outputs.push_back(std::move(benchmark_output));
   for (std::size_t index = 0; index < outputs.size(); ++index) {
     for (const auto& input : inputs) require_distinct_files(input, outputs[index]);

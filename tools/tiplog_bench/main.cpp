@@ -4,7 +4,7 @@
 #include "tiplog/trace/reader.hpp"
 
 #include <array>
-#include <chrono>
+#include <charconv>
 #include <cmath>
 #include <filesystem>
 #include <fstream>
@@ -15,7 +15,6 @@
 #include <optional>
 #include <sched.h>
 #include <set>
-#include <sstream>
 #include <sys/resource.h>
 #include <time.h>
 #include <unordered_map>
@@ -297,8 +296,8 @@ Loaded load(Options &o) {
     for (const auto &topic : out.trace->dictionary())
       paths.emplace_back(topic.id, topic.path);
   }
-  for (const auto &[id, path] : paths) {
-    (void)id;
+  for (const auto &entry : paths) {
+    const auto &path = entry.second;
     const auto slash = path.find('/');
     partition_paths.insert(path.substr(0, slash));
     if (slash != std::string::npos)
@@ -327,9 +326,8 @@ Loaded load(Options &o) {
                               ring.head_seq() - ring.tail_seq()});
     }
   };
-  // Trace validation/dictionary allocation are excluded. The publish-window
-  // diagnostic includes input traversal and the identical payload sink in both
-  // index-on/off arms; it is separate from replay timings.
+  // Excludes trace validation and dictionary setup; includes input traversal and the payload sink
+  // in both index arms. Separate from replay timings.
   out.publish_cpu_start = ::sched_getcpu();
   out.publish_freq_start = frequency();
   rusage usage_before{};
@@ -645,7 +643,7 @@ void allocator(std::ostream &out, Loaded &loaded, const Options &o) {
   const auto expected = loaded.engine->index()->stats();
   const auto partition_count = loaded.engine->registry().partition_count();
   loaded.engine.reset();
-  // Schedule, trace map and output objects preexist this Index-only boundary.
+  // Schedule, trace map and output objects exist before this Index-only boundary.
   const auto before = ::mallinfo2();
   auto index = std::make_unique<index::Index>(o.config.index);
   for (const auto &entry : loaded.schedule) {
@@ -699,9 +697,8 @@ int main(int argc, char **argv) {
       throw std::runtime_error("cannot open output");
     out << std::setprecision(std::numeric_limits<double>::max_digits10);
     auto loaded = load(o);
-    // Intern every requested root and settle all observer filters before the
-    // first warm-up or measurement. Sorted unique term strings make zero-volume
-    // topic IDs, hook order and registry gauges independent of shuffled arms.
+    // Intern every root and settle all observer filters before measuring; sorted unique terms keep
+    // topic IDs, hook order and registry gauges independent of arm order.
     std::map<std::string, subs::CompiledSubscription> compiled;
     std::map<std::string, std::string> compilation_errors;
     for (const auto &request : todo)
@@ -794,8 +791,7 @@ int main(int argc, char **argv) {
     out << "}\n";
     std::vector<std::byte> scratch(64ULL << 20);
     std::uint64_t scratch_sink = 0;
-    // Registry and compiled plans are now immutable. Every measured arm still
-    // constructs a new captured replay; no request-loop compilation occurs.
+    // Registry and plans are immutable from here; each arm builds a new captured replay.
     bool run_failed = false;
     auto write_failure = [&](const Request &r, std::string_view status,
                              const std::exception &error) {
@@ -821,10 +817,8 @@ int main(int argc, char **argv) {
         const auto kernel = merge_kernel(r.kernel);
         if (r.cache != "repeat-warm" && r.cache != "scratch-thrashed")
           throw std::invalid_argument("cache treatment name");
-        // Mode eligibility also depends on the compiled plan and index. Probe
-        // construction before warm-up/cache treatment, outside timed replay.
-        // Known representation/configuration rejections stay reject arms;
-        // unexpected failures still escape this narrowly typed validation.
+        // Probe construction outside timed replay: mode eligibility depends on the compiled plan and index.
+        // Known representation/configuration rejections become reject arms; other failures escape.
         (void)loaded.engine->open_replay(compiled.at(r.terms), r.after, mode, kernel);
       } catch (const std::invalid_argument &error) {
         write_failure(r, "invalid_config", error);

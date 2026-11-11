@@ -1,19 +1,17 @@
+#include "cli_number.hpp"
+#include "tiplog_bench/contracts.hpp"
 #include "tiplog/engine/engine.hpp"
 
 #include <algorithm>
 #include <array>
 #include <bit>
-#include <charconv>
-#include <cerrno>
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>
 #include <iomanip>
 #include <iostream>
-#include <limits>
 #include <memory>
-#include <numeric>
 #include <optional>
 #include <sstream>
 #include <stdexcept>
@@ -28,6 +26,7 @@
 
 namespace {
 using namespace tiplog;
+namespace tb = tiplog::bench;
 constexpr std::uint64_t fixture_cap = 128ULL << 20;
 constexpr std::uint64_t max_records = 2000000;
 constexpr std::uint32_t block_entries = 1024;
@@ -39,25 +38,7 @@ std::uint64_t ns(clockid_t clock = CLOCK_MONOTONIC) {
   return static_cast<std::uint64_t>(value.tv_sec) * 1000000000ULL +
          static_cast<std::uint64_t>(value.tv_nsec);
 }
-std::uint64_t number(std::string_view value) {
-  std::uint64_t result{};
-  const auto parsed = std::from_chars(value.data(), value.data() + value.size(), result);
-  if (value.empty() || parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size())
-    throw std::invalid_argument("expected unsigned integer: " + std::string(value));
-  return result;
-}
-std::string quoted(std::string_view value) {
-  std::ostringstream out;
-  out << '"';
-  for (const char raw : value) {
-    const auto ch = static_cast<unsigned char>(raw);
-    if (ch == '"' || ch == '\\') out << '\\' << static_cast<char>(ch);
-    else if (ch < 32) out << "\\u" << std::hex << std::setw(4) << std::setfill('0') << static_cast<unsigned>(ch) << std::dec;
-    else out << static_cast<char>(ch);
-  }
-  out << '"';
-  return out.str();
-}
+using tiplog::cli::parse_u64;
 std::vector<std::string> split(std::string_view text) {
   std::vector<std::string> result;
   for (std::size_t start = 0;;) {
@@ -102,10 +83,10 @@ Options parse(int argc, char **argv) {
     }
     if (i + 1 == argc) throw std::invalid_argument("option needs a value");
     const std::string_view value = argv[++i];
-    if (arg == "--records") out.records = number(value);
-    else if (arg == "--seed") out.seed = number(value);
-    else if (arg == "--max-outputs") out.outputs = number(value);
-    else if (arg == "--reps") out.reps = number(value);
+    if (arg == "--records") out.records = parse_u64(value);
+    else if (arg == "--seed") out.seed = parse_u64(value);
+    else if (arg == "--max-outputs") out.outputs = parse_u64(value);
+    else if (arg == "--reps") out.reps = parse_u64(value);
     else if (arg == "--cases") out.cases = split(value);
     else if (arg == "--shapes") out.shapes = split(value);
     else if (arg == "--partitions") out.partitions = split(value);
@@ -125,15 +106,15 @@ Options parse(int argc, char **argv) {
   for (const auto &value : out.shapes)
     if (!one_of(value, {"small", "fixed", "variable", "wrapped-variable"})) throw std::invalid_argument("unknown shape");
   for (const auto &value : out.partitions)
-    if (number(value) == 0 || number(value) > merge::max_cursors) throw std::invalid_argument("K must be in [1,65535], subject to the fixture cap");
+    if (parse_u64(value) == 0 || parse_u64(value) > merge::max_cursors) throw std::invalid_argument("K must be in [1,65535], subject to the fixture cap");
   for (const auto &value : out.candidate_every)
-    if (number(value) == 0 || number(value) > 1024) throw std::invalid_argument("candidate-every must be in [1,1024]");
+    if (parse_u64(value) == 0 || parse_u64(value) > 1024) throw std::invalid_argument("candidate-every must be in [1,1024]");
   for (const auto &value : out.modes)
     if (!one_of(value, {"scan", "indexed", "auto"})) throw std::invalid_argument("unknown mode");
   for (const auto &value : out.kernels)
     if (!one_of(value, {"stdpq", "binheap", "quad", "loser"})) throw std::invalid_argument("unknown kernel");
   for (const auto &value : out.budgets)
-    if (!one_of(value, {"legacy", "unlimited"}) && number(value) == 0) throw std::invalid_argument("benchmark budgets must be positive");
+    if (!one_of(value, {"legacy", "unlimited"}) && parse_u64(value) == 0) throw std::invalid_argument("benchmark budgets must be positive");
   for (const auto &value : out.schedules)
     if (!one_of(value, {"round-robin", "immediate-redrain"})) throw std::invalid_argument("unknown schedule");
   const auto root = std::filesystem::current_path();
@@ -368,7 +349,7 @@ std::string run(const Options &o, Fixture &f, const Arm &arm) {
   const auto open_work = replay.work();
   const auto effective = replay.effective_mode();
   const auto bounded = !one_of(arm.budget, {"legacy", "unlimited"});
-  const auto cap = bounded ? std::optional<std::uint64_t>{number(arm.budget)} : std::nullopt;
+  const auto cap = bounded ? std::optional<std::uint64_t>{parse_u64(arm.budget)} : std::nullopt;
   Samples latency, victim_delay, publisher_delay;
   const auto sample_bound = o.records + f.pads_in_range + 2;
   latency.values.reserve(sample_bound); victim_delay.values.reserve(sample_bound); publisher_delay.values.reserve(sample_bound);
@@ -432,7 +413,7 @@ std::string run(const Options &o, Fixture &f, const Arm &arm) {
     throw std::logic_error("replay final captured boundary mismatch");
   std::ostringstream out;
   out << std::setprecision(17)
-      << "\"status\":\"ok\",\"correctness\":\"passed\",\"effective_mode\":" << quoted(mode_name(effective))
+      << "\"status\":\"ok\",\"correctness\":\"passed\",\"effective_mode\":" << tb::json(mode_name(effective))
       << ",\"selected_partition_count\":" << replay.selected_partition_count()
       << ",\"open_elapsed_ns\":" << open_ns << ",\"open_work\":" << work_json(open_work)
       << ",\"poll_work\":" << work_json(work) << ",\"all_work\":" << work_json(replay.work())
@@ -457,10 +438,10 @@ std::string host_json() {
   utsname host{};
   if (::uname(&host) != 0) throw std::runtime_error("uname failed");
   std::ostringstream out;
-  out << "{\"system\":" << quoted(host.sysname) << ",\"release\":" << quoted(host.release)
-      << ",\"machine\":" << quoted(host.machine) << ",\"hostname\":" << quoted(host.nodename)
+  out << "{\"system\":" << tb::json(host.sysname) << ",\"release\":" << tb::json(host.release)
+      << ",\"machine\":" << tb::json(host.machine) << ",\"hostname\":" << tb::json(host.nodename)
       << ",\"hardware_concurrency\":" << std::thread::hardware_concurrency()
-      << ",\"compiler\":" << quoted(__VERSION__)
+      << ",\"compiler\":" << tb::json(__VERSION__)
 #ifdef NDEBUG
       << ",\"ndebug\":true"
 #else
@@ -479,8 +460,8 @@ int main(int argc, char **argv) {
     bool failed = false;
     for (const auto &name : o.cases) for (const auto &shape : o.shapes)
       for (const auto &k_text : o.partitions) for (const auto &candidate_text : o.candidate_every) {
-      const auto k = number(k_text);
-      const auto candidate_every = number(candidate_text);
+      const auto k = parse_u64(k_text);
+      const auto candidate_every = parse_u64(candidate_text);
       std::optional<Fixture> f;
       std::string fixture_error;
       bool infeasible{};
@@ -496,16 +477,16 @@ int main(int argc, char **argv) {
         for (std::size_t order = 0; order < arms.size(); ++order) {
           const auto &arm = arms[(order + rotation) % arms.size()];
           std::ostringstream row;
-          row << "{\"schema\":\"tiplog.f01.poll-benchmark.v1\",\"reader\":\"replay\",\"case\":" << quoted(name)
-              << ",\"shape\":" << quoted(shape) << ",\"records\":" << o.records << ",\"seed\":" << o.seed
-              << ",\"configured_partitions\":" << k << ",\"mode\":" << quoted(arm.mode) << ",\"kernel\":" << quoted(arm.kernel)
+          row << "{\"schema\":\"tiplog.f01.poll-benchmark.v1\",\"reader\":\"replay\",\"case\":" << tb::json(name)
+              << ",\"shape\":" << tb::json(shape) << ",\"records\":" << o.records << ",\"seed\":" << o.seed
+              << ",\"configured_partitions\":" << k << ",\"mode\":" << tb::json(arm.mode) << ",\"kernel\":" << tb::json(arm.kernel)
               << ",\"candidate_every\":" << candidate_every
-              << ",\"budget\":" << quoted(arm.budget) << ",\"schedule\":" << quoted(arm.schedule)
+              << ",\"budget\":" << tb::json(arm.budget) << ",\"schedule\":" << tb::json(arm.schedule)
               << ",\"max_outputs\":" << o.outputs << ",\"repetition\":" << repetition << ",\"arm_order\":" << order
               << ",\"host\":" << host << ',';
           if (!f) {
             failed = true;
-            row << "\"status\":" << quoted(infeasible ? "infeasible" : "error") << ",\"error\":" << quoted(fixture_error);
+            row << "\"status\":" << tb::json(infeasible ? "infeasible" : "error") << ",\"error\":" << tb::json(fixture_error);
           } else {
             row << "\"fixture_build_ns\":" << f->build_ns << ",\"fixture_reserved_bytes\":" << f->reserved_bytes
                 << ",\"index_reserved_bytes\":" << f->index_reserved_bytes
@@ -517,7 +498,7 @@ int main(int argc, char **argv) {
             try { row << run(o, *f, arm); }
             catch (const std::exception &error) {
               failed = true;
-              row << "\"status\":\"error\",\"error\":" << quoted(error.what());
+              row << "\"status\":\"error\",\"error\":" << tb::json(error.what());
             }
           }
           row << '}';

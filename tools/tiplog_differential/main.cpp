@@ -1,18 +1,12 @@
+#include "../cli_number.hpp"
 #include "differential/campaign.hpp"
-#include <charconv>
 #include <chrono>
 #include <iostream>
 #include <stdexcept>
 #include <string_view>
-namespace {
-std::uint64_t number(std::string_view s) {
-  std::uint64_t n{};
-  const auto r = std::from_chars(s.data(), s.data() + s.size(), n);
-  if (r.ec != std::errc{} || r.ptr != s.data() + s.size())
-    throw std::invalid_argument("invalid unsigned integer");
-  return n;
-}
-} // namespace
+
+using tiplog::cli::parse_u64;
+
 int main(int argc, char **argv) {
   try {
     tiplog::differential::Config config;
@@ -29,11 +23,11 @@ int main(int argc, char **argv) {
         throw std::invalid_argument("missing option value");
       const std::string_view value(argv[++i]);
       if (arg == "--seeds")
-        config.seeds = number(value);
+        config.seeds = parse_u64(value);
       else if (arg == "--operations")
-        config.operations = number(value);
+        config.operations = parse_u64(value);
       else if (arg == "--seed-base")
-        config.seed_base = number(value);
+        config.seed_base = parse_u64(value);
       else if (arg == "--mode")
         mode = value;
       else if (arg == "--kernel")

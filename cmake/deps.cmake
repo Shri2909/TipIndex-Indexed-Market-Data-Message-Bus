@@ -2,7 +2,7 @@ include(FetchContent)
 
 option(TIPLOG_FORCE_FETCH_GTEST "Use the pinned GoogleTest archive (default)" ON)
 option(TIPLOG_ALLOW_SYSTEM_GTEST "Opt into an exact system GoogleTest without archive hash verification" OFF)
-option(TIPLOG_ENABLE_FUZZING "Instrument code for future libFuzzer targets" OFF)
+option(TIPLOG_ENABLE_FUZZING "Instrument code for libFuzzer targets" OFF)
 set(TIPLOG_DOWNLOAD_CACHE "${PROJECT_SOURCE_DIR}/build/downloads" CACHE PATH
   "Optional directory containing SHA-256-verified dependency archives")
 

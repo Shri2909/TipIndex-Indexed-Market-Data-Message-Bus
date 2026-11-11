@@ -1,3 +1,4 @@
+#include "../cli_number.hpp"
 #include "tiplog/driver/trace_driver.hpp"
 #include "tiplog/engine/engine.hpp"
 
@@ -13,15 +14,7 @@
 #include <string_view>
 
 namespace {
-std::uint64_t number(std::string_view value) {
-  std::uint64_t result{};
-  const auto parsed =
-      std::from_chars(value.data(), value.data() + value.size(), result);
-  if (parsed.ec != std::errc{} || parsed.ptr != value.data() + value.size()) {
-    throw std::invalid_argument("expected unsigned decimal integer");
-  }
-  return result;
-}
+using tiplog::cli::parse_u64;
 double fraction(std::string_view value) {
   double result{};
   const auto parsed =
@@ -94,7 +87,7 @@ int main(int argc, char **argv) {
       else if (arg == "--kernel")
         kernel_name = value;
       else if (arg == "--auto-max-partitions") {
-        const auto count = number(value);
+        const auto count = parse_u64(value);
         if (count > UINT32_MAX)
           throw std::invalid_argument("Auto partition threshold exceeds u32");
         engine_config.auto_max_partitions = static_cast<std::uint32_t>(count);
@@ -105,7 +98,7 @@ int main(int argc, char **argv) {
           throw std::invalid_argument("index-enabled must be 0 or 1");
         engine_config.index_enabled = value == "1";
       } else if (arg == "--pool-blocks" || arg == "--block-entries") {
-        const auto count = number(value);
+        const auto count = parse_u64(value);
         if (count > UINT32_MAX)
           throw std::invalid_argument("index block setting exceeds u32");
         if (arg == "--pool-blocks")
@@ -113,7 +106,7 @@ int main(int argc, char **argv) {
         else
           engine_config.index.entries_per_block = static_cast<std::uint32_t>(count);
       } else if (arg == "--minimum-record-bytes")
-        engine_config.minimum_record_bytes = static_cast<std::size_t>(number(value));
+        engine_config.minimum_record_bytes = static_cast<std::size_t>(parse_u64(value));
       else if (arg == "--pool-policy") {
         if (value == "force-evict")
           engine_config.pool_policy = tiplog::PoolPolicy::ForceEvict;
@@ -123,32 +116,32 @@ int main(int argc, char **argv) {
           throw std::invalid_argument("invalid pool policy");
       }
       else if (arg == "--seed")
-        config.seed = number(value);
+        config.seed = parse_u64(value);
       else if (arg == "--max-records")
-        config.max_records = number(value);
+        config.max_records = parse_u64(value);
       else if (arg == "--ring-bytes")
-        engine_config.ring_bytes = static_cast<std::size_t>(number(value));
+        engine_config.ring_bytes = static_cast<std::size_t>(parse_u64(value));
       else if (arg == "--max-record-bytes")
         engine_config.max_record_bytes =
-            static_cast<std::size_t>(number(value));
+            static_cast<std::size_t>(parse_u64(value));
       else if (arg == "--exact")
         subscription.terms.push_back({tiplog::Term::Exact, std::string(value)});
       else if (arg == "--subtree")
         subscription.terms.push_back(
             {tiplog::Term::Subtree, std::string(value)});
       else if (arg == "--budget") {
-        const auto budget = number(value);
+        const auto budget = parse_u64(value);
         if (budget > std::numeric_limits<std::size_t>::max())
           throw std::invalid_argument("budget too large");
         config.batch_budget = static_cast<std::size_t>(budget);
       } else if (arg == "--consume-every")
-        config.consume_every = number(value);
+        config.consume_every = parse_u64(value);
       else if (arg == "--pause") {
         const auto colon = value.find(':');
         if (colon == std::string_view::npos)
           throw std::invalid_argument("pause requires FIRST:COUNT");
         config.pauses.push_back(
-            {number(value.substr(0, colon)), number(value.substr(colon + 1))});
+            {parse_u64(value.substr(0, colon)), parse_u64(value.substr(colon + 1))});
       } else
         throw std::invalid_argument("unknown option");
     }
@@ -227,8 +220,7 @@ int main(int argc, char **argv) {
             if (!tick.paused)
               consume(tick.budget);
           });
-      // Finish the current captured range, then the final published range. This
-      // is deterministic draining, outside any latency/throughput experiment.
+      // Drain the current captured range, then the final published range (outside any timing).
       while (!final_error) {
         consume(std::max<std::size_t>(1, config.batch_budget));
         if (final_status == tiplog::Status::Done &&

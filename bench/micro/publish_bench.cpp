@@ -1,18 +1,17 @@
 #include "tiplog/engine/engine.hpp"
 #include "bench_log.hpp"
 #include "../../tools/tiplog_bench/contracts.hpp"
+#include "../../tools/cli_number.hpp"
 #include "../../tools/file_safety.hpp"
 #include <benchmark/benchmark.h>
 
 #include <algorithm>
 #include <array>
 #include <bit>
-#include <charconv>
 #include <cmath>
 #include <fstream>
 #include <iostream>
 #include <memory>
-#include <numeric>
 #include <random>
 #include <span>
 #include <string>
@@ -41,13 +40,7 @@ struct Inputs {
   std::uint64_t digest{14695981039346656037ULL};
   std::size_t maximum_payload{};
 };
-std::uint64_t number(std::string_view text) {
-  std::uint64_t value{};
-  const auto parsed = std::from_chars(text.data(), text.data() + text.size(), value);
-  if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size())
-    throw std::invalid_argument("unsigned integer required");
-  return value;
-}
+using tiplog::cli::parse_u64;
 void hash_word(std::uint64_t& hash, std::uint64_t value) {
   for (unsigned i = 0; i < 8; ++i) {
     hash ^= value & 255U; hash *= 1099511628211ULL; value >>= 8U;
@@ -77,7 +70,7 @@ Inputs inputs(const Profile& profile,
     for (auto& value : cumulative) value /= sum;
     cumulative.back() = 1;
   }
-  const auto fixed = profile.payload == "empirical" ? 0 : number(profile.payload);
+  const auto fixed = profile.payload == "empirical" ? 0 : parse_u64(profile.payload);
   for (std::size_t i = 0; i < schedule_size; ++i) {
     std::uint32_t owner{};
     if (profile.zipf) {
@@ -222,7 +215,7 @@ void verify(const Profile& profile, const Inputs& data) {
       throw std::logic_error("M2 verifier payload mismatch");
     pos += x.size;
   }
-  std::cout << "{\"status\":\"passed\",\"profile\":" << tiplog::benchlog::quoted(profile.name())
+  std::cout << "{\"status\":\"passed\",\"profile\":" << tiplog::bench::json(profile.name())
       << ",\"seed\":" << profile.seed << ",\"functional_capacity\":" << capacity
       << ",\"publishes\":" << data.choices.size() << ",\"input_schedule_fnv_hex\":\""
       << std::hex << data.digest << "\",\"output_digest_hex\":\"" << digest << std::dec
@@ -246,14 +239,14 @@ int main(int argc, char** argv) {
         const std::string_view value(argv[i]);
         if (option == "--payload") selected.payload = value;
         else if (option == "--partitions") {
-          const auto count = number(value); if (count != 1 && count != 100 && count != 10000)
+          const auto count = parse_u64(value); if (count != 1 && count != 100 && count != 10000)
             throw std::invalid_argument("P must be 1,100,10000");
           selected.partitions = static_cast<std::uint32_t>(count);
         } else if (option == "--block-entries") {
-          const auto count = number(value); if (count != 256 && count != 1024)
+          const auto count = parse_u64(value); if (count != 256 && count != 1024)
             throw std::invalid_argument("B must be 256 or1024");
           selected.block_entries = static_cast<std::uint32_t>(count);
-        } else if (option == "--seed") selected.seed = number(value);
+        } else if (option == "--seed") selected.seed = parse_u64(value);
         else if (option == "--mix-file") mix_file = value;
         else {
           if (value != "uniform" && value != "zipf") throw std::invalid_argument("uniform or zipf required");
